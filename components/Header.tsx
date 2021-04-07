@@ -40,10 +40,7 @@ export default (props: Props) => {
                             >
                                 <ul className="nav navbar-nav d-flex w-100">
                                     <li className="header__nav-item nav-item" role="presentation">
-                                        <Link
-                                            href="https://about.sourcegraph.com/customers"
-                                            activeClassName="header__nav-link-active"
-                                        >
+                                        <Link href="https://about.sourcegraph.com/customers">
                                             <a className="header__nav-link nav-link">Customers</a>
                                         </Link>
                                     </li>
@@ -53,10 +50,7 @@ export default (props: Props) => {
                                         </a>
                                     </li>
                                     <li className="header__nav-item nav-item" role="presentation">
-                                        <Link
-                                            href="https://about.sourcegraph.com/pricing"
-                                            activeClassName="header__nav-link-active"
-                                        >
+                                        <Link href="https://about.sourcegraph.com/pricing">
                                             <a className="header__nav-link nav-link">Pricing</a>
                                         </Link>
                                     </li>
@@ -71,12 +65,9 @@ export default (props: Props) => {
                                         </a>
                                     </li>
                                     <li className="header__nav-item nav-item" role="presentation">
-                                        <Link
-                                            href="https://about.sourcegraph.com/get-started"
-                                            title="Get started with Sourcegraph"
-                                        >
+                                        <Link href="https://about.sourcegraph.com/get-started">
                                             <a
-                                                className="header__nav-link nav-link btn btn-outline-primary"
+                                                title="Get started with Sourcegraph"
                                                 className="header__nav-link nav-link btn btn-outline-primary"
                                             >
                                                 Get started

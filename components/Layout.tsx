@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
-import Footer from './Footer.tsx'
-import Header from './Header.tsx'
+import Footer from './Footer'
+import Header from './Header'
 
 interface LayoutProps {
     meta?: {
@@ -50,17 +50,11 @@ export default class Layout extends React.PureComponent<LayoutProps> {
                     />
                 </Head>
                 <div className={this.props.heroAndHeaderClassName}>
-                    <Header
-                        isHome={isHome}
-                        isBlog={isBlog}
-                        isProductPage={isProductPage}
-                        minimal={this.props.minimal}
-                        className={`${this.props.className || ''}`}
-                    />
+                    <Header minimal={this.props.minimal} className={`${this.props.className || ''}`} />
                     {this.props.hero}
                 </div>
                 <section className="d-flex flex-column fill-height">{this.props.children}</section>
-                <Footer className={`pt-4 ${this.props.className || ''}`} minimal={this.props.minimal} />
+                <Footer minimal={this.props.minimal} />
             </div>
         )
     }

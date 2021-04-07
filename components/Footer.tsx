@@ -80,7 +80,7 @@ export default function Footer({ minimal }: Props) {
                                         <a href="https://about.sourcegraph.com/company/careers">Careers</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a to="https://about.sourcegraph.com/contact">Contact</a>
+                                        <a href="https://about.sourcegraph.com/contact">Contact</a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="https://about.sourcegraph.com/handbook">Handbook</a>
