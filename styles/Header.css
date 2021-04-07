@@ -1,0 +1,6 @@
+.header__logo {
+	background: url(/sourcegraph-logo.svg) no-repeat;
+	background-size: 150px;
+	width: 150px;
+	height: 26px;
+}
