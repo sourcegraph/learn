@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import ExternalLinkIcon from 'mdi-react/ExternalLinkIcon'
-import 'bootstrap/dist/css/bootstrap.css'
 
 interface Props {
     className?: string
     minimal?: boolean
 }
 
-export default (props: Props) => {
+export default function Header(props: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => setIsOpen(!isOpen)
 
