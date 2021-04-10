@@ -1,9 +1,8 @@
 import globby from 'globby'
 import path from 'path'
 
-export default async function getAllPosts() {
-    const baseDirectory = path.join(process.cwd(), 'posts')
-    const pattern = '**.md'
+export default async function listAllPosts(baseDirectory: string) {
+    const pattern = '**/*.{md,markdown,mdx}'
     const entries = await globby(pattern, { cwd: baseDirectory })
     return entries
 }

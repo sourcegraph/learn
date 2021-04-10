@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import React from 'react'
-import Layout from '../components/Layout'
 import PageLayout from '../components/PageLayout'
-import getAllPosts from '../util/getAllPosts'
+import listAllPosts from '../util/listAllPosts'
+import loadAllPosts from '../util/loadAllPosts'
 
 interface LinkEntry {
     title: string
@@ -14,17 +14,19 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-    const markdownEntries = await getAllPosts()
-    const markdownLinks = markdownEntries.map(file => ({ title: file, url: `/posts/${file}` }))
+    const posts = await loadAllPosts()
+    const postLinks = posts.map(post => ({
+        title: post.frontMatter.title || 'Untitled',
+        url: `/posts/${post.filename}`,
+    }))
     return {
         props: {
             links: [
-                // TODO: this will be manually scanned from the filesystem eventually
                 {
-                    title: 'How to install Sourcegraph',
-                    url: '/how-to-install-sourcegraph',
+                    title: 'About',
+                    url: '/about',
                 },
-                ...markdownLinks,
+                ...postLinks,
             ],
         },
     }
