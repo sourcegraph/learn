@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import ExternalLinkIcon from 'mdi-react/ExternalLinkIcon'
-import 'bootstrap/dist/css/bootstrap.css'
 
 interface Props {
     className?: string
     minimal?: boolean
 }
 
-export default (props: Props) => {
+export default function Header(props: Props) {
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => setIsOpen(!isOpen)
 
@@ -17,11 +16,7 @@ export default (props: Props) => {
             <nav className={`header navbar navbar-expand-md py-3 ${props.className || 'navbar-light'}`}>
                 <div className="container-lg px-0 px-lg-3">
                     <Link href="/">
-                        <a className="navbar-brand header__logo">
-                            <span role="img" aria-label="Sourcegraph - Universal code search">
-                                {' '}
-                            </span>
-                        </a>
+                        <a className="site-title">Sourcegraph Learn</a>
                     </Link>
                     {!props.minimal && (
                         <>

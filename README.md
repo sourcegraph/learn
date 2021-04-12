@@ -2,29 +2,36 @@
 
 This is work-in-progress prototype of the developer education website. It's a static site built with Next.js and markdown.
 
-The sections below are from the default Next.js readme, for getting started with working in this repo.
-
 # Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Getting started
 
-First, run the development server:
+Install dependencies and run the development server:
 
-```bash
+```
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Node.js version
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To make sure that you're using the same version of Node.js as used in the production build of the website, use `nvm` to select the version that's specified in [`.nvmrc`](.nvmrc):
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+nvm install
+```
+
+## Building the production version of the site
+
+When the site is being deployed to production, the following build command is executed and the output is in the `out/` directory.
+
+```
+npm run build
+```
 
 ## Learn More
 

@@ -1,11 +1,15 @@
 import Layout from './Layout'
 
-export default function PageLayout({ children }) {
+interface Props {
+    children: React.ReactNode
+}
+
+export default function PageLayout(props: Props) {
     return (
         <Layout>
             <div className="container">
                 <div className="row">
-                    <div className="col">{children}</div>
+                    <div className="col py-5">{props.children}</div>
                 </div>
             </div>
         </Layout>
