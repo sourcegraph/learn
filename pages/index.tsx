@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import React from 'react'
 import PageLayout from '../components/PageLayout'
+import collectTags from '../util/collectTags'
 import listAllPosts from '../util/listAllPosts'
 import loadAllPosts from '../util/loadAllPosts'
 
@@ -16,8 +17,13 @@ interface Props {
 export const getStaticProps: GetStaticProps<Props> = async context => {
     const posts = await loadAllPosts()
     const postLinks = posts.map(post => ({
-        title: post.frontMatter.title || 'Untitled',
+        title: post.frontMatter.title,
         url: `/posts/${post.filename}`,
+    }))
+    const tags = collectTags(posts)
+    const tagLinks = tags.map(tag => ({
+        title: `Posts tagged "${tag}"`,
+        url: `/tags/${tag}`,
     }))
     return {
         props: {
@@ -27,6 +33,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
                     url: '/about',
                 },
                 ...postLinks,
+                ...tagLinks,
             ],
         },
     }

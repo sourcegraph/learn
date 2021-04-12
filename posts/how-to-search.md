@@ -1,5 +1,6 @@
 ---
 title: How to search
+tags: [tutorial, search]
 ---
 
 ## Introduction

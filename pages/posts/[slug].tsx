@@ -1,14 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import React, { useState } from 'react'
+import React from 'react'
 import PageLayout from '../../components/PageLayout'
 import { MdxRemote } from 'next-mdx-remote/types'
 import useHydrate from 'next-mdx-remote/hydrate'
-import { ParsedUrlQuery } from 'querystring'
-import renderMdx from '../../util/loadMarkdownFile'
 import Counter from '../../components/Counter'
 import renderMdxSource from '../../util/renderMdxSource'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
 import listAllPosts from '../../util/listAllPosts'
+import getQueryParam from '../../util/getQueryParam'
 
 const components = { Counter }
 interface Props {
@@ -33,20 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         paths,
         fallback: false,
     }
-}
-
-function getQueryParam(params: ParsedUrlQuery | undefined, name: string): string {
-    if (!params) {
-        throw new Error('getQueryParam: No params provided')
-    }
-    let value = params[name]
-    if (Array.isArray(value)) {
-        value = value[0]
-    }
-    if (!value) {
-        throw new Error(`getQueryParam: Missing param value "${name}"`)
-    }
-    return value
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
