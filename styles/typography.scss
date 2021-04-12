@@ -2,6 +2,20 @@
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
+.site-title {
+    /** Remove link styling **/
+    &, &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    font-family: "PT Sans";
+    font-weight: bold;
+    font-size: 1.3rem;
+    vertical-align: -8px;
+    padding-bottom: 6px;
+}
+
 .markdown-content {
 
     h1, h2, h3, h4, h5, h6 {

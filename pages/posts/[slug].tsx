@@ -20,7 +20,7 @@ export default function Post(props: Props) {
     const content = useHydrate(props.mdxSource, { components })
     return (
         <PageLayout>
-            <h1>{props.title}</h1>
+            <h1 className="mb-5">{props.title}</h1>
             <div className="markdown-content">{content}</div>
         </PageLayout>
     )
