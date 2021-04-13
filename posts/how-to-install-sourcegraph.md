@@ -1,5 +1,6 @@
 ---
 title: How to install Sourcegraph
+tags: [tutorial, installation]
 ---
 
 ## Introduction
