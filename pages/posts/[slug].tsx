@@ -8,10 +8,13 @@ import renderMdxSource from '../../util/renderMdxSource'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
 import listAllPosts from '../../util/listAllPosts'
 import getQueryParam from '../../util/getQueryParam'
+import startCase from 'lodash/startCase'
+import Link from 'next/link'
 
 const components = { Counter }
 interface Props {
     title: string
+    tags: string[]
     mdxSource: MdxRemote.Source
 }
 
@@ -19,7 +22,18 @@ export default function Post(props: Props) {
     const content = useHydrate(props.mdxSource, { components })
     return (
         <PageLayout>
-            <h1 className="mb-5">{props.title}</h1>
+            <h1>{props.title}</h1>
+
+            <div className="mb-5">
+                {props.tags.map(tag => (
+                    <>
+                        <Link href={`/tags/${tag}`}>
+                            <a className="badge badge-primary mr-1">{startCase(tag)}</a>
+                        </Link>
+                    </>
+                ))}
+            </div>
+
             <div className="markdown-content">{content}</div>
         </PageLayout>
     )
@@ -43,6 +57,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     return {
         props: {
             title: markdownFile.frontMatter.title ?? 'Untitled',
+            tags: markdownFile.frontMatter.tags,
             mdxSource,
         },
     }
