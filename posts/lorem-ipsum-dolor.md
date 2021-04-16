@@ -1,5 +1,5 @@
 ---
-title: How to search
+title: Lorem Ipsum Dolor Sit Amet
 tags: [tutorial, search]
 ---
 

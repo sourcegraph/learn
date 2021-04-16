@@ -2,6 +2,7 @@ import * as React from 'react'
 import Head from 'next/head'
 import Footer from './Footer'
 import Header from './Header'
+import { GA_TRACKING_ID } from '../lib/gtag'
 
 interface LayoutProps {
     meta?: {
@@ -43,6 +44,24 @@ export default function Layout(props: LayoutProps) {
                     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
                     rel="stylesheet"
                 />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=UA-40540747-22`}
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-40540747-22', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
             </Head>
             <div className={props.heroAndHeaderClassName}>
                 <Header minimal={props.minimal} className={`${props.className || ''}`} />

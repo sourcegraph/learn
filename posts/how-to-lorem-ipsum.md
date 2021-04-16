@@ -1,5 +1,5 @@
 ---
-title: How to install Sourcegraph
+title: How To Lorem Ipsum
 tags: [tutorial, installation]
 ---
 
