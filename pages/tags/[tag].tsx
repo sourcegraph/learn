@@ -5,11 +5,11 @@ import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
 import getQueryParam from '../../util/getQueryParam'
 import loadAllPosts from '../../util/loadAllPosts'
-import { MarkdownFile } from '../../util/loadMarkdownFile'
+import { LinkEntry } from '../posts'
 
 interface Props {
     tag: string
-    posts: MarkdownFile[]
+    links: LinkEntry[]
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -22,10 +22,14 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     const tag = getQueryParam(context.params, 'tag').toLowerCase()
     const posts = await loadAllPosts()
     const filteredPosts = posts.filter(post => post.frontMatter.tags.includes(tag))
+    const links = filteredPosts.map(post => ({
+        title: post.frontMatter.title,
+        url: `/posts/${post.slug}`,
+    }))
     return {
         props: {
             tag,
-            posts: filteredPosts,
+            links,
         },
     }
 }
@@ -37,10 +41,10 @@ export default function TagPage(props: Props) {
                 Posts tagged <code>{props.tag}</code>
             </h1>
             <ul>
-                {props.posts.map(post => (
+                {props.links.map(link => (
                     <li>
-                        <Link href={`/posts/${post.filename}`}>
-                            <a>{post.frontMatter.title}</a>
+                        <Link href={link.url}>
+                            <a>{link.title}</a>
                         </Link>
                     </li>
                 ))}

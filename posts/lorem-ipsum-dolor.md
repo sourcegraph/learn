@@ -1,6 +1,7 @@
 ---
 title: Lorem Ipsum Dolor Sit Amet
 tags: [tutorial, search]
+author: Jordan Ipsum
 ---
 
 ## Introduction

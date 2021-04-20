@@ -1,6 +1,7 @@
 ---
 title: How To Lorem Ipsum
 tags: [tutorial, installation]
+author: Morgan Lorem
 ---
 
 ## Introduction
