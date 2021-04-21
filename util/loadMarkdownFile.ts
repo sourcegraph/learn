@@ -5,6 +5,9 @@ import path from 'path'
 export interface FrontMatter {
     title: string
     tags: string[]
+    published: boolean
+    unlisted: boolean
+    author?: string
 }
 
 export interface MarkdownFile {
@@ -52,6 +55,9 @@ function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['dat
     return {
         title: rawFrontMatter.title ?? 'Untitled',
         tags: normalizeTags(rawFrontMatter.tags).map(tag => tag.toLocaleLowerCase()),
+        published: rawFrontMatter.published ?? true,
+        unlisted: rawFrontMatter.unlisted ?? false,
+        author: rawFrontMatter.author,
     }
 }
 

@@ -5,7 +5,7 @@ import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
 import loadAllPosts from '../../util/loadAllPosts'
 
-interface LinkEntry {
+export interface LinkEntry {
     title: string
     url: string
 }
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     const posts = await loadAllPosts()
     const postLinks = posts.map(post => ({
         title: post.frontMatter.title,
-        url: `/posts/${post.filename}`,
+        url: `/posts/${post.slug}`,
     }))
     const tags = collectTags(posts)
     const tagLinks = tags.map(tag => ({
