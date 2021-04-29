@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 
 export default function TagPage(props: Props) {
     return (
-        <PageLayout>
+        <PageLayout contentTitle={`Posts tagged ${props.tag}`}>
             <h1 className="mb-5">
                 Posts tagged <code>{props.tag}</code>
             </h1>
