@@ -29,7 +29,6 @@ export default function Layout(props: LayoutProps) {
         title: 'Sourcegraph Learn',
         description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
         image: 'https://about.sourcegraph.com/sourcegraph-mark.png',
-        icon: '/favicon.png',
     }
     const metaProps = { ...defaultMetaProps, ...props.meta }
 
