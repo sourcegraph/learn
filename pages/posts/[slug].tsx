@@ -22,7 +22,7 @@ interface Props {
 export default function Post(props: Props) {
     const content = useHydrate(props.mdxSource, { components })
     return (
-        <PageLayout>
+        <PageLayout contentTitle={props.title}>
             <h1>{props.title}</h1>
             {props.author && <p className="text-muted">By {props.author}</p>}
 
