@@ -26,10 +26,9 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
     const defaultMetaProps: LayoutProps['meta'] = {
-        title: 'Sourcegraph - Universal Code Search',
+        title: 'Sourcegraph Learn',
         description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
         image: 'https://about.sourcegraph.com/sourcegraph-mark.png',
-        icon: 'https://about.sourcegraph.com/favicon.png',
     }
     const metaProps = { ...defaultMetaProps, ...props.meta }
 
@@ -39,9 +38,8 @@ export default function Layout(props: LayoutProps) {
             <div className={`flex flex-column fill-height ${props.className || ''}`}>
                 <Head>
                     <GoogleTagManagerScriptTag id={googleTagManagerId} />
-
                     <title>{metaProps.title}</title>
-
+                    <link href="/favicon.png" rel="icon" type="image/png"></link>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <link href="https://fonts.googleapis.com/css2?family=PT+Sans" rel="stylesheet"></link>
                     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,600,700" rel="stylesheet" />
