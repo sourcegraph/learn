@@ -6,8 +6,10 @@ import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './Goog
 import { googleTagManagerId } from '../posts/site-config'
 
 interface LayoutProps {
+    contentTitle?: string
+    title?: string
+
     meta?: {
-        title?: string
         description?: string
         image?: string
         icon?: string
@@ -24,7 +26,17 @@ interface LayoutProps {
     className?: string
 }
 
+function createTitle(contentTitle: string) {}
+
 export default function Layout(props: LayoutProps) {
+    const siteTitle = 'Sourcegraph Learn'
+    let title = siteTitle
+    if (props.title) {
+        title = props.title
+    } else if (props.contentTitle) {
+        title = `${props.contentTitle} - ${siteTitle}`
+    }
+
     const defaultMetaProps: LayoutProps['meta'] = {
         title: 'Sourcegraph Learn',
         description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
@@ -38,7 +50,7 @@ export default function Layout(props: LayoutProps) {
             <div className={`flex flex-column fill-height ${props.className || ''}`}>
                 <Head>
                     <GoogleTagManagerScriptTag id={googleTagManagerId} />
-                    <title>{metaProps.title}</title>
+                    <title>{title}</title>
                     <link href="/favicon.png" rel="icon" type="image/png"></link>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <link href="https://fonts.googleapis.com/css2?family=PT+Sans" rel="stylesheet"></link>
