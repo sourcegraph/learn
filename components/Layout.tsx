@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Header from './Header'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
 import { googleTagManagerId } from '../posts/site-config'
+import NavBar from './NavBar'
 
 interface LayoutProps {
     contentTitle?: string
@@ -46,24 +47,21 @@ export default function Layout(props: LayoutProps) {
     return (
         <>
             <GoogleTagManagerNoscriptFrame id={googleTagManagerId} />
-            <div className={`flex flex-column fill-height ${props.className || ''}`}>
-                <Head>
-                    <GoogleTagManagerScriptTag id={googleTagManagerId} />
-                    <title>{title}</title>
-                    <link href="/favicon.png" rel="icon" type="image/png"></link>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <link href="https://fonts.googleapis.com/css2?family=PT+Sans" rel="stylesheet"></link>
-                    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
-                        rel="stylesheet"
-                    />
-                </Head>
+            <Head>
+                <GoogleTagManagerScriptTag id={googleTagManagerId} />
+                <title>{title}</title>
+                <link href="/favicon.png" rel="icon" type="image/png"></link>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link href="https://fonts.googleapis.com/css2?family=PT+Sans" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
+                    rel="stylesheet"
+                />
+            </Head>
 
-                <div className={props.heroAndHeaderClassName}>
-                    <Header minimal={props.minimal} className={`${props.className || ''}`} />
-                    {props.hero}
-                </div>
+            <div className="container">
+                <NavBar />
                 <section className="d-flex flex-column fill-height">{props.children}</section>
                 <Footer minimal={props.minimal} />
             </div>
