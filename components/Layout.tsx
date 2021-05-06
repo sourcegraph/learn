@@ -61,8 +61,11 @@ export default function Layout(props: LayoutProps) {
             </Head>
 
             <div className="container">
-                <NavBar />
-                <section className="d-flex flex-column fill-height">{props.children}</section>
+                <div className="row">
+                    <NavBar />
+                </div>
+
+                <section>{props.children}</section>
                 <Footer minimal={props.minimal} />
             </div>
         </>

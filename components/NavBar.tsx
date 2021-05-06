@@ -20,28 +20,19 @@ export default function NavBar() {
             <ul className="nav col-12 col-md-auto mb-2 mb-md-0">
                 <li>
                     <Link href="/">
-                        <a href="#" className="nav-link px-2 link-secondary">
+                        <a href="#" className="nav-link px-2 link-dark">
                             Home
                         </a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/posts">
-                        <a href="#" className="nav-link px-2 link-dark">
-                            Posts
-                        </a>
+                        <a className="nav-link px-2 link-dark">Tutorials</a>
                     </Link>
                 </li>
                 <li>
-                    <a href="#" className="nav-link px-2 link-dark">
-                        Tutorials
-                    </a>
-                </li>
-                <li>
                     <Link href="/about">
-                        <a href="#" className="nav-link px-2 link-dark">
-                            About
-                        </a>
+                        <a className="nav-link px-2 link-dark">About</a>
                     </Link>
                 </li>
             </ul>
