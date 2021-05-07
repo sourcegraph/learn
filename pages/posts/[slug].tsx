@@ -28,11 +28,9 @@ export default function Post(props: Props) {
 
             <div className="mb-5">
                 {props.tags.map(tag => (
-                    <>
-                        <Link key={tag} href={`/tags/${tag}`}>
-                            <a className="badge badge-primary mr-1">{startCase(tag)}</a>
-                        </Link>
-                    </>
+                    <Link key={tag} href={`/tags/${tag}`}>
+                        <a className="badge badge-primary mr-1">{startCase(tag)}</a>
+                    </Link>
                 ))}
             </div>
 
