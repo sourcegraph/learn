@@ -10,8 +10,9 @@ import getQueryParam from '../../util/getQueryParam'
 import startCase from 'lodash/startCase'
 import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
+import SourcegraphSearch from '../../components/SouregraphSearch'
 
-const components = { Counter }
+const components = { Counter, SourcegraphSearch }
 interface Props {
     title: string
     author?: string
