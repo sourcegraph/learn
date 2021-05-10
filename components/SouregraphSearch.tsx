@@ -20,7 +20,7 @@ export default function SourcegraphSearch(props: Props) {
                 />
             </div>
             <div className="col-auto">
-                <a className="btn btn-primary" href={`https://sourcegraph.com/search?q=${encodeURIComponent(query)}`}>
+                <a className="btn btn-primary" href={`https://sourcegraph.com/search?q=${encodeURIComponent(query)}`} target="_blank">
                     Search on Sourcegraph
                 </a>
             </div>
