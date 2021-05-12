@@ -31,7 +31,7 @@ Within the **Manage Repositories** page, you’ll be presented with a few option
 * In the **Your repositories** section, you can sync _your own_ public repositories using GitHub or GitLab. 
 * In the **Other public repositories** section, you can add any public repositories on GitHub and GitLab.
 
-For now, we’ll focus on the second option, and click the checkbox (`[ ]`) next to `Sync specific public repositories by URL`. Choosing this option, you can add any public repositories of code from either GitHub or GitLab, whether you contribute to the project or not. 
+For now, we’ll focus on the second option, and click the checkbox next to `Sync specific public repositories by URL`. Choosing this option, you can add any public repositories of code from either GitHub or GitLab, whether you contribute to the project or not. 
 
 Once you have clicked the checkbox, a check mark sign will appear in the box, like so: &#9745;. At this point, a box will display, similar to the screenshot below.
 
