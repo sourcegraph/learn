@@ -12,7 +12,16 @@ import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SouregraphSearch'
 
-const components = { Counter, SourcegraphSearch }
+const markdownElementsClasses: Partial<Record<keyof JSX.IntrinsicElements, string>> = {
+    img: 'my-4 w-100',
+} as const
+
+const Img = (props: JSX.IntrinsicElements['img']) => (
+    <img {...props} className={`${markdownElementsClasses.img} ${props.className || ''}`} />
+)
+
+const components = { Counter, SourcegraphSearch, img: Img }
+
 interface Props {
     title: string
     author?: string
