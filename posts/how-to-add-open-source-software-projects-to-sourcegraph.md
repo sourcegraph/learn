@@ -18,7 +18,7 @@ Log into [Sourcegraph.com](https://sourcegraph.com) and click on your user icon 
 
 A drop-down menu will be displayed. From here, click on **Settings**.
 
-![Sourcegraph home with user menu](../public/tutorial-images/sourcegraph-home-user-menu.png)
+![Sourcegraph home with user menu](/tutorial-images/sourcegraph-home-user-menu.png)
 
 You’ll be taken to a page that indicates that you are in your settings with a header of **User Settings** displayed towards the top of the page, and a panel with options regarding your user account on the left hand side of the window.
 
