@@ -18,7 +18,7 @@ Log into [Sourcegraph.com](https://sourcegraph.com) and click on your user icon 
 
 A drop-down menu will be displayed. From here, click on **Settings**.
 
-![Sourcegraph home with user menu](../public/tutorial-images/sourcegraph-home-user-menu.png)
+<img src="/tutorial-images/sourcegraph-home-user-menu.png" alt="Sourcegraph home with user menu" width="550"/>
 
 You’ll be taken to a page that indicates that you are in your settings with a header of **User Settings** displayed towards the top of the page, and a panel with options regarding your user account on the left hand side of the window.
 
@@ -26,7 +26,7 @@ You’ll be taken to a page that indicates that you are in your settings with a 
 
 From the panel on the left hand side of the interface, you can click on **Repositories** in order to be taken to the page where you can manage repositories. If you already have repositories added, you’ll need to click on the **Manage Repositories** button that is on this page in order to access this page.
 
-![Sourcegraph manage repositories page](images/sourcegraph-manage-repositories.png)
+<img src="/tutorial-images/sourcegraph-manage-repositories.png" alt="Sourcegraph manage repositories page" width="550"/>
 
 Within the **Manage Repositories** page, you’ll be presented with a few options: 
 
@@ -37,7 +37,7 @@ For now, we’ll focus on the second option, and click the checkbox next to `Syn
 
 Once you have clicked the checkbox, a check mark sign will appear in the box, like so: &#9745;. At this point, a box will display, similar to the screenshot below.
 
-![Sourcegraph manage repositories page](images/sourcegraph-other-public-repositories.png)
+<img src="/tutorial-images/sourcegraph-other-public-repositories.png" alt="Sourcegraph other public repositories list" width="550"/>
 
 Within the box, you can type URLs of the public open source projects that you care about, one per line, with no separating characters other than the `ENTER` key. 
 
@@ -52,7 +52,7 @@ When you are satisfied with the repositories that we have added for now (you can
 
 At this point, you’re able to search the public repositories that you added. To verify this, you can scroll up to the top of the page where the Sourcegraph search bar is. To the left of the search bar it states `context:global`, which you can click on to limit it to your own username, to search the repositories you have added. 
 
-![Sourcegraph search with global context](images/sourcegraph-context.png)
+<img src="/tutorial-images/sourcegraph-context.png" alt="Sourcegraph search with global context" width="550"/>
 
 From here, you can search a common keyword to ensure that the public code you added is available to you.
 
@@ -60,7 +60,8 @@ To ensure that the public code you just added is available to anyone using Sourc
 
 <SourcegraphSearch query="women world wide"/>
 
-![Sourcegraph verification of OSS added](images/sourcegraph-anonymous-verification.png)
+
+<img src="/tutorial-images/sourcegraph-anonymous-verification.png" alt="Sourcegraph verification of OSS added" width="550"/>
 
 The screenshot above reveals output from the repository we just added to an anonymous user who is not logged in, which indicates that we have successfully added this public repository to Sourcegraph.
 
