@@ -12,19 +12,26 @@ import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SouregraphSearch'
 
-const markdownElementsClasses: Partial<Record<keyof JSX.IntrinsicElements, string>> = {
-    img: 'my-4 w-100',
+const classForHeadingElements = 'mb-4 mt-5'
+const markdownComponents = {
+    img: createComponentWithClasses('img', 'my-5 w-100'),
+    h1: createComponentWithClasses('h1', classForHeadingElements),
+    h2: createComponentWithClasses('h2', classForHeadingElements),
+    h3: createComponentWithClasses('h3', classForHeadingElements),
+    h4: createComponentWithClasses('h4', classForHeadingElements),
+    h5: createComponentWithClasses('h5', classForHeadingElements),
 } as const
 
-const Img = (props: JSX.IntrinsicElements['img']) => (
-    <img {...props} className={`${markdownElementsClasses.img} ${props.className || ''}`} />
-)
+function createComponentWithClasses<T extends keyof JSX.IntrinsicElements>(tag: T, className: string) {
+    return function (props: JSX.IntrinsicElements[T]) {
+        return React.createElement(tag, { ...props, className: `${props.className ?? ''} ${className}` })
+    }
+}
 
-const components = { Counter, SourcegraphSearch, img: Img }
-
+const components = { Counter, SourcegraphSearch, ...markdownComponents }
 interface Props {
     title: string
-    author?: string
+    author: string
     tags: string[]
     mdxSource: MdxRemote.Source
 }
@@ -67,7 +74,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     return {
         props: {
             title: markdownFile.frontMatter.title ?? 'Untitled',
-            author: markdownFile.frontMatter.author,
+            author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
             mdxSource,
         },
