@@ -10,7 +10,7 @@ import getQueryParam from '../../util/getQueryParam'
 import startCase from 'lodash/startCase'
 import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
-import SourcegraphSearch from '../../components/SouregraphSearch'
+import SourcegraphSearch from '../../components/SourcegraphSearch'
 
 const classForHeadingElements = 'mb-4 mt-5'
 const markdownComponents = {
