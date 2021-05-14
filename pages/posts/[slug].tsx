@@ -1,10 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
 import PageLayout from '../../components/PageLayout'
-import { MdxRemote } from 'next-mdx-remote/types'
-import useHydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Counter from '../../components/Counter'
-import renderMdxSource from '../../util/renderMdxSource'
+import serializeMdxSource from '../../util/serializeMdxSource'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
 import getQueryParam from '../../util/getQueryParam'
 import startCase from 'lodash/startCase'
@@ -33,11 +32,10 @@ interface Props {
     title: string
     author: string
     tags: string[]
-    mdxSource: MdxRemote.Source
+    mdxSource: MDXRemoteSerializeResult
 }
 
 export default function Post(props: Props) {
-    const content = useHydrate(props.mdxSource, { components })
     return (
         <PageLayout contentTitle={props.title}>
             <h1>{props.title}</h1>
@@ -53,7 +51,9 @@ export default function Post(props: Props) {
                 ))}
             </div>
 
-            <div className="markdown-content">{content}</div>
+            <div className="markdown-content">
+                <MDXRemote {...props.mdxSource} components={components}/>
+            </div>
         </PageLayout>
     )
 }
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     const slug = getQueryParam(context.params, 'slug')
     const baseDirectory = 'posts'
     const markdownFile = await loadMarkdownFile(baseDirectory, slug + '.md')
-    const mdxSource = await renderMdxSource(markdownFile, components)
+    const mdxSource = await serializeMdxSource(markdownFile)
 
     return {
         props: {
