@@ -6,6 +6,7 @@ import collectTags from '../../util/collectTags'
 import getQueryParam from '../../util/getQueryParam'
 import loadAllPosts from '../../util/loadAllPosts'
 import { LinkEntry } from '../posts'
+import startCase from 'lodash/startCase'
 
 interface Props {
     tag: string
@@ -35,11 +36,10 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 }
 
 export default function TagPage(props: Props) {
+    const tagName = startCase(props.tag)
     return (
-        <PageLayout contentTitle={`Posts tagged ${props.tag}`}>
-            <h1 className="mb-5">
-                Posts tagged <code>{props.tag}</code>
-            </h1>
+        <PageLayout contentTitle={`Posts tagged ${tagName}`}>
+            <h1 className="mb-5">Posts tagged {tagName}</h1>
             <ul>
                 {props.links.map(link => (
                     <li>
