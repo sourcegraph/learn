@@ -4,6 +4,7 @@ import React from 'react'
 import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
 import loadAllPosts from '../../util/loadAllPosts'
+import startCase from 'lodash/startCase'
 
 export interface LinkEntry {
     title: string
@@ -21,7 +22,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }))
     const tags = collectTags(posts)
     const tagLinks = tags.map(tag => ({
-        title: `Posts tagged "${tag}"`,
+        title: `Posts tagged ${startCase(tag)}`,
         url: `/tags/${tag}`,
     }))
     return {
