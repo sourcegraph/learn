@@ -8,6 +8,11 @@ author: Morgan Lorem
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum iaculis erat ac lacus tristique, id faucibus arcu convallis. Curabitur rhoncus aliquam quam vitae iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. In blandit quam tempor arcu aliquam mollis. In hac habitasse platea dictumst. Donec lobortis erat non elit blandit, sed consectetur nisi aliquam. Aliquam erat volutpat. Maecenas dapibus iaculis lectus, nec egestas diam elementum id. Phasellus volutpat libero purus, vulputate blandit nunc tincidunt ut.
 
+```
+a = "hello, world"
+print(a)
+```
+
 ## Prerequisites
 
 Nam sodales metus ut risus interdum, eget placerat ligula eleifend. Nam lacinia a nisl ut suscipit. Morbi congue convallis venenatis. Integer orci massa, malesuada at venenatis quis, varius at ipsum. Duis mollis dui dui, eu interdum sem luctus vel. Nullam sollicitudin, metus et euismod semper, augue eros ultricies mauris, in rhoncus justo odio quis velit.
