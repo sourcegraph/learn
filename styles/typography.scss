@@ -1,3 +1,16 @@
 :root {
     --bs-font-sans-serif: "Open Sans", "Arial", "Helvetica", sans-serif;
 }
+code {
+    font-family: monospace;
+    font-size: inherit;
+    color: #000000;
+    background: #E7E7E7;
+  }
+
+  pre {
+    background-color: #E7E7E7;
+    overflow: auto;
+    font-family: 'Monaco', monospace;
+    padding: 5px;
+  }
