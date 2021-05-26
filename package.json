@@ -10,14 +10,14 @@
     "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different"
   },
   "dependencies": {
-    "@next/mdx": "^10.2.0",
+    "@next/mdx": "^10.2.3",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^5.0.1",
     "globby": "^11.0.3",
     "gray-matter": "^4.0.3",
     "make-promises-safe": "^5.1.0",
     "mdi-react": "^7.5.0",
-    "next": "^10.2.0",
+    "next": "^10.2.3",
     "next-mdx-remote": "^3.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
