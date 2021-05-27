@@ -7,7 +7,7 @@ const CreativeCommonsLicense = () => (
         <div className="mb-3 text-muted small">
             This work is licensed under a{' '}
             <a href={creativeCommonsUrl} className="text-muted">
-                Creative Commons Attribution-NonCommercial 4.0 International License.
+                Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
             </a>
         </div>
         <a href={creativeCommonsUrl}>
