@@ -91,7 +91,6 @@ export default function Footer({ minimal }: Props) {
                                         </a>
                                     </li>
                                 </ul>
-                                w
                             </div>
                             <div className="col-sm-6 col-md-3 col-lg-2 mt-3 mb-3 order-md-4">
                                 <h3 className="footer__nav-header">Company</h3>
