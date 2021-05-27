@@ -19,19 +19,19 @@ export default function Footer({ minimal }: Props) {
                             <div className="col-sm-6 col-md-3 col-lg-2 mt-3 mb-3 order-md-2">
                                 <h3 className="footer__nav-header">About Sourcegraph</h3>
                                 <ul className="nav flex-column">
-                                    <li className="nav-item">
+                                    <li className="nav-item ">
                                         <Link href="https://about.sourcegraph.com/case-studies">
-                                            <a>Case studies</a>
+                                            <a className="text-dark text-decoration-none text-muted">Case studies</a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link href="https://about.sourcegraph.com/customers">
-                                            <a>Customers</a>
+                                            <a className="text-dark text-decoration-none text-muted">Customers</a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link href="https://about.sourcegraph.com/pricing">
-                                            <a>Pricing</a>
+                                            <a className="text-dark text-decoration-none text-muted">Pricing</a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
@@ -39,7 +39,7 @@ export default function Footer({ minimal }: Props) {
                                             href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
                                             target="_blank"
                                             rel="noopener"
-                                            className="bigCode"
+                                            className="bigCode text-dark text-decoration-none text-muted"
                                         >
                                             Not a developer?
                                         </a>
@@ -50,21 +50,21 @@ export default function Footer({ minimal }: Props) {
                                 <h3 className="footer__nav-header">Resources</h3>
                                 <ul className="nav flex-column">
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/blog">Blog</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/blog">Blog</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">
+                                        <a className="text-dark text-decoration-none text-muted" href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">
                                             Changelog
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://docs.sourcegraph.com">Documentation</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://docs.sourcegraph.com">Documentation</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/podcast">Podcast</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/podcast">Podcast</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey">
+                                        <a className="text-dark text-decoration-none text-muted" href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey">
                                             Big code survey
                                         </a>
                                     </li>
@@ -74,29 +74,29 @@ export default function Footer({ minimal }: Props) {
                                 <h3 className="footer__nav-header">Company</h3>
                                 <ul className="nav flex-column">
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/about">About</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/about">About</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/company/careers">Careers</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/company/careers">Careers</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/contact">Contact</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/contact">Contact</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/handbook">Handbook</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/handbook">Handbook</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/news">News</a>
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/news">News</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://about.sourcegraph.com/company/strategy">
+                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/company/strategy">
                                             Sourcegraph strategy
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div className="col-12 col-lg-3 mb-5 order-md-1">
-                                <a className="row footer__logo ml-1" href="/">
+                                <a className="row footer__logo ml-1" href="https://about.sourcegraph.com">
                                     <span role="img" aria-label="Sourcegraph - Universal code search">
                                         {' '}
                                     </span>
@@ -114,7 +114,7 @@ export default function Footer({ minimal }: Props) {
                                     </li>
                                     <li className="nav-item">
                                         <a
-                                            href="https://twitter.com/srcgraph"
+                                            href="https://twitter.com/sourcegraph"
                                             target="_blank"
                                             rel="nofollow noopener"
                                             aria-label="Twitter"
@@ -151,17 +151,17 @@ export default function Footer({ minimal }: Props) {
                     <ul className="nav">
                         <li className="nav-item text-muted mr-3">&copy; 2021 Sourcegraph</li>
                         <li className="nav-item">
-                            <a href="/terms" className="nav-link">
+                            <a href="https://about.sourcegraph.com/terms" className="nav-link">
                                 Terms
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="/security" className="nav-link">
+                            <a href="https://about.sourcegraph.com/security" className="nav-link">
                                 Security
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="/privacy" className="nav-link">
+                            <a href="https://about.sourcegraph.com/privacy" className="nav-link">
                                 Privacy
                             </a>
                         </li>
