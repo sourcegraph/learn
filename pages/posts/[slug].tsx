@@ -54,29 +54,6 @@ export default function Post(props: Props) {
             <div className="markdown-content">
                 <MDXRemote {...props.mdxSource} components={components} />
             </div>
-
-            <div className="card mt-5">
-                <div className="card-body">
-                    <div className="row">
-                        <div className="col-2">
-                            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                <img
-                                    alt="Creative Commons badge"
-                                    className="w-100"
-                                    src="/creative-commons-by-nc-sa.svg"
-                                />
-                            </a>
-                        </div>
-                        <div className="col-10 col-xs-12">
-                            Licensed under
-                            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                Creative Commons BY-NC-SA 4.0
-                            </a>
-                            .
-                        </div>
-                    </div>
-                </div>
-            </div>
         </PageLayout>
     )
 }

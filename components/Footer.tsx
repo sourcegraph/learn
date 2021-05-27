@@ -4,6 +4,7 @@ import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import YouTubeIcon from 'mdi-react/YoutubeIcon'
+import CreativeCommonsNotice from './CreativeCommonsNotice'
 
 interface Props {
     minimal?: boolean
@@ -50,46 +51,96 @@ export default function Footer({ minimal }: Props) {
                                 <h3 className="footer__nav-header">Resources</h3>
                                 <ul className="nav flex-column">
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/blog">Blog</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/blog"
+                                        >
+                                            Blog
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md"
+                                        >
                                             Changelog
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://docs.sourcegraph.com">Documentation</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://docs.sourcegraph.com"
+                                        >
+                                            Documentation
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/podcast">Podcast</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/podcast"
+                                        >
+                                            Podcast
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey">
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey"
+                                        >
                                             Big code survey
                                         </a>
                                     </li>
                                 </ul>
+                                w
                             </div>
                             <div className="col-sm-6 col-md-3 col-lg-2 mt-3 mb-3 order-md-4">
                                 <h3 className="footer__nav-header">Company</h3>
                                 <ul className="nav flex-column">
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/about">About</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/about"
+                                        >
+                                            About
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/company/careers">Careers</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/company/careers"
+                                        >
+                                            Careers
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/contact">Contact</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/contact"
+                                        >
+                                            Contact
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/handbook">Handbook</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/handbook"
+                                        >
+                                            Handbook
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/news">News</a>
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/news"
+                                        >
+                                            News
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="text-dark text-decoration-none text-muted" href="https://about.sourcegraph.com/company/strategy">
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://about.sourcegraph.com/company/strategy"
+                                        >
                                             Sourcegraph strategy
                                         </a>
                                     </li>
@@ -143,6 +194,7 @@ export default function Footer({ minimal }: Props) {
                                         </a>
                                     </li>
                                 </ul>
+                                <CreativeCommonsNotice />
                             </div>
                         </div>
                     </>
