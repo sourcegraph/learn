@@ -96,7 +96,7 @@ export default function Footer({ minimal }: Props) {
                                 </ul>
                             </div>
                             <div className="col-12 col-lg-3 mb-5 order-md-1">
-                                <a className="row footer__logo ml-1" href="/">
+                                <a className="row footer__logo ml-1" href="https://about.sourcegraph.com">
                                     <span role="img" aria-label="Sourcegraph - Universal code search">
                                         {' '}
                                     </span>
@@ -114,7 +114,7 @@ export default function Footer({ minimal }: Props) {
                                     </li>
                                     <li className="nav-item">
                                         <a
-                                            href="https://twitter.com/srcgraph"
+                                            href="https://twitter.com/sourcegraph"
                                             target="_blank"
                                             rel="nofollow noopener"
                                             aria-label="Twitter"
