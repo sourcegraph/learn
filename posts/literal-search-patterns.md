@@ -1,12 +1,12 @@
 ---
-title: SHow to Search with Sourcegraph using Literal Patterns
+title: How To Search with Sourcegraph using Literal Patterns
 author: Marek Zaluski
 tags: [tutorial, search]
 ---
 
 Sourcegraph code search is a search engine that allows you to search code in your own repositories as well as across public open source code. It supports three kinds of search patterns: literal patterns, regular expression patterns, and structural patterns. In this article, we’ll explore literal search patterns and how to use them.
 
-Performing a literal search is useful when you know the exact string that you’re looking for in a code base, like a particular function or variable name. You can find all occurrences of the name across multiple repositories by using your query as a literal pattern. It’s also useful for finding textual content -- like error messages or comments -- in the code.
+Performing a literal search is useful when you know the exact string that you’re looking for in a code base, like a particular function or variable name. You can find all occurrences of the name across multiple repositories by using your query as a literal pattern. It’s also useful for finding textual content — like error messages or comments — in the code.
 
 By default, all search queries on Sourcegraph are treated as literal patterns. We’ll discuss a few use cases to find useful results with Sourcegraph.
 
@@ -50,7 +50,7 @@ Returning to our example in the Linux kernel, we can narrow down our search for 
 
 <SourcegraphSearch query="struct list_head"/>
 
-If you want to find all instances of those two words appearing in the same file but not necessarily in sequence, then you can use the `and` operator, or you can switch to [regular expression mode](#todo).
+If you want to find all instances of those two words appearing in the same file but not necessarily in sequence, then you can use the `and` operator, or you can switch to regular expression mode.
 
 To use the `and` operator, add it to your search. The following query will find occurrences of `list_head` and `list_add_tail` when they are present anywhere in the same file.
 
@@ -80,7 +80,9 @@ Literal search patterns are a useful starting point, but often you need to searc
 
 To go beyond literal patterns, you can use regular expressions or structural search patterns.
 
-[struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[documentation]: https://docs.sourcegraph.com/code_search/reference/queries
-[regular expressions]: https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search
-[structural search]: https://docs.sourcegraph.com/code_search/reference/structural
+Related links:
+
+* [struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
+* [documentation]: https://docs.sourcegraph.com/code_search/reference/queries
+* [regular expressions]: https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search
+* [structural search]: https://docs.sourcegraph.com/code_search/reference/structural
