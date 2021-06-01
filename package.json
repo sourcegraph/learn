@@ -38,6 +38,6 @@
     "remark-html": "^13.0.1",
     "remark-preset-lint-markdown-style-guide": "^4.0.0",
     "sass": "^1.34.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   }
 }
