@@ -80,9 +80,13 @@ Literal search patterns are a useful starting point, but often you need to searc
 
 To go beyond literal patterns, you can use regular expressions or structural search patterns.
 
-Related links:
+**Related links:**
 
-* [struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
-* [documentation]: https://docs.sourcegraph.com/code_search/reference/queries
-* [regular expressions]: https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search
-* [structural search]: https://docs.sourcegraph.com/code_search/reference/structural
+- [Sourcegraph search query documentation][documentation]
+- [Sourcegraph regular expression search][documentation]
+- [Sourcegraph structural search][structural search]
+
+[struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[documentation]: https://docs.sourcegraph.com/code_search/reference/queries
+[regular expressions]: https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search
+[structural search]: https://docs.sourcegraph.com/code_search/reference/structural
