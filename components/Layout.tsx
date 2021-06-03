@@ -57,6 +57,8 @@ export default function Layout(props: LayoutProps) {
                     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:wght@700&display=swap"
                     rel="stylesheet"
                 />
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content="https://about.sourcegraph.com/sourcegraph-mark.png" />
             </Head>
 
             <div className="container">
