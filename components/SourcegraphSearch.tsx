@@ -24,7 +24,7 @@ export default function SourcegraphSearch(props: Props) {
                     <div className="col-4">
                         <a
                             className="btn btn-primary"
-                            href={`https://sourcegraph.com/search?q=${encodeURIComponent(query)}`}
+                            href={`https://sourcegraph.com/search?q=${encodeURIComponent(query)}&utm_source=learn`}
                             target="_blank"
                         >
                             <span className="small">Search on Sourcegraph</span>
