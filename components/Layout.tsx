@@ -27,6 +27,7 @@ interface LayoutProps {
     className?: string
 }
 
+
 function createTitle(contentTitle: string) {}
 
 export default function Layout(props: LayoutProps) {
@@ -59,9 +60,11 @@ export default function Layout(props: LayoutProps) {
                 />
             </Head>
 
+            <div className="heroAndHeaderClassName">
+                    <Header/>
+            </div>
             <div className="container">
                 <div className="row">
-                    <NavBar />
                 </div>
 
                 <section>{props.children}</section>
