@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 // TODO: update these CSS imports once we settle on a CSS strategy.
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
 import "@popperjs/core/dist/umd/popper.min.js";
 import '../styles/Footer.scss'
 import '../styles/typography.scss'
