@@ -1,4 +1,4 @@
-import {serialize} from 'next-mdx-remote/serialize'
+import { serialize } from 'next-mdx-remote/serialize'
 import { MarkdownFile } from './loadMarkdownFile'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
