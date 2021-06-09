@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different"
+    "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different",
+    "clean": "rm -rf out .next"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.6.0",
