@@ -54,9 +54,9 @@ export default function Header(props: Props) {
                                             Docs <ExternalLinkIcon className="icon-inline small ml-1" />
                                         </a>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <li className="nav-item dropdown">
                                         <a 
-                                            class="nav-link dropdown-toggle btn btn-navbar" 
+                                            className="nav-link dropdown-toggle btn btn-navbar" 
                                             href="#" 
                                             id="navbarDropdownMenuLink" 
                                             role="button" 
@@ -66,9 +66,9 @@ export default function Header(props: Props) {
                                         >
                                             Learn
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item" href="https://learn.sourcegraph.com/posts">Tutorials</a></li>
-                                            <li><a class="dropdown-item" href="https://learn.sourcegraph.com/tags/video">Videos</a></li>
+                                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a className="dropdown-item" href="https://learn.sourcegraph.com/posts">Tutorials</a></li>
+                                            <li><a className="dropdown-item" href="https://learn.sourcegraph.com/tags/video">Videos</a></li>
                                         </ul>
                                     </li>
                                     <li className="header__nav-item nav-item" role="presentation">
