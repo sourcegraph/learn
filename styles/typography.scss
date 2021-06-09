@@ -15,3 +15,11 @@ code {
     padding: 10px;
     border-radius:10px;
   }
+
+.reveal-on-hover-child {
+  visibility: hidden;
+}
+
+.reveal-on-hover-parent:hover .reveal-on-hover-child {
+  visibility: visible;
+}

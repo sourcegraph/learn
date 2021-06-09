@@ -59,6 +59,9 @@ export default function Layout(props: LayoutProps) {
                 />
                 {/* Prism theme for syntax highlighting */}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
+                
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content="https://about.sourcegraph.com/sourcegraph-mark.png" />
             </Head>
 
             <div className="container">
