@@ -19,8 +19,7 @@ export default function Header(props: Props) {
         <>
          <Navbar 
          className={`header navbar-default navbar-fixed-top navbar-expand-md py-3 container-lg px-0 px-lg-3 static-top ${props.className || 'navbar-light'}`} 
-         expand="lg" 
-         position="absolute">
+         expand="lg">
             <Container>
                 <Navbar.Brand 
                     className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none nowrap" 
