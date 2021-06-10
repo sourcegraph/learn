@@ -5,16 +5,23 @@ import Header from './Header'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
 import { googleTagManagerId } from '../posts/site-config'
 import NavBar from './NavBar'
+import { GetStaticProps } from 'next'
 
+const defaultMetaTags = {
+    description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
+    image: 'https://about.sourcegraph.com/sourcegraph-mark.png',
+} as const
+
+export interface MetaTags {
+    image?: string
+    description?: string
+}
 interface LayoutProps {
     contentTitle?: string
     title?: string
 
-    meta?: {
-        description?: string
-        image?: string
-        icon?: string
-    }
+    metaTags?: MetaTags
+
     location?: {
         pathname?: string
     }
@@ -25,9 +32,9 @@ interface LayoutProps {
     heroAndHeaderClassName?: string
 
     className?: string
-}
 
-function createTitle(contentTitle: string) {}
+    publicUrl?: string
+}
 
 export default function Layout(props: LayoutProps) {
     const siteTitle = 'Sourcegraph Learn'
@@ -38,11 +45,12 @@ export default function Layout(props: LayoutProps) {
         title = `${props.contentTitle} - ${siteTitle}`
     }
 
-    const defaultMetaProps: LayoutProps['meta'] = {
-        description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
-        image: 'https://about.sourcegraph.com/sourcegraph-mark.png',
+    // If the image is relative, prefix it with the public URL, because meta image tags expect an absolute URL.
+    const metaDescription = props.metaTags?.description ?? defaultMetaTags.description
+    let metaImage = props.metaTags?.image ?? defaultMetaTags.image
+    if (metaImage && !metaImage.startsWith('http') && props.publicUrl) {
+        metaImage = props.publicUrl + metaImage
     }
-    const metaProps = { ...defaultMetaProps, ...props.meta }
 
     return (
         <>
@@ -61,7 +69,9 @@ export default function Layout(props: LayoutProps) {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
 
                 <meta property="og:title" content={title} />
-                <meta property="og:image" content="https://about.sourcegraph.com/sourcegraph-mark.png" />
+                <meta property="og:image" content={metaImage} />
+                <meta property="description" content={metaDescription} />
+                <meta property="og:description" content={metaDescription} />
             </Head>
 
             <div className="container">
@@ -74,4 +84,12 @@ export default function Layout(props: LayoutProps) {
             </div>
         </>
     )
+}
+
+export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async context => {
+    return {
+        props: {
+            publicUrl: process.env.DEPLOY_URL ?? '',
+        },
+    }
 }

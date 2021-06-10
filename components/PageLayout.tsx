@@ -1,4 +1,4 @@
-import Layout from './Layout'
+import Layout, { MetaTags } from './Layout'
 
 interface Props {
     /**
@@ -8,11 +8,12 @@ interface Props {
     children: React.ReactNode
     leftColumn?: React.ReactNode
     rightColumn?: React.ReactNode
+    metaTags?: MetaTags
 }
 
 export default function PageLayout(props: Props) {
     return (
-        <Layout contentTitle={props.contentTitle}>
+        <Layout contentTitle={props.contentTitle} metaTags={props.metaTags}>
             <div className="row">
                 <div className="col-3">{props.leftColumn}</div>
                 <div className="col-6 py-5">{props.children}</div>
