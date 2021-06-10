@@ -8,6 +8,12 @@ export interface FrontMatter {
     published: boolean
     unlisted: boolean
     author?: string
+
+    /** Short description used for the post's card and social description meta tag..*/
+    description?: string
+
+    /** Image URL used for the posts's card, header, and social image meta tag. */
+    image?: string
 }
 
 export interface MarkdownFile {
@@ -54,10 +60,12 @@ function isStringArray(a: any[]): a is string[] {
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
         title: rawFrontMatter.title ?? 'Untitled',
-        tags: normalizeTags(rawFrontMatter.tags).map(tag => tag.toLocaleLowerCase()),
+        tags: normalizeTags(rawFrontMatter.tags),
         published: rawFrontMatter.published ?? true,
         unlisted: rawFrontMatter.unlisted ?? false,
         author: rawFrontMatter.author,
+        image: rawFrontMatter.image,
+        description: rawFrontMatter.description,
     }
 }
 
