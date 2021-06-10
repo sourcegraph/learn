@@ -21,6 +21,7 @@
     "next": "^10.2.3",
     "next-mdx-remote": "^3.0.2",
     "react": "17.0.2",
+    "react-bootstrap": "^2.0.0-beta.0",
     "react-dom": "17.0.2",
     "rehype-slug": "^4.0.1",
     "remark-toc": "^7.2.0",
