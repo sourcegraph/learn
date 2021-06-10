@@ -11,6 +11,7 @@ import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SourcegraphSearch'
 import LinkIcon from 'mdi-react/LinkIcon'
+import { MetaTags } from '../../components/Layout'
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
@@ -67,11 +68,20 @@ interface Props {
     author: string
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
+    image?: string
+    description?: string
 }
 
 export default function Post(props: Props) {
+    const metaTags: MetaTags = {
+        image: props.image,
+        description: props.description,
+    }
+
     return (
-        <PageLayout contentTitle={props.title}>
+        <PageLayout contentTitle={props.title} metaTags={metaTags}>
+            {props.image && <img src={props.image} className="w-100 mb-5" />}
+
             <h1>{props.title}</h1>
             {props.author && <p className="text-muted">By {props.author}</p>}
 
@@ -112,6 +122,8 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
             title: markdownFile.frontMatter.title,
             author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
+            image: markdownFile.frontMatter.image ?? '',
+            description: markdownFile.frontMatter.description ?? '',
             mdxSource,
         },
     }
