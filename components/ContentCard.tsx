@@ -15,14 +15,14 @@ const Card = (props: Props) => (
         <div className="card-body">
             <h5 className="card-title">
                 <Link href={props.url}>
-                    <a className="stretched-link">{props.title}</a>
+                    <a className="stretched-link text-dark text-decoration-none">{props.title}</a>
                 </Link>
             </h5>
-            {/* {card.author && <h6 className="card-subtitle mb-2 text-muted">{card.author}</h6>}{' '} */}
-            <p>
+            {props.tags && <p className="card-subtitle mb-2 text-muted small text-capitalize">{props.tags?.join(' • ')}</p>}
+            {/* <p>
                 {props.tags &&
                     props.tags.map(tag => <span className="badge bg-light text-dark me-1 text-capitalize">{tag}</span>)}
-            </p>
+            </p> */}
             {props.description && <p className="card-text">{props.description}</p>}
         </div>
     </div>

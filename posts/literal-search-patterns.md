@@ -1,7 +1,7 @@
 ---
 title: How To Search with Sourcegraph using Literal Patterns
 author: Marek Zaluski
-tags: [tutorial, search]
+tags: [tutorial, search, Sourcegraph]
 description: Learn how to use literal search patterns to search code on Sourcegraph.
 image: /headers/geometry-header-1.svg
 ---
