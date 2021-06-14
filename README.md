@@ -1,12 +1,24 @@
-# Sourcegraph developer education site
+# Sourcegraph Learn
 
-This is work-in-progress prototype of the developer education website. It's a static site built with Next.js and markdown.
+Sourcegraph Learn is Sourcegraph's developer education hub and learning center.
 
-# Next.js
+Public URL: [https://learn.sourcegraph.com](https://learn.sourcegraph.com)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## How the site is built
 
-## Getting started
+- The website consists of static content generated using [Next.js](https://nextjs.org) and hosted on [Netlify](https://www.netlify.com/).
+- The code of the website are written in TypeScript and React.
+- The content is written in Markdown.
+
+## Node.js version
+
+The site requires Node.js. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
+
+```
+nvm install
+```
+
+## How to run the site locally
 
 Install dependencies and run the development server:
 
@@ -17,13 +29,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Node.js version
+## Creating and editing content
 
-To make sure that you're using the same version of Node.js as used in the production build of the website, use `nvm` to select the version that's specified in [`.nvmrc`](.nvmrc):
+`TODO`
 
-```
-nvm install
-```
+## Deploy previews (staging branches)
+
+When a pull request is created in this repository, Netlify will automatically build and deploy the branch. You can find the link to the deploy preview in the Checks section of the pull request.
 
 ## Building the production version of the site
 
@@ -33,11 +45,11 @@ When the site is being deployed to production, the following build command is ex
 npm run build
 ```
 
-## Learn More
+## Learn about Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can also check out [the Next.js GitHub repository](https://github.com/vercel/next.js/).

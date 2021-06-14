@@ -1,46 +1,46 @@
 import { GetStaticProps } from 'next'
-import Link from 'next/link'
 import React from 'react'
 import PageLayout from '../components/PageLayout'
-import listAllPosts from '../util/listAllPosts'
 import loadAllPosts from '../util/loadAllPosts'
+import ContentCard from '../components/ContentCard'
+import { MarkdownFile } from '../util/loadMarkdownFile'
+import omitUndefinedFields from '../util/omitUndefinedFields'
 
-interface LinkEntry {
-    title: string
-    url: string
-}
 interface Props {
-    links: LinkEntry[]
+    posts: (MarkdownFile & { url: string })[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
     const posts = await loadAllPosts()
-    const postLinks = posts.map(post => ({
-        title: post.frontMatter.title || 'Untitled',
-        url: `/posts/${post.filename}`,
-    }))
+
     return {
         props: {
-            links: [
-                {
-                    title: 'About',
-                    url: '/about',
-                },
-                ...postLinks,
-            ],
+            posts: posts.map(post => omitUndefinedFields({ ...post, url: `/posts/${post.slug}` })),
         },
     }
 }
+
 export default function Home(props: Props) {
     return (
         <PageLayout>
-            <ul>
-                {props.links.map(linkEntry => (
-                    <li key={linkEntry.url}>
-                        <Link href={linkEntry.url}>{linkEntry.title}</Link>
-                    </li>
+            <p>
+                You've found <strong>Sourcegraph Learn</strong>, our new developer education hub.
+            </p>
+            <p>We haven't launched yet! Come back soon.</p>
+
+            <div className="row row-cols-2">
+                {props.posts.map(post => (
+                    <div className="col">
+                        <ContentCard
+                            title={post.frontMatter.title}
+                            tags={post.frontMatter.tags}
+                            description={post.frontMatter.description}
+                            image={post.frontMatter.image}
+                            url={post.url}
+                        />
+                    </div>
                 ))}
-            </ul>
+            </div>
         </PageLayout>
     )
 }

@@ -1,25 +1,25 @@
 :root {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    --bs-font-sans-serif: "Open Sans", "Arial", "Helvetica", sans-serif;
+}
+code {
+    font-family: monospace;
+    font-size: inherit;
+    color: #000000;
+    background: #E7E7E7;
+  }
+
+  pre {
+    background-color: #E7E7E7;
+    overflow: auto;
+    font-family: 'Monaco', monospace;
+    padding: 10px;
+    border-radius:10px;
+  }
+
+.reveal-on-hover-child {
+  visibility: hidden;
 }
 
-.site-title {
-    /** Remove link styling **/
-    &, &:hover {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    font-family: "PT Sans";
-    font-weight: bold;
-    font-size: 1.3rem;
-    vertical-align: -8px;
-    padding-bottom: 6px;
-}
-
-.markdown-content {
-
-    h1, h2, h3, h4, h5, h6 {
-        margin-bottom: 2rem;
-
-    }
+.reveal-on-hover-parent:hover .reveal-on-hover-child {
+  visibility: visible;
 }
