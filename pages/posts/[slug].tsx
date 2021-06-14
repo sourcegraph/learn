@@ -6,7 +6,6 @@ import Counter from '../../components/Counter'
 import serializeMdxSource from '../../util/serializeMdxSource'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
 import getQueryParam from '../../util/getQueryParam'
-import startCase from 'lodash/startCase'
 import Link from 'next/link'
 import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SourcegraphSearch'
@@ -89,7 +88,7 @@ export default function Post(props: Props) {
                 {props.tags.map(tag => (
                     <Link key={tag} href={`/tags/${tag}`}>
                         <a className="me-1">
-                            <span className="badge bg-primary">{startCase(tag)}</span>
+                            <span className="badge bg-primary text-capitalize">{tag}</span>
                         </a>
                     </Link>
                 ))}
