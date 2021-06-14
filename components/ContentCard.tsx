@@ -18,7 +18,9 @@ const Card = (props: Props) => (
                     <a className="stretched-link text-dark text-decoration-none">{props.title}</a>
                 </Link>
             </h5>
-            {props.tags && <p className="card-subtitle mb-2 text-muted small text-capitalize">{props.tags?.join(' • ')}</p>}
+            {props.tags && (
+                <p className="card-subtitle mb-2 text-muted small text-capitalize">{props.tags?.join(' • ')}</p>
+            )}
             {/* <p>
                 {props.tags &&
                     props.tags.map(tag => <span className="badge bg-light text-dark me-1 text-capitalize">{tag}</span>)}
