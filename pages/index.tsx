@@ -23,14 +23,9 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 export default function Home(props: Props) {
     return (
         <PageLayout>
-            <p>
-                You've found <strong>Sourcegraph Learn</strong>, our new developer education hub.
-            </p>
-            <p>We haven't launched yet! Come back soon.</p>
-
             <div className="row row-cols-2">
                 {props.posts.map(post => (
-                    <div className="col">
+                    <div className="col" key={post.url}>
                         <ContentCard
                             title={post.frontMatter.title}
                             tags={post.frontMatter.tags}
