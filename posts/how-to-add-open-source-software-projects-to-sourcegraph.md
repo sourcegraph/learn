@@ -2,6 +2,8 @@
 title: How To Add Open Source Software Projects to Sourcegraph
 tags: [tutorial, search, Sourcegraph]
 author: Lisa Tagliaferri
+description: Learn how to add public, open source repositories to Sourcegraph.
+image: /headers/geometry-header-2.svg
 ---
 
 ## Table of Contents
@@ -39,7 +41,7 @@ For now, we’ll focus on the second option, and click the checkbox next to `Syn
 
 Once you have clicked the checkbox, a check mark sign will appear in the box, like so: &#9745;. At this point, a box will display, similar to the screenshot below.
 
-![Sourcegraph other public repositories list](/public/tutorial-images/sourcegraph-other-public-sourcegraph-other-public-repositories.png)
+![Sourcegraph other public repositories list](/tutorial-images/sourcegraph-other-public-repositories.png)
 
 Within the box, you can type URLs of the public open source projects that you care about, one per line, with no separating characters other than the `ENTER` key.
 

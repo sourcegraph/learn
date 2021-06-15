@@ -31,8 +31,8 @@ export default function NavBar() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/about">
-                        <a className="nav-link px-2 link-dark">About</a>
+                    <Link href="/tags/video">
+                        <a className="nav-link px-2 link-dark">Videos</a>
                     </Link>
                 </li>
             </ul>
@@ -41,7 +41,6 @@ export default function NavBar() {
                 <a className="btn btn-outline-primary me-2" href="https://sourcegraph.com">
                     Go to Sourcegraph.com
                 </a>
-                {/* <button type="button" className="btn btn-primary">Sign-up</button> */}
             </div>
         </header>
     )
