@@ -13,6 +13,7 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.6.0",
     "@next/mdx": "^10.2.3",
+    "@popperjs/core": "^2.9.2",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^5.0.1",
     "globby": "^11.0.3",
@@ -22,6 +23,7 @@
     "next": "^10.2.3",
     "next-mdx-remote": "^3.0.2",
     "react": "17.0.2",
+    "react-bootstrap": "^2.0.0-beta.0",
     "react-dom": "17.0.2",
     "rehype-slug": "^4.0.1",
     "remark-toc": "^7.2.0",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@sourcegraph/prettierrc": "^3.0.3",
+    "@types/bootstrap": "^5.0.15",
     "@types/globby": "9.1.0",
     "@types/lodash": "4.14.170",
     "@types/node": "15.3.0",

@@ -32,9 +32,11 @@ interface LayoutProps {
     heroAndHeaderClassName?: string
 
     className?: string
-
+  
     publicUrl?: string
 }
+
+function createTitle(contentTitle: string) {}
 
 export default function Layout(props: LayoutProps) {
     const siteTitle = 'Sourcegraph Learn'
@@ -74,9 +76,11 @@ export default function Layout(props: LayoutProps) {
                 <meta property="og:description" content={metaDescription} />
             </Head>
 
+            <div className="heroAndHeaderClassName">
+                    <Header/>
+            </div>
             <div className="container">
                 <div className="row">
-                    <NavBar />
                 </div>
 
                 <section>{props.children}</section>
