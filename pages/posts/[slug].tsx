@@ -11,6 +11,7 @@ import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SourcegraphSearch'
 import LinkIcon from 'mdi-react/LinkIcon'
 import { MetaTags } from '../../components/Layout'
+import EmbeddedYoutubeVideo from '../../components/EmbeddedYoutubeVideo'
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
@@ -61,7 +62,7 @@ function createLinkableHeading<T extends HeadingTag>(tag: T) {
     }
 }
 
-const components = { Counter, SourcegraphSearch, ...markdownComponents }
+const components = { Counter, SourcegraphSearch, EmbeddedYoutubeVideo, ...markdownComponents }
 interface Props {
     title: string
     author: string
@@ -79,7 +80,7 @@ export default function Post(props: Props) {
 
     return (
         <PageLayout contentTitle={props.title} metaTags={metaTags}>
-            {props.image && <img src={props.image} className="w-100 mb-5" />}
+            {props.image && !props.tags.includes('video') && <img src={props.image} className="w-100 mb-5" />}
 
             <h1>{props.title}</h1>
             {props.author && <p className="text-muted">By {props.author}</p>}
