@@ -8,7 +8,7 @@ interface Props {
 }
 
 const EmbeddedYoutubeVideo = (props: Props) => (
-    <div className="ratio ratio-16x9">
+    <div className="ratio ratio-16x9 mb-5">
         <iframe
             className="embed-responsive-item"
             src={`https://www.youtube.com/embed/${props.id}`}
