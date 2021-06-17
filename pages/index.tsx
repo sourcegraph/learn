@@ -23,6 +23,9 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 export default function Home(props: Props) {
     return (
         <PageLayout>
+            <div className="row">
+                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5"/>
+            </div>
             <div className="row row-cols-2">
                 {props.posts.map(post => (
                     <div className="col" key={post.url}>
