@@ -11,6 +11,7 @@ import loadAllPosts from '../../util/loadAllPosts'
 import SourcegraphSearch from '../../components/SourcegraphSearch'
 import LinkIcon from 'mdi-react/LinkIcon'
 import { MetaTags } from '../../components/Layout'
+import EmbeddedYoutubeVideo from '../../components/EmbeddedYoutubeVideo'
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
@@ -61,7 +62,7 @@ function createLinkableHeading<T extends HeadingTag>(tag: T) {
     }
 }
 
-const components = { Counter, SourcegraphSearch, ...markdownComponents }
+const components = { Counter, SourcegraphSearch, EmbeddedYoutubeVideo, ...markdownComponents }
 interface Props {
     title: string
     author: string
@@ -77,22 +78,34 @@ export default function Post(props: Props) {
         description: props.description,
     }
 
+    // Special behavior on a video page (which is a page with the "video" tag):
+    // We don't show the post header image because it's just the thumbnail.
+    // The image will still be shown on the post's card and in social sharing.
+    // TODO: We can improve this by adding a `showImageInHeader` field in markdown front-matter
+    // to be able to override this special behavior.
+    const showHeaderImage = !props.tags.includes('video')
+
     return (
         <PageLayout contentTitle={props.title} metaTags={metaTags}>
-            {props.image && <img src={props.image} className="w-100 mb-5" />}
+            {/* Header image */}
+            {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" />}
 
+            {/* Title and author */}
             <h1>{props.title}</h1>
             {props.author && <p className="text-muted">By {props.author}</p>}
 
-            <div className="mb-5">
-                {props.tags.map(tag => (
-                    <Link key={tag} href={`/tags/${tag}`}>
-                        <a className="me-1">
-                            <span className="badge bg-primary text-capitalize">{tag}</span>
-                        </a>
-                    </Link>
-                ))}
-            </div>
+            {/* Tags list */}
+            {props.tags.length && (
+                <div className="mb-5">
+                    {props.tags.map(tag => (
+                        <Link key={tag} href={`/tags/${tag}`}>
+                            <a className="me-1">
+                                <span className="badge bg-primary text-capitalize">{tag}</span>
+                            </a>
+                        </Link>
+                    ))}
+                </div>
+            )}
 
             <div className="markdown-content">
                 <MDXRemote {...props.mdxSource} components={components} />
