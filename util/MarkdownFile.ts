@@ -1,8 +1,8 @@
-import FrontMatter from './FrontMatter';
+import FrontMatter from './FrontMatter'
 
 export default interface MarkdownFile {
-    slug: string;
-    filename: string;
-    frontMatter: FrontMatter;
-    body: string;
+    slug: string
+    filename: string
+    frontMatter: FrontMatter
+    body: string
 }

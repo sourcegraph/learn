@@ -66,13 +66,13 @@ The block at the top of each markdown file, delimited by `---` markers, is the f
 
 The data fields that are supported in the front-matter are:
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `title` | **string** | Title of the article, which is displayed in the `h1` tag and the html document title, and on the article's card. |
-| `author` | **string** | Name of the author, which is displayed on the article page. |
-| `tags` | **array of strings** | List of tags which will be displayed on the article page and card. Each tag has an index page that lists all tagged articles. |
-| `unlisted` | **true** or **false** | If true, the article will not be listed on index pages, and will only be accessible by direct URL. Default is false. |
-| `published` | **true** or **false** | If false, the article will not be listed or accessible on the website at all. Default is true. |
+| Field       | Type                  | Description                                                                                                                   |
+| ----------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `title`     | **string**            | Title of the article, which is displayed in the `h1` tag and the html document title, and on the article's card.              |
+| `author`    | **string**            | Name of the author, which is displayed on the article page.                                                                   |
+| `tags`      | **array of strings**  | List of tags which will be displayed on the article page and card. Each tag has an index page that lists all tagged articles. |
+| `unlisted`  | **true** or **false** | If true, the article will not be listed on index pages, and will only be accessible by direct URL. Default is false.          |
+| `published` | **true** or **false** | If false, the article will not be listed or accessible on the website at all. Default is true.                                |
 
 In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./util/MarkdownFile.ts) object.
 
