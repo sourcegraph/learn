@@ -74,7 +74,7 @@ The data fields that are supported in the front-matter are:
 | `unlisted` | **true** or **false** | If true, the article will not be listed on index pages, and will only be accessible by direct URL. Default is false. |
 | `published` | **true** or **false** | If false, the article will not be listed or accessible on the website at all. Default is true. |
 
-In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./u) object.
+In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./util/MarkdownFile.ts) object.
 
 ## Deploy previews (staging branches)
 
