@@ -12,7 +12,7 @@ import rehypeAddClasses from 'rehype-add-classes'
  * content. The `rehype-add-classes` plugin performs this task.
  */
 const classesToAddToElements = {
-    'h1,h2,h3,h4,h5,h6': 'mt-5 mb-4',
+    'h1,h2,h3,h4,h5,h6': 'mt-5 mb-4 reveal-on-hover-parent',
     img: 'w-100 mt-5',
 }
 
@@ -31,14 +31,9 @@ export default function serializeMdxSource(markdownFile: MarkdownFile) {
                 [
                     rehypeAutolinkHeadings,
                     {
-                        properties: { className: 'text-decoration-none' },
+                        properties: { className: 'ms-2 small text-muted text-decoration-none reveal-on-hover-child' },
                         behavior: 'append',
-                        content: {
-                            type: 'element',
-                            tagName: 'span',
-                            properties: { className: ['small text-muted text-decoration-none ms-5'] },
-                            children: [{ type: 'text', value: '#' }],
-                        },
+                        content: { type: 'text', value: '#' },
                     },
                 ],
 
