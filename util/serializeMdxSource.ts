@@ -31,7 +31,10 @@ export default function serializeMdxSource(markdownFile: MarkdownFile) {
                 [
                     rehypeAutolinkHeadings,
                     {
-                        properties: { className: 'ms-2 small text-muted text-decoration-none reveal-on-hover-child' },
+                        properties: {
+                            className: 'ms-2 small text-muted text-decoration-none reveal-on-hover-child',
+                            title: 'Link to this section',
+                        },
                         behavior: 'append',
                         content: { type: 'text', value: '#' },
                     },
