@@ -4,6 +4,7 @@ tags: [tutorial, search, Sourcegraph]
 author: Lisa Tagliaferri
 description: Learn how to add public, open source repositories to Sourcegraph.
 image: /headers/geometry-header-2.svg
+alternateTitle: An additional seo title
 ---
 
 ## Table of Contents
