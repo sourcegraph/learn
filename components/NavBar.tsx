@@ -22,7 +22,7 @@ export default function NavBar() {
                                 Case Studies
                             </NavDropdown.Item>
                             <NavDropdown.Item href="https://docs.sourcegraph.com">Docs</NavDropdown.Item>
-                            <NavDropdown.Item href="https://docs.sourcegraph.com/pricing">Pricing</NavDropdown.Item>
+                            <NavDropdown.Item href="https://about.sourcegraph.com/pricing">Pricing</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
