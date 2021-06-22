@@ -65,6 +65,7 @@ function createLinkableHeading<T extends HeadingTag>(tag: T) {
 const components = { Counter, SourcegraphSearch, EmbeddedYoutubeVideo, ...markdownComponents }
 interface Props {
     title: string
+    alternateTitle: string
     author: string
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
@@ -132,6 +133,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     return {
         props: {
             title: markdownFile.frontMatter.title,
+            alternateTitle: markdownFile.frontMatter.alternateTitle,
             author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image ?? '',

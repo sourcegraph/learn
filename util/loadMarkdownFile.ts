@@ -4,6 +4,7 @@ import path from 'path'
 
 export interface FrontMatter {
     title: string
+    alternateTitle: string
     tags: string[]
     published: boolean
     unlisted: boolean
@@ -59,7 +60,8 @@ function isStringArray(a: any[]): a is string[] {
 
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
-        title: rawFrontMatter.title ?? 'Untitled',
+        title: rawFrontMatter.title ?? rawFrontMatter.alternateTitle ?? 'Untitled Document',
+        alternateTitle: rawFrontMatter.alternateTitle ?? 'No alternate title',
         tags: normalizeTags(rawFrontMatter.tags),
         published: rawFrontMatter.published ?? true,
         unlisted: rawFrontMatter.unlisted ?? false,
