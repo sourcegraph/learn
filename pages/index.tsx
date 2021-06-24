@@ -2,12 +2,14 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
-import ContentCard from '../components/ContentCard'
 import { MarkdownFile } from '../util/loadMarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
+import ContentCardList from '../components/ContentCardList'
+
+export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    posts: (MarkdownFile & { url: string })[]
+    posts: MarkdownFileWithUrl[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
@@ -26,19 +28,8 @@ export default function Home(props: Props) {
             <div className="row">
                 <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
             </div>
-            <div className="row row-cols-1 row-cols-lg-2">
-                {props.posts.map(post => (
-                    <div className="col" key={post.url}>
-                        <ContentCard
-                            title={post.frontMatter.title}
-                            tags={post.frontMatter.tags}
-                            description={post.frontMatter.description}
-                            image={post.frontMatter.image}
-                            url={post.url}
-                        />
-                    </div>
-                ))}
-            </div>
+
+            <ContentCardList posts={props.posts} />
         </PageLayout>
     )
 }
