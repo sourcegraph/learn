@@ -7,7 +7,7 @@ export default function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container className= "py-3 container ">
-                <Navbar.Brand href="/">
+                <Navbar.Brand href="https://about.sourcegraph.com/">
                     <img src="/sourcegraph-logo.svg" width="150" style={{ verticalAlign: -5 }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
