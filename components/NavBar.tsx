@@ -2,33 +2,36 @@ import Link from 'next/link'
 import React from 'react'
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
+
 export default function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg">
-            <Container>
+            <Container className= "py-3 container ">
                 <Navbar.Brand href="/">
-                    <img src="/sourcegraph-learn.svg" width="200" style={{ verticalAlign: -5 }} />
+                    <img src="/sourcegraph-logo.svg" width="150" style={{ verticalAlign: -5 }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/tags/tutorial">Tutorials</Nav.Link>
-                        <Nav.Link href="/tags/video">Videos</Nav.Link>
-                        <NavDropdown title="About Sourcegraph" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="https://about.sourcegraph.com/customers">
-                                Customers
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="https://about.sourcegraph.com/case-studies">
-                                Case Studies
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="https://docs.sourcegraph.com">Docs</NavDropdown.Item>
-                            <NavDropdown.Item href="https://about.sourcegraph.com/pricing">Pricing</NavDropdown.Item>
+                        <Nav.Link href="https://about.sourcegraph.com/customers">Customers</Nav.Link>
+                        <Nav.Link href="https://about.sourcegraph.com/case-studies">Case Study</Nav.Link>
+                        <Nav.Link href="https://docs.sourcegraph.com">Docs</Nav.Link>
+                        <Nav.Link href="https://about.sourcegraph.com/pricing">Pricing</Nav.Link>
+
+
+                        <NavDropdown title="Learn" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="/">Overview </NavDropdown.Item>
+                            <NavDropdown.Item href="/tags/tutorial">Tutorials </NavDropdown.Item>
+                            <NavDropdown.Item href="/tags/video">Videos </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
                         <Nav.Item>
-                            <Button href="https://sourcegraph.com" variant="outline-primary">
-                                Go to Sourcegraph.com
+                            <Nav.Link href="https://sourcegraph.com/sign-in">Sign In</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Button href="https://about.sourcegraph.com/get-started/" variant="outline-primary" className="btn-link-color: red">
+                                Get Started
                             </Button>
                         </Nav.Item>
                     </Nav>
