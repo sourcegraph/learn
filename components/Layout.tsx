@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Footer from './Footer'
-import Header from './Header'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
 import { googleTagManagerId } from '../posts/site-config'
 import NavBar from './NavBar'
@@ -32,7 +31,7 @@ interface LayoutProps {
     heroAndHeaderClassName?: string
 
     className?: string
-  
+
     publicUrl?: string
 }
 
@@ -76,11 +75,9 @@ export default function Layout(props: LayoutProps) {
                 <meta property="og:description" content={metaDescription} />
             </Head>
 
-            <div className="heroAndHeaderClassName">
-                    <Header/>
-            </div>
             <div className="container">
                 <div className="row">
+                    <NavBar />
                 </div>
 
                 <section>{props.children}</section>

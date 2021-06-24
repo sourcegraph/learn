@@ -1,4 +1,4 @@
-import { MarkdownFile } from './loadMarkdownFile'
+import MarkdownFile from './MarkdownFile'
 import uniq from 'lodash/uniq'
 
 export default function collectTags(markdownFiles: MarkdownFile[]): string[] {

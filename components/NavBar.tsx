@@ -1,47 +1,42 @@
 import Link from 'next/link'
 import React from 'react'
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+
 
 export default function NavBar() {
     return (
-        <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img
-                    className="me-2"
-                    height="32"
-                    role="img"
-                    aria-label="Sourcegraph Learn"
-                    src="/sourcegraph-mark.svg"
-                />
-                <span className="fs-4" style={{ fontFamily: 'PT Sans', fontWeight: 'bold' }}>
-                    Sourcegraph Learn
-                </span>
-            </a>
+        <Navbar collapseOnSelect expand="lg">
+            <Container className= "py-3 container ">
+                <Navbar.Brand href="https://about.sourcegraph.com/">
+                    <img src="/sourcegraph-logo.svg" width="150" style={{ verticalAlign: -5 }} />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="https://about.sourcegraph.com/customers">Customers</Nav.Link>
+                        <Nav.Link href="https://about.sourcegraph.com/case-studies">Case Study</Nav.Link>
+                        <Nav.Link href="https://docs.sourcegraph.com">Docs</Nav.Link>
+                        <Nav.Link href="https://about.sourcegraph.com/pricing">Pricing</Nav.Link>
 
-            <ul className="nav col-12 col-md-auto mb-2 mb-md-0">
-                <li>
-                    <Link href="/">
-                        <a href="#" className="nav-link px-2 link-dark">
-                            Home
-                        </a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/posts">
-                        <a className="nav-link px-2 link-dark">Tutorials</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/tags/video">
-                        <a className="nav-link px-2 link-dark">Videos</a>
-                    </Link>
-                </li>
-            </ul>
 
-            <div className="col-md-3 text-end">
-                <a className="btn btn-outline-primary me-2" href="https://sourcegraph.com">
-                    Go to Sourcegraph.com
-                </a>
-            </div>
-        </header>
+                        <NavDropdown title="Learn" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="/">Overview </NavDropdown.Item>
+                            <NavDropdown.Item href="/tags/tutorial">Tutorials </NavDropdown.Item>
+                            <NavDropdown.Item href="/tags/video">Videos </NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Item>
+                            <Nav.Link href="https://sourcegraph.com/sign-in">Sign In</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Button href="https://about.sourcegraph.com/get-started/" variant="outline-primary" className="btn-link-color: red">
+                                Get Started
+                            </Button>
+                        </Nav.Item>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }

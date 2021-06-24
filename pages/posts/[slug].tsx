@@ -25,6 +25,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     return {
         props: {
             title: markdownFile.frontMatter.title,
+            alternateTitle: markdownFile.frontMatter.alternateTitle,
             author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image ?? '',

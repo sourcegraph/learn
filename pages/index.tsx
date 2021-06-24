@@ -3,11 +3,14 @@ import React from 'react'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
 import ContentCard from '../components/ContentCard'
-import { MarkdownFile } from '../util/loadMarkdownFile'
+import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
+import ContentCardList from '../components/ContentCardList'
+
+export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    posts: (MarkdownFile & { url: string })[]
+    posts: MarkdownFileWithUrl[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
@@ -39,6 +42,7 @@ export default function Home(props: Props) {
                     </div>
                 ))}
             </div>
+            <ContentCardList posts={props.posts} />
         </PageLayout>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-interface Props {
+export interface Props {
     title: string
     tags?: string[]
     description?: string
@@ -9,7 +9,7 @@ interface Props {
     url: string
 }
 
-const Card = (props: Props) => (
+const ContentCard = (props: Props) => (
     <div className="card mb-4">
         {props.image && <img src={props.image} className="card-img-top" />}
         <div className="card-body">
@@ -21,13 +21,9 @@ const Card = (props: Props) => (
             {props.tags && (
                 <p className="card-subtitle mb-2 text-muted small text-capitalize">{props.tags?.join(' • ')}</p>
             )}
-            {/* <p>
-                {props.tags &&
-                    props.tags.map(tag => <span className="badge bg-light text-dark me-1 text-capitalize">{tag}</span>)}
-            </p> */}
             {props.description && <p className="card-text">{props.description}</p>}
         </div>
     </div>
 )
 
-export default Card
+export default ContentCard

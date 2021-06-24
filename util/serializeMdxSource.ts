@@ -1,5 +1,5 @@
 import { serialize } from 'next-mdx-remote/serialize'
-import { MarkdownFile } from './loadMarkdownFile'
+import MarkdownFile from './MarkdownFile'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypePrism from '@mapbox/rehype-prism'
