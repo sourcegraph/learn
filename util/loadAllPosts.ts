@@ -1,5 +1,6 @@
 import listAllPosts from './listAllPosts'
-import loadMarkdownFile, { MarkdownFile } from './loadMarkdownFile'
+import loadMarkdownFile from './loadMarkdownFile'
+import MarkdownFile from './MarkdownFile'
 
 export default async function loadAllPosts(includeUnlisted: boolean = false): Promise<MarkdownFile[]> {
     const baseDirectory = 'posts'
