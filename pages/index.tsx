@@ -26,7 +26,7 @@ export default function Home(props: Props) {
     return (
         <PageLayout>
             <div className="row">
-                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5"/>
+                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
             </div>
 
             <ContentCardList posts={props.posts} />
