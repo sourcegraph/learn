@@ -7,7 +7,7 @@ Public URL: [https://learn.sourcegraph.com](https://learn.sourcegraph.com)
 ## How the site is built
 
 - The website consists of static content generated using [Next.js](https://nextjs.org) and hosted on [Netlify](https://www.netlify.com/).
-- The code of the website are written in TypeScript and React.
+- The website code is written in TypeScript and React.
 - The content is written in Markdown.
 
 ## Commands
@@ -16,7 +16,7 @@ Here are the available commands in this repository:
 
 | Command            | Description                                                                                                                                                                                                                                                                             |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nvm install`      | Use `nvm` to set up the project's recommended Node.js version. The version is specified [`.nvmrc`](./.nvmrc) and is automatically loaded by `nvm`. It's recommended to run this command once before running `npm install`. It requires the [`nvm`](https://github.com/nvm-sh/nvm) tool. |
+| `nvm install`      | Use `nvm` to set up the project's recommended Node.js version. The version is specified [`.nvmrc`](./.nvmrc) and is automatically loaded by `nvm`. It is recommended to run this command once before running `npm install`. It requires the [`nvm`](https://github.com/nvm-sh/nvm) tool. |
 | `npm install`      | Install dependencies. Run this once to set up the project, before running any other `npm` commands below.                                                                                                                                                                               |
 | `npm run dev`      | Run the development server. Once running, it can be viewed at [localhost:3000](http://localhost:3000). The development server should automatically load your changes while you edit files.                                                                                              |
 | `npm run build`    | Build the static site for production. This command exports the static site with `next export`. The output will be in the `out` directory. This is the build command which is run by the Netlify build process on every deployment (on production or on preview deploys).                |
@@ -42,29 +42,31 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to load the result.
 
 ## Creating and editing content
 
-To create a new post, create a new markdown file in [`posts/`](./posts) with the `.md` extension.
+To create a new post, create a new markdown file with the `.md` extension in the [`posts/`](./posts) directory.
 
-At the top of the file, copy the following markdown block as a template to get started
+At the top of the file, copy the following markdown block as a template to get started:
 
 ```md
 ---
-title: Your Title Here
+title: Your Title
 author: Your Name
-tags: [tutorial, search, sourcegraph]
-image: headers/sourcegraph-learn-header-2.svg
-description: Learn how to search on Sourcegraph...
+tags: [your, relevant, tags]
+image: headers/your-sourcegraph-learn-header.svg
+description: Your description
 ---
 ```
+
+More details about these fields are below.
 
 ## Markdown front-matter fields
 
 The block at the top of each markdown file, delimited by `---` markers, is the front-matter data which is defined in YAML format.
 
-The data fields that are supported in the front-matter are:
+The data fields that are supported in the front matter are:
 
 | Field       | Type                  | Description                                                                                                                   |
 | ----------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
