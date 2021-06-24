@@ -5,9 +5,12 @@ import loadAllPosts from '../util/loadAllPosts'
 import ContentCard from '../components/ContentCard'
 import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
+import ContentCardList from '../components/ContentCardList'
+
+export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    posts: (MarkdownFile & { url: string })[]
+    posts: MarkdownFileWithUrl[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
@@ -24,7 +27,7 @@ export default function Home(props: Props) {
     return (
         <PageLayout>
             <div className="row">
-                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
+                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5"/>
             </div>
             <div className="row row-cols-1 row-cols-lg-2">
                 {props.posts.map(post => (
@@ -39,6 +42,7 @@ export default function Home(props: Props) {
                     </div>
                 ))}
             </div>
+            <ContentCardList posts={props.posts} />
         </PageLayout>
     )
 }
