@@ -5,7 +5,8 @@ import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-
+import GifLikeVideo from './GiflikeVideo'
+import RegexIcon from 'mdi-react/RegexIcon'
 export interface Props {
     title: string
     author: string
@@ -15,7 +16,7 @@ export interface Props {
     description?: string
 }
 
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo }
+const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
 
 const Article = (props: Props) => {
     const metaTags: MetaTags = {
