@@ -52,7 +52,7 @@ Regular expressions are also useful if you’re looking for a variable that can 
 
 <SourcegraphSearch query="id\d+ type:symbol" patternType="regexp"/>
 
-In this case `\d+` matches one or more digits. 
+In this case `\d+` matches one or more digits.
 
 ## Using spaces in regular expression patterns
 
