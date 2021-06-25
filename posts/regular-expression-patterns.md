@@ -1,5 +1,5 @@
 ---
-title: How to Search with Sourcegraph Using Regular Expression Patterns
+title: How To Search with Sourcegraph using Regular Expression Patterns
 author: Marek Zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
@@ -22,7 +22,7 @@ Once it is highlighted, you're ready to search with regular expressions.
 
 Regular expressions are useful when you're looking for any strings that match a particular pattern. A common pattern in CSS is the RGB hex color code, like #6495ED (cornflower blue) or #663399 (Rebecca purple).
 
-To matche RGB hex color codes, we can write a regular expression that has three parts:
+To match RGB hex color codes, we can write a regular expression that has three parts:
 
 - A hash symbol (`#`)
 - A character class for hexadecimal characters: `[0-9a-f]`
@@ -36,22 +36,23 @@ Regular expressions are useful for finding patterns like this, where certain cla
 
 ## Finding a set of function calls
 
-One use case for using regular expression search is when you are trying to find examples of file system function calls. You may be interested in functions that read or write files: `readFile` and `writeFile`. While you could search for them individually, it can be useful to perform one search that includes results for both functions.
+One use case for regular expression search is when you are trying to find examples of file system function calls. You may be interested in functions that read or write files: `readFile` and `writeFile`. While you could search for them individually, it can be useful to perform one search that includes results for both functions.
 
 `readFile` and `writeFile` have a pattern in common: they both end in `File`. We can write a regular expression that expresses this pattern like so:
 
 <SourcegraphSearch query="(read|write)File" patternType="regexp"/>
 
-Using regular expression syntax of a pipe (`|`) character which signifies “or”, the above search query is therefore structured to search for `read` or `write` followed by `File`.
+The above search query uses the regular expression syntax of a pipe (`|`) character, which signifies “or”. We can read the query as a search for “`read` or `write`” followed by `File`.
+
 If you would like to narrow down the scope of the search, you can modify this pattern further. If you would like to specify that you would like to use the file system prefix of `fs`, as in `fs.readFile` or `fs.writeFile`, you can add that prefix to the search. Because the `.` dot character notation has a special regex meaning (it will match all characters), we will want to escape the dot with a backslash (`\`).
 
 <SourcegraphSearch query="fs\.(read|write)File" patternType="regexp"/>
 
-Regular expressions are also useful if you’re looking for a variable that can contain a mix of alphabetic and numeric characters, like `id1`, `id2`, `id3` and so forth. To narrow down the results, we can add the `type:symbol` filter to show only results
+Regular expressions are also useful if you’re looking for a variable that can contain a mix of alphabetic and numeric characters, like `id1`, `id2`, `id3` and so forth. To narrow down the results, we can add the `type:symbol` filter.
 
 <SourcegraphSearch query="id\d+ type:symbol" patternType="regexp"/>
 
-In this case `\d+` matches one or more digits. The above query would return output ...
+In this case `\d+` matches one or more digits. 
 
 ## Using spaces in regular expression patterns
 
@@ -65,7 +66,7 @@ When you use spaces in regular expressions in Sourcegraph, the space character i
 
 ## Finding whole words using word boundaries
 
-By default, Sourcegraph finds all occurrences of your search pattern even when it occurs inside of a longer word. Sometimes when you’re searching for a pattern like `count`, you’re only interested in functions or variables called `count` and not `counter` or `countId` or `countItems`. In those cases, you should be specific that you’re looking for an exact keyword. You can do this with the regular expression `\b`, which stands for _word boundary_.
+By default, Sourcegraph finds all occurrences of your search pattern even when it occurs inside of a longer word. Sometimes when you’re searching for a pattern like `count`, you’re only interested in functions or variables called `count` and not `counter` or `countId` or `countItems`. In those cases, you should specify that you’re looking for an exact keyword. You can do this with the regular expression `\b`, which stands for _word boundary_.
 
 <SourcegraphSearch query="\bcount\b" patternType="regexp"/>
 
