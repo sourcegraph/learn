@@ -2,17 +2,10 @@ import React, { useState } from 'react'
 
 interface Props {
     query: string
-    patternType?: string
 }
 
 export default function SourcegraphSearch(props: Props) {
     const [query, setQuery] = useState(props.query)
-    let modifiedQuery = query
-
-    if (props.patternType) {
-        modifiedQuery += ` patternType:${props.patternType}`
-    }
-
     return (
         <div className="my-4">
             <div className="card">
@@ -31,9 +24,7 @@ export default function SourcegraphSearch(props: Props) {
                     <div className="col-4">
                         <a
                             className="btn btn-primary"
-                            href={`https://sourcegraph.com/search?q=${encodeURIComponent(
-                                modifiedQuery
-                            )}&utm_source=learn`}
+                            href={`https://sourcegraph.com/search?q=${encodeURIComponent(query)}&utm_source=learn`}
                             target="_blank"
                         >
                             <span className="small">Search on Sourcegraph</span>
