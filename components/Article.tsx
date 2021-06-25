@@ -5,7 +5,7 @@ import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GiflikeVideo'
+import GifLikeVideo from './GifLikeVideo'
 import RegexIcon from 'mdi-react/RegexIcon'
 export interface Props {
     title: string
