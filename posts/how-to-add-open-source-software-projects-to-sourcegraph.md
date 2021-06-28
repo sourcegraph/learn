@@ -7,10 +7,6 @@ alternateTitle: An additional seo title
 image: /headers/sourcegraph-learn-header-4.svg
 ---
 
-## Table of Contents
-
-## Introduction
-
 Sourcegraph is actively working to index open source software so that developers can search all of the code that they care about. Being able to search across public repositories can help you learn open source best practices, inspect the libraries you may have as dependencies on your projects, and provide you with real-world examples you can leverage while you’re programming.
 
 This tutorial will guide you through how to add public, open source repositories from GitHub and GitLab to Sourcegraph so that these code bases are indexed by the platform. Once you have added and synched these public repositories, anyone using Sourcegraph Cloud will be able to see results from these projects when they search all the code that is available through Sourcegraph via its global context.
