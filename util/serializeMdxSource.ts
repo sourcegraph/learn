@@ -5,6 +5,8 @@ import rehypeSlug from 'rehype-slug'
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeAddClasses from 'rehype-add-classes'
+import mdastUtilToc from 'mdast-util-toc'
+import { Node } from 'unist'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is
@@ -16,12 +18,22 @@ const classesToAddToElements = {
     img: 'w-100 mt-5',
 }
 
-export default function serializeMdxSource(markdownFile: MarkdownFile) {
-    return serialize(markdownFile.body, {
+export default async function serializeMdxSource(markdownFile: MarkdownFile) {
+    let toc: mdastUtilToc.TOCResult | undefined
+
+    /** This is a remarkPlugin which is created here so that we can capture the
+     * toc result, which otherwise we would not be able to capture because it's
+     * not part of the serialized output. */
+    const extractTocPlugin = () => (tree: Node) => {
+        toc = mdastUtilToc(tree)
+    }
+
+    const serializeResult = await serialize(markdownFile.body, {
         mdxOptions: {
             remarkPlugins: [
                 // Generate table of contents and insert it into the content.
                 remarkToc,
+                extractTocPlugin,
             ],
             rehypePlugins: [
                 // Add "slug" IDs to each heading, for links and table of contents.
@@ -48,4 +60,6 @@ export default function serializeMdxSource(markdownFile: MarkdownFile) {
             ],
         },
     })
+    console.log('Extracted TOC:', toc)
+    return { toc, serializeResult }
 }
