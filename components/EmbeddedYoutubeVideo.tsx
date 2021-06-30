@@ -12,8 +12,8 @@ const EmbeddedYoutubeVideo = (props: Props) => (
         <iframe
             className="embed-responsive-item"
             src={`https://www.youtube.com/embed/${props.id}`}
-            allowFullScreen
-        ></iframe>
+            allowFullScreen={true}
+         />
     </div>
 )
 

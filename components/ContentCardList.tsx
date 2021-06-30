@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { MarkdownFileWithUrl } from '../pages'
+
 import ContentCard from './ContentCard'
 
 interface Props {

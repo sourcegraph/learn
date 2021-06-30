@@ -1,11 +1,12 @@
 import { GetStaticProps } from 'next'
 import React from 'react'
+
+import ContentCard from '../components/ContentCard'
+import ContentCardList from '../components/ContentCardList'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
-import ContentCard from '../components/ContentCard'
 import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
-import ContentCardList from '../components/ContentCardList'
 
 export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 

@@ -1,10 +1,11 @@
+import startCase from 'lodash/startCase'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import React from 'react'
+
 import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
 import loadAllPosts from '../../util/loadAllPosts'
-import startCase from 'lodash/startCase'
 
 export interface LinkEntry {
     title: string

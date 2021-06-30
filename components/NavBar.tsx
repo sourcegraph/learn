@@ -2,10 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
-
 export default function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg">
+        <Navbar collapseOnSelect={true} expand="lg">
             <Container className= "py-3 container ">
                 <Navbar.Brand href="https://about.sourcegraph.com/">
                     <img src="/sourcegraph-logo.svg" width="150" style={{ verticalAlign: -5 }} />
@@ -17,7 +16,6 @@ export default function NavBar() {
                         <Nav.Link href="https://about.sourcegraph.com/case-studies">Case Study</Nav.Link>
                         <Nav.Link href="https://docs.sourcegraph.com">Docs</Nav.Link>
                         <Nav.Link href="https://about.sourcegraph.com/pricing">Pricing</Nav.Link>
-
 
                         <NavDropdown title="Learn" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="/">Overview </NavDropdown.Item>

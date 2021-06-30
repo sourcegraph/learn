@@ -34,7 +34,7 @@ export default function SourcegraphSearch(props: Props) {
                             href={`https://sourcegraph.com/search?q=${encodeURIComponent(
                                 modifiedQuery
                             )}&utm_source=learn`}
-                            target="_blank"
+                            target="_blank" rel="noreferrer"
                         >
                             <span className="small">Search on Sourcegraph</span>
                         </a>

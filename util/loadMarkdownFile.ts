@@ -1,6 +1,8 @@
 import { promises as fs } from 'fs'
-import greyMatter from 'gray-matter'
 import path from 'path'
+
+import greyMatter from 'gray-matter'
+
 import FrontMatter from './FrontMatter'
 import MarkdownFile from './MarkdownFile'
 

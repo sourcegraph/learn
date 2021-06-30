@@ -1,12 +1,13 @@
+import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Link from 'next/link'
 import React from 'react'
+
+import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
+import GifLikeVideo from './GifLikeVideo'
 import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
-import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GifLikeVideo'
-import RegexIcon from 'mdi-react/RegexIcon'
 export interface Props {
     title: string
     author: string

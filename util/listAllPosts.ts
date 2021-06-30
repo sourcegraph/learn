@@ -1,5 +1,6 @@
-import globby from 'globby'
 import path from 'path'
+
+import globby from 'globby'
 
 export default async function listAllPosts(baseDirectory: string) {
     const pattern = '**/*.{md,markdown,mdx}'

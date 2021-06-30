@@ -1,10 +1,12 @@
-import * as React from 'react'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import * as React from 'react'
+
+import { googleTagManagerId } from '../posts/site-config'
+
 import Footer from './Footer'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
-import { googleTagManagerId } from '../posts/site-config'
 import NavBar from './NavBar'
-import { GetStaticProps } from 'next'
 
 const defaultMetaTags = {
     description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
@@ -59,7 +61,7 @@ export default function Layout(props: LayoutProps) {
             <Head>
                 <GoogleTagManagerScriptTag id={googleTagManagerId} />
                 <title>{title}</title>
-                <link href="/favicon.png" rel="icon" type="image/png"></link>
+                <link href="/favicon.png" rel="icon" type="image/png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
@@ -87,10 +89,8 @@ export default function Layout(props: LayoutProps) {
     )
 }
 
-export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async context => {
-    return {
+export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async context => ({
         props: {
             publicUrl: process.env.DEPLOY_URL ?? '',
         },
-    }
-}
+    })

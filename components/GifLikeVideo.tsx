@@ -14,7 +14,7 @@ interface Props {
  * screencast demonstrations or animations.
  */
 const GifLikeVideo = (props: Props) => (
-    <video autoPlay loop muted playsInline className="my-5 mx-auto d-block" style={{ maxWidth: '100%' }}>
+    <video autoPlay={true} loop={true} muted={true} playsInline={true} className="my-5 mx-auto d-block" style={{ maxWidth: '100%' }}>
         <source src={props.url} type={props.type ?? 'video/mp4'} />
     </video>
 )
