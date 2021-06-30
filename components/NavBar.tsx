@@ -14,7 +14,7 @@ export default function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="https://about.sourcegraph.com/customers">Customers</Nav.Link>
-                        <Nav.Link href="https://about.sourcegraph.com/case-studies">Case Study</Nav.Link>
+                        <Nav.Link href="https://about.sourcegraph.com/case-studies">Case Studies</Nav.Link>
                         <Nav.Link href="https://docs.sourcegraph.com">Docs</Nav.Link>
                         <Nav.Link href="https://about.sourcegraph.com/pricing">Pricing</Nav.Link>
 
