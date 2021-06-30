@@ -1,27 +1,8 @@
 import { promises as fs } from 'fs'
 import greyMatter from 'gray-matter'
 import path from 'path'
-
-export interface FrontMatter {
-    title: string
-    tags: string[]
-    published: boolean
-    unlisted: boolean
-    author?: string
-
-    /** Short description used for the post's card and social description meta tag..*/
-    description?: string
-
-    /** Image URL used for the posts's card, header, and social image meta tag. */
-    image?: string
-}
-
-export interface MarkdownFile {
-    slug: string
-    filename: string
-    frontMatter: FrontMatter
-    body: string
-}
+import FrontMatter from './FrontMatter'
+import MarkdownFile from './MarkdownFile'
 
 function removeExtension(filename: string) {
     const parts = filename.split('.')
@@ -59,7 +40,8 @@ function isStringArray(a: any[]): a is string[] {
 
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
-        title: rawFrontMatter.title ?? 'Untitled',
+        title: rawFrontMatter.title ?? rawFrontMatter.alternateTitle ?? 'Untitled Document',
+        alternateTitle: rawFrontMatter.alternateTitle ?? 'No alternate title',
         tags: normalizeTags(rawFrontMatter.tags),
         published: rawFrontMatter.published ?? true,
         unlisted: rawFrontMatter.unlisted ?? false,

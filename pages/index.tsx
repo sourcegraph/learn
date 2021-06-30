@@ -3,11 +3,14 @@ import React from 'react'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
 import ContentCard from '../components/ContentCard'
-import { MarkdownFile } from '../util/loadMarkdownFile'
+import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
+import ContentCardList from '../components/ContentCardList'
+
+export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    posts: (MarkdownFile & { url: string })[]
+    posts: MarkdownFileWithUrl[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
@@ -23,24 +26,10 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 export default function Home(props: Props) {
     return (
         <PageLayout>
-            <p>
-                You've found <strong>Sourcegraph Learn</strong>, our new developer education hub.
-            </p>
-            <p>We haven't launched yet! Come back soon.</p>
-
-            <div className="row row-cols-2">
-                {props.posts.map(post => (
-                    <div className="col">
-                        <ContentCard
-                            title={post.frontMatter.title}
-                            tags={post.frontMatter.tags}
-                            description={post.frontMatter.description}
-                            image={post.frontMatter.image}
-                            url={post.url}
-                        />
-                    </div>
-                ))}
+            <div className="row">
+                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
             </div>
+            <ContentCardList posts={props.posts} />
         </PageLayout>
     )
 }

@@ -27,14 +27,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }))
     return {
         props: {
-            links: [
-                {
-                    title: 'About',
-                    url: '/about',
-                },
-                ...postLinks,
-                ...tagLinks,
-            ],
+            links: [...postLinks, ...tagLinks],
         },
     }
 }

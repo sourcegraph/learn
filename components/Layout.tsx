@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Footer from './Footer'
-import Header from './Header'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
 import { googleTagManagerId } from '../posts/site-config'
 import NavBar from './NavBar'
@@ -35,6 +34,8 @@ interface LayoutProps {
 
     publicUrl?: string
 }
+
+function createTitle(contentTitle: string) {}
 
 export default function Layout(props: LayoutProps) {
     const siteTitle = 'Sourcegraph Learn'
