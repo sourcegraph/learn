@@ -7,13 +7,14 @@ interface Props {
     id: string
 }
 
-const EmbeddedYoutubeVideo = (props: Props) => (
+const EmbeddedYoutubeVideo: React.FunctionComponent<Props> = props => (
     <div className="ratio ratio-16x9 mb-5">
         <iframe
+            title="Embedded Youtube Video"
             className="embed-responsive-item"
             src={`https://www.youtube.com/embed/${props.id}`}
             allowFullScreen={true}
-         />
+        />
     </div>
 )
 

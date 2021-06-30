@@ -6,7 +6,7 @@ import greyMatter from 'gray-matter'
 import FrontMatter from './FrontMatter'
 import MarkdownFile from './MarkdownFile'
 
-function removeExtension(filename: string) {
+function removeExtension(filename: string): string {
     const parts = filename.split('.')
     if (parts.length > 1) {
         return parts.slice(0, -1).join('.')
@@ -14,12 +14,12 @@ function removeExtension(filename: string) {
     return filename
 }
 
-function filenameToSlug(filepath: string) {
+function filenameToSlug(filepath: string): string {
     const basename = path.basename(filepath)
     return removeExtension(basename)
 }
 
-function normalizeTags(rawTags: any): string[] {
+function normalizeTags(rawTags: unknown): string[] {
     if (!rawTags) {
         return []
     }
@@ -32,12 +32,12 @@ function normalizeTags(rawTags: any): string[] {
     throw new Error('Front-matter: Tags must be an array of strings.')
 }
 
-function isString(s: string): s is string {
-    return typeof s === 'string'
+function isString(value: unknown): value is string {
+    return typeof value === 'string'
 }
 
-function isStringArray(a: any[]): a is string[] {
-    return a.every(item => isString(item))
+function isStringArray(value: unknown): value is string[] {
+    return Array.isArray(value) && value.every(item => isString(item))
 }
 
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {

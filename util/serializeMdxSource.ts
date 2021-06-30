@@ -1,4 +1,5 @@
 import rehypePrism from '@mapbox/rehype-prism'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import rehypeAddClasses from 'rehype-add-classes'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -17,7 +18,7 @@ const classesToAddToElements = {
     img: 'w-100 mt-5',
 }
 
-export default function serializeMdxSource(markdownFile: MarkdownFile) {
+export default function serializeMdxSource(markdownFile: MarkdownFile): Promise<MDXRemoteSerializeResult> {
     return serialize(markdownFile.body, {
         mdxOptions: {
             remarkPlugins: [

@@ -5,7 +5,7 @@ interface Props {
     patternType?: string
 }
 
-export default function SourcegraphSearch(props: Props) {
+const SourcegraphSearch: React.FunctionComponent<Props> = props => {
     const [query, setQuery] = useState(props.query)
     let modifiedQuery = query
 
@@ -34,7 +34,8 @@ export default function SourcegraphSearch(props: Props) {
                             href={`https://sourcegraph.com/search?q=${encodeURIComponent(
                                 modifiedQuery
                             )}&utm_source=learn`}
-                            target="_blank" rel="noreferrer"
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             <span className="small">Search on Sourcegraph</span>
                         </a>
@@ -44,3 +45,5 @@ export default function SourcegraphSearch(props: Props) {
         </div>
     )
 }
+
+export default SourcegraphSearch

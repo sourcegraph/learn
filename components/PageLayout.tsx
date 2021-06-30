@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Layout, { MetaTags } from './Layout'
 
 interface Props {
@@ -11,14 +13,14 @@ interface Props {
     metaTags?: MetaTags
 }
 
-export default function PageLayout(props: Props) {
-    return (
-        <Layout contentTitle={props.contentTitle} metaTags={props.metaTags}>
-            <div className="row">
-                <div className="col-12 col-xl-3">{props.leftColumn}</div>
-                <div className="col-12 col-xl-6 py-5">{props.children}</div>
-                <div className="col-12 col-xl-3">{props.rightColumn}</div>
-            </div>
-        </Layout>
-    )
-}
+const PageLayout: React.FunctionComponent<Props> = props => (
+    <Layout contentTitle={props.contentTitle} metaTags={props.metaTags}>
+        <div className="row">
+            <div className="col-12 col-xl-3">{props.leftColumn}</div>
+            <div className="col-12 col-xl-6 py-5">{props.children}</div>
+            <div className="col-12 col-xl-3">{props.rightColumn}</div>
+        </div>
+    </Layout>
+)
+
+export default PageLayout

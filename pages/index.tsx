@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next'
 import React from 'react'
 
-import ContentCard from '../components/ContentCard'
 import ContentCardList from '../components/ContentCardList'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
@@ -14,7 +13,7 @@ interface Props {
     posts: MarkdownFileWithUrl[]
 }
 
-export const getStaticProps: GetStaticProps<Props> = async context => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllPosts()
 
     return {
@@ -24,13 +23,13 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }
 }
 
-export default function Home(props: Props) {
-    return (
-        <PageLayout>
-            <div className="row">
-                <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
-            </div>
-            <ContentCardList posts={props.posts} />
-        </PageLayout>
-    )
-}
+const Home: React.FunctionComponent<Props> = props => (
+    <PageLayout>
+        <div className="row">
+            <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
+        </div>
+        <ContentCardList posts={props.posts} />
+    </PageLayout>
+)
+
+export default Home

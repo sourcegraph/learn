@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import * as React from 'react'
 
-import { googleTagManagerId } from '../posts/site-config'
+import { googleTagManagerId } from '../site-config'
 
 import Footer from './Footer'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
@@ -37,9 +37,7 @@ interface LayoutProps {
     publicUrl?: string
 }
 
-function createTitle(contentTitle: string) {}
-
-export default function Layout(props: LayoutProps) {
+const Layout: React.FunctionComponent<LayoutProps> = props => {
     const siteTitle = 'Sourcegraph Learn'
     let title = siteTitle
     if (props.title) {
@@ -89,8 +87,10 @@ export default function Layout(props: LayoutProps) {
     )
 }
 
-export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async context => ({
-        props: {
-            publicUrl: process.env.DEPLOY_URL ?? '',
-        },
-    })
+export default Layout
+
+export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async () => ({
+    props: {
+        publicUrl: process.env.DEPLOY_URL ?? '',
+    },
+})

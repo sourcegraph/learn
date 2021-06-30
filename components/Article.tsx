@@ -19,7 +19,7 @@ export interface Props {
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
 
-const Article = (props: Props) => {
+const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.image,
         description: props.description,

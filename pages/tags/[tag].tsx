@@ -2,12 +2,12 @@ import startCase from 'lodash/startCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
 
-import { MarkdownFileWithUrl } from '..'
 import ContentCardList from '../../components/ContentCardList'
 import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
-import getQueryParameter from '../../util/getQueryParam'
+import getQueryParameter from '../../util/getQueryParameters'
 import loadAllPosts from '../../util/loadAllPosts'
+import { MarkdownFileWithUrl } from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 interface Props {
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }
 }
 
-export default function TagPage(props: Props) {
+const TagPage: React.FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
     return (
         <PageLayout contentTitle={`Posts tagged ${tagName}`}>
@@ -44,3 +44,5 @@ export default function TagPage(props: Props) {
         </PageLayout>
     )
 }
+
+export default TagPage

@@ -13,8 +13,15 @@ interface Props {
  * and accessibility advantages (like being pausable). Use cases include
  * screencast demonstrations or animations.
  */
-const GifLikeVideo = (props: Props) => (
-    <video autoPlay={true} loop={true} muted={true} playsInline={true} className="my-5 mx-auto d-block" style={{ maxWidth: '100%' }}>
+const GifLikeVideo: React.FunctionComponent<Props> = props => (
+    <video
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
+        className="my-5 mx-auto d-block"
+        style={{ maxWidth: '100%' }}
+    >
         <source src={props.url} type={props.type ?? 'video/mp4'} />
     </video>
 )

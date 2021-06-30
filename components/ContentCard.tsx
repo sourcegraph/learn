@@ -9,7 +9,7 @@ export interface Props {
     url: string
 }
 
-const ContentCard = (props: Props) => (
+const ContentCard: React.FunctionComponent<Props> = props => (
     <div className="card mb-4">
         {props.image && <img src={props.image} className="card-img-top" />}
         <div className="card-body">
