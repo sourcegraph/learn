@@ -40,9 +40,9 @@ export default function Footer({ minimal }: Props) {
                                             href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
                                             target="_blank"
                                             rel="noopener"
-                                            className="bigCode text-dark text-decoration-none text-muted"
+                                            className="text-dark text-decoration-none text-muted"
                                         >
-                                            Not a developer?
+                                            Sourcegraph overview (PDF)
                                         </a>
                                     </li>
                                 </ul>
@@ -72,6 +72,14 @@ export default function Footer({ minimal }: Props) {
                                             href="https://docs.sourcegraph.com"
                                         >
                                             Documentation
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a
+                                            className="text-dark text-decoration-none text-muted"
+                                            href="https://learn.sourcegraph.com"
+                                        >
+                                            Learn
                                         </a>
                                     </li>
                                     <li className="nav-item">
