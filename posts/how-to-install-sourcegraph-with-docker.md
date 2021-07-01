@@ -16,9 +16,9 @@ We’ll go through how to install Sourcegraph on your local machine with Docker 
 
 ## Step 1 — Install Docker
 
-_If you already have Docker installed, you can skip to the next step._
+_If you already have Docker installed, you can [skip to the next step](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph)._
 
-We’ll go over how to install Docker across Linux, macOS, and Windows operating systems in this section. Skip down to the section that is relevant for the machine you’re using to install Sourcegraph.
+We’ll go over how to install Docker across [Linux](/posts/how-to-install-sourcegraph-with-docker#on-linux), [macOS](/posts/how-to-install-sourcegraph-with-docker#on-macos), and [Windows](/posts/how-to-install-sourcegraph-with-docker#on-windows) operating systems in this section. Skip down to the section that is relevant for the machine you’re using to install Sourcegraph.
 
 ### On Linux 
 
@@ -54,7 +54,7 @@ sudo snap install docker
 
 Alternatively, you can install Docker through its `.deb` or `.rpm` packages through the [Docker installation page](https://docs.docker.com/engine/install/).
 
-With Docker installed, you can continue to [Step 2 — Installing Sourcegraph](add-link).
+With Docker installed, you can continue to [Step 2](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph).
 
 ### On macOS
 
@@ -64,7 +64,7 @@ You can determine what chip you have by navigating to the Apple menu in the top 
 
 Once you know which is the appropriate version to install, select either `Mac with Intel chip` for any macOS machine that is on an Intel chip, or `Mac with Apple chip` for any macOS machine that has an Apple M1 chip. Then follow the guidance from the Docker installation to complete the process. 
 
-With Docker fully installed, you’ll be ready to move onto the next section of [installing Sourcegraph](add-link).
+With Docker fully installed, you’ll be ready to move onto the next section of [installing Sourcegraph](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph).
 
 ### On Windows
 
@@ -74,16 +74,19 @@ With Docker fully installed, you’ll be ready to move onto the section below to
 
 ## Step 2 — Install Sourcegraph
 
-Depending on the machine that you have, you’ll be able to run a Docker command to install Sourcegraph and get you up and running with code search on your local repositories and beyond. 
+Depending on the machine that you have, you’ll be able to run a Docker command to install Sourcegraph and get up and running with code search on your local repositories and beyond. 
 
-We’ll go over four options below, the first which is recommended for many local machine use cases, inclusive of Linux machines and macOS machines with Intel chips. The second option is recommended for Linux cloud servers. The third option is for macOS machines with Apple M1 chips. Finally, the fourth option is to be able to test Sourcegraph on Windows machines.
+We’ll go over four approaches below, the first which is recommended for many local machine use cases, inclusive of Linux machines and macOS machines with Intel chips. The second option is recommended for Linux cloud servers. The third option is for macOS machines with Apple M1 chips. Finally, the fourth option is to be able to test Sourcegraph on Windows machines.
 
 ### Locally on Linux or on macOs with Intel Chip
 
 On local machines that use a Linux distribution or macOS on an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command. 
 
 ```
-docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:3.29.0
+docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 
+--rm --volume ~/.sourcegraph/config:/etc/sourcegraph 
+--volume ~/.sourcegraph/data:/var/opt/sourcegraph 
+sourcegraph/server:3.29.0
 ```
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -101,12 +104,16 @@ At this point, you’ll be able to move onto the next section to verify your ins
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
 ```
-docker run -d --publish 80:7080 --publish 443:7443 --restart unless-stopped --volume /root/.sourcegraph/config:/etc/sourcegraph --volume /root/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:3.29.0
+docker run -d --publish 80:7080 --publish 443:7443 
+--restart unless-stopped 
+--volume /root/.sourcegraph/config:/etc/sourcegraph 
+--volume /root/.sourcegraph/data:/var/opt/sourcegraph 
+sourcegraph/server:3.29.0
 ```
 
 This command is telling your server to install and run Sourcegraph in port 7080 of your server and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
 
-Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following. Your server’s IP address will display in place of `your-server-ip-address`. 
+Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following. Your server’s IP address will display in place of `your-server-ip-address`. 
 
 ```
 ✱ Sourcegraph is ready at: http://your-server-ip-address:7080
@@ -120,12 +127,16 @@ On a macOS machine with an Apple M1 chip, you’ll need to add an extra argument
 
 ```
 docker run 
---publish 7080:7080 --publish 127.0.0.1:3370:3370 --platform linux/amd64 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:3.29.0
+--publish 7080:7080 --publish 127.0.0.1:3370:3370 
+--platform linux/amd64 
+--rm --volume ~/.sourcegraph/config:/etc/sourcegraph 
+--volume ~/.sourcegraph/data:/var/opt/sourcegraph 
+sourcegraph/server:3.29.0
 ```
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
 
-Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
+Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
 ```
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
@@ -138,12 +149,13 @@ At this point, you’ll be able to move onto the next section to verify your ins
 Due to limitations with Docker for Windows, Sourcegraph can only be tested on Windows as data cannot persist on a Windows installation. Due to that, we’ll remove the `--volume` arguments from the Docker commands above, and run the following command instead.
 
 ```
-docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 --rm sourcegraph/server:3.29.0
+docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 
+--rm sourcegraph/server:3.29.0
 ```
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. 
 
-Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
+Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
 ```
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
@@ -173,4 +185,4 @@ Congratulations! You have installed Sourcegraph with Docker and have created an 
 
 If you have installed Sourcegraph on a Linux server rather than a local machine, you may want to secure your installation as a next step (to access Sourcegraph via `https` rather than `http`), which you can read more about through our official [Sourcegraph docs](https://docs.sourcegraph.com/admin/http_https_configuration#sourcegraph-single-instance-docker).
 
-Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our [overview video on the three ways to search with Sourcegraph](https://learn.sourcegraph.com/posts/three-ways-to-search-video) so that you can more effectively search your code. 
+Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](https://learn.sourcegraph.com/posts/three-ways-to-search-video) so that you can more effectively search your code. 
