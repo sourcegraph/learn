@@ -10,9 +10,9 @@ image: /headers/sourcegraph-learn-header-7.svg
 
 Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph Cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.
 
-By installing Sourcegraph on your own hardware, you’ll be able to manage your own instance of Sourcegraph, providing you with complete control over who has access to your code. Your own installation will also allow you to connect your local (or server-side) code as well as any relevant Git servers. Git servers that you can connect to include, GitHub, GitHub Enterprise, GitLab, Bitbucket, AWS CodeCommit, Perforce, and more. 
+By installing Sourcegraph on your own hardware, you’ll be able to manage your own instance of Sourcegraph, providing you with complete control over who has access to your code. Your own installation will also allow you to connect your local (or server-side) code as well as any relevant Git servers. Git servers that you can connect to include GitHub, GitHub Enterprise, GitLab, Bitbucket, AWS CodeCommit, Perforce, and more. 
 
-We’ll go through how to install Sourcegraph on your local machine with Docker so that you can begin to use Sourcegraph on all of your code. This installation guide is appropriate for local testing and should be quick to set up. If you would like to use Sourcegraph in a production environment, you should follow or documentation on [installing Sourcegraph with [Docker Compose](https://docs.sourcegraph.com/admin/install/docker-compose) on a single node, or on a [Kubernetes cluster](https://docs.sourcegraph.com/admin/install/kubernetes). 
+We’ll go through how to install Sourcegraph on your local machine with Docker so that you can begin to use Sourcegraph on all of your code. This installation guide is appropriate for local testing and should be quick to set up. If you would like to use Sourcegraph in a production environment, you should follow our documentation on installing Sourcegraph with [Docker Compose](https://docs.sourcegraph.com/admin/install/docker-compose) on a single node, or on a [Kubernetes cluster](https://docs.sourcegraph.com/admin/install/kubernetes). 
 
 ## Step 1 — Install Docker
 
@@ -26,7 +26,7 @@ On a Linux cloud server or local computer, you can install Docker via the comman
 
 Ensure that you have the [snap package manager](https://snapcraft.io/) installed by running the following commands in your terminal for **Ubuntu or Debian Linux**:
 
-````
+```
 sudo apt update
 sudo apt install snapd
 sudo snap install core
