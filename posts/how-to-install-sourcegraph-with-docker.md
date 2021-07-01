@@ -76,16 +76,16 @@ With Docker fully installed, you’ll be ready to move onto the section below to
 
 Depending on the machine that you have, you’ll be able to run a Docker command to install Sourcegraph and get up and running with code search on your local repositories and beyond. 
 
-We’ll go over four approaches below, the first which is recommended for many local machine use cases, inclusive of Linux machines and macOS machines with Intel chips. The second option is recommended for Linux cloud servers. The third option is for macOS machines with Apple M1 chips. Finally, the fourth option is to be able to test Sourcegraph on Windows machines.
+We’ll go over four approaches below, the first which is recommended for many local machine use cases, inclusive of [Linux machines and macOS machines with Intel chips](/posts/how-to-install-sourcegraph-with-docker#locally-on-linux-or-on-macos-with-intel-chip). The second option is recommended for [Linux cloud servers](/posts/how-to-install-sourcegraph-with-docker#on-a-linux-server). The third option is for [macOS machines with Apple M1 chips](/posts/how-to-install-sourcegraph-with-docker#on-an-apple-m1-chip-on-macos). Finally, the fourth option is to be able to test Sourcegraph on [Windows machines](/posts/how-to-install-sourcegraph-with-docker#on-windows-1).
 
 ### Locally on Linux or on macOs with Intel Chip
 
 On local machines that use a Linux distribution or macOS on an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command. 
 
 ```
-docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 
---rm --volume ~/.sourcegraph/config:/etc/sourcegraph 
---volume ~/.sourcegraph/data:/var/opt/sourcegraph 
+docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
+--rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
+--volume ~/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.29.0
 ```
 
@@ -104,10 +104,10 @@ At this point, you’ll be able to move onto the next section to verify your ins
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
 ```
-docker run -d --publish 80:7080 --publish 443:7443 
---restart unless-stopped 
---volume /root/.sourcegraph/config:/etc/sourcegraph 
---volume /root/.sourcegraph/data:/var/opt/sourcegraph 
+docker run -d --publish 80:7080 --publish 443:7443 \
+--restart unless-stopped \
+--volume /root/.sourcegraph/config:/etc/sourcegraph \
+--volume /root/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.29.0
 ```
 
@@ -126,11 +126,11 @@ At this point, you’ll be able to move onto the next section to verify your ins
 On a macOS machine with an Apple M1 chip, you’ll need to add an extra argument to your Docker command so that the platform does not interfere with the installation and running of Sourcegraph. Run the following command with the `--platform linux/amd64` argument as demonstrated below.
 
 ```
-docker run 
---publish 7080:7080 --publish 127.0.0.1:3370:3370 
---platform linux/amd64 
---rm --volume ~/.sourcegraph/config:/etc/sourcegraph 
---volume ~/.sourcegraph/data:/var/opt/sourcegraph 
+docker run \
+--publish 7080:7080 --publish 127.0.0.1:3370:3370 \
+--platform linux/amd64 \
+--rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
+--volume ~/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.29.0
 ```
 
@@ -149,7 +149,14 @@ At this point, you’ll be able to move onto the next section to verify your ins
 Due to limitations with Docker for Windows, Sourcegraph can only be tested on Windows as data cannot persist on a Windows installation. Due to that, we’ll remove the `--volume` arguments from the Docker commands above, and run the following command instead.
 
 ```
-docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 
+docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 `
+--rm sourcegraph/server:3.29.0
+```
+
+_The above command with backtick assumes use of PowerShell. If you're using the Windows Command Prompt, substitute `^` as below._
+
+```
+docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 ^
 --rm sourcegraph/server:3.29.0
 ```
 
