@@ -3,7 +3,7 @@ title: How To Install Sourcegraph with Docker
 author: Lisa Tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your own machine with Docker
-image: /headers/sourcegraph-learn-header-3.svg
+image: /headers/sourcegraph-learn-header-7.svg
 ---
 
 # How To Install Sourcegraph with Docker
