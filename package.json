@@ -16,7 +16,7 @@
     "@popperjs/core": "^2.9.2",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^5.0.1",
-    "globby": "^11.0.3",
+    "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
     "make-promises-safe": "^5.1.0",
     "mdi-react": "^7.5.0",
