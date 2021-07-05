@@ -229,3 +229,5 @@ const Footer: React.FunctionComponent<Props> = ({ minimal }) => (
             </div>
         </footer>
     )
+
+    export default Footer

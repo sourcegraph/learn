@@ -15,7 +15,7 @@ const NavBar: React.FunctionComponent = () => (
                     <Nav.Link href="https://docs.sourcegraph.com">Docs</Nav.Link>
                     <Nav.Link href="https://about.sourcegraph.com/pricing">Pricing</Nav.Link>
 
-                    <NavDropdown title="Learn" id="collasible-nav-dropdown">
+                    <NavDropdown title="Learn" id="collapsible-nav-dropdown">
                         <NavDropdown.Item href="/">Overview </NavDropdown.Item>
                         <NavDropdown.Item href="/tags/tutorial">Tutorials </NavDropdown.Item>
                         <NavDropdown.Item href="/tags/video">Videos </NavDropdown.Item>
@@ -29,7 +29,6 @@ const NavBar: React.FunctionComponent = () => (
                         <Button
                             href="https://about.sourcegraph.com/get-started/"
                             variant="outline-primary"
-                            className="btn-link-color: red"
                         >
                             Get Started
                         </Button>
@@ -39,3 +38,5 @@ const NavBar: React.FunctionComponent = () => (
         </Container>
     </Navbar>
 )
+
+export default NavBar
