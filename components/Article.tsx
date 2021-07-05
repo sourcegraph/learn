@@ -38,6 +38,12 @@ const Article = (props: Props) => {
     let tocFragment
     if (props.toc) {
         tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
+        tocFragment = (
+            <>
+                <h5 className="mt-5">Table of Contents</h5>
+                {tocFragment}
+            </>
+        )
     }
     return (
         <PageLayout contentTitle={props.title} metaTags={metaTags} leftColumn={tocFragment}>

@@ -60,6 +60,6 @@ export default async function serializeMdxSource(markdownFile: MarkdownFile) {
             ],
         },
     })
-    console.log('Extracted TOC:', toc)
+
     return { toc, serializeResult }
 }
