@@ -1,17 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
 import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import YouTubeIcon from 'mdi-react/YoutubeIcon'
+import Link from 'next/link'
+import React from 'react'
+
 import CreativeCommonsNotice from './CreativeCommonsNotice'
 
 interface Props {
     minimal?: boolean
 }
 
-export default function Footer({ minimal }: Props) {
-    return (
+const Footer: React.FunctionComponent<Props> = ({ minimal }) => (
         <footer className={`${minimal ? '' : 'pt-6 pb-2'}`}>
             <div className="footer__container container">
                 {!minimal && (
@@ -39,7 +39,7 @@ export default function Footer({ minimal }: Props) {
                                         <a
                                             href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
                                             target="_blank"
-                                            rel="noopener"
+                                            rel="noopener noreferrer"
                                             className="text-dark text-decoration-none text-muted"
                                         >
                                             Sourcegraph overview (PDF)
@@ -164,7 +164,7 @@ export default function Footer({ minimal }: Props) {
                                         <a
                                             href="https://github.com/sourcegraph"
                                             target="_blank"
-                                            rel="nofollow noopener"
+                                            rel="nofollow noopener noreferrer"
                                             aria-label="GitHub"
                                         >
                                             <GithubIcon />
@@ -174,7 +174,7 @@ export default function Footer({ minimal }: Props) {
                                         <a
                                             href="https://twitter.com/sourcegraph"
                                             target="_blank"
-                                            rel="nofollow noopener"
+                                            rel="nofollow noopener noreferrer"
                                             aria-label="Twitter"
                                         >
                                             <TwitterIcon />
@@ -184,7 +184,7 @@ export default function Footer({ minimal }: Props) {
                                         <a
                                             href="https://www.linkedin.com/company/4803356/"
                                             target="_blank"
-                                            rel="nofollow noopener"
+                                            rel="nofollow noopener noreferrer"
                                             aria-label="LinkedIn"
                                         >
                                             <LinkedinIcon />
@@ -194,7 +194,7 @@ export default function Footer({ minimal }: Props) {
                                         <a
                                             href="https://www.youtube.com/c/Sourcegraph/featured"
                                             target="_blank"
-                                            rel="nofollow noopener"
+                                            rel="nofollow noopener noreferrer"
                                             aria-label="YouTube"
                                         >
                                             <YouTubeIcon />
@@ -229,4 +229,3 @@ export default function Footer({ minimal }: Props) {
             </div>
         </footer>
     )
-}
