@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeAddClasses from 'rehype-add-classes'
 import mdastUtilToc from 'mdast-util-toc'
 import { Node } from 'unist'
+import mdastUtilToHast from 'mdast-util-to-hast'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is
@@ -18,14 +19,25 @@ const classesToAddToElements = {
     img: 'w-100 mt-5',
 }
 
-export default async function serializeMdxSource(markdownFile: MarkdownFile) {
-    let toc: mdastUtilToc.TOCResult | undefined
+/**
+ * Extract the table of contents (from heading nodes) from a markdown tree
+ * (mdast) and return an html tree (hast).
+ */
+function extractTableOfContents(tree: Node): Node {
+    const tocMdastResult = mdastUtilToc(tree)
+    const tocMdastTree = tocMdastResult.map as Node
+    const tocHastTree = mdastUtilToHast(tocMdastTree)
+    return tocHastTree
+}
 
-    /** This is a remarkPlugin which is created here so that we can capture the
+export default async function serializeMdxSource(markdownFile: MarkdownFile) {
+    let toc: Node | undefined
+
+    /** This is a remark plugin which is created here so that we can capture the
      * toc result, which otherwise we would not be able to capture because it's
      * not part of the serialized output. */
     const extractTocPlugin = () => (tree: Node) => {
-        toc = mdastUtilToc(tree)
+        toc = extractTableOfContents(tree)
     }
 
     const serializeResult = await serialize(markdownFile.body, {

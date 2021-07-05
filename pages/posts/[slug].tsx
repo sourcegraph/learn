@@ -4,7 +4,6 @@ import loadMarkdownFile from '../../util/loadMarkdownFile'
 import getQueryParam from '../../util/getQueryParam'
 import loadAllPosts from '../../util/loadAllPosts'
 import Article, { Props as ArticleProps } from '../../components/Article'
-import remarkRehype from 'remark-rehype'
 
 export default Article
 
@@ -23,8 +22,6 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const markdownFile = await loadMarkdownFile(baseDirectory, slug + '.md')
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
 
-    const tocFragment = toc && remarkRehype()(toc.map)
-
     return {
         props: {
             title: markdownFile.frontMatter.title,
@@ -33,7 +30,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image ?? '',
             description: markdownFile.frontMatter.description ?? '',
-            toc: tocFragment,
+            toc,
             mdxSource: serializeResult,
         },
     }

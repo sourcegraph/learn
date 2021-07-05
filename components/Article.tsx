@@ -9,6 +9,7 @@ import GifLikeVideo from './GifLikeVideo'
 import RegexIcon from 'mdi-react/RegexIcon'
 import rehypeReact from 'rehype-react'
 import unified from 'unified'
+import {Node} from 'unist'
 
 export interface Props {
     title: string
@@ -17,7 +18,7 @@ export interface Props {
     mdxSource: MDXRemoteSerializeResult
     image?: string
     description?: string
-    toc?: any
+    toc?: Node
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
