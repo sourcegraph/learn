@@ -6,3 +6,5 @@ export default interface MarkdownFile {
     frontMatter: FrontMatter
     body: string
 }
+
+export type MarkdownFileWithUrl = MarkdownFile & { url: string }

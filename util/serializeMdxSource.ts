@@ -1,10 +1,12 @@
-import { serialize } from 'next-mdx-remote/serialize'
-import MarkdownFile from './MarkdownFile'
-import remarkToc from 'remark-toc'
-import rehypeSlug from 'rehype-slug'
 import rehypePrism from '@mapbox/rehype-prism'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import rehypeAddClasses from 'rehype-add-classes'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
+import remarkToc from 'remark-toc'
+
+import MarkdownFile from './MarkdownFile'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is
@@ -16,7 +18,7 @@ const classesToAddToElements = {
     img: 'w-100 mt-5',
 }
 
-export default function serializeMdxSource(markdownFile: MarkdownFile) {
+export default function serializeMdxSource(markdownFile: MarkdownFile): Promise<MDXRemoteSerializeResult> {
     return serialize(markdownFile.body, {
         mdxOptions: {
             remarkPlugins: [

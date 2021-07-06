@@ -1,10 +1,11 @@
+import startCase from 'lodash/startCase'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import React from 'react'
+
 import PageLayout from '../../components/PageLayout'
 import collectTags from '../../util/collectTags'
 import loadAllPosts from '../../util/loadAllPosts'
-import startCase from 'lodash/startCase'
 
 export interface LinkEntry {
     title: string
@@ -14,7 +15,7 @@ interface Props {
     links: LinkEntry[]
 }
 
-export const getStaticProps: GetStaticProps<Props> = async context => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllPosts()
     const postLinks = posts.map(post => ({
         title: post.frontMatter.title,
@@ -31,16 +32,16 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
         },
     }
 }
-export default function Home(props: Props) {
-    return (
-        <PageLayout>
-            <ul>
-                {props.links.map(linkEntry => (
-                    <li key={linkEntry.url}>
-                        <Link href={linkEntry.url}>{linkEntry.title}</Link>
-                    </li>
-                ))}
-            </ul>
-        </PageLayout>
-    )
-}
+const Posts: React.FunctionComponent<Props> = props => (
+    <PageLayout>
+        <ul>
+            {props.links.map(linkEntry => (
+                <li key={linkEntry.url}>
+                    <Link href={linkEntry.url}>{linkEntry.title}</Link>
+                </li>
+            ))}
+        </ul>
+    </PageLayout>
+)
+
+export default Posts
