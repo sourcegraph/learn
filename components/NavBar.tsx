@@ -26,10 +26,7 @@ const NavBar: React.FunctionComponent = () => (
                         <Nav.Link href="https://sourcegraph.com/sign-in">Sign In</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Button
-                            href="https://about.sourcegraph.com/get-started/"
-                            variant="outline-primary"
-                        >
+                        <Button href="https://about.sourcegraph.com/get-started/" variant="outline-primary">
                             Get Started
                         </Button>
                     </Nav.Item>

@@ -9,6 +9,7 @@
     "start": "next start",
     "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different",
     "eslint": "eslint '**/*.{ts,tsx}' --ignore-path .gitignore",
+    "eslint-fix": "npm run eslint -- --fix",
     "clean": "rm -rf out .next"
   },
   "dependencies": {
