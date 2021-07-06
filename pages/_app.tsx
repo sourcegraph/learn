@@ -7,6 +7,7 @@ import { Dropdown, Nav, Navbar, NavDropdown, Container } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/Footer.scss'
 import '../styles/typography.scss'
+import '../styles/ErrorPage.scss'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />
