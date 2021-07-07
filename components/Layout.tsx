@@ -75,14 +75,13 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
                 <meta property="og:description" content={metaDescription} />
             </Head>
 
-            <div className="container">
-                <div className="row">
-                    <NavBar />
-                </div>
+            <NavBar />
 
+            <div className="container">
                 <section>{props.children}</section>
-                <Footer minimal={props.minimal} />
             </div>
+
+            <Footer minimal={props.minimal} />
         </>
     )
 }
