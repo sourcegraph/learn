@@ -1,12 +1,17 @@
+import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Link from 'next/link'
 import React from 'react'
+import rehypeReact from 'rehype-react'
+import unified from 'unified'
+import {Node} from 'unist'
+
+import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
+import GifLikeVideo from './GifLikeVideo'
 import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
-import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GifLikeVideo'
-import RegexIcon from 'mdi-react/RegexIcon'
+
 export interface Props {
     title: string
     author: string
@@ -14,11 +19,12 @@ export interface Props {
     mdxSource: MDXRemoteSerializeResult
     image?: string
     description?: string
+    toc?: Node
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
 
-const Article = (props: Props) => {
+const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.image,
         description: props.description,
@@ -31,8 +37,18 @@ const Article = (props: Props) => {
     // to be able to override this special behavior.
     const showHeaderImage = !props.tags.includes('video')
 
+    let tocFragment
+    if (props.toc) {
+        tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
+        tocFragment = (
+            <>
+                <h5 className="mt-5">Table of Contents</h5>
+                {tocFragment}
+            </>
+        )
+    }
     return (
-        <PageLayout contentTitle={props.title} metaTags={metaTags}>
+        <PageLayout contentTitle={props.title} metaTags={metaTags} leftColumn={tocFragment}>
             {/* Header image */}
             {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" />}
 

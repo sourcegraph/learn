@@ -1,9 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import serializeMdxSource from '../../util/serializeMdxSource'
-import loadMarkdownFile from '../../util/loadMarkdownFile'
-import getQueryParam from '../../util/getQueryParam'
-import loadAllPosts from '../../util/loadAllPosts'
+
 import Article, { Props as ArticleProps } from '../../components/Article'
+import getQueryParameter from '../../util/getQueryParameters'
+import loadAllPosts from '../../util/loadAllPosts'
+import loadMarkdownFile from '../../util/loadMarkdownFile'
+import serializeMdxSource from '../../util/serializeMdxSource'
 
 export default Article
 
@@ -17,10 +18,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
-    const slug = getQueryParam(context.params, 'slug')
+    const slug = getQueryParameter(context.params, 'slug')
     const baseDirectory = 'posts'
-    const markdownFile = await loadMarkdownFile(baseDirectory, slug + '.md')
-    const mdxSource = await serializeMdxSource(markdownFile)
+    const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
+    const { serializeResult, toc } = await serializeMdxSource(markdownFile)
 
     return {
         props: {
@@ -30,7 +31,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image ?? '',
             description: markdownFile.frontMatter.description ?? '',
-            mdxSource,
+            toc,
+            mdxSource: serializeResult,
         },
     }
 }
