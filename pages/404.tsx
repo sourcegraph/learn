@@ -2,13 +2,13 @@ import SignDirectionIcon from 'mdi-react/SignDirectionIcon'
 import * as React from 'react'
 import Layout from '../components/Layout'
 
-export class NotFoundPage extends React.Component<any, {}> {
+class NotFoundPage extends React.Component<any, {}> {
     public render(): JSX.Element {
         return (
             <Layout location={this.props.location} className="bg-white">
                 <div className="container center error-page text-dark">
-                    <div className="error-page__circle rounded-circle">
-                        <div className="error-page__icon">
+                    <div>
+                        <div >
                             <SignDirectionIcon />
                         </div>
                     </div>
