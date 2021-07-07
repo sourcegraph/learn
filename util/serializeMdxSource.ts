@@ -6,7 +6,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 import rehypeAddClasses from 'rehype-add-classes'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-import remarkToc from 'remark-toc'
 import { Node } from 'unist'
 
 import MarkdownFile from './MarkdownFile'
@@ -32,7 +31,9 @@ function extractTableOfContents(tree: Node): Node {
     return tocHastTree
 }
 
-export default async function serializeMdxSource(markdownFile: MarkdownFile): Promise<{toc?: Node, serializeResult: MDXRemoteSerializeResult }> {
+export default async function serializeMdxSource(
+    markdownFile: MarkdownFile
+): Promise<{ toc?: Node; serializeResult: MDXRemoteSerializeResult }> {
     let toc: Node | undefined
 
     const saveTocResult = (tree: Node): void => {
@@ -46,11 +47,7 @@ export default async function serializeMdxSource(markdownFile: MarkdownFile): Pr
 
     const serializeResult = await serialize(markdownFile.body, {
         mdxOptions: {
-            remarkPlugins: [
-                // Generate table of contents and insert it into the content.
-                remarkToc,
-                extractTocPlugin,
-            ],
+            remarkPlugins: [extractTocPlugin],
             rehypePlugins: [
                 // Add "slug" IDs to each heading, for links and table of contents.
                 rehypeSlug,
