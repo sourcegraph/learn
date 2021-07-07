@@ -2,7 +2,7 @@ import React from 'react'
 
 const creativeCommonsUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 
-const CreativeCommonsLicense = () => (
+const CreativeCommonsNotice: React.FunctionComponent = () => (
     <div className="my-3">
         <div className="mb-3 text-muted small">
             This work is licensed under a{' '}
@@ -16,4 +16,4 @@ const CreativeCommonsLicense = () => (
     </div>
 )
 
-export default CreativeCommonsLicense
+export default CreativeCommonsNotice

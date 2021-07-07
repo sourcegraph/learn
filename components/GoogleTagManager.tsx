@@ -10,7 +10,7 @@ interface Props {
 /**
  * Google Tag Manager script tag. This should be rendered in the <head>.
  */
-export const GoogleTagManagerScriptTag = (props: Props) => (
+export const GoogleTagManagerScriptTag: React.FunctionComponent<Props> = props => (
     <script
         dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -27,13 +27,14 @@ export const GoogleTagManagerScriptTag = (props: Props) => (
  * script. This should be rendered in the <body> element (ideally right after
  * the opening <body> tag).
  */
-export const GoogleTagManagerNoscriptFrame = (props: Props) => (
+export const GoogleTagManagerNoscriptFrame: React.FunctionComponent<Props> = props => (
     <noscript>
         <iframe
+            title="google-tag-manager-noscript-frame"
             src={`https://www.googletagmanager.com/ns.html?id=${props.id}`}
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
-        ></iframe>
+        />
     </noscript>
 )

@@ -1,13 +1,15 @@
-import { serialize } from 'next-mdx-remote/serialize'
-import MarkdownFile from './MarkdownFile'
-import remarkToc from 'remark-toc'
-import rehypeSlug from 'rehype-slug'
 import rehypePrism from '@mapbox/rehype-prism'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeAddClasses from 'rehype-add-classes'
-import mdastUtilToc from 'mdast-util-toc'
-import { Node } from 'unist'
 import mdastUtilToHast from 'mdast-util-to-hast'
+import mdastUtilToc from 'mdast-util-toc'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import rehypeAddClasses from 'rehype-add-classes'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
+import remarkToc from 'remark-toc'
+import { Node } from 'unist'
+
+import MarkdownFile from './MarkdownFile'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is
@@ -30,15 +32,17 @@ function extractTableOfContents(tree: Node): Node {
     return tocHastTree
 }
 
-export default async function serializeMdxSource(markdownFile: MarkdownFile) {
+export default async function serializeMdxSource(markdownFile: MarkdownFile): Promise<{toc?: Node, serializeResult: MDXRemoteSerializeResult }> {
     let toc: Node | undefined
+
+    const saveTocResult = (tree: Node): void => {
+        toc = extractTableOfContents(tree)
+    }
 
     /** This is a remark plugin which is created here so that we can capture the
      * toc result, which otherwise we would not be able to capture because it's
      * not part of the serialized output. */
-    const extractTocPlugin = () => (tree: Node) => {
-        toc = extractTableOfContents(tree)
-    }
+    const extractTocPlugin = (): typeof saveTocResult => saveTocResult
 
     const serializeResult = await serialize(markdownFile.body, {
         mdxOptions: {

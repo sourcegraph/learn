@@ -1,15 +1,16 @@
+import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Link from 'next/link'
 import React from 'react'
-import { MetaTags } from './Layout'
-import PageLayout from './PageLayout'
-import SourcegraphSearch from './SourcegraphSearch'
-import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GifLikeVideo'
-import RegexIcon from 'mdi-react/RegexIcon'
 import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import {Node} from 'unist'
+
+import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
+import GifLikeVideo from './GifLikeVideo'
+import { MetaTags } from './Layout'
+import PageLayout from './PageLayout'
+import SourcegraphSearch from './SourcegraphSearch'
 
 export interface Props {
     title: string
@@ -23,7 +24,7 @@ export interface Props {
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
 
-const Article = (props: Props) => {
+const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.image,
         description: props.description,
