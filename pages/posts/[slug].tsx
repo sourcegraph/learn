@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const slug = getQueryParameter(context.params, 'slug')
     const baseDirectory = 'posts'
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
-    const mdxSource = await serializeMdxSource(markdownFile)
+    const { serializeResult, toc } = await serializeMdxSource(markdownFile)
 
     return {
         props: {
@@ -31,7 +31,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image ?? '',
             description: markdownFile.frontMatter.description ?? '',
-            mdxSource,
+            toc,
+            mdxSource: serializeResult,
         },
     }
 }
