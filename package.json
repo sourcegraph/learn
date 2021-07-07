@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.6.22",
-    "@sourcegraph/eslint-config": "^0.24.0",
+    "@sourcegraph/eslint-config": "^0.25.0",
     "@sourcegraph/prettierrc": "^3.0.3",
     "@types/bootstrap": "5.0.15",
     "@types/globby": "9.1.0",
