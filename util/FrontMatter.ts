@@ -17,6 +17,9 @@ export default interface FrontMatter {
     /** Short description used for the post's card and social description meta tag..*/
     description?: string
 
-    /** Image URL used for the posts's card, header, and social image meta tag. */
+    /** Image URL used for the posts's card, header. */
     image?: string
+
+    /** Image URL used for social image tag (og:image). If not present, the social image defaults to the `image` field. */
+    socialImage?: string
 }

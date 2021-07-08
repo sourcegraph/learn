@@ -99,3 +99,22 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can also check out [the Next.js GitHub repository](https://github.com/vercel/next.js/).
+
+## Image conversion and optimization
+
+We prefer to use SVG images when possible. However, SVG images are not supported as a format for social previews (the `og:image` meta tag). To get around this, we convert the article images that are SVGs to PNG format and add the `socialImage` markdown front-matter field to point to the PNG url.
+
+Social preview PNG images should be 1200x627 in size. This is already the target aspect ratio of the SVG headers that we use.
+
+The tools to convert and optimize the images are included in the project dependencies so you can run the from the command line:
+
+```sh
+cd public/headers
+
+# Example: convert an SVG header to a PNG at 1200x627 size
+npx svgexport sourcegraph-learn-header.svg sourcegraph-learn-header.png 1200:627
+
+
+# Optimize all PNGs in the directory in one command:
+npx optipng-bin *.png -o7
+```

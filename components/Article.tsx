@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import rehypeReact from 'rehype-react'
 import unified from 'unified'
-import {Node} from 'unist'
+import { Node } from 'unist'
 
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
 import GifLikeVideo from './GifLikeVideo'
@@ -18,6 +18,7 @@ export interface Props {
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
     image?: string
+    socialImage?: string
     description?: string
     toc?: Node
 }
@@ -26,7 +27,7 @@ const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, Rege
 
 const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
-        image: props.image,
+        image: props.socialImage ?? props.image,
         description: props.description,
     }
 

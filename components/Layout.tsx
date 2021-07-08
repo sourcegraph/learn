@@ -10,7 +10,7 @@ import NavBar from './NavBar'
 
 const defaultMetaTags = {
     description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
-    image: 'https://about.sourcegraph.com/sourcegraph-mark.png',
+    image: '/headers/sourcegraph-learn-header.png',
 } as const
 
 export interface MetaTags {
