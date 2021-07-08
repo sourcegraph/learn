@@ -14,12 +14,15 @@ export default interface FrontMatter {
     unlisted: boolean
     author?: string
 
-    /** Short description used for the post's card and social description meta tag..*/
+    /** Short description used for the post's card and social description meta
+     * tag.*/
     description?: string
 
-    /** Image URL used for the posts's card, header. */
+    /** Image URL used for the post's card, header, and social image unless
+     * overridden by `socialImage` */
     image?: string
 
-    /** Image URL used for social image tag (og:image). If not present, the social image defaults to the `image` field. */
+    /** Image URL used for social image tag (og:image). If not present, the
+     * social image defaults to the `image` field. */
     socialImage?: string
 }

@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image,
-            socialImage: markdownFile.frontMatter.image,
+            socialImage: markdownFile.frontMatter.socialImage,
             description: markdownFile.frontMatter.description,
             toc,
             mdxSource: serializeResult,
