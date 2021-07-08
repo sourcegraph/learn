@@ -42,7 +42,7 @@ const Article: React.FunctionComponent<Props> = props => {
         tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
         tocFragment = (
             <>
-                <h5 className="mt-5">Table of Contents</h5>
+                <h5 className="mt-5">Contents</h5>
                 {tocFragment}
             </>
         )
