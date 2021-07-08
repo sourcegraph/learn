@@ -1,4 +1,3 @@
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import * as React from 'react'
 
@@ -33,8 +32,6 @@ interface LayoutProps {
     heroAndHeaderClassName?: string
 
     className?: string
-
-    publicUrl?: string
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = props => {
@@ -49,8 +46,8 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
     // If the image is relative, prefix it with the public URL, because meta image tags expect an absolute URL.
     const metaDescription = props.metaTags?.description ?? defaultMetaTags.description
     let metaImage = props.metaTags?.image ?? defaultMetaTags.image
-    if (metaImage && !metaImage.startsWith('http') && props.publicUrl) {
-        metaImage = props.publicUrl + metaImage
+    if (metaImage && !metaImage.startsWith('http') && process.env.NEXT_PUBLIC_URL) {
+        metaImage = process.env.NEXT_PUBLIC_URL + metaImage
     }
 
     return (
@@ -87,9 +84,3 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
 }
 
 export default Layout
-
-export const getStaticProps: GetStaticProps<Pick<LayoutProps, 'publicUrl'>> = async () => ({
-    props: {
-        publicUrl: process.env.DEPLOY_URL ?? '',
-    },
-})
