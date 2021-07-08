@@ -4,6 +4,7 @@ author: Marek Zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use literal search patterns to search code on Sourcegraph.
 image: /headers/sourcegraph-learn-header-3.svg
+socialImage: /headers/sourcegraph-learn-header-3.png
 ---
 
 Sourcegraph code search is a search engine that allows you to search code in your own repositories as well as across public open source code. It supports three kinds of search patterns: literal patterns, regular expression patterns, and structural patterns. In this article, we’ll explore literal search patterns and how to use them.

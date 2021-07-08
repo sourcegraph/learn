@@ -4,6 +4,7 @@ import Article, { Props as ArticleProps } from '../../components/Article'
 import getQueryParameter from '../../util/getQueryParameters'
 import loadAllPosts from '../../util/loadAllPosts'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
+import omitUndefinedFields from '../../util/omitUndefinedFields'
 import serializeMdxSource from '../../util/serializeMdxSource'
 
 export default Article
@@ -24,15 +25,16 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
 
     return {
-        props: {
+        props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
             alternateTitle: markdownFile.frontMatter.alternateTitle,
             author: markdownFile.frontMatter.author ?? '',
             tags: markdownFile.frontMatter.tags,
-            image: markdownFile.frontMatter.image ?? '',
-            description: markdownFile.frontMatter.description ?? '',
+            image: markdownFile.frontMatter.image,
+            socialImage: markdownFile.frontMatter.socialImage,
+            description: markdownFile.frontMatter.description,
             toc,
             mdxSource: serializeResult,
-        },
+        }),
     }
 }

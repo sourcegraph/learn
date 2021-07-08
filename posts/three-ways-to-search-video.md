@@ -2,7 +2,7 @@
 title: Three Ways to Search with Sourcegraph (Video)
 tags: [video, search, sourcegraph]
 author: Marek Zaluski
-image: http://i3.ytimg.com/vi/XLfE2YuRwvw/maxresdefault.jpg
+image: https://i3.ytimg.com/vi/XLfE2YuRwvw/maxresdefault.jpg
 ---
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />

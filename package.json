@@ -41,8 +41,10 @@
     "@types/react": "17.0.14",
     "eslint": "^7.30.0",
     "lodash": "^4.17.21",
+    "optipng-bin": "^7.0.0",
     "prettier": "^2.3.2",
     "sass": "^1.34.1",
+    "svgexport": "^0.4.2",
     "typescript": "^4.3.5"
   }
 }

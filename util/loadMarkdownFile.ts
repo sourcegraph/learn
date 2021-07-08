@@ -49,6 +49,7 @@ function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['dat
         unlisted: rawFrontMatter.unlisted ?? false,
         author: rawFrontMatter.author,
         image: rawFrontMatter.image,
+        socialImage: rawFrontMatter.socialImage,
         description: rawFrontMatter.description,
     }
 }
