@@ -104,11 +104,12 @@ You can also check out [the Next.js GitHub repository](https://github.com/vercel
 
 ## Image conversion and optimization
 
-We prefer to use SVG images when possible. However, SVG images are not supported as a format for social previews (the `og:image` meta tag). To get around this, we convert the article images that are SVGs to PNG format and add the `socialImage` markdown front-matter field to point to the PNG url.
+We prefer to use SVG images when possible in order to limit file size and ensure our pages load quickly.
+However, SVG images are not supported as a format for social previews (the `og:image` meta tag). To get around this, we convert the article images that are SVGs to PNG format and add the `socialImage` markdown front-matter field to point to the PNG url.
 
 Social preview PNG images should be 1200x627 in size. This is already the target aspect ratio of the SVG headers that we use.
 
-The tools to convert and optimize the images are included in the project dependencies so you can run the from the command line:
+The tools to convert and optimize the images are included in the project dependencies so you can run them from the command line:
 
 ```sh
 cd public/headers
