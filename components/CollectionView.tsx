@@ -21,16 +21,17 @@ const CollectionView: React.FunctionComponent<Props> = props => (
         <div className="list-group list-group-flush list-group-numbered">
             {props.members.map((post, index) => {
                 const isActive = props.activeSlug === post.slug
+                const titleText = `${index + 1}. ${post.frontMatter.title}`
                 if (isActive) {
                     return (
                         <div className="list-group-item list-group-item-primary" key={post.slug}>
-                            {post.frontMatter.title}
+                            {titleText}
                         </div>
                     )
                 }
                 return (
                     <Link href={`/posts/${post.slug}`} key={post.slug}>
-                        <a className="list-group-item list-group-item-action">{post.frontMatter.title}</a>
+                        <a className="list-group-item list-group-item-action">{titleText}</a>
                     </Link>
                 )
             })}
