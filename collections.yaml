@@ -1,0 +1,6 @@
+collections:
+    - title: Using Search Patterns on Sourcegraph
+      members:
+          - literal-search-patterns
+          - regular-expression-patterns
+          - three-ways-to-search-video
