@@ -8,7 +8,7 @@ import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './Goog
 import NavBar from './NavBar'
 
 const defaultMetaTags = {
-    description: 'Find and fix things across all of your code with Sourcegraph universal code search.',
+    description: 'Sourcegraph Learn is an educational hub to support all developers.',
     image: '/headers/sourcegraph-learn-header.png',
 } as const
 
