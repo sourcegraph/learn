@@ -4,7 +4,6 @@ import React from 'react'
 import AuthorAvatar from '/authors/unisex-avatar.svg'
 
 export interface Props {
-    tags?: string[]
     description?: string
     image?: string
     url: string

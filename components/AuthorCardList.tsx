@@ -13,7 +13,6 @@ const AuthorCardList: React.FunctionComponent<Props> = props => (
         {props.posts.map(post => (
             <div className="col" key={post.url}>
                 <AuthorCard
-                    tags={post.frontMatter.tags}
                     description={post.frontMatter.description}
                     image={post.frontMatter.image}
                     url={post.url}
