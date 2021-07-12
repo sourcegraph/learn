@@ -20,11 +20,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         props: {
             posts: posts.map(post => omitUndefinedFields({ ...post, url: `/posts/${post.slug}` })),
             authors: posts.map(post => post.frontMatter.author),
-            numberOfAuthorArticles: posts.reduce((post, author) => {
-                console.log(post, author)
-                // post[author] = ++post[author] || 1;
-                // return post;
-              }),
         },
     }
 }
