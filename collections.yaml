@@ -1,6 +1,7 @@
 collections:
-    - title: Using Search Patterns on Sourcegraph
+    - title: How To Use Search Patterns on Sourcegraph
       members:
-          - literal-search-patterns
-          - regular-expression-patterns
-          - three-ways-to-search-video
+        - three-ways-to-search-video
+        - literal-search-patterns
+        - regular-expression-patterns
+
