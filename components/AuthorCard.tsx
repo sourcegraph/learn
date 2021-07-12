@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
 
-import AuthorAvatar from '/authors/unisex-avatar.svg'
-
 export interface Props {
     description?: string
     image?: string
     url: string
     author?: string
     authorImage?: string
+    authorBio?: string
 }
 
 const ContentCard: React.FunctionComponent<Props> = props => (
@@ -18,7 +17,7 @@ const ContentCard: React.FunctionComponent<Props> = props => (
           <img src="/authors/unisex-avatar.svg" alt="Author Avatar" className="card-img-top rounded-circle p-4" />}
         <div className="card-body">
             <h5 className="card-title text-center">
-                <Link href={props.url}>
+                <Link href={props.authorBio? props.authorBio : '#'}>
                     <a className="stretched-link text-dark text-decoration-none">{props.author}</a>
                 </Link>
             </h5>
