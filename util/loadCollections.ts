@@ -22,7 +22,6 @@ export default async function loadCollections(): Promise<Collection[]> {
     const posts = await loadAllPosts()
     const body = await fs.readFile(collectionsFilePath, 'utf-8')
     const data = yaml.load(body) as { collections: CollectionDefinition[] }
-    console.log(JSON.stringify(data, null, 2))
     const collections = data.collections.map(collectionDefinition => {
         const memberPosts = collectionDefinition.members.map(memberSlug => {
             const memberPost = posts.find(post => post.slug === memberSlug)
