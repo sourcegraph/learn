@@ -27,7 +27,7 @@ export default async function loadCollections(): Promise<Collection[]> {
             const memberPost = posts.find(post => post.slug === memberSlug)
             if (!memberPost) {
                 throw new Error(
-                    `Post not found: "${post.slug}" from collection "${collectionDefinition.slug}" (${collectionDefinition.title})`
+                    `Post not found: "${memberSlug}" from collection "${collectionDefinition.slug}" (${collectionDefinition.title})`
                 )
             }
             return memberPost
