@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Article, { Props as ArticleProps } from '../../components/Article'
 import getQueryParameter from '../../util/getQueryParameters'
 import loadAllPosts from '../../util/loadAllPosts'
+import loadCollections from '../../util/loadCollections'
 import loadMarkdownFile from '../../util/loadMarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 import serializeMdxSource from '../../util/serializeMdxSource'
@@ -23,6 +24,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const baseDirectory = 'posts'
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
+    const collections = await loadCollections()
+    const parentCollection = collections.find(collection => !!collection.members.find(member => member.slug === slug))
 
     return {
         props: omitUndefinedFields({
@@ -35,6 +38,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             description: markdownFile.frontMatter.description,
             toc,
             mdxSource: serializeResult,
+            collection: parentCollection,
+            slug,
         }),
     }
 }
