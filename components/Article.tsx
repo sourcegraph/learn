@@ -6,6 +6,9 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
+import { Collection } from '../util/loadCollections'
+
+import CollectionView from './CollectionView'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
 import GifLikeVideo from './GifLikeVideo'
 import { MetaTags } from './Layout'
@@ -21,9 +24,11 @@ export interface Props {
     socialImage?: string
     description?: string
     toc?: Node
+    collection?: Collection
+    slug: string
 }
 
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon }
+const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
 
 const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
@@ -68,6 +73,14 @@ const Article: React.FunctionComponent<Props> = props => {
                         </Link>
                     ))}
                 </div>
+            )}
+
+            {props.collection && (
+                <CollectionView
+                    title={props.collection.title}
+                    members={props.collection.members}
+                    activeSlug={props.slug}
+                />
             )}
 
             <div className="markdown-content">
