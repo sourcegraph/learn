@@ -68,7 +68,7 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
 
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content={metaImage} />
-                <meta property="description" content={metaDescription} />
+                <meta name="description" content={metaDescription} />
                 <meta property="og:description" content={metaDescription} />
             </Head>
 
