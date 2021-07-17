@@ -13,8 +13,8 @@ class NotFoundPage extends React.Component<any, {}> {
                         </div>
                     </div>
                     <h1>404: Not Found</h1>
-                    <p className="text-center">The requested URL was not found. <br/> Return to
-                      <a href="https://learn.sourcegraph.com"> Sourcegraph Learn</a>
+                    <p className="text-center">The requested URL was not found. <br/> Return to{' '}
+                      <a href="https://learn.sourcegraph.com">Sourcegraph Learn</a>
                     </p>
                 </div>
             </Layout>
