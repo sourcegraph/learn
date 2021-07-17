@@ -10,4 +10,5 @@ module.exports = {
   env: {
     NEXT_PUBLIC_URL: process.env.DEPLOY_URL,
   },
+  redirects: async () => [{ source: '/posts/:slug', destination: '/:slug', permanent: true }]
 }

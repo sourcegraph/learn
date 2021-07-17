@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllPosts()
     const postLinks = posts.map(post => ({
         title: post.frontMatter.title,
-        url: `/posts/${post.slug}`,
+        url: `/${post.slug}`,
     }))
     const tags = collectTags(posts)
     const tagLinks = tags.map(tag => ({
