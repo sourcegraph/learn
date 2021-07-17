@@ -30,7 +30,7 @@ const CollectionView: React.FunctionComponent<Props> = props => (
                     )
                 }
                 return (
-                    <Link href={`/posts/${post.slug}`} key={post.slug}>
+                    <Link href={`/${post.slug}`} key={post.slug}>
                         <a className="list-group-item list-group-item-action">{titleText}</a>
                     </Link>
                 )

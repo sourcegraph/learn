@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Article, { Props as ArticleProps } from '../../components/Article'
-import getQueryParameter from '../../util/getQueryParameters'
-import loadAllPosts from '../../util/loadAllPosts'
-import loadCollections from '../../util/loadCollections'
-import loadMarkdownFile from '../../util/loadMarkdownFile'
-import omitUndefinedFields from '../../util/omitUndefinedFields'
-import serializeMdxSource from '../../util/serializeMdxSource'
+import Article, { Props as ArticleProps } from '../components/Article'
+import getQueryParameter from '../util/getQueryParameters'
+import loadAllPosts from '../util/loadAllPosts'
+import loadCollections from '../util/loadCollections'
+import loadMarkdownFile from '../util/loadMarkdownFile'
+import omitUndefinedFields from '../util/omitUndefinedFields'
+import serializeMdxSource from '../util/serializeMdxSource'
 
 export default Article
 
