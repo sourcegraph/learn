@@ -1,3 +1,6 @@
+// @ts-check
+
+/** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
 module.exports = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   future: {
