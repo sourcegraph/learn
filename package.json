@@ -21,7 +21,7 @@
     "mdast-util-to-hast": "^10.2.0",
     "mdast-util-toc": "^5.1.0",
     "mdi-react": "^7.5.0",
-    "next": "^10.2.3",
+    "next": "^11.0.1",
     "next-mdx-remote": "^3.0.2",
     "react": "17.0.2",
     "react-bootstrap": "^2.0.0-beta.3",
