@@ -3,10 +3,7 @@
 /** @type {import("next/dist/next-server/server/config-shared").NextConfig} */
 module.exports = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  future: {
-    // Enable webpack5
-    webpack5: true,
-  },
+  webpack5: true,
   env: {
     NEXT_PUBLIC_URL: process.env.DEPLOY_URL,
   },
