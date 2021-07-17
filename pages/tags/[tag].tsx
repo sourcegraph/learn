@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     return {
         props: {
             tag,
-            posts: filteredPosts.map(post => omitUndefinedFields({ ...post, url: `/posts/${post.slug}` })),
+            posts: filteredPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
         },
     }
 }
