@@ -15,9 +15,9 @@ We’ll go through how to install Sourcegraph on your local machine with Docker 
 
 ## Step 1 — Install Docker
 
-_If you already have Docker installed, you can [skip to the next step](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph)._
+_If you already have Docker installed, you can [skip to the next step](#step-2--install-sourcegraph)._
 
-We’ll go over how to install Docker across [Linux](/posts/how-to-install-sourcegraph-with-docker#on-linux), [macOS](/posts/how-to-install-sourcegraph-with-docker#on-macos), and [Windows](/posts/how-to-install-sourcegraph-with-docker#on-windows) operating systems in this section. Skip down to the section that is relevant for the machine you’re using to install Sourcegraph.
+We’ll go over how to install Docker across [Linux](#on-linux), [macOS](#on-macos), and [Windows](#on-windows) operating systems in this section. Skip down to the section that is relevant for the machine you’re using to install Sourcegraph.
 
 ### On Linux
 
@@ -53,7 +53,7 @@ sudo snap install docker
 
 Alternatively, you can install Docker through its `.deb` or `.rpm` packages through the [Docker installation page](https://docs.docker.com/engine/install/).
 
-With Docker installed, you can continue to [Step 2](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph).
+With Docker installed, you can continue to [Step 2](#step-2--install-sourcegraph).
 
 ### On macOS
 
@@ -63,7 +63,7 @@ You can determine what chip you have by navigating to the Apple menu in the top 
 
 Once you know which is the appropriate version to install, select either `Mac with Intel chip` for any macOS machine that is on an Intel chip, or `Mac with Apple chip` for any macOS machine that has an Apple M1 chip. Then follow the guidance from the Docker installation to complete the process.
 
-With Docker fully installed, you’ll be ready to move onto the next section of [installing Sourcegraph](/posts/how-to-install-sourcegraph-with-docker#step-2--install-sourcegraph).
+With Docker fully installed, you’ll be ready to move onto the next section of [installing Sourcegraph](#step-2--install-sourcegraph).
 
 ### On Windows
 
@@ -75,7 +75,7 @@ With Docker fully installed, you’ll be ready to move onto the section below to
 
 Depending on the machine that you have, you’ll be able to run a Docker command to install Sourcegraph and get up and running with code search on your local repositories and beyond.
 
-We’ll go over four approaches below, the first which is recommended for many local machine use cases, inclusive of [Linux machines and macOS machines with Intel chips](/posts/how-to-install-sourcegraph-with-docker#locally-on-linux-or-on-macos-with-intel-chip). The second option is recommended for [Linux cloud servers](/posts/how-to-install-sourcegraph-with-docker#on-a-linux-server). The third option is for [macOS machines with Apple M1 chips](/posts/how-to-install-sourcegraph-with-docker#on-an-apple-m1-chip-on-macos). Finally, the fourth option is to be able to test Sourcegraph on [Windows machines](/posts/how-to-install-sourcegraph-with-docker#on-windows-1).
+We’ll go over four approaches below, the first which is recommended for many local machine use cases, inclusive of [Linux machines and macOS machines with Intel chips](#locally-on-linux-or-on-macos-with-intel-chip). The second option is recommended for [Linux cloud servers](#on-a-linux-server). The third option is for [macOS machines with Apple M1 chips](#on-an-apple-m1-chip-on-macos). Finally, the fourth option is to be able to test Sourcegraph on [Windows machines](#on-windows-1).
 
 ### Locally on Linux or on macOs with Intel Chip
 
