@@ -8,7 +8,7 @@
  */
 export default interface FrontMatter {
     title: string
-    alternateTitle: string
+    alternateTitle?: string
     tags: string[]
     published: boolean
     unlisted: boolean

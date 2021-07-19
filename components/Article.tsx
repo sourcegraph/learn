@@ -26,6 +26,7 @@ export interface Props {
     toc?: Node
     collection?: PostCollection
     slug: string
+    alternateTitle?: string
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -54,7 +55,7 @@ const Article: React.FunctionComponent<Props> = props => {
         )
     }
     return (
-        <PageLayout contentTitle={props.title} metaTags={metaTags} leftColumn={tocFragment}>
+        <PageLayout contentTitle={props.alternateTitle ? props.alternateTitle : props.title} metaTags={metaTags} leftColumn={tocFragment}>
             {/* Header image */}
             {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" />}
 

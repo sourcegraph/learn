@@ -43,7 +43,7 @@ function isStringArray(value: unknown): value is string[] {
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
         title: rawFrontMatter.title ?? rawFrontMatter.alternateTitle ?? 'Untitled Document',
-        alternateTitle: rawFrontMatter.alternateTitle ?? 'No alternate title',
+        alternateTitle: rawFrontMatter.alternateTitle,
         tags: normalizeTags(rawFrontMatter.tags),
         published: rawFrontMatter.published ?? true,
         unlisted: rawFrontMatter.unlisted ?? false,

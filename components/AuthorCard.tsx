@@ -8,6 +8,7 @@ interface Props {
     bio: string
     image?: string
     socialLinks?: string[]
+    id: string
 }
 
 const ContentCard: React.FunctionComponent<Props> = props => (
