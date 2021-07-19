@@ -25,13 +25,14 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
     const collections = await loadCollections()
-    const parentCollection = collections.find(collection => !!collection.members.find(member => member.slug === slug))
-
+    const {postCollections, authors} = collections
+    const parentCollection = postCollections.find(collection => !!collection.members.find(member => member.slug === slug))
+    const uniqueAuthor = authors.find(author => author.id === markdownFile.frontMatter.author)
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
             alternateTitle: markdownFile.frontMatter.alternateTitle,
-            author: markdownFile.frontMatter.author ?? '',
+            author: uniqueAuthor?.name ?? '',
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image,
             socialImage: markdownFile.frontMatter.socialImage,

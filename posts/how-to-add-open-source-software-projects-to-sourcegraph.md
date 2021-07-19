@@ -1,7 +1,7 @@
 ---
 title: How To Add Open Source Software Projects to Sourcegraph
 tags: [tutorial, open source, Sourcegraph]
-author: Lisa Tagliaferri
+author: lisa-tagliaferri
 description: Learn how to add public, open source repositories to Sourcegraph.
 image: /headers/sourcegraph-learn-header-2.svg
 socialImage: /headers/sourcegraph-learn-header-2.png
