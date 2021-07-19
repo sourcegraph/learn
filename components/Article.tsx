@@ -55,7 +55,7 @@ const Article: React.FunctionComponent<Props> = props => {
         )
     }
     return (
-        <PageLayout contentTitle={props.alternateTitle ? props.alternateTitle : props.title} metaTags={metaTags} leftColumn={tocFragment}>
+        <PageLayout contentTitle={props.alternateTitle ?? props.title} metaTags={metaTags} leftColumn={tocFragment}>
             {/* Header image */}
             {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" />}
 
