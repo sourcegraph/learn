@@ -63,7 +63,7 @@ const Article: React.FunctionComponent<Props> = props => {
             {props.author && <p className="text-muted">By {props.author}</p>}
 
             {/* Tags list */}
-            {props.tags.length && (
+            {props.tags.length > 0 ? (
                 <div className="mb-5">
                     {props.tags.map(tag => (
                         <Link key={tag} href={`/tags/${tag}`}>
@@ -73,7 +73,7 @@ const Article: React.FunctionComponent<Props> = props => {
                         </Link>
                     ))}
                 </div>
-            )}
+            ) : null}
 
             {props.collection && (
                 <CollectionView
