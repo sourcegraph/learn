@@ -1,22 +1,22 @@
 import React from 'react'
 
 import { MarkdownFileWithUrl } from '../pages'
+import { AuthorDefinition } from '../util/loadCollections'
 
 import AuthorCard from './AuthorCard'
 
 interface Props {
-    posts: MarkdownFileWithUrl[]
+    authors: AuthorDefinition[]
 }
 
 const AuthorCardList: React.FunctionComponent<Props> = props => (
     <div className="row row-cols-1 row-cols-lg-2">
-        {props.posts.map(post => (
-            <div className="col" key={post.url}>
+        {props.authors.map(author => (
+            <div className="col" key={author.id}>
                 <AuthorCard
-                    description={post.frontMatter.description}
-                    image={post.frontMatter.image}
-                    url={post.url}
-                    author={post.frontMatter.author}
+                    name={author.name}
+                    bio={author.bio}
+                    socialLinks={author.socialLinks}
                 />
             </div>
         ))}

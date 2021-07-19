@@ -6,7 +6,7 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import { Collection } from '../util/loadCollections'
+import { PostCollection } from '../util/loadCollections'
 
 import CollectionView from './CollectionView'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
@@ -24,7 +24,7 @@ export interface Props {
     socialImage?: string
     description?: string
     toc?: Node
-    collection?: Collection
+    collection?: PostCollection
     slug: string
 }
 

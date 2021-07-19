@@ -5,3 +5,15 @@ collections:
         - literal-search-patterns
         - regular-expression-patterns
 
+authors:
+    - id: marek-zaluski
+      name: Marek Zaluski
+      bio: Marek is a developer education engineer at Sourcegraph.
+      socialLinks:
+        - https://twitter.com/marekweb
+        - https://www.linkedin.com/in/marekzaluski
+    - id: lisa-tagliaferri
+      name: Lisa Tagliaferri
+      bio: TODO
+      socialLinks:
+        - todo

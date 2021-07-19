@@ -1,32 +1,37 @@
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import React from 'react'
 
 import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
 import loadAllPosts from '../../util/loadAllPosts'
+import loadCollections, {AuthorDefinition} from '../../util/loadCollections'
 import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    posts: MarkdownFileWithUrl[],
+    uniqueAuthors: AuthorDefinition[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllPosts()
-
+    const { authors } = await loadCollections()
     return {
-        props: {
-            posts: posts.map(post => omitUndefinedFields({ ...post, url: `/posts/${post.slug}` })),
-            authors: posts.map(post => post.frontMatter.author),
-        },
-    }
+            props: omitUndefinedFields({
+                authorCollection: authors,
+                authors: posts.map(post => omitUndefinedFields(post.frontMatter.author)),
+                uniqueAuthors: authors.filter(element => {
+                    const articleAuthors = posts.map(post => omitUndefinedFields(post.frontMatter.author))
+                    return articleAuthors.includes(element.id)
+                })
+    })
+}
 }
 
 const AuthorHome: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <AuthorCardList posts={props.posts} />
+        <AuthorCardList authors={props.uniqueAuthors} />
     </PageLayout>
 )
 
