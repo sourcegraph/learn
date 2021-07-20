@@ -23,3 +23,23 @@ code {
 .reveal-on-hover-parent:hover .reveal-on-hover-child {
   visibility: visible;
 }
+
+// Table of contents styles
+.toc-wrapper {
+  .header {
+    margin-top: 30px;
+  }
+  
+  ul {
+    display: inline;
+    list-style-type: none;
+    
+    li {
+      padding-bottom: 10px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
