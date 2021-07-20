@@ -4,6 +4,7 @@ author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
 image: /headers/sourcegraph-learn-header-5.svg
+imageAlt: Learn how to use regular expression search patterns to search code on Sourcegraph.
 socialImage: /headers/sourcegraph-learn-header-5.png
 alternateTitle: Regular Expressions, How To Search with Sourcegraph using Regular Expression Patterns, Sourcegraph
 ---
