@@ -26,10 +26,14 @@ code {
 
 // Table of contents styles
 .toc-wrapper {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
   .header {
     margin-top: 30px;
   }
-  
+
   ul {
     display: inline;
     list-style-type: none;
