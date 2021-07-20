@@ -155,10 +155,8 @@ const Footer: React.FunctionComponent<Props> = ({ minimal }) => (
                             </ul>
                         </div>
                         <div className="col-12 col-lg-3 mb-5 order-md-1">
-                            <a className="row footer__logo ml-1" href="https://about.sourcegraph.com">
-                                <span role="img" aria-label="Sourcegraph - Universal code search">
-                                    {' '}
-                                </span>
+                            <a href="https://about.sourcegraph.com">
+                                <img className="row footer__logo ml-1" src="/sourcegraph-logo.svg" alt="Sourcegraph - Universal code search" />
                             </a>
                             <ul className="nav footer__social mt-1">
                                 <li className="nav-item">
