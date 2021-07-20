@@ -21,7 +21,7 @@ interface LayoutProps {
      * The page title (for <title> and meta tags). Overrides the value of
      * `contentTitle`.
      */
-     title?: string
+    title?: string
 
     /**
      * The title of the content which will be combined with the site title (for
@@ -29,7 +29,7 @@ interface LayoutProps {
      * `contentTitle`.
      */
     contentTitle?: string
-    
+
     metaTags?: MetaTags
 
     location?: {
