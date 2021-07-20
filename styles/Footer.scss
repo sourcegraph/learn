@@ -16,9 +16,9 @@
         font-weight: bolder;
     }
     &__logo {
-        background: url(/sourcegraph-logo.svg) no-repeat;
-        background-size: 200px;
         height: 40px;
+        margin-left: 0.1rem;
+        width: 200px;
     }
     &__social,
     &__postscript {
