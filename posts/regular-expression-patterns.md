@@ -5,7 +5,7 @@ tags: [tutorial, search, Sourcegraph]
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
 image: /headers/sourcegraph-learn-header-5.svg
 socialImage: /headers/sourcegraph-learn-header-5.png
-alternateTitle: Regular Expressions, How To Search with Sourcegraph using Regular Expression Patterns, Sourcegraph
+alternateTitle: Using RegEx with Sourcegraph
 ---
 
 Sourcegraph lets you search code across repositories, supporting three kinds of search patterns: literal patterns, regular expression patterns, and structural patterns. In this article, we’ll take a look at regular expressions patterns and how to use them in Sourcegraph.

@@ -17,9 +17,19 @@ export interface MetaTags {
     description?: string
 }
 interface LayoutProps {
-    contentTitle?: string
-    title?: string
+    /**
+     * The page title (for <title> and meta tags). Overrides the value of
+     * `contentTitle`.
+     */
+     title?: string
 
+    /**
+     * The title of the content which will be combined with the site title (for
+     * <title> and meta tags). If `title` is provided then it will override
+     * `contentTitle`.
+     */
+    contentTitle?: string
+    
     metaTags?: MetaTags
 
     location?: {

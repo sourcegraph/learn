@@ -3,9 +3,7 @@ import React from 'react'
 import Layout, { MetaTags } from './Layout'
 
 interface Props {
-    /**
-     * The title of the content which will be combined with the site title.
-     */
+    title?: string
     contentTitle?: string
     children: React.ReactNode
     leftColumn?: React.ReactNode
@@ -14,7 +12,7 @@ interface Props {
 }
 
 const PageLayout: React.FunctionComponent<Props> = props => (
-    <Layout contentTitle={props.contentTitle} metaTags={props.metaTags}>
+    <Layout title={props.title} contentTitle={props.contentTitle} metaTags={props.metaTags}>
         <div className="row">
             <div className="col-12 col-xl-3">{props.leftColumn}</div>
             <div className="col-12 col-xl-6 py-5">{props.children}</div>
