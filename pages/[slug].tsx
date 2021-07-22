@@ -8,8 +8,6 @@ import loadMarkdownFile from '../util/loadMarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
 import serializeMdxSource from '../util/serializeMdxSource'
 
-export default Article
-
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllPosts(true)
     const paths = posts.map(post => ({ params: { slug: post.slug } }))
@@ -35,6 +33,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             author: uniqueAuthor?.name ?? '',
             tags: markdownFile.frontMatter.tags,
             image: markdownFile.frontMatter.image,
+            imageAlt: markdownFile.frontMatter.imageAlt,
             socialImage: markdownFile.frontMatter.socialImage,
             description: markdownFile.frontMatter.description,
             toc,
@@ -44,3 +43,5 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
         }),
     }
 }
+
+export default Article

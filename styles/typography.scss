@@ -23,3 +23,26 @@ code {
 .reveal-on-hover-parent:hover .reveal-on-hover-child {
   visibility: visible;
 }
+
+// Table of contents styles
+.toc-wrapper {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  .header {
+    padding: 48px 0 10px 32px;
+  }
+
+  ul {
+    list-style-type: none;
+    
+    li {
+      padding-bottom: 10px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

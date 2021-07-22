@@ -6,12 +6,13 @@ export interface Props {
     tags?: string[]
     description?: string
     image?: string
+    imageAlt?: string
     url: string
 }
 
 const ContentCard: React.FunctionComponent<Props> = props => (
     <div className="card mb-4">
-        {props.image && <img src={props.image} className="card-img-top" />}
+        {props.image && <img src={props.image} className="card-img-top" alt={props.imageAlt ? props.imageAlt : ''} />}
         <div className="card-body">
             <h5 className="card-title">
                 <Link href={props.url}>

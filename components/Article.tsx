@@ -14,6 +14,7 @@ import GifLikeVideo from './GifLikeVideo'
 import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
+import TocWrapper from './TocWrapper'
 
 export interface Props {
     title: string
@@ -21,6 +22,7 @@ export interface Props {
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
     image?: string
+    imageAlt?: string
     socialImage?: string
     description?: string
     toc?: Node
@@ -49,15 +51,14 @@ const Article: React.FunctionComponent<Props> = props => {
         tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
         tocFragment = (
             <>
-                <h5 className="mt-5">Contents</h5>
-                {tocFragment}
+                <TocWrapper tocContents={tocFragment} />
             </>
         )
     }
     return (
         <PageLayout contentTitle={props.alternateTitle ?? props.title} metaTags={metaTags} leftColumn={tocFragment}>
             {/* Header image */}
-            {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" />}
+            {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />}
 
             {/* Title and author */}
             <h1>{props.title}</h1>

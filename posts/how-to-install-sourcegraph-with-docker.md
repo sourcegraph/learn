@@ -4,6 +4,7 @@ author: lisa-tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your own machine with Docker
 image: /headers/sourcegraph-learn-header-7.svg
+imageAlt: Sourcegraph Learn
 socialImage: /headers/sourcegraph-learn-header-7.png
 ---
 
@@ -191,4 +192,4 @@ Congratulations! You have installed Sourcegraph with Docker and have created an 
 
 If you have installed Sourcegraph on a Linux server rather than a local machine, you may want to secure your installation as a next step (to access Sourcegraph via `https` rather than `http`), which you can read more about through our official [Sourcegraph docs](https://docs.sourcegraph.com/admin/http_https_configuration#sourcegraph-single-instance-docker).
 
-Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](https://learn.sourcegraph.com/posts/three-ways-to-search-video) so that you can more effectively search your code.
+Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-video) so that you can more effectively search your code.
