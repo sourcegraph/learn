@@ -26,7 +26,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <Header />
+        <Header 
+            showCta={true} 
+            link='/how-to-install-sourcegraph-with-docker'
+            text='Full guide to code search' />
         <ContentCardList posts={props.posts} />
     </PageLayout>
 )
