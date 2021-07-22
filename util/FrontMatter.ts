@@ -21,6 +21,7 @@ export default interface FrontMatter {
     /** Image URL used for the post's card, header, and social image unless
      * overridden by `socialImage` */
     image?: string
+    imageAlt?: string
 
     /** Image URL used for social image tag (og:image). If not present, the
      * social image defaults to the `image` field. */
