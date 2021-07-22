@@ -1,2 +1,0 @@
-# For more information on this config, please see https://docs.netlify.com/routing/redirects
-/posts/*  /:splat
