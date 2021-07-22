@@ -1,12 +1,11 @@
 ## Type of change
-<!-- Delete any that don't apply -->
-
-- **Frontend:** Changes to the front-end components and other visual updates.
-- **Infrastructure:** Changes to infrastructure.
-- **Something else:** <!-- Replace this with a one-liner summary of the scope of changes -->
+<!-- Please be sure to add the appropriate label to your PR. -->
 
 ### What should this PR do?
-<!-- What problem does this PR address? Does it resolve an Asana or Jira issue? Please include a link to the ticket. -->
+<!-- Does this PR resolve an Asana or Jira issue? Please include a link to the ticket. -->
+
+### Why are we making this change?
+<!-- What larger problem does this PR address? -->
 
 ### What are the acceptance criteria? 
 <!-- What should be happening for this PR to be accepted? Please list criteria. -->
