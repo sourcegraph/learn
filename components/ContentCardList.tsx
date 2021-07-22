@@ -17,6 +17,7 @@ const ContentCardList: React.FunctionComponent<Props> = props => (
                     tags={post.frontMatter.tags}
                     description={post.frontMatter.description}
                     image={post.frontMatter.image}
+                    imageAlt={post.frontMatter.imageAlt}
                     url={post.url}
                 />
             </div>
