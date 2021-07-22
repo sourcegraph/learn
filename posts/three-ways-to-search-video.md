@@ -10,8 +10,8 @@ imageAlt: Marek Zaluski demos searching with Sourcegraph.
 
 In this video:
 
-- Literal search ([tutorial](/posts/literal-search-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
-- Regular expression search ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))
+- Literal search ([tutorial](/literal-search-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
+- Regular expression search ([tutorial](/regular-expression-patterns), ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))
 - Structural search ([docs](https://docs.sourcegraph.com/code_search/reference/structural))
 
 ## Transcript
