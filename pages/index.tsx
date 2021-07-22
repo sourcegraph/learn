@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 
 import ContentCardList from '../components/ContentCardList'
+import Header from '../components/Header'
 import PageLayout from '../components/PageLayout'
 import loadAllPosts from '../util/loadAllPosts'
 import MarkdownFile from '../util/MarkdownFile'
@@ -25,9 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <div className="row">
-            <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
-        </div>
+        <Header />
         <ContentCardList posts={props.posts} />
     </PageLayout>
 )
