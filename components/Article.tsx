@@ -14,6 +14,7 @@ import GifLikeVideo from './GifLikeVideo'
 import { MetaTags } from './Layout'
 import PageLayout from './PageLayout'
 import SourcegraphSearch from './SourcegraphSearch'
+import TocWrapper from './TocWrapper'
 
 export interface Props {
     title: string
@@ -50,8 +51,7 @@ const Article: React.FunctionComponent<Props> = props => {
         tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
         tocFragment = (
             <>
-                <h5 className="mt-5">Contents</h5>
-                {tocFragment}
+                <TocWrapper tocContents={tocFragment} />
             </>
         )
     }
