@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 export const NotFoundPage: React.FunctionComponent<{
     location: { pathname: string }
 }> = props => (
-    <Layout location={props.location} className="bg-white">
+    <Layout>
         <div className="container center error-page text-dark">
             <div>
                 <div>
