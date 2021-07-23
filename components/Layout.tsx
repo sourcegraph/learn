@@ -7,6 +7,8 @@ import Footer from './Footer'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
 import NavBar from './NavBar'
 
+const SITE_TITLE = 'Sourcegraph Learn'
+
 const defaultMetaTags = {
     description: 'Sourcegraph Learn is an educational hub to support all developers.',
     image: '/headers/sourcegraph-learn-header.png',
@@ -16,31 +18,27 @@ export interface MetaTags {
     image?: string
     description?: string
 }
-interface LayoutProps {
-    contentTitle?: string
-    title?: string
+
+export interface Props {
+    /**
+     * The document title (for <title> and meta tags). If absent, the site title will be used.
+     */
+    documentTitle?: string
+
+    /**
+     * Append the site title to the document title.
+     */
+    appendSiteTitle?: boolean
 
     metaTags?: MetaTags
-
-    location?: {
-        pathname?: string
-    }
-    children: React.ReactNode
-    minimal?: boolean
-
-    hero?: React.ReactFragment
-    heroAndHeaderClassName?: string
-
-    className?: string
 }
 
-const Layout: React.FunctionComponent<LayoutProps> = props => {
-    const siteTitle = 'Sourcegraph Learn'
-    let title = siteTitle
-    if (props.title) {
-        title = props.title
-    } else if (props.contentTitle) {
-        title = `${props.contentTitle} - ${siteTitle}`
+const Layout: React.FunctionComponent<Props> = props => {
+    let documentTitle = props.documentTitle
+    if (!documentTitle) {
+        documentTitle = SITE_TITLE
+    } else if (props.appendSiteTitle) {
+        documentTitle = `${documentTitle} - ${SITE_TITLE}`
     }
 
     // If the image is relative, prefix it with the public URL, because meta image tags expect an absolute URL.
@@ -55,7 +53,7 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
             <GoogleTagManagerNoscriptFrame id={googleTagManagerId} />
             <Head>
                 <GoogleTagManagerScriptTag id={googleTagManagerId} />
-                <title>{title}</title>
+                <title>{documentTitle}</title>
                 <link href="/favicon.png" rel="icon" type="image/png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -66,7 +64,7 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
                 {/* Prism theme for syntax highlighting */}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
 
-                <meta property="og:title" content={title} />
+                <meta property="og:title" content={documentTitle} />
                 <meta property="og:image" content={metaImage} />
                 <meta name="description" content={metaDescription} />
                 <meta property="og:description" content={metaDescription} />
@@ -78,7 +76,7 @@ const Layout: React.FunctionComponent<LayoutProps> = props => {
                 <section>{props.children}</section>
             </div>
 
-            <Footer minimal={props.minimal} />
+            <Footer />
         </>
     )
 }

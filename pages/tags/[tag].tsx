@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
 const TagPage: React.FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
     return (
-        <PageLayout contentTitle={`Posts tagged ${tagName}`}>
+        <PageLayout documentTitle={`Posts tagged ${tagName}`} appendSiteTitle={true}>
             <h1 className="mb-5">Posts tagged {tagName}</h1>
 
             <ContentCardList posts={props.posts} />
