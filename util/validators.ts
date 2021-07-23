@@ -26,6 +26,6 @@ export function normalizeTags(rawTags: unknown): string[] {
 export function normalizeString(rawString: unknown): string {
     if (isString(rawString)) {
         return rawString.trim()
-    }
+    } 
     throw new Error('Front-matter: Value must be a string.')
 }

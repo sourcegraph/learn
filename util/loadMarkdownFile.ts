@@ -23,15 +23,15 @@ function filenameToSlug(filepath: string): string {
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
         title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.alternateTitle) ?? 'Untitled Document',
-        alternateTitle: normalizeString(rawFrontMatter.alternateTitle),
+        alternateTitle: rawFrontMatter.alternateTitle ? normalizeString(rawFrontMatter.alternateTitle) : '',
         tags: normalizeTags(rawFrontMatter.tags),
-        published: isBoolean(rawFrontMatter.published) ? rawFrontMatter.published : false,
+        published: isBoolean(rawFrontMatter.published) ? rawFrontMatter.published : true,
         unlisted: isBoolean(rawFrontMatter.unlisted) ? rawFrontMatter.unlisted : false,
-        author: normalizeString(rawFrontMatter.author),
-        image: normalizeString(rawFrontMatter.image),
-        imageAlt: normalizeString(rawFrontMatter.imageAlt),
-        socialImage: normalizeString(rawFrontMatter.socialImage),
-        description: normalizeString(rawFrontMatter.description),
+        author: rawFrontMatter.author ? normalizeString(rawFrontMatter.author) : '',
+        image: rawFrontMatter.image ? normalizeString(rawFrontMatter.image) : '',
+        imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : '',
+        socialImage: rawFrontMatter.socialImage ? normalizeString(rawFrontMatter.socialImage) : '',
+        description: rawFrontMatter.description ? normalizeString(rawFrontMatter.description) : '',
     }
 }
 
