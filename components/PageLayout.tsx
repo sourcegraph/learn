@@ -1,20 +1,14 @@
 import React from 'react'
 
-import Layout, { MetaTags } from './Layout'
+import Layout, { Props as LayoutProps, MetaTags } from './Layout'
 
-interface Props {
-    /**
-     * The title of the content which will be combined with the site title.
-     */
-    contentTitle?: string
-    children: React.ReactNode
+interface Props extends LayoutProps {
     leftColumn?: React.ReactNode
     rightColumn?: React.ReactNode
-    metaTags?: MetaTags
 }
 
 const PageLayout: React.FunctionComponent<Props> = props => (
-    <Layout contentTitle={props.contentTitle} metaTags={props.metaTags}>
+    <Layout documentTitle={props.documentTitle} appendSiteTitle={props.appendSiteTitle} metaTags={props.metaTags}>
         <div className="row">
             <div className="col-12 col-xl-3">{props.leftColumn}</div>
             <div className="col-12 col-xl-6 py-5">{props.children}</div>

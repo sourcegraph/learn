@@ -55,8 +55,18 @@ const Article: React.FunctionComponent<Props> = props => {
             </>
         )
     }
+
+    // The alternate title, if present, is used for the document title and it omits the site title suffix.
+    const documentTitle = props.alternateTitle || props.title
+    const appendSiteTitle = !props.alternateTitle
+
     return (
-        <PageLayout contentTitle={props.alternateTitle ?? props.title} metaTags={metaTags} leftColumn={tocFragment}>
+        <PageLayout
+            documentTitle={documentTitle}
+            appendSiteTitle={appendSiteTitle}
+            metaTags={metaTags}
+            leftColumn={tocFragment}
+        >
             {/* Header image */}
             {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />}
 
