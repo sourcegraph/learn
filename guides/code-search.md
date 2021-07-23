@@ -1,26 +1,3 @@
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 1.247 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β30
-* Thu Jul 22 2021 11:54:24 GMT-0700 (PDT)
-* Source doc: Code search guide - NEW July 2021
-
-WARNING:
-You have 7 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
-
------>
 ---
 title: Code Search Guide
 tags: [guide, open source, Sourcegraph]
@@ -303,10 +280,3 @@ Authors The project has been originally conceived in Sun Microsystems by Chandan
 _For each code search tool, summarize the product roadmap (Sourcegraph's will be by far the best :)_
 
 _For any devs and companies, summarize what unmet needs they have from code search, their wishlist_
-
-## Publishing notes
-
-
-
-* URL?
-    * [https://learn.sourcegraph.com/guide/code-search](https://learn.sourcegraph.com/code-search)

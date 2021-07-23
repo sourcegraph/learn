@@ -3,7 +3,7 @@ import React from 'react'
 
 import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
-import loadAllPosts from '../../util/loadAllPosts'
+import loadAllRecords from '../../util/loadAllRecords'
 import loadCollections, {AuthorDefinition} from '../../util/loadCollections'
 import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
@@ -15,15 +15,15 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const posts = await loadAllPosts()
-    const { authors } = await loadCollections()
+    const posts = await loadAllRecords('posts')
+    const guides = await loadAllRecords('guides')
+    const combinedRecords = posts.concat(guides)
+    const { authors } = await loadCollections('posts')
     return {
             props: omitUndefinedFields({
-                authorCollection: authors,
-                authors: posts.map(post => omitUndefinedFields(post.frontMatter.author)),
                 uniqueAuthors: authors.filter(element => {
-                    const articleAuthors = posts.map(post => omitUndefinedFields(post.frontMatter.author))
-                    return articleAuthors.includes(element.id)
+                    const recordAuthors = combinedRecords.map(record => omitUndefinedFields(record.frontMatter.author))
+                    return recordAuthors.includes(element.id)
                 })
     })
 }
