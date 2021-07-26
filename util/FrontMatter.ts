@@ -26,4 +26,7 @@ export default interface FrontMatter {
     /** Image URL used for social image tag (og:image). If not present, the
      * social image defaults to the `image` field. */
     socialImage?: string
+
+    /** Content type */
+    type: string
 }

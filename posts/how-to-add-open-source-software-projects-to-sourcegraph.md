@@ -6,6 +6,7 @@ description: Learn how to add public, open source repositories to Sourcegraph.
 image: /headers/sourcegraph-learn-header-2.svg
 imageAlt: Sourcegraph Learn
 socialImage: /headers/sourcegraph-learn-header-2.png
+type: posts
 ---
 
 Sourcegraph is actively working to index open source software so that developers can search all of the code that they care about. Being able to search across public repositories can help you learn open source best practices, inspect the libraries you may have as dependencies on your projects, and provide you with real-world examples you can leverage while you’re programming.
