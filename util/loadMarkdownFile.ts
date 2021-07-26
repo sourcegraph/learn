@@ -5,6 +5,7 @@ import greyMatter from 'gray-matter'
 
 import FrontMatter from './FrontMatter'
 import MarkdownFile from './MarkdownFile'
+import { normalizeTags, normalizeString, isBoolean } from './validators'
 
 function removeExtension(filename: string): string {
     const parts = filename.split('.')
@@ -19,40 +20,19 @@ function filenameToSlug(filepath: string): string {
     return removeExtension(basename)
 }
 
-function normalizeTags(rawTags: unknown): string[] {
-    if (!rawTags) {
-        return []
-    }
-    if (isString(rawTags)) {
-        return [rawTags.trim().toLowerCase()]
-    }
-    if (isStringArray(rawTags)) {
-        return rawTags.map(tag => tag.trim().toLowerCase())
-    }
-    throw new Error('Front-matter: Tags must be an array of strings.')
-}
-
-function isString(value: unknown): value is string {
-    return typeof value === 'string'
-}
-
-function isStringArray(value: unknown): value is string[] {
-    return Array.isArray(value) && value.every(item => isString(item))
-}
-
 function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
-        title: rawFrontMatter.title ?? rawFrontMatter.alternateTitle ?? 'Untitled Document',
-        alternateTitle: rawFrontMatter.alternateTitle,
+        title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.alternateTitle) ?? 'Untitled Document',
+        alternateTitle: rawFrontMatter.alternateTitle ? normalizeString(rawFrontMatter.alternateTitle) : '',
         tags: normalizeTags(rawFrontMatter.tags),
-        published: rawFrontMatter.published ?? true,
-        unlisted: rawFrontMatter.unlisted ?? false,
-        author: rawFrontMatter.author,
-        image: rawFrontMatter.image,
-        imageAlt: rawFrontMatter.imageAlt,
-        socialImage: rawFrontMatter.socialImage,
-        description: rawFrontMatter.description,
-        type: rawFrontMatter.type
+        published: isBoolean(rawFrontMatter.published) ? rawFrontMatter.published : true,
+        unlisted: isBoolean(rawFrontMatter.unlisted) ? rawFrontMatter.unlisted : false,
+        author: rawFrontMatter.author ? normalizeString(rawFrontMatter.author) : '',
+        image: rawFrontMatter.image ? normalizeString(rawFrontMatter.image) : '',
+        imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : '',
+        socialImage: rawFrontMatter.socialImage ? normalizeString(rawFrontMatter.socialImage) : '',
+        description: rawFrontMatter.description ? normalizeString(rawFrontMatter.description) : '',
+        type: normalizeString(rawFrontMatter.type)
     }
 }
 
