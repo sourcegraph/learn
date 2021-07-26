@@ -18,9 +18,3 @@ authors:
       bio: TODO
       socialLinks:
         - todo
-    - id: quinn-slack
-      name: Quinn Slack
-      bio: CEO & Co-founder — Sourcegraph
-      socialLinks:
-        - https://twitter.com/sqs
-        - https://www.linkedin.com/in/quinnslack
