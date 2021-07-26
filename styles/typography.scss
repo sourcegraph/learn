@@ -46,3 +46,16 @@ code {
     }
   }
 }
+
+// Header CTA styles
+.header-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .header-cta-button {
+    color: white;
+    background-color: #a112ff;
+    max-width: 50%;
+  }
+}

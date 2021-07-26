@@ -2,8 +2,9 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 
 import ContentCardList from '../components/ContentCardList'
+import Header from '../components/Header'
 import PageLayout from '../components/PageLayout'
-import loadAllPosts from '../util/loadAllPosts'
+import loadAllRecords from '../util/loadAllRecords'
 import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
 
@@ -14,7 +15,7 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const posts = await loadAllPosts()
+    const posts = await loadAllRecords('posts')
 
     return {
         props: {
@@ -25,10 +26,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <div className="row">
-            <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" />
-        </div>
-        <ContentCardList posts={props.posts} />
+        <Header showCta={false} />
+        <ContentCardList records={props.posts} />
     </PageLayout>
 )
 
