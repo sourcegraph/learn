@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ContentCard: React.FunctionComponent<Props> = props => (
-    <div className="card mb-1">
+    <div className="card mb-4">
         {props.image ?
           <img src={props.image} alt="Author Avatar" className="card-img-top rounded-circle" /> :
           <img src="/authors/unisex-avatar.svg" alt="Author Avatar" className="card-img-top rounded-circle p-4" />}

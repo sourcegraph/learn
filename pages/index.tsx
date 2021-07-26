@@ -26,8 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <Header
-            showCta={false} />
+        <Header showCta={false} />
         <ContentCardList records={props.posts} />
     </PageLayout>
 )
