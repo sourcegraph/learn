@@ -52,6 +52,7 @@ function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['dat
         imageAlt: rawFrontMatter.imageAlt,
         socialImage: rawFrontMatter.socialImage,
         description: rawFrontMatter.description,
+        type: rawFrontMatter.type
     }
 }
 

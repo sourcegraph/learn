@@ -4,6 +4,7 @@ tags: [video, search, sourcegraph]
 author: marek-zaluski
 image: https://i3.ytimg.com/vi/XLfE2YuRwvw/maxresdefault.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
+type: posts
 ---
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />

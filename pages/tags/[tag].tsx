@@ -33,7 +33,10 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     return {
         props: {
             tag,
-            records: filteredRecords.map(record => omitUndefinedFields({ ...record, url: `/${record.slug}` })),
+            records: filteredRecords.map(record => omitUndefinedFields({ 
+                ...record, 
+                url: record.frontMatter.type === 'posts' ? `/${record.slug}` : `/${record.frontMatter.type}/${record.slug}`
+            })),
         },
     }
 }

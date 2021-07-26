@@ -6,6 +6,7 @@ description: Learn how to install Sourcegraph on your own machine with Docker
 image: /headers/sourcegraph-learn-header-7.svg
 imageAlt: Sourcegraph Learn
 socialImage: /headers/sourcegraph-learn-header-7.png
+type: posts
 ---
 
 Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph Cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.

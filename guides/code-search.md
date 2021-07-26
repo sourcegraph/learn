@@ -6,6 +6,7 @@ description: Learn the fundamentals of code search.
 image: /headers/sourcegraph-learn-header-2.svg
 imageAlt: Sourcegraph Learn
 socialImage: /headers/sourcegraph-learn-header-2.png
+type: guides
 ---
 
 Code search is used by more and more companies, but still most devs and companies don't know about it! We made this guide because we love code search, tons of other companies and devs love it, and we want every dev and company to know why and to start using it in the future.
