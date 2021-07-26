@@ -5,20 +5,20 @@ import { MarkdownFileWithUrl } from '../pages'
 import ContentCard from './ContentCard'
 
 interface Props {
-    posts: MarkdownFileWithUrl[]
+    records: MarkdownFileWithUrl[]
 }
 
 const ContentCardList: React.FunctionComponent<Props> = props => (
     <div className="row row-cols-1 row-cols-lg-2">
-        {props.posts.map(post => (
-            <div className="col" key={post.url}>
+        {props.records.map(record => (
+            <div className="col" key={record.url}>
                 <ContentCard
-                    title={post.frontMatter.title}
-                    tags={post.frontMatter.tags}
-                    description={post.frontMatter.description}
-                    image={post.frontMatter.image}
-                    imageAlt={post.frontMatter.imageAlt}
-                    url={post.url}
+                    title={record.frontMatter.title}
+                    tags={record.frontMatter.tags}
+                    description={record.frontMatter.description}
+                    image={record.frontMatter.image}
+                    imageAlt={record.frontMatter.imageAlt}
+                    url={record.url}
                 />
             </div>
         ))}
