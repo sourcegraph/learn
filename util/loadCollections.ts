@@ -7,7 +7,7 @@ import MarkdownFile from './MarkdownFile'
 
 interface CollectionDefinition {
     title: string
-    slug: string
+    slug?: string
     type: string
     members: string[]
 }
@@ -21,13 +21,46 @@ export interface AuthorDefinition {
 
 export interface RecordCollection {
     title: string
-    slug: string
+    slug?: string
+    type: string
     members: MarkdownFile[]
 }
 
 interface Collections {
     recordCollections: RecordCollection[]
     authors: AuthorDefinition[]
+}
+
+function findMemberRecord(records: MarkdownFile[], memberSlug: string, collectionDefinition: CollectionDefinition): MarkdownFile {
+    const memberRecord = records.find(record => record.slug === memberSlug)
+    if (!memberRecord) {
+        throw new Error(
+            `Record not found: "${memberSlug}" from collection "${collectionDefinition.title})"`
+        )
+    }
+    return memberRecord
+}
+
+function returnAllMemberRecords(collectionDefinition: CollectionDefinition, records: MarkdownFile[]): MarkdownFile[] {
+    const uniqueMemberRecords: MarkdownFile[] = []
+    collectionDefinition.members.map(memberSlug => {
+        const memberRecord = findMemberRecord(records, memberSlug, collectionDefinition)
+        uniqueMemberRecords.push(memberRecord)   
+    })
+
+    return uniqueMemberRecords
+}
+
+function returnRecordCollections(collections: CollectionDefinition[], records: MarkdownFile[]): RecordCollection[] {
+    const recordCollections = collections.map(collectionDefinition => {
+        const memberRecords = returnAllMemberRecords(collectionDefinition, records)
+        return {
+            ...collectionDefinition,
+            members: memberRecords,
+        }
+    })
+
+    return recordCollections
 }
 
 export default async function loadCollections(recordType: string): Promise<Collections> {
@@ -38,22 +71,7 @@ export default async function loadCollections(recordType: string): Promise<Colle
                                         collections: CollectionDefinition[],
                                         authors: AuthorDefinition[]
                                     }
-    const recordCollections = data.collections.map(collectionDefinition => {
-        const memberRecords = collectionDefinition.members.map(memberSlug => {
-            const memberRecord = records.find(record => record.slug === memberSlug)
-            if (!memberRecord) {
-                throw new Error(
-                    `Record not found: "${memberSlug}" from collection "${collectionDefinition.slug}" (${collectionDefinition.title})`
-                )
-            }
-            return memberRecord
-        })
-        return {
-            ...collectionDefinition,
-            members: memberRecords,
-        }
-    })
-
+    const recordCollections = returnRecordCollections(data.collections, records)
     const authors = data.authors
 
     return { recordCollections, authors }
