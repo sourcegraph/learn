@@ -2,15 +2,10 @@ import { promises as fs } from 'fs'
 
 import yaml from 'js-yaml'
 
+import CollectionDefinition from './CollectionDefinition'
 import loadAllRecords from './loadAllRecords'
 import MarkdownFile from './MarkdownFile'
-
-interface CollectionDefinition {
-    title: string
-    slug?: string
-    type: string
-    members: string[]
-}
+import { normalizeCollectionDefinition } from './validators'
 
 export interface AuthorDefinition {
     id: string
@@ -41,26 +36,30 @@ function findMemberRecord(records: MarkdownFile[], memberSlug: string, collectio
     return memberRecord
 }
 
-function returnAllMemberRecords(collectionDefinition: CollectionDefinition, records: MarkdownFile[]): MarkdownFile[] {
+function returnAllMemberRecords(collectionDefinition: CollectionDefinition, records: MarkdownFile[]):MarkdownFile[] {
     const uniqueMemberRecords: MarkdownFile[] = []
     collectionDefinition.members.map(memberSlug => {
         const memberRecord = findMemberRecord(records, memberSlug, collectionDefinition)
-        uniqueMemberRecords.push(memberRecord)   
+        uniqueMemberRecords.push(memberRecord) 
     })
 
     return uniqueMemberRecords
 }
 
 function returnRecordCollections(collections: CollectionDefinition[], records: MarkdownFile[]): RecordCollection[] {
-    const recordCollections = collections.map(collectionDefinition => {
-        const memberRecords = returnAllMemberRecords(collectionDefinition, records)
-        return {
-            ...collectionDefinition,
+    const uniqueRecordCollections: RecordCollection[] = []
+    collections.map(collectionDefinition => {
+        const normalizedCollectionDefinition = normalizeCollectionDefinition(collectionDefinition)
+        const memberRecords = returnAllMemberRecords(normalizedCollectionDefinition, records)
+        const collection =  {
+            title: normalizedCollectionDefinition.title,
+            type: normalizedCollectionDefinition.type,
             members: memberRecords,
         }
+        uniqueRecordCollections.push(collection)
     })
-
-    return recordCollections
+    
+    return uniqueRecordCollections
 }
 
 export default async function loadCollections(recordType: string): Promise<Collections> {
@@ -73,6 +72,6 @@ export default async function loadCollections(recordType: string): Promise<Colle
                                     }
     const recordCollections = returnRecordCollections(data.collections, records)
     const authors = data.authors
-
+   
     return { recordCollections, authors }
 }

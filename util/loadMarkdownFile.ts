@@ -23,7 +23,7 @@ export default async function loadMarkdownFile(baseDirectory: string, filename: 
     const filepath = path.join(baseDirectory, filename)
     const rawSource = await fs.readFile(filepath, 'utf-8')
     const { content, data } = greyMatter(rawSource)
-    const frontMatter = await normalizeFrontMatter(data)
+    const frontMatter = normalizeFrontMatter(data)
     const slug = filenameToSlug(filename)
     return { slug, filename, body: content, frontMatter }
 }
