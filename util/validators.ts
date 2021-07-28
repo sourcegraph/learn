@@ -1,6 +1,6 @@
 import greyMatter from 'gray-matter'
 
-import AuthorCollectionDefinition from './AuthorCollectionDefinition'
+import AuthorCollection from './AuthorCollection'
 import FrontMatter from './FrontMatter'
 import RecordCollectionDefinition from './RecordCollectionDefinition'
 
@@ -61,7 +61,7 @@ export function normalizeRecordCollectionDefinition(collection: RecordCollection
     }
 }
 
-export function normalizeAuthorCollectionDefinition(author: AuthorCollectionDefinition): AuthorCollectionDefinition {
+export function normalizeAuthorCollectionDefinition(author: AuthorCollection): AuthorCollection {
     return {
         id: normalizeString(author.id),
         name: normalizeString(author.name),

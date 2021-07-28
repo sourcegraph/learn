@@ -2,7 +2,7 @@
  * Description of the fields that are supported in author collections
  * in the `collections.yaml` file
  */
- export default interface AuthorCollectionDefinition {
+ export default interface AuthorCollection {
     id: string
     name: string
     bio?: string | null

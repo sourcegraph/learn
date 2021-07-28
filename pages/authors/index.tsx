@@ -3,28 +3,28 @@ import React from 'react'
 
 import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
-import AuthorCollectionDefinition from '../../util/AuthorCollectionDefinition'
+import AuthorCollection from '../../util/AuthorCollection'
 import loadAllRecords from '../../util/loadAllRecords'
-import loadCollections from '../../util/loadCollections'
+import loadAuthors from '../../util/loadAuthors'
 import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
-    uniqueAuthors: AuthorCollectionDefinition[]
+    uniqueAuthors: AuthorCollection[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllRecords('posts')
     const guides = await loadAllRecords('guides')
     const combinedRecords = posts.concat(guides)
-    const { authors } = await loadCollections('posts')
+    const { authors } = await loadAuthors()
     return {
         props: omitUndefinedFields({
-            uniqueAuthors: authors.filter(element => {
+            uniqueAuthors: authors.filter(author => {
                 const recordAuthors = combinedRecords.map(record => omitUndefinedFields(record.frontMatter.author))
-                return recordAuthors.includes(element.id)
+                return recordAuthors.includes(author.id)
             })
         })
     }

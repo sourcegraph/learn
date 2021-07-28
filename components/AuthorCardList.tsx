@@ -1,11 +1,11 @@
 import React from 'react'
 
-import AuthorCollectionDefinition from '../util/AuthorCollectionDefinition'
+import AuthorCollection from '../util/AuthorCollection'
 
 import AuthorCard from './AuthorCard'
 
 interface Props {
-    authors: AuthorCollectionDefinition[]
+    authors: AuthorCollection[]
 }
 
 const AuthorCardList: React.FunctionComponent<Props> = props => (

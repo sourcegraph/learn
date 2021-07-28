@@ -2,16 +2,14 @@ import { promises as fs } from 'fs'
 
 import yaml from 'js-yaml'
 
-import AuthorCollectionDefinition from './AuthorCollectionDefinition'
 import loadAllRecords from './loadAllRecords'
 import MarkdownFile from './MarkdownFile'
 import RecordCollection from './RecordCollection'
 import RecordCollectionDefinition from './RecordCollectionDefinition'
-import { normalizeRecordCollectionDefinition, normalizeAuthorCollectionDefinition } from './validators'
+import { normalizeRecordCollectionDefinition } from './validators'
 
-interface Collections {
+interface RecordCollections {
     recordCollections: RecordCollection[]
-    authors: AuthorCollectionDefinition[]
 }
 
 function findMemberRecord(records: MarkdownFile[], memberSlug: string, collectionDefinition: RecordCollectionDefinition): MarkdownFile {
@@ -50,26 +48,12 @@ function returnRecordCollections(collections: RecordCollectionDefinition[], reco
     return validatedRecordCollections
 }
 
-function returnAuthorCollection(authors: AuthorCollectionDefinition[]): AuthorCollectionDefinition[] {
-    let validatedAuthorCollections: AuthorCollectionDefinition[] = []
-    authors.map(authorCollectionDefinition => {
-        const normalizedAuthorCollection = normalizeAuthorCollectionDefinition(authorCollectionDefinition)
-        validatedAuthorCollections = [ ...validatedAuthorCollections, normalizedAuthorCollection ]
-    })
-
-    return validatedAuthorCollections
-}
-
-export default async function loadCollections(recordType: string): Promise<Collections> {
-    const collectionsFilePath = 'collections.yaml'
+export default async function loadRecordCollections(recordType: string): Promise<RecordCollections> {
+    const collectionsFilePath = 'data/collections.yaml'
     const records = await loadAllRecords(recordType)
     const body = await fs.readFile(collectionsFilePath, 'utf-8')
-    const data = yaml.load(body) as {
-                                        collections: RecordCollectionDefinition[],
-                                        authors: AuthorCollectionDefinition[]
-                                    }
+    const data = yaml.load(body) as { collections: RecordCollectionDefinition[] }
     const recordCollections = returnRecordCollections(data.collections, records)
-    const authors = returnAuthorCollection(data.authors)
    
-    return { recordCollections, authors }
+    return { recordCollections }
 }
