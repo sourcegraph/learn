@@ -11,7 +11,7 @@ const SITE_TITLE = 'Sourcegraph Learn'
 
 const defaultMetaTags = {
     description: 'Sourcegraph Learn is an educational hub to support all developers.',
-    image: '/headers/sourcegraph-learn-header.png',
+    image: 'https://learn.sourcegraph.com/headers/sourcegraph-learn-header.png',
 } as const
 
 export interface MetaTags {
