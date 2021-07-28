@@ -5,7 +5,7 @@ import { AuthorDefinition } from '../util/loadCollections'
 
 interface Props {
     name: string
-    bio: string
+    bio?: string
     image?: string
     socialLinks?: string[]
     id: string

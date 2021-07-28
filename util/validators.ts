@@ -1,7 +1,8 @@
 import greyMatter from 'gray-matter'
 
-import CollectionDefinition from './CollectionDefinition'
+import AuthorCollectionDefinition from './AuthorCollectionDefinition'
 import FrontMatter from './FrontMatter'
+import RecordCollectionDefinition from './RecordCollectionDefinition'
 
 export function isString(value: unknown): value is string {
     return typeof value === 'string'
@@ -51,11 +52,20 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
     }
 }
 
-export function normalizeCollectionDefinition(collection: CollectionDefinition): CollectionDefinition {
+export function normalizeRecordCollectionDefinition(collection: RecordCollectionDefinition): RecordCollectionDefinition {
     return {
         title: normalizeString(collection.title),
         slug: collection.slug ? normalizeString(collection.slug) : '',
         type: normalizeString(collection.type),
         members: normalizeStringArray(collection.members)
+    }
+}
+
+export function normalizeAuthorCollectionDefinition(author: AuthorCollectionDefinition): AuthorCollectionDefinition {
+    return {
+        id: normalizeString(author.id),
+        name: normalizeString(author.name),
+        bio: author.bio ? normalizeString(author.bio) : '',
+        socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : ['']
     }
 }
