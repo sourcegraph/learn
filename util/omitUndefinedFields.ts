@@ -8,7 +8,7 @@ import { isPlainObject } from 'lodash'
  * Next.js discussion: https://github.com/vercel/next.js/discussions/11209
  */
 export default function omitUndefinedFields<T>(object: T): T {
-    if (typeof object !== 'object' && typeof object !== null) {
+    if (typeof object !== 'object' && object !== null) {
         return object
     }
     return Object.fromEntries(
