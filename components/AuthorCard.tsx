@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { AuthorDefinition } from '../util/loadCollections'
-
 interface Props {
     name: string
     bio?: string
