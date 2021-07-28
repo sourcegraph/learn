@@ -23,13 +23,7 @@ function findMemberRecord(records: MarkdownFile[], memberSlug: string, collectio
 }
 
 function returnAllMemberRecords(collectionDefinition: RecordCollectionDefinition, records: MarkdownFile[]):MarkdownFile[] {
-    let uniqueMemberRecords: MarkdownFile[] = []
-    collectionDefinition.members.map(memberSlug => {
-        const memberRecord = findMemberRecord(records, memberSlug, collectionDefinition)
-        uniqueMemberRecords = [ ...uniqueMemberRecords, memberRecord ]
-    })
-
-    return uniqueMemberRecords
+    return collectionDefinition.members.map(memberSlug => findMemberRecord(records, memberSlug, collectionDefinition))
 }
 
 function returnRecordCollections(collections: RecordCollectionDefinition[], records: MarkdownFile[]): RecordCollection[] {

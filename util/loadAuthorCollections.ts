@@ -10,13 +10,7 @@ interface AuthorCollections {
 }
 
 function returnAuthorCollection(authors: AuthorCollection[]): AuthorCollection[] {
-    let validatedAuthorCollections: AuthorCollection[] = []
-    authors.map(authorCollectionDefinition => {
-        const normalizedAuthorCollection = normalizeAuthorCollectionDefinition(authorCollectionDefinition)
-        validatedAuthorCollections = [ ...validatedAuthorCollections, normalizedAuthorCollection ]
-    })
-
-    return validatedAuthorCollections
+    return authors.map(normalizeAuthorCollectionDefinition)
 }
 
 export default async function loadAuthorCollections(): Promise<AuthorCollections> {
