@@ -5,6 +5,6 @@
  export default interface AuthorCollectionDefinition {
     id: string
     name: string
-    bio?: string
-    socialLinks?: string[]
+    bio?: string | null
+    socialLinks?: string[] | null
 }

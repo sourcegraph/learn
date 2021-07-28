@@ -13,7 +13,7 @@ export default function omitUndefinedFields<T>(object: T): T {
     }
     return Object.fromEntries(
         Object.entries(object)
-            .filter(([, value]) => value !== undefined)
+            .filter(([, value]) => value !== null)
             .map(([key, value]) => {
                 if (Array.isArray(value)) {
                     return [key, value.map(omitUndefinedFields)]

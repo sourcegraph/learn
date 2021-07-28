@@ -39,15 +39,15 @@ export function normalizeString(rawString: unknown): string {
 export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
         title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.alternateTitle) ?? 'Untitled Document',
-        alternateTitle: rawFrontMatter.alternateTitle ? normalizeString(rawFrontMatter.alternateTitle) : '',
+        alternateTitle: rawFrontMatter.alternateTitle ? normalizeString(rawFrontMatter.alternateTitle) : null,
         tags: normalizeStringArray(rawFrontMatter.tags),
         published: isBoolean(rawFrontMatter.published) ? rawFrontMatter.published : true,
         unlisted: isBoolean(rawFrontMatter.unlisted) ? rawFrontMatter.unlisted : false,
-        author: rawFrontMatter.author ? normalizeString(rawFrontMatter.author) : '',
-        image: rawFrontMatter.image ? normalizeString(rawFrontMatter.image) : '',
-        imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : '',
-        socialImage: rawFrontMatter.socialImage ? normalizeString(rawFrontMatter.socialImage) : '',
-        description: rawFrontMatter.description ? normalizeString(rawFrontMatter.description) : '',
+        author: rawFrontMatter.author ? normalizeString(rawFrontMatter.author) : null,
+        image: rawFrontMatter.image ? normalizeString(rawFrontMatter.image) : null,
+        imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : null,
+        socialImage: rawFrontMatter.socialImage ? normalizeString(rawFrontMatter.socialImage) : null,
+        description: rawFrontMatter.description ? normalizeString(rawFrontMatter.description) : null,
         type: normalizeString(rawFrontMatter.type)
     }
 }
@@ -55,7 +55,7 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
 export function normalizeRecordCollectionDefinition(collection: RecordCollectionDefinition): RecordCollectionDefinition {
     return {
         title: normalizeString(collection.title),
-        slug: collection.slug ? normalizeString(collection.slug) : '',
+        slug: normalizeString(collection.slug),
         type: normalizeString(collection.type),
         members: normalizeStringArray(collection.members)
     }
@@ -65,7 +65,7 @@ export function normalizeAuthorCollectionDefinition(author: AuthorCollectionDefi
     return {
         id: normalizeString(author.id),
         name: normalizeString(author.name),
-        bio: author.bio ? normalizeString(author.bio) : '',
-        socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : ['']
+        bio: author.bio ? normalizeString(author.bio) : null,
+        socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : null
     }
 }

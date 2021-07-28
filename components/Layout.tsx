@@ -15,8 +15,8 @@ const defaultMetaTags = {
 } as const
 
 export interface MetaTags {
-    image?: string
-    description?: string
+    image?: string | null
+    description?: string | null
 }
 
 export interface Props {

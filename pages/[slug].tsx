@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const collections = await loadCollections('posts')
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
-    const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : ''
+    const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             description: markdownFile.frontMatter.description,
             toc,
             mdxSource: serializeResult,
-            collection: parentCollection,
+            collection: parentCollection ?? null,
             slug,
         }),
     }

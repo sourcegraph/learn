@@ -1,5 +1,6 @@
 collections:
     - title: How To Use Search Patterns on Sourcegraph
+      slug: how-to-use-search-patterns-on-sourcegraph
       type: posts
       members:
         - three-ways-to-search-video

@@ -4,7 +4,7 @@
  */
 export default interface RecordCollectionDefinition {
     title: string
-    slug?: string
+    slug: string
     type: string
     members: string[]
 }
