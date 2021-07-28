@@ -3,9 +3,9 @@ import React from 'react'
 
 interface Props {
     name: string
-    bio?: string
+    bio?: string | null
     image?: string
-    socialLinks?: string[]
+    socialLinks?: string[] | null
     id: string
 }
 
