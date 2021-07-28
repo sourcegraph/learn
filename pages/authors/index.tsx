@@ -5,7 +5,7 @@ import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
 import AuthorCollection from '../../util/AuthorCollection'
 import loadAllRecords from '../../util/loadAllRecords'
-import loadAuthors from '../../util/loadAuthors'
+import loadAuthorCollections from '../../util/loadAuthorCollections'
 import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllRecords('posts')
     const guides = await loadAllRecords('guides')
     const combinedRecords = posts.concat(guides)
-    const { authors } = await loadAuthors()
+    const { authors } = await loadAuthorCollections()
     return {
         props: omitUndefinedFields({
             uniqueAuthors: authors.filter(author => {
