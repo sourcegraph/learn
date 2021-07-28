@@ -5,7 +5,7 @@ author: lisa-tagliaferri
 description: Learn how to add public, open source repositories to Sourcegraph.
 image: /headers/sourcegraph-learn-header-2.svg
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-2.png
+socialImage: https://learn.sourcegraph.com/headers/sourcegraph-learn-header-2.png
 type: posts
 ---
 

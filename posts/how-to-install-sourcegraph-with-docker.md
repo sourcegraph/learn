@@ -5,7 +5,7 @@ tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your own machine with Docker
 image: /headers/sourcegraph-learn-header-7.svg
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-7.png
+socialImage: https://learn.sourcegraph.com/headers/sourcegraph-learn-header-7.png
 type: posts
 ---
 

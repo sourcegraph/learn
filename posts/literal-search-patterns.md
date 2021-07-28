@@ -5,7 +5,7 @@ tags: [tutorial, search, Sourcegraph]
 description: Learn how to use literal search patterns to search code on Sourcegraph.
 image: /headers/sourcegraph-learn-header-3.svg
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-3.png
+socialImage: https://learn.sourcegraph.com/headers/sourcegraph-learn-header-3.png
 type: posts
 ---
 
