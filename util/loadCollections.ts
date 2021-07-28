@@ -5,15 +5,9 @@ import yaml from 'js-yaml'
 import AuthorCollectionDefinition from './AuthorCollectionDefinition'
 import loadAllRecords from './loadAllRecords'
 import MarkdownFile from './MarkdownFile'
+import RecordCollection from './RecordCollection'
 import RecordCollectionDefinition from './RecordCollectionDefinition'
 import { normalizeRecordCollectionDefinition, normalizeAuthorCollectionDefinition } from './validators'
-
-export interface RecordCollection {
-    title: string
-    slug?: string
-    type: string
-    members: MarkdownFile[]
-}
 
 interface Collections {
     recordCollections: RecordCollection[]
