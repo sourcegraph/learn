@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { Card, ListGroup } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 import MarkdownFile from '../util/MarkdownFile'
 

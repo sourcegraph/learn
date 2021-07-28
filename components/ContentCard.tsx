@@ -3,10 +3,10 @@ import React from 'react'
 
 export interface Props {
     title: string
-    tags?: string[]
-    description?: string
-    image?: string
-    imageAlt?: string
+    tags?: string[] | null
+    description?: string | null
+    image?: string | null
+    imageAlt?: string | null
     url: string
 }
 
