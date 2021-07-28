@@ -6,7 +6,7 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import { RecordCollection } from '../util/loadCollections'
+import RecordCollection from '../util/RecordCollection'
 
 import CollectionView from './CollectionView'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
@@ -18,17 +18,17 @@ import TocWrapper from './TocWrapper'
 
 export interface Props {
     title: string
-    author: string
+    author?: string | null
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
-    image?: string
-    imageAlt?: string
-    socialImage?: string
-    description?: string
-    toc?: Node
-    collection?: RecordCollection
+    image?: string | null
+    imageAlt?: string | null
+    socialImage?: string | null
+    description?: string | null
+    toc?: Node | null
+    collection?: RecordCollection | null
     slug: string
-    alternateTitle?: string
+    alternateTitle?: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }

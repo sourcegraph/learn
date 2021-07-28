@@ -1,11 +1,3 @@
-collections:
-    - title: How To Use Search Patterns on Sourcegraph
-      type: posts
-      members:
-        - three-ways-to-search-video
-        - literal-search-patterns
-        - regular-expression-patterns
-
 authors:
     - id: marek-zaluski
       name: Marek Zaluski
@@ -15,6 +7,3 @@ authors:
         - https://www.linkedin.com/in/marekzaluski
     - id: lisa-tagliaferri
       name: Lisa Tagliaferri
-      bio: TODO
-      socialLinks:
-        - todo

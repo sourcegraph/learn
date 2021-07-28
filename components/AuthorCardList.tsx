@@ -1,12 +1,11 @@
 import React from 'react'
 
-import { MarkdownFileWithUrl } from '../pages'
-import { AuthorDefinition } from '../util/loadCollections'
+import AuthorCollection from '../util/AuthorCollection'
 
 import AuthorCard from './AuthorCard'
 
 interface Props {
-    authors: AuthorDefinition[]
+    authors: AuthorCollection[]
 }
 
 const AuthorCardList: React.FunctionComponent<Props> = props => (

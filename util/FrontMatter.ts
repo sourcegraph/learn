@@ -8,24 +8,24 @@
  */
 export default interface FrontMatter {
     title: string
-    alternateTitle?: string
+    alternateTitle?: string | null
     tags: string[]
     published: boolean
     unlisted: boolean
-    author?: string
+    author?: string | null
 
     /** Short description used for the post's card and social description meta
      * tag.*/
-    description?: string
+    description?: string | null
 
     /** Image URL used for the post's card, header, and social image unless
      * overridden by `socialImage` */
-    image?: string
-    imageAlt?: string
+    image?: string | null
+    imageAlt?: string | null
 
     /** Image URL used for social image tag (og:image). If not present, the
      * social image defaults to the `image` field. */
-    socialImage?: string
+    socialImage?: string | null
 
     /** Content type */
     type: string

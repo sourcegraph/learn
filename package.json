@@ -10,6 +10,8 @@
     "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different",
     "eslint": "eslint '**/*.{ts,tsx}' --ignore-path .gitignore",
     "eslint-fix": "npm run eslint -- --fix",
+    "check-types": "tsc --noemit",
+    "lint": "npm run eslint && npm run check-types",
     "clean": "rm -rf out .next"
   },
   "dependencies": {
