@@ -3,9 +3,9 @@ import React from 'react'
 
 import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
+import loadAllRecords from '../../lib/loadAllRecords'
+import loadAuthorCollections from '../../lib/loadAuthorCollections'
 import AuthorCollection from '../../util/AuthorCollection'
-import loadAllRecords from '../../util/loadAllRecords'
-import loadAuthorCollections from '../../util/loadAuthorCollections'
 import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 

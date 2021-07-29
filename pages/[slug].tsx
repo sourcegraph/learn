@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Article, { Props as ArticleProps } from '../components/Article'
+import loadAllRecords from '../lib/loadAllRecords'
+import loadMarkdownFile from '../lib/loadMarkdownFile'
+import loadRecordCollections from '../lib/loadRecordCollections'
+import serializeMdxSource from '../lib/serializeMdxSource'
 import getQueryParameter from '../util/getQueryParameters'
-import loadAllRecords from '../util/loadAllRecords'
-import loadMarkdownFile from '../util/loadMarkdownFile'
-import loadRecordCollections from '../util/loadRecordCollections'
 import omitUndefinedFields from '../util/omitUndefinedFields'
-import serializeMdxSource from '../util/serializeMdxSource'
 import slugToTitleCase from '../util/slugToTitleCase'
 
 export const getStaticPaths: GetStaticPaths = async () => {

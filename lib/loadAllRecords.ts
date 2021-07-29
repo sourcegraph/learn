@@ -1,6 +1,7 @@
+import MarkdownFile from '../util/MarkdownFile'
+
 import listAllRecords from './listAllRecords'
 import loadMarkdownFile from './loadMarkdownFile'
-import MarkdownFile from './MarkdownFile'
 
 export default async function loadAllRecords(baseDirectory: string, includeUnlisted: boolean = false): Promise<MarkdownFile[]> {
     const records = await listAllRecords(baseDirectory)

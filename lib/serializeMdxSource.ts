@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { Node } from 'unist'
 
-import MarkdownFile from './MarkdownFile'
+import MarkdownFile from '../util/MarkdownFile'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is

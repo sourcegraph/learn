@@ -4,7 +4,7 @@ import React from 'react'
 import ContentCardList from '../components/ContentCardList'
 import Header from '../components/Header'
 import PageLayout from '../components/PageLayout'
-import loadAllRecords from '../util/loadAllRecords'
+import loadAllRecords from '../lib/loadAllRecords'
 import MarkdownFile from '../util/MarkdownFile'
 import omitUndefinedFields from '../util/omitUndefinedFields'
 
