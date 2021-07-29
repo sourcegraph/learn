@@ -6,15 +6,14 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import RecordCollection from '../interfaces/RecordCollection'
-
-import CollectionView from './atoms/CollectionView'
-import EmbeddedYoutubeVideo from './atoms/EmbeddedYoutubeVideo'
-import GifLikeVideo from './atoms/GifLikeVideo'
-import SourcegraphSearch from './atoms/SourcegraphSearch'
-import TocWrapper from './atoms/TocWrapper'
-import { MetaTags } from './layouts/Layout'
-import PageLayout from './layouts/PageLayout'
+import RecordCollection from '../../interfaces/RecordCollection'
+import CollectionView from '../atoms/CollectionView'
+import EmbeddedYoutubeVideo from '../atoms/EmbeddedYoutubeVideo'
+import GifLikeVideo from '../atoms/GifLikeVideo'
+import SourcegraphSearch from '../atoms/SourcegraphSearch'
+import TocWrapper from '../atoms/TocWrapper'
+import { MetaTags } from '../layouts/Layout'
+import PageLayout from '../layouts/PageLayout'
 
 export interface Props {
     title: string
