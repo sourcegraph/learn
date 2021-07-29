@@ -3,10 +3,10 @@ import React from 'react'
 
 import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
-import AuthorCollection from '../../util/AuthorCollection'
+import AuthorCollection from '../../interfaces/AuthorCollection'
+import MarkdownFile from '../../interfaces/MarkdownFile'
 import loadAllRecords from '../../util/loadAllRecords'
 import loadAuthorCollections from '../../util/loadAuthorCollections'
-import MarkdownFile from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export type MarkdownFileWithUrl = MarkdownFile & { url: string }
