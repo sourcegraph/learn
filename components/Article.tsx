@@ -8,13 +8,13 @@ import { Node } from 'unist'
 
 import RecordCollection from '../interfaces/RecordCollection'
 
-import CollectionView from './CollectionView'
-import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GifLikeVideo'
-import { MetaTags } from './Layout'
-import PageLayout from './PageLayout'
-import SourcegraphSearch from './SourcegraphSearch'
-import TocWrapper from './TocWrapper'
+import CollectionView from './atoms/CollectionView'
+import EmbeddedYoutubeVideo from './atoms/EmbeddedYoutubeVideo'
+import GifLikeVideo from './atoms/GifLikeVideo'
+import SourcegraphSearch from './atoms/SourcegraphSearch'
+import TocWrapper from './atoms/TocWrapper'
+import { MetaTags } from './layouts/Layout'
+import PageLayout from './layouts/PageLayout'
 
 export interface Props {
     title: string

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MarkdownFileWithUrl } from '../types/MarkdownFileWithUrl'
+import { MarkdownFileWithUrl } from '../../types/MarkdownFileWithUrl'
 
 import ContentCard from './ContentCard'
 

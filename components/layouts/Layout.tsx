@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import * as React from 'react'
 
-import { googleTagManagerId } from '../site-config'
-
-import Footer from './Footer'
-import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
-import NavBar from './NavBar'
+import { googleTagManagerId } from '../../site-config'
+import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
+import Footer from '../Footer'
+import NavBar from '../NavBar'
 
 const SITE_TITLE = 'Sourcegraph Learn'
 
