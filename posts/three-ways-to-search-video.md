@@ -2,9 +2,9 @@
 title: Three Ways to Search with Sourcegraph (Video)
 tags: [video, search, sourcegraph]
 author: marek-zaluski
-image: https://learn.sourcegraph.com/headers/three-ways-to-search.jpg
+image: https://learn.sourcegraph.com/headers/three-ways-to-search-header.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
-socialImage: https://learn.sourcegraph.com/headers/three-ways-to-search.jpg
+socialImage: https://learn.sourcegraph.com/headers/three-ways-to-search-header.jpg
 type: posts
 ---
 

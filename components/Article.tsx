@@ -67,19 +67,7 @@ const Article: React.FunctionComponent<Props> = props => {
             metaTags={metaTags}
             leftColumn={tocFragment}
         >
-            {/* Social image */}
-            {props.socialImage ? <meta name="twitter:card" content="summary_large_image" /> : ''}
-            {props.socialImage ? (
-                <meta name="twitter:image" content={props.socialImage} />
-                ) : (
-                    <meta name="twitter:image" content="https://learn.sourcegraph.com/headers/sourcegraph-learn-header.png" />
-                    )}
-            {props.socialImage ? (
-                <meta property="og:image" content={props.socialImage} />
-                ) : (
-                    <meta property="og:image" content="https://learn.sourcegraph.com/headers/sourcegraph-learn-header.png" />
-                    )}
-
+ 
             {/* Header image */}
             {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />}
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout, { Props as LayoutProps, MetaTags } from './Layout'
 
-interface Props extends LayoutProps {
+interface Props extends LayoutProps, MetaTags {
     leftColumn?: React.ReactNode
     rightColumn?: React.ReactNode
 }
