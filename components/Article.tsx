@@ -37,6 +37,7 @@ const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
+        type: 'article',
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
@@ -68,7 +69,9 @@ const Article: React.FunctionComponent<Props> = props => {
             leftColumn={tocFragment}
         >
             {/* Header image */}
-            {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />}
+            {props.image && showHeaderImage && (
+                <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />
+            )}
 
             {/* Title and author */}
             <h1>{props.title}</h1>
