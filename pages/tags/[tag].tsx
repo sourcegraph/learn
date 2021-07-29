@@ -5,9 +5,9 @@ import React from 'react'
 import ContentCardList from '../../components/ContentCardList'
 import PageLayout from '../../components/PageLayout'
 import loadAllRecords from '../../lib/loadAllRecords'
+import { MarkdownFileWithUrl } from '../../types/MarkdownFileWithUrl'
 import collectTags from '../../util/collectTags'
 import getQueryParameter from '../../util/getQueryParameters'
-import { MarkdownFileWithUrl } from '../../util/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 interface Props {

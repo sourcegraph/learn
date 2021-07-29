@@ -5,8 +5,8 @@ import AuthorCardList from '../../components/AuthorCardList'
 import PageLayout from '../../components/PageLayout'
 import loadAllRecords from '../../lib/loadAllRecords'
 import loadAuthorCollections from '../../lib/loadAuthorCollections'
-import AuthorCollection from '../../util/AuthorCollection'
-import MarkdownFile from '../../util/MarkdownFile'
+import AuthorCollection from '../../interfaces/AuthorCollection'
+import MarkdownFile from '../../interfaces/MarkdownFile'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export type MarkdownFileWithUrl = MarkdownFile & { url: string }

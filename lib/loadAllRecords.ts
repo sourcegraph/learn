@@ -1,4 +1,4 @@
-import MarkdownFile from '../util/MarkdownFile'
+import MarkdownFile from '../interfaces/MarkdownFile'
 
 import listAllRecords from './listAllRecords'
 import loadMarkdownFile from './loadMarkdownFile'

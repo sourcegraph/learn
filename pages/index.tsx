@@ -5,10 +5,8 @@ import ContentCardList from '../components/ContentCardList'
 import Header from '../components/Header'
 import PageLayout from '../components/PageLayout'
 import loadAllRecords from '../lib/loadAllRecords'
-import MarkdownFile from '../util/MarkdownFile'
+import { MarkdownFileWithUrl } from '../types/MarkdownFileWithUrl'
 import omitUndefinedFields from '../util/omitUndefinedFields'
-
-export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
     posts: MarkdownFileWithUrl[]

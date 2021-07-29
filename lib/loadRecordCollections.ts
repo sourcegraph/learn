@@ -2,9 +2,9 @@ import { promises as fs } from 'fs'
 
 import yaml from 'js-yaml'
 
-import MarkdownFile from '../util/MarkdownFile'
-import RecordCollection from '../util/RecordCollection'
-import RecordCollectionDefinition from '../util/RecordCollectionDefinition'
+import MarkdownFile from '../interfaces/MarkdownFile'
+import RecordCollection from '../interfaces/RecordCollection'
+import RecordCollectionDefinition from '../interfaces/RecordCollectionDefinition'
 import { normalizeRecordCollectionDefinition } from '../util/validators'
 
 import loadAllRecords from './loadAllRecords'
