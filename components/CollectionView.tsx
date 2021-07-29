@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-import MarkdownFile from '../util/MarkdownFile'
+import MarkdownFile from '../interfaces/MarkdownFile'
 
 interface Props {
     title: string

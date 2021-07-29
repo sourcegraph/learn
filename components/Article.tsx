@@ -6,7 +6,7 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import RecordCollection from '../util/RecordCollection'
+import RecordCollection from '../interfaces/RecordCollection'
 
 import CollectionView from './CollectionView'
 import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'

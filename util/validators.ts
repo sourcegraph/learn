@@ -1,8 +1,8 @@
 import greyMatter from 'gray-matter'
 
-import AuthorCollection from './AuthorCollection'
-import FrontMatter from './FrontMatter'
-import RecordCollectionDefinition from './RecordCollectionDefinition'
+import AuthorCollection from '../interfaces/AuthorCollection'
+import FrontMatter from '../interfaces/FrontMatter'
+import RecordCollectionDefinition from '../interfaces/RecordCollectionDefinition'
 
 export function isString(value: unknown): value is string {
     return typeof value === 'string'
