@@ -3,8 +3,7 @@ import { promises as fs } from 'fs'
 import yaml from 'js-yaml'
 
 import AuthorCollection from '../interfaces/AuthorCollection'
-
-import { normalizeAuthorCollectionDefinition } from './validators'
+import { normalizeAuthorCollectionDefinition } from '../util/validators'
 
 interface AuthorCollections {
     authors: AuthorCollection[]

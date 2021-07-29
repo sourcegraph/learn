@@ -5,9 +5,9 @@ import yaml from 'js-yaml'
 import MarkdownFile from '../interfaces/MarkdownFile'
 import RecordCollection from '../interfaces/RecordCollection'
 import RecordCollectionDefinition from '../interfaces/RecordCollectionDefinition'
+import { normalizeRecordCollectionDefinition } from '../util/validators'
 
 import loadAllRecords from './loadAllRecords'
-import { normalizeRecordCollectionDefinition } from './validators'
 
 interface RecordCollections {
     recordCollections: RecordCollection[]
