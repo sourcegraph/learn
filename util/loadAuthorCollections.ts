@@ -2,7 +2,8 @@ import { promises as fs } from 'fs'
 
 import yaml from 'js-yaml'
 
-import AuthorCollection from './AuthorCollection'
+import AuthorCollection from '../interfaces/AuthorCollection'
+
 import { normalizeAuthorCollectionDefinition } from './validators'
 
 interface AuthorCollections {

@@ -3,7 +3,8 @@ import path from 'path'
 
 import greyMatter from 'gray-matter'
 
-import MarkdownFile from './MarkdownFile'
+import MarkdownFile from '../interfaces/MarkdownFile'
+
 import { normalizeFrontMatter } from './validators'
 
 function removeExtension(filename: string): string {
