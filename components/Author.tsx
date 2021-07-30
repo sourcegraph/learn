@@ -14,7 +14,7 @@ export interface Props {
 const Author: React.FunctionComponent<Props> = props => {
   const authorName = props.validAuthor.name
   return (
-      <PageLayout documentTitle={` ${authorName}`} appendSiteTitle={true}>
+      <PageLayout documentTitle={`Resources by ${authorName}`} appendSiteTitle={true}>
          <div className="mb-4 w-100 p-2 d-flex flex-column">
             <div className=" w-25 align-self-center p-3">
               {props.validAuthor.image ?
