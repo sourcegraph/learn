@@ -66,6 +66,7 @@ export function normalizeAuthorCollectionDefinition(author: AuthorCollection): A
         id: normalizeString(author.id),
         name: normalizeString(author.name),
         bio: author.bio ? normalizeString(author.bio) : null,
-        socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : null
+        socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : null,
+        image: author.image ? normalizeString(author.image): null
     }
 }
