@@ -6,5 +6,6 @@
     id: string
     name: string
     bio?: string | null
+    image?: string | null
     socialLinks?: string[] | null
 }

@@ -16,7 +16,7 @@ const ContentCard: React.FunctionComponent<Props> = props => (
           <img src="/authors/unisex-avatar.svg" alt="Author Avatar" className="card-img-top rounded-circle p-4" />}
         <div className="card-body">
             <h5 className="card-title text-center">
-                <Link href='#'>
+                <Link href={`/authors/${props.id}`}>
                     <a className="stretched-link text-dark text-decoration-none">{props.name}</a>
                 </Link>
             </h5>
