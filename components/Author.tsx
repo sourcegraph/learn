@@ -24,7 +24,7 @@ const Author: React.FunctionComponent<Props> = props => {
             <h5 className="text-center"> {authorName}</h5>
             <p className="text-center">{props.validAuthor.bio}</p>
          </div>
-          <p>{`All articles written by ${authorName}`}</p>
+          <p>All resources published by {authorName}</p>
           <ContentCardList records={props.filteredRecordsWithUrl} />
       </PageLayout>
   )
