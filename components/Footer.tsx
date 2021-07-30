@@ -5,7 +5,7 @@ import YouTubeIcon from 'mdi-react/YoutubeIcon'
 import Link from 'next/link'
 import React from 'react'
 
-import CreativeCommonsNotice from './CreativeCommonsNotice'
+import CreativeCommonsNotice from './atoms/CreativeCommonsNotice'
 
 interface Props {
     minimal?: boolean

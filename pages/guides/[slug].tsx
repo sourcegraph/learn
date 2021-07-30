@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Article, { Props as ArticleProps } from '../../components/Article'
+import Article, { Props as ArticleProps } from '../../components/templates/Article'
 import loadAllRecords from '../../lib/loadAllRecords'
 import loadMarkdownFile from '../../lib/loadMarkdownFile'
 import serializeMdxSource from '../../lib/serializeMdxSource'

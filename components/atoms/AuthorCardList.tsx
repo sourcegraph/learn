@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AuthorCollection from '../interfaces/AuthorCollection'
+import AuthorCollection from '../../interfaces/AuthorCollection'
 
 import AuthorCard from './AuthorCard'
 

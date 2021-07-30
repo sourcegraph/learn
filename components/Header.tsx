@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HeaderCta from './HeaderCta'
+import HeaderCta from './atoms/HeaderCta'
 
 interface Props {
     showCta: boolean
