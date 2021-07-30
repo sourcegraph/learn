@@ -7,8 +7,8 @@ import ContentCardList from './ContentCardList'
 import PageLayout from './PageLayout'
 
 export interface Props {
- validAuthor: AuthorCollection
- filteredRecordsWithUrl: MarkdownFileWithUrl[]
+ author: AuthorCollection
+ records: MarkdownFileWithUrl[]
 }
 
 const Author: React.FunctionComponent<Props> = props => {
