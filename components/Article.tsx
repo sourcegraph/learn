@@ -29,6 +29,7 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
+    authorId?: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -72,11 +73,15 @@ const Article: React.FunctionComponent<Props> = props => {
 
             {/* Title and author */}
             <h1>{props.title}</h1>
-            {props.author && <p className="text-muted">By {props.author}</p>}
-
+            { props.authorId &&
+                <Link href={`/authors/${props.authorId}`}>
+                    <a className="text-muted text-capitalize mb-5 text-decoration-none">By {props.authorId}</a>
+                </Link>
+            }
+            {console.log({props})}
             {/* Tags list */}
             {props.tags.length > 0 ? (
-                <div className="mb-5">
+                <div className="mb-5 mt-3">
                     {props.tags.map(tag => (
                         <Link key={tag} href={`/tags/${tag}`}>
                             <a className="me-1">
