@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next'
 import React from 'react'
 
-import ContentCardList from '../components/ContentCardList'
+import ContentCardList from '../components/atoms/ContentCardList'
 import Header from '../components/Header'
-import PageLayout from '../components/PageLayout'
+import PageLayout from '../components/layouts/PageLayout'
+import loadAllRecords from '../lib/loadAllRecords'
 import { MarkdownFileWithUrl } from '../types/MarkdownFileWithUrl'
-import loadAllRecords from '../util/loadAllRecords'
 import omitUndefinedFields from '../util/omitUndefinedFields'
 
 interface Props {

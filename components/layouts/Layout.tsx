@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import * as React from 'react'
 
-import { googleTagManagerId } from '../site-config'
-
-import Footer from './Footer'
-import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from './GoogleTagManager'
-import NavBar from './NavBar'
+import { googleTagManagerId } from '../../site-config'
+import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
+import Footer from '../Footer'
+import NavBar from '../NavBar'
 
 const SITE_TITLE = 'Sourcegraph Learn'
 
@@ -17,6 +16,7 @@ const defaultMetaTags = {
 export interface MetaTags {
     image?: string | null
     description?: string | null
+    type?: string
 }
 
 export interface Props {
@@ -41,6 +41,8 @@ const Layout: React.FunctionComponent<Props> = props => {
         documentTitle = `${documentTitle} - ${SITE_TITLE}`
     }
 
+    const metaType = props.metaTags?.type ?? 'website'
+
     // If the image is relative, prefix it with the public URL, because meta image tags expect an absolute URL.
     const metaDescription = props.metaTags?.description ?? defaultMetaTags.description
     let metaImage = props.metaTags?.image ?? defaultMetaTags.image
@@ -64,6 +66,7 @@ const Layout: React.FunctionComponent<Props> = props => {
                 {/* Prism theme for syntax highlighting */}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
 
+                <meta property="og:type" content={metaType} />
                 <meta property="og:title" content={documentTitle} />
                 <meta property="og:image" content={metaImage} />
                 <meta name="description" content={metaDescription} />

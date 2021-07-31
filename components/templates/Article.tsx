@@ -6,15 +6,14 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import RecordCollection from '../interfaces/RecordCollection'
-
-import CollectionView from './CollectionView'
-import EmbeddedYoutubeVideo from './EmbeddedYoutubeVideo'
-import GifLikeVideo from './GifLikeVideo'
-import { MetaTags } from './Layout'
-import PageLayout from './PageLayout'
-import SourcegraphSearch from './SourcegraphSearch'
-import TocWrapper from './TocWrapper'
+import RecordCollection from '../../interfaces/RecordCollection'
+import CollectionView from '../atoms/CollectionView'
+import EmbeddedYoutubeVideo from '../atoms/EmbeddedYoutubeVideo'
+import GifLikeVideo from '../atoms/GifLikeVideo'
+import SourcegraphSearch from '../atoms/SourcegraphSearch'
+import TocWrapper from '../atoms/TocWrapper'
+import { MetaTags } from '../layouts/Layout'
+import PageLayout from '../layouts/PageLayout'
 
 export interface Props {
     title: string
@@ -38,6 +37,7 @@ const Article: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
+        type: 'article',
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
@@ -69,7 +69,9 @@ const Article: React.FunctionComponent<Props> = props => {
             leftColumn={tocFragment}
         >
             {/* Header image */}
-            {props.image && showHeaderImage && <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />}
+            {props.image && showHeaderImage && (
+                <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />
+            )}
 
             {/* Title and author */}
             <h1>{props.title}</h1>
