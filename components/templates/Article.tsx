@@ -80,7 +80,7 @@ const Article: React.FunctionComponent<Props> = props => {
                     <a className="text-muted text-capitalize mb-5 text-decoration-none">By {props.authorId}</a>
                 </Link>
             }
-            {console.log({props})}
+
             {/* Tags list */}
             {props.tags.length > 0 ? (
                 <div className="mb-5 mt-3">

@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import Author, { Props as AuthorProps } from '../../components/Author'
+import loadAllRecords from '../../lib/loadAllRecords'
+import loadAuthorCollections from '../../lib/loadAuthorCollections'
 import getQueryParameter from '../../util/getQueryParameters'
-import loadAllRecords from '../../util/loadAllRecords'
-import loadAuthorCollections from '../../util/loadAuthorCollections'
 import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export const getStaticPaths: GetStaticPaths = async () => {
