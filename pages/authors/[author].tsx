@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Author, { Props as AuthorProps } from '../../components/Author'
+import Author, { Props as AuthorProps } from '../../components/templates/Profile'
 import loadAllRecords from '../../lib/loadAllRecords'
 import loadAuthorCollections from '../../lib/loadAuthorCollections'
 import getQueryParameter from '../../util/getQueryParameters'
@@ -20,6 +20,10 @@ export const getStaticProps: GetStaticProps<AuthorProps> = async context => {
     const authorId = getQueryParameter(context.params, 'author')
     const authorCollection =  await loadAuthorCollections()
     const author = authorCollection.authors.find(author => author.id === authorId)
+
+    if (!author) {
+        throw new Error(`Did not find author with id "${authorId}".`)
+    }
 
     const posts = await loadAllRecords('posts')
     const filteredRecords = posts.filter(record => record.frontMatter.author === authorId)
