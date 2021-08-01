@@ -28,6 +28,7 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
+    showToc?: boolean
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -47,7 +48,7 @@ const Article: React.FunctionComponent<Props> = props => {
     const showHeaderImage = !props.tags.includes('video')
 
     let tocFragment
-    if (props.toc) {
+    if (props.toc && props.showToc) {
         tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
         tocFragment = (
             <>

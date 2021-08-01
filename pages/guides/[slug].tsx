@@ -23,6 +23,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
     const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : ''
+    const showToc = markdownFile.frontMatter.showToc ?? true
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -33,6 +34,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
             socialImage: markdownFile.frontMatter.socialImage,
             description: markdownFile.frontMatter.description,
             toc,
+            showToc,
             mdxSource: serializeResult,
             slug,
         }),

@@ -48,6 +48,7 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
         imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : null,
         socialImage: rawFrontMatter.socialImage ? normalizeString(rawFrontMatter.socialImage) : null,
         description: rawFrontMatter.description ? normalizeString(rawFrontMatter.description) : null,
+        showToc: isBoolean(rawFrontMatter.showToc) ? rawFrontMatter.showToc : true,
         type: normalizeString(rawFrontMatter.type)
     }
 }

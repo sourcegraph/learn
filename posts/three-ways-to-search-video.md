@@ -5,6 +5,7 @@ author: marek-zaluski
 image: https://i3.ytimg.com/vi/XLfE2YuRwvw/maxresdefault.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
 type: posts
+showToc: false
 ---
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />

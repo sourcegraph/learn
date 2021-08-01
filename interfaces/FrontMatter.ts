@@ -26,6 +26,14 @@ export default interface FrontMatter {
     /** Image URL used for social image tag (og:image). If not present, the
      * social image defaults to the `image` field. */
     socialImage?: string | null
+    /**
+     * Flag to determine if table of contents should be shown for an article or not
+     * If present and its value true, table of contents should be shown
+     * If present and its value is false, TOC should not be shown
+     * If absent, TOC should be shown
+     * Hence by default it is visible except it is set to false
+     */
+    showToc?: boolean
 
     /** Content type */
     type: string
