@@ -77,7 +77,7 @@ const Article: React.FunctionComponent<Props> = props => {
             <h1>{props.title}</h1>
             { props.authorId &&
                 <Link href={`/authors/${props.authorId}`}>
-                    <a className="text-muted text-capitalize mb-5 text-decoration-none">By {props.authorId}</a>
+                    <a className="text-muted text-capitalize mb-5">By {props.author}</a>
                 </Link>
             }
 
