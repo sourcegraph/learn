@@ -8,10 +8,8 @@
 }
 
 .col {
-    align-items: center;
     display: flex;
-    flex: 0 0 auto;
-    justify-content: center;
+    padding: .625rem;
 
     &.extra-small {
         width: 8.33%;

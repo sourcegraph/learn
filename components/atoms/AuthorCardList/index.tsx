@@ -1,15 +1,16 @@
 import React from 'react'
 
-import AuthorCollection from '../../interfaces/AuthorCollection'
+import AuthorCollection from '../../../interfaces/AuthorCollection'
+import AuthorCard from '../AuthorCard'
 
-import AuthorCard from './AuthorCard'
+import { StyledAuthorCardList } from './AuthorCardListStyles'
 
 interface Props {
     authors: AuthorCollection[]
 }
 
 const AuthorCardList: React.FunctionComponent<Props> = props => (
-    <div className="row row-cols-1 row-cols-lg-2">
+    <StyledAuthorCardList>
         {props.authors.map(author => (
             <div className="col" key={author.id}>
                 <AuthorCard
@@ -20,7 +21,7 @@ const AuthorCardList: React.FunctionComponent<Props> = props => (
                 />
             </div>
         ))}
-    </div>
+    </StyledAuthorCardList>
 )
 
 export default AuthorCardList
