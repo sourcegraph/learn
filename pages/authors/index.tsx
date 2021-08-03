@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         props: omitUndefinedFields({
             uniqueAuthors: authors.filter(author => {
                 const recordAuthors = combinedRecords.map(record => omitUndefinedFields(record.frontMatter.author))
-                return recordAuthors.includes(author.id)
+                return recordAuthors.includes(author.slug)
             })
         })
     }

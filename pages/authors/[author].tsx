@@ -8,8 +8,8 @@ import omitUndefinedFields from '../../util/omitUndefinedFields'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const authorCollection =  await loadAuthorCollections()
-    const authorIds = authorCollection.authors.map(author => author.id)
-    const paths = authorIds.map(authorId => `/authors/${authorId}`)
+    const authorSlugs = authorCollection.authors.map(author => author?.slug)
+    const paths = authorSlugs.map(authorSlug => `/authors/${authorSlug}`)
     return {
         paths,
         fallback: false,
@@ -17,16 +17,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<AuthorProps> = async context => {
-    const authorId = getQueryParameter(context.params, 'author')
+    const authorSlug = getQueryParameter(context.params, 'author')
     const authorCollection =  await loadAuthorCollections()
-    const author = authorCollection.authors.find(author => author.id === authorId)
+    const author = authorCollection.authors.find(author => author.slug === authorSlug)
 
     if (!author) {
-        throw new Error(`Did not find author with id "${authorId}".`)
+        throw new Error(`Did not find author with id "${authorSlug}".`)
     }
 
     const posts = await loadAllRecords('posts')
-    const filteredRecords = posts.filter(record => record.frontMatter.author === authorId)
+    const filteredRecords = posts.filter(record => record.frontMatter.author === authorSlug)
     const records = filteredRecords.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` }))
 
     return {

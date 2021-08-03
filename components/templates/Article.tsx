@@ -28,7 +28,7 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    authorId?: string | null
+    authorSlug?: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -75,9 +75,9 @@ const Article: React.FunctionComponent<Props> = props => {
 
             {/* Title and author */}
             <h1>{props.title}</h1>
-            { props.authorId &&
-                <Link href={`/authors/${props.authorId}`}>
-                    <a className="text-muted text-capitalize mb-5">By {props.author}</a>
+            { props.authorSlug &&
+                <Link href={`/authors/${props.authorSlug}`}>
+                    <a className="text-muted text-capitalize mb-5 text-decoration-none">By <span className="text-primary"> {props.author} </span></a>
                 </Link>
             }
 

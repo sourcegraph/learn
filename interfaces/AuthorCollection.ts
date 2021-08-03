@@ -3,7 +3,7 @@
  * in the `collections.yaml` file
  */
  export default interface AuthorCollection {
-    id: string
+    slug: string
     name: string
     bio?: string | null
     image?: string | null

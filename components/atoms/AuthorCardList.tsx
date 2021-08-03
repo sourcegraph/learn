@@ -10,12 +10,12 @@ interface Props {
 
 const AuthorCardList: React.FunctionComponent<Props> = props => (
     <div className="row row-cols-1 row-cols-lg-2">
-        {props.authors.map(author => (
-            <div className="col" key={author.id}>
+        {props.authors?.map(author => (
+            <div className="col" key={author.slug}>
                 <AuthorCard
                     name={author.name}
                     bio={author.bio}
-                    id={author.id}
+                    id={author.slug}
                     socialLinks={author.socialLinks}
                 />
             </div>

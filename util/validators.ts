@@ -63,7 +63,7 @@ export function normalizeRecordCollectionDefinition(collection: RecordCollection
 
 export function normalizeAuthorCollectionDefinition(author: AuthorCollection): AuthorCollection {
     return {
-        id: normalizeString(author.id),
+        slug: normalizeString(author.slug),
         name: normalizeString(author.name),
         bio: author.bio ? normalizeString(author.bio) : null,
         socialLinks: author.socialLinks ? normalizeStringArray(author.socialLinks) : null,
