@@ -15,7 +15,7 @@ const AuthorCardList: React.FunctionComponent<Props> = props => (
                 <AuthorCard
                     name={author.name}
                     bio={author.bio}
-                    id={author.slug}
+                    slug={author.slug}
                     socialLinks={author.socialLinks}
                 />
             </div>
