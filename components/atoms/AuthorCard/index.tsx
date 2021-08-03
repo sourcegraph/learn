@@ -2,13 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 
 import Card from '../Card'
+import ContentCard from '../ContentCard'
 
-import {
-    StyledAuthorCardBody,
-    StyledAuthorCardTitle,
-    StyledAuthorCardLink,
-    StyledAuthorImage,
-} from './AuthorCardStyles'
+import { StyledAuthorImage } from './AuthorCardStyles'
 
 interface Props {
     name: string
@@ -19,16 +15,13 @@ interface Props {
 }
 
 const AuthorCard: React.FunctionComponent<Props> = props => (
-    <Card>
+    <Card showBorder={true}>
         <StyledAuthorImage src="/authors/unisex-avatar.svg" alt="Author Avatar" />
-        <StyledAuthorCardBody>
-            <StyledAuthorCardTitle>
-                <Link href="/authors" passHref={true}>
-                    <StyledAuthorCardLink>{props.name}</StyledAuthorCardLink>
-                </Link>
-            </StyledAuthorCardTitle>
-            {props.bio && <p>{props.bio}</p>}
-        </StyledAuthorCardBody>
+        <ContentCard
+            title={props.name}
+            url="/authors"
+            description={props.bio}
+        />
     </Card>
 )
 

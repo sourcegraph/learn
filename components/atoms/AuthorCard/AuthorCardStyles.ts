@@ -20,6 +20,5 @@ export const StyledAuthorCardLink = styled.a`
 export const StyledAuthorImage = styled.img`
     border-radius: 50%;
     padding: 1.5rem;
-    vertical-align: center;
     width: 100%;
 `

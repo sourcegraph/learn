@@ -19,6 +19,7 @@ const ContentCardList: React.FunctionComponent<Props> = props => (
                     image={record.frontMatter.image}
                     imageAlt={record.frontMatter.imageAlt}
                     url={record.url}
+                    contentType='post'
                 />
             </div>
         ))}

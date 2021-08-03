@@ -1,15 +1,19 @@
 .row {
+    display: flex;
     flex-shrink: 0;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
-    padding-right: calc(var(1.5rem) * .5);
-    padding-left: calc(var(1.5rem) * .5);
     margin-top: 0;
 }
 
 .col {
     display: flex;
     padding: .625rem;
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+    }
 
     &.extra-small {
         width: 8.33%;
