@@ -16,8 +16,6 @@ export const StyledCollectionBody = styled.div`
 `
 export const StyledCollectionTitle = styled.h5`
     font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.2;
     margin: 0 0 .5rem 0;
 `
 export const StyledCollectionDescription = styled.p`
