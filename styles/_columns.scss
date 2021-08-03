@@ -1,0 +1,31 @@
+.row {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(1.5rem) * .5);
+    padding-left: calc(var(1.5rem) * .5);
+    margin-top: 0;
+}
+
+.col {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+
+    &.extra-small {
+        width: 8.33%;
+    }
+
+    &.small {
+        width: 33.33%  
+    }
+
+    &.medium {
+        width: 58.33%
+    }
+
+    &.large {
+        width: 83.33%
+    }
+}

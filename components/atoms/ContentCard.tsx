@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
+import Card from './Card'
+
 export interface Props {
     title: string
     tags?: string[] | null
@@ -11,7 +13,7 @@ export interface Props {
 }
 
 const ContentCard: React.FunctionComponent<Props> = props => (
-    <div className="card mb-4">
+    <Card>
         {props.image && <img src={props.image} className="card-img-top" alt={props.imageAlt ? props.imageAlt : ''} />}
         <div className="card-body">
             <h5 className="card-title">
@@ -24,7 +26,7 @@ const ContentCard: React.FunctionComponent<Props> = props => (
             )}
             {props.description && <p className="card-text">{props.description}</p>}
         </div>
-    </div>
+    </Card>
 )
 
 export default ContentCard

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/Footer.scss'
 import '../styles/typography.scss'
 import '../styles/ErrorPage.scss'
+import '../styles/styles.scss'
 
 const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />
 
