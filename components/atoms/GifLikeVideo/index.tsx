@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { StyledVideo } from './GifLikeVideoStyles'
+
 interface Props {
     url: string
     type?: string
@@ -14,16 +16,14 @@ interface Props {
  * screencast demonstrations or animations.
  */
 const GifLikeVideo: React.FunctionComponent<Props> = props => (
-    <video
+    <StyledVideo
         autoPlay={true}
         loop={true}
         muted={true}
         playsInline={true}
-        className="my-5 mx-auto d-block"
-        style={{ maxWidth: '100%' }}
     >
         <source src={props.url} type={props.type ?? 'video/mp4'} />
-    </video>
+    </StyledVideo>
 )
 
 export default GifLikeVideo
