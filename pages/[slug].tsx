@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
     const recordAuthorSlug = markdownFile.frontMatter.author ?? null
-    // const recordAuthor = recordAuthorSlug ? slugToTitleCase(recordAuthorSlug) : null
+
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
