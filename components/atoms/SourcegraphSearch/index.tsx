@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Button from '../Button'
 import Card from '../Card'
+import Column from '../Column'
 
 import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
 
@@ -21,17 +22,17 @@ const SourcegraphSearch: React.FunctionComponent<Props> = props => {
     return (
         <Card>
             <StyledSearchBody>
-                <div className="col extra-small">
+                <Column width="extra-small">
                     <img width="32" src="/sourcegraph-mark.svg" alt="Sourcegraph logo" />
-                </div>
-                <div className="col medium">
+                </Column>
+                <Column width="medium">
                     <StyledSearchInput
                         type="text"
                         value={query}
                         onChange={event => setQuery(event.target.value)}
                     />
-                </div>
-                <div className="col small">
+                </Column>
+                <Column width="small">
                     <Button
                         className="is-primary small"
                         href={`https://sourcegraph.com/search?q=${encodeURIComponent(
@@ -42,7 +43,7 @@ const SourcegraphSearch: React.FunctionComponent<Props> = props => {
                     >
                         <span>Search on Sourcegraph</span>
                     </Button>
-                </div>
+                </Column>
             </StyledSearchBody>
         </Card>
     )

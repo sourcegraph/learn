@@ -1,16 +1,18 @@
 import React from 'react'
 
 import { MarkdownFileWithUrl } from '../../../types/MarkdownFileWithUrl'
+import Column from '../Column'
 import ContentCard from '../ContentCard'
+import Row from '../Row'
 
 interface Props {
     records: MarkdownFileWithUrl[]
 }
 
 const ContentCardList: React.FunctionComponent<Props> = props => (
-    <div className="flex-row">
+    <Row>
         {props.records.map(record => (
-            <div className="col" key={record.url}>
+            <Column flex={true} width='flex-medium' key={record.url}>
                 <ContentCard
                     title={record.frontMatter.title}
                     tags={record.frontMatter.tags}
@@ -20,9 +22,9 @@ const ContentCardList: React.FunctionComponent<Props> = props => (
                     url={record.url}
                     contentType='post'
                 />
-            </div>
+            </Column>
         ))}
-    </div>
+    </Row>
 )
 
 export default ContentCardList

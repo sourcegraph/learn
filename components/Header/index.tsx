@@ -1,6 +1,7 @@
 import React from 'react'
 
 import HeaderCta from '../atoms/HeaderCta'
+import Row from '../atoms/Row'
 
 import { StyledHeaderImage } from './HeaderStyles'
 
@@ -12,10 +13,10 @@ interface Props {
 
 const Header: React.FunctionComponent<Props> = props => (
     <>
-        <div className="flex-row">
+        <Row>
             <StyledHeaderImage src="/headers/sourcegraph-learn-header.svg" alt="Sourcegraph Learn" />
             {props.showCta && <HeaderCta link={props.link} text={props.text} />}
-        </div>
+        </Row>
     </>
 )
 
