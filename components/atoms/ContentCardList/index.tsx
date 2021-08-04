@@ -1,15 +1,14 @@
 import React from 'react'
 
-import { MarkdownFileWithUrl } from '../../types/MarkdownFileWithUrl'
-
-import ContentCard from './ContentCard'
+import { MarkdownFileWithUrl } from '../../../types/MarkdownFileWithUrl'
+import ContentCard from '../ContentCard'
 
 interface Props {
     records: MarkdownFileWithUrl[]
 }
 
 const ContentCardList: React.FunctionComponent<Props> = props => (
-    <div className="row row-cols-1 row-cols-lg-2">
+    <div className="flex-row">
         {props.records.map(record => (
             <div className="col" key={record.url}>
                 <ContentCard

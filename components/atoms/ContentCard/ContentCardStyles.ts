@@ -4,7 +4,6 @@ export const StyledCardBody = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1rem 1rem;
-    text-align: left;
 `
 
 export const StyledCardTitle = styled.h5`

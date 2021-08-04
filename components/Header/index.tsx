@@ -1,6 +1,8 @@
 import React from 'react'
 
-import HeaderCta from './atoms/HeaderCta'
+import HeaderCta from '../atoms/HeaderCta'
+
+import { StyledHeaderImage } from './HeaderStyles'
 
 interface Props {
     showCta: boolean
@@ -10,8 +12,8 @@ interface Props {
 
 const Header: React.FunctionComponent<Props> = props => (
     <>
-        <div className="row">
-            <img src="/headers/sourcegraph-learn-header.svg" className="w-100 mb-5" alt="Sourcegraph Learn" />
+        <div className="flex-row">
+            <StyledHeaderImage src="/headers/sourcegraph-learn-header.svg" alt="Sourcegraph Learn" />
             {props.showCta && <HeaderCta link={props.link} text={props.text} />}
         </div>
     </>

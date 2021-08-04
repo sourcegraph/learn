@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface Props {
     addMargin: boolean | undefined
     showBorder: boolean | undefined
+    leftAlign: boolean | undefined
 }
 
 export const StyledCard = styled.div<Props>`
@@ -18,6 +19,9 @@ export const StyledCard = styled.div<Props>`
     border-radius: .25rem;
     margin: ${props => props.addMargin
         ? '3rem 0'
-        : '0 0 1.5rem 0'};
+        : '0 .625rem 1.5rem'};
+    text-align: ${props => props.leftAlign
+        ? 'left'
+        : 'center'};
     word-wrap: break-word;
 `

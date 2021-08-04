@@ -20,21 +20,25 @@ export interface Props {
     contentType?: string | null
 }
 
-const ContentCard: React.FunctionComponent<Props> = props => (
-    <Card showBorder={props.contentType === 'post'}>
-        {props.image && <img src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />}
-        <StyledCardBody>
-            <StyledCardTitle>
-                <Link href={props.url} passHref={true}>
-                    <StyledCardLink>{props.title}</StyledCardLink>
-                </Link>
-            </StyledCardTitle>
-            {props.tags && (
-                <StyledCardTagList>{props.tags?.join(' • ')}</StyledCardTagList>
-            )}
-            {props.description && <p>{props.description}</p>}
-        </StyledCardBody>
-    </Card>
-)
+const ContentCard: React.FunctionComponent<Props> = props => {
+    const isPost = props.contentType === 'post'
+
+    return (
+        <Card showBorder={isPost} leftAlign={isPost}>
+            {props.image && <img src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />}
+            <StyledCardBody>
+                <StyledCardTitle>
+                    <Link href={props.url} passHref={true}>
+                        <StyledCardLink>{props.title}</StyledCardLink>
+                    </Link>
+                </StyledCardTitle>
+                {props.tags && (
+                    <StyledCardTagList>{props.tags?.join(' • ')}</StyledCardTagList>
+                )}
+                {props.description && <p>{props.description}</p>}
+            </StyledCardBody>
+        </Card>
+    )
+}
 
 export default ContentCard
