@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { StyledEmbeddedVideoWrapper, StyledEmbeddedVideo } from './EmbeddedYoutubeVideoStyles'
+
 interface Props {
     /**
      * Youtube video ID
@@ -8,14 +10,13 @@ interface Props {
 }
 
 const EmbeddedYoutubeVideo: React.FunctionComponent<Props> = props => (
-    <div className="ratio ratio-16x9 mb-5">
-        <iframe
+    <StyledEmbeddedVideoWrapper>
+        <StyledEmbeddedVideo
             title="Embedded Youtube Video"
-            className="embed-responsive-item"
             src={`https://www.youtube.com/embed/${props.id}`}
             allowFullScreen={true}
         />
-    </div>
+    </StyledEmbeddedVideoWrapper>
 )
 
 export default EmbeddedYoutubeVideo
