@@ -17,3 +17,7 @@ export const StyledCreativeCommonsLink = styled.a`
         color: #6c757d;
     }
 `
+export const StyledCreativeCommonsImage = styled.img`
+    display: block;
+    width: 5rem;
+`

@@ -4,6 +4,7 @@ import {
     StyledCreativeCommonsNoticeContainer,
     StyledCreativeCommonsNoticeText,
     StyledCreativeCommonsLink,
+    StyledCreativeCommonsImage,
 } from './CreativeCommonsNoticeStyles'
 
 const creativeCommonsUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
@@ -17,7 +18,7 @@ const CreativeCommonsNotice: React.FunctionComponent = () => (
             </StyledCreativeCommonsLink>
         </StyledCreativeCommonsNoticeText>
         <a href={creativeCommonsUrl}>
-            <img alt="Creative Commons badge" width="80" src="/creative-commons-by-nc-sa.svg" />
+            <StyledCreativeCommonsImage alt="Creative Commons badge" src="/creative-commons-by-nc-sa.svg" />
         </a>
     </StyledCreativeCommonsNoticeContainer>
 )
