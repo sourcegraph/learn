@@ -1,14 +1,15 @@
 import React from 'react'
 
+import { StyledTocWrapper } from './TocWrapperStyles'
 interface Props {
   tocContents: string
 }
 
 const TocWrapper: React.FunctionComponent<Props> = props => (
-    <div className="toc-wrapper">
-        <h5 className="header">Contents</h5>
+    <StyledTocWrapper>
+        <h5>Contents</h5>
         {props.tocContents}
-    </div>
+    </StyledTocWrapper>
 )
 
 export default TocWrapper

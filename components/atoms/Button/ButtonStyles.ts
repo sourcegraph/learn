@@ -30,4 +30,10 @@ export const StyledButton = styled.a`
         font-size: 12px;
         padding: .563rem;
     }
+
+    &.header-cta {
+        color: white;
+        background-color: #a112ff;
+        max-width: 50%;
+    }
 `

@@ -1,19 +1,23 @@
 import Link from 'next/link'
 import React from 'react'
 
+import Button from '../Button'
+
+import { StyledHeaderCtaWrapper } from './HeaderCtaStyles'
+
 interface Props {
     link?: string
     text?: string
 }
 
 const HeaderCta: React.FunctionComponent<Props> = props => (
-    <div className="header-cta-wrapper">
+    <StyledHeaderCtaWrapper>
         {props.link && <Link href={props.link}>
-            <a className="btn header-cta-button">
+            <Button className="header-cta">
                 {props.text}
-            </a>
+            </Button>
         </Link>}
-    </div>
+    </StyledHeaderCtaWrapper>
 )
 
 export default HeaderCta
