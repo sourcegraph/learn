@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { StyledIframe } from './GoogleTagManagerStyles'
+
 interface Props {
     /**
      * GTM tracking ID, starting with "GTM-".
@@ -29,12 +31,9 @@ export const GoogleTagManagerScriptTag: React.FunctionComponent<Props> = props =
  */
 export const GoogleTagManagerNoscriptFrame: React.FunctionComponent<Props> = props => (
     <noscript>
-        <iframe
+        <StyledIframe
             title="google-tag-manager-noscript-frame"
             src={`https://www.googletagmanager.com/ns.html?id=${props.id}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
         />
     </noscript>
 )
