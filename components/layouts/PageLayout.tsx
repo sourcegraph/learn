@@ -12,10 +12,10 @@ interface Props extends LayoutProps {
 
 const PageLayout: React.FunctionComponent<Props> = props => (
     <Layout documentTitle={props.documentTitle} appendSiteTitle={props.appendSiteTitle} metaTags={props.metaTags}>
-        <Row>
-            <Column flex={true} width='flex-small'>{props.leftColumn}</Column>
-            <Column flex={true} width='flex-medium'>{props.children}</Column>
-            <Column flex={true} width='flex-small'>{props.rightColumn}</Column>
+        <Row className='medium'>
+            <Column className='flex-small' width='flex-small'>{props.leftColumn}</Column>
+            <Column className='flex-medium' width='flex-medium'>{props.children}</Column>
+            <Column className='flex-small' width='flex-small'>{props.rightColumn}</Column>
         </Row>
     </Layout>
 )

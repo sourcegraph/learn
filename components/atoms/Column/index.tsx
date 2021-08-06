@@ -1,23 +1,17 @@
 import React, { ReactNode, FunctionComponent } from 'react'
 
-import { StyledColumn, StyledFlexColumn } from './ColumnStyles'
+import { StyledColumn } from './ColumnStyles'
 
 interface Props {
     children?: ReactNode
     width?: string | undefined
-    flex?: boolean | undefined
+    className?: string | undefined
 }
 
-const Column: FunctionComponent<Props> = props => props.flex
-    ? (
-        <StyledFlexColumn width={props.width}>
-            {props.children}
-        </StyledFlexColumn>
-    )
-    : (
-        <StyledColumn width={props.width}>
-            {props.children}
-        </StyledColumn> 
-    )      
+const Column: FunctionComponent<Props> = props => (
+    <StyledColumn width={props.width} className={props.className}>
+        {props.children}
+    </StyledColumn>
+)
 
 export default Column

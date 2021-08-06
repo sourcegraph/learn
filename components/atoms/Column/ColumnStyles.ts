@@ -15,17 +15,11 @@ const setColumnWidth = (width: string | undefined): string => {
                 return '58.33%'
             case 'large':
                 return '83.33%'
-            case 'flex-small':
-                return '25%'
-            case 'flex-medium':
-                return '50%'
         }
     }
 
-    return '50%'
+    return ''
 }
-
-const isFlexMedium = (width: string | undefined): boolean => width === 'flex-medium'
 
 export const StyledColumn = styled.div<Props>`
     display: flex;
@@ -34,11 +28,19 @@ export const StyledColumn = styled.div<Props>`
     @media screen and (max-width: 768px) {
         width: 100%;
     }
-`
-export const StyledFlexColumn = styled.div<Props>`
-    flex: 0 0 auto;
-    flex-direction: ${props => isFlexMedium(props.width)
-        ? 'column'
-        : 'row'};
-    width: ${props => setColumnWidth(props.width)};
+
+    &.flex-small {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    &.flex-medium {
+        flex: 0 0 auto;
+        flex-direction: column;
+        width: 50%;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
 `

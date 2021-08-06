@@ -12,7 +12,7 @@ interface Props {
 const ContentCardList: React.FunctionComponent<Props> = props => (
     <Row>
         {props.records.map(record => (
-            <Column flex={true} width='flex-medium' key={record.url}>
+            <Column className='flex-medium' width='flex-medium' key={record.url}>
                 <ContentCard
                     title={record.frontMatter.title}
                     tags={record.frontMatter.tags}

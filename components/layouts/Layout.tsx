@@ -2,6 +2,7 @@ import Head from 'next/head'
 import * as React from 'react'
 
 import { googleTagManagerId } from '../../site-config'
+import Container from '../atoms/Container'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
 import Footer from '../Footer'
 import NavBar from '../NavBar'
@@ -75,9 +76,9 @@ const Layout: React.FunctionComponent<Props> = props => {
 
             <NavBar />
 
-            <div className="container">
+            <Container>
                 <section>{props.children}</section>
-            </div>
+            </Container>
 
             <Footer />
         </>

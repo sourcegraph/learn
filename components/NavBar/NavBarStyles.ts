@@ -94,7 +94,7 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
     flex-grow: 1;
 
     @media screen and (max-width: 768px) {
-        animation: ${fadeIn} 1s ease-in;
+        animation: ${fadeIn} .5s ease-in;
         flex-basis: 100%;
         display: ${props => props.expandOnMobile
             ? 'block'

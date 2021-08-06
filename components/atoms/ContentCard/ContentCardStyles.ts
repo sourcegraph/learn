@@ -13,6 +13,10 @@ export const StyledCardTitle = styled.h5`
 export const StyledCardLink = styled.a`
     color: #212529;
     text-decoration: none;
+
+    :hover {
+        color: #212529;
+    }
 `
 export const StyledCardTagList = styled.p`
     color: #6c757d;

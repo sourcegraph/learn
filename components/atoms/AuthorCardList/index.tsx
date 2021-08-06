@@ -13,7 +13,7 @@ interface Props {
 const AuthorCardList: React.FunctionComponent<Props> = props => (
     <StyledAuthorCardList>
         {props.authors.map(author => (
-            <Column flex={true} width='flex-medium' key={author.id}>
+            <Column className='flex-medium' width='flex-medium' key={author.id}>
                 <AuthorCard
                     name={author.name}
                     bio={author.bio}

@@ -6,7 +6,7 @@ export const StyledTocWrapper = styled.div`
     }
 
     h5 {
-        padding: 48px 0 10px 32px;
+        padding: 0 0 10px 32px;
     }
 
     ul {
