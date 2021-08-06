@@ -20,7 +20,7 @@ export const StyledButton = styled.a`
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
 
-    &.is-primary {
+    &.primary {
         color: #fff;
         background-color: #0d6efd;
         border-color: #0d6efd;
@@ -35,5 +35,16 @@ export const StyledButton = styled.a`
         color: white;
         background-color: #a112ff;
         max-width: 50%;
+    }
+
+    &.outline-primary {
+        color: #0d6efd;
+        border-color: #0d6efd;
+
+        :hover {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: #fff;
+        }
     }
 `

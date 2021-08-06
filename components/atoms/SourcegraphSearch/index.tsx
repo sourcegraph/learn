@@ -34,7 +34,7 @@ const SourcegraphSearch: React.FunctionComponent<Props> = props => {
                 </Column>
                 <Column width="small">
                     <Button
-                        className="is-primary small"
+                        className="primary small"
                         href={`https://sourcegraph.com/search?q=${encodeURIComponent(
                             modifiedQuery
                         )}&utm_source=learn`}
