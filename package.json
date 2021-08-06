@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.1.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
     "js-yaml": "^3.14.1",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@sourcegraph/eslint-config": "^0.25.1",
     "@sourcegraph/prettierrc": "^3.0.3",
-    "@types/bootstrap": "5.0.17",
+    "@types/bootstrap": "5.1.0",
     "@types/js-yaml": "4.0.2",
     "@types/lodash": "4.14.172",
     "@types/node": "15.3.0",
