@@ -46,5 +46,9 @@ export const StyledButton = styled.a`
             border-color: #0d6efd;
             color: #fff;
         }
+
+        @media screen and (max-width: 768px) {
+            margin-top: .3125rem;
+        }
     }
 `

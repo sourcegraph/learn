@@ -1,22 +1,10 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 
 interface Props {
     expandNavItems?: boolean | undefined
     expandDropdown?: boolean | undefined
     expandOnMobile?: boolean | undefined
 }
-
-const fadeIn = keyframes`
-    from {
-        opacity: 0;
-        height: 0;
-    }
-
-    to {
-        opacity: 1;
-        height: 100%;
-    }
-`
 
 export const StyledNavBarWrapper = styled.nav`
     align-items: center;
@@ -94,11 +82,20 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
     flex-grow: 1;
 
     @media screen and (max-width: 768px) {
-        animation: ${fadeIn} .5s ease-in;
         flex-basis: 100%;
-        display: ${props => props.expandOnMobile
-            ? 'block'
-            : 'none'};
+        flex-direction: column;
+        overflow: ${props => props.expandOnMobile
+            ? ''
+            : 'hidden'};
+        opacity: ${props => props.expandOnMobile
+            ? '1'
+            : '0'};
+        height: ${props => props.expandOnMobile
+            ? '100%'
+            : '0'};
+        transition: ${props => props.expandOnMobile
+            ? 'all .5s ease-in 400ms'
+            : 'all .5s ease-out 400ms'};
     }
 `
 export const StyledNavBarItemsContainer = styled.div`
