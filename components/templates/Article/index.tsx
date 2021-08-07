@@ -6,14 +6,22 @@ import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
 
-import RecordCollection from '../../interfaces/RecordCollection'
-import CollectionView from '../atoms/CollectionView'
-import EmbeddedYoutubeVideo from '../atoms/EmbeddedYoutubeVideo'
-import GifLikeVideo from '../atoms/GifLikeVideo'
-import SourcegraphSearch from '../atoms/SourcegraphSearch'
-import TocWrapper from '../atoms/TocWrapper'
-import { MetaTags } from '../layouts/Layout'
-import PageLayout from '../layouts/PageLayout'
+import RecordCollection from '../../../interfaces/RecordCollection'
+import Button from '../../atoms/Button'
+import CollectionView from '../../atoms/CollectionView'
+import EmbeddedYoutubeVideo from '../../atoms/EmbeddedYoutubeVideo'
+import GifLikeVideo from '../../atoms/GifLikeVideo'
+import SourcegraphSearch from '../../atoms/SourcegraphSearch'
+import TocWrapper from '../../atoms/TocWrapper'
+import { MetaTags } from '../../layouts/Layout'
+import PageLayout from '../../layouts/PageLayout'
+
+import {
+    StyledHeaderImage,
+    StyledAuthorByline,
+    StyledTagsWrapper,
+    StyledMarkdownWrapper,
+} from './ArticleStyles'
 
 export interface Props {
     title: string
@@ -69,24 +77,22 @@ const Article: React.FunctionComponent<Props> = props => {
         >
             {/* Header image */}
             {props.image && showHeaderImage && (
-                <img src={props.image} className="w-100 mb-5" alt={props.imageAlt ? props.imageAlt : ''} />
+                <StyledHeaderImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />
             )}
 
             {/* Title and author */}
             <h1>{props.title}</h1>
-            {props.author && <p className="text-muted">By {props.author}</p>}
+            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
 
             {/* Tags list */}
             {props.tags.length > 0 ? (
-                <div className="mb-5">
+                <StyledTagsWrapper>
                     {props.tags.map(tag => (
-                        <Link key={tag} href={`/tags/${tag}`}>
-                            <a className="me-1">
-                                <span className="badge bg-primary text-capitalize">{tag}</span>
-                            </a>
-                        </Link>
+                        <Button key={tag} href={`/tags/${tag}`} className='extra-small'>
+                            {tag}
+                        </Button>
                     ))}
-                </div>
+                </StyledTagsWrapper>
             ) : null}
 
             {props.collection && (

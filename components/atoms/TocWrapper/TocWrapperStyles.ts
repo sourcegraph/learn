@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledTocWrapper = styled.div`
+    padding-right: 1.5rem;
+
     @media screen and (max-width: 768px) {
         display: none;
     }

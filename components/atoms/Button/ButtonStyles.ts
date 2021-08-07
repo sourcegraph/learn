@@ -51,4 +51,21 @@ export const StyledButton = styled.a`
             margin-top: .3125rem;
         }
     }
+
+    &.extra-small {
+        color: #fff;
+        background-color: #0d6efd;
+        border-radius: .25rem;
+        display: inline-block;
+        font-size: .75em;
+        font-weight: 700;
+        line-height: 1;
+        padding: .35em .65em;
+        margin-right: .25rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+    }
 `
