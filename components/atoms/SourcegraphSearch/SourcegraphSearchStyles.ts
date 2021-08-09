@@ -3,8 +3,13 @@ import styled from 'styled-components'
 export const StyledSearchBody = styled.div`
     flex: 1 1 auto;
     flex-wrap: wrap;
+    justify-content: space-between;
     display: flex;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 export const StyledSearchInput = styled.input`
     background-color: #fff;
@@ -17,7 +22,10 @@ export const StyledSearchInput = styled.input`
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    margin-left: .625rem;
-    padding: .375rem .75rem;
+    padding: .375rem 4rem .375rem .375rem;
     width: 100%;
+
+    @media screen and (max-width: 1024px) {
+        margin: 1rem 0;
+    }
 `

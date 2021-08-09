@@ -21,7 +21,7 @@ interface Props {
 }
 
 const CollectionView: React.FunctionComponent<Props> = props => (
-    <Card addMargin={true}>
+    <Card addMargin={true} showBorder={true} leftAlign={true}>
         <StyledCollectionHeader>This article is part of a series:</StyledCollectionHeader>
         <StyledCollectionBody>
             <StyledCollectionTitle>{props.title}</StyledCollectionTitle>

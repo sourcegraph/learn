@@ -20,7 +20,7 @@ const SourcegraphSearch: React.FunctionComponent<Props> = props => {
     }
 
     return (
-        <Card>
+        <Card showBorder={true}>
             <StyledSearchBody>
                 <Column width="extra-small">
                     <img width="32" src="/sourcegraph-mark.svg" alt="Sourcegraph logo" />
