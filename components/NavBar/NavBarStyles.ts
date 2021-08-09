@@ -94,8 +94,8 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
             ? '100%'
             : '0'};
         transition: ${props => props.expandOnMobile
-            ? 'all .2s ease-in 400ms'
-            : 'all .2s ease-out 400ms'};
+            ? 'all 50ms ease-in 400ms'
+            : 'all 50ms ease-out 400ms'};
     }
 `
 export const StyledNavBarItemsContainer = styled.div`

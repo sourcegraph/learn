@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
         max-width: 720px;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 576px) {
         max-width: 320px;
     }
 `
