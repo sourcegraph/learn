@@ -10,7 +10,7 @@ export const StyledAuthorByline = styled.p`
     margin: 0 0 1rem;
 `
 export const StyledTagsWrapper = styled.div`
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 `
 export const StyledMarkdownWrapper = styled.div`
     code {
