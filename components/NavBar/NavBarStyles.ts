@@ -22,7 +22,7 @@ export const StyledNavBarWrapper = styled.nav`
 export const StyledNavBarContainer = styled.div`
     align-items: center;
     display: flex;
-    flex-wrap: inherit;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1320px;
@@ -60,7 +60,7 @@ export const StyledNavBarMobileToggle = styled.button<Props>`
     margin: 0;
     padding: .25rem .75rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1023px) {
         display: block;
     }
 `
@@ -81,7 +81,7 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
     flex-basis: auto;
     flex-grow: 1;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1023px) {
         flex-basis: 100%;
         flex-direction: column;
         overflow: ${props => props.expandOnMobile
@@ -94,8 +94,8 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
             ? '100%'
             : '0'};
         transition: ${props => props.expandOnMobile
-            ? 'all .5s ease-in 400ms'
-            : 'all .5s ease-out 400ms'};
+            ? 'all .2s ease-in 400ms'
+            : 'all .2s ease-out 400ms'};
     }
 `
 export const StyledNavBarItemsContainer = styled.div`
@@ -131,11 +131,14 @@ export const StyledNavBarDropDownContainer = styled.div`
     align-items: center;
     display: flex;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1023px) {
         align-items: start;
         flex-direction: column;
-        padding: .5rem 0;
         margin-top: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: .5rem 0;
     }
 `
 export const StyledNavBarDropDownToggle = styled.a<Props>`
@@ -175,7 +178,7 @@ export const StyledNavBarDropDownItems = styled.div`
     border-radius: .25rem;
     z-index: 5;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1023px) {
         position: relative;
         top: 0;
     }

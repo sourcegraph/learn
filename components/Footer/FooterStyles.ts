@@ -14,6 +14,14 @@ export const StyledFooterContainer = styled.div`
     margin: 0 auto;
     max-width: 1320px;
     padding: 0 .75rem;
+
+    @media screen and (max-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 375px) {
+        max-width: 320px;
+    }
 `
 export const StyledFooterRow = styled.div`
     display: flex;
@@ -34,7 +42,7 @@ export const StyledFooterColumn = styled.div`
         width: 25%;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 576px) {
         width: 100%;
     }
 `
