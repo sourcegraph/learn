@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 import Button from '../Button'
@@ -12,11 +11,10 @@ interface Props {
 
 const HeaderCta: React.FunctionComponent<Props> = props => (
     <StyledHeaderCtaWrapper>
-        {props.link && <Link href={props.link}>
-            <Button className="header-cta">
+        {props.link && 
+            <Button href={props.link} className="header-cta">
                 {props.text}
-            </Button>
-        </Link>}
+            </Button>}
     </StyledHeaderCtaWrapper>
 )
 
