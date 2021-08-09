@@ -84,18 +84,9 @@ export const StyledNavBarItemsWrapper = styled.div<Props>`
     @media screen and (max-width: 1023px) {
         flex-basis: 100%;
         flex-direction: column;
-        overflow: ${props => props.expandOnMobile
-            ? ''
-            : 'hidden'};
-        opacity: ${props => props.expandOnMobile
-            ? '1'
-            : '0'};
-        height: ${props => props.expandOnMobile
-            ? '100%'
-            : '0'};
-        transition: ${props => props.expandOnMobile
-            ? 'all 50ms ease-in 400ms'
-            : 'all 50ms ease-out 400ms'};
+        display: ${props => props.expandOnMobile
+            ? 'block'
+            : 'none'};
     }
 `
 export const StyledNavBarItemsContainer = styled.div`
