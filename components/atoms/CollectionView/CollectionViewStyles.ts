@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface Props {
-    isActive: boolean
+    isActive?: boolean
 }
 
 export const StyledCollectionHeader = styled.div`

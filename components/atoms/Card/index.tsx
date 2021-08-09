@@ -4,9 +4,9 @@ import { StyledCard } from './CardStyles'
 
 interface Props {
     children?: ReactNode
-    addMargin?: boolean | undefined
-    showBorder?: boolean | undefined
-    leftAlign?: boolean | undefined
+    addMargin?: boolean
+    showBorder?: boolean
+    leftAlign?: boolean
 }
 
 const Card: FunctionComponent<Props> = props => (

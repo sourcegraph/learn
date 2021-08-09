@@ -17,11 +17,11 @@ export const StyledMarkdownWrapper = styled.div`
         font-family: monospace;
         font-size: inherit;
         color: #000000;
-        background: #E7E7E7;
+        background: #e7e7e7;
     }
     
     pre {
-        background-color: #E7E7E7;
+        background-color: #e7e7e7;
         overflow: auto;
         font-family: 'Monaco', monospace;
         padding: 10px;
@@ -30,6 +30,11 @@ export const StyledMarkdownWrapper = styled.div`
 
     img {
         max-width: 100%;
+    }
+
+    a {
+        color: #0d6efd;
+        text-decoration: none;
     }
     
     .reveal-on-hover-child {

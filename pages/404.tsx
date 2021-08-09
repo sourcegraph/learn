@@ -1,4 +1,3 @@
-import SignDirectionIcon from 'mdi-react/SignDirectionIcon'
 import * as React from 'react'
 
 import Layout from '../components/layouts/Layout'

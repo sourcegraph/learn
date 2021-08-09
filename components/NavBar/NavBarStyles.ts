@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 interface Props {
-    expandNavItems?: boolean | undefined
-    expandDropdown?: boolean | undefined
-    expandOnMobile?: boolean | undefined
+    expandNavItems?: boolean
+    expandDropdown?: boolean
+    expandOnMobile?: boolean
 }
 
 export const StyledNavBarWrapper = styled.nav`

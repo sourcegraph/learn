@@ -4,8 +4,8 @@ import { StyledColumn } from './ColumnStyles'
 
 interface Props {
     children?: ReactNode
-    width?: string | undefined
-    className?: string | undefined
+    width?: string
+    className?: string
 }
 
 const Column: FunctionComponent<Props> = props => (

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface Props {
-    minimal?: boolean | undefined
+    minimal?: boolean
 }
 
 export const StyledFooterWrapper = styled.footer<Props>`

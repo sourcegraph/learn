@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 interface Props {
-    width: string | undefined
+    width?: string
 }
 
 const setColumnWidth = (width: string | undefined): string => {

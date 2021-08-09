@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 interface Props {
-    addMargin: boolean | undefined
-    showBorder: boolean | undefined
-    leftAlign: boolean | undefined
+    addMargin?: boolean
+    showBorder?: boolean
+    leftAlign?: boolean
 }
 
 export const StyledCard = styled.div<Props>`

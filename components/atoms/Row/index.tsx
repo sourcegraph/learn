@@ -4,7 +4,7 @@ import { StyledRow } from './RowStyles'
 
 interface Props {
     children?: ReactNode
-    className?: string | undefined
+    className?: string
 }
 
 const Row: FunctionComponent<Props> = props => (

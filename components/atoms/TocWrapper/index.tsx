@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { StyledTocWrapper } from './TocWrapperStyles'
+
 interface Props {
-  tocContents: string
+    tocContents: string
 }
 
 const TocWrapper: React.FunctionComponent<Props> = props => (

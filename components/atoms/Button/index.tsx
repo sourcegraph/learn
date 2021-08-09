@@ -14,7 +14,7 @@ const Button: FunctionComponent<Props> = props => (
     <StyledButton
         href={props.href} 
         target={props.target} 
-        rel ={props.rel}
+        rel={props.rel}
         className={props.className}>
         {props.children}
     </StyledButton>
