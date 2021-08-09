@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
 
 import ContentCardList from '../../components/atoms/ContentCardList'
+import Header from '../../components/Header'
 import PageLayout from '../../components/layouts/PageLayout'
 import loadAllRecords from '../../lib/loadAllRecords'
 import { MarkdownFileWithUrl } from '../../types/MarkdownFileWithUrl'
@@ -45,8 +46,10 @@ const TagPage: React.FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
     return (
         <PageLayout documentTitle={`Records tagged with ${tagName}`} appendSiteTitle={true}>
-            <h1 className="mb-5">Records tagged with {tagName}</h1>
-
+            <Header 
+                showImage={false}
+                headerText={`Records tagged with ${tagName}`}
+            />
             <ContentCardList records={props.records} />
         </PageLayout>
     )

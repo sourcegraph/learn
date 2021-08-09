@@ -24,7 +24,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: React.FunctionComponent<Props> = props => (
     <PageLayout>
-        <Header showCta={false} />
+        <Header 
+            showImage={true}
+            headerImage='/headers/sourcegraph-learn-header.svg'
+            headerImageAlt='Sourcegraph Learn' />
         <ContentCardList records={props.posts} />
     </PageLayout>
 )

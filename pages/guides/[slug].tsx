@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Article, { Props as ArticleProps } from '../../components/templates/Article'
+import ArticleTemplate, { Props as ArticleTemplateProps } from '../../components/templates/ArticleTemplate'
 import loadAllRecords from '../../lib/loadAllRecords'
 import loadMarkdownFile from '../../lib/loadMarkdownFile'
 import serializeMdxSource from '../../lib/serializeMdxSource'
@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
+export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async context => {
     const slug = getQueryParameter(context.params, 'slug')
     const baseDirectory = 'guides'
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
@@ -39,4 +39,4 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async context => {
     }
 }
 
-export default Article
+export default ArticleTemplate

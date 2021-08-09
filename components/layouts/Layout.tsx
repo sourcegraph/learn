@@ -2,6 +2,7 @@ import Head from 'next/head'
 import * as React from 'react'
 
 import { googleTagManagerId } from '../../site-config'
+import Container from '../atoms/Container'
 import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
 import Footer from '../Footer'
 import NavBar from '../NavBar'
@@ -60,8 +61,9 @@ const Layout: React.FunctionComponent<Props> = props => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
+                    rel="stylesheet preload prefetch"
+                    as="style"
                     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:wght@700&display=swap"
-                    rel="stylesheet"
                 />
                 {/* Prism theme for syntax highlighting */}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
@@ -75,9 +77,9 @@ const Layout: React.FunctionComponent<Props> = props => {
 
             <NavBar />
 
-            <div className="container">
+            <Container>
                 <section>{props.children}</section>
-            </div>
+            </Container>
 
             <Footer />
         </>

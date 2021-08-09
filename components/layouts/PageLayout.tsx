@@ -1,5 +1,8 @@
 import React from 'react'
 
+import Column from '../atoms/Column'
+import Row from '../atoms/Row'
+
 import Layout, { Props as LayoutProps, MetaTags } from './Layout'
 
 interface Props extends LayoutProps {
@@ -9,11 +12,11 @@ interface Props extends LayoutProps {
 
 const PageLayout: React.FunctionComponent<Props> = props => (
     <Layout documentTitle={props.documentTitle} appendSiteTitle={props.appendSiteTitle} metaTags={props.metaTags}>
-        <div className="row">
-            <div className="col-12 col-xl-3">{props.leftColumn}</div>
-            <div className="col-12 col-xl-6 py-5">{props.children}</div>
-            <div className="col-12 col-xl-3">{props.rightColumn}</div>
-        </div>
+        <Row className='medium'>
+            <Column className='flex-small' width='flex-small'>{props.leftColumn}</Column>
+            <Column className='flex-medium' width='flex-medium'>{props.children}</Column>
+            <Column className='flex-small' width='flex-small'>{props.rightColumn}</Column>
+        </Row>
     </Layout>
 )
 
