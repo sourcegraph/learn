@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const StyledCreativeCommonsNoticeContainer = styled.div`
     margin: 1rem 0;
+
+    @media screen and (max-width: 768px) {
+        padding: .4rem;
+    }
 `
 export const StyledCreativeCommonsNoticeText = styled.div`
     color: #6c757d;

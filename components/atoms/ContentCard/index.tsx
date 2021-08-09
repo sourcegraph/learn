@@ -8,6 +8,7 @@ import {
     StyledCardTitle,
     StyledCardLink,
     StyledCardTagList,
+    StyledCardDescription,
 } from './ContentCardStyles'
 
 export interface Props {
@@ -35,7 +36,7 @@ const ContentCard: React.FunctionComponent<Props> = props => {
                 {props.tags && (
                     <StyledCardTagList>{props.tags?.join(' • ')}</StyledCardTagList>
                 )}
-                {props.description && <p>{props.description}</p>}
+                {props.description && <StyledCardDescription>{props.description}</StyledCardDescription>}
             </StyledCardBody>
         </Card>
     )

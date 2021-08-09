@@ -27,6 +27,10 @@ export const StyledMarkdownWrapper = styled.div`
         padding: 10px;
         border-radius:10px;
     }
+
+    img {
+        max-width: 100%;
+    }
     
     .reveal-on-hover-child {
       visibility: hidden;

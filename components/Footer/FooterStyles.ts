@@ -28,7 +28,11 @@ export const StyledFooterColumn = styled.div`
     flex: 0 0 auto;
     margin: 1rem 0;
     padding: 0 .75rem;
-    width: 25%;
+    width: 15%;
+
+    @media screen and (max-width: 768px) {
+        width: 25%;
+    }
 
     @media screen and (max-width: 375px) {
         width: 100%;
@@ -90,6 +94,7 @@ export const StyledSocialIconsContainer = styled.ul`
 ` 
 
 export const StyledFooterSocialLink = styled.a`
+    color: #0d6efd;
     display: inline-block;
     font-size: .9rem;
     padding: .3rem;

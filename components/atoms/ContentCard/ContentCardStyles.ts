@@ -24,3 +24,6 @@ export const StyledCardTagList = styled.p`
     text-transform: capitalize;
     margin: -.25rem 0 .5rem;
 `
+export const StyledCardDescription = styled.p`
+    margin: 0;
+`

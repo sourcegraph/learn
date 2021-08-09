@@ -115,7 +115,7 @@ export const StyledNavBarItemLink = styled.a`
     color: #000;
     display: block;
     opacity: .55;
-    padding: 0 .5rem;
+    padding: .5rem;
     text-decoration: none;
 
     :hover {
@@ -128,22 +128,25 @@ export const StyledNavBarItemLink = styled.a`
     }
 `
 export const StyledNavBarDropDownContainer = styled.div`
-    margin-top: .125rem;
-    position: relative;
+    align-items: center;
+    display: flex;
 
     @media screen and (max-width: 768px) {
+        align-items: start;
+        flex-direction: column;
         padding: .5rem 0;
         margin-top: 0;
     }
 `
 export const StyledNavBarDropDownToggle = styled.a<Props>`
+    align-items: center;
     color: #000;
     cursor: pointer;
-    display: block;
+    display: flex;
     opacity: ${props => props.expandDropdown
         ? '1'
         : '.55'};
-    padding: 0 .5rem;
+    padding: .5rem;
     text-decoration: none;
     white-space: nowrap;
 
@@ -157,10 +160,8 @@ export const StyledNavBarDropDownToggle = styled.a<Props>`
 `
 export const StyledNavBarDropDownItems = styled.div`
     display: block;
-    left: 0;
-    margin-top: .125rem;
     position: absolute;
-    top: 100%;
+    top: 4rem;
     min-width: 10rem;
     padding: .5rem 0;
     margin: 0;
@@ -175,12 +176,12 @@ export const StyledNavBarDropDownItems = styled.div`
     z-index: 5;
 
     @media screen and (max-width: 768px) {
-        position: static;
+        position: relative;
+        top: 0;
     }
 `
 export const StyledNavBarDropDownItem = styled.a`
     display: block;
-    width: 100%;
     padding: .25rem 1rem;
     clear: both;
     font-weight: 400;
