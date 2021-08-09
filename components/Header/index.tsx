@@ -3,10 +3,14 @@ import React from 'react'
 import HeaderCta from '../atoms/HeaderCta'
 import Row from '../atoms/Row'
 
-import { StyledHeaderImage } from './HeaderStyles'
+import { StyledHeaderImage, StyledHeaderText } from './HeaderStyles'
 
 interface Props {
-    showCta: boolean
+    showCta?: boolean
+    showImage: boolean
+    headerImage?: string
+    headerImageAlt?: string
+    headerText?: string
     link?: string
     text?: string
 }
@@ -14,8 +18,12 @@ interface Props {
 const Header: React.FunctionComponent<Props> = props => (
     <>
         <Row>
-            <StyledHeaderImage src="/headers/sourcegraph-learn-header.svg" alt="Sourcegraph Learn" />
+            {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} />}
             {props.showCta && <HeaderCta link={props.link} text={props.text} />}
+            {props.headerText &&
+                <StyledHeaderText>
+                    {props.headerText}
+                </StyledHeaderText>}
         </Row>
     </>
 )

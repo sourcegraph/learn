@@ -1,6 +1,5 @@
 import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import Link from 'next/link'
 import React from 'react'
 import rehypeReact from 'rehype-react'
 import unified from 'unified'
@@ -21,7 +20,7 @@ import {
     StyledAuthorByline,
     StyledTagsWrapper,
     StyledMarkdownWrapper,
-} from './ArticleStyles'
+} from './ArticleTemplateStyles'
 
 export interface Props {
     title: string
@@ -40,7 +39,7 @@ export interface Props {
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
 
-const Article: React.FunctionComponent<Props> = props => {
+const ArticleTemplate: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -103,11 +102,11 @@ const Article: React.FunctionComponent<Props> = props => {
                 />
             )}
 
-            <div className="markdown-content">
+            <StyledMarkdownWrapper>
                 <MDXRemote {...props.mdxSource} components={components} />
-            </div>
+            </StyledMarkdownWrapper>
         </PageLayout>
     )
 }
 
-export default Article
+export default ArticleTemplate
