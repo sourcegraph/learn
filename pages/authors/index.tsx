@@ -1,14 +1,11 @@
 import AuthorCardList from '@components/atoms/AuthorCardList'
 import PageLayout from '@components/layouts/PageLayout'
 import AuthorCollection from '@interfaces/AuthorCollection'
-import MarkdownFile from '@interfaces/MarkdownFile'
 import loadAllRecords from '@lib/loadAllRecords'
 import loadAuthorCollections from '@lib/loadAuthorCollections'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
 import React from 'react'
-
-export type MarkdownFileWithUrl = MarkdownFile & { url: string }
 
 interface Props {
     uniqueAuthors: AuthorCollection[]

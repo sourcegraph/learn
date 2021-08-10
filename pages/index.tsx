@@ -1,12 +1,11 @@
 import ContentCardList from '@components/atoms/ContentCardList'
 import Header from '@components/Header'
 import PageLayout from '@components/layouts/PageLayout'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import loadAllRecords from '@lib/loadAllRecords'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
 import React from 'react'
-
-import { MarkdownFileWithUrl } from '../types/MarkdownFileWithUrl'
 
 interface Props {
     posts: MarkdownFileWithUrl[]
