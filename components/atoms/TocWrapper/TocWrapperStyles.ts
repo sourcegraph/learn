@@ -28,8 +28,14 @@ export const StyledTocWrapper = styled.div`
             }
 
             a {
-                color: #0d6efd;
+                color: #6c757d;
+                opacity: .85;
                 text-decoration: none;
+
+                :hover {
+                    color: #000;
+                    opacity: 1;
+                }
             }
         }
     }
