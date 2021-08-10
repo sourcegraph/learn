@@ -1,7 +1,6 @@
+import Card from '@components/atoms/Card'
 import Link from 'next/link'
 import React from 'react'
-
-import Card from '../Card'
 
 import {
     StyledCardBody,

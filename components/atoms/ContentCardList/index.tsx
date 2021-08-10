@@ -1,9 +1,9 @@
+import Column from '@components/atoms/Column'
+import ContentCard from '@components/atoms/ContentCard'
+import Row from '@components/atoms/Row'
 import React from 'react'
 
 import { MarkdownFileWithUrl } from '../../../types/MarkdownFileWithUrl'
-import Column from '../Column'
-import ContentCard from '../ContentCard'
-import Row from '../Row'
 
 interface Props {
     records: MarkdownFileWithUrl[]

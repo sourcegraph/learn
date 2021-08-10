@@ -1,9 +1,7 @@
+import Column from '@components/atoms/Column'
+import Row from '@components/atoms/Row'
+import Layout, { Props as LayoutProps, MetaTags } from '@components/layouts/Layout'
 import React from 'react'
-
-import Column from '../atoms/Column'
-import Row from '../atoms/Row'
-
-import Layout, { Props as LayoutProps, MetaTags } from './Layout'
 
 interface Props extends LayoutProps {
     leftColumn?: React.ReactNode

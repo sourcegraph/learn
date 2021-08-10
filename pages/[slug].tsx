@@ -1,13 +1,13 @@
+import loadAllRecords from '@lib/loadAllRecords'
+import loadMarkdownFile from '@lib/loadMarkdownFile'
+import loadRecordCollections from '@lib/loadRecordCollections'
+import serializeMdxSource from '@lib/serializeMdxSource'
+import getQueryParameter from '@util/getQueryParameters'
+import omitUndefinedFields from '@util/omitUndefinedFields'
+import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import ArticleTemplate, { Props as ArticleTemplateProps } from '../components/templates/ArticleTemplate'
-import loadAllRecords from '../lib/loadAllRecords'
-import loadMarkdownFile from '../lib/loadMarkdownFile'
-import loadRecordCollections from '../lib/loadRecordCollections'
-import serializeMdxSource from '../lib/serializeMdxSource'
-import getQueryParameter from '../util/getQueryParameters'
-import omitUndefinedFields from '../util/omitUndefinedFields'
-import slugToTitleCase from '../util/slugToTitleCase'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllRecords('posts', true)

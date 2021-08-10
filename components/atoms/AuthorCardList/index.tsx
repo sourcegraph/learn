@@ -1,8 +1,7 @@
+import AuthorCard from '@components/atoms/AuthorCard'
+import Column from '@components/atoms/Column'
+import AuthorCollection from '@interfaces/AuthorCollection'
 import React from 'react'
-
-import AuthorCollection from '../../../interfaces/AuthorCollection'
-import AuthorCard from '../AuthorCard'
-import Column from '../Column'
 
 import { StyledAuthorCardList } from './AuthorCardListStyles'
 
