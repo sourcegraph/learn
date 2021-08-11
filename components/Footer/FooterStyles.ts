@@ -83,7 +83,7 @@ export const StyledFooterColumnListLink = styled.a`
     text-decoration: none;
 
     :hover {
-        color: #6c757d;
+        color: #000;
     }
 `
 export const StyledFooterLogo = styled.img`
@@ -100,13 +100,16 @@ export const StyledSocialIconsContainer = styled.ul`
     margin: .25rem auto 0;
     padding-left: 0;
 ` 
-
 export const StyledFooterSocialLink = styled.a`
-    color: #0d6efd;
+    color: #6c757d;
     display: inline-block;
     font-size: .9rem;
     padding: .3rem;
     text-decoration: none;
+
+    :hover {
+        color: #000;
+    }
 `
 export const StyledFooterPostscriptWrapper = styled.div`
     display: flex;
@@ -126,7 +129,7 @@ export const StyledFooterPostscriptListItem = styled.li`
     font-size: 14px;
 `
 export const StyledFooterPostscriptLink = styled.a`
-    color: #0d6efd;
+    color: #5033e1;
     display: block;
     padding: 0 .375rem;
     text-decoration: none;
