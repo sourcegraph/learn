@@ -3,16 +3,16 @@ export const fetchEndpoint = async (url: string, token: string, query: string): 
     const defaultOptions = {
         method: 'POST',
         headers: { 
-            Authorization: `token-sudo user="SUDO_TO_USERNAME",token=${token}`,
-            'Content-Type': 'application/json; charset=utf-8',
-            'X-Requested-With': 'XmlHttpRequest',
-            'Access-Control-Allow-Origin': '*',
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
-            "x-requested-with": "Sourcegraph",
-            "x-sourcegraph-client": "http://192.168.1.206:7080",
-            "x-sourcegraph-should-trace": "false"
+            Authorization: `token-sudo user="SUDO_TO_USERNAME",token="${token}"`,
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'sec-fetch-dest': 'empty',
+            'sec-fetch-mode': 'cors',
+            'sec-fetch-site': 'same-origin',
+            'x-requested-with': 'Sourcegraph',
+            'x-sourcegraph-client': 'http://192.168.1.206:3000',
+            'x-sourcegraph-should-trace': 'false',
+            'mode': 'cors'
         },
         body: JSON.stringify(data)
     };
@@ -33,12 +33,10 @@ export const fetchResults = async (url: string, token: string, query: string): P
     const results = await JSON.parse(JSON.stringify(response));
     console.log(results)
 
-    /*if (results.errors) {
+    /* if (results.errors) {
         console.error(results.errors);
         throw new Error(`Failed to fetch API: ${url}`);
     } */
 
     return {};
 };
-
-  
