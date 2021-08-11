@@ -5,7 +5,7 @@ import loadAllRecords from '@lib/loadAllRecords'
 import loadAuthorCollections from '@lib/loadAuthorCollections'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 interface Props {
     uniqueAuthors: AuthorCollection[]
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }
 }
 
-const AuthorHome: React.FunctionComponent<Props> = props => (
+const AuthorHome: FunctionComponent<Props> = props => (
     <PageLayout>
         <AuthorCardList authors={props.uniqueAuthors} />
     </PageLayout>

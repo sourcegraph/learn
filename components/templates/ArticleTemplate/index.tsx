@@ -9,7 +9,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import RecordCollection from '@interfaces/RecordCollection'
 import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import React from 'react'
+import { FunctionComponent, createElement } from 'react'
 import rehypeReact from 'rehype-react'
 import unified from 'unified'
 import { Node } from 'unist'
@@ -38,7 +38,7 @@ export interface Props {
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
 
-const ArticleTemplate: React.FunctionComponent<Props> = props => {
+const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -54,7 +54,7 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
 
     let tocFragment
     if (props.toc) {
-        tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
+        tocFragment = unified().use(rehypeReact, { createElement }).stringify(props.toc)
         tocFragment = (
             <>
                 <TocWrapper tocContents={tocFragment} />

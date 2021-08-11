@@ -1,7 +1,7 @@
 import Card from '@components/atoms/Card'
 import MarkdownFile from '@interfaces/MarkdownFile'
 import Link from 'next/link'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import {
     StyledCollectionHeader,
@@ -19,7 +19,7 @@ interface Props {
     activeSlug?: string
 }
 
-const CollectionView: React.FunctionComponent<Props> = props => (
+const CollectionView: FunctionComponent<Props> = props => (
     <Card addMargin={true} showBorder={true} leftAlign={true}>
         <StyledCollectionHeader>This article is part of a series:</StyledCollectionHeader>
         <StyledCollectionBody>

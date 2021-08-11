@@ -1,6 +1,6 @@
 import HeaderCta from '@components/atoms/HeaderCta'
 import Row from '@components/atoms/Row'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledHeaderImage, StyledHeaderText } from './HeaderStyles'
 
@@ -14,7 +14,7 @@ interface Props {
     text?: string
 }
 
-const Header: React.FunctionComponent<Props> = props => (
+const Header: FunctionComponent<Props> = props => (
     <>
         <Row>
             {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} />}

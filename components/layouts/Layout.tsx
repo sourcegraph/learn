@@ -3,7 +3,7 @@ import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '@compo
 import Footer from '@components/Footer'
 import NavBar from '@components/NavBar'
 import Head from 'next/head'
-import * as React from 'react'
+import { FunctionComponent } from 'react'
 
 import { googleTagManagerId } from '../../site-config'
 
@@ -34,7 +34,7 @@ export interface Props {
     metaTags?: MetaTags
 }
 
-const Layout: React.FunctionComponent<Props> = props => {
+const Layout: FunctionComponent<Props> = props => {
     let documentTitle = props.documentTitle
     if (!documentTitle) {
         documentTitle = SITE_TITLE
