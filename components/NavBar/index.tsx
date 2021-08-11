@@ -1,9 +1,8 @@
+import Button from '@components/atoms/Button'
 import MenuDownIcon from 'mdi-react/MenuDownIcon'
 import MenuIcon from 'mdi-react/MenuIcon'
 import MenuUpIcon from 'mdi-react/MenuUpIcon'
 import React, { useState } from 'react'
-
-import Button from '../atoms/Button'
 
 import {
     StyledNavBarWrapper,

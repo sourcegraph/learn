@@ -1,4 +1,4 @@
-import FrontMatter from './FrontMatter'
+import FrontMatter from '@interfaces/FrontMatter'
 
 export default interface MarkdownFile {
     slug: string

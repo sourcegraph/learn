@@ -1,3 +1,4 @@
+import MarkdownFile from '@interfaces/MarkdownFile'
 import rehypePrism from '@mapbox/rehype-prism'
 import mdastUtilToHast from 'mdast-util-to-hast'
 import mdastUtilToc from 'mdast-util-toc'
@@ -7,8 +8,6 @@ import rehypeAddClasses from 'rehype-add-classes'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { Node } from 'unist'
-
-import MarkdownFile from '../interfaces/MarkdownFile'
 
 /**
  * Classes to add to elements in the rendered markdown (after the HTML is

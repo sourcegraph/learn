@@ -1,7 +1,6 @@
-import MarkdownFile from '../interfaces/MarkdownFile'
-
-import listAllRecords from './listAllRecords'
-import loadMarkdownFile from './loadMarkdownFile'
+import MarkdownFile from '@interfaces/MarkdownFile'
+import listAllRecords from '@lib/listAllRecords'
+import loadMarkdownFile from '@lib/loadMarkdownFile'
 
 export default async function loadAllRecords(baseDirectory: string, includeUnlisted: boolean = false): Promise<MarkdownFile[]> {
     const records = await listAllRecords(baseDirectory)

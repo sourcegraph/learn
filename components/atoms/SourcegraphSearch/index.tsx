@@ -1,8 +1,7 @@
+import Button from '@components/atoms/Button'
+import Card from '@components/atoms/Card'
+import Column from '@components/atoms/Column'
 import React, { useState } from 'react'
-
-import Button from '../Button'
-import Card from '../Card'
-import Column from '../Column'
 
 import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
 

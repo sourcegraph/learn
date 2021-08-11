@@ -1,11 +1,10 @@
+import CreativeCommonsNotice from '@components/atoms/CreativeCommonsNotice'
 import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import YouTubeIcon from 'mdi-react/YoutubeIcon'
 import Link from 'next/link'
 import React from 'react'
-
-import CreativeCommonsNotice from '../atoms/CreativeCommonsNotice'
 
 import {
     StyledFooterWrapper,

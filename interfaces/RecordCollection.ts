@@ -1,7 +1,7 @@
 /**
  * Description of the fields that are supported in individual record collections
  */
- import MarkdownFile from './MarkdownFile'
+ import MarkdownFile from '@interfaces/MarkdownFile'
  
  export default interface RecordCollection {
     title: string
