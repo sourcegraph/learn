@@ -35,6 +35,7 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
+    initialSearchResults?: any | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -66,6 +67,7 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
+    console.log(props.initialSearchResults)
 
     return (
         <PageLayout

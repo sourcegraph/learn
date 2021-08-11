@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import ArticleTemplate, { Props as ArticleTemplateProps } from '../components/templates/ArticleTemplate'
+import { fetchResults } from '../lib/fetch'
 import loadAllRecords from '../lib/loadAllRecords'
 import loadMarkdownFile from '../lib/loadMarkdownFile'
 import loadRecordCollections from '../lib/loadRecordCollections'
@@ -27,6 +28,10 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
     const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
+    const initialSearchResults = await fetchResults(
+        'http://192.168.1.206:7080/.api/graphql', 
+        '9e392403f12c7df1e4025eb966cb704ccd373ea7',
+        'querystring')
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -41,6 +46,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
             slug,
+            initialSearchResults,
         }),
     }
 }
