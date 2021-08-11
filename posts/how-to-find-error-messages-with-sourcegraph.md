@@ -3,7 +3,7 @@ title: How To Find Error Messages with Sourcegraph (Video)
 author: marek-zaluski
 tags: [video, search, sourcegraph]
 description: Learn about finding error messages in your code with Sourcegraph.
-image: https://i3.ytimg.com/vi/M4zlcZJ2fOA/maxresdefault.jpg
+image: /headers/how-to-find-error-messages-with-sourcegraph-thumbnail.jpg
 imageAlt: Marek talking about finding error messages with Sourcegraph.
 type: posts
 ---
