@@ -1,8 +1,7 @@
+import Card from '@components/atoms/Card'
+import MarkdownFile from '@interfaces/MarkdownFile'
 import Link from 'next/link'
 import React from 'react'
-
-import MarkdownFile from '../../../interfaces/MarkdownFile'
-import Card from '../Card'
 
 import {
     StyledCollectionHeader,

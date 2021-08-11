@@ -1,10 +1,9 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
+import MarkdownFile from '@interfaces/MarkdownFile'
+import { normalizeFrontMatter } from '@util/validators'
 import greyMatter from 'gray-matter'
-
-import MarkdownFile from '../interfaces/MarkdownFile'
-import { normalizeFrontMatter } from '../util/validators'
 
 function removeExtension(filename: string): string {
     const parts = filename.split('.')

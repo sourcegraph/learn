@@ -1,7 +1,6 @@
+import HeaderCta from '@components/atoms/HeaderCta'
+import Row from '@components/atoms/Row'
 import React from 'react'
-
-import HeaderCta from '../atoms/HeaderCta'
-import Row from '../atoms/Row'
 
 import { StyledHeaderImage, StyledHeaderText } from './HeaderStyles'
 

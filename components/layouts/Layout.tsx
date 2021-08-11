@@ -1,11 +1,11 @@
+import Container from '@components/atoms/Container'
+import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '@components/atoms/GoogleTagManager'
+import Footer from '@components/Footer'
+import NavBar from '@components/NavBar'
 import Head from 'next/head'
 import * as React from 'react'
 
 import { googleTagManagerId } from '../../site-config'
-import Container from '../atoms/Container'
-import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
-import Footer from '../Footer'
-import NavBar from '../NavBar'
 
 const SITE_TITLE = 'Sourcegraph Learn'
 

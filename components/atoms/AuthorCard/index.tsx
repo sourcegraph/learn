@@ -1,7 +1,6 @@
+import Card from '@components/atoms/Card'
+import ContentCard from '@components/atoms/ContentCard'
 import React from 'react'
-
-import Card from '../Card'
-import ContentCard from '../ContentCard'
 
 import { StyledAuthorImage } from './AuthorCardStyles'
 
