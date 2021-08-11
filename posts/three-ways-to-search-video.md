@@ -9,7 +9,7 @@ type: posts
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />
 
-In this video:
+## In this video
 
 - Literal search ([tutorial](/literal-search-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
 - Regular expression search ([tutorial](/regular-expression-patterns), ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))
