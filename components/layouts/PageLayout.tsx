@@ -1,6 +1,6 @@
 import Column from '@components/atoms/Column'
 import Row from '@components/atoms/Row'
-import Layout, { Props as LayoutProps, MetaTags } from '@components/layouts/Layout'
+import Layout, { Props as LayoutProps } from '@components/layouts/Layout'
 import { FunctionComponent } from 'react'
 
 interface Props extends LayoutProps {
