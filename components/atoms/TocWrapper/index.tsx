@@ -6,8 +6,8 @@ import React from 'react'
 
 import { 
     StyledTocWrapper,
-    StyledNestedTocItem,
     StyledHeaderTocItem,
+    StyledTocItem,
  } from './TocWrapperStyles'
 
 interface Props {
@@ -15,29 +15,33 @@ interface Props {
     slug: string
 }
 
-const TocWrapper: React.FunctionComponent<Props> = props => (
-    <StyledTocWrapper>
-        <h5>Contents</h5>
-            <ul>
-                {props.tocContents.map(item =>
-                    item.includes('Step')
-                    ? (
-                        <StyledHeaderTocItem key={createRandomId()}>
-                            <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(item))}`}>
-                                <a>{item}</a>
-                            </Link>   
-                        </StyledHeaderTocItem>
-                    )
-                    : (
-                        <StyledNestedTocItem key={createRandomId()}>
-                            <Link href={`/${props.slug}/#${sluggify(item)}`}>
-                                <a>{item}</a>
-                            </Link>  
-                        </StyledNestedTocItem>
-                    )
-                )}
-            </ul>
-    </StyledTocWrapper>
-)
+const TocWrapper: React.FunctionComponent<Props> = props => {
+    const anyHeaders = props.tocContents.map(string => string.includes('Step')).includes(true)
+
+    return (
+        <StyledTocWrapper>
+            <h5>Contents</h5>
+                <ul>
+                    {props.tocContents.map(item =>
+                        item.includes('Step')
+                        ? (
+                            <StyledHeaderTocItem key={createRandomId()}>
+                                <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(item))}`}>
+                                    <a>{item}</a>
+                                </Link>   
+                            </StyledHeaderTocItem>
+                        )
+                        : (
+                            <StyledTocItem anyHeaders={anyHeaders} key={createRandomId()}>
+                                <Link href={`/${props.slug}/#${sluggify(item)}`}>
+                                    <a>{item}</a>
+                                </Link>  
+                            </StyledTocItem>
+                        )
+                    )}
+                </ul>
+        </StyledTocWrapper>
+    )
+}
 
 export default TocWrapper
