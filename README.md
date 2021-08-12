@@ -49,7 +49,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to load th
 To enable our pre-commit hook, update the following git config setting:
 
 ```sh
-$ git config core.hooksPath .githooks
+git config core.hooksPath .githooks
 ```
 
 ## Creating and editing content
