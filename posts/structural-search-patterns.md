@@ -40,11 +40,11 @@ In this example, we're using a placeholder, `...`, for the remaining arguments. 
 
 ## Matching multiple function arguments
 
-The above example gave us results that use `stderr`, but we may want to narrow down our search further. For example, we may want to match only `fprintf` calls where the final argument is "err". We can add `err` to our search query to match it in the position of the last argument:
+The above example gave us results that use `stderr`, but we may want to narrow down our search further. For example, we may want to match only `fprintf` calls where the final argument is `err`. We can add `err` to our search query to match it in the position of the last argument:
 
 <SourcegraphSearch query="fprintf(stderr, ..., err) lang:c repo:^github\.com/torvalds/linux$ " patternType="structural" />
 
-The above query matches `fprintf` calls where the first argument is `stderr` and the last argument is `message`. The `...` hole will match any number of arguments in between, and that's particularly useful for a function like `fprintf`, which accepts a variable number of arguments.
+The above query matches `fprintf` calls where the first argument is `stderr` and the last argument is `err`. The `...` hole will match any number of arguments in between, and that's particularly useful for a function like `fprintf`, which accepts a variable number of arguments.
 
 ## Using multiple holes
 
@@ -58,7 +58,7 @@ The second argument to `fprintf` is expected to be a format string. In this abov
 
 Structural search can interpret quote-delimited strings, too. Using the `...` hole within a string, we can match partial string literals in the code. For example, we can expand our previous search to match any format strings that start with `ERROR:`
 
-<SourcegraphSearch query='fprintf(..., "ERROR: ...", ...) lang: c repo:^github\.com/torvalds/linux$' patternType="structural" />
+<SourcegraphSearch query='fprintf(..., "ERROR: ...", ...) lang:c repo:^github\.com/torvalds/linux$' patternType="structural" />
 
 In the above example, we're using three `...` holes:
 
@@ -72,9 +72,9 @@ As a whole, this search pattern helps us find `fprintf` calls that match this pa
 
 The `...` placeholder can also match partial content between brackets, like part of an expression.
 
-Suppose we're investigating a bug that only happens when an array, `items`, is empty. In the following example, we're looking for `if` statements where the condition starts with a check for whether the array is empty:
+Suppose we're investigating a bug that only happens when an array, `parts`, is empty. In the following example, we're looking for `if` statements where the condition starts with a check for whether the array is empty:
 
-<SourcegraphSearch query="if (!items.length && ...) { ... }" patternType="structural" />
+<SourcegraphSearch query="if (!parts.length && ...) { ... } lang:javascript repo:^github\.com/google/.* count:all" patternType="structural" />
 
 The above example will match `if` statements with any additional sub-expressions that follow the `&&` operator.
 
