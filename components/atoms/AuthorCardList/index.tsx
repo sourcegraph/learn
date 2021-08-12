@@ -1,7 +1,7 @@
 import AuthorCard from '@components/atoms/AuthorCard'
 import Column from '@components/atoms/Column'
 import AuthorCollection from '@interfaces/AuthorCollection'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledAuthorCardList } from './AuthorCardListStyles'
 
@@ -9,7 +9,7 @@ interface Props {
     authors: AuthorCollection[]
 }
 
-const AuthorCardList: React.FunctionComponent<Props> = props => (
+const AuthorCardList: FunctionComponent<Props> = props => (
     <StyledAuthorCardList>
         {props.authors.map(author => (
             <Column className='flex-medium' width='flex-medium' key={author.id}>

@@ -8,7 +8,7 @@ import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import startCase from 'lodash/startCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 interface Props {
     tag: string
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }
 }
 
-const TagPage: React.FunctionComponent<Props> = props => {
+const TagPage: FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
     return (
         <PageLayout documentTitle={`Records tagged with ${tagName}`} appendSiteTitle={true}>

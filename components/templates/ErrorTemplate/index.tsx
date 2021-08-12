@@ -1,5 +1,5 @@
 import SignDirectionIcon from 'mdi-react/SignDirectionIcon'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledErrorPageWrapper, StyledErrorPageText } from './ErrorTemplateStyles'
 
