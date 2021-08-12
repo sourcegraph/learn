@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface Props {
+    anyHeaders?: boolean
+}
+
 export const StyledTocWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -12,31 +16,31 @@ export const StyledTocWrapper = styled.div`
 
     h5 {
         font-size: 1.25rem;
-        padding: 0 .8rem;
     }
 
     ul {
         list-style-type: none;
         margin: 0;
-        padding: 0 .8rem;
+        padding: 0;
     
-        li {
-            padding: .4rem 0;
+        a {
+            color: #6c757d;
+            opacity: .85;
+            text-decoration: none;
 
-            p {
-                padding: 0;
-            }
-
-            a {
-                color: #6c757d;
-                opacity: .85;
-                text-decoration: none;
-
-                :hover {
-                    color: #000;
-                    opacity: 1;
-                }
+            :hover {
+                color: #000;
+                opacity: 1;
             }
         }
     }
+`
+
+export const StyledHeaderTocItem = styled.li`
+    padding: .8rem 0;
+`
+export const StyledTocItem = styled.li<Props>`
+    margin: ${props => props.anyHeaders
+        ? '.8rem'
+        : '.8rem 0'};
 `
