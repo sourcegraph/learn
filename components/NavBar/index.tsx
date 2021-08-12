@@ -2,7 +2,7 @@ import Button from '@components/atoms/Button'
 import MenuDownIcon from 'mdi-react/MenuDownIcon'
 import MenuIcon from 'mdi-react/MenuIcon'
 import MenuUpIcon from 'mdi-react/MenuUpIcon'
-import React, { useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import {
     StyledNavBarWrapper,
@@ -20,7 +20,7 @@ import {
     StyledNavBarDropDownItem,
 } from './NavBarStyles'
 
-const NavBar: React.FunctionComponent = () => {
+const NavBar: FunctionComponent = () => {
     const [ expandDropdown, setExpandDropdown ] = useState(false)
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
 

@@ -4,7 +4,7 @@ import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import YouTubeIcon from 'mdi-react/YoutubeIcon'
 import Link from 'next/link'
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import {
     StyledFooterWrapper,
@@ -28,7 +28,7 @@ interface Props {
     minimal?: boolean
 }
 
-const Footer: React.FunctionComponent<Props> = ({ minimal }) => (
+const Footer: FunctionComponent<Props> = ({ minimal }) => (
     <StyledFooterWrapper minimal={minimal}>
         <StyledFooterContainer>
             {!minimal && (

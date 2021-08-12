@@ -1,7 +1,7 @@
 import Button from '@components/atoms/Button'
 import Card from '@components/atoms/Card'
 import Column from '@components/atoms/Column'
-import React, { useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
 
@@ -10,7 +10,7 @@ interface Props {
     patternType?: string
 }
 
-const SourcegraphSearch: React.FunctionComponent<Props> = props => {
+const SourcegraphSearch: FunctionComponent<Props> = props => {
     const [query, setQuery] = useState(props.query)
     let modifiedQuery = query
 

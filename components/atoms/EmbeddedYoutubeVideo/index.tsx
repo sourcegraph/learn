@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledEmbeddedVideoWrapper, StyledEmbeddedVideo } from './EmbeddedYoutubeVideoStyles'
 
@@ -9,7 +9,7 @@ interface Props {
     id: string
 }
 
-const EmbeddedYoutubeVideo: React.FunctionComponent<Props> = props => (
+const EmbeddedYoutubeVideo: FunctionComponent<Props> = props => (
     <StyledEmbeddedVideoWrapper>
         <StyledEmbeddedVideo
             title="Embedded Youtube Video"
