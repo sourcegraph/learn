@@ -9,14 +9,13 @@ socialImage: /headers/sourcegraph-learn-header-8.png
 type: posts
 ---
 
-How to Search with Sourcegraph using Structural Search
 Structural search helps you search code for syntactical code patterns like function calls, arguments, `if`...`else` statements, and `try`...`catch` statements. It's useful for finding nested and recursive patterns as well as multi-line blocks of code.
 
-Structural search patterns are one of the three search patterns supported by Sourcegraph, along with literal patterns and regular expressions. It's different from regular expressions because it takes into account the syntax of code, like balanced brackets, quoted strings, and delimiters.
+Structural search patterns are one of the three search patterns supported by Sourcegraph, along with literal patterns and regular expressions. They're different from regular expressions because they take into account the syntax of code, like balanced brackets, quoted strings, and delimiters.
 
 ## Enabling structural search on Sourcegraph
 
-Enable structural search by clicking the icon of two square brackets (<CodeBracketsIcon/>) to the right of the search box: 
+Enable structural search by clicking the icon of two square brackets (<CodeBracketsIcon/>) to the right of the search box:
 
 <GifLikeVideo url="/tutorial-images/enable-structural-search.mp4"/>
 
@@ -62,9 +61,9 @@ Structural search can interpret quote-delimited strings, too. Using the `...` ho
 
 In the above example, we're using three `...` holes:
 
-The first one accepts initial arguments
-The second one, within the string, accepts any string content that comes after the "Error:" portion of the string
-The third one accepts any final arguments.
+- The first one accepts initial arguments
+- The second one, within the string, accepts any string content that comes after the "Error:" portion of the string
+- The third one accepts any final arguments.
 
 As a whole, this search pattern helps us find `fprintf` calls that match this particular `"Error: ..."` pattern that we're looking for.
 
