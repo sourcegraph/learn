@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledIframe } from './GoogleTagManagerStyles'
 
@@ -12,7 +12,7 @@ interface Props {
 /**
  * Google Tag Manager script tag. This should be rendered in the <head>.
  */
-export const GoogleTagManagerScriptTag: React.FunctionComponent<Props> = props => (
+export const GoogleTagManagerScriptTag: FunctionComponent<Props> = props => (
     <script
         dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -29,7 +29,7 @@ export const GoogleTagManagerScriptTag: React.FunctionComponent<Props> = props =
  * script. This should be rendered in the <body> element (ideally right after
  * the opening <body> tag).
  */
-export const GoogleTagManagerNoscriptFrame: React.FunctionComponent<Props> = props => (
+export const GoogleTagManagerNoscriptFrame: FunctionComponent<Props> = props => (
     <noscript>
         <StyledIframe
             title="google-tag-manager-noscript-frame"
