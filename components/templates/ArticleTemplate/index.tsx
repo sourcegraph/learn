@@ -35,7 +35,13 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    initialSearchResults?: any | null
+    initialSearchResults?: SearchResults | null
+}
+
+interface SearchResults {
+    data: Node
+    search: Node
+    results: Node
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }

@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
     const initialSearchResults = await fetchResults(
         'http://192.168.1.206:7080/.api/graphql', 
-        '9e392403f12c7df1e4025eb966cb704ccd373ea7',
+        'dbb1cb9479046666d32e4e26f7e2884a7afad798',
         'querystring')
     return {
         props: omitUndefinedFields({
