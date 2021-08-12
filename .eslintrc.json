@@ -5,7 +5,8 @@
     "jsx-a11y/anchor-is-valid": "off",
     "import/no-default-export": "off",
     "react/forbid-dom-props": "warn",
-    "@typescript-eslint/require-await": "warn"
+    "@typescript-eslint/require-await": "warn",
+    "react/react-in-jsx-scope": "off"
   },
   "parserOptions": {
     "project": "tsconfig.json"

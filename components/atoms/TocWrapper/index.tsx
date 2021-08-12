@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledTocWrapper } from './TocWrapperStyles'
 
@@ -6,7 +6,7 @@ interface Props {
     tocContents: string
 }
 
-const TocWrapper: React.FunctionComponent<Props> = props => (
+const TocWrapper: FunctionComponent<Props> = props => (
     <StyledTocWrapper>
         <h5>Contents</h5>
         {props.tocContents}

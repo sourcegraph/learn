@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import {
     StyledCreativeCommonsNoticeContainer,
@@ -9,7 +9,7 @@ import {
 
 const creativeCommonsUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 
-const CreativeCommonsNotice: React.FunctionComponent = () => (
+const CreativeCommonsNotice: FunctionComponent = () => (
     <StyledCreativeCommonsNoticeContainer>
         <StyledCreativeCommonsNoticeText>
             This work is licensed under a{' '}

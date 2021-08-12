@@ -1,14 +1,14 @@
 import Column from '@components/atoms/Column'
 import Row from '@components/atoms/Row'
-import Layout, { Props as LayoutProps, MetaTags } from '@components/layouts/Layout'
-import React from 'react'
+import Layout, { Props as LayoutProps } from '@components/layouts/Layout'
+import { FunctionComponent } from 'react'
 
 interface Props extends LayoutProps {
     leftColumn?: React.ReactNode
     rightColumn?: React.ReactNode
 }
 
-const PageLayout: React.FunctionComponent<Props> = props => (
+const PageLayout: FunctionComponent<Props> = props => (
     <Layout documentTitle={props.documentTitle} appendSiteTitle={props.appendSiteTitle} metaTags={props.metaTags}>
         <Row className='medium'>
             <Column className='flex-small' width='flex-small'>{props.leftColumn}</Column>
