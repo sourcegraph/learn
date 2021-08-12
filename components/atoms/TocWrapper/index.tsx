@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
 import Link from 'next/link'
-import React from 'react'
-=======
 import { FunctionComponent } from 'react'
->>>>>>> main
 
 import { 
     StyledTocWrapper,
@@ -19,8 +15,7 @@ interface Props {
     slug: string
 }
 
-<<<<<<< HEAD
-const TocWrapper: React.FunctionComponent<Props> = props => {
+const TocWrapper: FunctionComponent<Props> = props => {
     const anyHeaders = props.tocContents.map(string => string.includes('Step')).includes(true)
 
     return (
@@ -48,13 +43,5 @@ const TocWrapper: React.FunctionComponent<Props> = props => {
         </StyledTocWrapper>
     )
 }
-=======
-const TocWrapper: FunctionComponent<Props> = props => (
-    <StyledTocWrapper>
-        <h5>Contents</h5>
-        {props.tocContents}
-    </StyledTocWrapper>
-)
->>>>>>> main
 
 export default TocWrapper

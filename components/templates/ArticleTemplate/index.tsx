@@ -9,14 +9,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import RecordCollection from '@interfaces/RecordCollection'
 import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-<<<<<<< HEAD
-import React from 'react'
-=======
-import { FunctionComponent, createElement } from 'react'
-import rehypeReact from 'rehype-react'
-import unified from 'unified'
-import { Node } from 'unist'
->>>>>>> main
+import { FunctionComponent } from 'react'
 
 import {
     StyledHeaderImage,
@@ -56,19 +49,6 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
     // to be able to override this special behavior.
     const showHeaderImage = !props.tags.includes('video')
 
-<<<<<<< HEAD
-=======
-    let tocFragment
-    if (props.toc) {
-        tocFragment = unified().use(rehypeReact, { createElement }).stringify(props.toc)
-        tocFragment = (
-            <>
-                <TocWrapper tocContents={tocFragment} />
-            </>
-        )
-    }
-
->>>>>>> main
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
