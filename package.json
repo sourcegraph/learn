@@ -21,7 +21,7 @@
     "gray-matter": "^4.0.3",
     "js-yaml": "^3.14.1",
     "mdast-util-to-hast": "^10.2.0",
-    "mdast-util-toc": "^5.1.0",
+    "mdast-util-toc": "^6.1.0",
     "mdi-react": "^7.5.0",
     "next": "^10.2.3",
     "next-mdx-remote": "^3.0.2",
