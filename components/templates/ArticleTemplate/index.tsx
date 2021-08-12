@@ -10,9 +10,6 @@ import RecordCollection from '@interfaces/RecordCollection'
 import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import React from 'react'
-import rehypeReact from 'rehype-react'
-import unified from 'unified'
-import { Node } from 'unist'
 
 import {
     StyledHeaderImage,
@@ -30,7 +27,7 @@ export interface Props {
     imageAlt?: string | null
     socialImage?: string | null
     description?: string | null
-    toc?: Node | null
+    toc?: string[] | null
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
@@ -52,16 +49,6 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
     // to be able to override this special behavior.
     const showHeaderImage = !props.tags.includes('video')
 
-    let tocFragment
-    if (props.toc) {
-        tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
-        tocFragment = (
-            <>
-                <TocWrapper tocContents={tocFragment} />
-            </>
-        )
-    }
-
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
@@ -71,7 +58,11 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
             documentTitle={documentTitle}
             appendSiteTitle={appendSiteTitle}
             metaTags={metaTags}
-            leftColumn={tocFragment}
+            leftColumn={props.toc && (
+                <>
+                    <TocWrapper tocContents={props.toc} slug={props.slug} />
+                </>
+            )}
         >
             {/* Header image */}
             {props.image && showHeaderImage && (

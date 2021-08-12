@@ -21,11 +21,7 @@ export const StyledTocWrapper = styled.div`
         padding: 0 .8rem;
     
         li {
-            padding: .4rem 0;
-
-            p {
-                padding: 0;
-            }
+            margin: .8rem 0;
 
             a {
                 color: #6c757d;
@@ -39,4 +35,11 @@ export const StyledTocWrapper = styled.div`
             }
         }
     }
+`
+export const StyledNestedTocItem = styled.li`
+    padding: 0px 0.8rem;
+`
+
+export const StyledHeaderTocItem = styled.li`
+    margin: 1rem 0;
 `
