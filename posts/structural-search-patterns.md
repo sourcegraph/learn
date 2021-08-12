@@ -16,7 +16,9 @@ Structural search patterns are one of the three search patterns supported by Sou
 
 ## Enabling structural search on Sourcegraph
 
-Enable structural search by clicking the icon of two square brackets (`[]`) to the right of the search box: [TODO insert icon here]
+Enable structural search by clicking the icon of two square brackets (<CodeBracketsIcon/>) to the right of the search box: 
+
+<GifLikeVideo url="/tutorial-images/enable-structural-search.mp4"/>
 
 Once structural search is enabled, the icon will be highlighted and you can begin performing structural searches.
 

@@ -8,6 +8,7 @@ import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
 import RecordCollection from '@interfaces/RecordCollection'
 import RegexIcon from 'mdi-react/RegexIcon'
+import CodeBracketsIcon from 'mdi-react/CodeBracketsIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import React from 'react'
 import rehypeReact from 'rehype-react'
@@ -36,7 +37,14 @@ export interface Props {
     alternateTitle?: string | null
 }
 
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
+const components = {
+    SourcegraphSearch,
+    EmbeddedYoutubeVideo,
+    GifLikeVideo,
+    RegexIcon,
+    CodeBracketsIcon,
+    CollectionView,
+}
 
 const ArticleTemplate: React.FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
