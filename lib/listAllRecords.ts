@@ -4,5 +4,6 @@ export default async function listAllRecords(baseDirectory: string): Promise<str
     const fileRegex = /\.(md|markdown|mdx)$/gi
     const getFiles = await fs.readdir(baseDirectory)
     const matchedFiles = getFiles.filter(file => file.match(fileRegex))
+
     return matchedFiles
 }
