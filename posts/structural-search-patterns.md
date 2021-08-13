@@ -3,9 +3,9 @@ title: How To Search with Sourcegraph using Structural Patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use structural search patterns to search code on Sourcegraph.
-image: /headers/sourcegraph-learn-header-8.svg
+image: /headers/sourcegraph-learn-header-10.svg
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-8.png
+socialImage: /headers/sourcegraph-learn-header-10.png
 type: posts
 ---
 
@@ -15,7 +15,7 @@ Structural search patterns are one of the three search patterns supported by Sou
 
 ## Enabling structural search on Sourcegraph
 
-Enable structural search by clicking the icon of two square brackets (<CodeBracketsIcon/>) to the right of the search box:
+Enable structural search by clicking the icon of two square brackets (`[]`) to the right of the search box:
 
 <GifLikeVideo url="/tutorial-images/enable-structural-search.mp4"/>
 

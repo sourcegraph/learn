@@ -16,7 +16,7 @@ Regular expressions, often shortened as _regex_, help you find code that matches
 
 ## Enabling regular expression search on Sourcegraph
 
-Start searching with regular expression patterns by toggling the dot asterisk (<RegexIcon/> ) button towards the right-hand side of the search box. When you mouse over it you’ll receive a tooltip that reads `Enable regular expression`.
+Start searching with regular expression patterns by toggling the dot asterisk (`.*`) button towards the right-hand side of the search box. When you mouse over it you’ll receive a tooltip that reads `Enable regular expression`.
 
 <GifLikeVideo url="/tutorial-images/enable-regex.mp4"/>
 
