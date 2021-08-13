@@ -7,7 +7,6 @@ import TocWrapper from '@components/atoms/TocWrapper'
 import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
 import RecordCollection from '@interfaces/RecordCollection'
-import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
 
@@ -33,7 +32,7 @@ export interface Props {
     alternateTitle?: string | null
 }
 
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
+const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
