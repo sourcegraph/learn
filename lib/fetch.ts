@@ -125,7 +125,7 @@ export const fetchEndpoint = async (url: string, token: string, query: string): 
     const data = {
         query: graphQLQuery,
         variables: { 
-            query: query
+            query
         },
     }
 

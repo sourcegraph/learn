@@ -34,10 +34,27 @@ export interface Props {
     initialSearchResults?: SearchResults | null
 }
 
-interface SearchResults {
-    data: Node
-    search: Node
-    results: Node
+interface SearchResults extends Array<ResultsArray> {
+    results: ResultsArray | undefined
+}
+
+interface ResultsObject {
+    typeName: string
+    repository: RepositoryMatch
+    file: FileMatch
+    lineMatches: Node
+}
+
+interface ResultsArray extends Array<ResultsObject> {
+    [key: number]: ResultsObject
+}
+
+interface RepositoryMatch {
+    repository: Node
+}
+
+interface FileMatch {
+    file: Node
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
@@ -59,7 +76,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
-    console.log(props.initialSearchResults)
+    const results: ResultsArray | undefined = props.initialSearchResults?.results
+    console.log(repo)
 
     return (
         <PageLayout
