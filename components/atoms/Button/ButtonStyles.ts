@@ -4,7 +4,7 @@ export const StyledButton = styled.a`
     background-color: transparent;
     border-radius: .25rem;
     border: 1px solid transparent;
-    color: #212529;
+    color: #000;
     cursor: pointer;
     display: inline-block;
     font-size: 1rem;
@@ -22,8 +22,8 @@ export const StyledButton = styled.a`
 
     &.primary {
         color: #fff;
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        background-color: #5033e1;
+        border-color: #5033e1;
     }
 
     &.small {
@@ -38,12 +38,12 @@ export const StyledButton = styled.a`
     }
 
     &.outline-primary {
-        color: #0d6efd;
-        border-color: #0d6efd;
+        color: #5033e1;
+        border-color: #5033e1;
 
         :hover {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
+            background-color: #5033e1;
+            border-color: #5033e1;
             color: #fff;
         }
 
@@ -54,7 +54,7 @@ export const StyledButton = styled.a`
 
     &.extra-small {
         color: #fff;
-        background-color: #0d6efd;
+        background-color: #5033e1;
         border-radius: .25rem;
         display: inline-block;
         font-size: .75em;
@@ -67,5 +67,11 @@ export const StyledButton = styled.a`
         text-align: center;
         white-space: nowrap;
         vertical-align: baseline;
+
+        :hover {
+            color: #5033e1;
+            background-color: #fff;
+            border-color: #5033e1;
+        }
     }
 `

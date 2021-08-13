@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-
-import Button from '../Button'
-import Card from '../Card'
-import Column from '../Column'
+import Button from '@components/atoms/Button'
+import Card from '@components/atoms/Card'
+import Column from '@components/atoms/Column'
+import { FunctionComponent, useState } from 'react'
 
 import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
 
@@ -11,7 +10,7 @@ interface Props {
     patternType?: string
 }
 
-const SourcegraphSearch: React.FunctionComponent<Props> = props => {
+const SourcegraphSearch: FunctionComponent<Props> = props => {
     const [query, setQuery] = useState(props.query)
     let modifiedQuery = query
 

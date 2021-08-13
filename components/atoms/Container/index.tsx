@@ -1,4 +1,4 @@
-import React, { ReactNode, FunctionComponent } from 'react'
+import { ReactNode, FunctionComponent } from 'react'
 
 import { StyledContainer } from './ContainerStyles'
 

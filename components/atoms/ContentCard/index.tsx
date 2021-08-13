@@ -1,7 +1,6 @@
+import Card from '@components/atoms/Card'
 import Link from 'next/link'
-import React from 'react'
-
-import Card from '../Card'
+import { FunctionComponent } from 'react'
 
 import {
     StyledCardBody,
@@ -21,7 +20,7 @@ export interface Props {
     contentType?: string | null
 }
 
-const ContentCard: React.FunctionComponent<Props> = props => {
+const ContentCard: FunctionComponent<Props> = props => {
     const isPost = props.contentType === 'post'
 
     return (

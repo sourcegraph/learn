@@ -1,11 +1,11 @@
+import Container from '@components/atoms/Container'
+import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '@components/atoms/GoogleTagManager'
+import Footer from '@components/Footer'
+import NavBar from '@components/NavBar'
 import Head from 'next/head'
-import * as React from 'react'
+import { FunctionComponent } from 'react'
 
 import { googleTagManagerId } from '../../site-config'
-import Container from '../atoms/Container'
-import { GoogleTagManagerScriptTag, GoogleTagManagerNoscriptFrame } from '../atoms/GoogleTagManager'
-import Footer from '../Footer'
-import NavBar from '../NavBar'
 
 const SITE_TITLE = 'Sourcegraph Learn'
 
@@ -34,7 +34,7 @@ export interface Props {
     metaTags?: MetaTags
 }
 
-const Layout: React.FunctionComponent<Props> = props => {
+const Layout: FunctionComponent<Props> = props => {
     let documentTitle = props.documentTitle
     if (!documentTitle) {
         documentTitle = SITE_TITLE
@@ -61,8 +61,7 @@ const Layout: React.FunctionComponent<Props> = props => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
-                    rel="stylesheet preload prefetch"
-                    as="style"
+                    rel="stylesheet"
                     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:wght@700&display=swap"
                 />
                 {/* Prism theme for syntax highlighting */}

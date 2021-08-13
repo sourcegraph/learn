@@ -2,14 +2,14 @@
 title: Three Ways to Search with Sourcegraph (Video)
 tags: [video, search, sourcegraph]
 author: marek-zaluski
-image: https://i3.ytimg.com/vi/XLfE2YuRwvw/maxresdefault.jpg
+image: /headers/three-ways-to-search-thumbnail.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
 type: posts
 ---
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />
 
-In this video:
+## In this video
 
 - Literal search ([tutorial](/literal-search-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
 - Regular expression search ([tutorial](/regular-expression-patterns), ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))

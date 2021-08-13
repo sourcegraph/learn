@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import Button from '../Button'
 
@@ -9,7 +9,7 @@ interface Props {
     text?: string
 }
 
-const HeaderCta: React.FunctionComponent<Props> = props => (
+const HeaderCta: FunctionComponent<Props> = props => (
     <StyledHeaderCtaWrapper>
         {props.link && 
             <Button href={props.link} className="header-cta">

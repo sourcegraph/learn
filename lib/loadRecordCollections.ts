@@ -1,13 +1,11 @@
 import { promises as fs } from 'fs'
 
+import MarkdownFile from '@interfaces/MarkdownFile'
+import RecordCollection from '@interfaces/RecordCollection'
+import RecordCollectionDefinition from '@interfaces/RecordCollectionDefinition'
+import loadAllRecords from '@lib/loadAllRecords'
+import { normalizeRecordCollectionDefinition } from '@util/validators'
 import yaml from 'js-yaml'
-
-import MarkdownFile from '../interfaces/MarkdownFile'
-import RecordCollection from '../interfaces/RecordCollection'
-import RecordCollectionDefinition from '../interfaces/RecordCollectionDefinition'
-import { normalizeRecordCollectionDefinition } from '../util/validators'
-
-import loadAllRecords from './loadAllRecords'
 
 interface RecordCollections {
     recordCollections: RecordCollection[]

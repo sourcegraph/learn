@@ -1,12 +1,11 @@
+import ContentCardList from '@components/atoms/ContentCardList'
+import Header from '@components/Header'
+import PageLayout from '@components/layouts/PageLayout'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import loadAllRecords from '@lib/loadAllRecords'
+import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
-import React from 'react'
-
-import ContentCardList from '../components/atoms/ContentCardList'
-import Header from '../components/Header'
-import PageLayout from '../components/layouts/PageLayout'
-import loadAllRecords from '../lib/loadAllRecords'
-import { MarkdownFileWithUrl } from '../types/MarkdownFileWithUrl'
-import omitUndefinedFields from '../util/omitUndefinedFields'
+import { FunctionComponent } from 'react'
 
 interface Props {
     posts: MarkdownFileWithUrl[]
@@ -22,7 +21,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }
 }
 
-const Home: React.FunctionComponent<Props> = props => (
+const Home: FunctionComponent<Props> = props => (
     <PageLayout>
         <Header 
             showImage={true}

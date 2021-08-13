@@ -34,13 +34,13 @@ export const StyledCollectionList = styled.div`
 `
 export const StyledCollectionListItem = styled.a<Props>`
     background-color: ${props => props.isActive
-    ? '#cfe2ff;'
-    : '#fff;'}
+    ? '#edeafc'
+    : '#fff'};
     border: 1px solid rgba(0,0,0,.125);
     border-width: 0 0 1px;
     color: ${props => props.isActive
-    ? '#084298;'
-    : '#212529;'}
+    ? '#20145a'
+    : '#212529'};
     display: block;
     padding: .5rem 1rem;
     position: relative;

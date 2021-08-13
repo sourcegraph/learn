@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import { StyledVideo } from './GifLikeVideoStyles'
 
@@ -15,7 +15,7 @@ interface Props {
  * and accessibility advantages (like being pausable). Use cases include
  * screencast demonstrations or animations.
  */
-const GifLikeVideo: React.FunctionComponent<Props> = props => (
+const GifLikeVideo: FunctionComponent<Props> = props => (
     <StyledVideo
         autoPlay={true}
         loop={true}

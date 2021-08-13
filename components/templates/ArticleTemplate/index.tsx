@@ -1,19 +1,15 @@
+import Button from '@components/atoms/Button'
+import CollectionView from '@components/atoms/CollectionView'
+import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
+import GifLikeVideo from '@components/atoms/GifLikeVideo'
+import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
+import TocWrapper from '@components/atoms/TocWrapper'
+import { MetaTags } from '@components/layouts/Layout'
+import PageLayout from '@components/layouts/PageLayout'
+import RecordCollection from '@interfaces/RecordCollection'
 import RegexIcon from 'mdi-react/RegexIcon'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import React from 'react'
-import rehypeReact from 'rehype-react'
-import unified from 'unified'
-import { Node } from 'unist'
-
-import RecordCollection from '../../../interfaces/RecordCollection'
-import Button from '../../atoms/Button'
-import CollectionView from '../../atoms/CollectionView'
-import EmbeddedYoutubeVideo from '../../atoms/EmbeddedYoutubeVideo'
-import GifLikeVideo from '../../atoms/GifLikeVideo'
-import SourcegraphSearch from '../../atoms/SourcegraphSearch'
-import TocWrapper from '../../atoms/TocWrapper'
-import { MetaTags } from '../../layouts/Layout'
-import PageLayout from '../../layouts/PageLayout'
+import { FunctionComponent } from 'react'
 
 import {
     StyledHeaderImage,
@@ -31,7 +27,7 @@ export interface Props {
     imageAlt?: string | null
     socialImage?: string | null
     description?: string | null
-    toc?: Node | null
+    toc?: string[] | null
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
@@ -46,7 +42,7 @@ interface SearchResults {
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, RegexIcon, CollectionView }
 
-const ArticleTemplate: React.FunctionComponent<Props> = props => {
+const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -60,16 +56,6 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
     // to be able to override this special behavior.
     const showHeaderImage = !props.tags.includes('video')
 
-    let tocFragment
-    if (props.toc) {
-        tocFragment = unified().use(rehypeReact, { createElement: React.createElement }).stringify(props.toc)
-        tocFragment = (
-            <>
-                <TocWrapper tocContents={tocFragment} />
-            </>
-        )
-    }
-
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
@@ -80,7 +66,11 @@ const ArticleTemplate: React.FunctionComponent<Props> = props => {
             documentTitle={documentTitle}
             appendSiteTitle={appendSiteTitle}
             metaTags={metaTags}
-            leftColumn={tocFragment}
+            leftColumn={props.toc && (
+                <>
+                    <TocWrapper tocContents={props.toc} slug={props.slug} />
+                </>
+            )}
         >
             {/* Header image */}
             {props.image && showHeaderImage && (

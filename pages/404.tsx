@@ -1,9 +1,8 @@
-import * as React from 'react'
+import Layout from '@components/layouts/Layout'
+import ErrorTemplate from '@components/templates/ErrorTemplate'
+import { FunctionComponent } from 'react'
 
-import Layout from '../components/layouts/Layout'
-import ErrorTemplate from '../components/templates/ErrorTemplate'
-
-export const NotFoundPage: React.FunctionComponent = () => (
+export const NotFoundPage: FunctionComponent = () => (
     <Layout>
         <ErrorTemplate />
     </Layout>

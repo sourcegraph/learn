@@ -30,7 +30,7 @@ Here are the available commands in this repository:
 
 The site requires Node.js. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
 
-```
+```sh
 nvm install
 ```
 
@@ -38,12 +38,19 @@ nvm install
 
 Install dependencies and run the development server:
 
-```
+```sh
 npm install
 npm run dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to load the result.
+
+## Configure the `pre-commit` Githook
+
+To enable our pre-commit hook, update the following git config setting:
+
+```sh
+git config core.hooksPath .githooks
+```
 
 ## Creating and editing content
 
@@ -89,7 +96,7 @@ When a pull request is created in this repository, Netlify will automatically bu
 
 When the site is being deployed to production, the following build command is executed and the output is in the `out/` directory.
 
-```
+```sh
 npm run build
 ```
 

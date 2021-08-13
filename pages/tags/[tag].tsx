@@ -1,15 +1,14 @@
+import ContentCardList from '@components/atoms/ContentCardList'
+import Header from '@components/Header'
+import PageLayout from '@components/layouts/PageLayout'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import loadAllRecords from '@lib/loadAllRecords'
+import collectTags from '@util/collectTags'
+import getQueryParameter from '@util/getQueryParameters'
+import omitUndefinedFields from '@util/omitUndefinedFields'
 import startCase from 'lodash/startCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import React from 'react'
-
-import ContentCardList from '../../components/atoms/ContentCardList'
-import Header from '../../components/Header'
-import PageLayout from '../../components/layouts/PageLayout'
-import loadAllRecords from '../../lib/loadAllRecords'
-import { MarkdownFileWithUrl } from '../../types/MarkdownFileWithUrl'
-import collectTags from '../../util/collectTags'
-import getQueryParameter from '../../util/getQueryParameters'
-import omitUndefinedFields from '../../util/omitUndefinedFields'
+import { FunctionComponent } from 'react'
 
 interface Props {
     tag: string
@@ -42,7 +41,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
     }
 }
 
-const TagPage: React.FunctionComponent<Props> = props => {
+const TagPage: FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
     return (
         <PageLayout documentTitle={`Records tagged with ${tagName}`} appendSiteTitle={true}>
