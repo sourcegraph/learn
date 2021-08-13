@@ -13,13 +13,11 @@ interface Props {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
     const posts = await loadAllRecords('posts')
-    const guides = await loadAllRecords('guides')
-    const combinedRecords = posts.concat(guides)
     const { authors } = await loadAuthorCollections()
     return {
         props: omitUndefinedFields({
             uniqueAuthors: authors.filter(author => {
-                const recordAuthors = combinedRecords.map(record => omitUndefinedFields(record.frontMatter.author))
+                const recordAuthors = posts.map(record => omitUndefinedFields(record.frontMatter.author))
                 return recordAuthors.includes(author.id)
             })
         })
