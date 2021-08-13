@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledSearchBody = styled.div`
+    align-items: center;
     flex: 1 1 auto;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -11,7 +12,7 @@ export const StyledSearchBody = styled.div`
         flex-direction: column;
     }
 `
-export const StyledSearchInput = styled.input`
+export const StyledSearchInput = styled.textarea`
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -22,10 +23,13 @@ export const StyledSearchInput = styled.input`
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: .375rem 4rem .375rem .375rem;
-    width: 100%;
+    width: 22rem;
 
     @media screen and (max-width: 1024px) {
         margin: 1rem 0;
+    }
+
+    @media screen and (max-width: 576px) {
+        width: 16rem;
     }
 `
