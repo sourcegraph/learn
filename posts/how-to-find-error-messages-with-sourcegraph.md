@@ -8,7 +8,7 @@ imageAlt: Marek talking about finding error messages with Sourcegraph.
 type: posts
 ---
 
-<EmbeddedYoutubeVideo id="M4zlcZJ2fOA" />
+<EmbeddedYoutubeVideo id="r2CpLe1h89I" />
 
 ## Related links
 
