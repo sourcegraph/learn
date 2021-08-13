@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             imageAlt: markdownFile.frontMatter.imageAlt,
             socialImage: markdownFile.frontMatter.socialImage,
             description: markdownFile.frontMatter.description,
-            toc,
+            toc: toc ?? null,
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
             slug,
