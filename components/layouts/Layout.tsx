@@ -5,9 +5,8 @@ import NavBar from '@components/NavBar'
 import Head from 'next/head'
 import { FunctionComponent } from 'react'
 
-import { googleTagManagerId } from '../../site-config'
-
 const SITE_TITLE = 'Sourcegraph Learn'
+const GTM = process.env.GTM_ID ?? ''
 
 const defaultMetaTags = {
     description: 'Sourcegraph Learn is an educational hub to support all developers.',
@@ -53,9 +52,9 @@ const Layout: FunctionComponent<Props> = props => {
 
     return (
         <>
-            <GoogleTagManagerNoscriptFrame id={googleTagManagerId} />
+            <GoogleTagManagerNoscriptFrame id={GTM} />
             <Head>
-                <GoogleTagManagerScriptTag id={googleTagManagerId} />
+                <GoogleTagManagerScriptTag id={GTM} />
                 <title>{documentTitle}</title>
                 <link href="/favicon.png" rel="icon" type="image/png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
