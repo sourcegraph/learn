@@ -19,7 +19,7 @@
     "@mapbox/rehype-prism": "^0.7.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
-    "js-yaml": "^3.14.1",
+    "js-yaml": "^4.1.0",
     "mdi-react": "^7.5.0",
     "next": "^10.2.3",
     "next-mdx-remote": "^3.0.4",
