@@ -10,15 +10,50 @@ Public URL: [https://learn.sourcegraph.com](https://learn.sourcegraph.com)
 - The website code is written in TypeScript and React.
 - The content is written in Markdown.
 
+## Getting Started
+
+### Node.js
+
+First, make sure that you have Node.js installed. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
+
+```sh
+nvm install
+```
+
+Alternatively, you can use [`n`](https://www.npmjs.com/package/n) to manage your Node versions. Use the following command to install the version of Node specified in the `.nvmrc` file:
+
+```sh 
+n <node version>
+```
+
+### Install Dependencies
+
+This repository includes a bootstrap script, `./script/install.sh`, that is designed to get you up and running quickly. 
+
+From the top level of the project, run the following command to install dependencies:
+
+```sh
+./script/install.sh
+```
+This script does two things:
+- It installs the dependencies specified in the `package-lock.json` file with [`npm ci`](https://docs.npmjs.com/cli/v7/commands/npm-ci).
+- It also creates a local `.env` file with environment variables for local development. 
+
+### Running the Application
+
+To run the application, type the following command from the top level of the project:
+
+```sh
+npm run dev
+```
+You can now navigate to `http://localhost:3000` to inspect the application in action.
+
 ## Commands
 
-Here are the available commands in this repository:
+Below, please find a list of some of the other available `npm` commands not covered above:
 
 | Command              | Description                                                                                                                                                                                                                                                                              |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nvm install`        | Use `nvm` to set up the project's recommended Node.js version. The version is specified [`.nvmrc`](./.nvmrc) and is automatically loaded by `nvm`. It is recommended to run this command once before running `npm install`. It requires the [`nvm`](https://github.com/nvm-sh/nvm) tool. |
-| `npm install`        | Install dependencies. Run this once to set up the project, before running any other `npm` commands below.                                                                                                                                                                                |
-| `npm run dev`        | Run the development server. Once running, it can be viewed at [localhost:3000](http://localhost:3000). The development server should automatically load your changes while you edit files.                                                                                               |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                 |
 | `npm run build`      | Build the static site for production. This command exports the static site with `next export`. The output will be in the `out` directory. This is the build command which is run by the Netlify build process on every deployment (on production or on preview deploys).                 |
 | `npm run prettier`   | Run the `prettier` formatter on the code to format it according to the formatting style.                                                                                                                                                                                                 |
 | `npm run eslint`     | Run the `eslint` lint checker on the code to check for issues. See [`.eslintrc.json`](./.eslintrc.json) for the `eslint` configuration.                                                                                                                                                  |
@@ -26,23 +61,6 @@ Here are the available commands in this repository:
 | `npm start`          | _Not currently used_. This command is reserved for the dynamic version of the site which is planned                                                                                                                                                                                      |
 | `npm run clean`      | Delete the NextJS cache and output directories (`.next` and `out`). If you are experiencing unexpected NextJS crashes, run this command to clean the cache.                                                                                                                              |
 
-## Node.js version
-
-The site requires Node.js. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
-
-```sh
-nvm install
-```
-
-## How to run the site locally
-
-Install dependencies and run the development server:
-
-```sh
-npm install
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) with your browser to load the result.
 
 ## Configure the `pre-commit` Githook
 
