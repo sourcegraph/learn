@@ -4,3 +4,9 @@
   to = "/:splat"
   status = 301
   force = true
+[context.production]
+  [context.production.environment]
+    NEXT_PUBLIC_URL="https://learn.sourcegraph.com"
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    NEXT_PUBLIC_URL="$DEPLOY_URL"
