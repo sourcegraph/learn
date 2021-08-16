@@ -4,9 +4,13 @@
   to = "/:splat"
   status = 301
   force = true
+
+## Non-sensitive env vars
 [context.production]
   [context.production.environment]
     NEXT_PUBLIC_URL="https://learn.sourcegraph.com"
+    NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
 [context.deploy-preview]
   [context.deploy-preview.environment]
     NEXT_PUBLIC_URL="$DEPLOY_URL"
+    NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
