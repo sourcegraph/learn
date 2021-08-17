@@ -6,3 +6,4 @@ collections:
         - three-ways-to-search-video
         - literal-search-patterns
         - regular-expression-patterns
+        - structural-search-patterns
