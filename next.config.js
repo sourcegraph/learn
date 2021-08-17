@@ -11,7 +11,4 @@ module.exports = withBundleAnalyzer({
     // Enable webpack5
     webpack5: true,
   },
-  env: {
-    NEXT_PUBLIC_URL: process.env.DEPLOY_URL,
-  }
 })
