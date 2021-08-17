@@ -2,6 +2,7 @@ import Button from '@components/atoms/Button'
 import CollectionView from '@components/atoms/CollectionView'
 import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
+import SourcegraphInteractiveSearch from '@components/atoms/SourcegraphInteractiveSearch'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import { MetaTags } from '@components/layouts/Layout'
@@ -30,11 +31,11 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    initialSearchResults?: SearchResults | null
+    initialSearchItems: SearchInterface
 }
-
-interface SearchResults extends Array<ResultsArray> {
-    results: ResultsArray | undefined
+interface SearchInterface {
+    url: string
+    auth: string
 }
 
 interface ResultsObject {
@@ -44,21 +45,25 @@ interface ResultsObject {
     lineMatches: Node
 }
 
-interface ResultsArray extends Array<ResultsObject> {
-    [key: number]: ResultsObject
-}
-
 interface RepositoryMatch {
-    repository: Node
+    name: string
+    url: string
 }
 
 interface FileMatch {
-    file: Node
+    path: string
+    url: string
+    commit: Node
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
+    const fragment =
+    <>
+        <SourcegraphInteractiveSearch searchInterface={props.initialSearchItems} />
+    </>
+
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -75,8 +80,6 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
     // The alternate title, if present, is used for the document title and it omits the site title suffix.
     const documentTitle = props.alternateTitle || props.title
     const appendSiteTitle = !props.alternateTitle
-    const results: ResultsArray | undefined = props.initialSearchResults?.results
-    console.log(repo)
 
     return (
         <PageLayout
@@ -118,7 +121,12 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             )}
 
             <StyledMarkdownWrapper>
-                <MDXRemote {...props.mdxSource} components={components} />
+                <MDXRemote 
+                    {...props.mdxSource} 
+                    components={props.initialSearchItems
+                        ? components
+                        : {...fragment, components}}
+                />
             </StyledMarkdownWrapper>
         </PageLayout>
     )

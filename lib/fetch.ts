@@ -121,6 +121,30 @@ query ($query: String!) {
   }
 }
 `
+
+interface SearchResults {
+    results: ResultsArray[] | undefined
+}
+
+interface ResultsObject {
+    typeName: string
+    repository: RepositoryMatch
+    file: FileMatch
+    lineMatches: Node
+}
+
+interface ResultsArray {
+    [index: number]: ResultsObject
+}
+
+interface RepositoryMatch {
+    repository: Node
+}
+
+interface FileMatch {
+    file: Node
+}
+
 export const fetchEndpoint = async (url: string, token: string, query: string): Promise<Response> => {
     const data = {
         query: graphQLQuery,
@@ -147,19 +171,26 @@ export const fetchEndpoint = async (url: string, token: string, query: string): 
     return response;
 };
   
-export const fetchResults = async (url: string, token: string, query: string): Promise<{}> => {
-    const response = await fetchEndpoint(url, token, query)
-    const results = await response.json() as { 
-        data: {
-            search: {
-                results: Node
+export const fetchResults = async (url?: string, token?: string, query?: string): Promise<{} | null> => {
+    if (url && token && query) {
+        const response = await fetchEndpoint(url, token, query)
+        const fetchedResults = await response.json() as { 
+            data: {
+                search: {
+                    results: {
+                        results: ResultsArray[]
+                    }
+                }
             }
         }
+    
+        if (!fetchedResults.data) {
+            throw new Error(`Failed to fetch API: ${url}`)
+        }
+        const [ results ] = fetchedResults.data.search.results.results
+    
+        return results
     }
-
-    if (!results.data) {
-        throw new Error(`Failed to fetch API: ${url}`)
-    }
-
-    return results.data.search.results;
+ 
+    return null
 };

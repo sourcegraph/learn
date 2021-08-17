@@ -34,6 +34,8 @@ To match RGB hex color codes, we can write a regular expression that has three p
 
 Combining these parts into one regular expression, we can use this pattern in a Sourcegraph search. To make the results more relevant, we can add the `lang:css` filter so that we target only CSS files.
 
+<SourcegraphInteractiveSearch query="querystring" />
+
 <SourcegraphSearch query="#[0-9a-f]{6} lang:css" patternType="regexp"/>
 
 Regular expressions are useful for finding patterns like this, where certain classes of characters are repeated a certain number of times.
