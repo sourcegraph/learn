@@ -7,8 +7,5 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 module.exports = withBundleAnalyzer({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  webpack5: true,
-  env: {
-    NEXT_PUBLIC_URL: process.env.DEPLOY_URL,
-  }
+  webpack5: true
 })
