@@ -1,4 +1,4 @@
-import { HookResultsObject } from '@interfaces/Search'
+import createRandomId from '@util/createRandomId'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
@@ -14,6 +14,8 @@ import {
     StyledResultsFileNameLink,
     StyledResultsMatchCount,
     StyledResultsCodeContainer,
+    StyledResultsCodeLineNumber,
+    StyledResultsCodeLine,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -22,36 +24,9 @@ interface Props {
     initialQuery: string
 }
 
-/* function DoFetch(url: string, authToken: string, query: string): HookResultsObject | undefined {
-    const [results, setResults] = useState<HookResultsObject | undefined>()
-    useEffect(() => {
-        const FetchResults = (): void => {
-          setResults(useInteractiveSearch({ url, authToken, query }))
-        }
-        FetchResults()
-      }, [])
-      return results
-} */
-
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const { initialUrl, initialAuthToken, initialQuery } = props
     const fetchedResults = useInteractiveSearch({ url: initialUrl, authToken: initialAuthToken, query: initialQuery })
-    const [results, setResults] = useState<HookResultsObject | undefined>()
-    /* useEffect(() => {
-        setResults(fetchedResults)
-    }, []) */
-    // const [results, setResults] = useState<HookResultsObject | undefined>()
-    /* useEffect(() => {
-        if (!results) {
-            const fetchResults = (): void => {
-                setResults(useInteractiveSearch({ url: initialUrl, authToken: initialAuthToken, query: initialQuery }))
-            }
-            fetchResults()
-        }
-      }, []) */
-    //const results = useInteractiveSearch({ initialUrl, initialAuthToken, initialQuery })
-    //const [results, setResults] = useState(newResults)
-    console.log(results)
     return (
         <StyledResultsContainer>
             <StyledResultsContainerHeader>
@@ -59,19 +34,36 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                 <StyledResultsContainerHeaderDivider />
                 <GithubIcon />
                 <StyledResultsContainerHeaderTitle>
+                {fetchedResults?.results && (
                     <StyledResultsFileName>
                         <StyledResultsFileNameLink>
-                            {fetchedResults?.results?.repository.name}
+                            {fetchedResults.results.repository.name}
                         </StyledResultsFileNameLink>
-                        {` > ${fetchedResults?.results?.file.path}`}
+                        {` > ${fetchedResults.results.file.path}`}
                     </StyledResultsFileName>
+                )}
                 </StyledResultsContainerHeaderTitle>
                 <StyledResultsContainerHeaderDivider />
                 <StyledResultsMatchCount>1</StyledResultsMatchCount>
                 <StyledResultsContainerHeaderDivider />
                 <StarIcon />
             </StyledResultsContainerHeader>
-            <StyledResultsCodeContainer />
+            <StyledResultsCodeContainer>
+                {fetchedResults.results && fetchedResults.results.lineMatches.length > 0 && (
+                    <table>
+                        <tbody>
+                            {fetchedResults.results?.lineMatches.map((line, index) => (
+                                <tr key={createRandomId()}>
+                                    <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
+                                    <StyledResultsCodeLine>
+                                        {line.preview}
+                                    </StyledResultsCodeLine>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
+            </StyledResultsCodeContainer>
         </StyledResultsContainer>
     )
 }

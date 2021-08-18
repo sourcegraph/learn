@@ -18,7 +18,7 @@ const useInteractiveSearch = (hook: HookInterface): HookResultsObject  => {
         .catch(error => {
             throw error
         })
-    }, [url, authToken, query])
+    }, [hook.url, hook.authToken, hook.query])
     
     return {
         results,

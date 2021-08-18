@@ -7,8 +7,9 @@ import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { fetchResults } from '@lib/fetch'
-import useInteractiveSearch from 'hooks/interactiveSearch'
+
+const SEARCH_API_URL = process.env.SEARCH_API_URL
+const SEARCH_API_AUTH_TOKEN = process.env.SEARCH_API_AUTH_TOKEN
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllRecords('posts', true)
@@ -28,8 +29,6 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
     const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
-    const initialUrl = 'https://edd420833540.ngrok.io/.api/graphql'
-    const initialAuthToken = 'dbb1cb9479046666d32e4e26f7e2884a7afad798'
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -44,8 +43,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
             slug,
-            initialUrl,
-            initialAuthToken
+            initialUrl: SEARCH_API_URL ?? null,
+            initialAuthToken:  SEARCH_API_AUTH_TOKEN ?? null
         }),
     }
 }

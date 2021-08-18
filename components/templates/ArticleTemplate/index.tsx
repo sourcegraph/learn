@@ -7,12 +7,9 @@ import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
-import { ResultsObject } from '@interfaces/Search'
 import RecordCollection from '@interfaces/RecordCollection'
-import { fetchResults } from '@lib/fetch'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
-import useInteractiveSearch from 'hooks/interactiveSearch'
 
 import {
     StyledHeaderImage,
@@ -34,8 +31,8 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    initialUrl: string
-    initialAuthToken: string
+    initialUrl?: string | null
+    initialAuthToken?: string | null
 }
 
 const components = { SourcegraphSearch, SourcegraphInteractiveSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }

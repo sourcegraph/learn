@@ -6,7 +6,7 @@ export interface ResultsObject {
     typeName: string
     repository: RepositoryMatch
     file: FileMatch
-    lineMatches: Node
+    lineMatches: LineMatch[]
 }
 
 export interface RepositoryMatch {
@@ -18,6 +18,13 @@ export interface FileMatch {
     path: string
     url: string
     commit: Node
+}
+
+export interface LineMatch {
+    preview: string
+    lineNumber: number
+    offsetAndLengths: number[][]
+    limitHit: boolean
 }
 
 export interface HookInterface {
