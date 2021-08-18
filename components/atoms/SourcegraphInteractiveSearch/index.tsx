@@ -36,7 +36,7 @@ interface Props {
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const { initialUrl, initialAuthToken, initialQuery } = props
     const fetchedResults = useInteractiveSearch({ url: initialUrl, authToken: initialAuthToken, query: initialQuery })
-    const [results, setResults] = useState<HookResultsObject | undefined>(fetchedResults)
+    const [results, setResults] = useState<HookResultsObject | undefined>()
     /* useEffect(() => {
         setResults(fetchedResults)
     }, []) */
@@ -51,7 +51,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
       }, []) */
     //const results = useInteractiveSearch({ initialUrl, initialAuthToken, initialQuery })
     //const [results, setResults] = useState(newResults)
-    //console.log(results)
+    console.log(results)
     return (
         <StyledResultsContainer>
             <StyledResultsContainerHeader>
