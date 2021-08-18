@@ -1,5 +1,4 @@
 import ArticleTemplate, { Props as ArticleTemplateProps } from '@components/templates/ArticleTemplate'
-import { fetchResults } from '@lib/fetch'
 import loadAllRecords from '@lib/loadAllRecords'
 import loadMarkdownFile from '@lib/loadMarkdownFile'
 import loadRecordCollections from '@lib/loadRecordCollections'
@@ -8,6 +7,8 @@ import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { fetchResults } from '@lib/fetch'
+import useInteractiveSearch from 'hooks/interactiveSearch'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllRecords('posts', true)
@@ -27,14 +28,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
     const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
-    const initialSearchItems = {
-        url: 'http://192.168.1.206:7080/.api/graphql',
-        auth: 'dbb1cb9479046666d32e4e26f7e2884a7afad798'
-    }
-    /* const initialSearchResults = await fetchResults(
-        'http://192.168.1.206:7080/.api/graphql', 
-        'dbb1cb9479046666d32e4e26f7e2884a7afad798',
-        'querystring') */
+    const initialUrl = 'https://edd420833540.ngrok.io/.api/graphql'
+    const initialAuthToken = 'dbb1cb9479046666d32e4e26f7e2884a7afad798'
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -49,7 +44,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
             slug,
-            initialSearchItems,
+            initialUrl,
+            initialAuthToken
         }),
     }
 }

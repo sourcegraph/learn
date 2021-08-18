@@ -7,9 +7,12 @@ import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
+import { ResultsObject } from '@interfaces/Search'
 import RecordCollection from '@interfaces/RecordCollection'
+import { fetchResults } from '@lib/fetch'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
+import useInteractiveSearch from 'hooks/interactiveSearch'
 
 import {
     StyledHeaderImage,
@@ -31,39 +34,18 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    initialSearchItems: SearchInterface
-}
-interface SearchInterface {
-    url: string
-    auth: string
+    initialUrl: string
+    initialAuthToken: string
 }
 
-interface ResultsObject {
-    typeName: string
-    repository: RepositoryMatch
-    file: FileMatch
-    lineMatches: Node
-}
-
-interface RepositoryMatch {
-    name: string
-    url: string
-}
-
-interface FileMatch {
-    path: string
-    url: string
-    commit: Node
-}
-
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
+const components = { SourcegraphSearch, SourcegraphInteractiveSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
-    const fragment =
-    <>
-        <SourcegraphInteractiveSearch searchInterface={props.initialSearchItems} />
-    </>
-
+    const { initialUrl, initialAuthToken } = props
+    const searchData = {
+        initialUrl,
+        initialAuthToken
+    }
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -123,9 +105,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             <StyledMarkdownWrapper>
                 <MDXRemote 
                     {...props.mdxSource} 
-                    components={props.initialSearchItems
-                        ? components
-                        : {...fragment, components}}
+                    components={components}
+                    scope={searchData}
                 />
             </StyledMarkdownWrapper>
         </PageLayout>
