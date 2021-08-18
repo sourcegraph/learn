@@ -1,5 +1,5 @@
 export interface ResultsArray {
-    results: ResultsObject
+    [index: number]: ResultsObject
 }
 
 export interface ResultsObject {
@@ -34,7 +34,7 @@ export interface HookInterface {
 }
 
 export interface HookResultsObject {
-    results?: ResultsObject
+    results?: ResultsObject[]
     query: string
     setQuery: (query: string) => void
     url: string

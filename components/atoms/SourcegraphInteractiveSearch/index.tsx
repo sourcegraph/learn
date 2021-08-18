@@ -1,3 +1,4 @@
+import { ResultsObject, LineMatch } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
@@ -13,6 +14,7 @@ import {
     StyledResultsFileName,
     StyledResultsFileNameLink,
     StyledResultsMatchCount,
+    StyledResultsCodeTable,
     StyledResultsCodeContainer,
     StyledResultsCodeLineNumber,
     StyledResultsCodeLine,
@@ -27,43 +29,50 @@ interface Props {
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const { initialUrl, initialAuthToken, initialQuery } = props
     const fetchedResults = useInteractiveSearch({ url: initialUrl, authToken: initialAuthToken, query: initialQuery })
-    return (
+    return (    
         <StyledResultsContainer>
-            <StyledResultsContainerHeader>
-                <FileDocumentOutlineIcon />
-                <StyledResultsContainerHeaderDivider />
-                <GithubIcon />
-                <StyledResultsContainerHeaderTitle>
-                {fetchedResults?.results && (
-                    <StyledResultsFileName>
-                        <StyledResultsFileNameLink>
-                            {fetchedResults.results.repository.name}
-                        </StyledResultsFileNameLink>
-                        {` > ${fetchedResults.results.file.path}`}
-                    </StyledResultsFileName>
-                )}
-                </StyledResultsContainerHeaderTitle>
-                <StyledResultsContainerHeaderDivider />
-                <StyledResultsMatchCount>1</StyledResultsMatchCount>
-                <StyledResultsContainerHeaderDivider />
-                <StarIcon />
-            </StyledResultsContainerHeader>
-            <StyledResultsCodeContainer>
-                {fetchedResults.results && fetchedResults.results.lineMatches.length > 0 && (
-                    <table>
-                        <tbody>
-                            {fetchedResults.results?.lineMatches.map((line, index) => (
-                                <tr key={createRandomId()}>
-                                    <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
-                                    <StyledResultsCodeLine>
-                                        {line.preview}
-                                    </StyledResultsCodeLine>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                )}
-            </StyledResultsCodeContainer>
+           {fetchedResults?.results && (
+                fetchedResults.results.map((result: ResultsObject, index: number) => (
+                    <>
+                        <div>
+                            <StyledResultsContainerHeader key={createRandomId()}>
+                                <FileDocumentOutlineIcon />
+                                <StyledResultsContainerHeaderDivider />
+                                <GithubIcon />
+                                <StyledResultsContainerHeaderTitle>
+                            
+                                    <StyledResultsFileName>
+                                        <StyledResultsFileNameLink>
+                                            {result.repository.name}
+                                        </StyledResultsFileNameLink>
+                                        {` > ${result.file.path}`}
+                                    </StyledResultsFileName>
+                                </StyledResultsContainerHeaderTitle>
+                                <StyledResultsContainerHeaderDivider />
+                                <StyledResultsMatchCount>{index + 1}</StyledResultsMatchCount>
+                                <StyledResultsContainerHeaderDivider />
+                                <StarIcon />
+                            </StyledResultsContainerHeader>
+                            <StyledResultsCodeContainer>
+                                {result.lineMatches.length > 0 && (
+                                    <StyledResultsCodeTable>
+                                        <tbody>
+                                            {result.lineMatches.map((line: LineMatch, index: number) => (
+                                                <tr key={createRandomId()}>
+                                                    <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
+                                                    <StyledResultsCodeLine>
+                                                        {line.preview}
+                                                    </StyledResultsCodeLine>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </StyledResultsCodeTable>
+                                )}
+                            </StyledResultsCodeContainer>
+                        </div>
+                    </>
+                ))                   
+            )}
         </StyledResultsContainer>
     )
 }

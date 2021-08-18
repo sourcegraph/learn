@@ -149,15 +149,13 @@ export const fetchEndpoint = async (url: string, token: string, query: string): 
     return response;
 };
   
-export const fetchResults = async (url: string, token: string, query: string): Promise<ResultsObject | undefined> => {
+export const fetchResults = async (url: string, token: string, query: string): Promise<ResultsObject[] | undefined> => {
         const response = await fetchEndpoint(url, token, query)
         const fetchedResults = await response.json() as { 
             data: {
                 search: {
                     results: {
-                        results: [
-                            ResultsObject
-                        ]
+                        results: ResultsObject[]
                     }
                 }
             }
@@ -166,7 +164,6 @@ export const fetchResults = async (url: string, token: string, query: string): P
         if (!fetchedResults.data) {
             throw new Error(`Failed to fetch API: ${url}`)
         }
-        const [ results ] = fetchedResults.data.search.results.results
       
-        return results
+        return fetchedResults.data.search.results.results
 };

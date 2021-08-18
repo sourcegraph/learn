@@ -24,6 +24,8 @@ export const StyledResultsContainerHeaderTitle = styled.div`
 `
 export const StyledResultsFileName = styled.div`
     margin-left: .25rem;
+    overflow: scroll;
+    width: 100%;
 `
 
 export const StyledResultsFileNameLink = styled.a`
@@ -39,17 +41,21 @@ export const StyledResultsCodeContainer = styled.div`
     background: #e7e7e7;
     border-radius: .187rem;
     padding: .25rem 0;
+    overflow: scroll;
+`
+export const StyledResultsCodeTable = styled.table`
+    table-layout: fixed;
+    width: 100%;
 `
 export const StyledResultsCodeLineNumber = styled.td`
     height: .88rem; 
-    padding: 0;
-    min-width: 1.5rem;
-    text-align: right;
-    vertical-align: middle;
+    padding-right: .75rem;
+    width: 5%;
 `
 export const StyledResultsCodeLine = styled.td`
     height: .88rem;
     vertical-align: middle;
     padding: 0 0 0 1rem;
+    text-align: left;
     white-space: pre;
 `

@@ -6,10 +6,10 @@ const useInteractiveSearch = (hook: HookInterface): HookResultsObject  => {
     const [query, setQuery] = useState(hook.query)
     const [url, setUrl] = useState(hook.url)
     const [authToken, setAuthToken] = useState(hook.authToken)
-    const [results, setResults] = useState<ResultsObject | undefined>()
+    const [results, setResults] = useState<ResultsObject[] | undefined>([])
 
     useEffect(() => {
-        const results = async (): Promise<ResultsObject | undefined> => {
+        const results = async (): Promise<ResultsObject[] | undefined> => {
             const fetchedData = await fetchResults(hook.url, hook.authToken, hook.query.trim())
             return fetchedData
         }
