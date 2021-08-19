@@ -1,3 +1,4 @@
+import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
@@ -16,27 +17,27 @@ interface Props {
 }
 
 const TocWrapper: FunctionComponent<Props> = props => {
-    const anyHeaders = props.tocContents.map(string => string.includes('Step')).includes(true)
+    const convertedHeaders = convertHeaders(props.tocContents)
 
     return (
         <StyledTocWrapper>
             <h5>Contents</h5>
                 <ul>
-                    {props.tocContents.map(item =>
-                        item.includes('Step')
-                        ? (
-                            <StyledHeaderTocItem key={createRandomId()}>
-                                <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(item))}`}>
-                                    <a>{item}</a>
-                                </Link>   
-                            </StyledHeaderTocItem>
-                        )
-                        : (
-                            <StyledTocItem anyHeaders={anyHeaders} key={createRandomId()}>
-                                <Link href={`/${props.slug}/#${sluggify(item)}`}>
-                                    <a>{item}</a>
+                    {convertedHeaders.map(header =>
+                        header.isNested
+                        ?  (
+                            <StyledTocItem key={createRandomId()}>
+                                <Link href={`/${props.slug}/#${sluggify(header.header)}`}>
+                                    <a>{header.header}</a>
                                 </Link>  
                             </StyledTocItem>
+                        )
+                        : (
+                            <StyledHeaderTocItem key={createRandomId()}>
+                                <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(header.header))}`}>
+                                    <a>{header.header}</a>
+                                </Link>   
+                            </StyledHeaderTocItem>
                         )
                     )}
                 </ul>

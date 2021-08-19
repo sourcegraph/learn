@@ -40,7 +40,5 @@ export const StyledHeaderTocItem = styled.li`
     padding: .8rem 0;
 `
 export const StyledTocItem = styled.li<Props>`
-    margin: ${props => props.anyHeaders
-        ? '.8rem'
-        : '.8rem 0'};
+    margin: .5rem 1.5rem;
 `
