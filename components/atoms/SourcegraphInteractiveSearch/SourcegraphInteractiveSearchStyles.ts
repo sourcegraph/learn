@@ -27,7 +27,6 @@ export const StyledResultsFileName = styled.div`
     overflow: scroll;
     width: 100%;
 `
-
 export const StyledResultsFileNameLink = styled.a`
     text-decoration: none;
 `
@@ -38,14 +37,20 @@ export const StyledResultsMatchCount = styled.div`
 export const StyledResultsCodeContainer = styled.div`
     font-family: monospace;
     color: #000000;
-    background: #e7e7e7;
-    border-radius: .187rem;
-    padding: .25rem 0;
     overflow: scroll;
+    padding: .25rem 0;
 `
 export const StyledResultsCodeTable = styled.table`
+    border-collapse: collapse;
+    border-spacing: 0px;
     table-layout: fixed;
-    width: 100%;
+    width: 34.35rem;
+`
+export const StyledResultsCodeBlock = styled.div`
+    background: #e7e7e7;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    overflow-x: auto;
 `
 export const StyledResultsCodeLineNumber = styled.td`
     height: .88rem; 
@@ -58,4 +63,5 @@ export const StyledResultsCodeLine = styled.td`
     padding: 0 0 0 1rem;
     text-align: left;
     white-space: pre;
+    word-break: break-all;
 `

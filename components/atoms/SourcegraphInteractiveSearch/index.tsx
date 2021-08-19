@@ -16,6 +16,7 @@ import {
     StyledResultsMatchCount,
     StyledResultsCodeTable,
     StyledResultsCodeContainer,
+    StyledResultsCodeBlock,
     StyledResultsCodeLineNumber,
     StyledResultsCodeLine,
 } from './SourcegraphInteractiveSearchStyles'
@@ -54,18 +55,20 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                         </StyledResultsContainerHeader>
                         <StyledResultsCodeContainer>
                             {result.lineMatches.length > 0 && (
-                                <StyledResultsCodeTable>
-                                    <tbody>
-                                        {result.lineMatches.map((line: LineMatch, index: number) => (
-                                            <tr key={createRandomId()}>
-                                                <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
-                                                <StyledResultsCodeLine>
-                                                    {line.preview}
-                                                </StyledResultsCodeLine>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </StyledResultsCodeTable>
+                                result.lineMatches.map((line: LineMatch) => (
+                                    <StyledResultsCodeBlock key={createRandomId()}>
+                                        <StyledResultsCodeTable>
+                                            <tbody>   
+                                                <tr>
+                                                    <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
+                                                    <StyledResultsCodeLine>
+                                                        {line.preview}
+                                                    </StyledResultsCodeLine>
+                                                </tr>  
+                                            </tbody>
+                                        </StyledResultsCodeTable>
+                                    </StyledResultsCodeBlock>
+                                ))
                             )}
                         </StyledResultsCodeContainer>
                     </div>
