@@ -33,9 +33,9 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
         <StyledResultsContainer>
            {fetchedResults?.results && (
                 fetchedResults.results.map((result: ResultsObject, index: number) => (
-                    <>
-                        <div>
-                            <StyledResultsContainerHeader key={createRandomId()}>
+                    
+                        <div key={createRandomId()}>
+                            <StyledResultsContainerHeader>
                                 <FileDocumentOutlineIcon />
                                 <StyledResultsContainerHeaderDivider />
                                 <GithubIcon />
@@ -70,7 +70,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 )}
                             </StyledResultsCodeContainer>
                         </div>
-                    </>
+                    
                 ))                   
             )}
         </StyledResultsContainer>
