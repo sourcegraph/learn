@@ -1,16 +1,14 @@
 ---
-title: Sourcegraph Cheat Sheet
+title: How To Search Code with Sourcegraph — A Cheat Sheet
 author: oluebube-princess-egbuna
-tags: [tutorial, search, Sourcegraph, Cheat Sheet]
+tags: [tutorial, search, Sourcegraph, cheat sheet]
 description: A guide to help you get up to speed with Sourcegraph's commands quickly
 image: /headers/sourcegraph-learn-header-2.svg
 imageAlt: Sourcegraph Learn
 socialImage: /headers/sourcegraph-learn-header-2.png
-alternateTitle: Getting Started with Sourcegraph
+alternateTitle: Getting Started with Sourcegraph Universal Code Search
 type: posts
 ---
-
-How To Search Code with Sourcegraph: A Cheat Sheet
 
 Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more.
 
@@ -42,7 +40,7 @@ The `repo` keyword contextualizes the searches you perform on Sourcegraph.
 
 When searching a repository, command chaining can be used to return more specific results depending on the expected results.
 
-#### Search for a repository that contains a file
+**Search for a repository that contains a file**
 
 If you are searching for a file in a repository, use `repo.contains.file`.
 
@@ -65,7 +63,7 @@ A similar example that uses the content query to search for files is shown below
 This query returns repositories that contain a `package.json` file and has content written in TypeScript.
 
 
-#### Search for a repository that contains some content
+**Search for a repository that contains some content**
 
 Suppose you are searching for some content in a repository, such as a library. Use `repo.contains.content`.
 
