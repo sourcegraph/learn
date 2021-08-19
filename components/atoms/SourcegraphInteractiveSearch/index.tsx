@@ -33,44 +33,42 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
         <StyledResultsContainer>
            {fetchedResults?.results && (
                 fetchedResults.results.map((result: ResultsObject, index: number) => (
-                    
-                        <div key={createRandomId()}>
-                            <StyledResultsContainerHeader>
-                                <FileDocumentOutlineIcon />
-                                <StyledResultsContainerHeaderDivider />
-                                <GithubIcon />
-                                <StyledResultsContainerHeaderTitle>
-                            
-                                    <StyledResultsFileName>
-                                        <StyledResultsFileNameLink>
-                                            {result.repository.name}
-                                        </StyledResultsFileNameLink>
-                                        {` > ${result.file.path}`}
-                                    </StyledResultsFileName>
-                                </StyledResultsContainerHeaderTitle>
-                                <StyledResultsContainerHeaderDivider />
-                                <StyledResultsMatchCount>{index + 1}</StyledResultsMatchCount>
-                                <StyledResultsContainerHeaderDivider />
-                                <StarIcon />
-                            </StyledResultsContainerHeader>
-                            <StyledResultsCodeContainer>
-                                {result.lineMatches.length > 0 && (
-                                    <StyledResultsCodeTable>
-                                        <tbody>
-                                            {result.lineMatches.map((line: LineMatch, index: number) => (
-                                                <tr key={createRandomId()}>
-                                                    <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
-                                                    <StyledResultsCodeLine>
-                                                        {line.preview}
-                                                    </StyledResultsCodeLine>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </StyledResultsCodeTable>
-                                )}
-                            </StyledResultsCodeContainer>
-                        </div>
-                    
+                    <div key={createRandomId()}>
+                        <StyledResultsContainerHeader>
+                            <FileDocumentOutlineIcon />
+                            <StyledResultsContainerHeaderDivider />
+                            <GithubIcon />
+                            <StyledResultsContainerHeaderTitle>
+                        
+                                <StyledResultsFileName>
+                                    <StyledResultsFileNameLink>
+                                        {result.repository.name}
+                                    </StyledResultsFileNameLink>
+                                    {` > ${result.file.path}`}
+                                </StyledResultsFileName>
+                            </StyledResultsContainerHeaderTitle>
+                            <StyledResultsContainerHeaderDivider />
+                            <StyledResultsMatchCount>{index + 1}</StyledResultsMatchCount>
+                            <StyledResultsContainerHeaderDivider />
+                            <StarIcon />
+                        </StyledResultsContainerHeader>
+                        <StyledResultsCodeContainer>
+                            {result.lineMatches.length > 0 && (
+                                <StyledResultsCodeTable>
+                                    <tbody>
+                                        {result.lineMatches.map((line: LineMatch, index: number) => (
+                                            <tr key={createRandomId()}>
+                                                <StyledResultsCodeLineNumber>{index + 1}</StyledResultsCodeLineNumber>
+                                                <StyledResultsCodeLine>
+                                                    {line.preview}
+                                                </StyledResultsCodeLine>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </StyledResultsCodeTable>
+                            )}
+                        </StyledResultsCodeContainer>
+                    </div>
                 ))                   
             )}
         </StyledResultsContainer>
