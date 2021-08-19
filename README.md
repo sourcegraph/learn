@@ -10,39 +10,57 @@ Public URL: [https://learn.sourcegraph.com](https://learn.sourcegraph.com)
 - The website code is written in TypeScript and React.
 - The content is written in Markdown.
 
-## Commands
+## Getting Started
 
-Here are the available commands in this repository:
+### Node.js
 
-| Command              | Description                                                                                                                                                                                                                                                                              |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nvm install`        | Use `nvm` to set up the project's recommended Node.js version. The version is specified [`.nvmrc`](./.nvmrc) and is automatically loaded by `nvm`. It is recommended to run this command once before running `npm install`. It requires the [`nvm`](https://github.com/nvm-sh/nvm) tool. |
-| `npm install`        | Install dependencies. Run this once to set up the project, before running any other `npm` commands below.                                                                                                                                                                                |
-| `npm run dev`        | Run the development server. Once running, it can be viewed at [localhost:3000](http://localhost:3000). The development server should automatically load your changes while you edit files.                                                                                               |
-| `npm run build`      | Build the static site for production. This command exports the static site with `next export`. The output will be in the `out` directory. This is the build command which is run by the Netlify build process on every deployment (on production or on preview deploys).                 |
-| `npm run prettier`   | Run the `prettier` formatter on the code to format it according to the formatting style.                                                                                                                                                                                                 |
-| `npm run eslint`     | Run the `eslint` lint checker on the code to check for issues. See [`.eslintrc.json`](./.eslintrc.json) for the `eslint` configuration.                                                                                                                                                  |
-| `npm run eslint-fix` | Run `eslint` with automatic fixes (with the `--fix` option). This will modify files, if automatic fixes are found. It's a good idea to run this command before committing changes.                                                                                                       |
-| `npm start`          | _Not currently used_. This command is reserved for the dynamic version of the site which is planned                                                                                                                                                                                      |
-| `npm run clean`      | Delete the NextJS cache and output directories (`.next` and `out`). If you are experiencing unexpected NextJS crashes, run this command to clean the cache.                                                                                                                              |
-
-## Node.js version
-
-The site requires Node.js. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
+First, make sure that you have Node.js installed. You can use [`nvm`](https://github.com/nvm-sh/nvm) to automatically use the version of Node.js which is specified in the repository's [`.nvmrc`](./.nvmrc) file:
 
 ```sh
 nvm install
 ```
 
-## How to run the site locally
+Alternatively, you can use [`n`](https://www.npmjs.com/package/n) to manage your Node versions. Use the following command to install the version of Node specified in the `.nvmrc` file:
 
-Install dependencies and run the development server:
+```sh 
+n <node version>
+```
+
+### Install Dependencies
+
+This repository includes a bootstrap script, `./script/install.sh`, that is designed to get you up and running quickly. 
+
+From the top level of the project, run the following command to install dependencies:
 
 ```sh
-npm install
+./script/install.sh
+```
+This script does two things:
+- It installs the dependencies specified in the `package-lock.json` file with [`npm ci`](https://docs.npmjs.com/cli/v7/commands/npm-ci).
+- It also creates a local `.env` file with environment variables for local development. 
+
+### Running the Application
+
+To run the application, type the following command from the top level of the project:
+
+```sh
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to load the result.
+You can now navigate to `http://localhost:3000` to inspect the application in action.
+
+## Commands
+
+Below, please find a list of some of the other available `npm` commands not covered above:
+
+| Command              | Description 
+| -------------------- | -------------------------- | 
+| `npm run build`      | Build the static site for production. This command exports the static site with `next export`. The output will be in the `out` directory. This is the build command which is run by the Netlify build process on every deployment (on production or on preview deploys).                      |
+| `npm run prettier`   | Run the `prettier` formatter on the code to format it according to the formatting style.                                                                                                                                                                      |
+| `npm run eslint`     | Run the `eslint` lint checker on the code to check for issues. See [`.eslintrc.json`](./.eslintrc.json) for the `eslint` configuration.         |
+| `npm run eslint-fix` | Run `eslint` with automatic fixes (with the `--fix` option). This will modify files, if automatic fixes are found. It's a good idea to run this command before committing changes.                                                                                      |
+| `npm start`          | _Not currently used_. This command is reserved for the dynamic version of the site which is planned.                                                                                                                                                                     |
+| `npm run clean`      | Delete the NextJS cache and output directories (`.next` and `out`). If you are experiencing unexpected NextJS crashes, run this command to clean the cache.                                                                                                                              |
+
 
 ## Configure the `pre-commit` Githook
 
@@ -81,12 +99,12 @@ The data fields that are supported in the front matter are:
 | `title`       | **string**                 | Title of the article, which is displayed in the `h1` tag and the html document title, and on the article's card.              |
 | `author`      | **string**                 | Name of the author, which is displayed on the article page.                                                                   |
 | `tags`        | **array of strings**       | List of tags which will be displayed on the article page and card. Each tag has an index page that lists all tagged articles. |
-| `unlisted`    | **true** or **false**      | If true, the article will not be listed on index pages, and will only be accessible by direct URL. Default is false.          |
+| `unlisted`    | **true** or **false**      | If true, the article will not be listed on index pages, and will only be accessible by direct URL Default is false.          |
 | `published`   | **true** or **false**      | If false, the article will not be listed or accessible on the website at all. Default is true.                                |
-| `image`       | **string (relative path)** | Image to display in the article header, the article card, and social preview (unless overriden by `socialImage`)              |
+| `image`       | **string (relative path)** | Image to display in the article header, the article card, and social preview (unless overriden by `socialImage`).              |
 | `socialImage` | **string (relative path)** | Image to use for social preview (`og:image` meta tag). If not provided, `image` is used.                                      |
 
-In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./util/MarkdownFile.ts) object.
+In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./util/MarkdownFile.ts) object
 
 ## Deploy previews (staging branches)
 

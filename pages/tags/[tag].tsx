@@ -17,18 +17,14 @@ interface Props {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllRecords('posts')
-    const guides = await loadAllRecords('guides')
-    const combinedRecords = posts.concat(guides)
-    const tags = collectTags(combinedRecords)
+    const tags = collectTags(posts)
     return { paths: tags.map(tag => `/tags/${tag}`), fallback: false }
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
     const tag = getQueryParameter(context.params, 'tag').toLowerCase()
     const posts = await loadAllRecords('posts')
-    const guides = await loadAllRecords('guides')
-    const combinedRecords = posts.concat(guides)
-    const filteredRecords = combinedRecords.filter(record => record.frontMatter.tags.includes(tag))
+    const filteredRecords = posts.filter(record => record.frontMatter.tags.includes(tag))
 
     return {
         props: {
