@@ -1,24 +1,27 @@
-import { ResultsArray, ResultsObject, HookResultsObject, HookInterface } from '@interfaces/Search'
+import { ResultsObject, HookResultsObject } from '@interfaces/Search'
 import { fetchResults } from '@lib/fetch'
 import { useState, useEffect } from 'react'
 
-const useInteractiveSearch = (hook: HookInterface): HookResultsObject  => {
-    const [query, setQuery] = useState(hook.query)
-    const [url, setUrl] = useState(hook.url)
-    const [authToken, setAuthToken] = useState(hook.authToken)
+const useInteractiveSearch = ({ initialUrl = '', initialAuthToken = '', initialQuery = '' }): HookResultsObject  => {
+    const [query, setQuery] = useState(initialQuery)
+    const [url, setUrl] = useState(initialUrl)
+    const [authToken, setAuthToken] = useState(initialAuthToken)
     const [results, setResults] = useState<ResultsObject[] | undefined>([])
 
     useEffect(() => {
         const results = async (): Promise<ResultsObject[] | undefined> => {
-            const fetchedData = await fetchResults(hook.url, hook.authToken, hook.query.trim())
+            const fetchedData = await fetchResults(url, authToken, query.trim())
             return fetchedData
         }
         results()
-        .then(results => setResults(results))
+        .then(results => {
+            setResults(results)
+        })
         .catch(error => {
             throw error
         })
-    }, [hook.url, hook.authToken, hook.query])
+
+    }, [url, authToken, query])
     
     return {
         results,

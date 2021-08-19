@@ -27,12 +27,6 @@ export interface LineMatch {
     limitHit: boolean
 }
 
-export interface HookInterface {
-    url: string
-    authToken: string
-    query: string
-}
-
 export interface HookResultsObject {
     results?: ResultsObject[]
     query: string

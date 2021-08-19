@@ -36,8 +36,6 @@ Combining these parts into one regular expression, we can use this pattern in a 
 
 <SourcegraphInteractiveSearch initialUrl={initialUrl} initialAuthToken={initialAuthToken} initialQuery='MDXRemote' />
 
-<SourcegraphSearch query="#[0-9a-f]{6} lang:css" patternType="regexp"/>
-
 Regular expressions are useful for finding patterns like this, where certain classes of characters are repeated a certain number of times.
 
 ## Finding a set of function calls

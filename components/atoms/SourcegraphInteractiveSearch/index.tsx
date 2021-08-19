@@ -1,12 +1,17 @@
+import Button from '@components/atoms/Button'
 import { ResultsObject, LineMatch } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
 import StarIcon from 'mdi-react/StarIcon'
-import { FunctionComponent, useState, useEffect } from 'react'
+import { FunctionComponent, useRef } from 'react'
 
 import {
+    StyledSearchInput,
+    StyledInputSearchColumn,
+    StyledResultsBorder,
+    StyledResultsWrapper,
     StyledResultsContainer,
     StyledResultsContainerHeader,
     StyledResultsContainerHeaderDivider,
@@ -19,6 +24,7 @@ import {
     StyledResultsCodeBlock,
     StyledResultsCodeLineNumber,
     StyledResultsCodeLine,
+    StyledInputButtton,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -29,18 +35,38 @@ interface Props {
 
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const { initialUrl, initialAuthToken, initialQuery } = props
-    const fetchedResults = useInteractiveSearch({ url: initialUrl, authToken: initialAuthToken, query: initialQuery })
-    return (    
-        <StyledResultsContainer>
-           {fetchedResults?.results && (
-                fetchedResults.results.map((result: ResultsObject, index: number) => (
-                    <div key={createRandomId()}>
+    const currentQuery = useRef(initialQuery) 
+    const search = useInteractiveSearch({ initialUrl, initialAuthToken, initialQuery })
+    const updateQuery = (value: string): string => currentQuery.current = value
+    const handleClick = (): void => search.setQuery(currentQuery.current)
+    
+    return (
+        <StyledResultsWrapper>
+            Search Query:
+            <StyledInputSearchColumn>
+                <StyledSearchInput
+                    type="text"
+                    defaultValue={initialQuery}
+                    onChange={event => updateQuery(event.target.value)}
+                />
+                <Button
+                    className="primary small"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => handleClick()}
+                >
+                    <span>Search on Sourcegraph</span>
+                </Button>
+            </StyledInputSearchColumn>
+            <StyledResultsBorder />
+           {search?.results && (
+                search.results.map((result: ResultsObject, index: number) => (
+                    <StyledResultsContainer key={createRandomId()}>
                         <StyledResultsContainerHeader>
                             <FileDocumentOutlineIcon />
                             <StyledResultsContainerHeaderDivider />
                             <GithubIcon />
-                            <StyledResultsContainerHeaderTitle>
-                        
+                            <StyledResultsContainerHeaderTitle>                    
                                 <StyledResultsFileName>
                                     <StyledResultsFileNameLink>
                                         {result.repository.name}
@@ -62,7 +88,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                                 <tr>
                                                     <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
                                                     <StyledResultsCodeLine>
-                                                        {line.preview}
+                                                        {line.preview.trim()}
                                                     </StyledResultsCodeLine>
                                                 </tr>  
                                             </tbody>
@@ -71,10 +97,10 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 ))
                             )}
                         </StyledResultsCodeContainer>
-                    </div>
+                    </StyledResultsContainer>
                 ))                   
             )}
-        </StyledResultsContainer>
+        </StyledResultsWrapper>
     )
 }
 
