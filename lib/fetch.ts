@@ -1,21 +1,24 @@
-import { ResultsArray, ResultsObject } from '@interfaces/Search'
+import { ResultsObject } from '@interfaces/Search'
 
-const graphQLQuery = `fragment FileMatchFields on FileMatch {
+const graphQLQuery = `fragment FileMatchFields on FileMatch {  
     repository {
         name
         url
     }
     file {
+        name
         path
         url
+        content
         commit {
-            oid
+        oid
         }
     }
     lineMatches {
         preview
         lineNumber
         offsetAndLengths
+        limitHit
     }
 }
 
@@ -160,7 +163,7 @@ export const fetchResults = async (url: string, token: string, query: string): P
                 }
             }
         }
-    
+
         if (!fetchedResults.data) {
             throw new Error(`Failed to fetch API: ${url}`)
         }

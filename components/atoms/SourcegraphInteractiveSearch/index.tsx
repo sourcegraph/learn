@@ -1,6 +1,7 @@
 import Button from '@components/atoms/Button'
 import { ResultsObject, LineMatch } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
+import { returnPreviousLine, returnNextLine }from '@util/returnLineMatchContext'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
@@ -24,7 +25,7 @@ import {
     StyledResultsCodeBlock,
     StyledResultsCodeLineNumber,
     StyledResultsCodeLine,
-    StyledInputButtton,
+    StyledIconWrapper,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -60,12 +61,16 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
             </StyledInputSearchColumn>
             <StyledResultsBorder />
            {search?.results && (
-                search.results.map((result: ResultsObject, index: number) => (
+                search.results.map((result: ResultsObject) => (
                     <StyledResultsContainer key={createRandomId()}>
                         <StyledResultsContainerHeader>
-                            <FileDocumentOutlineIcon />
+                            <StyledIconWrapper>
+                                <FileDocumentOutlineIcon size={24} />
+                            </StyledIconWrapper>  
                             <StyledResultsContainerHeaderDivider />
-                            <GithubIcon />
+                            <StyledIconWrapper>
+                                <GithubIcon size={24} />
+                            </StyledIconWrapper>            
                             <StyledResultsContainerHeaderTitle>                    
                                 <StyledResultsFileName>
                                     <StyledResultsFileNameLink>
@@ -75,20 +80,31 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 </StyledResultsFileName>
                             </StyledResultsContainerHeaderTitle>
                             <StyledResultsContainerHeaderDivider />
-                            <StyledResultsMatchCount>{index + 1}</StyledResultsMatchCount>
+                            <StyledResultsMatchCount>{result.lineMatches.length} matches</StyledResultsMatchCount>
                             <StyledResultsContainerHeaderDivider />
-                            <StarIcon />
                         </StyledResultsContainerHeader>
                         <StyledResultsCodeContainer>
                             {result.lineMatches.length > 0 && (
                                 result.lineMatches.map((line: LineMatch) => (
                                     <StyledResultsCodeBlock key={createRandomId()}>
                                         <StyledResultsCodeTable>
-                                            <tbody>   
+                                            <tbody>
+                                                <tr>
+                                                    <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
+                                                    <StyledResultsCodeLine>
+                                                        {returnPreviousLine(result.file.content, line.lineNumber)}
+                                                    </StyledResultsCodeLine>
+                                                </tr>   
                                                 <tr>
                                                     <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
                                                     <StyledResultsCodeLine>
-                                                        {line.preview.trim()}
+                                                        {line.preview}
+                                                    </StyledResultsCodeLine>
+                                                </tr>
+                                                <tr>
+                                                    <StyledResultsCodeLineNumber>{line.lineNumber + 2}</StyledResultsCodeLineNumber>
+                                                    <StyledResultsCodeLine>
+                                                        {returnNextLine(result.file.content, line.lineNumber)}
                                                     </StyledResultsCodeLine>
                                                 </tr>  
                                             </tbody>

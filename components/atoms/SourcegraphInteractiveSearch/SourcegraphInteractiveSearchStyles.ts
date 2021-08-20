@@ -14,7 +14,7 @@ export const StyledResultsContainerHeader = styled.div`
 export const StyledResultsContainerHeaderDivider = styled.div`
     border-right: 1px solid #000;
     height: 1rem;
-    margin: 0 .25rem;
+    margin: 0 .5rem;
 `
 export const StyledResultsContainerHeaderTitle = styled.div`
     flex: 1 1 auto;
@@ -94,4 +94,8 @@ export const StyledInputButtton = styled.div`
     border-color: #5033e1;
     font-size: 12px;
     padding: .563rem;
+`
+export const StyledIconWrapper = styled.div`
+    height: 1.6rem;
+    width: auto;
 `

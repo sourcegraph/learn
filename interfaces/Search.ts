@@ -15,8 +15,10 @@ export interface RepositoryMatch {
 }
 
 export interface FileMatch {
+    name: string
     path: string
     url: string
+    content: string
     commit: Node
 }
 
