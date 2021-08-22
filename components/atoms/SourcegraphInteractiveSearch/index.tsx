@@ -89,11 +89,14 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                     <StyledResultsCodeBlock key={createRandomId()}>
                                         <StyledResultsCodeTable>
                                             <tbody>
-                                                <tr>                                               
-                                                    <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
-                                                    <StyledResultsCodeLine>
-                                                        {returnPreviousLine(result.file.content, line.lineNumber)}
-                                                    </StyledResultsCodeLine>
+                                                <tr>
+                                                    {line.lineNumber > 0 &&
+                                                    <>
+                                                        <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
+                                                        <StyledResultsCodeLine>
+                                                            {returnPreviousLine(result.file.content, line.lineNumber)}
+                                                        </StyledResultsCodeLine>
+                                                   </>}                                         
                                                 </tr>   
                                                 <tr>
                                                     <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
