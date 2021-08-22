@@ -1,11 +1,11 @@
 import Button from '@components/atoms/Button'
+import Highlighter from '@components/atoms/Highlighter'
 import { ResultsObject, LineMatch } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
 import { returnPreviousLine, returnNextLine }from '@util/returnLineMatchContext'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
-import StarIcon from 'mdi-react/StarIcon'
 import { FunctionComponent, useRef } from 'react'
 
 import {
@@ -40,7 +40,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const search = useInteractiveSearch({ initialUrl, initialAuthToken, initialQuery })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
-    
+
     return (
         <StyledResultsWrapper>
             Search Query:
@@ -89,7 +89,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                     <StyledResultsCodeBlock key={createRandomId()}>
                                         <StyledResultsCodeTable>
                                             <tbody>
-                                                <tr>
+                                                <tr>                                               
                                                     <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
                                                     <StyledResultsCodeLine>
                                                         {returnPreviousLine(result.file.content, line.lineNumber)}
@@ -98,7 +98,10 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                                 <tr>
                                                     <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
                                                     <StyledResultsCodeLine>
-                                                        {line.preview}
+                                                        <Highlighter
+                                                            input={line.preview}
+                                                            matcher={currentQuery.current}
+                                                        />
                                                     </StyledResultsCodeLine>
                                                 </tr>
                                                 <tr>
