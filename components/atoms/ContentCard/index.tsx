@@ -8,6 +8,7 @@ import {
     StyledCardLink,
     StyledCardTagList,
     StyledCardDescription,
+    StyledCardImage,
 } from './ContentCardStyles'
 
 export interface Props {
@@ -25,7 +26,7 @@ const ContentCard: FunctionComponent<Props> = props => {
 
     return (
         <Card showBorder={isPost} leftAlign={isPost}>
-            {props.image && <img src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />}
+            {props.image && <StyledCardImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />}
             <StyledCardBody>
                 <StyledCardTitle>
                     <Link href={props.url} passHref={true}>

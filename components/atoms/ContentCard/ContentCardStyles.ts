@@ -27,3 +27,6 @@ export const StyledCardTagList = styled.p`
 export const StyledCardDescription = styled.p`
     margin: 0;
 `
+export const StyledCardImage = styled.img`
+    width: 100%;
+`
