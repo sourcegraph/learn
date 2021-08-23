@@ -8,9 +8,6 @@ import omitUndefinedFields from '@util/omitUndefinedFields'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-const SEARCH_API_URL = process.env.SEARCH_API_URL
-const SEARCH_API_AUTH_TOKEN = process.env.SEARCH_API_AUTH_TOKEN
-
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await loadAllRecords('posts', true)
     const paths = posts.map(post => ({ params: { slug: post.slug } }))
