@@ -126,7 +126,9 @@ query ($query: String!) {
   }
 }
 `
-export const fetchEndpoint = async (url: string, token: string, query: string): Promise<Response> => {
+export const fetchEndpoint = async (query: string): Promise<Response | null> => {
+    const url = process.env.NEXT_PUBLIC_SEARCH_API_URL
+    const token = process.env.NEXT_PUBLIC_SEARCH_API_AUTH_TOKEN
     const data = {
         query: graphQLQuery,
         variables: { 
@@ -134,27 +136,30 @@ export const fetchEndpoint = async (url: string, token: string, query: string): 
         },
     }
 
-    const defaultOptions = {
-        method: 'POST',
-        headers: {
-            Authorization: `token ${token}`
-        },
-        body: JSON.stringify(data),
-    };
-    const response = await fetch(url, defaultOptions);
-
-    if (!response.ok) {
-        console.error(response.statusText);
-        console.error(response.status)
-        throw new Error(`Failed to fetch API: ${url}`);
+    if (url && token) {
+        const defaultOptions = {
+            method: 'POST',
+            headers: {
+                Authorization: `token ${token}`
+            },
+            body: JSON.stringify(data),
+        }
+        const response = await fetch(url, defaultOptions)
+        if (!response.ok) {
+            console.error(response.statusText);
+            console.error(response.status)
+            throw new Error(`Failed to fetch API: ${url}`);
+        }
+    
+        return response
     }
-
-    return response;
-};
+    
+    return null
+}
   
-export const fetchResults = async (url: string, token: string, query: string): Promise<ResultsObject[] | undefined> => {
-        const response = await fetchEndpoint(url, token, query)
-        const fetchedResults = await response.json() as { 
+export const fetchResults = async (query: string): Promise<ResultsObject[] | undefined> => {
+        const response = await fetchEndpoint(query)
+        const fetchedResults = await response?.json() as { 
             data: {
                 search: {
                     results: {
@@ -165,8 +170,8 @@ export const fetchResults = async (url: string, token: string, query: string): P
         }
 
         if (!fetchedResults.data) {
-            throw new Error(`Failed to fetch API: ${url}`)
+            throw new Error('Failed to fetch API')
         }
       
         return fetchedResults.data.search.results.results
-};
+}

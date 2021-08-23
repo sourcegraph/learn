@@ -31,18 +31,11 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    initialUrl?: string | null
-    initialAuthToken?: string | null
 }
 
 const components = { SourcegraphSearch, SourcegraphInteractiveSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
-    const { initialUrl, initialAuthToken } = props
-    const searchData = {
-        initialUrl,
-        initialAuthToken
-    }
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
@@ -103,7 +96,6 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 <MDXRemote 
                     {...props.mdxSource} 
                     components={components}
-                    scope={searchData}
                 />
             </StyledMarkdownWrapper>
         </PageLayout>

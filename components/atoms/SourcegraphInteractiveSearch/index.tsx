@@ -29,15 +29,13 @@ import {
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
-    initialUrl: string
-    initialAuthToken: string
     initialQuery: string
 }
 
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
-    const { initialUrl, initialAuthToken, initialQuery } = props
+    const { initialQuery } = props
     const currentQuery = useRef(initialQuery) 
-    const search = useInteractiveSearch({ initialUrl, initialAuthToken, initialQuery })
+    const search = useInteractiveSearch({ initialQuery })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
 

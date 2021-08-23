@@ -42,9 +42,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             toc: toc ?? null,
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
-            slug,
-            initialUrl: SEARCH_API_URL ?? null,
-            initialAuthToken:  SEARCH_API_AUTH_TOKEN ?? null
+            slug
         }),
     }
 }

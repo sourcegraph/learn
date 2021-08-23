@@ -33,8 +33,4 @@ export interface HookResultsObject {
     results?: ResultsObject[]
     query: string
     setQuery: (query: string) => void
-    url: string
-    setUrl: (url: string) => void
-    authToken: string
-    setAuthToken: (authToken: string) => void
 }
