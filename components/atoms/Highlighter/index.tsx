@@ -9,13 +9,13 @@ interface Props {
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
-    const regex = new RegExp(`(${props.matcher})`, 'gi')
+    const regex = new RegExp(`(${props.matcher})|(?=${props.matcher}) `, 'gi')
     const parts = props.input.split(regex)
 
     return (
         <div>
             {parts.map(part => (
-                part.includes(props.matcher)
+                regex.test(part)
                     ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
                     : <span key={createRandomId()}>{part}</span>
             ))}

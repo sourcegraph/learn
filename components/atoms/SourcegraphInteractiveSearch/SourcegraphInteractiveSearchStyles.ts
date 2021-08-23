@@ -17,6 +17,7 @@ export const StyledResultsContainerHeaderDivider = styled.div`
     margin: 0 .5rem;
 `
 export const StyledResultsContainerHeaderTitle = styled.div`
+    cursor: pointer;
     flex: 1 1 auto;
     overflow: hidden;
     display: flex;

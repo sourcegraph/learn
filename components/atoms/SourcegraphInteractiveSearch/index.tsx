@@ -61,7 +61,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
             </StyledInputSearchColumn>
             <StyledResultsBorder />
            {search?.results && (
-                search.results.map((result: ResultsObject) => (
+                search.results.slice(0,4).map((result: ResultsObject) => (
                     <StyledResultsContainer key={createRandomId()}>
                         <StyledResultsContainerHeader>
                             <StyledIconWrapper>
@@ -70,14 +70,18 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                             <StyledResultsContainerHeaderDivider />
                             <StyledIconWrapper>
                                 <GithubIcon size={24} />
-                            </StyledIconWrapper>            
-                            <StyledResultsContainerHeaderTitle>                    
+                            </StyledIconWrapper>                               
+                            <StyledResultsContainerHeaderTitle>                                                
                                 <StyledResultsFileName>
-                                    <StyledResultsFileNameLink>
+                                    <StyledResultsFileNameLink 
+                                        href={`https://${result.repository.name}/blob/main/${result.file.path}`}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         {result.repository.name}
                                     </StyledResultsFileNameLink>
                                     {` > ${result.file.path}`}
-                                </StyledResultsFileName>
+                                </StyledResultsFileName>                                          
                             </StyledResultsContainerHeaderTitle>
                             <StyledResultsContainerHeaderDivider />
                             <StyledResultsMatchCount>{result.lineMatches.length} matches</StyledResultsMatchCount>
@@ -85,7 +89,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                         </StyledResultsContainerHeader>
                         <StyledResultsCodeContainer>
                             {result.lineMatches.length > 0 && (
-                                result.lineMatches.map((line: LineMatch) => (
+                                result.lineMatches.slice(0,4).map((line: LineMatch) => (
                                     <StyledResultsCodeBlock key={createRandomId()}>
                                         <StyledResultsCodeTable>
                                             <tbody>
