@@ -13,7 +13,7 @@ import {
  } from './TocWrapperStyles'
 
 interface Props {
-    tocContents: string[],
+    tocContents: string[]
     slug: string
 }
 
@@ -25,7 +25,8 @@ const TocWrapper: FunctionComponent<Props> = props => {
             const getElements = Array.from(document.querySelectorAll('h2, h3'))
             highlightHook.setHeaders(getElements)
         }
-      }, [props.tocContents, highlightHook]) 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [props.tocContents]) 
 
     return (
         <StyledTocWrapper>
