@@ -2,8 +2,9 @@ import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
+import useHighlightOnScroll from 'hooks/highlightOnScroll'
 import Link from 'next/link'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 
 import { 
     StyledTocWrapper,
@@ -18,6 +19,13 @@ interface Props {
 
 const TocWrapper: FunctionComponent<Props> = props => {
     const convertedHeaders = convertHeaders(props.tocContents)
+    const highlightHook = useHighlightOnScroll(null)
+    useEffect(() => {
+        if (props.tocContents) {
+            const getElements = Array.from(document.querySelectorAll('h2, h3'))
+            highlightHook.setHeaders(getElements)
+        }
+      }, [props.tocContents, highlightHook]) 
 
     return (
         <StyledTocWrapper>
@@ -26,14 +34,18 @@ const TocWrapper: FunctionComponent<Props> = props => {
                     {convertedHeaders.map(header =>
                         header.isNested
                         ?  (
-                            <StyledTocItem key={createRandomId()}>
+                            <StyledTocItem 
+                                key={createRandomId()}
+                                isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}>
                                 <Link href={`/${props.slug}/#${sluggify(header.header)}`}>
                                     <a>{header.header}</a>
                                 </Link>  
                             </StyledTocItem>
                         )
                         : (
-                            <StyledHeaderTocItem key={createRandomId()}>
+                            <StyledHeaderTocItem
+                                key={createRandomId()}
+                                isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}>
                                 <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(header.header))}`}>
                                     <a>{header.header}</a>
                                 </Link>   

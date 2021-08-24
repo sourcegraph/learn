@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface Props {
-    anyHeaders?: boolean
+    isHighlighted?: boolean
 }
 
 export const StyledTocWrapper = styled.div`
@@ -9,6 +9,8 @@ export const StyledTocWrapper = styled.div`
     flex-direction: column;
     justify-content: left;
     padding-right: 1.5rem;
+    position: fixed;
+    top: 20;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -36,9 +38,15 @@ export const StyledTocWrapper = styled.div`
     }
 `
 
-export const StyledHeaderTocItem = styled.li`
+export const StyledHeaderTocItem = styled.li<Props>`
+    background-color: ${props => props.isHighlighted
+        ? '#edeafc'
+        : '#fff'};
     padding: .8rem 0;
 `
 export const StyledTocItem = styled.li<Props>`
+    background-color: ${props => props.isHighlighted
+        ? '#edeafc'
+        : '#fff'};
     margin: .5rem 1.5rem;
 `
