@@ -7,7 +7,9 @@ import Link from 'next/link'
 import { FunctionComponent, useEffect } from 'react'
 
 import { 
+    StyledTocWrapperBody,
     StyledTocWrapper,
+    StyledTocTopWrapper,
     StyledHeaderTocItem,
     StyledTocItem,
  } from './TocWrapperStyles'
@@ -29,32 +31,36 @@ const TocWrapper: FunctionComponent<Props> = props => {
       }, [props.tocContents]) 
 
     return (
-        <StyledTocWrapper>
-            <h5>Contents</h5>
-                <ul>
-                    {convertedHeaders.map(header =>
-                        header.isNested
-                        ?  (
-                            <StyledTocItem 
-                                key={createRandomId()}
-                                isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}>
-                                <Link href={`/${props.slug}/#${sluggify(header.header)}`}>
-                                    <a>{header.header}</a>
-                                </Link>  
-                            </StyledTocItem>
-                        )
-                        : (
-                            <StyledHeaderTocItem
-                                key={createRandomId()}
-                                isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}>
-                                <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(header.header))}`}>
-                                    <a>{header.header}</a>
-                                </Link>   
-                            </StyledHeaderTocItem>
-                        )
-                    )}
-                </ul>
-        </StyledTocWrapper>
+        <StyledTocTopWrapper>
+            <StyledTocWrapper>
+                <StyledTocWrapperBody>
+                    <h5>Contents</h5>
+                        <ul>
+                            {convertedHeaders.map(header =>
+                                header.isNested
+                                ?  (
+                                    <StyledTocItem 
+                                        key={createRandomId()}
+                                        isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}>
+                                        <Link href={`/${props.slug}/#${sluggify(header.header)}`}>
+                                            <a>{header.header}</a>
+                                        </Link>  
+                                    </StyledTocItem>
+                                )
+                                : (
+                                    <StyledHeaderTocItem
+                                        key={createRandomId()}
+                                        isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}>
+                                        <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(header.header))}`}>
+                                            <a>{header.header}</a>
+                                        </Link>   
+                                    </StyledHeaderTocItem>
+                                )
+                            )}
+                        </ul>
+                </StyledTocWrapperBody>
+            </StyledTocWrapper>
+        </StyledTocTopWrapper>
     )
 }
 

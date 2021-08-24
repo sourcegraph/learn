@@ -4,13 +4,21 @@ interface Props {
     isHighlighted?: boolean
 }
 
+export const StyledTocTopWrapper = styled.div`
+    position: relative;
+`
+
 export const StyledTocWrapper = styled.div`
+    position: absolute;
+    left: -3.125rem;
+`
+
+export const StyledTocWrapperBody = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: left;
     padding-right: 1.5rem;
     position: fixed;
-    top: 20;
 
     @media screen and (max-width: 768px) {
         display: none;
