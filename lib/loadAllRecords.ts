@@ -2,18 +2,10 @@ import MarkdownFile from '@interfaces/MarkdownFile'
 import listAllRecords from '@lib/listAllRecords'
 import loadMarkdownFile from '@lib/loadMarkdownFile'
 
-export default async function loadAllRecords(baseDirectory: string, includeUnlisted: boolean = false): Promise<MarkdownFile[]> {
+export default async function loadAllRecords(baseDirectory: string): Promise<MarkdownFile[]> {
     const records = await listAllRecords(baseDirectory)
     const loadingRecords = records.map(record => loadMarkdownFile(baseDirectory, record))
-    let loadedRecords = await Promise.all(loadingRecords)
-
-    // Exclude records that are unlisted, unless includeUnlisted option is used.
-    if (!includeUnlisted) {
-        loadedRecords = loadedRecords.filter(record => !record.frontMatter.unlisted)
-    }
-
-    // Exclude records that are not published.
-    loadedRecords = loadedRecords.filter(record => record.frontMatter.published)
+    const loadedRecords = await Promise.all(loadingRecords)
 
     return loadedRecords
 }

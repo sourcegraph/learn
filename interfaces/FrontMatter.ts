@@ -10,8 +10,6 @@ export default interface FrontMatter {
     title: string
     alternateTitle?: string | null
     tags: string[]
-    published: boolean
-    unlisted: boolean
     author?: string | null
 
     /** Short description used for the post's card and social description meta

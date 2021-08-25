@@ -40,8 +40,6 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
         title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.alternateTitle) ?? 'Untitled Document',
         alternateTitle: rawFrontMatter.alternateTitle ? normalizeString(rawFrontMatter.alternateTitle) : null,
         tags: normalizeStringArray(rawFrontMatter.tags),
-        published: isBoolean(rawFrontMatter.published) ? rawFrontMatter.published : true,
-        unlisted: isBoolean(rawFrontMatter.unlisted) ? rawFrontMatter.unlisted : false,
         author: rawFrontMatter.author ? normalizeString(rawFrontMatter.author) : null,
         image: rawFrontMatter.image ? normalizeString(rawFrontMatter.image) : null,
         imageAlt: rawFrontMatter.imageAlt ? normalizeString(rawFrontMatter.imageAlt) : null,
