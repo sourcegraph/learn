@@ -29,7 +29,7 @@ export const StyledTocWrapperBody = styled.div`
         max-width: 12.5rem;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         display: none;
     }
 
