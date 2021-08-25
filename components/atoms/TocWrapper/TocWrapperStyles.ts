@@ -6,11 +6,16 @@ interface Props {
 
 export const StyledTocTopWrapper = styled.div`
     position: relative;
+    z-index: 4;
 `
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
     left: -5rem;
+
+    @media screen and (max-width: 1464px) {
+        left: 0;
+    }
 `
 
 export const StyledTocWrapperBody = styled.div`
