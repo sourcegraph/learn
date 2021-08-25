@@ -25,6 +25,10 @@ export const StyledTocWrapperBody = styled.div`
     padding-right: 1.5rem;
     position: fixed;
 
+    @media screen and (max-width: 1464px) {
+        max-width: 12.5rem;
+    }
+
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -61,5 +65,5 @@ export const StyledTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
         : '#fff'};
-    margin: .5rem 1.5rem;
+    padding: .5rem 1.5rem;
 `
