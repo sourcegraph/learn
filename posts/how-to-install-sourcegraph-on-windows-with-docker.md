@@ -60,7 +60,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-## Step 3 — Verify the Installation
+## Step 3 — Verify the installation
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
@@ -74,7 +74,7 @@ The first time you open Sourcegraph, the page that will be displayed will be the
 
 As this is a test installation, you can choose whether this page satisfies your testing needs, or continue to create a test account and explore further.
 
-## Next Steps
+## Next steps
 
 Congratulations! You have installed a test environment of Sourcegraph with Docker on Windows and can begin using Sourcegraph to search all of the code that is important to you.
 

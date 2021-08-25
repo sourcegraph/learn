@@ -1,10 +1,11 @@
 ---
-title: How To Add Open Source Software Projects to Sourcegraph
+title: How to add open source software projects to Sourcegraph cloud
 tags: [tutorial, open source, Sourcegraph]
 author: lisa-tagliaferri
 description: Learn how to add public, open source repositories to Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
+alternativeTitle: Indexing open source repositories to search with Sourcegraph cloud
 type: posts
 ---
 
@@ -14,7 +15,7 @@ This tutorial will guide you through how to add public, open source repositories
 
 To add public repositories to Sourcegraph, you’ll need a free Sourcegraph account, which you can set up by following our documentation on [getting started with Sourcegraph](https://docs.sourcegraph.com/getting-started#how-do-i-start-using-sourcegraph).
 
-## Step 1 — Access User Settings
+## Step 1 — Access user settings
 
 Log into [Sourcegraph.com](https://sourcegraph.com) and click on your user icon on the top right corner of the page.
 
@@ -24,7 +25,7 @@ A drop-down menu will be displayed. From here, click on **Settings**.
 
 You’ll be taken to a page that indicates that you are in your settings with a header of **User Settings** displayed towards the top of the page, and a panel with options regarding your user account on the left hand side of the window.
 
-## Step 2 — Add Repositories
+## Step 2 — Add repositories
 
 From the panel on the left hand side of the interface, you can click on **Repositories** in order to be taken to the page where you can manage repositories. If you already have repositories added, you’ll need to click on the **Manage Repositories** button that is on this page in order to access this page.
 
@@ -66,7 +67,7 @@ To ensure that the public code you just added is available to anyone using Sourc
 
 The screenshot above reveals output from the repository we just added to an anonymous user who is not logged in, which indicates that we have successfully added this public repository to Sourcegraph.
 
-## Next Steps
+## Next steps
 
 From here, you may want to sync your GitHub or GitLab account to add your own public repositories or forks.
 

@@ -106,7 +106,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-### On a Linux Server
+### On a Linux server
 
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
@@ -128,7 +128,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-## Step 3 — Verify the Installation
+## Step 3 — Verify the installation
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
@@ -144,7 +144,7 @@ You can create the account now. This account will be tied to your own instance o
 
 Once you set up your account, you’ll be able to add repositories and set up your preferences and configuration.
 
-## Next Steps
+## Next steps
 
 Congratulations! You have installed Sourcegraph with Docker on your Linux machine and have created an account so that you can begin using Sourcegraph to search all of the code that is important to you.
 

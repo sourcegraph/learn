@@ -1,9 +1,10 @@
 ---
-title: Three Ways to Search with Sourcegraph (Video)
+title: Three ways to search code with Sourcegraph
 tags: [video, search, sourcegraph]
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/three-ways-to-search-thumbnail.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
+alternateTitle: Searching code with Sourcegraph using literal patterns, regular expressions, and structural search
 type: posts
 ---
 

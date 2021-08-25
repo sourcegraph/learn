@@ -42,7 +42,7 @@ Depending on the chip that you have, you’ll be able to run a Docker command to
 
 The first section is for macOS machines with [Intel chips](#on-macos-with-intel-chip), and is currently the only macOS chip supported by Sourcegraph. The second option is a suggested workflow for macOS with [Apple M1 chips](#on-an-apple-m1-chip-on-macos), though this is not supported by Sourcegraph.
 
-### On macOS with Intel Chip
+### On macOS with Intel chip
 
 On local machines with an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command.
 
@@ -86,7 +86,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-## Step 3 — Verify the Installation
+## Step 3 — Verify the installation
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
@@ -102,7 +102,7 @@ You can create the account now. This account will be tied to your own instance o
 
 Once you set up your account, you’ll be able to add repositories and set up your preferences and configuration.
 
-## Next Steps
+## Next steps
 
 Congratulations! You have installed Sourcegraph with Docker and have created an account so that you can begin using Sourcegraph to search all of the code that is important to you.
 

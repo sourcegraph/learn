@@ -1,5 +1,5 @@
 ---
-title: How to find error messages with Sourcegraph (Video)
+title: How to find error messages with Sourcegraph (video)
 author: marek-zaluski
 tags: [video, search, sourcegraph]
 description: Learn about finding error messages in your code with Sourcegraph.
