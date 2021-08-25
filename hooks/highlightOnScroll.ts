@@ -15,7 +15,7 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
 
     useEffect(() => {
         const options = {
-            rootMargin: '-500px',
+            rootMargin: '-400px',
             threshold: [0]
         }
         const observer = new IntersectionObserver(highlightOnScroll, options)      

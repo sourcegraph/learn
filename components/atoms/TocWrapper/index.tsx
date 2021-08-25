@@ -1,8 +1,8 @@
+import useHighlightOnScroll from '@hooks/highlightOnScroll'
 import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
-import useHighlightOnScroll from 'hooks/highlightOnScroll'
 import Link from 'next/link'
 import { FunctionComponent, useEffect, useState } from 'react'
 
