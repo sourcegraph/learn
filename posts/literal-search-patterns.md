@@ -1,11 +1,11 @@
 ---
-title: How To Search with Sourcegraph using Literal Patterns
+title: How to search code with Sourcegraph using literal patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use literal search patterns to search code on Sourcegraph.
-image: /headers/sourcegraph-learn-header-3.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-3.png
+alternateTitle: Searching code with Sourcegraph using literal search
 type: posts
 ---
 

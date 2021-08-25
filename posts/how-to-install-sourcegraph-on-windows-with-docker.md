@@ -1,11 +1,11 @@
 ---
-title: How To Install Sourcegraph on Windows with Docker
+title: How to install Sourcegraph on Windows with Docker
 author: lisa-tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your Windows machine with Docker
-image: /headers/sourcegraph-learn-header-4.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-4.png
+alternateTitle: Installing Sourcegraph for code search testing on Windows with Docker
 type: posts
 ---
 
@@ -64,13 +64,13 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
-![Installation complete verification on command line](/tutorial-images/sourcegraph-logo-terminal.png)
+![Installation complete verification on command line](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
 Open a browser and go to the URL indicated in the output. Keep in mind that if you are using a local machine, you’ll be directed to the localhost, but on a server you should go to the IP address of that server.
 
 The first time you open Sourcegraph, the page that will be displayed will be the page to setup your administrative account.
 
-![Sourcegraph create account and login page](/tutorial-images/sourcegraph-login-page.png)
+![Sourcegraph create account and login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-login-page.png)
 
 As this is a test installation, you can choose whether this page satisfies your testing needs, or continue to create a test account and explore further.
 

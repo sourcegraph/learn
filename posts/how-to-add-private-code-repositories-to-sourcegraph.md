@@ -1,11 +1,11 @@
 ---
-title: How To Add Private Code Repositories to Sourcegraph
+title: How to add private code repositories to Sourcegraph cloud
 tags: [tutorial, security, Sourcegraph]
 author: lisa-tagliaferri
 description: Learn how to add private software repositories to Sourcegraph.
-image: /headers/sourcegraph-learn-header-9.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-9.png
+alternateTitle: Adding private software repos to Sourcegraph cloud
 type: posts
 ---
 
@@ -30,7 +30,7 @@ Log into [Sourcegraph.com](https://sourcegraph.com) and click on your user icon 
 
 A drop-down menu will be displayed. From here, click on **Settings**.
 
-![Sourcegraph home with user menu](/tutorial-images/sourcegraph-home-user-menu.png)
+![Sourcegraph home with user menu](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-home-user-menu.png)
 
 
 
@@ -40,7 +40,7 @@ You’ll be taken to a page that indicates that you are in your settings with a 
 
 From the panel on the left hand side of the interface, you can click on **Repositories** in order to be taken to the page where you can manage repositories. If you already have repositories added, you’ll need to click on the **Manage Repositories** button in order to access this page.
 
-![Sourcegraph repositories section under settings](/tutorial-images/sourcegraph-repositories-section.png)
+![Sourcegraph repositories section under settings](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-repositories-section.png)
 
 
 
@@ -56,7 +56,7 @@ If you are part of an organization on a code host, an administrator will need to
 
 In the image below, the `medieval-data` repository is a private repository, as indicated by the `Private` label.
 
-![Sourcegraph repo list showing private label](/tutorial-images/sourcegraph-repo-list-private-label.png)
+![Sourcegraph repo list showing private label](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-repo-list-private-label.png)
 
 You can also search for repositories by name, using the search bar labeled `Search repositories…`. 
 
@@ -64,7 +64,7 @@ Click the checkbox next to the private repositories you would like to add. In th
 
 Once Sourcegraph has fully saved your selections, you should receive an output page that confirms all of the repositories you have saved to your account, both public and private.
 
-![Sourcegraph list displaying all saved repos](/tutorial-images/sourcegraph-list-of-saved-repos.png)
+![Sourcegraph list displaying all saved repos](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-list-of-saved-repos.png)
 
 The image above shows 2 private repositories labeled with the `Private` tag and 5 public open source repositories that were also saved. For guidance on how to add open source software to Sourcegraph, review our tutorial, [How To Add Open Source Software Projects to Sourcegraph](https://learn.sourcegraph.com/how-to-add-open-source-software-projects-to-sourcegraph).
 
@@ -72,13 +72,13 @@ The image above shows 2 private repositories labeled with the `Private` tag and 
 
 At this point, you’re able to search all the private repositories you have access to that you added. To verify this, you can scroll up to the top of the page where the Sourcegraph search bar is. To the left of the search bar it states `context:global`. Instead, click on your own username (`@your-username`) to limit the search to your own repositories. 
 
-![Sourcegraph search with context choice](/tutorial-images/sourcegraph-context.png)
+![Sourcegraph search with context choice](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-context.png)
 
 Next, further limit the context down so that you are only searching your private repositories. You can do this with the `visibility` command set to `private`. 
 
 Let’s perform a search for the term `html` with the context set to our own username, and the command `visibility:private`.
 
-![Sourcegraph visibility private code search](/tutorial-images/sourcegraph-visibility-private-code-search.png)
+![Sourcegraph visibility private code search](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-visibility-private-code-search.png)
 
 The screenshot above reveals 15 results across the private repositories loaded into this Sourcegraph account.
 

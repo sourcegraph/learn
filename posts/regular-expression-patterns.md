@@ -1,11 +1,10 @@
 ---
-title: How To Search with Sourcegraph using Regular Expression Patterns
+title: How to search with Sourcegraph using regular expression patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
-image: /headers/sourcegraph-learn-header-5.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-5.png
 alternateTitle: Using RegEx with Sourcegraph
 type: posts
 ---
@@ -18,7 +17,7 @@ Regular expressions, often shortened as _regex_, help you find code that matches
 
 Start searching with regular expression patterns by toggling the dot asterisk (`.*`) button towards the right-hand side of the search box. When you mouse over it you’ll receive a tooltip that reads `Enable regular expression`.
 
-<GifLikeVideo url="/tutorial-images/enable-regex.mp4"/>
+<GifLikeVideo url="https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/enable-regex.mp4"/>
 
 Once it is highlighted, you're ready to search with regular expressions.
 

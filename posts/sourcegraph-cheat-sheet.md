@@ -1,12 +1,11 @@
 ---
-title: How To Search Code with Sourcegraph — A Cheat Sheet
+title: How to search code with Sourcegraph — a cheat sheet
 author: oluebube-princess-egbuna
 tags: [tutorial, search, Sourcegraph, cheat sheet]
 description: A guide to help you get up to speed with Sourcegraph's commands quickly
-image: /headers/sourcegraph-learn-header-2.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-2.png
-alternateTitle: Getting Started with Sourcegraph Universal Code Search
+alternateTitle: Getting started with Sourcegraph universal code search
 type: posts
 ---
 
