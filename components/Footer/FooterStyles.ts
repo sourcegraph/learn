@@ -54,6 +54,7 @@ export const StyledLogoFooterColumn = styled.div`
     width: 25%;
 
     @media screen and (max-width: 768px) {
+        padding: 0 .75rem;
         width: 100%;
     }
 
@@ -117,7 +118,7 @@ export const StyledFooterPostscriptWrapper = styled.div`
     justify-content: space-between;
     padding: 1.5rem 0 .5rem;
 
-    @media screen and (max-width: 1464px) {
+    @media screen and (min-width: 768px) {
         padding: 1.5rem;
     }
 `
