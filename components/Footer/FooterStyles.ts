@@ -50,10 +50,11 @@ export const StyledLogoFooterColumn = styled.div`
     flex: 0 0 auto;
     margin-bottom: 3rem;
     order: -1;
-    padding: 0 .75rem;
+    padding: 0 1.5rem;
     width: 25%;
 
     @media screen and (max-width: 768px) {
+        padding: 0 .75rem;
         width: 100%;
     }
 
@@ -115,7 +116,11 @@ export const StyledFooterPostscriptWrapper = styled.div`
     display: flex;
     font-size: .875em;
     justify-content: space-between;
-    padding: 1.5rem 0 .5rem; 
+    padding: 1.5rem 0 .5rem;
+
+    @media screen and (min-width: 768px) {
+        padding: 1.5rem;
+    }
 `
 export const StyledFooterPostscriptList = styled.ul`
     display: flex;
