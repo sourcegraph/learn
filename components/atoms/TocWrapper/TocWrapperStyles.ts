@@ -10,7 +10,7 @@ export const StyledTocTopWrapper = styled.div`
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
-    left: -3.125rem;
+    left: -5rem;
 `
 
 export const StyledTocWrapperBody = styled.div`

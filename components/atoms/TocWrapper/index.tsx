@@ -4,7 +4,7 @@ import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
 import useHighlightOnScroll from 'hooks/highlightOnScroll'
 import Link from 'next/link'
-import { FunctionComponent, useEffect } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 
 import { 
     StyledTocWrapperBody,
@@ -20,15 +20,21 @@ interface Props {
 }
 
 const TocWrapper: FunctionComponent<Props> = props => {
+    const [elements, setElements] = useState<Element[] | null>(null)
     const convertedHeaders = convertHeaders(props.tocContents)
-    const highlightHook = useHighlightOnScroll(null)
+    const highlightHook = useHighlightOnScroll(elements)
     useEffect(() => {
         if (props.tocContents) {
-            const getElements = Array.from(document.querySelectorAll('h2, h3'))
-            highlightHook.setHeaders(getElements)
+            const getElements = [].slice.call(document.querySelectorAll('h2, h3'))
+            setElements(getElements)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [props.tocContents]) 
+    }, [props.tocContents])
+
+    useEffect(() => {
+        if (elements) {
+            highlightHook.setHeaders(elements)
+        }
+    }, [elements, highlightHook])
 
     return (
         <StyledTocTopWrapper>
