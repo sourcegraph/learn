@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 interface Props {
-    expandNavItems?: boolean
     expandDropdown?: boolean
     expandOnMobile?: boolean
 }
@@ -43,11 +42,12 @@ export const StyledNavBarLogoLink = styled.a`
     white-space: nowrap;
 `
 export const SyledNavBarLogoImage = styled.img`
+    height: auto;
     vertical-align: -.3125rem;
     width: 9.375rem;
 `
 
-export const StyledNavBarMobileToggle = styled.button<Props>`
+export const StyledNavBarMobileToggle = styled.button`
     background-color: transparent;
     border: 1px solid #d0d2d4;
     border-radius: .25rem;

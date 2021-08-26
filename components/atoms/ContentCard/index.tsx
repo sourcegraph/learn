@@ -26,7 +26,7 @@ const ContentCard: FunctionComponent<Props> = props => {
 
     return (
         <Card showBorder={isPost} leftAlign={isPost}>
-            {props.image && <StyledCardImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />}
+            {props.image && <StyledCardImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} width="185" height="96" />}
             <StyledCardBody>
                 <StyledCardTitle>
                     <Link href={props.url} passHref={true}>
