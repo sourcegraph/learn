@@ -65,7 +65,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         >
             {/* Header image */}
             {props.image && showHeaderImage && (
-                <StyledHeaderImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} />
+                <StyledHeaderImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} width="648" height="338" />
             )}
 
             {/* Title and author */}

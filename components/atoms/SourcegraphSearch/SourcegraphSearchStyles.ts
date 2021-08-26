@@ -8,7 +8,7 @@ export const StyledSearchBody = styled.div`
     display: flex;
     padding: 1rem;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1240px) {
         flex-direction: column;
     }
 `

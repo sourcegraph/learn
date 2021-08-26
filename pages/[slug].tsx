@@ -9,7 +9,7 @@ import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await loadAllRecords('posts', true)
+    const posts = await loadAllRecords('posts')
     const paths = posts.map(post => ({ params: { slug: post.slug } }))
     return {
         paths,

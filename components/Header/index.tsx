@@ -17,7 +17,7 @@ interface Props {
 const Header: FunctionComponent<Props> = props => (
     <>
         <Row>
-            {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} />}
+            {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="393" height="205" />}
             {props.showCta && <HeaderCta link={props.link} text={props.text} />}
             {props.headerText &&
                 <StyledHeaderText>

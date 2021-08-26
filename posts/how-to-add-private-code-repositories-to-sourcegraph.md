@@ -24,7 +24,7 @@ This tutorial will guide you through adding private repositories from a code hos
 
 To add your private repositories to Sourcegraph, you’ll need a free Sourcegraph account, which you can set up by following our documentation on [getting started with Sourcegraph](https://docs.sourcegraph.com/getting-started#how-do-i-start-using-sourcegraph).
 
-## Step 1  — Access user settings
+## Step 1 — Access user settings
 
 Log into [Sourcegraph.com](https://sourcegraph.com) and click on your user icon on the top right corner of the page. 
 
