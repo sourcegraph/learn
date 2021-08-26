@@ -39,10 +39,7 @@ const NavBar: FunctionComponent = () => {
                 </StyledNavBarMobileToggle>
                 <StyledNavBarItemsWrapper expandOnMobile={expandOnMobile}>
                     <StyledNavBarItemsContainer>
-                        <StyledNavBarItemLink href="https://about.sourcegraph.com/customers">Customers</StyledNavBarItemLink>
-                        <StyledNavBarItemLink href="https://about.sourcegraph.com/case-studies">Case Studies</StyledNavBarItemLink>
                         <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
-                        <StyledNavBarItemLink href="https://about.sourcegraph.com/pricing">Pricing</StyledNavBarItemLink>
                         <StyledNavBarDropDownContainer onClick={() => setExpandDropdown(!expandDropdown)}>
                             <StyledNavBarDropDownToggle expandDropdown={expandDropdown}>
                                 Learn
