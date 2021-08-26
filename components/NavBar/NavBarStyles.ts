@@ -132,7 +132,7 @@ export const StyledNavBarDropDownContainer = styled.div`
         padding: .5rem 0;
     }
 `
-export const StyledNavBarDropDownToggle = styled.a<Props>`
+export const StyledNavBarDropDownToggle = styled.div<Props>`
     align-items: center;
     color: #000;
     cursor: pointer;
