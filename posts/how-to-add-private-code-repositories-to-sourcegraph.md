@@ -92,4 +92,6 @@ Running a command like the one above across your own username will enable you to
 
 You should now be able to search your private code in Sourcegraph cloud, a feature that is currently in public beta! If you had any issues in bringing in repositories, please review our [troubleshooting guidance](https://docs.sourcegraph.com/code_search/how-to/adding_repositories_to_cloud#troubleshooting). Note that organizations you are affiliated with will need to grant you relevant access. 
 
-With your private code connected to Sourcegraph, you can learn more about how to search effectively by following along with our [Sourcegraph search series](https://learn.sourcegraph.com/literal-search-patterns). You can also learn more about the product through reviewing Sourcegraph’s [product documentation](https://docs.sourcegraph.com/). 
+With your private code connected to Sourcegraph, you can learn more about how to search effectively by following along with our [Sourcegraph search series](https://learn.sourcegraph.com/how-to-search-code-with-sourcegraph-using-literal-patterns). You can also learn more about the product through reviewing Sourcegraph’s [product documentation](https://docs.sourcegraph.com/). 
+
+For a video version of this tutorial, check out "[How to add private code repositories to Sourcegraph cloud (video)](/how-to-add-private-code-repositories-to-sourcegraph-video)."

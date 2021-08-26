@@ -286,8 +286,8 @@ This can allow you to search across the code that is private to only you. _Pleas
 ## Further resources
 
 To learn more about how to search effectively with Sourcegraph, you can read through our Sourcegraph search series:
-* [How To Search with Sourcegraph using Literal Patterns](https://learn.sourcegraph.com/literal-search-patterns)
-* [How To Search with Sourcegraph using Regular Expression Patterns](https://learn.sourcegraph.com/regular-expression-patterns)
-* [How To Search with Sourcegraph using Structural Patterns](https://learn.sourcegraph.com/structural-search-patterns)
+* [How To Search with Sourcegraph using Literal Patterns](/how-to-search-code-with-sourcegraph-using-literal-patterns)
+* [How To Search with Sourcegraph using Regular Expression Patterns](/how-to-search-with-sourcegraph-using-regular-expression-patterns)
+* [How To Search with Sourcegraph using Structural Patterns](/how-to-search-with-sourcegraph-using-structural-patterns)
 
 You can also check out [Sourcegraph product documentation](https://docs.sourcegraph.com/) and [Sourcegraph tutorials](https://learn.sourcegraph.com/tags/sourcegraph).

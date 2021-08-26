@@ -12,9 +12,9 @@ type: posts
 
 ## In this video
 
-- Literal search ([tutorial](/literal-search-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
-- Regular expression search ([tutorial](/regular-expression-patterns), ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))
-- Structural search ([docs](https://docs.sourcegraph.com/code_search/reference/structural))
+- Literal search ([tutorial](/how-to-search-code-with-sourcegraph-using-literal-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/queries#literal-search-default))
+- Regular expression search ([tutorial](/how-to-search-with-sourcegraph-using-regular-expression-patterns), ([docs](https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search))
+- Structural search ([tutorial](how-to-search-with-sourcegraph-using-structural-patterns), [docs](https://docs.sourcegraph.com/code_search/reference/structural))
 
 ## Transcript
 

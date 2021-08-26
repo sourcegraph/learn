@@ -97,4 +97,4 @@ This is where the `\s*` pattern is useful; it matches any number of whitespace c
 
 Regular expressions are a powerful syntax for searching code, and in this tutorial we’ve only covered some fundamental features. Sourcegraph uses the RE2 style of regular expressions, which you can learn more about by reading the [RE2 documentation](https://github.com/google/re2/wiki/Syntax).
 
-<!-- When you’re looking for nested structures in your code, like matching brackets, argument lists, or if-then statements, then structural search can be helpful. Learn about structural search in the next article in this series. -->
+When you’re looking for nested structures in your code, like matching brackets, argument lists, or if-then statements, then structural search can be helpful. Learn about structural search in "[How to search with Sourcegraph using structural patterns](how-to-search-with-sourcegraph-using-structural-patterns)."

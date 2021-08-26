@@ -78,4 +78,4 @@ As this is a test installation, you can choose whether this page satisfies your 
 
 Congratulations! You have installed a test environment of Sourcegraph with Docker on Windows and can begin using Sourcegraph to search all of the code that is important to you.
 
-Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-video) so that you can more effectively search your code.
+Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on [Three ways to search code with Sourcegraph](/three-ways-to-search-code-with-sourcegraph) so that you can more effectively search your code.
