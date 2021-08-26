@@ -44,7 +44,7 @@ export const StyledNavBarLogoLink = styled.a`
 `
 export const SyledNavBarLogoImage = styled.img`
     vertical-align: -.3125rem;
-    width: 9.375rem;
+    width: 12.5rem;
 `
 
 export const StyledNavBarMobileToggle = styled.button<Props>`
@@ -59,6 +59,10 @@ export const StyledNavBarMobileToggle = styled.button<Props>`
     line-height: 1;
     margin: 0;
     padding: .25rem .75rem;
+
+    :focus {
+        outline: none;
+    }
 
     @media screen and (max-width: 1023px) {
         display: block;

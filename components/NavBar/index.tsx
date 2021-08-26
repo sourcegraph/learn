@@ -28,7 +28,7 @@ const NavBar: FunctionComponent = () => {
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="https://about.sourcegraph.com/">
-                    <SyledNavBarLogoImage src="/sourcegraph-logo.svg" />
+                    <SyledNavBarLogoImage src="/sourcegraph-learn.svg" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
                     onClick={() => setExpandOnMobile(!expandOnMobile)}
@@ -40,21 +40,9 @@ const NavBar: FunctionComponent = () => {
                 <StyledNavBarItemsWrapper expandOnMobile={expandOnMobile}>
                     <StyledNavBarItemsContainer>
                         <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
-                        <StyledNavBarDropDownContainer onClick={() => setExpandDropdown(!expandDropdown)}>
-                            <StyledNavBarDropDownToggle expandDropdown={expandDropdown}>
-                                Learn
-                                {expandDropdown
-                                    ? <MenuUpIcon />
-                                    : <MenuDownIcon />}
-                            </StyledNavBarDropDownToggle>
-                            {expandDropdown && (
-                                <StyledNavBarDropDownItems>        
-                                    <StyledNavBarDropDownItem href="/">Overview </StyledNavBarDropDownItem>
-                                    <StyledNavBarDropDownItem href="/tags/tutorial">Tutorials </StyledNavBarDropDownItem>
-                                    <StyledNavBarDropDownItem href="/tags/video">Videos </StyledNavBarDropDownItem>
-                                </StyledNavBarDropDownItems>
-                            )}
-                        </StyledNavBarDropDownContainer>
+                        <StyledNavBarItemLink href="/">Overview </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="/tags/tutorial">Tutorials </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
                     </StyledNavBarItemsContainer>
                     <StyledNavBarItemsContainer>
                         <div>
