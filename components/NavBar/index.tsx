@@ -1,7 +1,5 @@
 import Button from '@components/atoms/Button'
-import MenuDownIcon from 'mdi-react/MenuDownIcon'
 import MenuIcon from 'mdi-react/MenuIcon'
-import MenuUpIcon from 'mdi-react/MenuUpIcon'
 import { FunctionComponent, useState } from 'react'
 
 import {
@@ -14,20 +12,15 @@ import {
     StyledNavBarItemsWrapper,
     StyledNavBarItemsContainer,
     StyledNavBarItemLink,
-    StyledNavBarDropDownContainer,
-    StyledNavBarDropDownToggle,
-    StyledNavBarDropDownItems,
-    StyledNavBarDropDownItem,
 } from './NavBarStyles'
 
 const NavBar: FunctionComponent = () => {
-    const [ expandDropdown, setExpandDropdown ] = useState(false)
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
 
     return (
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
-                <StyledNavBarLogoLink href="https://about.sourcegraph.com/">
+                <StyledNavBarLogoLink href="https://learn.sourcegraph.com/">
                     <SyledNavBarLogoImage src="/sourcegraph-learn.svg" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
@@ -39,10 +32,10 @@ const NavBar: FunctionComponent = () => {
                 </StyledNavBarMobileToggle>
                 <StyledNavBarItemsWrapper expandOnMobile={expandOnMobile}>
                     <StyledNavBarItemsContainer>
-                        <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
-                        <StyledNavBarItemLink href="/">Overview </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="/">Sourcegraph Learn </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="/tags/tutorial">Tutorials </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
                     </StyledNavBarItemsContainer>
                     <StyledNavBarItemsContainer>
                         <div>
