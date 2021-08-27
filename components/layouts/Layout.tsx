@@ -52,8 +52,8 @@ const Layout: FunctionComponent<Props> = props => {
     return (
         <>
             <GoogleTagManagerNoscriptFrame />
+            <GoogleTagManagerScriptTag />
             <Head>
-                <GoogleTagManagerScriptTag />
                 <title>{documentTitle}</title>
                 <link href="/favicon.png" rel="icon" type="image/png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
