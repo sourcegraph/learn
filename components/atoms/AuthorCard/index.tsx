@@ -14,7 +14,6 @@ interface Props {
 
 const AuthorCard: FunctionComponent<Props> = props => (
     <Card showBorder={true}>
-        <StyledAuthorImage src="/authors/unisex-avatar.svg" alt="Author Avatar" />
         <ContentCard
             title={props.name}
             url="/authors"

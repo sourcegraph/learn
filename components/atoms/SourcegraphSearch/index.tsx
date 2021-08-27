@@ -22,7 +22,7 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
         <Card showBorder={true}>
             <StyledSearchBody>
                 <Column width="extra-small">
-                    <img width="32" src="/sourcegraph-mark.svg" alt="Sourcegraph logo" />
+                    <img width="32" src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg" alt="Sourcegraph logo" />
                 </Column>
                 <Column width="medium">
                     <StyledSearchInput
