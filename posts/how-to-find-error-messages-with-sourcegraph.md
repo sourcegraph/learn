@@ -1,10 +1,11 @@
 ---
-title: How To Find Error Messages with Sourcegraph (Video)
+title: How to find error messages with Sourcegraph (video)
 author: marek-zaluski
 tags: [video, search, sourcegraph]
 description: Learn about finding error messages in your code with Sourcegraph.
-image: /headers/how-to-find-error-messages-with-sourcegraph-thumbnail.jpg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-find-error-messages-with-sourcegraph-thumbnail.jpg
 imageAlt: Marek talking about finding error messages with Sourcegraph.
+alternateTitle: Finding software error messages with Sourcegraph universal code search
 type: posts
 ---
 
@@ -12,10 +13,10 @@ type: posts
 
 ## Related links
 
-- [Sourcegraph code search](https://sourcegraph.com/search)
+- [Sourcegraph cloud code search](https://sourcegraph.com/search)
 - [Sourcegraph docs](https://docs.sourcegraph.com)
-- [Read about literal search patterns](/literal-search-patterns)
-- [Watch: Three Ways to Search with Sourcegraph (Video)](/three-ways-to-search-video)
+- [Read about literal search patterns](/how-to-search-code-with-sourcegraph-using-literal-patterns)
+- [Watch: Three Ways to Search with Sourcegraph (Video)](/three-ways-to-search-code-with-sourcegraph)
 
 ## Transcript
 

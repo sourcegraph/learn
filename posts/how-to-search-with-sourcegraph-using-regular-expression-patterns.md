@@ -1,11 +1,10 @@
 ---
-title: How To Search with Sourcegraph using Regular Expression Patterns
+title: How to search with Sourcegraph using regular expression patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
-image: /headers/sourcegraph-learn-header-5.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-5.png
 alternateTitle: Using RegEx with Sourcegraph
 type: posts
 ---
@@ -18,7 +17,7 @@ Regular expressions, often shortened as _regex_, help you find code that matches
 
 Start searching with regular expression patterns by toggling the dot asterisk (`.*`) button towards the right-hand side of the search box. When you mouse over it you’ll receive a tooltip that reads `Enable regular expression`.
 
-<GifLikeVideo url="/tutorial-images/enable-regex.mp4"/>
+<GifLikeVideo url="https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/enable-regex.mp4"/>
 
 Once it is highlighted, you're ready to search with regular expressions.
 
@@ -98,4 +97,4 @@ This is where the `\s*` pattern is useful; it matches any number of whitespace c
 
 Regular expressions are a powerful syntax for searching code, and in this tutorial we’ve only covered some fundamental features. Sourcegraph uses the RE2 style of regular expressions, which you can learn more about by reading the [RE2 documentation](https://github.com/google/re2/wiki/Syntax).
 
-<!-- When you’re looking for nested structures in your code, like matching brackets, argument lists, or if-then statements, then structural search can be helpful. Learn about structural search in the next article in this series. -->
+When you’re looking for nested structures in your code, like matching brackets, argument lists, or if-then statements, then structural search can be helpful. Learn about structural search in "[How to search with Sourcegraph using structural patterns](how-to-search-with-sourcegraph-using-structural-patterns)."

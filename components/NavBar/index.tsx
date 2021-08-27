@@ -21,7 +21,7 @@ const NavBar: FunctionComponent = () => {
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="/">
-                    <SyledNavBarLogoImage src="/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
+                    <SyledNavBarLogoImage src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
                     onClick={() => setExpandOnMobile(!expandOnMobile)}

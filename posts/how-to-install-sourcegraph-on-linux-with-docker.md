@@ -1,11 +1,11 @@
 ---
-title: How To Install Sourcegraph on Linux with Docker
+title: How to install Sourcegraph on Linux with Docker
 author: lisa-tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your own machine with Docker
-image: /headers/sourcegraph-learn-header-7.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-7.png
+alternateTitle: Installing a self-hosted Sourcegraph test instance on Linux with Docker
 type: posts
 ---
 
@@ -93,7 +93,7 @@ On local machines that use a Linux distribution, you’ll be able to install Sou
 docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.29.0
+sourcegraph/server:3.30.4
 ```
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -106,7 +106,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-### On a Linux Server
+### On a Linux server
 
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
@@ -115,7 +115,7 @@ docker run -d --publish 80:7080 --publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.29.0
+sourcegraph/server:3.30.4
 ```
 
 This command is telling your server to install and run Sourcegraph in port 7080 of your server and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -128,26 +128,26 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-## Step 3 — Verify the Installation
+## Step 3 — Verify the installation
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
-![Installation complete verification on command line](/tutorial-images/sourcegraph-logo-terminal.png)
+![Installation complete verification on command line](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
 Open a browser and go to the URL indicated in the output. Keep in mind that if you are using a local machine, you’ll be directed to the localhost, but on a server you should go to the IP address of that server.
 
 The first time you open Sourcegraph, the page that will be displayed will be the page to setup your administrative account.
 
-![Sourcegraph create account and login page](/tutorial-images/sourcegraph-login-page.png)
+![Sourcegraph create account and login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-login-page.png)
 
 You can create the account now. This account will be tied to your own instance of Sourcegraph.
 
 Once you set up your account, you’ll be able to add repositories and set up your preferences and configuration.
 
-## Next Steps
+## Next steps
 
 Congratulations! You have installed Sourcegraph with Docker on your Linux machine and have created an account so that you can begin using Sourcegraph to search all of the code that is important to you.
 
 If you have installed Sourcegraph on a Linux server rather than a local machine, you may want to secure your installation as a next step (to access Sourcegraph via `https` rather than `http`), which you can read more about through our official [Sourcegraph docs](https://docs.sourcegraph.com/admin/http_https_configuration#sourcegraph-single-instance-docker).
 
-Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-video) so that you can more effectively search your code.
+Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-code-with-sourcegraph) so that you can more effectively search your code.

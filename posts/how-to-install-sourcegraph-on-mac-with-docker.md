@@ -1,11 +1,11 @@
 ---
-title: How To Install Sourcegraph on macOS with Docker
+title: How to install Sourcegraph on macOS with Docker
 author: lisa-tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 description: Learn how to install Sourcegraph on your Apple Mac with Docker
-image: /headers/sourcegraph-learn-header-6.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-6.png
+alternateTitle: Installing Sourcegraph to search code on a local instance with macOS and Docker
 type: posts
 ---
 
@@ -42,7 +42,7 @@ Depending on the chip that you have, you’ll be able to run a Docker command to
 
 The first section is for macOS machines with [Intel chips](#on-macos-with-intel-chip), and is currently the only macOS chip supported by Sourcegraph. The second option is a suggested workflow for macOS with [Apple M1 chips](#on-an-apple-m1-chip-on-macos), though this is not supported by Sourcegraph.
 
-### On macOS with Intel Chip
+### On macOS with Intel chip
 
 On local machines with an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command.
 
@@ -73,7 +73,7 @@ docker run \
 --platform linux/amd64 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.29.0
+sourcegraph/server:3.30.4
 ```
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -86,24 +86,24 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
-## Step 3 — Verify the Installation
+## Step 3 — Verify the installation
 
 When Sourcegraph is fully installed and ready to be used, the Sourcegraph logo will appear and you should access the URL that is indicated in the Terminal output.
 
-![Installation complete verification on command line](/tutorial-images/sourcegraph-logo-terminal.png)
+![Installation complete verification on command line](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
 Open a browser and go to the URL indicated in the output. Keep in mind that if you are using a local machine, you’ll be directed to the localhost, but on a server you should go to the IP address of that server.
 
 The first time you open Sourcegraph, the page that will be displayed will be the page to setup your administrative account.
 
-![Sourcegraph create account and login page](/tutorial-images/sourcegraph-login-page.png)
+![Sourcegraph create account and login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-login-page.png)
 
 You can create the account now. This account will be tied to your own instance of Sourcegraph.
 
 Once you set up your account, you’ll be able to add repositories and set up your preferences and configuration.
 
-## Next Steps
+## Next steps
 
 Congratulations! You have installed Sourcegraph with Docker and have created an account so that you can begin using Sourcegraph to search all of the code that is important to you.
 
-Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-video) so that you can more effectively search your code.
+Once you have Sourcegraph up and running, and your code repositories available to Sourcegraph, you can check our overview video on the [three ways to search with Sourcegraph](/three-ways-to-search-code-with-sourcegraph) so that you can more effectively search your code.

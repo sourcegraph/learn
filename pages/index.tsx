@@ -25,7 +25,7 @@ const Home: FunctionComponent<Props> = props => (
     <PageLayout>
         <Header 
             showImage={true}
-            headerImage='/headers/sourcegraph-learn-header.svg'
+            headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png'
             headerImageAlt='Sourcegraph Learn' />
         <ContentCardList records={props.posts} />
     </PageLayout>
