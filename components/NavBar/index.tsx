@@ -21,7 +21,7 @@ const NavBar: FunctionComponent = () => {
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="/">
-                    <SyledNavBarLogoImage src="/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
+                    <SyledNavBarLogoImage src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
                     onClick={() => setExpandOnMobile(!expandOnMobile)}
@@ -36,13 +36,11 @@ const NavBar: FunctionComponent = () => {
                         <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
                     </StyledNavBarItemsContainer>
-                    <StyledNavBarItemsContainer>
-                        <div>
-                            <Button href="https://sourcegraph.com/search" className="outline-primary">
-                                Search on Sourcegraph
-                            </Button>
-                        </div>
-                    </StyledNavBarItemsContainer>
+                    <div>                
+                        <Button href="https://sourcegraph.com/search" className="outline-primary">
+                            Search on Sourcegraph
+                        </Button>                     
+                    </div>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
         </StyledNavBarWrapper>

@@ -26,7 +26,7 @@ const CreativeCommonsNotice: FunctionComponent = () => (
             target="_blank"
             rel="noreferrer"
         >
-            <StyledCreativeCommonsImage alt="Creative Commons badge" src="/creative-commons-by-nc-sa.svg" width="80" height="28" />
+            <StyledCreativeCommonsImage alt="Creative Commons badge" src="https://storage.googleapis.com/sourcegraph-assets/learn/icons/creative-commons-by-nc-sa.svg" width="80" height="28" />
         </a>
     </StyledCreativeCommonsNoticeContainer>
 )
