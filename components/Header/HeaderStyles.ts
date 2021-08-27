@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledHeaderImage = styled.img`
+    height: auto;
     margin: 3rem 0;
     padding: 0 .625rem;
     width: 100%;

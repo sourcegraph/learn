@@ -28,5 +28,6 @@ export const StyledCardDescription = styled.p`
     margin: 0;
 `
 export const StyledCardImage = styled.img`
+    height: auto;
     width: 100%;
 `

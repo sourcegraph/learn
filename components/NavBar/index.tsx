@@ -21,11 +21,11 @@ const NavBar: FunctionComponent = () => {
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="https://learn.sourcegraph.com/">
-                    <SyledNavBarLogoImage src="/sourcegraph-learn.svg" />
+                    <SyledNavBarLogoImage src="/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
                     onClick={() => setExpandOnMobile(!expandOnMobile)}
-                    expandOnMobile={expandOnMobile}>
+                    aria-label="Expand Nav Items">
                     <StyledNavBarMobileIcon>
                         <MenuIcon size={30} />
                     </StyledNavBarMobileIcon>
