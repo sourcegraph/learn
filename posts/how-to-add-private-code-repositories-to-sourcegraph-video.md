@@ -45,4 +45,4 @@ I can click on search results and start browsing my codebase on Sourcegraph. Thi
 
 If you want to learn more about the kinds of things that you can search for, and how to use different search features like filters and types of search, I invite you to take a look at the [documentation](https://docs.sourcegraph.com/) and learn more there.
 
-_For a full tutorial, read "[How to add private code repositories to Sourcegraph cloud]()."_
+_For a full tutorial, read "[How to add private code repositories to Sourcegraph cloud](/how-to-add-private-code-repositories-to-sourcegraph)."_
