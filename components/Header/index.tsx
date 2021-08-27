@@ -1,8 +1,13 @@
+import Column from '@components/atoms/Column'
 import HeaderCta from '@components/atoms/HeaderCta'
-import Row from '@components/atoms/Row'
 import { FunctionComponent } from 'react'
 
-import { StyledHeaderImage, StyledHeaderText } from './HeaderStyles'
+import { 
+    StyledHeaderImage,
+    StyledHeaderTextContainer, 
+    StyledHeaderImageContainer,
+    StyledHeaderText,
+} from './HeaderStyles'
 
 interface Props {
     showCta?: boolean
@@ -16,14 +21,18 @@ interface Props {
 
 const Header: FunctionComponent<Props> = props => (
     <>
-        <Row>
-            {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="393" height="205" />}
-            {props.showCta && <HeaderCta link={props.link} text={props.text} />}
-            {props.headerText &&
+        <Column className='flex-large'>
+        {props.headerText &&
+            <StyledHeaderTextContainer>
                 <StyledHeaderText>
                     {props.headerText}
-                </StyledHeaderText>}
-        </Row>
+                </StyledHeaderText>
+            </StyledHeaderTextContainer>}
+            <StyledHeaderImageContainer>
+                {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
+                {props.showCta && <HeaderCta link={props.link} text={props.text} />}
+            </StyledHeaderImageContainer>  
+        </Column>
     </>
 )
 

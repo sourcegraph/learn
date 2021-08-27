@@ -43,4 +43,11 @@ export const StyledColumn = styled.div<Props>`
             width: 100%;
         }
     }
+
+    &.flex-large {
+        justify-content: center;
+        min-height: 31.25rem;
+        padding: 0 .75rem;
+        width: 100%;
+    }
 `

@@ -1,17 +1,9 @@
-import ContentCardList from '@components/atoms/ContentCardList'
-import Header from '@components/Header'
-import PageLayout from '@components/layouts/PageLayout'
-import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import HomepageTemplate, { Props as HomepageTemplateProps } from '@components/templates/HomepageTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
-import { FunctionComponent } from 'react'
 
-interface Props {
-    posts: MarkdownFileWithUrl[]
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () => {
     const posts = await loadAllRecords('posts')
 
     return {
@@ -21,14 +13,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }
 }
 
-const Home: FunctionComponent<Props> = props => (
-    <PageLayout>
-        <Header 
-            showImage={true}
-            headerImage='/headers/sourcegraph-learn-header.svg'
-            headerImageAlt='Sourcegraph Learn' />
-        <ContentCardList records={props.posts} />
-    </PageLayout>
-)
-
-export default Home
+export default HomepageTemplate
