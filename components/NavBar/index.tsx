@@ -36,13 +36,11 @@ const NavBar: FunctionComponent = () => {
                         <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
                     </StyledNavBarItemsContainer>
-                    <StyledNavBarItemsContainer>
-                        <div>
-                            <Button href="https://sourcegraph.com/search" className="outline-primary">
-                                Search on Sourcegraph
-                            </Button>
-                        </div>
-                    </StyledNavBarItemsContainer>
+                    <div>                
+                        <Button href="https://sourcegraph.com/search" className="outline-primary">
+                            Search on Sourcegraph
+                        </Button>                     
+                    </div>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
         </StyledNavBarWrapper>
