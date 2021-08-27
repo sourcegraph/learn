@@ -43,7 +43,7 @@ export const StyledNavBarLogoLink = styled.a`
 `
 export const SyledNavBarLogoImage = styled.img`
     height: auto;
-    vertical-align: -.3125rem;
+    vertical-align: -.3rem;
     width: 12.5rem;
 `
 

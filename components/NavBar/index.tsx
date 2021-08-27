@@ -20,7 +20,7 @@ const NavBar: FunctionComponent = () => {
     return (
         <StyledNavBarWrapper>
             <StyledNavBarContainer>
-                <StyledNavBarLogoLink href="https://learn.sourcegraph.com/">
+                <StyledNavBarLogoLink href="/">
                     <SyledNavBarLogoImage src="/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
@@ -32,7 +32,6 @@ const NavBar: FunctionComponent = () => {
                 </StyledNavBarMobileToggle>
                 <StyledNavBarItemsWrapper expandOnMobile={expandOnMobile}>
                     <StyledNavBarItemsContainer>
-                        <StyledNavBarItemLink href="/">Sourcegraph Learn </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="/tags/tutorial">Tutorials </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
