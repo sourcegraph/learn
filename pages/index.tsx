@@ -5,10 +5,13 @@ import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () => {
     const posts = await loadAllRecords('posts')
+    const searchPosts = posts.filter(record => record.frontMatter.tags.includes('search')).slice(0,3)
+    const videoPosts = posts.filter(record => record.frontMatter.tags.includes('video')).slice(0,3)
 
     return {
         props: {
-            posts: posts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
+            searchPosts: searchPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
+            videoPosts: videoPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
         },
     }
 }

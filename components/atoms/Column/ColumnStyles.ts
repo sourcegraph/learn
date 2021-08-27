@@ -45,7 +45,7 @@ export const StyledColumn = styled.div<Props>`
     }
 
     &.flex-large {
-        justify-content: center;
+        align-items: center;
         min-height: 31.25rem;
         padding: 0 .75rem;
         width: 100%;

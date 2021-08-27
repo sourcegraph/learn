@@ -24,4 +24,5 @@ export const StyledCard = styled.div<Props>`
         ? 'left'
         : 'center'};
     word-wrap: break-word;
+    width: 100%;
 `

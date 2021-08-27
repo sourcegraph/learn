@@ -38,7 +38,6 @@ export const StyledHeaderImage = styled.img`
     animation-timing-function: linear;
     margin-left: 20px;
     position: relative;
-    top: -10px;
     width: fit-content;
 `
 export const StyledHeaderText = styled.div`
@@ -63,7 +62,7 @@ export const StyledHeaderTextContainer = styled.div`
         top: 0;
         right: 0;
         width: 50%;
-        height: 10%;
+        height: 100%;
         background: #fff;
         animation: ${textBefore} 2s cubic-bezier(.77,0,.18,1) forwards;
         transform: translateX(0);
@@ -75,7 +74,7 @@ export const StyledHeaderTextContainer = styled.div`
         top: 0;
         right: 0;
         width: 50%;
-        height: 10%;
+        height: 100%;
         background: #a112ff;
         animation: ${textAfter} 2s cubic-bezier(.77,0,.18,1) forwards;
         transform: translateX(-101%);

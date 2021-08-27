@@ -11,7 +11,7 @@ interface Props {
 const ContentCardList: FunctionComponent<Props> = props => (
     <Row>
         {props.records.map(record => (
-            <Column className='flex-medium' width='flex-medium' key={record.url}>
+            <Column className='flex-medium' key={record.url}>
                 <ContentCard
                     title={record.frontMatter.title}
                     tags={record.frontMatter.tags}
