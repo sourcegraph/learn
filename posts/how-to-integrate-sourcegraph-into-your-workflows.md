@@ -12,7 +12,7 @@ type: posts
 
 ## Learn more
 
-- [Install the Sourcegraph browser extension](https://docs.sourcegraph.com/integration/browser_extension)
+- Install the [Sourcegraph browser extension](https://docs.sourcegraph.com/integration/browser_extension)
 - Learn about the [“Git Extras” Sourcegraph extension](https://sourcegraph.com/extensions/sourcegraph/git-extras)
 - Learn about [Sourcegraph extensions for your code editor](https://sourcegraph.com/extensions?category=Code+editors)
 - Watch the video: [Open-in-editor Sourcegraph extension](https://youtu.be/Maa6jCaoZFw)
