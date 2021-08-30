@@ -11,7 +11,7 @@ export const StyledTocTopWrapper = styled.div`
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
-    left: -5rem;
+    left: -12.5rem;
 
     @media screen and (max-width: 1464px) {
         left: 0;
