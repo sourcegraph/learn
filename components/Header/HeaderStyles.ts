@@ -29,7 +29,7 @@ const textAfter = keyframes`
 `
 export const StyledHeaderImageContainer = styled.div`
     position: relative;
-    width: 35%;
+    width: 30%;
 `
 export const StyledHeaderImage = styled.img`
     animation-name: ${logoAnimation};
@@ -53,7 +53,7 @@ export const StyledHeaderTextContainer = styled.div`
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    width: 65%;
+    width: 70%;
 
     :before {
         content: '';

@@ -16,7 +16,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
         <Row className='medium'>
             <Header 
                 showImage={true}
-                headerImage='/sourcegraph-mark.svg'
+                headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg'
                 headerImageAlt='Sourcegraph Learn'
                 headerText='Welcome to Sourcegraph Learn' />
             <Column className='flex-large'>
