@@ -38,14 +38,14 @@ Please note that Sourcegraph can only be tested on Windows 10 as data will not b
 
 Due to limitations with Docker for Windows, Sourcegraph can only be tested on Windows as data cannot persist on a Windows installation. Due to that, we won't be using the `--volume` argument in our command.
 
-```
+```sh
 docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 `
 --rm sourcegraph/server:3.29.0
 ```
 
 _The above command with backtick assumes use of PowerShell. If you're using the Windows Command Prompt, substitute `^` as below._
 
-```
+```sh
 docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 ^
 --rm sourcegraph/server:3.29.0
 ```
@@ -54,7 +54,7 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
-```
+```sh
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
 ```
 
