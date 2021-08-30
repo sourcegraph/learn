@@ -5,6 +5,42 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/how-to-add-open-source-software-projects-to-sourcegraph"
+  to = "/how-to-add-open-source-software-projects-to-sourcegraph-cloud"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sourcegraph-cheat-sheet"
+  to = "/how-to-search-code-with-sourcegraph-a-cheat-sheet"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/literal-search-patterns"
+  to = "/how-to-search-code-with-sourcegraph-using-literal-patterns"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/regular-expression-patterns"
+  to = "/how-to-search-with-sourcegraph-using-regular-expression-patterns"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/structural-search-patterns"
+  to = "/how-to-search-with-sourcegraph-using-structural-patterns"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/three-ways-to-search-video"
+  to = "/three-ways-to-search-code-with-sourcegraph"
+  status = 301
+  force = true
+
 [build]
   command="NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
 
