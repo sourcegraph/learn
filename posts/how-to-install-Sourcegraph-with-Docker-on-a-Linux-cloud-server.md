@@ -23,7 +23,7 @@ Installing Sourcegraph with Docker is appropriate for testing and fairly quick t
 
 I set up this DigitalOcean Droplet with a [non-root sudo user](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04), Sammy. First, I want to make sure that everything is up to date by running the following command. 
 
-```bash
+```sh
 sudo apt update
 ```
 
@@ -31,18 +31,18 @@ I’ll enter the password when prompted to use my sudo user.
 
 Now we know everything is up to date, and I can move ahead to installing Docker. I am going to use the snap package manager, so let’s make sure that’s installed. 
 
-```bash
+```sh
 sudo apt install snapd
 ```
 
 With that installed and set up, I want to make sure I have the core libraries I need, so I’ll run sudo snap install core.
 
-```bash
+```sh
 sudo snap install core
 ```
 
 Now that snap is installed, we’ll install Docker using snap.
-```bash
+```sh
 sudo snap install docker
 ```
 
@@ -54,7 +54,7 @@ We have a multi-line Docker command that we need to run, and we’ll demonstrate
 
 We’ll run the following Docker run command:
 
-```bash
+```sh
 sudo docker run -d --publish 80:7080 --publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
