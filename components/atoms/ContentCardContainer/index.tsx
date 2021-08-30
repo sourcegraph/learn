@@ -17,7 +17,7 @@ interface Props {
 }
 
 const ContentCardContainer: FunctionComponent<Props> = props => (
-    <Row className='medium'>
+    <Row>
         <StyledContentCardContainerWrapper>
             <StyledCardContainerHeader>
                 {props.header}

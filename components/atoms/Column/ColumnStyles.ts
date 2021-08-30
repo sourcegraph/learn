@@ -7,6 +7,12 @@ export const StyledColumn = styled.div`
         width: 100%;
     }
 
+    &.centered {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
     &.medium {
         width: 50%;
 
@@ -33,6 +39,7 @@ export const StyledColumn = styled.div`
     &.flex-large {
         align-items: center;
         flex: 0 0 auto;
+        flex-wrap: wrap;
         min-height: 15.625rem;
         padding: 0 .75rem;
         width: 100%;

@@ -1,3 +1,4 @@
+import Button from '@components/atoms/Button'
 import Column from '@components/atoms/Column'
 import ContentCardContainer from '@components/atoms/ContentCardContainer'
 import Row from '@components/atoms/Row'
@@ -25,12 +26,22 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                     records={props.searchPosts} 
                     header='Search'
                     description='Learn about search principles with these guides' />
+                    <Column className='centered'>
+                        <Button className='primary' href='/tags/search'>
+                            Load more
+                        </Button>
+                    </Column>
             </Column>
             <Column className='flex-large'>
                 <ContentCardContainer 
                     records={props.videoPosts} 
                     header='Video'
                     description='Follow along with these video resources' />
+                    <Column className='centered'>
+                        <Button className='primary' href='/tags/video'>
+                            Load more
+                        </Button>
+                    </Column>
             </Column>
         </Row>
     </Layout>
