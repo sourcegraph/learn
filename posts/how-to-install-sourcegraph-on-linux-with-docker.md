@@ -25,7 +25,7 @@ On a Linux cloud server or local computer, you can install Docker via the comman
 
 Ensure that you have the [snap package manager](https://snapcraft.io/) installed by running the following commands in your terminal for **Ubuntu or Debian Linux**:
 
-```
+```bash
 sudo apt update
 sudo apt install snapd
 sudo snap install core
@@ -33,7 +33,7 @@ sudo snap install core
 
 Once snap is fully installed, you can install Docker using snap.
 
-```
+```bash
 sudo snap install docker
 ```
 
@@ -45,13 +45,13 @@ With Docker installed, you are ready to procceed to [Step 2](#step-2--install-so
 
 If you are using **Fedora**, ensure that snap is installed by running the following command:
 
-```
+```bash
 sudo dnf install snapd
 ```
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
-```
+```bash
 sudo snap install docker
 ```
 
@@ -63,7 +63,7 @@ With Docker installed, you are ready to procceed to [Step 2](#step-2--install-so
 
 If you are using **CentOs**, you can ensure that snap is installed and ready by running the following commands. For more guidance on these commands, please visit snap’s [official documentation](https://snapcraft.io/install/docker/centos).
 
-```
+```bash
 sudo yum install epel-release
 sudo yum install snapd
 sudo systemctl enable --now snapd.socket
@@ -71,7 +71,7 @@ sudo systemctl enable --now snapd.socket
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
-```
+```bash
 sudo snap install docker
 ```
 
@@ -89,7 +89,7 @@ We’ll go over two approaches below; the first which is recommended for [Linux 
 
 On local machines that use a Linux distribution, you’ll be able to install Sourcegraph by running the following Docker command.
 
-```
+```bash
 docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
@@ -100,7 +100,7 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
 
-```
+```bash
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
 ```
 
@@ -110,7 +110,7 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
-```
+```bash
 docker run -d --publish 80:7080 --publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
@@ -122,7 +122,7 @@ This command is telling your server to install and run Sourcegraph in port 7080 
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following. Your server’s IP address will display in place of `your-server-ip-address`.
 
-```
+```bash
 ✱ Sourcegraph is ready at: http://your-server-ip-address:7080
 ```
 
