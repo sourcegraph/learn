@@ -6,7 +6,8 @@ interface Props {
     leftAlign?: boolean
 }
 
-export const StyledCard = styled.div<Props>`
+export const StyledCard = styled.a<Props>`
+    cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -23,6 +24,7 @@ export const StyledCard = styled.div<Props>`
     text-align: ${props => props.leftAlign
         ? 'left'
         : 'center'};
+    text-decoration: none;
     word-wrap: break-word;
     width: 100%;
 `

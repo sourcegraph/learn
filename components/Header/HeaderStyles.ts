@@ -29,14 +29,14 @@ const textAfter = keyframes`
 `
 export const StyledHeaderImageContainer = styled.div`
     position: relative;
-    width: 40%;
+    width: 35%;
 `
 export const StyledHeaderImage = styled.img`
     animation-name: ${logoAnimation};
     animation-duration: .5s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
-    margin-left: 20px;
+    margin-left: 10px;
     position: relative;
     width: fit-content;
 `
@@ -53,8 +53,7 @@ export const StyledHeaderTextContainer = styled.div`
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    text-align: center;
-    width: 60%;
+    width: 65%;
 
     :before {
         content: '';
@@ -79,4 +78,9 @@ export const StyledHeaderTextContainer = styled.div`
         animation: ${textAfter} 2s cubic-bezier(.77,0,.18,1) forwards;
         transform: translateX(-101%);
     }
+`
+export const StyledHeaderSharedContainer = styled.div`
+    align-items: center;
+    display: flex;
+    width: 100%;
 `

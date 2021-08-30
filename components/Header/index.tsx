@@ -7,6 +7,7 @@ import {
     StyledHeaderTextContainer, 
     StyledHeaderImageContainer,
     StyledHeaderText,
+    StyledHeaderSharedContainer,
 } from './HeaderStyles'
 
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
     showImage: boolean
     headerImage?: string
     headerImageAlt?: string
-    headerText?: string
+    headerText: string
     link?: string
     text?: string
 }
@@ -22,16 +23,17 @@ interface Props {
 const Header: FunctionComponent<Props> = props => (
     <>
         <Column className='flex-large'>
-        {props.headerText &&
-            <StyledHeaderTextContainer>
-                <StyledHeaderText>
-                    {props.headerText}
-                </StyledHeaderText>
-            </StyledHeaderTextContainer>}
-            <StyledHeaderImageContainer>
-                {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
-                {props.showCta && <HeaderCta link={props.link} text={props.text} />}
-            </StyledHeaderImageContainer>  
+            <StyledHeaderSharedContainer>
+                <StyledHeaderTextContainer>
+                    <StyledHeaderText>
+                        {props.headerText}
+                    </StyledHeaderText>
+                </StyledHeaderTextContainer>
+                <StyledHeaderImageContainer>
+                    {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
+                    {props.showCta && <HeaderCta link={props.link} text={props.text} />}
+                </StyledHeaderImageContainer>
+            </StyledHeaderSharedContainer>
         </Column>
     </>
 )
