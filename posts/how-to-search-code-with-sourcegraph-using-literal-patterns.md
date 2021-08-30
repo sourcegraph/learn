@@ -1,11 +1,11 @@
 ---
-title: How To Search with Sourcegraph using Literal Patterns
+title: How to search code with Sourcegraph using literal patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
 description: Learn how to use literal search patterns to search code on Sourcegraph.
-image: /headers/sourcegraph-learn-header-3.svg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
 imageAlt: Sourcegraph Learn
-socialImage: /headers/sourcegraph-learn-header-3.png
+alternateTitle: Searching code with Sourcegraph using literal search
 type: posts
 ---
 
@@ -94,4 +94,4 @@ To go beyond literal patterns, you can use regular expressions or structural sea
 [struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [documentation]: https://docs.sourcegraph.com/code_search/reference/queries
 [regular expressions]: https://docs.sourcegraph.com/code_search/reference/queries#regular-expression-search
-[structural search]: https://docs.sourcegraph.com/code_search/reference/structural
+[structural search]: /how-to-search-with-sourcegraph-using-structural-patterns
