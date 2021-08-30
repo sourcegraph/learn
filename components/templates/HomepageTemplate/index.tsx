@@ -15,8 +15,7 @@ export interface Props {
 const HomepageTemplate: FunctionComponent<Props> = props => (
     <Layout>
         <Row className='medium'>
-            <Header 
-                showImage={true}
+            <Header
                 headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg'
                 headerImageAlt='Sourcegraph Learn'
                 headerText='Welcome to Sourcegraph Learn'

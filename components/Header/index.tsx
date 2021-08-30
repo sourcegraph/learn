@@ -1,5 +1,4 @@
 import Column from '@components/atoms/Column'
-import HeaderCta from '@components/atoms/HeaderCta'
 import { FunctionComponent } from 'react'
 
 import { 
@@ -12,14 +11,10 @@ import {
 } from './HeaderStyles'
 
 interface Props {
-    showCta?: boolean
-    showImage: boolean
     headerImage?: string
     headerImageAlt?: string
     headerText: string
-    link?: string
-    text?: string
-    isHomepage: boolean
+    isHomepage?: boolean
 }
 
 const Header: FunctionComponent<Props> = props => (
@@ -34,8 +29,7 @@ const Header: FunctionComponent<Props> = props => (
                         </StyledHeaderText>
                     </StyledHeaderTextContainerAnimated>
                     <StyledHeaderImageContainer>
-                        {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
-                        {props.showCta && <HeaderCta link={props.link} text={props.text} />}
+                        {props.headerImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
                     </StyledHeaderImageContainer>
                 </StyledHeaderSharedContainer>
                 )

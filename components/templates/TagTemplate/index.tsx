@@ -15,8 +15,6 @@ const TagTemplate: FunctionComponent<Props> = props => {
     return (
         <PageLayout documentTitle={`Records tagged with ${tagName}`} appendSiteTitle={true}>
             <Header
-                isHomepage={false}
-                showImage={false}
                 headerText={`Records tagged with ${tagName}`}
             />
             <ContentCardList records={props.records} />
