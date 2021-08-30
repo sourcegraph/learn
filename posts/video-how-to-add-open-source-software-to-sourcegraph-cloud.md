@@ -3,7 +3,7 @@ title: Video — How to add open source software to Sourcegraph cloud
 author: lisa-tagliaferri
 tags: [video, Sourcegraph, open source]
 description: Find out how to add open source repos to Sourcegraph cloud so you can search across all the code you care about.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/add-oss-to-sourcegraph-cloud-screengrab.jpg
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/install-sourcegraph-with-docker-screengrab.png
 imageAlt: Demo of how to add open source repositories to Sourcegraph cloud for indexing
 alternateTitle: Sourcegraph is indexing open source
 type: posts
@@ -25,13 +25,13 @@ From here you will be able to connect your own repositories to Sourcegraph, but 
 
 ### Add links to public repositories
 
-In the box, you can add links to these public repos, whether you contribute to the project or not. These are probably open source projects that you care about. Add one URL per line with no separating characters other than the ENTER key.
+In the box, you can add links to these public repos, whether you contribute to the project or not. These are probably open source projects that you care about. Add one URL per line with no separating characters other than the `ENTER` key.
 
-I have identified two projects that I would like to have Sourcegraph index. One of them is this Cloud Haiku repository, I’ll go through, copy, and paste. Then I’ll hit **Enter** to start a new line — don’t put any characters in between. Then I’ll go through and copy paste for the second repository, which is an archive of computational history. When you are satisfied with the repositories that you have added, you can click the **Save** button below. You can always add more repos later!
+I have identified two projects that I would like to have Sourcegraph index. One of them is this [Cloud Haiku repository](https://github.com/do-community/cloud_haiku), I’ll go through, copy, and paste. Then I’ll hit `ENTER` to start a new line — don’t put any characters in between. Then I’ll go through and copy paste for the second repository, which is an [archive of computational history](https://github.com/dhmit/computation_hist). When you are satisfied with the repositories that you have added, you can click the **Save** button below. You can always add more repos later!
 
 ### Verify that repositories have been added
 
-Once I clicked on **Save** I should see that these repositories are loaded in, preloaded to my account. And now I can actually check to make sure that Sourcegraph has in fact indexed these repositories by looking for a specific string that I know exists in one of them. So, first I’ll identify that string and share that with you really quickly.
+Once I've clicked on **Save** I should see that these repositories are loaded in, preloaded to my account. And now I can actually check to make sure that Sourcegraph has in fact indexed these repositories by looking for a specific string that I know exists in one of them. So, first I’ll identify that string and share that with you really quickly.
 
 In this Cloud Haiku repository, there is this line, “Like the octopuses’ minds” and a break. I suspect this is not a common line in open source repositories. So what I’m going to do next is open a private or incognito window and then I’m going to search Sourcegraph for this specific line to make sure that it is globally available. 
 
