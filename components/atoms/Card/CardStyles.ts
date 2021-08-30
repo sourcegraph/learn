@@ -4,9 +4,10 @@ interface Props {
     addMargin?: boolean
     showBorder?: boolean
     leftAlign?: boolean
+    width?: string
 }
 
-export const StyledCard = styled.a<Props>`
+export const StyledCard = styled.div<Props>`
     cursor: pointer;
     position: relative;
     display: flex;
@@ -26,5 +27,7 @@ export const StyledCard = styled.a<Props>`
         : 'center'};
     text-decoration: none;
     word-wrap: break-word;
-    width: 100%;
+    width: ${props => props.width
+        ? `${props.width}%`
+        : '100%'};
 `

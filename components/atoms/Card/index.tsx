@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react'
+import { ReactNode, FunctionComponent } from 'react'
 
 import { StyledCard } from './CardStyles'
 
@@ -7,18 +7,17 @@ interface Props {
     addMargin?: boolean
     showBorder?: boolean
     leftAlign?: boolean
-    href?: string
+    width?: string
 }
 
-const Card = forwardRef<HTMLAnchorElement, Props>((props, reference) => (
+const Card: FunctionComponent<Props> = props => (
     <StyledCard
-        href={props.href}
         addMargin={props.addMargin} 
         showBorder={props.showBorder}
         leftAlign={props.leftAlign}
-        ref={reference}>
+        width={props.width}>
         {props.children}
     </StyledCard>
-))
+)
 
 export default Card

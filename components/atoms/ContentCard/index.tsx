@@ -1,4 +1,4 @@
-import Card from '@components/atoms/Card'
+import CardLink from '@components/atoms/CardLink'
 import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
@@ -25,7 +25,7 @@ const ContentCard: FunctionComponent<Props> = props => {
 
     return (
         <Link href={props.url} passHref={true}>
-            <Card showBorder={isPost} leftAlign={isPost} href={props.url}>
+            <CardLink href={props.url}>
                 {props.image && <StyledCardImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} width="185" height="96" />}
                 <StyledCardBody>
                     <StyledCardTitle>  
@@ -36,7 +36,7 @@ const ContentCard: FunctionComponent<Props> = props => {
                     )}
                     {props.description && <StyledCardDescription>{props.description}</StyledCardDescription>}
                 </StyledCardBody>
-            </Card>
+            </CardLink>
         </Link> 
     )
 }
