@@ -11,6 +11,8 @@ type: posts
 
 <EmbeddedYoutubeVideo id="u_SmtOejFkg" />
 
+## Transcript
+
 Hi, I’m Lisa, Director of Developer Education at Sourcegraph, and I’m going to walk you through installing an instance of Sourcegraph on a Linux Ubuntu 20.04 cloud server. We’ll be using a [DigitalOcean Droplet](https://www.digitalocean.com/) with the recommended 4GB of RAM and 2 CPUs for this demo.
 
 Sourcegraph is a tool that can allow you to search the code that is important to you. You can try out [Sourcegraph cloud](https://sourcegraph.com) on the web to search through open source repositories right now. In this video, we’ll discuss an installation instead. If you would like to use Sourcegraph to access local code, server-side code, or code from several different code hosts, an instance like this may be the right fit for you. 
