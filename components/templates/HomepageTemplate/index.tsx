@@ -18,7 +18,8 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                 showImage={true}
                 headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg'
                 headerImageAlt='Sourcegraph Learn'
-                headerText='Welcome to Sourcegraph Learn' />
+                headerText='Welcome to Sourcegraph Learn'
+                isHomepage={true} />
             <Column className='flex-large'>
                 <ContentCardContainer 
                     records={props.searchPosts} 

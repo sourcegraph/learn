@@ -45,6 +45,14 @@ export const StyledHeaderText = styled.div`
     margin-left: 100px;
 `
 export const StyledHeaderTextContainer = styled.div`
+    font-size: 2.2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+`
+export const StyledHeaderTextContainerAnimated = styled(StyledHeaderTextContainer)`
     animation-delay: 2s;
     animation-duration: 800ms;
     font-size: 2.2rem;
