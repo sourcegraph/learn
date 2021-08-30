@@ -46,7 +46,7 @@ The first section is for macOS machines with [Intel chips](#on-macos-with-intel-
 
 On local machines with an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command.
 
-```
+```sh
 docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
@@ -57,7 +57,7 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
 
-```
+```sh
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
 ```
 
@@ -67,7 +67,7 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 On a macOS machine with an Apple M1 chip, you’ll need to add an extra argument to your Docker command so that the platform does not interfere with the installation and running of Sourcegraph. Run the following command with the `--platform linux/amd64` argument as demonstrated below.
 
-```
+```sh
 docker run \
 --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --platform linux/amd64 \
@@ -80,7 +80,7 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
-```
+```sh
 ✱ Sourcegraph is ready at: http://127.0.0.1:7080
 ```
 
