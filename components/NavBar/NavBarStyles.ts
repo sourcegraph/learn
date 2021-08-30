@@ -12,10 +12,19 @@ export const StyledNavBarWrapper = styled.nav`
     justify-content: flex-start;
     padding: .5rem 0;
     position: relative;
+    width: 100%;
 
     @media screen and (max-width: 768px) {
         flex-wrap: wrap;
         justify-content: flex-start;
+        max-width: 720px;
+        padding: 0 .75rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 320px;
+        padding: 1rem;
+        margin: 0 auto;
     }
 `
 export const StyledNavBarContainer = styled.div`
@@ -30,6 +39,11 @@ export const StyledNavBarContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         max-width: 720px;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 320px;
+        padding: 0;
     }
 `
 

@@ -14,8 +14,13 @@ export const StyledCardContainerDescription = styled.p`
 export const StyledContentCardContainerWrapper = styled.div`
     justify-content: center;
     text-align: center;
+    width: 100%;
 `
 export const StyledContentCardContainerCards = styled.div`
     display: flex;
     flex-direction: row;
+
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+    }
 `

@@ -15,4 +15,9 @@ export const StyledCardLink = styled.a`
     text-decoration: none;
     word-wrap: break-word;
     width: 100%;
+
+    @media screen and (max-width: 576px) {
+        margin: .75rem;
+        width: unset;
+    }
 `

@@ -9,6 +9,10 @@ export const StyledColumn = styled.div`
 
     &.medium {
         width: 50%;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
     }
 
     &.flex-small {
@@ -28,8 +32,21 @@ export const StyledColumn = styled.div`
 
     &.flex-large {
         align-items: center;
-        min-height: 21.88rem;
+        flex: 0 0 auto;
+        min-height: 15.625rem;
         padding: 0 .75rem;
         width: 100%;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            padding: 0;
+            max-width: 720px;
+            margin-top: 1.88rem;
+            min-height: 15.6rem;
+        }
+
+        @media screen and (max-width: 576px) {
+            max-width: 320px;
+        }
     }
 `

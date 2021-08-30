@@ -36,7 +36,7 @@ export const StyledHeaderImage = styled.img`
     animation-duration: .5s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
-    margin-left: 10px;
+    margin-left: .625rem;
     position: relative;
     width: fit-content;
 `
@@ -50,6 +50,7 @@ export const StyledHeaderTextContainer = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    text-align: center;
     width: 100%;
 `
 export const StyledHeaderTextContainerAnimated = styled(StyledHeaderTextContainer)`
@@ -91,4 +92,8 @@ export const StyledHeaderSharedContainer = styled.div`
     align-items: center;
     display: flex;
     width: 100%;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 3.125rem;
+    }
 `
