@@ -47,8 +47,11 @@ sudo snap install docker
 ```
 
 Now that we have Docker installed, we can move on to installing Sourcegraph with Docker.
+
 ### Installing Sourcegraph
+
 We have a multi-line Docker command that we need to run, and we’ll demonstrate how to do that here. We’ll be using the sudo command and it’s going to take a little bit. 
+
 We’ll run the following Docker run command:
 
 ```bash
@@ -60,7 +63,11 @@ sourcegraph/server:3.30.4
 ```
 
 This command is telling your server to install and run Sourcegraph, binding port 7080 to TCP port 80 of your server; it’s calling up the relevant files from the Docker image of Sourcegraph. Since this is a cloud server, we can keep our instance of Sourcegraph up and running even after closing our Terminal connection to the server, and that was one of the details we pass to this command. It is also setting up a store for your Sourcegraph data.
+
 ### Verify installation
+
 With our installation complete, we can navigate to our web browser of choice and enter the IP address of the server with port 80. We’ll press enter and get the feedback that the installation is complete. We have validated that we have installed Sourcegraph with Docker on this Ubuntu server. At this point, you can create your account. 
+
 Now we have verified that everything is working. For next steps, head on over to [Sourcegraph Learn](https://learn.sourcegraph.com). Or go ahead to read through our [documentation](https://docs.sourcegraph.com) to read more about Sourcegraph, the different installation methods, and how you can effectively search all of your code. Happy coding and happy searching!
-__For a longer-form written tutorial of this guide, read “[How to install Sourcegraph on Linux with Docker](https://learn.sourcegraph.com/how-to-install-sourcegraph-on-linux-with-docker).”__
+
+_For a longer-form written tutorial of this guide, read “[How to install Sourcegraph on Linux with Docker](https://learn.sourcegraph.com/how-to-install-sourcegraph-on-linux-with-docker).”_
