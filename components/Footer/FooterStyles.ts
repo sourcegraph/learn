@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const StyledFooterWrapper = styled.footer<Props>`
-    margin: 18rem 0 0;
+    margin: 21.88rem 0 0;
     padding-bottom: ${props => props.minimal
         ? ''
         : '.5rem'};
