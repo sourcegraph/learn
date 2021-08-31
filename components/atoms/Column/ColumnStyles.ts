@@ -49,7 +49,7 @@ export const StyledColumn = styled.div`
             padding: 0;
             max-width: 720px;
             margin-top: 1.88rem;
-            min-height: 15.6rem;
+            min-height: 12.5rem;
         }
 
         @media screen and (max-width: 576px) {
