@@ -1,6 +1,6 @@
 ---
 title: How to create an account on Sourcegraph cloud
-tags: [tutorial, Sourcegraph Cloud, Sourcegraph]
+tags: [tutorial, Sourcegraph cloud, Sourcegraph]
 author: oluebube-princess-egbuna
 description: Learn how to create an account on Sourcegraph cloud to access advanced features of Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
