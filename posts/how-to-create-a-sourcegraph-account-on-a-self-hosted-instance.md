@@ -3,9 +3,9 @@ title: How to create an account on self-hosted Sourcegraph.
 tags: [tutorial, Sourcegraph Cloud, Sourcegraph]
 author: oluebube-princess-egbuna
 description: Learn how to create an account on self-hosted instances of Sourcegraph.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
-alternativeTitle: Signing up on Sourcegraph that is installed on your machine with Docker, Docker Compose or Kubernetes.
+alternativeTitle: Signing up on Sourcegraph that is installed on your host with Docker, Docker Compose or Kubernetes.
 type: posts
 ---
 
@@ -54,17 +54,19 @@ Enter your preferred username in the form input section labelled **Username**.
 
 ![Username field on Sourcegraph cloud sign up form](username-field-sourcegraph-signup-form.png)
 
-If the username you have chosen is taken, you will find an error that indicates that the username is taken. You can modify your preferred username to continue.
+If the username you have chosen is taken or if you have used special characters while creating your username, you will find an error that indicates that the username is taken. When there is an error, you can modify your preferred username to continue.
 
 ![Username field error on Sourcegraph cloud sign up form](username-field-error-sourcegraph-signup-form.png)
 
 Next, create a password. A password lets you add a layer of security to your account by preventing unauthorized access.
 
-When creating a Sourcegraph account, your chosen password should be at least 12 characters. Enter your chosen password in the form input section labelled **Password**.
+When creating a Sourcegraph account, your chosen password should be at least 12 characters to avoid having issues with creating a password. Enter your chosen password in the form input section labelled **Password** to create a password.
+
+![Create a password on Sourcegraph](password-field-sourcegraph-signup-form.png)
 
 After completing the three steps above completely, clicking on the **Register** button creates an account for you.
 
-# Next Steps
+# Next steps
 
 Now that you have created a Sourcegraph account, you can start using Sourcegraph to search all the code that is important to you by having a look at our [quick search guide](https://learn.sourcegraph.com/sourcegraph-cheat-sheet).
 

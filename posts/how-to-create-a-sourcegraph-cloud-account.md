@@ -3,7 +3,7 @@ title: How to create an account on Sourcegraph cloud
 tags: [tutorial, Sourcegraph Cloud, Sourcegraph]
 author: oluebube-princess-egbuna
 description: Learn how to create an account on Sourcegraph cloud to access advanced features of Sourcegraph.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-1.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 alternativeTitle: Signing up on Sourcegraph Cloud to access Sourcegraph's advanced features.
 type: posts
@@ -23,11 +23,11 @@ You can get started using Sourcegraph cloud by navigating to [sourcegraph.com](h
 
 This section will walk you through how to create an account on Sourcegraph cloud. Using your preferred browser, navigate to [Sourcegraph cloud](https://sourcegraph.com/search).
 
-When the page is fully loaded, you’ll receive a page similar to the following, with Sourcegraph’s logo and a search bar: .
+When the page is fully loaded, you’ll receive a page similar to the following, with Sourcegraph’s logo and a search bar:
 
 ![Sourcegraph cloud landing page](/tutorial-images/sourcegraph-cloud-landing.png)
 
-On the right hand side of the top navigation pane, there is a **Sign up** button that takes you to the [Sign up](https://sourcegraph.com/sign-up) page. The **Sign up** page contains a form that allows you to create an account.
+On the right hand side of the top navigation pane, there is a **Sign up** button that takes you to the [Sign up](https://sourcegraph.com/sign-up) page.
 
 ![Sourcegraph cloud sign up form](/tutorial-images/sourcegraph-cloud-signup-landing.png)
 
@@ -37,7 +37,7 @@ The other two sign up options allow you to optionally sign up using GitHub’s o
 
 ### Create a Sourcegraph cloud account with GitHub
 
-If you would like to use the GitHub authentication, you can do so at the  **Sign up** page of Sourcegraph cloud.
+If you would like to use the GitHub's authentication service, you can do so at the  **Sign up** page of Sourcegraph cloud.
 
 To create an account with GitHub, click on the **Continue with GitHub** button on the [Sign up](https://sourcegraph.com/sign-up) page. Clicking on the GitHub button will take you to GitHub’s login page if you are not already logged in.
 
@@ -47,7 +47,9 @@ Once you are logged in on GitHub,  you will receive  a page that requires you to
 
 ![Authorize Sourcegraph to access permitted data on GitHub](/tutorial-images/authorise-sourcegraph-on-github.png)
 
-If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cloud’s welcome page. By completing these steps, you have successfully created a Sourcegraph cloud account using GitHub.
+If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cloud’s welcome page.
+
+By completing these steps, you have successfully created a Sourcegraph cloud account using GitHub.
 
 ### Create a Sourcegraph account with GitLab
 
@@ -67,7 +69,8 @@ Clicking on **Authorize**  will allow Sourcegraph to use the GitLab data mention
 
 To create a Sourcegraph account by providing an email address, you need to make sure that the email address you will be using is valid. You will also need to ensure that that you have access to it. This is because after using an email to sign up, your account will be tied to that email address. If you need to recover your account, you will need access to this email to do so.
 
-On the **Sign up** page, there is a `continue with email` link below the **Continue with GitLab** button. Clicking on the link takes you to a form with which you can create an account using an email address. Enter the valid email address you want to use in the form input space labelled **Email**.
+On the **Sign up** page, there is a `continue with email` link below the **Continue with GitLab** button.
+Clicking on the link takes you to a form with which you can create an account using an email address. Enter the valid email address you want to use in the form input space labelled **Email**.
 
 ![Email field on Sourcegraph cloud sign up form](sourcegraph-cloud-signup-email-field.png)
 
@@ -81,22 +84,24 @@ Enter your preferred username in the form input section labelled **Username**.
 
 ![Username field on Sourcegraph cloud sign up form](username-field-sourcegraph-signup-form.png)
 
-If the username you have chosen is taken, you will find an error that indicates that the username is taken. You can modify your preferred username to continue.
+If the username you have chosen is taken or if you have used special characters while creating your username, you will find an error that indicates that the username is taken. When there is an error, you can modify your preferred username to continue.
 
 ![Username field error on Sourcegraph cloud sign up form](username-field-error-sourcegraph-signup-form.png)
 
 Next, create a password. A password lets you add a layer of security to your account by preventing unauthorized access.
 
-When creating a Sourcegraph account, your chosen password should be at least 12 characters. Enter your chosen password in the form input section labelled **Password**.
+When creating a Sourcegraph account, your chosen password should be at least 12 characters to avoid having issues with creating a password. Enter your chosen password in the form input section labelled **Password** to create a password.
+
+![Create a password on Sourcegraph](password-field-sourcegraph-signup-form.png)
 
 After completing the three steps above completely, clicking on the **Register** button creates an account for you.
 
 ### Security on Sourcegraph cloud
-On Sourcegraph cloud, your private code is protected and no one has access to it. Sourcegraph uses the permissions on repositories from your GitHub and GitLab repositories to determine who has access to your code. 
+On Sourcegraph cloud, your private code is protected and no one has access to it. Sourcegraph uses the permissions on repositories from your GitHub and GitLab repositories to determine who has access to your code.
 
 Sourcegraph does not also have access to your private repositories. Read more about Sourcegraph and privacy on our [privacy page](https://about.sourcegraph.com/privacy/).
 
-# Next Steps
+# Next steps
 
 Now that you have created a Sourcegraph account, you can start using Sourcegraph to search all the code that is important to you by having a look at our [quick search guide](https://learn.sourcegraph.com/sourcegraph-cheat-sheet).
 

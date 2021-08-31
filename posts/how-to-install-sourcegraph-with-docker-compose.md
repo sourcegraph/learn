@@ -1,5 +1,5 @@
 ---
-title: How to install SOurcegraph with Docker Compose
+title: How to install Sourcegraph with Docker Compose
 tags: [tutorial, Docker, Docker Compose, Sourcegraph]
 author: oluebube-princess-egbuna
 description: Learn how to install Sourcegraph with Docker Compose on your hosts.
@@ -26,7 +26,7 @@ Use our resource estimator to ensure that your machine meets the [minimum requir
 
 Forking the repository allows you to make customizations that are tailored to your organization’s needs. That way, the original repository serves as a source of truth when you need to make updates or upgrades to your Sourcegraph’s instance.
 
-You can fork the reference repository from GitHub’s user interface. Having a GitHub account is required when forking repositories that are hosted on GitHub.
+You can fork the reference repository from GitHub’s user interface. You will need to have a GitHub account to fork a repository on GitHub.
 
 To fork the repository using GitHub’s user interface, navigate to the [reference repository](https://github.com/sourcegraph/deploy-sourcegraph-docker/). On the right hand side of the top navigation pane, you will find a `fork` button.
 
@@ -102,16 +102,17 @@ The instance is healthy when the `sourcegraph-frontend-0` image is up and runnin
 
 ## Step 6 — Access Sourcegraph with a browser
 
-Copy the `ip` address created by your server and access it with a web browser of your choice. The link leads to a page that lets you create an account to start using Sourcegraph.
+Copy the IP address created by your server and access it with a web browser of your choice. The link leads to a page that lets you create an account to start using Sourcegraph.
 
 ![Sourcegraph sign up and login page](/tutorial-images/sourcegraph-login-page.png)
 
 After a successful installation of Sourcegraph with Docker Compose, you can [create a Sourcegraph Account](https://learn.sourcegraph.com/how-to-create-a-sourcegraph-account ).
 
-## Next Steps:
+## Next steps:
+
 Now that you have Sourcegraph installed and you also have a Sourcegraph account, you can start testing out Sourcegraph commands by looking at our [cheat sheet](https://learn.sourcegraph.com/sourcegraph-cheat-sheet), if you are not already familiar with Sourcegraph’s search commands.
 
 
 Alternatively, you may want to [add your private repositories to Sourcegraph](https://learn.sourcegraph.com/how-to-add-private-code-repositories-to-sourcegraph).
 
-Our tutorials [docs](https://learn.sourcegraph.com/) provide useful guides on how to use Sourcegraph effectively. You can learn more about Sourcegraph by looking at our product [docs](https://docs.sourcegraph.com/).
+Our [tutorials](https://learn.sourcegraph.com/) provide useful guides on how to use Sourcegraph effectively. You can learn more about Sourcegraph by looking at our product [docs](https://docs.sourcegraph.com/).
