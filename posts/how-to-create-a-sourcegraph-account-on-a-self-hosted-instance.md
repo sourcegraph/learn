@@ -42,27 +42,27 @@ After you open the address provided by your server on your preferred web browser
 
 Enter the valid email address you want to use in the form input space labelled **Email**.
 
-![Email field on Sourcegraph cloud sign up form](sourcegraph-cloud-signup-email-field.png)
+![Email field on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-signup-email-field.png)
 
 An invalid email address will throw an error message and will not let you complete the account creation process.
 
-![Email field error on Sourcegraph cloud sign up form](sourcegraph-cloud-email-field-error.png)
+![Email field error on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-email-field-error.png)
 
 Choose a username that is unique. Every account on Sourcegraph is tied to a unique username.
 
 Enter your preferred username in the form input section labelled **Username**.
 
-![Username field on Sourcegraph cloud sign up form](username-field-sourcegraph-signup-form.png)
+![Username field on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/username-field-sourcegraph-signup-form.png)
 
 If the username you have chosen is taken or if you have used special characters while creating your username, you will find an error that indicates that the username is taken. When there is an error, you can modify your preferred username to continue.
 
-![Username field error on Sourcegraph cloud sign up form](username-field-error-sourcegraph-signup-form.png)
+![Username field error on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/username-field-error-sourcegraph-signup-form.png)
 
 Next, create a password. A password lets you add a layer of security to your account by preventing unauthorized access.
 
 When creating a Sourcegraph account, your chosen password should be at least 12 characters to avoid having issues with creating a password. Enter your chosen password in the form input section labelled **Password** to create a password.
 
-![Create a password on Sourcegraph](password-field-sourcegraph-signup-form.png)
+![Create a password on Sourcegraph](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/password-field-sourcegraph-signup-form.png)
 
 After completing the three steps above completely, clicking on the **Register** button creates an account for you.
 

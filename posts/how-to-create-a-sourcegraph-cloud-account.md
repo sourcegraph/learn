@@ -25,11 +25,11 @@ This section will walk you through how to create an account on Sourcegraph cloud
 
 When the page is fully loaded, you’ll receive a page similar to the following, with Sourcegraph’s logo and a search bar:
 
-![Sourcegraph cloud landing page](/tutorial-images/sourcegraph-cloud-landing.png)
+![Sourcegraph cloud landing page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-landing.png)
 
 On the right hand side of the top navigation pane, there is a **Sign up** button that takes you to the [Sign up](https://sourcegraph.com/sign-up) page.
 
-![Sourcegraph cloud sign up form](/tutorial-images/sourcegraph-cloud-signup-landing.png)
+![Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-signup-landing.png)
 
 Currently, there are three ways to sign up for Sourcegraph cloud. One of the options allows you to use your email address, along with a username and a password to create an account.
 
@@ -41,11 +41,11 @@ If you would like to use the GitHub's authentication service, you can do so at t
 
 To create an account with GitHub, click on the **Continue with GitHub** button on the [Sign up](https://sourcegraph.com/sign-up) page. Clicking on the GitHub button will take you to GitHub’s login page if you are not already logged in.
 
-![GitHub login page](/tutorial-images/github-login-to-access-sourcegraph.png)
+![GitHub login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-login-to-access-sourcegraph.png)
 
 Once you are logged in on GitHub,  you will receive  a page that requires you to authorize Sourcegraph. The authorization you will be giving to Sourcegraph from GitHub will allow Sourcegraph to use the GitHub data mentioned in the signup form for your account creation.
 
-![Authorize Sourcegraph to access permitted data on GitHub](/tutorial-images/authorise-sourcegraph-on-github.png)
+![Authorize Sourcegraph to access permitted data on GitHub](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/authorise-sourcegraph-on-github.png)
 
 If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cloud’s welcome page.
 
@@ -57,11 +57,11 @@ If you have a GitLab account and would prefer to create a Sourcegraph account th
 
 If you are not signed into your GitLab account, you will be redirected to log into GitLab to continue.
 
-![GitLab Login page](/tutorial-images/gitlab-login.png)
+![GitLab Login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/gitlab-login.png)
 
 If you are logged into GitLab, you will need to authorize Sourcegraph to create a Sourcegraph cloud account.
 
-![Authorize Sourcegraph to access permitted data on GitLab](/tutorial-images/authorize-sourcegraph-on-gitlab.png)
+![Authorize Sourcegraph to access permitted data on GitLab](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/authorize-sourcegraph-on-gitlab.png)
 
 Clicking on **Authorize**  will allow Sourcegraph to use the GitLab data mentioned in the signup form for your account creation.
 
@@ -72,27 +72,27 @@ To create a Sourcegraph account by providing an email address, you need to make 
 On the **Sign up** page, there is a `continue with email` link below the **Continue with GitLab** button.
 Clicking on the link takes you to a form with which you can create an account using an email address. Enter the valid email address you want to use in the form input space labelled **Email**.
 
-![Email field on Sourcegraph cloud sign up form](sourcegraph-cloud-signup-email-field.png)
+![Email field on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-signup-email-field.png)
 
 An invalid email address will throw an error message and will not let you complete the account creation process.
 
-![Email field error on Sourcegraph cloud sign up form](sourcegraph-cloud-email-field-error.png)
+![Email field error on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-email-field-error.png)
 
 Choose a username that is unique. Every account on Sourcegraph is tied to a unique username.
 
 Enter your preferred username in the form input section labelled **Username**.
 
-![Username field on Sourcegraph cloud sign up form](username-field-sourcegraph-signup-form.png)
+![Username field on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/username-field-sourcegraph-signup-form.png)
 
 If the username you have chosen is taken or if you have used special characters while creating your username, you will find an error that indicates that the username is taken. When there is an error, you can modify your preferred username to continue.
 
-![Username field error on Sourcegraph cloud sign up form](username-field-error-sourcegraph-signup-form.png)
+![Username field error on Sourcegraph cloud sign up form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/username-field-error-sourcegraph-signup-form.png)
 
 Next, create a password. A password lets you add a layer of security to your account by preventing unauthorized access.
 
 When creating a Sourcegraph account, your chosen password should be at least 12 characters to avoid having issues with creating a password. Enter your chosen password in the form input section labelled **Password** to create a password.
 
-![Create a password on Sourcegraph](password-field-sourcegraph-signup-form.png)
+![Create a password on Sourcegraph](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/password-field-sourcegraph-signup-form.png)
 
 After completing the three steps above completely, clicking on the **Register** button creates an account for you.
 
