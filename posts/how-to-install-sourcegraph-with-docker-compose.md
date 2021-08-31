@@ -1,4 +1,14 @@
-# How to Install Sourcegraph with Docker Compose
+---
+title: How to install SOurcegraph with Docker Compose
+tags: [tutorial, Docker, Docker Compose, Sourcegraph]
+author: oluebube-princess-egbuna
+description: Learn how to install Sourcegraph with Docker Compose on your hosts.
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
+imageAlt: Sourcegraph Learn
+alternativeTitle: Creating an on-premise version of SOurcegraph on your host.
+type: posts
+---
+
 
 In production environments, it is [recommended](https://docs.sourcegraph.com/admin/install) to install Sourcegraph with Docker Compose or Kubernetes.
 

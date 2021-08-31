@@ -1,4 +1,14 @@
-# How to Create a Sourcegraph Account
+---
+title: How to create an account on Sourcegraph cloud
+tags: [tutorial, Sourcegraph Cloud, Sourcegraph]
+author: oluebube-princess-egbuna
+description: Learn how to create an account on Sourcegraph cloud to access advanced features of Sourcegraph.
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-1.png
+imageAlt: Sourcegraph Learn
+alternativeTitle: Signing up on Sourcegraph Cloud to access Sourcegraph's advanced features.
+type: posts
+---
+
 
 Sourcegraph is a tool that allows you to search code that is important to you across all repositories. These repositories can have code that is private to you or your team. They also include all open source repositories.
 
@@ -85,23 +95,6 @@ After completing the three steps above completely, clicking on the **Register** 
 On Sourcegraph cloud, your private code is protected and no one has access to it. Sourcegraph uses the permissions on repositories from your GitHub and GitLab repositories to determine who has access to your code. 
 
 Sourcegraph does not also have access to your private repositories. Read more about Sourcegraph and privacy on our [privacy page](https://about.sourcegraph.com/privacy/).
-
-## Create an account on self-hosted Sourcegraph
-Check our [tutorials](https://learn.sourcegraph.com/)  to find out how to install self hosted instances of Sourcegraph.
-
-Whether you are doing an installation on a macOS, Windows, or Linux machine, you’ll know your installation was successful once you receive the Sourcegraph logo on the command line.
-
-Along with the Sourcegraph logo, you will find a message that Sourcegraph is ready. You will also find an IP address created by your server, with which you can access Sourcegraph.
-
-```
-Sourcegraph is ready at: http://the-server-ip-address:7080
-```
-
-Using your preferred browser, you can navigate to the relevant IP address provided by your server. At this point, you should be at the sign up screen if you have not made an account already.
-
-There is currently one way to create an account when you perform a self-installation of Sourcegraph. To create an account, you will have to provide an email address, create a username and also create a password.
-
-Follow these [steps to create an account](#create-a-sourcegraph-cloud-account-with-your-email-address) when you successfully find the **Sign up** form as displayed in the image above.
 
 # Next Steps
 
