@@ -47,7 +47,7 @@ export const StyledColumn = styled.div`
         @media screen and (max-width: 768px) {
             flex-direction: column;
             padding: 0;
-            max-width: 720px;
+            max-width: 45rem;
             margin-top: 1.88rem;
             min-height: 12.5rem;
         }

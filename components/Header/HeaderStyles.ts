@@ -23,6 +23,7 @@ const textAfter = keyframes`
     0% {
         transform: translateX(-100%)
     }
+
     100% {
         transform: translateX(101%)
     }
@@ -42,7 +43,7 @@ export const StyledHeaderImage = styled.img`
 `
 export const StyledHeaderText = styled.div`
     height: fit-content;
-    margin-left: 100px;
+    margin-left: 6.25rem;
 `
 export const StyledHeaderTextContainer = styled.div`
     font-size: 2.2rem;
@@ -56,11 +57,7 @@ export const StyledHeaderTextContainer = styled.div`
 export const StyledHeaderTextContainerAnimated = styled(StyledHeaderTextContainer)`
     animation-delay: 2s;
     animation-duration: 800ms;
-    font-size: 2.2rem;
-    font-weight: 500;
-    display: flex;
     justify-content: flex-end;
-    position: relative;
     overflow: hidden;
     width: 70%;
 

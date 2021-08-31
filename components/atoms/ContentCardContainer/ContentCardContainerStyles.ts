@@ -9,7 +9,7 @@ export const StyledCardContainerDescription = styled.p`
     font-size: 22px;
     line-height: 1.3;
     letter-spacing: 0.01em;
-    margin-top: 16px;
+    margin-top: 1rem;
 `
 export const StyledContentCardContainerWrapper = styled.div`
     justify-content: center;

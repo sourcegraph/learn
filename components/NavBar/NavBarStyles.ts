@@ -17,12 +17,12 @@ export const StyledNavBarWrapper = styled.nav`
     @media screen and (max-width: 768px) {
         flex-wrap: wrap;
         justify-content: flex-start;
-        max-width: 720px;
+        max-width: 45rem;
         padding: 0 .75rem;
     }
 
     @media screen and (max-width: 576px) {
-        max-width: 320px;
+        max-width: 20rem;
         padding: 1rem;
         margin: 0 auto;
     }
@@ -33,16 +33,16 @@ export const StyledNavBarContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1320px;
+    max-width: 82.5rem;
     padding: 1rem .75rem;
     width: 100%;
 
     @media screen and (max-width: 768px) {
-        max-width: 720px;
+        max-width: 45rem;
     }
 
     @media screen and (max-width: 576px) {
-        max-width: 320px;
+        max-width: 20rem;
         padding: 0;
     }
 `

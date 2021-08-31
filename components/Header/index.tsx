@@ -22,21 +22,22 @@ const Header: FunctionComponent<Props> = props => (
         <Column className='flex-large'>
             {props.isHomepage ?
                 (
-                <StyledHeaderSharedContainer>
-                    <StyledHeaderTextContainerAnimated>
-                        <StyledHeaderText>
-                            {props.headerText}
-                        </StyledHeaderText>
-                    </StyledHeaderTextContainerAnimated>
-                    <StyledHeaderImageContainer>
-                        {props.headerImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
-                    </StyledHeaderImageContainer>
-                </StyledHeaderSharedContainer>
-                )
-                : (
-                <StyledHeaderTextContainer>
-                     {props.headerText}
-                </StyledHeaderTextContainer>)}
+                    <StyledHeaderSharedContainer>
+                        <StyledHeaderTextContainerAnimated>
+                            <StyledHeaderText>
+                                {props.headerText}
+                            </StyledHeaderText>
+                        </StyledHeaderTextContainerAnimated>
+                        <StyledHeaderImageContainer>
+                            {props.headerImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
+                        </StyledHeaderImageContainer>
+                    </StyledHeaderSharedContainer>
+                ) :
+                (
+                    <StyledHeaderTextContainer>
+                        {props.headerText}
+                    </StyledHeaderTextContainer>
+                )}
         </Column>
     </>
 )
