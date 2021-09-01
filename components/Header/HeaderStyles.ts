@@ -44,6 +44,10 @@ export const StyledHeaderImage = styled.img`
 export const StyledHeaderText = styled.div`
     height: fit-content;
     margin-left: 6.25rem;
+
+    @media screen and (max-width: 768px) {
+        margin-left: 10rem;
+    }
 `
 export const StyledHeaderTextContainer = styled.div`
     font-size: 2.2rem;

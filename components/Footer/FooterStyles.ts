@@ -49,9 +49,9 @@ export const StyledFooterColumn = styled.div`
 `
 export const StyledLogoFooterColumn = styled.div`
     flex: 0 0 auto;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem;
     order: -1;
-    padding: 0 1.5rem;
+    padding: 0 .75rem;
     width: 25%;
 
     @media screen and (max-width: 768px) {
