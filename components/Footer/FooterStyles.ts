@@ -5,6 +5,7 @@ interface Props {
 }
 
 export const StyledFooterWrapper = styled.footer<Props>`
+    margin: 21.88rem 0 0;
     padding-bottom: ${props => props.minimal
         ? ''
         : '.5rem'};
@@ -48,7 +49,7 @@ export const StyledFooterColumn = styled.div`
 `
 export const StyledLogoFooterColumn = styled.div`
     flex: 0 0 auto;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem;
     order: -1;
     padding: 0 1.5rem;
     width: 25%;

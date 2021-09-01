@@ -65,7 +65,13 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         >
             {/* Header image */}
             {props.image && showHeaderImage && (
-                <StyledHeaderImage src={props.image} alt={props.imageAlt ? props.imageAlt : ''} width="648" height="338" />
+                <StyledHeaderImage
+                    src={props.image} 
+                    alt={props.imageAlt ? 
+                        props.imageAlt
+                        : ''} 
+                    width="648" 
+                    height="338" />
             )}
 
             {/* Title and author */}
@@ -73,15 +79,17 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
 
             {/* Tags list */}
-            {props.tags.length > 0 ? (
-                <StyledTagsWrapper>
-                    {props.tags.map(tag => (
-                        <Button key={tag} href={`/tags/${tag}`} className='extra-small'>
-                            {tag}
-                        </Button>
-                    ))}
-                </StyledTagsWrapper>
-            ) : null}
+            {props.tags.length > 0 ? 
+                (
+                    <StyledTagsWrapper id='tags'>
+                        {props.tags.map(tag => (
+                            <Button key={tag} href={`/tags/${tag}`} className='extra-small'>
+                                {tag}
+                            </Button>
+                        ))}
+                    </StyledTagsWrapper>
+                ) 
+                : null}
 
             {props.collection && (
                 <CollectionView

@@ -12,10 +12,19 @@ export const StyledNavBarWrapper = styled.nav`
     justify-content: flex-start;
     padding: .5rem 0;
     position: relative;
+    width: 100%;
 
     @media screen and (max-width: 768px) {
         flex-wrap: wrap;
         justify-content: flex-start;
+        max-width: 45rem;
+        padding: 0 .75rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 20rem;
+        padding: 1rem;
+        margin: 0 auto;
     }
 `
 export const StyledNavBarContainer = styled.div`
@@ -24,12 +33,17 @@ export const StyledNavBarContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1320px;
-    padding: 1rem .75rem;
+    max-width: 82.5rem;
+    padding: 1rem 1.5rem;
     width: 100%;
 
     @media screen and (max-width: 768px) {
-        max-width: 720px;
+        max-width: 45rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 20rem;
+        padding: 0;
     }
 `
 

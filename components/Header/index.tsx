@@ -1,29 +1,44 @@
-import HeaderCta from '@components/atoms/HeaderCta'
-import Row from '@components/atoms/Row'
+import Column from '@components/atoms/Column'
 import { FunctionComponent } from 'react'
 
-import { StyledHeaderImage, StyledHeaderText } from './HeaderStyles'
+import { 
+    StyledHeaderImage,
+    StyledHeaderTextContainerAnimated, 
+    StyledHeaderImageContainer,
+    StyledHeaderText,
+    StyledHeaderSharedContainer,
+    StyledHeaderTextContainer,
+} from './HeaderStyles'
 
 interface Props {
-    showCta?: boolean
-    showImage: boolean
     headerImage?: string
     headerImageAlt?: string
-    headerText?: string
-    link?: string
-    text?: string
+    headerText: string
+    isHomepage?: boolean
 }
 
 const Header: FunctionComponent<Props> = props => (
     <>
-        <Row>
-            {props.showImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="393" height="205" />}
-            {props.showCta && <HeaderCta link={props.link} text={props.text} />}
-            {props.headerText &&
-                <StyledHeaderText>
-                    {props.headerText}
-                </StyledHeaderText>}
-        </Row>
+        <Column className='flex-large'>
+            {props.isHomepage ?
+                (
+                    <StyledHeaderSharedContainer>
+                        <StyledHeaderTextContainerAnimated>
+                            <StyledHeaderText>
+                                {props.headerText}
+                            </StyledHeaderText>
+                        </StyledHeaderTextContainerAnimated>
+                        <StyledHeaderImageContainer>
+                            {props.headerImage && <StyledHeaderImage src={props.headerImage} alt={props.headerImageAlt} width="80" height="80" />}
+                        </StyledHeaderImageContainer>
+                    </StyledHeaderSharedContainer>
+                ) :
+                (
+                    <StyledHeaderTextContainer>
+                        {props.headerText}
+                    </StyledHeaderTextContainer>
+                )}
+        </Column>
     </>
 )
 

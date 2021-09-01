@@ -1,34 +1,19 @@
-import ContentCardList from '@components/atoms/ContentCardList'
-import Header from '@components/Header'
-import PageLayout from '@components/layouts/PageLayout'
-import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import HomepageTemplate, { Props as HomepageTemplateProps } from '@components/templates/HomepageTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticProps } from 'next'
-import { FunctionComponent } from 'react'
 
-interface Props {
-    posts: MarkdownFileWithUrl[]
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () => {
     const posts = await loadAllRecords('posts')
+    const searchPosts = posts.filter(record => record.frontMatter.tags.includes('search')).slice(0,3)
+    const videoPosts = posts.filter(record => record.frontMatter.tags.includes('video')).slice(0,3)
 
     return {
         props: {
-            posts: posts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
+            searchPosts: searchPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
+            videoPosts: videoPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
         },
     }
 }
 
-const Home: FunctionComponent<Props> = props => (
-    <PageLayout>
-        <Header 
-            showImage={true}
-            headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png'
-            headerImageAlt='Sourcegraph Learn' />
-        <ContentCardList records={props.posts} />
-    </PageLayout>
-)
-
-export default Home
+export default HomepageTemplate

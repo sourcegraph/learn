@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface Props {
     isHighlighted?: boolean
+    setTop?: boolean
 }
 
 export const StyledTocTopWrapper = styled.div`
@@ -11,23 +12,19 @@ export const StyledTocTopWrapper = styled.div`
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
-    left: -12.5rem;
-
-    @media screen and (max-width: 1464px) {
-        left: 0;
-    }
+    left: 0;
 `
 
-export const StyledTocWrapperBody = styled.div`
+export const StyledTocWrapperBody = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: left;
+    max-width: 15.62rem;
     padding-right: 1.5rem;
     position: fixed;
-
-    @media screen and (max-width: 1464px) {
-        max-width: 12.5rem;
-    }
+    top: ${props => props.setTop
+        ? '.3125rem'
+        : ''};
 
     @media screen and (max-width: 1024px) {
         display: none;
@@ -59,11 +56,11 @@ export const StyledHeaderTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
         : '#fff'};
-    padding: .8rem 0;
+    padding: .4rem 0;
 `
 export const StyledTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
         : '#fff'};
-    padding: .5rem 1.5rem;
+    padding: .2rem 1.5rem;
 `

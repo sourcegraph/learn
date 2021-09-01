@@ -1,32 +1,24 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-interface Props {
-    width?: string
-}
-
-const setColumnWidth = (width: string | undefined): string => {
-    if (width) {
-        switch (width) {
-            case 'extra-small':
-                return '8.33%'
-            case 'small':
-                return '33.33%'
-            case 'medium':
-                return '58.33%'
-            case 'large':
-                return '83.33%'
-        }
-    }
-
-    return ''
-}
-
-export const StyledColumn = styled.div<Props>`
+export const StyledColumn = styled.div`
     display: flex;
-    width: ${props => setColumnWidth(props.width)}
 
     @media screen and (max-width: 768px) {
         width: 100%;
+    }
+
+    &.centered {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &.medium {
+        width: 50%;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
     }
 
     &.flex-small {
@@ -41,6 +33,27 @@ export const StyledColumn = styled.div<Props>`
 
         @media screen and (max-width: 768px) {
             width: 100%;
+        }
+    }
+
+    &.flex-large {
+        align-items: center;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        min-height: 15.625rem;
+        padding: 0 .75rem;
+        width: 100%;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            padding: 0;
+            max-width: 45rem;
+            margin-top: 1.88rem;
+            min-height: 12.5rem;
+        }
+
+        @media screen and (max-width: 576px) {
+            max-width: 320px;
         }
     }
 `
