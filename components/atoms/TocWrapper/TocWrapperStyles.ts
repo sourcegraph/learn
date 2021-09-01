@@ -23,7 +23,7 @@ export const StyledTocWrapperBody = styled.div<Props>`
     padding-right: 1.5rem;
     position: fixed;
     top: ${props => props.setTop
-        ? '0'
+        ? '.3125rem'
         : ''};
 
     @media screen and (max-width: 1024px) {
