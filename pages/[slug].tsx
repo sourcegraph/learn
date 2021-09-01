@@ -9,7 +9,7 @@ import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await loadAllRecords('posts', true)
+    const posts = await loadAllRecords('posts')
     const paths = posts.map(post => ({ params: { slug: post.slug } }))
     return {
         paths,
@@ -25,7 +25,9 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const collections = await loadRecordCollections('posts')
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
-    const recordAuthor = markdownFile.frontMatter.author ? slugToTitleCase(markdownFile.frontMatter.author) : null
+    const recordAuthor = markdownFile.frontMatter.author ?
+        slugToTitleCase(markdownFile.frontMatter.author)
+        : null
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,

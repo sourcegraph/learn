@@ -8,11 +8,7 @@ export const StyledCardBody = styled.div`
 
 export const StyledCardTitle = styled.h5`
     font-size: 1.25rem;
-`
-
-export const StyledCardLink = styled.a`
     color: #212529;
-    text-decoration: none;
 
     :hover {
         color: #212529;
@@ -25,8 +21,10 @@ export const StyledCardTagList = styled.p`
     margin: -.25rem 0 .5rem;
 `
 export const StyledCardDescription = styled.p`
+    color: #212529;
     margin: 0;
 `
 export const StyledCardImage = styled.img`
+    height: auto;
     width: 100%;
 `

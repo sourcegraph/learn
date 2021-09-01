@@ -21,16 +21,16 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
     return (
         <Card showBorder={true}>
             <StyledSearchBody>
-                <Column width="extra-small">
-                    <img width="32" src="/sourcegraph-mark.svg" alt="Sourcegraph logo" />
+                <Column>
+                    <img width="32" src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg" alt="Sourcegraph logo" />
                 </Column>
-                <Column width="medium">
+                <Column>
                     <StyledSearchInput
                         value={query}
                         onChange={event => setQuery(event.target.value)}
                     />
                 </Column>
-                <Column width="small">
+                <Column>
                     <Button
                         className="primary small"
                         href={`https://sourcegraph.com/search?q=${encodeURIComponent(

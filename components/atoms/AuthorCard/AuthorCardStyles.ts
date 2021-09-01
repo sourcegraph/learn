@@ -16,9 +16,3 @@ export const StyledAuthorCardLink = styled.a`
     color: #212529;
     text-decoration: none;
 `
-
-export const StyledAuthorImage = styled.img`
-    border-radius: 50%;
-    padding: 1.5rem;
-    width: 100%;
-`

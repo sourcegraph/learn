@@ -2,8 +2,6 @@ import Card from '@components/atoms/Card'
 import ContentCard from '@components/atoms/ContentCard'
 import { FunctionComponent } from 'react'
 
-import { StyledAuthorImage } from './AuthorCardStyles'
-
 interface Props {
     name: string
     bio?: string | null
@@ -13,8 +11,7 @@ interface Props {
 }
 
 const AuthorCard: FunctionComponent<Props> = props => (
-    <Card showBorder={true}>
-        <StyledAuthorImage src="/authors/unisex-avatar.svg" alt="Author Avatar" />
+    <Card showBorder={false} width='90'>
         <ContentCard
             title={props.name}
             url="/authors"

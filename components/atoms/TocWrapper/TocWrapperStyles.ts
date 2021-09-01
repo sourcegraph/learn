@@ -1,16 +1,32 @@
 import styled from 'styled-components'
 
 interface Props {
-    anyHeaders?: boolean
+    isHighlighted?: boolean
+    setTop?: boolean
 }
 
+export const StyledTocTopWrapper = styled.div`
+    position: relative;
+    z-index: 4;
+`
+
 export const StyledTocWrapper = styled.div`
+    position: absolute;
+    left: 0;
+`
+
+export const StyledTocWrapperBody = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: left;
+    max-width: 15.62rem;
     padding-right: 1.5rem;
+    position: fixed;
+    top: ${props => props.setTop
+        ? '.3125rem'
+        : ''};
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         display: none;
     }
 
@@ -36,9 +52,15 @@ export const StyledTocWrapper = styled.div`
     }
 `
 
-export const StyledHeaderTocItem = styled.li`
-    padding: .8rem 0;
+export const StyledHeaderTocItem = styled.li<Props>`
+    background-color: ${props => props.isHighlighted
+        ? '#edeafc'
+        : '#fff'};
+    padding: .4rem 0;
 `
 export const StyledTocItem = styled.li<Props>`
-    margin: .5rem 1.5rem;
+    background-color: ${props => props.isHighlighted
+        ? '#edeafc'
+        : '#fff'};
+    padding: .2rem 1.5rem;
 `

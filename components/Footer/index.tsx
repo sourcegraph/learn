@@ -137,7 +137,7 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                         </StyledFooterColumn>
                         <StyledLogoFooterColumn>
                             <a href="https://about.sourcegraph.com">
-                                <StyledFooterLogo src="/sourcegraph-logo.svg" alt="Sourcegraph - Universal code search" />
+                                <StyledFooterLogo src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg" alt="Sourcegraph - Universal code search" width="80" height="28" />
                             </a>
                             <StyledSocialIconsContainer>
                                 <li>

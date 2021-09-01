@@ -23,5 +23,6 @@ export const StyledCreativeCommonsLink = styled.a`
 `
 export const StyledCreativeCommonsImage = styled.img`
     display: block;
+    height: auto;
     width: 5rem;
 `

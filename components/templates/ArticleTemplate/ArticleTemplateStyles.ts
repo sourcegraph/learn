@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledHeaderImage = styled.img`
+    height: auto;
     margin-bottom: 3rem;
     vertical-align: middle;
     width: 100%;

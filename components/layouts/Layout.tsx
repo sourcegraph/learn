@@ -9,7 +9,7 @@ const SITE_TITLE = 'Sourcegraph Learn'
 
 const defaultMetaTags = {
     description: 'Sourcegraph Learn is an educational hub to support all developers.',
-    image: '/headers/sourcegraph-learn-header.png',
+    image: 'https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png',
 } as const
 
 export interface MetaTags {
@@ -52,10 +52,10 @@ const Layout: FunctionComponent<Props> = props => {
     return (
         <>
             <GoogleTagManagerNoscriptFrame />
+            <GoogleTagManagerScriptTag />
             <Head>
-                <GoogleTagManagerScriptTag />
                 <title>{documentTitle}</title>
-                <link href="/favicon.png" rel="icon" type="image/png" />
+                <link href="https://storage.googleapis.com/sourcegraph-assets/learn/favicon.png" rel="icon" type="image/png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 interface Props {
-    expandNavItems?: boolean
     expandDropdown?: boolean
     expandOnMobile?: boolean
 }
@@ -13,10 +12,19 @@ export const StyledNavBarWrapper = styled.nav`
     justify-content: flex-start;
     padding: .5rem 0;
     position: relative;
+    width: 100%;
 
     @media screen and (max-width: 768px) {
         flex-wrap: wrap;
         justify-content: flex-start;
+        max-width: 45rem;
+        padding: 0 .75rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 20rem;
+        padding: 1rem;
+        margin: 0 auto;
     }
 `
 export const StyledNavBarContainer = styled.div`
@@ -25,12 +33,17 @@ export const StyledNavBarContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1320px;
-    padding: 1rem .75rem;
+    max-width: 82.5rem;
+    padding: 1rem 1.5rem;
     width: 100%;
 
     @media screen and (max-width: 768px) {
-        max-width: 720px;
+        max-width: 45rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 20rem;
+        padding: 0;
     }
 `
 
@@ -43,11 +56,12 @@ export const StyledNavBarLogoLink = styled.a`
     white-space: nowrap;
 `
 export const SyledNavBarLogoImage = styled.img`
-    vertical-align: -.3125rem;
-    width: 9.375rem;
+    height: auto;
+    vertical-align: -.3rem;
+    width: 12.5rem;
 `
 
-export const StyledNavBarMobileToggle = styled.button<Props>`
+export const StyledNavBarMobileToggle = styled.button`
     background-color: transparent;
     border: 1px solid #d0d2d4;
     border-radius: .25rem;
@@ -59,6 +73,10 @@ export const StyledNavBarMobileToggle = styled.button<Props>`
     line-height: 1;
     margin: 0;
     padding: .25rem .75rem;
+
+    :focus {
+        outline: none;
+    }
 
     @media screen and (max-width: 1023px) {
         display: block;
@@ -132,7 +150,7 @@ export const StyledNavBarDropDownContainer = styled.div`
         padding: .5rem 0;
     }
 `
-export const StyledNavBarDropDownToggle = styled.a<Props>`
+export const StyledNavBarDropDownToggle = styled.div<Props>`
     align-items: center;
     color: #000;
     cursor: pointer;

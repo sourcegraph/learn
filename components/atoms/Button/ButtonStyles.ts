@@ -24,6 +24,12 @@ export const StyledButton = styled.a`
         color: #fff;
         background-color: #5033e1;
         border-color: #5033e1;
+
+        :hover {
+            color: #5033e1;
+            background-color: #fff;
+            border-color: #5033e1;
+        }
     }
 
     &.small {
