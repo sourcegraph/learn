@@ -34,7 +34,12 @@ const NavBar: FunctionComponent = () => {
                     <StyledNavBarItemsContainer>
                         <StyledNavBarItemLink href="/tags/tutorial">Tutorials </StyledNavBarItemLink>
                         <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
-                        <StyledNavBarItemLink href="https://docs.sourcegraph.com">Docs</StyledNavBarItemLink>
+                        <StyledNavBarItemLink 
+                            href="https://docs.sourcegraph.com"
+                            target="_blank"
+                            rel="noreferrer">
+                            Docs
+                        </StyledNavBarItemLink>
                     </StyledNavBarItemsContainer>
                     <div>                
                         <Button 
