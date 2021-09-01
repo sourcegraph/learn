@@ -1,4 +1,5 @@
 import useHighlightOnScroll from '@hooks/highlightOnScroll'
+import useRepositionOnScroll from '@hooks/repositionOnScroll'
 import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
@@ -20,26 +21,36 @@ interface Props {
 }
 
 const TocWrapper: FunctionComponent<Props> = props => {
-    const [elements, setElements] = useState<Element[] | null>(null)
+    const [headers, setHeaders] = useState<Element[] | null>(null)
+    const [element, setElement] = useState<Element | null>(null)
     const convertedHeaders = convertHeaders(props.tocContents)
-    const highlightHook = useHighlightOnScroll(elements)
+    const highlightHook = useHighlightOnScroll(headers)
+    const repositionHook = useRepositionOnScroll(element)
     useEffect(() => {
         if (props.tocContents) {
-            const getElements = [].slice.call(document.querySelectorAll('h2, h3'))
-            setElements(getElements)
+            const getHeaders = [].slice.call(document.querySelectorAll('h2, h3'))
+            const getTagsContainer = document.querySelector('#tags')
+            setHeaders(getHeaders)
+            setElement(getTagsContainer)
         }
     }, [props.tocContents])
 
     useEffect(() => {
-        if (elements) {
-            highlightHook.setHeaders(elements)
+        if (headers) {
+            highlightHook.setHeaders(headers)
         }
-    }, [elements, highlightHook])
+    }, [headers, highlightHook])
+
+    useEffect(() => {
+        if (element) {
+            repositionHook.setElement(element)
+        }
+    }, [element, repositionHook])
 
     return (
         <StyledTocTopWrapper>
             <StyledTocWrapper>
-                <StyledTocWrapperBody>
+                <StyledTocWrapperBody setTop={repositionHook.reposition}>
                     <h5>Contents</h5>
                         <ul>
                             {convertedHeaders.map(header =>
