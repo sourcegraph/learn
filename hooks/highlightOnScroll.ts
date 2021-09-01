@@ -33,7 +33,7 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
     return {
         activeHeader,
         headers,
-        setHeaders
+        setHeaders,
     }
 }
 
