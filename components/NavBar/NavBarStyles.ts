@@ -34,7 +34,7 @@ export const StyledNavBarContainer = styled.div`
     justify-content: space-between;
     margin: 0 auto;
     max-width: 82.5rem;
-    padding: 1rem .75rem;
+    padding: 1rem 1.5rem;
     width: 100%;
 
     @media screen and (max-width: 768px) {
