@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface Props {
     isHighlighted?: boolean
+    setTop?: boolean
 }
 
 export const StyledTocTopWrapper = styled.div`
@@ -14,13 +15,16 @@ export const StyledTocWrapper = styled.div`
     left: 0;
 `
 
-export const StyledTocWrapperBody = styled.div`
+export const StyledTocWrapperBody = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: left;
     max-width: 15.62rem;
     padding-right: 1.5rem;
     position: fixed;
+    top: ${props => props.setTop
+        ? '1.875rem'
+        : ''};
 
     @media screen and (max-width: 1024px) {
         display: none;

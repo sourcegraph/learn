@@ -81,7 +81,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             {/* Tags list */}
             {props.tags.length > 0 ? 
                 (
-                    <StyledTagsWrapper>
+                    <StyledTagsWrapper id='tags'>
                         {props.tags.map(tag => (
                             <Button key={tag} href={`/tags/${tag}`} className='extra-small'>
                                 {tag}
