@@ -30,7 +30,7 @@ export interface LineMatch {
 }
 
 export interface HookResultsObject {
-    results?: ResultsObject[]
+    results?: ResultsObject[] | null
     query: string
     setQuery: (query: string) => void
 }

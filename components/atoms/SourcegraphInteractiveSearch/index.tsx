@@ -26,6 +26,7 @@ import {
     StyledResultsCodeLineNumber,
     StyledResultsCodeLine,
     StyledIconWrapper,
+    StyledErrorMessageContainer,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -58,8 +59,8 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                 </Button>
             </StyledInputSearchColumn>
             <StyledResultsBorder />
-           {search?.results && (
-                search.results.slice(0,4).map((result: ResultsObject) => (
+           {search.results ? 
+                (search.results.slice(0,4).map((result: ResultsObject) => (
                     <StyledResultsContainer key={createRandomId()}>
                         <StyledResultsContainerHeader>
                             <StyledIconWrapper>
@@ -98,7 +99,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                                         <StyledResultsCodeLine>
                                                             {returnPreviousLine(result.file.content, line.lineNumber)}
                                                         </StyledResultsCodeLine>
-                                                   </>}                                         
+                                                </>}                                         
                                                 </tr>   
                                                 <tr>
                                                     <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
@@ -122,7 +123,11 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                             )}
                         </StyledResultsCodeContainer>
                     </StyledResultsContainer>
-                ))                   
+                )))                   
+            : (
+                <StyledErrorMessageContainer>
+                    No results to display at this time.
+                </StyledErrorMessageContainer>
             )}
         </StyledResultsWrapper>
     )

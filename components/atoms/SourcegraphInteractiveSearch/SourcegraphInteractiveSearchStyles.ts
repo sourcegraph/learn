@@ -100,3 +100,10 @@ export const StyledIconWrapper = styled.div`
     height: 1.6rem;
     width: auto;
 `
+export const StyledErrorMessageContainer = styled.div`
+    background: #e7e7e7;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: 1.875rem;
+    text-align: center;
+`;
