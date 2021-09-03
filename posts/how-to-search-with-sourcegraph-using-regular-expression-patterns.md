@@ -2,7 +2,7 @@
 title: How to search with Sourcegraph using regular expression patterns
 author: marek-zaluski
 tags: [tutorial, search, Sourcegraph]
-publishedDate: June 25, 2021
+publicationDate: June 25, 2021
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn

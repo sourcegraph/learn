@@ -13,8 +13,8 @@ export default interface FrontMatter {
     author?: string | null
 
     /** First publication date and updated publication date */
-    publicationDate?: string | null
-    updatedDate?: string | null
+    publicationDate?: string | null 
+    updatedDate?: string | null 
 
     /** Short description used for the post's card and social description meta
      * tag.*/
