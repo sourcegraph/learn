@@ -30,6 +30,8 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
+    publicationDate: string
+    updatedDate: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
@@ -74,9 +76,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     height="338" />
             )}
 
-            {/* Title and author */}
+            {/* Title */}
             <h1>{props.title}</h1>
-            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
@@ -90,6 +91,13 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     </StyledTagsWrapper>
                 ) 
                 : null}
+
+            {/* Author and Date */}
+            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
+            Published on {props.publicationDate} 
+            {props.updatedDate !== undefined ? 
+                <> • Updated on {props.updatedDate} </>
+            : null}
 
             {props.collection && (
                 <CollectionView
