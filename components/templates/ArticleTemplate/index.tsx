@@ -31,8 +31,8 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
-    publicationDate: string
-    updatedDate: string | null
+    publicationDate?: string | null
+    updatedDate?: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
