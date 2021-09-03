@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "lib": ["dom", "dom.iterable"],
+      "outDir": "dist",
+      "rootDir": "src",
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "baseUrl": "."
+    },
+    "include": ["types.d.ts", "src/**/*.ts"],
+    "exclude": ["node_modules", "dist"],
+}
