@@ -8,8 +8,15 @@ export const StyledHeaderImage = styled.img`
 `
 export const StyledAuthorByline = styled.p`
     color: #6c757d;
+    margin: 0 0 0.5rem;
+`
+
+export const StyledDates = styled.text`
+    color: #6c757d;
+    font-size: 12px;
     margin: 0 0 1rem;
 `
+
 export const StyledTagsWrapper = styled.div`
     margin-bottom: 1.5rem;
 `

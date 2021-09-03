@@ -13,6 +13,7 @@ import { FunctionComponent } from 'react'
 import {
     StyledHeaderImage,
     StyledAuthorByline,
+    StyledDates,
     StyledTagsWrapper,
     StyledMarkdownWrapper,
 } from './ArticleTemplateStyles'
@@ -92,12 +93,14 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 ) 
                 : null}
 
-            {/* Author and Date */}
+            {/* Author */}
             {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
-            Published on {props.publicationDate} 
+
+            {/* Dates */}
+            {props.publicationDate && <StyledDates> Published on {props.publicationDate}
             {props.updatedDate !== undefined ? 
-                <> • Updated on {props.updatedDate} </>
-            : null}
+              <> • Updated on {props.updatedDate} </>
+              : null} </StyledDates>}
 
             {props.collection && (
                 <CollectionView
