@@ -49,7 +49,7 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
             normalizeString(rawFrontMatter.publicationDate) 
             : null,
         updatedDate: rawFrontMatter.updatedDate ? 
-        normalizeString(rawFrontMatter.updatedDate) 
+            normalizeString(rawFrontMatter.updatedDate) 
             : null,
         image: rawFrontMatter.image ? 
             normalizeString(rawFrontMatter.image) 
