@@ -97,10 +97,13 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
 
             {/* Dates */}
-            {props.publicationDate && <StyledDates> Published on {props.publicationDate}
-            {props.updatedDate !== undefined ? 
-              <> • Updated on {props.updatedDate} </>
-              : null} </StyledDates>}
+            {props.publicationDate && (
+                <StyledDates> Published on {props.publicationDate}
+                    {props.updatedDate && (
+                        <> • Updated on {props.updatedDate}</>
+                    )} 
+                </StyledDates>
+            )}
 
             {props.collection && (
                 <CollectionView

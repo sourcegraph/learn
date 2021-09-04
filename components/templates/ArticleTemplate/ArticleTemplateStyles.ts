@@ -7,12 +7,10 @@ export const StyledHeaderImage = styled.img`
     width: 100%;
 `
 export const StyledAuthorByline = styled.p`
-    color: #6c757d;
     margin: 0 0 0.5rem;
 `
 
-export const StyledDates = styled.text`
-    color: #6c757d;
+export const StyledDates = styled.div`
     font-size: 12px;
     margin: 0 0 1rem;
 `
