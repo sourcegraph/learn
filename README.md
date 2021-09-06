@@ -81,6 +81,7 @@ At the top of the file, copy the following markdown block as a template to get s
 title: Your title
 author: Your Name
 tags: [relevant, tags]
+publicationDte: Date of merge into project
 image: [bucket URL]
 imageAlt: Alternative information for header image
 description: Your description
@@ -102,6 +103,8 @@ The data fields that are supported in the front matter are:
 | `title`       | **string**                 | Title of the article, which is displayed in the `h1` tag and the html document title, and on the article's card.              |
 | `author`      | **string**                 | Name of the author, which is displayed on the article page.                                                                   |
 | `tags`        | **array of strings**       | List of tags which will be displayed on the article page and card. Each tag has an index page that lists all tagged articles. |
+| `publicationDate` | **string**             | Date that the article is merged into the project to be public-facing. Written as a string in `Month, Day, Year` format in alignment with [strings: the Sourcegraph blog](https://about.sourcegraph.com/blog/). |
+| `updatedDate` | **string**                 | If and when an article is updated, the date of the new merge should be recorded in this field., following the format of `publicationDate`. |
 | `image`       | **string (URL)**           | Image to display in the article header, the article card, and social preview.              |
 | `imageAlt`    | **string**                 | Alternative textual information for the header image.                           |
 | `alternateTitle` | **string**              | Browser title, which appears on the menu bar, with additional keywords.                                      |
