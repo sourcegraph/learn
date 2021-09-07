@@ -8,7 +8,7 @@ imageAlt: Visual Studio Code displaying a diff view
 type: posts
 ---
 
-Committing code with Git is useful whether you’re working on your own projects, collaborating with others, or contributing to an open source project. Visual Studio Code is an open source IDE (Integrated Development Environment) with support for many programming languages.In addition to being a capable tool for writing and editing source code, VS Code can help you interact with Git repositories and commit changes.If you’re already using VS Code to edit code, it’s convenient to use the same tool to commit your changes with Git.
+Committing code with Git is useful whether you’re working on your own projects, collaborating with others, or contributing to an open source project. Visual Studio Code is an open source IDE (Integrated Development Environment) with support for many programming languages. In addition to being a capable tool for writing and editing source code, VS Code can help you interact with Git repositories and commit changes.If you’re already using VS Code to edit code, it’s convenient to use the same tool to commit your changes with Git.
 
 In this tutorial, we’ll demonstrate how to use the Git features within VS Code to commit code to a Git repository.
 
@@ -88,7 +88,7 @@ In situations where we have many changed files and we want to stage them all, we
 
 <figure className="small">
     <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-stage-all-changes.png" alt="The actions revealed when hovering over the Changes title, from left to right: Discard All Changes and Stage All Changes, followed by the number of files changed (3)." />
-    <figcaption>The actions revealed when hovering over the <strong>Changes</strong> title, from left to right: <strong>Discard All Changes</strong> and <strong>Stage All Changes</strong>, followed by the number of files changed (3).</figcaption>
+    <figcaption>The actions revealed when hovering over the <strong>Changes</strong> title, from left to right: <strong>Discard All Changes</strong> and <strong>Stage All Changes</strong>, followed by the number of changed files which is 3.</figcaption>
 </figure>
 
 
@@ -96,7 +96,7 @@ After clicking the **Stage All Changes** button, all changed files in the list w
 
 ## Step 4 — Checking the list of staged changes
 
-After staging some changes, a new section will appear in the Source Control panel: **Staged Changes**.
+After staging some changes, a new section will appear in the **Source Control** panel: **Staged Changes**.
 
 For example, after staging `README.md` and `getting-started.txt`, both files will now be present in the **Staged Changes** section and will no longer appear in the **Changes** section.
 
@@ -116,10 +116,10 @@ Before we can commit our changes, we need to write a commit message. The commit 
 For example, we can write the following commit message for our changed files:
 
 ```
-Update Readme and Getting Started
+Update Readme and Getting Started docs
 ```
 
-We’ll use the **Message** input box at the top of the Source Control panel to enter this commit message.
+We’ll use the **Message** input box at the top of the **Source Control** panel to enter this commit message.
 
 <figure className="small">
     <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-staged-changes-with-message.png" alt="Writing a commit message in the Message input box." />
@@ -128,20 +128,20 @@ We’ll use the **Message** input box at the top of the Source Control panel to 
 
 A common convention in Git is to limit the length of commit messages to a maximum of 50 characters. VS Code helps us follow this convention by showing a warning message if we exceed that length.
 
-We’ll use the **Commit** button located at the very top of the Source Control panel to create the commit. This button appears as a checkmark icon, visible in the following screenshot:
+We’ll use the **Commit** button located at the very top of the **Source Control** panel to create the commit. This button appears as a checkmark icon, visible in the following screenshot:
 
 <figure className="small">
     <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-commit-button.png" alt="The Commit button at the top of the Source Control panel." />
     <figcaption>The <strong>Commit</strong> button at the top of the <strong>Source Control</strong> panel.</figcaption>
 </figure>
 
-When we click the **Commit** button, a new commit is created containing the staged changes. Those changes will disappear from the Source Control panel, and the commit message input box will be cleared. Any unstaged changes will remain unstaged and available for inclusion in future commits.
+When we click the **Commit** button, a new commit is created containing the staged changes. Those changes will disappear from the **Source Control** panel, and the commit message input box will be cleared. Any unstaged changes will remain unstaged and available for inclusion in future commits.
 
-### Step 5 — Checking the commit
+## Step 6 — Checking the commit
 
 To check that the commit was successful, we can view the commit log and confirm that our commit is present in the repository. Although VS Code doesn’t have a built-in way to display the commit log, we can display it by running a Git command in the terminal: `git log`.
 
-Open the integrated terminal in VS Code by clicking on the **View** menu and clicking on **Terminal**. This should open a Terminal panel in the lower half of the window. The integrated terminal can also be opened with the keyboard shortcut: Control-` (Control and backtick).
+Open the integrated terminal in VS Code by clicking on the **View** menu and clicking on **Terminal**. This should open a **Terminal** panel in the lower half of the window. The integrated terminal can also be opened with the keyboard shortcut: Control-<code>`</code> (Control and backtick).
 
 To display the commit log in the terminal, run the `git log` command. By default, the command will display a scrollable list of all previous commits. In this case, we’re only interested in checking the latest changes we made, so we can provide the `-1` flag to the command to limit its output to one commit. Here’s what we’ll run in the terminal:
 
@@ -156,7 +156,7 @@ commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
 Author: Marek <marek@sourcegraph.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400
 
-    Update Readme and Getting Started
+    Update Readme and Getting Started docs
 ```
 
 In the above output of `git log -1`, we see the commit ID and the branch name (`main`) on the first line. The output also includes the author and date, followed by the commit message.
