@@ -3,7 +3,7 @@ title: How to commit code to a Git repository with Visual Studio Code
 author: marek-zaluski
 tags: [tutorial, git, IDE, open source]
 description: Learn how to create commits in a Git repository with VS Code.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-commit-code-to-a-git-repository-with-visual-studio-code.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-commit-code-to-a-git-repository-with-visual-studio-code.jpg
 imageAlt: Visual Studio Code displaying a diff view
 type: posts
 ---
@@ -22,21 +22,30 @@ With that software installed, you should have created or identified a Git reposi
 
 ## Step 1 — Opening the Source Control panel
 
-The Source Control panel in VS Code allows you to use Git features. It’s one of the panels that you can select in the Activity Bar, which is the vertical bar on the left side of the VS Code interface.
+The **Source Control** panel in VS Code allows you to use Git features. It’s one of the panels that you can select in the **Activity Bar**, which is the vertical bar on the left side of the VS Code interface.
 
-Each panel in the Activity Bar is represented by an icon. The Source Control icon is highlighted in the screenshot below:
+Each panel in the **Activity Bar** is represented by an icon. The **Source Control** icon is highlighted in the screenshot below:
 
-![Location of the Source Control icon in the Activity Bar.](https://storage.googleapis.com/sourcegraph-assets/learn/TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-icon.png" alt="Location of the Source Control icon in the Activity Bar." />
+    <figcaption>Location of the <strong>Source Control</strong> icon in the Activity Bar.</figcaption>
+</figure>
 
-Click on the icon to open the Source Control panel. This panel provides an interface to view the current changes in your working directory and to create new commits.
+Click on the icon to open the **Source Control** panel. This panel provides an interface to view the current changes in your working directory and to create new commits.
 
-![The Source Control panel displays some changes in the repository.](https://storage.googleapis.com/sourcegraph-assets/learn/TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-panel.png" alt="The Source Control panel displays some changes in the repository." />
+    <figcaption>The <strong>Source Control</strong> panel displays some changes in the repository.</figcaption>
+</figure>
 
-The **Changes** section of the panel lists all the files in the working directory that have been changed. The total number of changed files is also reflected on the Source Control icon’s badge. In the example in the above screenshot, the badge indicates that there are three changed files, and those three files are listed in the **Changes** section.
+The **Changes** section of the panel lists all the files in the working directory that have been changed. The total number of changed files is also reflected on the **Source Control** icon’s badge. In the example in the above screenshot, the badge indicates that there are three changed files, and those three files are listed in the **Changes** section.
 
 By selecting one of the files in the list, we can view the changes to that file. VS Code displays the changes as a **diff view** in a new editor tab. For example, if we select the `README.md` file, we can browse the changes as displayed in the screenshot below.
 
-![An example of a diff view of the changes made to README.md.](https://storage.googleapis.com/sourcegraph-assets/learn/TODO)
+<figure>
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-diff-view.png" alt="An example of a diff view of the changes made to README.md." />
+    <figcaption>An example of a diff view of the changes made to <code>README.md</code>.</figcaption>
+</figure>
 
 To prepare a commit, we will select changes to add to the staging area.
 
@@ -56,13 +65,16 @@ The badge next to each file indicates the type of change:
 
 Each file has three action buttons. You can reveal these buttons by hovering or clicking on a file in the list.
 
-![Actions for each file in the **Changes** section.](TODO)
+<figure className="small" >
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-stage-file.png" alt="Actions for each file in the Changes section." />
+    <figcaption>Actions for each file in the <strong>Changes</strong> section.</figcaption>
+</figure>
 
 From left to right, the action buttons are:
 
-**Open File**, which opens the file in a new editor tab for editing.
-**Discard Changes**. This will discard the changes to this file, reverting it to the version from the latest commit.
-**Stage Changes**. This will add the file to the staging area for inclusion in the next commit.
+- **Open File**, which opens the file in a new editor tab for editing.
+- **Discard Changes**. This will discard the changes to this file, reverting it to the version from the latest commit.
+- **Stage Changes**. This will add the file to the staging area for inclusion in the next commit.
 
 To add a file to the staging area, click on its **Stage Changes** icon, represented by a `+` sign.
 
@@ -74,7 +86,11 @@ If we want to add more changes, we can repeat this process for other files. For 
 
 In situations where we have many changed files and we want to stage them all, we can use the **Stage All Changes** button. This button is revealed by hovering over the title of the **Changes** section. Its icon is a `+` sign, as illustrated in the screenshot below.
 
-![The actions revealed when hovering over the **Changes** title, from left to right: **Discard All Changes** and **Stage All Changes**, followed by the number of files changed (3).](TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-stage-all-changes.png" alt="The actions revealed when hovering over the Changes title, from left to right: Discard All Changes and Stage All Changes, followed by the number of files changed (3)." />
+    <figcaption>The actions revealed when hovering over the <strong>Changes</strong> title, from left to right: <strong>Discard All Changes</strong> and <strong>Stage All Changes</strong>, followed by the number of files changed (3).</figcaption>
+</figure>
+
 
 After clicking the **Stage All Changes** button, all changed files in the list will be added to the staging area. This is a faster option than adding each file one by one.
 
@@ -84,8 +100,10 @@ After staging some changes, a new section will appear in the Source Control pane
 
 For example, after staging `README.md` and `getting-started.txt`, both files will now be present in the **Staged Changes** section and will no longer appear in the **Changes** section.
 
-![The **Staged Changes** showing that the `README.md` file is staged.
-](TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-staged-changes.png" alt="The Staged Changes showing that the `README.md` file is staged." />
+    <figcaption>The <strong>Staged Changes</strong> showing that the <code>README.md</code> file is staged.</figcaption>
+</figure>
 
 If any changes remain in the **Changes** section when we commit, they will remain in the working directory and will be available to be staged for a future commit.
 
@@ -103,14 +121,19 @@ Update Readme and Getting Started
 
 We’ll use the **Message** input box at the top of the Source Control panel to enter this commit message.
 
-![Writing a commit message in the **Message** input box.
-](TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-staged-changes-with-message.png" alt="Writing a commit message in the Message input box." />
+    <figcaption>Writing a commit message in the <strong>Message</strong> input box.</figcaption>
+</figure>
 
 A common convention in Git is to limit the length of commit messages to a maximum of 50 characters. VS Code helps us follow this convention by showing a warning message if we exceed that length.
 
 We’ll use the **Commit** button located at the very top of the Source Control panel to create the commit. This button appears as a checkmark icon, visible in the following screenshot:
 
-![The Commit button at the top of the Source Control panel.](TODO)
+<figure className="small">
+    <img src="https://storage.googleapis.com/sourcegraph-assets/learn/headers/vs-code-source-control-commit-button.png" alt="The Commit button at the top of the Source Control panel." />
+    <figcaption>The <strong>Commit</strong> button at the top of the <strong>Source Control</strong> panel.</figcaption>
+</figure>
 
 When we click the **Commit** button, a new commit is created containing the staged changes. Those changes will disappear from the Source Control panel, and the commit message input box will be cleared. Any unstaged changes will remain unstaged and available for inclusion in future commits.
 

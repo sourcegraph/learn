@@ -18,3 +18,17 @@ body {
     line-height: 1.5;
     color: #212529;
 }
+
+
+figure {
+    text-align: center;
+
+    /* For smaller images that don't need to be full-width: */
+    &.small > img {
+        max-width: 75%;
+    }
+}
+
+figcaption {
+    font-style: italic;
+}
