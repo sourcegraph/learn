@@ -2,6 +2,7 @@
 title: Three ways to search code with Sourcegraph
 tags: [video, search, sourcegraph]
 author: marek-zaluski
+publicationDate: June 17, 2021
 description: Demo of how to search code three different ways with Sourcegraph
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/three-ways-to-search-thumbnail.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
