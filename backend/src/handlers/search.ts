@@ -136,7 +136,7 @@ export const getSearch = async (request: Request, response: Response, next: Next
     const data = {
         query: graphQLQuery,
         variables: { 
-            query: request.body.query
+            query: request.query.query
         },
     }
 
@@ -160,7 +160,7 @@ export const getSearch = async (request: Request, response: Response, next: Next
                     }
                 }
             }
-            
+
             response.status(200).send(fetchedResults.data.search.results.results)
         }
     }

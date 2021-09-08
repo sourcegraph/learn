@@ -6,7 +6,7 @@ npm ci || exit 1
 
 echo "Creating local env file for client"
 
-printf "NEXT_PUBLIC_URL='http://localhost:3000'\nNEXT_PUBLIC_GTM_ID='GTM-TB4NLS7'" > .env
+printf "NEXT_PUBLIC_URL='http://localhost:3000'\nSEARCH_URL='http://localhost:3001'\nNEXT_PUBLIC_GTM_ID='GTM-TB4NLS7'" > .env
 
 echo "Installing dependencies from lock file for backend"
 

@@ -18,9 +18,8 @@
       "@components/*": ["components/*"],
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
-      "@interfaces/*": ["../interfaces/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@lib/*": ["lib/*"],
-      "@sharedUtil/*": ["../util/*"],
       "@styles/*": ["styles/*"],
       "@util/*": ["util/*"]
     }

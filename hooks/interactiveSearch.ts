@@ -1,5 +1,5 @@
 import { ResultsObject, HookResultsObject } from '@interfaces/Search'
-import { fetchResults } from '@lib/fetch'
+import { sourcegraphSearch } from '@lib/api/search'
 import { useState, useEffect } from 'react'
 
 const useInteractiveSearch = ({ initialQuery = '' }): HookResultsObject  => {
@@ -8,7 +8,7 @@ const useInteractiveSearch = ({ initialQuery = '' }): HookResultsObject  => {
 
     useEffect(() => {
         const results = async (): Promise<ResultsObject[] | null> => {
-            const fetchedData = await fetchResults(query.trim())
+            const fetchedData = await sourcegraphSearch(query.trim())
             return fetchedData
         }
         results()
