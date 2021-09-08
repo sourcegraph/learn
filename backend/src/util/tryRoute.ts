@@ -1,19 +1,12 @@
-import { Response, NextFunction, RequestHandler } from 'express'
+import { RequestHandler, Application } from 'express'
 
-interface RestifyHttpError {
-    message: string
-}
-
-const tryRoute = async (request: RequestHandler, response: Response, next: NextFunction): Promise<RequestHandler | void> => {
+const tryRoute = async (handler: RequestHandler): Promise<Application> => {
     try {
-        return await tryRoute(request, response, next)
+        return await tryRoute(handler)
     }
     catch(error: unknown) {
         console.error(error)
-        const fetchError: RestifyHttpError = {
-            message: 'Server error'
-        }
-        return next(fetchError)
+        throw new Error('Failed to handle route')
     }
 }
 

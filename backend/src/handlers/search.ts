@@ -1,10 +1,7 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response, NextFunction, Application } from 'express'
+import fetch from 'node-fetch'
 
-import { isString } from '../util/types'
-
-interface RequestError {
-    message: string
-}
+import { ResultsObject } from '../interfaces/Search'
 
 const graphQLQuery = `fragment FileMatchFields on FileMatch {  
     repository {
@@ -133,32 +130,40 @@ query ($query: String!) {
 }
 `
 
-export const getSearch = async (request: Request, response: Response, next: NextFunction): Promise<NextFunction | void> => {
+export const getSearch = async (request: Request, response: Response, next: NextFunction): Promise<Application | void> => {
     const { SEARCH_API_AUTH_TOKEN, SEARCH_API_URL } = process.env
-
-    if (!request) {
-        const error: RequestError = {
-            message: 'Incorrect request'
-        }
-        return next(error)
-    }
-
     // TODO validation
 
     const data = {
         query: graphQLQuery,
         variables: { 
-            request
+            query: request.body.query
         },
     }
 
     if (SEARCH_API_AUTH_TOKEN && SEARCH_API_URL) {
-        response.status(200)
-        response.send({
-            Authorization: `token ${SEARCH_API_AUTH_TOKEN}`,
-            url: SEARCH_API_URL,
-            data,
-        })
+        const defaultOptions = {
+            method: 'POST',
+            headers: {
+                Authorization: `token ${SEARCH_API_AUTH_TOKEN}`
+            },
+            body: JSON.stringify(data),
+        }
+
+        const getResponse = await fetch(SEARCH_API_URL, defaultOptions)
+        if (getResponse) {
+            const fetchedResults = await getResponse.json() as { 
+                data: {
+                    search: {
+                        results: {
+                            results: ResultsObject[]
+                        }
+                    }
+                }
+            }
+            
+            response.status(200).send(fetchedResults.data.search.results.results)
+        }
     }
 
     return next()
