@@ -81,7 +81,7 @@ At the top of the file, copy the following markdown block as a template to get s
 title: Your title
 author: Your Name
 tags: [relevant, tags]
-publicationDte: Date of merge into project
+publicationDate: Date of merge into project
 image: [bucket URL]
 imageAlt: Alternative information for header image
 description: Your description
