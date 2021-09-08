@@ -1,0 +1,9 @@
+collections:
+    - title: How to use search patterns on Sourcegraph
+      slug: how-to-use-search-patterns-on-sourcegraph
+      type: posts
+      members:
+        - three-ways-to-search-code-with-sourcegraph
+        - how-to-search-code-with-sourcegraph-using-literal-patterns
+        - how-to-search-with-sourcegraph-using-regular-expression-patterns
+        - how-to-search-with-sourcegraph-using-structural-patterns
