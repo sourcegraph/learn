@@ -23,15 +23,10 @@ const startServer = async (port: number): Promise<http.Server> => {
     router.use(urlencoded(({ extended: true })))
 
     // Get routes
-    
-    // const files = await getFiles(path.join(process.cwd(), 'src/routes'))
-    // router.use(files.map(file => file))
-    
     const files = await getFiles(path.join(process.cwd(), 'src/routes'))
     files.map((file: string) => import(file).then(({ default: routes }) => routes(router)))
     
     app.use(router)
-    // files.map(file => import(file).then((file: string) => app.use('/', file))
 
     // Start
     return app.listen(port, () => {

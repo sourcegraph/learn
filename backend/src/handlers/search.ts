@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, Application, RequestHandler } from 'express'
+import { Request, Response, NextFunction, RequestHandler } from 'express'
 import fetch from 'node-fetch'
 
 import { ResultsObject } from '../interfaces/Search'
@@ -132,7 +132,6 @@ query ($query: String!) {
 
 export const getSearch = async (request: Request, response: Response, next: NextFunction): Promise<RequestHandler | void> => {
     const { SEARCH_API_AUTH_TOKEN, SEARCH_API_URL } = process.env
-    // TODO validation
 
     const data = {
         query: graphQLQuery,

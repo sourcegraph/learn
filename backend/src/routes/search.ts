@@ -12,4 +12,3 @@ export default async (router: Router): Promise<Handler> =>
             throw new Error('Failed to handle route')
         }
     })
-
