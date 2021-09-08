@@ -45,6 +45,12 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
         author: rawFrontMatter.author ?
             normalizeString(rawFrontMatter.author)
             : null,
+        publicationDate: rawFrontMatter.publicationDate ? 
+            normalizeString(rawFrontMatter.publicationDate) 
+            : null,
+        updatedDate: rawFrontMatter.updatedDate ? 
+            normalizeString(rawFrontMatter.updatedDate) 
+            : null,
         image: rawFrontMatter.image ? 
             normalizeString(rawFrontMatter.image) 
             : null,

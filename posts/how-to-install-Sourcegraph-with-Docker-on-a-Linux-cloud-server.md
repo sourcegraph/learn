@@ -1,7 +1,8 @@
 ---
-title: Video — How to install Sourcegraph with Docker on a Linux cloud server
+title: How to install Sourcegraph with Docker on a Linux cloud server (video)
 author: lisa-tagliaferri
 tags: [video, Sourcegraph, Docker, Linux, installation]
+publicationDate: August 30, 2021
 description: Install Sourcegraph onto a DigitalOcean Ubuntu cloud server with Docker.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/add-oss-to-sourcegraph-cloud-screengrab.jpg
 imageAlt: Demo of how to add install Sourcegraph with Docker on a Linux server

@@ -34,6 +34,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             alternateTitle: markdownFile.frontMatter.alternateTitle,
             author: recordAuthor,
             tags: markdownFile.frontMatter.tags,
+            publicationDate: markdownFile.frontMatter.publicationDate,
+            updatedDate: markdownFile.frontMatter.updatedDate, 
             image: markdownFile.frontMatter.image,
             imageAlt: markdownFile.frontMatter.imageAlt,
             socialImage: markdownFile.frontMatter.socialImage,
