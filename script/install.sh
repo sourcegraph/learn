@@ -15,4 +15,4 @@ npm ci || exit 1
 
 echo "Creating local env file for client"
 
-printf "ORIGIN_URL='http://localhost:3000'\nSEARCH_API_AUTH_TOKEN=''\nSEARCH_API_URL=''" > .env
+printf "ORIGIN_URL=''\nSEARCH_API_AUTH_TOKEN=''\nSEARCH_API_URL=''" > .env
