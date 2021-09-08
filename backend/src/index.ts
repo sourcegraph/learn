@@ -20,7 +20,7 @@ const startServer = async (port: number): Promise<http.Server> => {
     }
     router.use(cors(corsOptions))
     router.use(json())
-    router.use(urlencoded())
+    router.use(urlencoded(({ extended: true })))
 
     // Get routes
     
