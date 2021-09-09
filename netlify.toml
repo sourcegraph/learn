@@ -42,16 +42,18 @@
   force = true
 
 [build]
-  command="NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
+  base = "."
+  command = "NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
 
 ## Non-sensitive env vars
 [context.production]
-  command="NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
+  command = "NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
   [context.production.environment]
-    NEXT_PUBLIC_URL="https://learn.sourcegraph.com"
-    NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
+    NEXT_PUBLIC_URL = "https://learn.sourcegraph.com"
+    NEXT_PUBLIC_GTM_ID = "GTM-TB4NLS7"
 [context.deploy-preview]
-  command="NEXT_PUBLIC_URL=$DEPLOY_URL npm run build"
+  command = "NEXT_PUBLIC_URL=$DEPLOY_URL npm run build"
   [context.deploy-preview.environment]
-    NEXT_PUBLIC_URL="$DEPLOY_URL"
-    NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
+    NEXT_PUBLIC_URL = "$DEPLOY_URL"
+    NEXT_PUBLIC_GTM_ID = "GTM-TB4NLS7"
