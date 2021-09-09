@@ -2,6 +2,7 @@
 
 echo "Installing dependencies from lock file for client"
 
+cd client
 npm ci || exit 1
 
 echo "Creating local env file for client"
