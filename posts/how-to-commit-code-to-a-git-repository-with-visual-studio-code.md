@@ -149,4 +149,4 @@ If you want to learn about committing code with the Git command-line tools, read
 
 <!--
 To learn about ways that VS Code can integrate with Sourcegraph, watch our video about [How to integrate Sourcegraph into your workflows](/how-to-integrate-sourcegraph-into-your-workflows).
---)
+-->
