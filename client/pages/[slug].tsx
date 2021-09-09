@@ -28,6 +28,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const recordAuthor = markdownFile.frontMatter.author ?
         slugToTitleCase(markdownFile.frontMatter.author)
         : null
+    const initialSearchURL = process.env.SEARCH_URL
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -43,7 +44,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             toc: toc ?? null,
             mdxSource: serializeResult,
             collection: parentCollection ?? null,
-            slug
+            slug,
+            initialSearchURL: initialSearchURL ?? 'http://localhost:3001/search'
         }),
     }
 }

@@ -34,15 +34,20 @@ export interface Props {
     alternateTitle?: string | null
     publicationDate?: string | null
     updatedDate?: string | null
+    initialSearchURL: string
 }
 
 const components = { SourcegraphSearch, SourcegraphInteractiveSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
+    const { initialSearchURL } = props
     const metaTags: MetaTags = {
         image: props.socialImage ?? props.image,
         description: props.description,
         type: 'article',
+    }
+    const searchURL = {
+        initialSearchURL
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
@@ -118,6 +123,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 <MDXRemote 
                     {...props.mdxSource} 
                     components={components}
+                    scope={searchURL}
                 />
             </StyledMarkdownWrapper>
         </PageLayout>

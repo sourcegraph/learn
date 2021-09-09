@@ -1,13 +1,11 @@
 import { ResultsObject } from '@interfaces/Search'
 import { fetchResults } from '@lib/api/fetch'
 
-const SEARCH = process.env.SEARCH_URL || 'http://localhost:3001/search'
-
-export const sourcegraphSearch = async (query: string): Promise<ResultsObject[] | null> => {
-    const url = new URL(SEARCH)
+export const sourcegraphSearch = async (url: string, query: string): Promise<ResultsObject[] | null> => {
+    const searchURL = new URL(url)
     if (query !== undefined) {
-        url.searchParams.set('query', query)
+        searchURL.searchParams.set('query', query)
     }
 
-    return fetchResults(url.toString(), query)
+    return fetchResults(searchURL.toString(), query)
 }

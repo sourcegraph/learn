@@ -9,7 +9,7 @@
     "build": "next build && next export",
     "start": "next start",
     "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different",
-    "eslint": "eslint '**/*.{ts,tsx}' --ignore-path .gitignore",
+    "eslint": "eslint '**/*.{ts,tsx}' --ignore-path ../.gitignore",
     "eslint-fix": "npm run eslint -- --fix",
     "check-types": "tsc --noemit",
     "lint": "npm run eslint && npm run check-types",

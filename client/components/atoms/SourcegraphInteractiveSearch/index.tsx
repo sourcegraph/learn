@@ -31,12 +31,13 @@ import {
 
 interface Props {
     initialQuery: string
+    initialSearchURL: string
 }
 
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
-    const { initialQuery } = props
+    const { initialQuery, initialSearchURL } = props
     const currentQuery = useRef(initialQuery) 
-    const search = useInteractiveSearch({ initialQuery })
+    const search = useInteractiveSearch({ initialSearchURL, initialQuery })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
 
