@@ -65,7 +65,7 @@ From left to right, the action buttons are:
 - **Discard Changes**, which will discard the changes to this file, reverting it to the version from the latest commit.
 - **Stage Changes**, which will add the file to the staging area for inclusion in the next commit.
 
-To add a file to the staging area, click on its **Stage Changes** icon, represented by a `+` sign.
+To add a file to the staging area, click on its **Stage Changes** icon, represented by a plus (`+`) sign.
 
 For example, we can stage the `README.md` file in the above screenshot by clicking on it in the list to reveal the action buttons and then selecting the plus (`+`) icon.
 
