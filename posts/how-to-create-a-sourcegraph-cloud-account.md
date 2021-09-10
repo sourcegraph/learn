@@ -37,7 +37,7 @@ From here, you can continue to signing up through your option of choice.
 
 ## Creating a Sourcegraph cloud account with GitHub
 
-To use GitHub authentication, from the [Sign up](https://sourcegraph.com/sign-up) page, click on the **Continue with GitHub** button. Clicking on the GitHub button will take you to GitHub’s login page if you are not already logged in.
+To use GitHub authentication, from the **[Sign up](https://sourcegraph.com/sign-up)** page, click on the **Continue with GitHub** button. Clicking on the GitHub button will take you to GitHub’s login page if you are not already logged in.
 
 ![Create a Sourcegraph cloud with GitHub](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-login-to-access-sourcegraph.png)
 
@@ -67,7 +67,7 @@ If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cl
 
 To create a Sourcegraph account by providing an email address, you will need to use a valid address that you can access. 
 
-On the **Sign up** page, there is a [continue with email](https://sourcegraph.com/sign-up?showEmail=true) link below the code host buttons. Clicking on this link takes you to a form where you can create an account using an email address. Enter the valid email address you would like to use in the form input space labeled **Email**.
+On the **Sign up](https://sourcegraph.com/sign-up)** page, there is a [continue with email](https://sourcegraph.com/sign-up?showEmail=true) link below the code host buttons. Clicking on this link takes you to a form where you can create an account using an email address. Enter the valid email address you would like to use in the form input space labeled **Email**.
 
 ![Sourcegraph cloud signup with email form](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-cloud-signup-email-field.png)
 
