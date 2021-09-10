@@ -12,7 +12,7 @@ interface Props {
 const EmbeddedYoutubeVideo: FunctionComponent<Props> = props => (
     <StyledEmbeddedVideoWrapper>
         <StyledEmbeddedVideo
-            title="Embedded Youtube Video"
+            title="Embedded YouTube Video"
             src={`https://www.youtube.com/embed/${props.id}`}
             allowFullScreen={true}
         />

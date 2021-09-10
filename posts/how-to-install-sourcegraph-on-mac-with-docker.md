@@ -2,6 +2,8 @@
 title: How to install Sourcegraph on macOS with Docker
 author: lisa-tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
+publicationDate: July 1, 2021
+updatedDate: August 10, 2021
 description: Learn how to install Sourcegraph on your Apple Mac with Docker
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
