@@ -162,13 +162,13 @@ We specify the commit message by providing it as an argument to `git commit`. Th
 With our example commit message, the command would look like this:
 
 ```sh
-git commit -m “Update readme and add getting-started file”
+git commit -m “Update README and add getting-started file”
 ```
 
 Here’s the output when we run this command:
 
 ```
-[main 5388e04d38] Update readme and add getting-started file
+[main 5388e04d38] Update README and add getting-started file
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 getting-started.txt
 ```
@@ -194,7 +194,7 @@ commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
 Author: Marek <marek@example.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400
 
-    Update readme and add getting started file
+    Update README and add getting-started file
 ```
 
 In the above output of `git log -1`, we see the commit ID and the branch name (`main`) on the first line. The output also includes the author and date, followed by the commit message.
