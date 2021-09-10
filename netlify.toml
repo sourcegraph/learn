@@ -44,7 +44,7 @@
 [build]
   base = "client"
   command = "NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . .."
 
 ## Non-sensitive env vars
 [context.production]
