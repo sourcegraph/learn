@@ -1,3 +1,5 @@
+import { Router } from 'express'
+
 export interface ResultsArray {
     [index: number]: ResultsObject
 }
@@ -29,8 +31,6 @@ export interface LineMatch {
     limitHit: boolean
 }
 
-export interface HookResultsObject {
-    results?: ResultsObject[] | null
-    query: string
-    setQuery: (query: string) => void
+export interface RoutesObject {
+    default: (argument0: Router) => void
 }

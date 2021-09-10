@@ -1,12 +1,12 @@
-import http from 'http'
 import * as path from 'path'
 
 import cors from 'cors'
 import express, { Express, Router, urlencoded, json } from 'express'
 
+import { RoutesObject } from './interfaces/Search'
 import getFiles from './util/getFiles'
 
-const startServer = async (port: number): Promise<http.Server> => {
+const startServer = async (port: number): Promise<void> => {
     const { ORIGIN_URL } = process.env
     const app: Express = express()
     const router: Router = Router()
@@ -24,12 +24,12 @@ const startServer = async (port: number): Promise<http.Server> => {
 
     // Get routes
     const files = await getFiles(path.join(process.cwd(), 'src/routes'))
-    files.map((file: string) => import(file).then(({ default: routes }) => routes(router)))
+    files.map((file: string) => import(file).then(({ default: routes }: RoutesObject) => routes(router)))
     
     app.use(router)
 
     // Start
-    return app.listen(port, () => {
+    app.listen(port, () => {
         // eslint-disable-next-line no-console
         console.log(`Application listening on port ${port}`)
     })

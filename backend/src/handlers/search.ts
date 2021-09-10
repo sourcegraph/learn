@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, RequestHandler } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import fetch from 'node-fetch'
 
 import { ResultsObject } from '../interfaces/Search'
@@ -130,7 +130,7 @@ query ($query: String!) {
 }
 `
 
-export const getSearch = async (request: Request, response: Response, next: NextFunction): Promise<RequestHandler | void> => {
+export const getSearch = async (request: Request, response: Response, next: NextFunction): Promise<ResultsObject[] | void> => {
     const { SEARCH_API_AUTH_TOKEN, SEARCH_API_URL } = process.env
 
     const data = {
@@ -161,7 +161,7 @@ export const getSearch = async (request: Request, response: Response, next: Next
                 }
             }
 
-            response.status(200).send(fetchedResults.data.search.results.results)
+            return fetchedResults.data.search.results.results
         }
     }
 
