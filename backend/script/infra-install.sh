@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-DOCKER_COMPOSE_VERSION='1.29.2'
+DOCKER_COMPOSE_VERSION='1.27.4'
 DEPLOY_SOURCEGRAPH_LEARN_CHECKOUT='/root/learn'
 DEPLOY_SOURCEGRAPH_LEARN_BACKEND='/root/learn/backend'
 
@@ -30,7 +30,3 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 curl -L "https://raw.githubusercontent.com/docker/compose/${DOCKER_COMPOSE_VERSION}/contrib/completion/bash/docker-compose" -o /etc/bash_completion.d/docker-compose
-
-# Run backend server and proxy. Restart the containers upon reboot.
-cd "${DEPLOY_SOURCEGRAPH_LEARN_BACKEND}"
-docker-compose up -d
