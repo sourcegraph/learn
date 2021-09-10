@@ -90,7 +90,7 @@ After this command, `getting-started.txt` will also be included in the “Change
 
 Rather than adding each changed file one by one to the staging area, a common alternative is to add all changed files in one command. This applies to situations where we don’t want to selectively choose which changes to commit because we want the commit to be a snapshot of the entire working directory.
 
-We can add all files by providing the `-A` flag to `git add` instead of specifying a file name:
+We can add all files by providing the `-A` flag (which is short for `--all`) to `git add` instead of specifying a file name:
 
 ```sh
 git add -A
