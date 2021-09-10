@@ -1,8 +1,8 @@
-import { ResultsObject, HookResultsObject } from '@interfaces/Search'
+import { ResultsObject, HookResultsObject, HookInitialObject } from '@interfaces/Search'
 import { sourcegraphSearch } from '@lib/api/search'
 import { useState, useEffect } from 'react'
 
-const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '' }): HookResultsObject  => {
+const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '' }: HookInitialObject): HookResultsObject  => {
     const [query, setQuery] = useState(initialQuery)
     const [url, setURL] = useState(initialSearchURL)
     const [results, setResults] = useState<ResultsObject[] | null>(null)

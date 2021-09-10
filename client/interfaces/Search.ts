@@ -29,6 +29,11 @@ export interface LineMatch {
     limitHit: boolean
 }
 
+export interface HookInitialObject {
+    initialQuery: string
+    initialSearchURL: string
+}
+
 export interface HookResultsObject {
     results?: ResultsObject[] | null
     query: string
