@@ -96,7 +96,7 @@ We can add all files by providing the `-A` flag (which is short for `--all`) to 
 git add -A
 ```
 
-The above command will recursively add all the modified files in all subdirectories in the current repository to the staging area, regardless of where we are running the command from. We can run this from any subdirectory of the repository.
+The above command will recursively add all the repository's modified files in all subdirectories to the staging area, regardless of where we are running the command. We can run this from any location within the repository.
 
 ### Removing changes from the staging area
 
