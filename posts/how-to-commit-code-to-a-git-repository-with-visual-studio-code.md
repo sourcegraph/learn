@@ -1,7 +1,7 @@
 ---
 title: How to commit code to a Git repository with Visual Studio Code
 author: marek-zaluski
-publicationDate: September 9, 2021
+publicationDate: September 10, 2021
 tags: [tutorial, git, IDE, open source]
 description: Learn how to create commits in a Git repository with VS Code.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-02.png
@@ -79,7 +79,7 @@ In situations where we have many changed files and we want to stage them all, we
 
 After clicking the **Stage All Changes** button, all changed files in the list will be added to the staging area. This is a faster option than adding each file one by one.
 
-## Step 4 — Checking the list of staged changes
+## Step 3 — Checking the list of staged changes
 
 After staging some changes, a new section will appear in the **Source Control** panel: **Staged Changes**.
 
@@ -91,7 +91,7 @@ If any changes remain in the **Changes** section when we commit, they will remai
 
 After checking that **Staged Changes** contains all the changes that we intend to commit, we can proceed to write a commit message.
 
-## Step 5 — Writing a commit message and committing
+## Step 4 — Writing a commit message and committing
 
 Before we can commit our changes, we need to write a commit message. The commit message should describe the change being made. Commit messages are helpful when we’re browsing the history of a repository and trying to understand changes that were made in the past.
 
@@ -113,7 +113,7 @@ We’ll use the **Commit** button located at the very top of the **Source Contro
 
 When we click the **Commit** button, a new commit is created containing the staged changes. Those changes will disappear from the **Source Control** panel, and the commit message input box will be cleared. Any unstaged changes will remain unstaged and available for inclusion in future commits.
 
-## Step 6 — Verifying the commit
+## Step 5 — Verifying the commit
 
 To check that the commit was successful, we can view the commit log and confirm that our commit is present in the repository. Although VS Code doesn’t have a built-in way to display the commit log, we can display it by running a Git command in the terminal: `git log`.
 
