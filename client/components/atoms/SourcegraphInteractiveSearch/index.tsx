@@ -40,7 +40,6 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const search = useInteractiveSearch({ initialSearchURL, initialQuery })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
-    console.log(search.results)
 
     return (
         <StyledResultsWrapper>

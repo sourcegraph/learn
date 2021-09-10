@@ -30,6 +30,7 @@ const startServer = async (port: number): Promise<http.Server> => {
 
     // Start
     return app.listen(port, () => {
+        // eslint-disable-next-line no-console
         console.log(`Application listening on port ${port}`)
     })
 }
