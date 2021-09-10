@@ -16,4 +16,4 @@ npm ci || exit 1
 
 echo "Creating local env file for client"
 
-printf "ORIGIN_URL=''\nSEARCH_API_AUTH_TOKEN=''\nSEARCH_API_URL=''" > .env
+printf "ORIGIN_URL=''\nSEARCH_API_AUTH_TOKEN=''\nSEARCH_API_URL=''\nXDG_DATA_HOME='/caddy-storage/data'\nXDG_CONFIG_HOME='/caddy-storage/config'" > .env

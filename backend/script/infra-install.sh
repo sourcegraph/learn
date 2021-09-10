@@ -4,7 +4,6 @@ set -euxo pipefail
 
 DOCKER_COMPOSE_VERSION='1.27.4'
 DEPLOY_SOURCEGRAPH_LEARN_CHECKOUT='/root/learn'
-DEPLOY_SOURCEGRAPH_LEARN_BACKEND='/root/learn/backend'
 
 # 🚨 Update these variables with the correct values!
 DEPLOY_SOURCEGRAPH_LEARN_CLONE_URL='https://github.com/sourcegraph/learn.git'
