@@ -143,8 +143,6 @@ Based on this output, we can conclude that the commit was successful and is now 
 
 In this tutorial, we learned how to commit changes to a Git repository with VS Code.
 
-<!--
 If you want to learn about committing code with the Git command-line tools, read [How to commit code with the Git command-line interface](/how-to-commit-code-with-the-git-command-line-interface).
--->
 
 To learn about ways that VS Code can integrate with Sourcegraph, watch our video about [How to integrate Sourcegraph into your workflows](/how-to-integrate-sourcegraph-into-your-workflows).
