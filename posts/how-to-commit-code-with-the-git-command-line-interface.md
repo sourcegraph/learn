@@ -3,6 +3,7 @@ title: How to commit code with the Git command-line interface
 author: marek-zaluski
 tags: [tutorial, git, open source]
 description: Learn how to create commits with the Git command-line tools in the terminal.
+publicationDate: September 10, 2021
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-01.png
 imageAlt: Sourcegraph Learn
 type: posts
@@ -95,7 +96,7 @@ We can add all files by providing the `-A` flag to `git add` instead of specifyi
 git add -A
 ```
 
-The above command will add all changes in the entire repository directory to the staging area. We can run this from any subdirectory of the repository.
+The above command will recursively add all the modified files in all subdirectories in the current repository to the staging area, regardless of where we are running the command from. We can run this from any subdirectory of the repository.
 
 ### Removing changes from the staging area
 
@@ -109,7 +110,7 @@ git restore --staged README.md
 
 This will remove `README.md` from the staging area. The changes to the file won’t be lost. They will remain in the working directory.
 
-## Step 3: Checking staged changes before committing
+## Step 3 — Checking staged changes before committing
 
 Once we’ve selected the changes that we want to commit, it’s a good idea to check the status of the repository again. This helps us confirm that the changes we’re about to commit are the ones we intend to commit.
 
@@ -126,15 +127,15 @@ The output confirms that we have two changes in the staging area: `README.md`, w
 
 If we have any other modified files that we haven’t staged, they will be present in the `Changes not staged for commit` section. These changes won’t be included in the commit and will remain in the working directory after the commit is created.
 
-## Step 4: Creating the commit
+## Step 4 — Creating the commit
 
 To create a commit, we use the `git commit` command, which will perform these tasks:
 
-Create a new commit on top of the latest commit in the current branch.
-Move all staged changes into the new commit.
-Attach the date, author, and message to the new commit.
-Update the current branch to include the new commit.
-Clear the staged changes from the staging area.
+- Create a new commit on top of the latest commit in the current branch.
+- Move all staged changes into the new commit.
+- Attach the date, author, and message to the new commit.
+- Update the current branch to include the new commit.
+- Clear the staged changes from the staging area.
 
 Before we can run the command, we need to write a commit message.
 
@@ -144,9 +145,11 @@ The commit message is an important piece of information that we need to provide 
 
 Commit messages are helpful when you’re browsing through the commit history of a project. They show you, at a glance, the sequence of changes made to the project. It’s common to browse commits by looking at the log of each commit’s message, date, and author.
 
-Suppose that we’re committing changes to update the readme file and add a getting-started file. Our commit message could be:
+Suppose that we’re committing changes to update the `README.md` file and add a `getting-started.txt` file. Our commit message could be:
 
-> Update readme and add getting-started file
+```
+Update README and add getting-started file
+```
 
 We’ll use this message with the `git commit` command in the next step.
 
@@ -188,7 +191,7 @@ This helps us confirm that the last commit is, in fact, the one that we just cre
 
 ```
 commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
-Author: Marek <marek@sourcegraph.com>
+Author: Marek <marek@example.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400
 
     Update readme and add getting started file
@@ -202,9 +205,11 @@ Based on this output, we can conclude that the commit was successful and is now 
 
 In this tutorial, we explored how to create Git commits with command-line tools. There are other ways to create Git commits, and there are many tools that can facilitate the task.
 
+<!--
 Check out our tutorials about committing code to Git with other tools:
 
 - [How to commit code to a Git repository with Visual Studio Code](/how-to-commit-code-to-a-git-repository-with-visual-studio-code)
 - [How to commit code to a Git repository with GitHub Desktop](/how-to-commit-code-to-a-git-repository-with-github-desktop)
+-->
 
 Visit the [Sourcegraph Learn home page](/) for more educational resources.
