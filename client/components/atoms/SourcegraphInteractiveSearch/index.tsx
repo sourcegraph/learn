@@ -40,6 +40,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
     const search = useInteractiveSearch({ initialSearchURL, initialQuery })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
+    console.log(search.results)
 
     return (
         <StyledResultsWrapper>
@@ -60,7 +61,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                 </Button>
             </StyledInputSearchColumn>
             <StyledResultsBorder />
-           {search.results ? 
+           {search.results && search.results.length > 0 ? 
                 (search.results.slice(0,4).map((result: ResultsObject) => (
                     <StyledResultsContainer key={createRandomId()}>
                         <StyledResultsContainerHeader>
@@ -84,7 +85,10 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 </StyledResultsFileName>                                          
                             </StyledResultsContainerHeaderTitle>
                             <StyledResultsContainerHeaderDivider />
-                            <StyledResultsMatchCount>{result.lineMatches.length} matches</StyledResultsMatchCount>
+                            <StyledResultsMatchCount>{result.lineMatches.length > 1 
+                                ? `${result.lineMatches.length} matches`
+                                : '1 match'}
+                            </StyledResultsMatchCount>
                             <StyledResultsContainerHeaderDivider />
                         </StyledResultsContainerHeader>
                         <StyledResultsCodeContainer>
