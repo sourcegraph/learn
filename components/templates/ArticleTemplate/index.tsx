@@ -13,6 +13,7 @@ import { FunctionComponent } from 'react'
 import {
     StyledHeaderImage,
     StyledAuthorByline,
+    StyledDates,
     StyledTagsWrapper,
     StyledMarkdownWrapper,
 } from './ArticleTemplateStyles'
@@ -30,6 +31,8 @@ export interface Props {
     collection?: RecordCollection | null
     slug: string
     alternateTitle?: string | null
+    publicationDate?: string | null
+    updatedDate?: string | null
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
@@ -74,9 +77,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     height="338" />
             )}
 
-            {/* Title and author */}
+            {/* Title */}
             <h1>{props.title}</h1>
-            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
@@ -90,6 +92,18 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     </StyledTagsWrapper>
                 ) 
                 : null}
+
+            {/* Author */}
+            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
+
+            {/* Dates */}
+            {props.publicationDate && (
+                <StyledDates> Published on {props.publicationDate}
+                    {props.updatedDate && (
+                        <> • Updated on {props.updatedDate}</>
+                    )} 
+                </StyledDates>
+            )}
 
             {props.collection && (
                 <CollectionView
