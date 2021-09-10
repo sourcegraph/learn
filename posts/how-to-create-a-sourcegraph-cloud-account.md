@@ -93,7 +93,7 @@ Your security and privacy are very important to Sourcegraph; Sourcegraph will ha
 
 Read more about Sourcegraph and privacy on our [privacy page](https://about.sourcegraph.com/privacy/).
 
-# Next steps
+## Next steps
 
 Now that you have created a Sourcegraph cloud account, you can start using Sourcegraph cloud to search the code that is important to you by having a look at our [cheat sheet guide](/how-to-search-code-with-sourcegraph-a-cheat-sheet).
 
