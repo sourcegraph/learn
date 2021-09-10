@@ -19,7 +19,7 @@ To follow this tutorial, you need Visual Studio Code installed on your computer.
 
 You also need Git installed. Visual Studio Code’s Git features depend on the Git command-line tools. You can install Git by following the instructions on the [“Installing Git” page of the official documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-With the above software installed, you should have created or identified a Git repository that you would like to contribute to. To make one of your local code repositories a Git repository, you can review the official documentation for “[Getting a Git Repository.](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)”
+With the above software installed, you should have created or identified a Git repository that you would like to contribute to. To make one of your local code repositories a Git repository, you can review the official documentation for “[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)”.
 
 ## Step 1 — Preparing to make a commit
 
@@ -107,7 +107,7 @@ We’ll use the **Message** input box at the top of the **Source Control** panel
 
 A common convention in Git is to limit the length of commit messages to a maximum of 50 characters. VS Code helps us follow this convention by showing a warning message if we exceed that length.
 
-We’ll use the **Commit** button located at the very top of the **Source Control** panel to create the commit. This button appears as a check mark icon, as in the screenshot below:
+We’ll use the **Commit** button located at the very top of the **Source Control** panel to create the commit. This button appears as a check mark icon, as in the screenshot below.
 
 ![The Commit button at the top of the Source Control panel.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/vs-code-source-control-commit-button.png)
 
@@ -147,6 +147,4 @@ In this tutorial, we learned how to commit changes to a Git repository with VS C
 If you want to learn about committing code with the Git command-line tools, read [How to commit code with the Git command-line interface](/how-to-commit-code-with-the-git-command-line-interface).
 -->
 
-<!--
 To learn about ways that VS Code can integrate with Sourcegraph, watch our video about [How to integrate Sourcegraph into your workflows](/how-to-integrate-sourcegraph-into-your-workflows).
--->
