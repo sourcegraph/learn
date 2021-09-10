@@ -18,7 +18,7 @@ Sourcegraph cloud lets you search across open source software and your private r
 There are three ways to sign up for a Sourcegraph cloud account, which will be detailed in the sections below. Feel free to skip ahead to your preferred choice:
 
 * [Creating a Sourcegraph cloud account with GitHub](#creating-a-sourcegraph-cloud-account-with-github)
-* [Creating a Sourcegraph cloud account with GitLab](#creating-a-sorucegraph-cloud-account-with-gitlab)
+* [Creating a Sourcegraph cloud account with GitLab](#creating-a-sourcegraph-cloud-account-with-gitlab)
 * [Creating a Sourcegraph cloud account with an email address](#creating-a-sourcegraph-cloud-account-with-an-email-address)
 
 Open your browser of choice, and we can get started.
@@ -43,7 +43,7 @@ Once you are logged into GitHub, you will be directed to a page that requires yo
 
 If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cloud’s welcome page. By completing these steps, you have successfully created a Sourcegraph cloud account using GitHub.
 
-### Creating a Sourcegraph cloud account with GitLab
+## Creating a Sourcegraph cloud account with GitLab
 
 If you have a GitLab account and would prefer to create a Sourcegraph account that is tied to your GitLab account, click on the **GitLab** button on Sourcegraph cloud’s **[Sign up](https://sourcegraph.com/sign-up)** page.
 
@@ -59,7 +59,7 @@ Clicking on **Authorize** will allow Sourcegraph to have access to the GitLab de
 
 If you choose to authorize Sourcegraph, you will be redirected to Sourcegraph cloud’s welcome page. By completing these steps, you have successfully created a Sourcegraph cloud account using GitLab.
 
-### Creating a Sourcegraph cloud account with an email address
+## Creating a Sourcegraph cloud account with an email address
 
 To create a Sourcegraph account by providing an email address, you will need to use a valid address that you can access. 
 
