@@ -2,7 +2,7 @@
 title: How to commit code to a Git repository with GitHub Desktop
 author: marek-zaluski
 tags: [tutorial, git, github, open source]
-Description: Learn how to create commits in a Git repository with GitHub Desktop
+description: Learn how to create commits in a Git repository with GitHub Desktop
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-04.png
 publicationDate: September 13, 2021
 imageAlt: Sourcegraph Learn
@@ -37,7 +37,7 @@ To select an added repository, open the **Current Repository** panel by clicking
 
 ![The Current Repository panel showing a list of repositories](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-repositories.png)
 
-If you see the repository that you want to commit to in the list, click on it to select it. Once your repository is selected, its name will appear on the **Current Repository** tab, and you can proceed to [Step 2 — Selecting a branch](#step-2-selecting-a-branch).
+If you see the repository that you want to commit to in the list, click on it to select it. Once your repository is selected, its name will appear on the **Current Repository** tab, and you can proceed to [Step 2 — Selecting a branch](#step-2--selecting-a-branch).
 
 If the repository is not in the list, you’ll need to add it manually, as explained in the next section.
 
@@ -61,7 +61,7 @@ After following these steps, your repository’s name should now appear under **
 
 Next, ensure that the current branch is the one where you intend to make your commit. The current branch is displayed on the **Current Branch** tab. You can click on this tab to switch branches or to create a new branch.
 
-[The Current Branch tab displaying the `main` branch.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-current-branch-tab.png)
+![The Current Branch tab displaying the `main` branch.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-current-branch-tab.png)
 
 If you want to create a new branch before committing, use the **New Branch** button in the **Current Branch** panel. Creating a new branch can be useful if you’re working on a new feature and want to keep your changes independent of the main branch, or if you’re making some experimental changes.
 
@@ -81,9 +81,9 @@ The **Changes** panel lists every changed file in your working directory. The he
 
 Different types of changes are represented by icons to the right of each file name.
 
-Modified files are shown with a yellow dot in a square.
-Untracked (newly created files) files are shown with a green `+` sign in a square.
-Deleted files are shown with a red `-` sign in a square.
+- Modified files are shown with a yellow dot in a square.
+- Untracked (newly created files) files are shown with a green `+` sign in a square.
+- Deleted files are shown with a red `-` sign in a square.
 
 The top-most checkbox, found in the list header, allows you to select or deselect all files. You can also select files individually by using each file’s checkbox.
 
