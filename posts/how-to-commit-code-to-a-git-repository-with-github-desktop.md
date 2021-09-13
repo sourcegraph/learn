@@ -4,11 +4,12 @@ author: marek-zaluski
 tags: [tutorial, git, github, open source]
 Description: Learn how to create commits in a Git repository with GitHub Desktop
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-04.png
+publicationDate: September 13, 2021
 imageAlt: Sourcegraph Learn
 type: posts
 ---
 
-Committing code with Git allows you to version control your own work, collaborate with other developers, and contribute to open source projects. GitHub Desktop is an application that provides a graphical interface to interact with Git repositories on your computer, providing an alternative to using the Git on the command line. It can also clone, push, and pull remote repositories hosted on GitHub and elsewhere.
+Committing code with Git allows you to version control your own work, collaborate with other developers, and contribute to open source projects. GitHub Desktop is an application that provides a graphical interface to interact with Git repositories on your computer, providing an alternative to using Git on the command line. It can also clone, push, and pull remote repositories hosted on GitHub and elsewhere.
 
 In this tutorial, we’ll go through how to commit code to a Git repository using GitHub Desktop.
 
@@ -16,7 +17,7 @@ In this tutorial, we’ll go through how to commit code to a Git repository usin
 
 Be sure that you have GitHub Desktop installed. You can install it by going to the [GitHub Desktop website](https://desktop.github.com/) and selecting the version of the software relevant to your operating system.
 
-To follow this tutorial, you should already have a local Git repository on your computer and that you’ve made some changes that you want to commit. If you don’t yet have a Git repository on your computer, you can review the official documentation for “[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository).
+To follow this tutorial, you should already have a local Git repository on your computer and have made some changes that you want to commit. If you don’t yet have a Git repository on your computer, you can review the official documentation for "[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)".
 
 ## Step 1 — Opening a repository in GitHub Desktop
 
@@ -55,6 +56,7 @@ To add a local repository from your file system, open the **Current Repository**
 Alternatively, you also have the option of cloning a remote repository hosted on GitHub or another source by selecting **Clone Repository** from the **Add** dropdown. This will also add it to the list of repositories.
 
 After following these steps, your repository’s name should now appear under **Current Repository** in the top toolbar.
+
 ## Step 2 — Selecting a branch
 
 Next, ensure that the current branch is the one where you intend to make your commit. The current branch is displayed on the **Current Branch** tab. You can click on this tab to switch branches or to create a new branch.
@@ -88,6 +90,7 @@ The top-most checkbox, found in the list header, allows you to select or deselec
 ![Selecting files using the checkboxes in the file list.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-changes-selected.png)
 
 For example, in the screenshot above, we’re selecting two changed files (`demo.js` and `README.md`) by making sure their checkboxes are selected. We’re leaving the other file unselected, so it won’t be part of our commit.
+
 ## Step 4 — Writing a commit message and committing
 
 In order to proceed to commit our changes, we need to provide a commit message. Each commit needs a commit message that describes the changes made. Commit messages are useful when browsing the history of commits in a repository, and they provide a summary of the changes made over time.
@@ -135,8 +138,7 @@ In this tutorial, we created a commit using GitHub Desktop while also learning h
 
 To learn about other ways to commit code, you can read these tutorials:
 
-[How to commit code with the Git command-line interface](/how-to-commit-code-with-the-git-command-line-interface)
-[How to commit code to a Git repository with Visual Studio Code](/how-to-commit-code-to-a-git-repository-with-visual-studio-code)
+- [How to commit code with the Git command-line interface](/how-to-commit-code-with-the-git-command-line-interface)
+- [How to commit code to a Git repository with Visual Studio Code](/how-to-commit-code-to-a-git-repository-with-visual-studio-code)
 
-You can also check out the [official Git project website](https://git-scm.com/). 
-
+You can also check out the [official Git project website](https://git-scm.com/).
