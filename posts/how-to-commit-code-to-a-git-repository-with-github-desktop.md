@@ -17,7 +17,7 @@ In this tutorial, we’ll go through how to commit code to a Git repository usin
 
 Be sure that you have GitHub Desktop installed. You can install it by going to the [GitHub Desktop website](https://desktop.github.com/) and selecting the version of the software relevant to your operating system.
 
-To follow this tutorial, you should already have a local Git repository on your computer and have made some changes that you want to commit. If you don’t yet have a Git repository on your computer, you can review the official documentation for "[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)".
+To follow this tutorial, you should already have a local Git repository on your computer and have made some changes that you want to commit. If you don’t yet have a Git repository on your computer, you can review the official documentation for “[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository).”
 
 ## Step 1 — Opening a repository in GitHub Desktop
 
@@ -37,7 +37,7 @@ To select an added repository, open the **Current Repository** panel by clicking
 
 ![The Current Repository panel showing a list of repositories](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-repositories.png)
 
-If you see the repository that you want to commit to in the list, click on it to select it. Once your repository is selected, its name will appear on the **Current Repository** tab, and you can proceed to [Step 2 — Selecting a branch](#step-2--selecting-a-branch).
+If the repository that you want to commit to is in the list, click on it to select it. Once your repository is selected, its name will appear on the **Current Repository** tab, and you can proceed to [Step 2 — Selecting a branch](#step-2--selecting-a-branch).
 
 If the repository is not in the list, you’ll need to add it manually, as explained in the next section.
 
@@ -47,9 +47,9 @@ If you created or cloned your local repository with a tool other than GitHub Des
 
 To add a local repository from your file system, open the **Current Repository** panel by clicking on it in the top toolbar and following these steps:
 
-- Click the **Add** button in the **Current Repository** panel.
-- Select **Add Existing Repository** in the dropdown menu.
-- Browse to the location of your repository in the file system.
+1. Click the **Add** button in the **Current Repository** panel.
+2. Select **Add Existing Repository** in the dropdown menu.
+3. Browse to the location of your repository in the file system.
 
 ![The Add Local Repository dialog box lets you choose a local repository.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-add-repository.png)
 
@@ -75,15 +75,15 @@ Once we’ve selected a branch, its name will be displayed in the **Current Bran
 
 Before committing, you can choose which changed files you want to include in the commit.
 
-The **Changes** panel lists every changed file in your working directory. The header of the list displays a file count, like “3 changed files”, as displayed in the screenshot below.
+The **Changes** panel lists every changed file in your working directory. The header of the list displays a file count, like “3 changed files,” as displayed in the screenshot below.
 
 ![The Changes tab showing the list of changed files.](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/github-desktop-changes.png)
 
 Different types of changes are represented by icons to the right of each file name.
 
 - Modified files are shown with a yellow dot in a square.
-- Untracked (newly created files) files are shown with a green `+` sign in a square.
-- Deleted files are shown with a red `-` sign in a square.
+- Untracked (newly created files) files are shown with a green plus sign (`+`) in a square.
+- Deleted files are shown with a red minus sign (`-`) sign in a square.
 
 The top-most checkbox, found in the list header, allows you to select or deselect all files. You can also select files individually by using each file’s checkbox.
 
