@@ -9,8 +9,6 @@ imageAlt: Sourcegraph Learn
 type: posts
 ---
 
-## What is the staging area in Git?
-
 The staging area in Git is a state that files can be in before being committed to a repository. This tutorial will explain how to add and remove files from the staging area.
 
 Git’s staging area allows you to be selective in the changes you want to include in a commit. Sometimes, you may want to commit every change in your working directory to the repository. In other cases, you may want to include some changes in your commit and exclude others. It can be useful to exclude changes if they’re still a work in progress or if they’re unrelated to your current work.
