@@ -9,8 +9,6 @@ alternateTitle: Search code in a browser with a Sourcegraph cloud account
 type: posts
 ---
 
-# How to create a Sourcegraph cloud account
-
 Sourcegraph cloud lets you search across open source software and your private repositories hosted on GitHub or GitLab in a web browser. To begin using Sourcegraph cloud, you can navigate directly to [sourcegraph.com](https://sourcegraph.com) and begin searching the code that Sourcegraph has already indexed. If you would like to save your search history or to connect your public or private repositories on GitHub or GitLab, you will need to create a Sourcegraph cloud account.
 
 **_Note that searching private code on Sourcegraph cloud is currently in Public Beta._**
