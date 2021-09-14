@@ -9,11 +9,9 @@ alternateTitle: Search your code with a Sourcegraph account
 type: posts
 ---
 
-With a self-hosted instance of Sourcegraph, you can search your local code and the code that you and your team collaborate on in repositories held within code hosts like GitHub and GitLab. 
+With a self-hosted instance of Sourcegraph, you can search your local code, and the code that you and your team collaborate on in repositories held within code hosts like GitHub and GitLab. 
 
 In order to use a self-hosted instance of Sourcegraph, you’ll need to create an account. This tutorial will provide you with guidance on creating an account with Sourcegraph.
-
-Check our [tutorials](https://learn.sourcegraph.com/) to find out how to install self-hosted instances of Sourcegraph.
 
 ## Prerequisites
 
@@ -23,12 +21,11 @@ If you need to install and set up an instance of Sourcegraph, you can review our
 
 With access to a Sourcegraph instance, you can get started.
 
-## Navigate to the URL of your instance of Sourcegraph
+## Step 1 — Navigate to the URL of your instance of Sourcegraph
 
-If you are invited to use an instance of Sourcegraph, ask an administrator for the relevant URL or IP address for the instance.
+If you are invited to use an instance of Sourcegraph, ask an administrator to create an account for you, or set up a sign on process to access the instance.
 
 If you have just set up your own instance of Sourcegraph, you should have received output on your terminal for the relevant IP address and port created to access Sourcegraph.
-
 
 ![Sourcegraph terminal output after installation](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
@@ -38,9 +35,9 @@ Sourcegraph is ready at: http://the-server-ip-address:7080
 
 Using your preferred browser, navigate to the relevant IP address or URL. At this point, you should be at the signup screen if you have not made an account already.
 
-## Sign up with your email address
+## Step 2 — Sign up with your email address
 
-Once you have navigate to the IP address or URL of your Sourcegraph instance, you should be at the signup page if you don’t have an account already 
+Once you have navigated to the IP address or URL of your Sourcegraph instance, you should be at the signup page if you don’t already have an account. 
 
 ![Sourcegraph self-hosted instance login page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-login-page.png)
 
@@ -50,22 +47,21 @@ Note that if you have navigated to a Sourcegraph instance that you were not invi
 
 ![Sourcegraph instance login, need to contact site administrator if you don’t get the signup page](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-contact-site-admin.png)
 
-You will need to use a valid email address that you can access. If you use an invalid email address, you will receive a descriptive error message to recover from before you can create an account. Enter your email address in the **Email** field of the signup form. 
+You will need to use a valid email address that you can access. If you use an invalid email address, you will receive a descriptive error message to troubleshoot your account creation. Enter your email address in the **Email** field of the signup form. 
 
 Once your email address is accepted, you can choose your preferred username in the form input section labeled **Username**. Only alphanumeric characters are permitted within the username.
-
 
 Next, create a password. A password adds a layer of security to your account by preventing unauthorized access. Your chosen password should be at least 12 characters. Enter a secure password in the form input section labeled **Password**, and make a note of it.
 
 After filling the form with a valid email address, username, and password, click on the button at the bottom of the form to create an account and continue.
 
-## Verify that your account was created
+## Step 3 — Verify that your account was created
 
 Once you have created your account successfully, you will be taken to your account overview page. 
 
 ![Sourcegraph overview page after account creation](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-overview-page-after-account-creation.png)
 
-From here, you can begin completing the onboarding process by adding repositories, searching your code, finding some references, and configuring SSO or adding teammates.   
+From here, you can begin completing the onboarding process by adding repositories, searching your code, finding some references, and configuring SSO or adding teammates. You can review all of our [administration documentation](https://docs.sourcegraph.com/admin) to learn more.
 
 ## Next steps
 
