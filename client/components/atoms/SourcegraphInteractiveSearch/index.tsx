@@ -86,20 +86,20 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                             )}                                      
                             </StyledResultsContainerHeaderTitle>
                             <StyledResultsContainerHeaderDivider />
-                            <StyledResultsMatchCount>{result.lineMatches.length > 1 
+                            <StyledResultsMatchCount>{result.lineMatches && result.lineMatches.length > 1 
                                 ? `${result.lineMatches.length} matches`
                                 : '1 match'}
                             </StyledResultsMatchCount>
                             <StyledResultsContainerHeaderDivider />
                         </StyledResultsContainerHeader>
                         <StyledResultsCodeContainer>
-                            {result.lineMatches.length > 0 && (
+                            {result.lineMatches && result.lineMatches.length > 0 && (
                                 result.lineMatches.slice(0,4).map((line: LineMatch) => (
                                     <StyledResultsCodeBlock key={createRandomId()}>
                                         <StyledResultsCodeTable>
                                             <tbody>
                                                 <tr>
-                                                    {line.lineNumber > 0 &&
+                                                    {line.lineNumber && line.lineNumber > 0 &&
                                                     <>
                                                         <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
                                                         <StyledResultsCodeLine>
