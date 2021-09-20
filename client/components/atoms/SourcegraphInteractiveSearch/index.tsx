@@ -62,73 +62,77 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
             <StyledResultsBorder />
            {search.results && search.results.length > 0 ? 
                 (search.results.slice(0,4).map((result: ResultsObject) => (
-                    <StyledResultsContainer key={createRandomId()}>
-                        <StyledResultsContainerHeader>
-                            <StyledIconWrapper>
-                                <FileDocumentOutlineIcon size={24} />
-                            </StyledIconWrapper>  
-                            <StyledResultsContainerHeaderDivider />
-                            <StyledIconWrapper>
-                                <GithubIcon size={24} />
-                            </StyledIconWrapper>                               
-                            <StyledResultsContainerHeaderTitle>
-                            {result.repository && result.file && (                                               
-                                <StyledResultsFileName>          
-                                    <StyledResultsFileNameLink 
-                                        href={`https://${result.repository.name}/blob/main/${result.file.path}`}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        {result.repository.name}
-                                    </StyledResultsFileNameLink>
-                                    {` > ${result.file.path}`}
-                                </StyledResultsFileName>
-                            )}                                      
-                            </StyledResultsContainerHeaderTitle>
-                            <StyledResultsContainerHeaderDivider />
-                            <StyledResultsMatchCount>{result.lineMatches && result.lineMatches.length > 1 
-                                ? `${result.lineMatches.length} matches`
-                                : '1 match'}
-                            </StyledResultsMatchCount>
-                            <StyledResultsContainerHeaderDivider />
-                        </StyledResultsContainerHeader>
-                        <StyledResultsCodeContainer>
-                            {result.lineMatches && result.lineMatches.length > 0 && (
-                                result.lineMatches.slice(0,4).map((line: LineMatch) => (
-                                    <StyledResultsCodeBlock key={createRandomId()}>
-                                        <StyledResultsCodeTable>
-                                            <tbody>
-                                                <tr>
-                                                    {line.lineNumber && line.lineNumber > 0 &&
-                                                    <>
-                                                        <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
+                    <>
+                    {result.repository && result.file && result.lineMatches && (
+                        <StyledResultsContainer key={createRandomId()}>
+                            <StyledResultsContainerHeader>
+                                <StyledIconWrapper>
+                                    <FileDocumentOutlineIcon size={24} />
+                                </StyledIconWrapper>  
+                                <StyledResultsContainerHeaderDivider />
+                                <StyledIconWrapper>
+                                    <GithubIcon size={24} />
+                                </StyledIconWrapper>                               
+                                <StyledResultsContainerHeaderTitle>
+                                                                            
+                                    <StyledResultsFileName>          
+                                        <StyledResultsFileNameLink 
+                                            href={`https://${result.repository.name}/blob/main/${result.file.path}`}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {result.repository.name}
+                                        </StyledResultsFileNameLink>
+                                        {` > ${result.file.path}`}
+                                    </StyledResultsFileName>                                     
+                                </StyledResultsContainerHeaderTitle>
+                                <StyledResultsContainerHeaderDivider />
+                                <StyledResultsMatchCount>{result.lineMatches.length > 1 
+                                    ? `${result.lineMatches.length} matches`
+                                    : '1 match'}
+                                </StyledResultsMatchCount>
+                                <StyledResultsContainerHeaderDivider />
+                            </StyledResultsContainerHeader>
+                            <StyledResultsCodeContainer>
+                                {result.lineMatches.length > 0 && (
+                                    result.lineMatches.slice(0,4).map((line: LineMatch) => (
+                                        <StyledResultsCodeBlock key={createRandomId()}>
+                                            <StyledResultsCodeTable>
+                                                <tbody>
+                                                    <tr>
+                                                        {line.lineNumber && line.lineNumber > 0 &&
+                                                        <>
+                                                            <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
+                                                            <StyledResultsCodeLine>
+                                                                {returnPreviousLine(result.file.content, line.lineNumber)}
+                                                            </StyledResultsCodeLine>
+                                                    </>}                                         
+                                                    </tr>   
+                                                    <tr>
+                                                        <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
                                                         <StyledResultsCodeLine>
-                                                            {returnPreviousLine(result.file.content, line.lineNumber)}
+                                                            <Highlighter
+                                                                input={line.preview}
+                                                                matcher={currentQuery.current}
+                                                            />
                                                         </StyledResultsCodeLine>
-                                                </>}                                         
-                                                </tr>   
-                                                <tr>
-                                                    <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
-                                                    <StyledResultsCodeLine>
-                                                        <Highlighter
-                                                            input={line.preview}
-                                                            matcher={currentQuery.current}
-                                                        />
-                                                    </StyledResultsCodeLine>
-                                                </tr>
-                                                <tr>
-                                                    <StyledResultsCodeLineNumber>{line.lineNumber + 2}</StyledResultsCodeLineNumber>
-                                                    <StyledResultsCodeLine>
-                                                        {returnNextLine(result.file.content, line.lineNumber)}
-                                                    </StyledResultsCodeLine>
-                                                </tr>  
-                                            </tbody>
-                                        </StyledResultsCodeTable>
-                                    </StyledResultsCodeBlock>
-                                ))
-                            )}
-                        </StyledResultsCodeContainer>
-                    </StyledResultsContainer>
+                                                    </tr>
+                                                    <tr>
+                                                        <StyledResultsCodeLineNumber>{line.lineNumber + 2}</StyledResultsCodeLineNumber>
+                                                        <StyledResultsCodeLine>
+                                                            {returnNextLine(result.file.content, line.lineNumber)}
+                                                        </StyledResultsCodeLine>
+                                                    </tr>  
+                                                </tbody>
+                                            </StyledResultsCodeTable>
+                                        </StyledResultsCodeBlock>
+                                    ))
+                                )}
+                            </StyledResultsCodeContainer>
+                            
+                        </StyledResultsContainer>
+                    )}
+                    </>
                 )))                   
             : (
                 <StyledErrorMessageContainer>
