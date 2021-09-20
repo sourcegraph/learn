@@ -27,6 +27,7 @@ import {
     StyledResultsCodeLine,
     StyledIconWrapper,
     StyledErrorMessageContainer,
+    StyledSearchOnCloudContainer,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -139,6 +140,26 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                     No results to display at this time.
                 </StyledErrorMessageContainer>
             )}
+            <StyledSearchOnCloudContainer>
+                Search on Sourcegraph cloud:
+                <StyledInputSearchColumn>
+                    <StyledSearchInput
+                        type="text"
+                        defaultValue={currentQuery.current}
+                        onChange={event => updateQuery(event.target.value)}
+                    />
+                    <Button
+                        className="primary small"
+                        target="_blank"
+                        rel="noreferrer"
+                        href={`https://sourcegraph.com/search?q=${encodeURIComponent(
+                            currentQuery.current
+                        )}&utm_source=learn`}
+                    >
+                        <span>Search on Sourcegraph</span>
+                    </Button>
+                </StyledInputSearchColumn>
+            </StyledSearchOnCloudContainer>
         </StyledResultsWrapper>
     )
 }

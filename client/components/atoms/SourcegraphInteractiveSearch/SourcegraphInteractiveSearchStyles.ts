@@ -106,4 +106,13 @@ export const StyledErrorMessageContainer = styled.div`
     border-radius: .25rem;
     padding: 1.875rem;
     text-align: center;
-`;
+`
+
+export const StyledSearchOnCloudContainer = styled.div`
+    font-style: italic;
+    margin: 1rem 0;
+
+    span {
+        font-style: normal;
+    }
+`
