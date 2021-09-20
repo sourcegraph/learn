@@ -72,7 +72,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 <GithubIcon size={24} />
                             </StyledIconWrapper>                               
                             <StyledResultsContainerHeaderTitle>
-                            {result.repository.name && result.file.path && (                                               
+                            {result.repository && result.file && (                                               
                                 <StyledResultsFileName>          
                                     <StyledResultsFileNameLink 
                                         href={`https://${result.repository.name}/blob/main/${result.file.path}`}
