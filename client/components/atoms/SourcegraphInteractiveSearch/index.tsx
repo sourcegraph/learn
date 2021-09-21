@@ -6,7 +6,7 @@ import { returnPreviousLine, returnNextLine }from '@util/returnLineMatchContext'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
-import { FunctionComponent, useRef } from 'react'
+import React, { FunctionComponent, useRef } from 'react'
 
 import {
     StyledSearchInput,
@@ -63,9 +63,9 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
             <StyledResultsBorder />
            {search.results && search.results.length > 0 ? 
                 (search.results.slice(0,4).map((result: ResultsObject) => (
-                    <>
+                   <React.Fragment key={createRandomId()}>
                     {result.repository && result.file && result.lineMatches && (
-                        <StyledResultsContainer key={createRandomId()}>
+                        <StyledResultsContainer>
                             <StyledResultsContainerHeader>
                                 <StyledIconWrapper>
                                     <FileDocumentOutlineIcon size={24} />
@@ -130,10 +130,9 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                     ))
                                 )}
                             </StyledResultsCodeContainer>
-                            
                         </StyledResultsContainer>
                     )}
-                    </>
+                    </React.Fragment>
                 )))                   
             : (
                 <StyledErrorMessageContainer>

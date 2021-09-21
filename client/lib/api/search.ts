@@ -4,8 +4,9 @@ import { fetchResults } from '@lib/api/fetch'
 export const sourcegraphSearch = async (url: string, query: string): Promise<ResultsObject[] | null> => {
     const searchURL = new URL(url)
     if (query !== undefined) {
-        searchURL.searchParams.set('query', query)
+        const encodedQuery = encodeURIComponent(query)
+        searchURL.search = `query=${encodedQuery}`
     }
 
-    return fetchResults(searchURL.toString(), query)
+    return fetchResults(searchURL.toString())
 }

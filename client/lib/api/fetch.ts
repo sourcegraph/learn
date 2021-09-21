@@ -1,12 +1,8 @@
 import { ResultsObject } from '@interfaces/Search'
 
-export const fetchEndpoint = async (url: string, query: string): Promise<Response | null> => {
-    const queryOptions = {
-        query
-    }
+export const fetchEndpoint = async (url: string): Promise<Response | null> => {
     const defaultOptions = {
-        method: 'POST',
-        body: JSON.stringify(queryOptions)
+        method: 'POST'
     }
     const response = await fetch(url, defaultOptions)
     if (!response.ok) {
@@ -18,8 +14,8 @@ export const fetchEndpoint = async (url: string, query: string): Promise<Respons
     return response
 }
   
-export const fetchResults = async (url: string, query: string): Promise<ResultsObject[] | null> => {
-        const response = await fetchEndpoint(url, query)
+export const fetchResults = async (url: string): Promise<ResultsObject[] | null> => {
+        const response = await fetchEndpoint(url)
             .catch(error => {
                 console.error(error)
                 throw new Error('Failed to fetch API')
