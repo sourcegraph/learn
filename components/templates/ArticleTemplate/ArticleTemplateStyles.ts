@@ -6,8 +6,9 @@ export const StyledHeaderImage = styled.img`
     vertical-align: middle;
     width: 100%;
 `
-export const StyledAuthorByline = styled.p`
+export const StyledAuthorByline = styled.a`
     margin: 0 0 0.5rem;
+    text-decoration: none;
 `
 
 export const StyledDates = styled.div`

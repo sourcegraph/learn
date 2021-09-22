@@ -7,14 +7,14 @@ interface Props {
     bio?: string | null
     image?: string
     socialLinks?: string[] | null
-    id: string
+    slug: string
 }
 
 const AuthorCard: FunctionComponent<Props> = props => (
     <Card showBorder={false} width='90'>
         <ContentCard
             title={props.name}
-            url="/authors"
+            url={`/authors/${props.slug}`}
             description={props.bio}
         />
     </Card>

@@ -12,11 +12,11 @@ interface Props {
 const AuthorCardList: FunctionComponent<Props> = props => (
     <StyledAuthorCardList>
         {props.authors.map(author => (
-            <Column className='flex-medium' key={author.id}>
+            <Column className='flex-medium' key={author.slug}>
                 <AuthorCard
                     name={author.name}
                     bio={author.bio}
-                    id={author.id}
+                    slug={author.slug}
                     socialLinks={author.socialLinks}
                 />
             </Column>

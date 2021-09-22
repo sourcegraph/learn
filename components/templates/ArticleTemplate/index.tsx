@@ -7,7 +7,9 @@ import TocWrapper from '@components/atoms/TocWrapper'
 import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
 import RecordCollection from '@interfaces/RecordCollection'
+import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 import {
@@ -32,7 +34,7 @@ export interface Props {
     slug: string
     alternateTitle?: string | null
     publicationDate?: string | null
-    updatedDate?: string | null
+    updatedDate?: string | null 
 }
 
 const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
@@ -94,7 +96,11 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 : null}
 
             {/* Author */}
-            {props.author && <StyledAuthorByline>By {props.author}</StyledAuthorByline>}
+            {props.author && (
+                <Link href={`/authors/${props.author}`} passHref={true}>
+                    <StyledAuthorByline>By {slugToTitleCase(props.author)}</StyledAuthorByline>
+                </Link>
+            )}
 
             {/* Dates */}
             {props.publicationDate && (
