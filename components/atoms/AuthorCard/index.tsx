@@ -15,7 +15,6 @@ const AuthorCard: FunctionComponent<Props> = props => (
         <ContentCard
             title={props.name}
             url="/authors"
-            description={props.bio}
         />
     </Card>
 )

@@ -6,7 +6,6 @@ import {
     StyledCardBody,
     StyledCardTitle,
     StyledCardTagList,
-    // StyledCardDescription,
     StyledCardImage,
 } from './ContentCardStyles'
 
