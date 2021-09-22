@@ -33,12 +33,13 @@ import {
 interface Props {
     initialQuery: string
     initialSearchURL: string
+    initialPatternType: string
 }
 
 const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
-    const { initialQuery, initialSearchURL } = props
+    const { initialQuery, initialSearchURL, initialPatternType } = props
     const currentQuery = useRef(initialQuery) 
-    const search = useInteractiveSearch({ initialSearchURL, initialQuery })
+    const search = useInteractiveSearch({ initialSearchURL, initialQuery, initialPatternType })
     const updateQuery = (value: string): string => currentQuery.current = value
     const handleClick = (): void => search.setQuery(currentQuery.current)
 
@@ -103,7 +104,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                                     <tr>
                                                         {line.lineNumber && line.lineNumber > 0 &&
                                                         <>
-                                                            <StyledResultsCodeLineNumber>{line.lineNumber - 2}</StyledResultsCodeLineNumber>
+                                                            <StyledResultsCodeLineNumber>{line.lineNumber}</StyledResultsCodeLineNumber>
                                                             <StyledResultsCodeLine>
                                                                 {returnPreviousLine(result.file.content, line.lineNumber)}
                                                             </StyledResultsCodeLine>
@@ -153,7 +154,7 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                         rel="noreferrer"
                         href={`https://sourcegraph.com/search?q=${encodeURIComponent(
                             currentQuery.current
-                        )}&utm_source=learn`}
+                        )}&patternType=${initialPatternType}&utm_source=learn`}
                     >
                         <span>Search on Sourcegraph</span>
                     </Button>

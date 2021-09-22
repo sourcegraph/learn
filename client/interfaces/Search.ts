@@ -32,6 +32,7 @@ export interface LineMatch {
 export interface HookInitialObject {
     initialQuery: string
     initialSearchURL: string
+    initialPatternType: string
 }
 
 export interface HookResultsObject {
@@ -40,4 +41,6 @@ export interface HookResultsObject {
     setQuery: (query: string) => void
     url: string
     setURL: (url: string) => void
+    patternType: string
+    setPatternType: (patternType: string) => void
 }

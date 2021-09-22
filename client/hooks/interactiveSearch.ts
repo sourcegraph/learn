@@ -2,14 +2,15 @@ import { ResultsObject, HookResultsObject, HookInitialObject } from '@interfaces
 import { sourcegraphSearch } from '@lib/api/search'
 import { useState, useEffect } from 'react'
 
-const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '' }: HookInitialObject): HookResultsObject  => {
+const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '', initialPatternType = '' }: HookInitialObject): HookResultsObject  => {
     const [query, setQuery] = useState(initialQuery)
     const [url, setURL] = useState(initialSearchURL)
+    const [patternType, setPatternType] = useState(initialPatternType)
     const [results, setResults] = useState<ResultsObject[] | null>(null)
 
     useEffect(() => {
         const results = async (): Promise<ResultsObject[] | null> => {
-            const fetchedData = await sourcegraphSearch(url, query.trim())
+            const fetchedData = await sourcegraphSearch(url, query.trim(), patternType.trim())
             return fetchedData
         }
         results()
@@ -22,7 +23,7 @@ const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '' }: Hook
             throw error
         })
 
-    }, [url, query])
+    }, [url, query, patternType])
     
     return {
         results,
@@ -30,6 +31,8 @@ const useInteractiveSearch = ({ initialSearchURL = '', initialQuery = '' }: Hook
         setQuery,
         url,
         setURL,
+        patternType,
+        setPatternType
     }
 }
 

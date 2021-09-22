@@ -62,7 +62,7 @@ From here, you can search a common keyword to ensure that the public code you ad
 
 To ensure that the public code you just added is available to anyone using Sourcegraph (even those not logged in), you can open a new private or incognito window and search for a fairly unique string to the code bases you have just added. In this case, we’ll search for `women world wide` to ensure that the `prisma/women-world-wide` repository is indexed:
 
-<SourcegraphSearch query="women world wide"/>
+<SourcegraphInteractiveSearch initialQuery='women world wide' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 ![Sourcegraph verification of OSS added](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-anonymous-verification.png)
 

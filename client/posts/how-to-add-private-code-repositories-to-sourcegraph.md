@@ -85,7 +85,7 @@ The screenshot above reveals 15 results across the private repositories loaded i
 
 You can perform a search similar to the one above with the Sourcegraph box below. Make sure you change the context to your own username:
 
-<SourcegraphSearch query="visibility:private html"/>
+<SourcegraphInteractiveSearch initialQuery='visibility:private html' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 Running a command like the one above across your own username will enable you to search across all of the private repositories that you have access to, providing you with all the benefits of universal code search.
 
