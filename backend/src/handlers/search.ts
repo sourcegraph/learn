@@ -98,7 +98,7 @@ fragment SearchResultsAlertFields on SearchResults {
 }
 
 query ($query: String!) {
-    search(query: $query) {
+    search(query: $query, version: V2) {
     results {
         results{
         __typename
