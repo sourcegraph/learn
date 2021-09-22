@@ -6,14 +6,13 @@ import {
     StyledCardBody,
     StyledCardTitle,
     StyledCardTagList,
-    StyledCardDescription,
+    // StyledCardDescription,
     StyledCardImage,
 } from './ContentCardStyles'
 
 export interface Props {
     title: string
     tags?: string[] | null
-    description?: string | null
     image?: string | null
     imageAlt?: string | null
     url: string
@@ -38,7 +37,6 @@ const ContentCard: FunctionComponent<Props> = props => (
                 {props.tags && (
                     <StyledCardTagList>{props.tags?.join(' • ')}</StyledCardTagList>
                 )}
-                {props.description && <StyledCardDescription>{props.description}</StyledCardDescription>}
             </StyledCardBody>
         </CardLink>
     </Link> 
