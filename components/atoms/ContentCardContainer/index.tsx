@@ -13,7 +13,6 @@ import {
 interface Props {
     records: MarkdownFileWithUrl[]
     header: string
-    description: string
 }
 
 const ContentCardContainer: FunctionComponent<Props> = props => (
@@ -30,7 +29,6 @@ const ContentCardContainer: FunctionComponent<Props> = props => (
                 <ContentCard
                     title={record.frontMatter.title}
                     tags={record.frontMatter.tags}
-                    description={record.frontMatter.description}
                     image={record.frontMatter.image}
                     imageAlt={record.frontMatter.imageAlt}
                     url={record.url}
