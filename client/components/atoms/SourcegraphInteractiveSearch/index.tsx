@@ -1,8 +1,7 @@
 import Button from '@components/atoms/Button'
-import Highlighter from '@components/atoms/Highlighter'
-import { ResultsObject, LineMatch } from '@interfaces/Search'
+import InteractiveSearchResults from '@components/atoms/InteractiveSearchResults'
+import { ResultsObject } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
-import { returnPreviousLine, returnNextLine }from '@util/returnLineMatchContext'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
 import GithubIcon from 'mdi-react/GithubIcon'
@@ -20,11 +19,6 @@ import {
     StyledResultsFileName,
     StyledResultsFileNameLink,
     StyledResultsMatchCount,
-    StyledResultsCodeTable,
-    StyledResultsCodeContainer,
-    StyledResultsCodeBlock,
-    StyledResultsCodeLineNumber,
-    StyledResultsCodeLine,
     StyledIconWrapper,
     StyledErrorMessageContainer,
     StyledSearchOnCloudContainer,
@@ -95,42 +89,12 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 </StyledResultsMatchCount>
                                 <StyledResultsContainerHeaderDivider />
                             </StyledResultsContainerHeader>
-                            <StyledResultsCodeContainer>
-                                {result.lineMatches.length > 0 && (
-                                    result.lineMatches.slice(0,4).map((line: LineMatch) => (
-                                        <StyledResultsCodeBlock key={createRandomId()}>
-                                            <StyledResultsCodeTable>
-                                                <tbody>
-                                                    <tr>
-                                                        {line.lineNumber && line.lineNumber > 0 &&
-                                                        <>
-                                                            <StyledResultsCodeLineNumber>{line.lineNumber}</StyledResultsCodeLineNumber>
-                                                            <StyledResultsCodeLine>
-                                                                {returnPreviousLine(result.file.content, line.lineNumber)}
-                                                            </StyledResultsCodeLine>
-                                                    </>}                                         
-                                                    </tr>   
-                                                    <tr>
-                                                        <StyledResultsCodeLineNumber>{line.lineNumber + 1}</StyledResultsCodeLineNumber>
-                                                        <StyledResultsCodeLine>
-                                                            <Highlighter
-                                                                input={line.preview}
-                                                                matcher={currentQuery.current}
-                                                            />
-                                                        </StyledResultsCodeLine>
-                                                    </tr>
-                                                    <tr>
-                                                        <StyledResultsCodeLineNumber>{line.lineNumber + 2}</StyledResultsCodeLineNumber>
-                                                        <StyledResultsCodeLine>
-                                                            {returnNextLine(result.file.content, line.lineNumber)}
-                                                        </StyledResultsCodeLine>
-                                                    </tr>  
-                                                </tbody>
-                                            </StyledResultsCodeTable>
-                                        </StyledResultsCodeBlock>
-                                    ))
-                                )}
-                            </StyledResultsCodeContainer>
+                            <InteractiveSearchResults
+                                result={result}
+                                lineMatches={result.lineMatches}
+                                patternType={initialPatternType}
+                                query={currentQuery.current}
+                            />
                         </StyledResultsContainer>
                     )}
                     </React.Fragment>
