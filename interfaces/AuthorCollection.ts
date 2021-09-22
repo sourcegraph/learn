@@ -6,5 +6,6 @@
     slug: string
     name: string
     bio?: string | null
-    socialLinks?: string[] | null
+    twitterLink?: string | null
+    linkedInLink?: string | null
 }

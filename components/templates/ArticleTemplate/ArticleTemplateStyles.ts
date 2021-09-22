@@ -7,8 +7,13 @@ export const StyledHeaderImage = styled.img`
     width: 100%;
 `
 export const StyledAuthorByline = styled.a`
+    color: #212529;
     margin: 0 0 0.5rem;
     text-decoration: none;
+
+    :hover {
+        color: #5033e1;
+    }
 `
 
 export const StyledDates = styled.div`

@@ -97,9 +97,12 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
 
             {/* Author */}
             {props.author && (
-                <Link href={`/authors/${props.author}`} passHref={true}>
-                    <StyledAuthorByline>By {slugToTitleCase(props.author)}</StyledAuthorByline>
-                </Link>
+                <div>
+                    By{' '}
+                    <Link href={`/authors/${props.author}`} passHref={true}>
+                        <StyledAuthorByline>{slugToTitleCase(props.author)}</StyledAuthorByline>
+                    </Link>
+                </div>
             )}
 
             {/* Dates */}

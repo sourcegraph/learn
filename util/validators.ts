@@ -83,8 +83,11 @@ export function normalizeAuthorCollectionDefinition(author: AuthorCollection): A
         bio: author.bio ? 
             normalizeString(author.bio) 
             : null,
-        socialLinks: author.socialLinks ? 
-            normalizeStringArray(author.socialLinks)
+        twitterLink: author.twitterLink ? 
+            normalizeString(author.twitterLink)
+            : null,
+        linkedInLink: author.linkedInLink ? 
+            normalizeString(author.linkedInLink)
             : null
     }
 }

@@ -2,9 +2,8 @@ authors:
     - slug: marek-zaluski
       name: Marek Zaluski
       bio: Marek is a developer education engineer at Sourcegraph.
-      socialLinks:
-        - https://twitter.com/marekweb
-        - https://www.linkedin.com/in/marekzaluski
+      twitterLink: https://twitter.com/marekweb
+      linkedInLink: https://www.linkedin.com/in/marekzaluski
     - slug: lisa-tagliaferri
       name: Lisa Tagliaferri
     - slug: oluebube-princess-egbuna

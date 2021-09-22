@@ -1,4 +1,4 @@
-import Author, { Props as AuthorProps } from '@components/templates/AuthorTemplate'
+import AuthorTemplate, { Props as AuthorTemplateProps } from '@components/templates/AuthorTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
 import loadAuthorCollections from '@lib/loadAuthorCollections'
 import getQueryParameter from '@util/getQueryParameters'
@@ -7,16 +7,16 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const authorCollection =  await loadAuthorCollections()
-    const authorSlugs = authorCollection.authors.map(author => author?.slug)
-    const paths = authorSlugs.map(authorSlug => ({ params: { author: authorSlug } }))
+    const authorSlugs = authorCollection.authors.map(author => author.slug)
+    const paths = authorSlugs.map(authorSlug => ({ params: { slug: authorSlug } }))
     return {
         paths,
         fallback: false,
     }
 }
 
-export const getStaticProps: GetStaticProps<AuthorProps> = async context => {
-    const authorSlug = getQueryParameter(context.params, 'author')
+export const getStaticProps: GetStaticProps<AuthorTemplateProps> = async context => {
+    const authorSlug = getQueryParameter(context.params, 'slug')
     const authorCollection =  await loadAuthorCollections()
     const author = authorCollection.authors.find(author => author.slug === authorSlug)
 
@@ -36,4 +36,4 @@ export const getStaticProps: GetStaticProps<AuthorProps> = async context => {
     }
 }
 
-export default Author
+export default AuthorTemplate
