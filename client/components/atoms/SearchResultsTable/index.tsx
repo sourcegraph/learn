@@ -40,6 +40,7 @@ const SearchResultsTable: FunctionComponent<Props> = props => (
                                     <Highlighter
                                         input={match.preview}
                                         matcher={props.query}
+                                        patternType={props.patternType}
                                     />
                                 </StyledResultsCodeLine>
                             </tr>
@@ -74,6 +75,7 @@ const SearchResultsTable: FunctionComponent<Props> = props => (
                                     <Highlighter
                                         input={match.preview}
                                         matcher={props.query}
+                                        patternType={props.patternType}
                                     />
                                 </StyledResultsCodeLine>
                             </tr>

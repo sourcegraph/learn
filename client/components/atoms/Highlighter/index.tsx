@@ -6,6 +6,7 @@ import { StyledHighlighterMatch } from './HighlighterStyles'
 interface Props {
     input: string
     matcher: string
+    patternType: string
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
@@ -20,11 +21,17 @@ const Highlighter: FunctionComponent<Props> = props => {
 
     return (
         <div>
-            {parts.map(part => (
-                regex.test(part)
-                    ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
-                    : <span key={createRandomId()}>{part}</span>
-            ))}
+            {props.patternType === 'literal' ?
+                (parts.map(part => (
+                        regex.test(part)
+                            ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
+                            : <span key={createRandomId()}>{part}</span>
+                )))
+                : (
+                    <StyledHighlighterMatch>{props.input}</StyledHighlighterMatch>
+                )
+            }
+ 
         </div>
     )
 }
