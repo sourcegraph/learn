@@ -1,0 +1,7 @@
+# Routes all plain http requests to backend service - suitable for local testing.
+#
+# Caddyfile documentation: https://caddyserver.com/docs/caddyfile
+
+:80
+
+reverse_proxy {$BACKEND}
