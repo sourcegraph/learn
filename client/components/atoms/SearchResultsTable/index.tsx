@@ -20,7 +20,7 @@ interface Props {
 
 const SearchResultsTable: FunctionComponent<Props> = props => (
     <>
-        {props.patternType === 'literal' ?
+        {props.patternType === 'literal' || props.patternType === 'regexp' ?
             (props.matches.map(match => (
                 <StyledResultsCodeBlock key={createRandomId()}>
                     <StyledResultsCodeTable>

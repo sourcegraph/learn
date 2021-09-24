@@ -1,4 +1,5 @@
 import createRandomId from '@util/createRandomId'
+import highlighterTypes from '@util/highlighterTypes'
 import { FunctionComponent } from 'react'
 
 import { StyledHighlighterMatch } from './HighlighterStyles'
@@ -11,20 +12,34 @@ interface Props {
 
 const Highlighter: FunctionComponent<Props> = props => {
     let regex = new RegExp('')
-    if (props.matcher.includes(':')) {
-        const getQuery = props.matcher.split(' ').filter(element => !element.includes(':')).join(' ')
-        regex = new RegExp(`(${getQuery.trim()})|(?=${getQuery.trim()})`, 'gi')
-    } else if (props.matcher.includes('and')) {
-        const getQueries = props.matcher.split('and')
-        regex = new RegExp(`(${getQueries[0].trim()})|(?=${getQueries[0].trim()})|(${getQueries[1].trim()})|(?=${getQueries[1].trim()})`, 'gi')
-    } else {
-        regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
+    const type = highlighterTypes(props.matcher, props.patternType)
+    switch (type) {
+        case 'filters': {
+            const getQuery = props.matcher.split(' ').filter(element => !element.includes(':')).join(' ')
+            regex = new RegExp(`(${getQuery.trim()})|(?=${getQuery.trim()})`, 'gi')
+            break
+        }
+        case 'andCondition': {
+            const getQuery = props.matcher.split('and')
+            regex = new RegExp(`(${getQuery[0].trim()})|(?=${getQuery[0].trim()})|(${getQuery[1].trim()})|(?=${getQuery[1].trim()})`, 'gi')
+            break
+        }
+        case 'regexpMultiples': {
+            const getQuery = props.matcher.replace(' ', '|')
+            regex = new RegExp(`(${getQuery.trim()})|(?=${getQuery.trim()})`, 'gi')
+            break
+        }
+        case 'none':
+            regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
+            break
+        default:
+            regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
     }
     const parts = props.input.split(regex)
 
     return (
         <div>
-            {props.patternType === 'literal' ?
+            {props.patternType === 'literal' || props.patternType === 'regexp' ?
                 (parts.map(part => (
                         regex.test(part)
                             ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>

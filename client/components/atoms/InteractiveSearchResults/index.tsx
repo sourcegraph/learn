@@ -15,7 +15,7 @@ const InteractiveSearchResults: FunctionComponent<Props> = props => (
     <StyledResultsCodeContainer>
         {props.lineMatches.length > 0 && (
             <SearchResultsTable
-                matches={props.patternType === 'literal'
+                matches={props.patternType === 'literal' || props.patternType === 'regexp'
                     ? props.lineMatches.slice(0,4)
                     : props.lineMatches}
                 result={props.result}
