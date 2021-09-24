@@ -29,6 +29,12 @@ const Highlighter: FunctionComponent<Props> = props => {
             regex = new RegExp(`(${getQuery.trim()})|(?=${getQuery.trim()})`, 'gi')
             break
         }
+        case 'regexpMatchingGroup': {
+            const matchRegex = new RegExp(props.matcher, 'gi')
+            const getMatch = props.input.match(matchRegex)?.join('') ?? props.matcher
+            regex = new RegExp(`(${getMatch.trim()})|(?=${getMatch.trim()})`, 'gi')
+            break
+        }
         case 'none':
             regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
             break
