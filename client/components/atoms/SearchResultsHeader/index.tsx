@@ -15,12 +15,13 @@ import {
 
 interface Props {
     repository: string
-    file?: string
     result: ResultsObject
+    resultType?: string
+    file?: string | null
 }
 
 const SearchResultsTable: FunctionComponent<Props> = props => {
-    const file = props.file ?? ''
+    const file = props.file ?? null
     return (
         <StyledResultsContainerHeader>
             <StyledIconWrapper>
@@ -33,15 +34,27 @@ const SearchResultsTable: FunctionComponent<Props> = props => {
             <StyledResultsContainerHeaderTitle>                                 
                 <StyledResultsFileName>
                     <StyledResultsFileNameLink 
-                        href={`https://${props.repository}/blob/main/${file}`}
+                        href={`https://${props.repository}`}
                         target="_blank"
                         rel="noreferrer"
                     >
                     {props.repository}
                     </StyledResultsFileNameLink>
-                    {props.file && (
-                        ` > ${props.file}`
-                    )}                   
+                    {props.file && props.resultType === 'CommitSearchResult' 
+                        ? (
+                            ` > ${props.file ?? ''}`
+                        )
+                        : (
+                        <StyledResultsFileNameLink
+                            href={`https://${props.repository}/blob/${'master' || 'main'}/${file ?? ''}`}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {props.file && (
+                                ` > ${props.file}`
+                            )}
+                        </StyledResultsFileNameLink> 
+                        )}              
                 </StyledResultsFileName>                                     
             </StyledResultsContainerHeaderTitle>
             <StyledResultsContainerHeaderDivider />

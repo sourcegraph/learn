@@ -1,7 +1,7 @@
 import Button from '@components/atoms/Button'
-import InteractiveSearchResults from '@components/atoms/InteractiveSearchResults'
 import SearchResultsHeader from '@components/atoms/SearchResultsHeader'
-import { ResultsObject, RepositoryResultsObject } from '@interfaces/Search'
+import SearchResultsTable from '@components/atoms/SearchResultsTable'
+import { ResultsObject } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
 import useInteractiveSearch from 'hooks/interactiveSearch'
 import React, { FunctionComponent, useRef } from 'react'
@@ -15,6 +15,7 @@ import {
     StyledResultsCodeBlock,
     StyledErrorMessageContainer,
     StyledSearchOnCloudContainer,
+    StyledResultsCodeContainer,
 } from './SourcegraphInteractiveSearchStyles'
 
 interface Props {
@@ -58,12 +59,18 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                     repository={result.repository.name}
                                     file={result.file.path} 
                                     result={result} />
-                                <InteractiveSearchResults
-                                    result={result}
-                                    lineMatches={result.lineMatches}
-                                    patternType={initialPatternType}
-                                    query={currentQuery.current}
-                                />
+                                <StyledResultsCodeContainer>
+                                    {result.lineMatches.length > 0 && (
+                                        <SearchResultsTable
+                                            matches={initialPatternType === 'literal' || initialPatternType === 'regexp'
+                                                ? result.lineMatches.slice(0,4)
+                                                : result.lineMatches}
+                                            result={result}
+                                            patternType={initialPatternType}
+                                            query={currentQuery.current}
+                                        />
+                                    )}
+                                </StyledResultsCodeContainer>
                             </StyledResultsContainer>
                         )}
                         {result.__typename === 'Repository' && (
@@ -79,7 +86,8 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
                                 <SearchResultsHeader 
                                     result={result}
                                     repository={result.commit.repository.name}
-                                    file={`${result.commit.author.person.displayName}:${result.commit.subject}`} />
+                                    file={`${result.commit.author.person.displayName}:${result.commit.subject}`}
+                                    resultType={result.__typename} />
                                 <StyledResultsCodeBlock>
                                     {result.commit.subject}
                                 </StyledResultsCodeBlock>

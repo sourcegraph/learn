@@ -11,30 +11,11 @@ export const StyledResultsCodeContainer = styled.div`
     overflow: scroll;
     padding: .25rem 0;
 `
-export const StyledResultsCodeTable = styled.table`
-    border-collapse: collapse;
-    border-spacing: 0px;
-    table-layout: fixed;
-    width: 34.35rem;
-`
 export const StyledResultsCodeBlock = styled.div`
     background: #e7e7e7;
     border: 1px solid #ced4da;
     border-radius: .25rem;
     overflow-x: auto;
-`
-export const StyledResultsCodeLineNumber = styled.td`
-    height: .88rem; 
-    padding-right: .75rem;
-    width: 5%;
-`
-export const StyledResultsCodeLine = styled.td`
-    height: .88rem;
-    vertical-align: middle;
-    padding: 0 0 0 1rem;
-    text-align: left;
-    white-space: pre;
-    word-break: break-all;
 `
 export const StyledSearchInput = styled.input`
     border: 1px solid #ced4da;
@@ -58,14 +39,6 @@ export const StyledResultsBorder = styled.div`
     border-top: 1px solid #ced4da;
     height: 1rem;
     margin: 0 .25rem;
-`
-export const StyledInputButtton = styled.div`
-    cursor: pointer;
-    color: #fff;
-    background-color: #5033e1;
-    border-color: #5033e1;
-    font-size: 12px;
-    padding: .563rem;
 `
 export const StyledErrorMessageContainer = styled.div`
     background: #e7e7e7;
