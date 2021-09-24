@@ -11,8 +11,8 @@ interface Props {
 
 const Highlighter: FunctionComponent<Props> = props => {
     let regex = new RegExp('')
-    if (props.matcher.includes('repo:')) {
-        const getQuery = props.matcher.split(' ').slice(1, props.matcher.split(' ').length).join(' ')
+    if (props.matcher.includes(':')) {
+        const getQuery = props.matcher.split(' ').filter(element => !element.includes(':')).join(' ')
         regex = new RegExp(`(${getQuery.trim()})|(?=${getQuery.trim()})`, 'gi')
     } else if (props.matcher.includes('and')) {
         const getQueries = props.matcher.split('and')

@@ -32,7 +32,7 @@ const SearchResultsTable: FunctionComponent<Props> = props => (
                                     <StyledResultsCodeLine>
                                         {returnPreviousLine(props.result.file.content, match.lineNumber)}
                                     </StyledResultsCodeLine>
-                            </>}                                         
+                                </>}                                         
                             </tr>   
                             <tr>
                                 <StyledResultsCodeLineNumber>{match.lineNumber + 1}</StyledResultsCodeLineNumber>
@@ -66,7 +66,7 @@ const SearchResultsTable: FunctionComponent<Props> = props => (
                                 <StyledResultsCodeLine>
                                     {returnPreviousLine(props.result.file.content, props.matches[0].lineNumber)}
                                 </StyledResultsCodeLine>
-                        </>}                                         
+                            </>}                                         
                         </tr>
                         {props.matches.map(match => (
                             <tr key={createRandomId()}>
@@ -78,8 +78,7 @@ const SearchResultsTable: FunctionComponent<Props> = props => (
                                         patternType={props.patternType}
                                     />
                                 </StyledResultsCodeLine>
-                            </tr>
-                                
+                            </tr>       
                         ))}   
                         <tr>
                             <StyledResultsCodeLineNumber>{props.matches[props.matches.length - 1].lineNumber + 2}</StyledResultsCodeLineNumber>

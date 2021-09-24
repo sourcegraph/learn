@@ -31,8 +31,7 @@ repo:[regular-pattern]
 
 Searching with `repo:^github\.com/ORGANIZATION` will return all repositories in a given organization, where `ORGANIZATION` can be `sourcegraph`, for example.
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/.*" />
-
+<SourcegraphInteractiveSearch initialQuery='repo:^github\.com/sourcegraph/.*' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 The `repo` keyword contextualizes the searches you perform on Sourcegraph. 
 
@@ -50,15 +49,11 @@ repo:[repository-path] repo.contains.file([file-path])
 
 For example, when searching for the `package.json` file in a project, this search query will return the file.
 
-
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:contains.file(package.json)" />
-
+<SourcegraphInteractiveSearch initialQuery='repo:^github\.com/sourcegraph/.* repo:contains.file(package.json)' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 A similar example that uses the content query to search for files is shown below.
 
-
-<SourcegraphSearch query="repo:contains(file:package\.json$ content:ts)" />
-
+<SourcegraphInteractiveSearch initialQuery='repo:contains(file:package\.json$ content:ts)' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 This query returns repositories that contain a `package.json` file and has content written in TypeScript.
 
@@ -74,8 +69,7 @@ repo:[repo-path] repo.contains.content([regular-pattern])
 
 We can search for the `mdi-react` library in Sourcegraph, for example:
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:contains.content(mdi-react)" />
-
+<SourcegraphInteractiveSearch initialQuery='repo:^github\.com/sourcegraph/.* repo:contains.content(mdi-react)' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 The above query returns repos that have `mdi-react` among its contents.
 
@@ -89,11 +83,9 @@ lang:[programming language]
 
 We can search for results within the C++ or Python programming languages.
 
+<SourcegraphInteractiveSearch initialQuery='lang:c++' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
-<SourcegraphSearch query="lang:c++" />
-
-<SourcegraphSearch query="lang:python" />
-
+<SourcegraphInteractiveSearch initialQuery='lang:python' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 By default, searches are case insensitive.
 
@@ -105,7 +97,7 @@ Prepending a hyphen can exclude results from a particular programming language.
 
 To exclude Java, you can perform the following search.
 
-<SourcegraphSearch query="​​-lang:java" />
+<SourcegraphInteractiveSearch initialQuery='-lang:java' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 Narrowing your search scope down to specific languages can ensure that you find the code that is most relevant to your needs.
 
@@ -128,7 +120,7 @@ before:02/01/2019
 
 To search between dates, keywords like `and` can be combined with `before` or `after` to return dates within a given period.
 
-<SourcegraphSearch query='repo:sourcegraph type:commit after:"july 9 2021" and before:"july 10 2021"' />
+<SourcegraphInteractiveSearch initialQuery='repo:sourcegraph type:commit after:"july 9 2021" and before:"july 10 2021"' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 Time-based search is usually used along with other search commands to further narrow down search results.
 
@@ -146,7 +138,7 @@ archived:only
 
 We can surface only archived repositories within the Sourcegraph organization with the following query.
 
-<SourcegraphSearch query="repo:sourcegraph archived:only" />
+<SourcegraphInteractiveSearch initialQuery='repo:sourcegraph archived:only' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 This can help us understand past decisions made within a given codebase. 
 
@@ -162,8 +154,7 @@ case:no
 
 Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the [PEP 8](https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
 
-<SourcegraphSearch query="case:yes lang:python myFunction" />
-
+<SourcegraphInteractiveSearch initialQuery='case:yes lang:python myFunction' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 If you would like to find all declared functions that use camelCase, you can try combining this query with regular expressions.
 
@@ -177,7 +168,7 @@ type:[commit|paths|diff|symbol|repo|files]
 
 Here is an example to show us time-based commits on the Sourcegraph repo.
 
-<SourcegraphSearch query="repo:sourcegraph after:yesterday type:commit" />
+<SourcegraphInteractiveSearch initialQuery='repo:sourcegraph after:yesterday type:commit' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 A `type` scope can use the following commands, which will restrict search to the following:
 * `commit` — commits to a repository
@@ -199,7 +190,7 @@ message:[string-regex-pattern]
 
 We can find all commit messages with “fix” in the `sourcegraph/sourcegraph` repository by searching the following.
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/sourcegraph$ type:commit message:fix" />
+<SourcegraphInteractiveSearch initialQuery='repo:^github\.com/sourcegraph/sourcegraph$ type:commit message:fix' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 Note that the message keyword only works for `type:diff` or `type:commit` queries.
 
@@ -220,7 +211,7 @@ Adding a hyphen in front of the `author` keyword omits code content created by a
 
 Search for all code diffs by the Renovate app within our Sourcegraph repository.
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/sourcegraph$ author:renovate type:diff" />
+<SourcegraphInteractiveSearch initialQuery='repo:^github\.com/sourcegraph/sourcegraph$ author:renovate type:diff' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 You can also search by `committer:git-email` with the same `type` constraints.
 
@@ -234,7 +225,7 @@ count:[number|all]
 
 For example, `count:5` would return the first 5 results of a given query.
 
-<SourcegraphSearch query="repo:sourcegraph/learn type:commit count:5" />
+<SourcegraphInteractiveSearch initialQuery='repo:sourcegraph/learn type:commit count:5' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 The `all` option returns all results from a search.
 
@@ -262,7 +253,7 @@ timeout:[time-duration-with-unit]
 
 This is useful when searching many repositories at the same time to give search more time to return useful results. By default, timeout is 10 seconds, however, when using the `timeout` command, timeouts can be set to over a minute. When this scope is provided, search is given more time to complete.
 
-<SourcegraphSearch query="timeout:40s" />
+<SourcegraphInteractiveSearch initialQuery='timeout:40s' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 Alternatively, if you are receiving too many results, you can decrease the time of search.
 
@@ -280,7 +271,7 @@ Except when explicitly set, all searches return results from both public and pri
 
 When logged into Sourcegraph, you can change your context to your username and then run the following command to show all of your available private repositories.
 
-<SourcegraphSearch query="visibility:private" />
+<SourcegraphInteractiveSearch initialQuery='visibility:private' initialSearchURL={initialSearchURL} initialPatternType='literal' />
 
 This can allow you to search across the code that is private to only you. _Please note that searching private code on Sourcegraph cloud is currently in Public Beta._
 

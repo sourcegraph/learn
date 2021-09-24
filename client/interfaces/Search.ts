@@ -2,8 +2,38 @@ export interface ResultsArray {
     [index: number]: ResultsObject
 }
 
-export interface ResultsObject {
-    typeName: string
+export interface Commit {
+    author: Author
+    repository: Repository
+    subject: string
+}
+
+export interface Repository {
+    name: string
+}
+
+export interface Author {
+    person: Person
+}
+
+export interface Person {
+    displayName: string
+}
+
+export type ResultsObject = RepositoryResultsObject & FileResultsObject & CommitResultsObject
+
+export interface CommitResultsObject {
+    commit: Commit
+}
+
+export interface RepositoryResultsObject {
+    __typename: string
+    name: string
+    url: string
+}
+
+export interface FileResultsObject {
+    __typename: string
     repository: RepositoryMatch
     file: FileMatch
     lineMatches: LineMatch[]

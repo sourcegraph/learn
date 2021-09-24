@@ -1,10 +1,9 @@
 import Button from '@components/atoms/Button'
 import InteractiveSearchResults from '@components/atoms/InteractiveSearchResults'
-import { ResultsObject } from '@interfaces/Search'
+import SearchResultsHeader from '@components/atoms/SearchResultsHeader'
+import { ResultsObject, RepositoryResultsObject } from '@interfaces/Search'
 import createRandomId from '@util/createRandomId'
 import useInteractiveSearch from 'hooks/interactiveSearch'
-import FileDocumentOutlineIcon from 'mdi-react/FileDocumentOutlineIcon'
-import GithubIcon from 'mdi-react/GithubIcon'
 import React, { FunctionComponent, useRef } from 'react'
 
 import {
@@ -13,13 +12,7 @@ import {
     StyledResultsBorder,
     StyledResultsWrapper,
     StyledResultsContainer,
-    StyledResultsContainerHeader,
-    StyledResultsContainerHeaderDivider,
-    StyledResultsContainerHeaderTitle,
-    StyledResultsFileName,
-    StyledResultsFileNameLink,
-    StyledResultsMatchCount,
-    StyledIconWrapper,
+    StyledResultsCodeBlock,
     StyledErrorMessageContainer,
     StyledSearchOnCloudContainer,
 } from './SourcegraphInteractiveSearchStyles'
@@ -59,44 +52,39 @@ const SourcegraphInteractiveSearch: FunctionComponent<Props> = props => {
            {search.results && search.results.length > 0 ? 
                 (search.results.slice(0,4).map((result: ResultsObject) => (
                    <React.Fragment key={createRandomId()}>
-                    {result.repository && result.file && result.lineMatches && (
-                        <StyledResultsContainer>
-                            <StyledResultsContainerHeader>
-                                <StyledIconWrapper>
-                                    <FileDocumentOutlineIcon size={24} />
-                                </StyledIconWrapper>  
-                                <StyledResultsContainerHeaderDivider />
-                                <StyledIconWrapper>
-                                    <GithubIcon size={24} />
-                                </StyledIconWrapper>                               
-                                <StyledResultsContainerHeaderTitle>
-                                                                            
-                                    <StyledResultsFileName>          
-                                        <StyledResultsFileNameLink 
-                                            href={`https://${result.repository.name}/blob/main/${result.file.path}`}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            {result.repository.name}
-                                        </StyledResultsFileNameLink>
-                                        {` > ${result.file.path}`}
-                                    </StyledResultsFileName>                                     
-                                </StyledResultsContainerHeaderTitle>
-                                <StyledResultsContainerHeaderDivider />
-                                <StyledResultsMatchCount>{result.lineMatches.length > 1 
-                                    ? `${result.lineMatches.length} matches`
-                                    : '1 match'}
-                                </StyledResultsMatchCount>
-                                <StyledResultsContainerHeaderDivider />
-                            </StyledResultsContainerHeader>
-                            <InteractiveSearchResults
-                                result={result}
-                                lineMatches={result.lineMatches}
-                                patternType={initialPatternType}
-                                query={currentQuery.current}
-                            />
-                        </StyledResultsContainer>
-                    )}
+                        {result.__typename === 'FileMatch' && (
+                            <StyledResultsContainer>
+                                <SearchResultsHeader
+                                    repository={result.repository.name}
+                                    file={result.file.path} 
+                                    result={result} />
+                                <InteractiveSearchResults
+                                    result={result}
+                                    lineMatches={result.lineMatches}
+                                    patternType={initialPatternType}
+                                    query={currentQuery.current}
+                                />
+                            </StyledResultsContainer>
+                        )}
+                        {result.__typename === 'Repository' && (
+                            <StyledResultsContainer>
+                                <SearchResultsHeader 
+                                    result={result}
+                                    repository={result.name}
+                                    file='' />
+                            </StyledResultsContainer>
+                        )}
+                        {result.__typename === 'CommitSearchResult' && (
+                            <StyledResultsContainer>
+                                <SearchResultsHeader 
+                                    result={result}
+                                    repository={result.commit.repository.name}
+                                    file={`${result.commit.author.person.displayName}:${result.commit.subject}`} />
+                                <StyledResultsCodeBlock>
+                                    {result.commit.subject}
+                                </StyledResultsCodeBlock>
+                            </StyledResultsContainer>
+                        )}
                     </React.Fragment>
                 )))                   
             : (
