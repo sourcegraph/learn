@@ -148,6 +148,7 @@ Finally, discuss the most important themes you observed with your team. Identify
 **A note on prioritizing issues:**
 
 Evaluating the errors and the feedback you get depends on the type of application and what a user’s priorities are while using it. If some features could have serious consequences (affecting sales of a product, or leading to specific health outcomes due to your project being a healthcare app), make sure to mark any user frustrations or confusion that arise while testing. 
+
 ---
 
 To return to our earlier examples — if you’re testing a state healthcare website, the tasks that are confusing or difficult to complete could have serious consequences for people, so it’s best to focus on making the website as clear and simple to use as possible. But if you’re testing a social media platform, it may be easy for users to complete a task, but because it’s not the only platform available, the design elements and seamlessness of the experience are just as important to become more widely adopted. So in this case, it’s better to focus on what testers find appealing or unpleasant about the design rather than just functionality.
