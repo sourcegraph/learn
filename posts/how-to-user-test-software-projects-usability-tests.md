@@ -1,5 +1,5 @@
 ---
-title: How to user test software projects: designing and conducting an in-person usability test 
+title: How to user test software projects — designing and conducting an in-person usability test 
 author: shaili-shah
 tags: [user testing, ux, software lifecycle]
 publicationDate: September, 25, 2021
