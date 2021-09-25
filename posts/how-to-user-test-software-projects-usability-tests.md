@@ -10,7 +10,7 @@ alternateTitle: UX research for developers
 type: posts
 ---
 
-Usability testing helps a team observe, understand, and draw insights from a user’s ability to complete a key set of tasks on their product. Usability testing helps teams figure out if their target user can use their product, if users can navigate the key steps and processes involved, and if the user experience is accessible and seamless. Most importantly, it helps designers and developers identify usability issues and how to fix them. 
+Usability testing helps a team observe, understand, and draw insights from a user’s ability to complete a key set of tasks on their software product. It helps teams figure out if their target user can use their product, if users can navigate the key steps and processes involved, and if the user experience is accessible and seamless. Most importantly, through testing, developers and designers can identify usability issues and determine how to fix them. 
 
 Usability testing is ideally conducted as part of the design phase while the prototype is still being tested and reiterated. This is a different process than User Acceptance Testing (UAT), which occurs near the end of development or shortly before deployment, and is a final check not often conducted on real users. 
 
@@ -28,6 +28,8 @@ In terms of materials, you should have the following:
 * Release forms
 * Materials to take notes and synthesize results
 * Compensation for participants
+
+With these addressed, you are ready to continue.
 
 ## Step 1 — Identifying the project goals and users
 
@@ -66,7 +68,7 @@ To assess the success or failure of a task, decide on a number of tries or promp
 
 ## Step 3 — Recruiting participants and setting up
 
-Make a list of the characteristics of your target users for your usability test that you have identified in [Step 1](add-link). Then, translate these characteristics into specific, measurable criteria to use to identify those people. For example, if your aim is to test your design with “frequent social media users,” you may decide that this means they share content on a particular platform at least twice daily. 
+Make a list of the characteristics of your target users for your usability test that you have identified in [Step 1](#step-1--identifying-the-project-goals-and-users). Then, translate these characteristics into specific, measurable criteria to use to identify those people. For example, if your aim is to test your design with “frequent social media users,” you may decide that this means they share content on a particular platform at least twice daily. 
 
 Based on your target audience, create a screener questionnaire so that you can quickly figure out whether potential participants are a good fit for your test. Write questions that address each point in your criteria, without being overly specific. For example, a good question may be to ask about other social media platforms, such as “How often do you share content on TikTok or Instagram?” If there are any people who don’t fit your audience, identify their qualities (such as their age range, occupation, or if they don’t work in the discipline that the site is designed for) and write questions that help you filter out these individuals. 
 
@@ -74,7 +76,7 @@ Find at least five users (per test group, if you have more than one target user 
 
 Choose a form of compensation or incentive for participants: for instance, you can offer payment or gift cards, a discounted rate for your product or service, or access to a premium service. 
 
-Finally, decide on where to conduct the tests. You can do guerilla usability testing in high traffic places like shopping malls, or you can do more planned tests in a conference room or office, or another relaxed setting where you would naturally find users of your application. Make sure there are no distractions, and that you can sit with participants while they test out the prototype. To record the tests, make arrangements for any audio or video equipment needed. 
+Finally, decide on where to conduct the tests. You can do guerilla usability testing in high-traffic locations like shopping malls, or you can do more planned tests in a conference room or office, or another relaxed setting where you would naturally find users of your application. Make sure there are no distractions, and that you can sit with participants while they test out the prototype. To record the tests, make arrangements for any audio or video equipment needed. 
 
 ## Step 4 — Writing a discussion guide 
 
@@ -90,9 +92,9 @@ The interview script starts with asking background questions, then walks the par
 4. “Are you familiar with [a relevant topic, project, or tool]?” 
 
 **Introduce the prototype.**
-5. Ask what they think this app is for, whether they have background knowledge on related topics. 
-6. Optionally ask other more specific questions about apps they use, the value they find in those tools, or about any experiences they’ve had using similar tools.
-7. “Do you have any questions before we begin?”
+1. Ask what they think this app is for, whether they have background knowledge on related topics. 
+2. Optionally ask other more specific questions about apps they use, the value they find in those tools, or about any experiences they’ve had using similar tools.
+3. “Do you have any questions before we begin?”
 
 **Walk-through of the prototype**
 1. “What do you think of the layout or design of this app or page?”
@@ -136,7 +138,7 @@ Once you have your data from the test in the form of notes and/or recordings, it
 
 Start by reviewing the recordings and notes: all the positive feedback and user frustrations, their questions and hesitations, suggestions or comments. What went as expected and what didn’t? Try not to be too attached to any ideas of how you think the prototype should work. 
 
-Then, simply record how many of the 5 test participants understood the design, clicked on the appropriate things, and completed the entire process. Write each piece of feedback or specific error onto individual sticky notes. Also write down any issues that came up, the type of error it was, any workarounds, and whether the issue is a serious obstacle in user satisfaction. 
+Then, record how many of the 5 test participants understood the design, clicked on the appropriate things, and completed the entire process. Write each piece of feedback or specific error onto individual sticky notes. Also write down any issues that came up, the type of error it was, any workarounds, and whether the issue is a serious obstacle in user satisfaction. 
 
 Next, sort the sticky notes into groups based on similarity or theme in order to create a visual organization of your results. If you’re presenting your findings, you can also write a summary of key points or organize this information into a chart, bar graph, or another medium so that you can identify relevant patterns. 
 
@@ -144,6 +146,7 @@ Finally, discuss the most important themes you observed with your team. Identify
 
 ---
 **A note on prioritizing issues:**
+
 Evaluating the errors and the feedback you get depends on the type of application and what a user’s priorities are while using it. If some features could have serious consequences (affecting sales of a product, or leading to specific health outcomes due to your project being a healthcare app), make sure to mark any user frustrations or confusion that arise while testing. 
 ---
 
@@ -165,5 +168,5 @@ After implementing your changes, conduct another round of research to figure out
 
 ## Conclusion
 
-This tutorial outlined the main steps for creating and implementing an in-person usability test, along with key criteria and points of consideration to help you generate a test that works for your unique product and your project objectives. While the tools and programs used by user experience designers may change, a basic usability test is a rewarding practice to use so that your application is made with your target user’s needs in mind.
+This tutorial outlined the main steps for creating and implementing an in-person usability test, along with key criteria and points of consideration to help you generate a test that works for your unique product and your project objectives. While the tools and programs used by user experience designers may change, a usability test is a rewarding practice that ensures your application is made with your target user’s needs in mind.
 
