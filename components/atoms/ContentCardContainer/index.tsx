@@ -5,6 +5,7 @@ import { FunctionComponent } from 'react'
 
 import { 
     StyledCardContainerHeader,
+    StyledCardContainerDescription,
     StyledContentCardContainerWrapper,
     StyledContentCardContainerCards,
 } from './ContentCardContainerStyles'
@@ -12,6 +13,7 @@ import {
 interface Props {
     records: MarkdownFileWithUrl[]
     header: string
+    description: string
 }
 
 const ContentCardContainer: FunctionComponent<Props> = props => (
@@ -20,6 +22,9 @@ const ContentCardContainer: FunctionComponent<Props> = props => (
             <StyledCardContainerHeader>
                 {props.header}
             </StyledCardContainerHeader>
+            <StyledCardContainerDescription>
+                {props.description}
+            </StyledCardContainerDescription>
             <StyledContentCardContainerCards>
             {props.records.map(record => (
                 <ContentCard

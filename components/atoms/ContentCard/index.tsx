@@ -12,6 +12,7 @@ import {
 export interface Props {
     title: string
     tags?: string[] | null
+    description?: string | null
     image?: string | null
     imageAlt?: string | null
     url: string
