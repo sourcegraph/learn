@@ -11,11 +11,13 @@ type: posts
 
 The staging area in Git is a state that files can be in before being committed to a repository. This tutorial will explain how to add and remove files from the staging area.
 
+## Understanding `git stage`
+
 Git’s staging area allows you to be selective in the changes you want to include in a commit. Sometimes, you may want to commit every change in your working directory to the repository. In other cases, you may want to include some changes in your commit and exclude others. It can be useful to exclude changes if they’re still a work in progress or if they’re unrelated to your current work.
 
-Adding files to the staging area is also referred to as “staging changes” (as in: “I will stage my changes.”). Removing files from the staging area is also referred to as “unstaging changes” (as in: “I unstaged these changes.”).
+Adding files to the staging area is also referred to as “staging changes” (as in: “I will stage my changes”). Removing files from the staging area is also referred to as “_unstaging_ changes” (as in: “I unstaged these changes”).
 
-The staging area is sometimes called the “staging index” or just “index”. Some Git commands use the term “index” in their output, and it’s also sometimes used in Git documentation. In this usage, “index” is synonymous with “staging area”.
+The staging area is sometimes called the “staging index” or just “index.” Some Git commands use the term “index” in their output, and it’s also sometimes used in Git documentation. In this usage, “index” is synonymous with “staging area.”
 
 This guide will explore a few different ways that you can stage and unstage files. It will discuss several Git commands that operate on the staging area:
 
@@ -102,9 +104,13 @@ This will stage all changes in the repository directory and all subdirectories. 
 
 Git repositories cannot contain empty directories. This means that if you create an empty directory in your project and attempt to stage it, it won’t be added to the staging area. This is because Git is only capable of tracking files and is unable to track a directory if there are no files inside. It’s a limitation of how Git represents files internally.
 
-Empty directories can often be useful as temporary storage areas, for example, or as locations for build output. A common workaround to include an empty directory in a Git repository is to put a placeholder file inside so that it’s not truly empty. By convention, this placeholder is usually named `.gitkeep`. You can find out how common this convention is by using a Sourcegraph search to find the presence of files named `.gitkeep` in many popular open source repositories, as demonstrated by the following search query.
+Empty directories can often be useful as temporary storage areas, for example, or as locations for build output. A common workaround to include an empty directory in a Git repository is to put a placeholder file inside so that it’s not truly empty. By convention, this placeholder is usually named `.gitkeep`. 
+
+You can get a sense of how common this convention is by performing a Sourcegraph cloud search to find the presence of files named `.gitkeep` in many popular open source repositories, as demonstrated by the following search query.
 
 <SourcegraphSearch query="file:.gitkeep"/>
+
+If you would like to leverage this method for adding directories to your staging area like the repos that were revealed in the above query, you can also initialize a directory with `.gitkeep`.
 
 Suppose you have an empty directory named `output` that you want to add to a repository. You can first create a placeholder file named `.gitkeep` within that directory by using the [`touch`](<https://en.wikipedia.org/wiki/Touch_(command)>) command in the terminal, which creates a blank file. Then, you can use the `git add` command to stage the directory.
 
@@ -145,7 +151,7 @@ The double star (`**`) pattern will search across all subdirectories recursively
 
 The `git rm` command deletes a file and then stages it. You can think of `git rm` as a replacement for two steps that can otherwise be done independently:
 
-1. Delete the file, which is equivalent to running the `rm` terminal command on the file (or using any other method to remove it from its current location in the file system).
+1. Delete the file, which is equivalent to running the `rm` terminal command on the file.
 2. Add the deleted file to the staging area, which is equivalent to running `git add` with the path of the deleted file.
 
 Like the `git add` command, `git rm` can be used with files, directories, or patterns as arguments.
@@ -164,8 +170,8 @@ If you’ve already deleted a file by some other means and want to stage it as a
 
 It’s a common occurrence to rename or move a file to a different directory in the repository. In Git, renaming a file is analogous to moving it to a new file name. In either case, Git will initially interpret the change as two distinct changes:
 
-1. The deletion of the original file
-2. The creation of a file with a new name or in a new location in the repository
+1. The deletion of the original file.
+2. The creation of a file with a new name or in a new location in the repository.
 
 To stage a moved or renamed file, you have to stage both of these changes. You could do this manually by running `git add` on both file names, or you can use the `git mv` command.
 
