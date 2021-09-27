@@ -35,72 +35,6 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                 <>
                     <StyledFooterRow>
                         <StyledFooterColumn>
-                            <StyledFooterColumnHeader>About Sourcegraph</StyledFooterColumnHeader>
-                            <StyledFooterColumnList>
-                                <li>
-                                    <Link href="https://about.sourcegraph.com/case-studies" passHref={true}>
-                                        <StyledFooterColumnListLink>Case studies</StyledFooterColumnListLink>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="https://about.sourcegraph.com/customers" passHref={true}>
-                                        <StyledFooterColumnListLink>Customers</StyledFooterColumnListLink>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="https://about.sourcegraph.com/pricing" passHref={true}>
-                                        <StyledFooterColumnListLink>Pricing</StyledFooterColumnListLink>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink
-                                        href="https://info.sourcegraph.com/hubfs/CTA%20assets/Sourcegraph-overview.pdf"
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        Sourcegraph overview (PDF)
-                                    </StyledFooterColumnListLink>
-                                </li>
-                            </StyledFooterColumnList>
-                        </StyledFooterColumn>
-                        <StyledFooterColumn>
-                            <StyledFooterColumnHeader>Resources</StyledFooterColumnHeader>
-                            <StyledFooterColumnList>
-                                <li>
-                                    <StyledFooterColumnListLink href="https://about.sourcegraph.com/blog">
-                                        Blog
-                                    </StyledFooterColumnListLink>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink
-                                        href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md"
-                                    >
-                                        Changelog
-                                    </StyledFooterColumnListLink>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink href="https://docs.sourcegraph.com">
-                                        Documentation
-                                    </StyledFooterColumnListLink>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink href="https://learn.sourcegraph.com">
-                                        Learn
-                                    </StyledFooterColumnListLink>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink href="https://about.sourcegraph.com/podcast">
-                                        Podcast
-                                    </StyledFooterColumnListLink>
-                                </li>
-                                <li>
-                                    <StyledFooterColumnListLink href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey">
-                                        Big code survey
-                                    </StyledFooterColumnListLink>
-                                </li>
-                            </StyledFooterColumnList>
-                        </StyledFooterColumn>
-                        <StyledFooterColumn>
                             <StyledFooterColumnHeader>Company</StyledFooterColumnHeader>
                             <StyledFooterColumnList>
                                 <li>
@@ -131,6 +65,42 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                                 <li>
                                     <StyledFooterColumnListLink href="https://about.sourcegraph.com/company/strategy">
                                         Sourcegraph strategy
+                                    </StyledFooterColumnListLink>
+                                </li>
+                            </StyledFooterColumnList>
+                        </StyledFooterColumn>
+                        <StyledFooterColumn>
+                            <StyledFooterColumnHeader>Resources</StyledFooterColumnHeader>
+                            <StyledFooterColumnList>
+                                <li>
+                                    <StyledFooterColumnListLink href="https://about.sourcegraph.com/blog">
+                                        Blog
+                                    </StyledFooterColumnListLink>
+                                </li>
+                                <li>
+                                    <StyledFooterColumnListLink
+                                        href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">
+                                        Changelog
+                                    </StyledFooterColumnListLink>
+                                </li>
+                                <li>
+                                    <StyledFooterColumnListLink href="https://docs.sourcegraph.com">
+                                        Documentation
+                                    </StyledFooterColumnListLink>
+                                </li>
+                                <li>
+                                    <StyledFooterColumnListLink href="https://learn.sourcegraph.com">
+                                        Learn
+                                    </StyledFooterColumnListLink>
+                                </li>
+                                <li>
+                                    <StyledFooterColumnListLink href="https://about.sourcegraph.com/podcast">
+                                        Podcast
+                                    </StyledFooterColumnListLink>
+                                </li>
+                                <li>
+                                    <StyledFooterColumnListLink href="https://info.sourcegraph.com/emergence-of-big-code-2020-survey">
+                                        Big code survey
                                     </StyledFooterColumnListLink>
                                 </li>
                             </StyledFooterColumnList>
