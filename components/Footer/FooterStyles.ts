@@ -66,7 +66,6 @@ export const StyledLogoFooterColumn = styled.div`
 export const StyledFooterColumnHeader = styled.h3`
     font-size: .8rem;
     font-weight: bolder;
-    opacity: .4;
     text-transform: uppercase;
 `
 export const StyledFooterColumnList = styled.ul`
