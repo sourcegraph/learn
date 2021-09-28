@@ -6,7 +6,6 @@ import {
     StyledCardBody,
     StyledCardTitle,
     StyledCardTagList,
-    StyledCardDescription,
     StyledCardImage,
 } from './ContentCardStyles'
 
@@ -38,7 +37,6 @@ const ContentCard: FunctionComponent<Props> = props => (
                 {props.tags && (
                     <StyledCardTagList>{props.tags?.join(' • ')}</StyledCardTagList>
                 )}
-                {props.description && <StyledCardDescription>{props.description}</StyledCardDescription>}
             </StyledCardBody>
         </CardLink>
     </Link> 

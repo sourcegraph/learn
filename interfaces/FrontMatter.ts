@@ -16,8 +16,7 @@ export default interface FrontMatter {
     publicationDate?: string | null 
     updatedDate?: string | null 
 
-    /** Short description used for the post's card and social description meta
-     * tag.*/
+    /** Short meta description for social and search */
     description?: string | null
 
     /** Image URL used for the post's card, header, and social image unless
