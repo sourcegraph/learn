@@ -34,6 +34,55 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
             {!minimal && (
                 <>
                     <StyledFooterRow>
+                        <StyledFooterColumn />
+                        <StyledLogoFooterColumn >
+                            <a href="https://about.sourcegraph.com">
+                                <StyledFooterLogo src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg" alt="Sourcegraph - Universal code search" width="80" height="28" />
+                            </a>
+                            <StyledSocialIconsContainer>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://github.com/sourcegraph"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="GitHub"
+                                    >
+                                        <GithubIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://twitter.com/sourcegraph"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="Twitter"
+                                    >
+                                        <TwitterIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://www.linkedin.com/company/4803356/"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="LinkedIn"
+                                    >
+                                        <LinkedinIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://www.youtube.com/c/Sourcegraph/featured"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="YouTube"
+                                    >
+                                        <YouTubeIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                            </StyledSocialIconsContainer>
+                            <CreativeCommonsNotice />
+                        </StyledLogoFooterColumn>
                         <StyledFooterColumn>
                             <StyledFooterColumnHeader>Company</StyledFooterColumnHeader>
                             <StyledFooterColumnList>
@@ -105,54 +154,7 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                                 </li>
                             </StyledFooterColumnList>
                         </StyledFooterColumn>
-                        <StyledLogoFooterColumn>
-                            <a href="https://about.sourcegraph.com">
-                                <StyledFooterLogo src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg" alt="Sourcegraph - Universal code search" width="80" height="28" />
-                            </a>
-                            <StyledSocialIconsContainer>
-                                <li>
-                                    <StyledFooterSocialLink
-                                        href="https://github.com/sourcegraph"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer"
-                                        aria-label="GitHub"
-                                    >
-                                        <GithubIcon />
-                                    </StyledFooterSocialLink>
-                                </li>
-                                <li>
-                                    <StyledFooterSocialLink
-                                        href="https://twitter.com/sourcegraph"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer"
-                                        aria-label="Twitter"
-                                    >
-                                        <TwitterIcon />
-                                    </StyledFooterSocialLink>
-                                </li>
-                                <li>
-                                    <StyledFooterSocialLink
-                                        href="https://www.linkedin.com/company/4803356/"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer"
-                                        aria-label="LinkedIn"
-                                    >
-                                        <LinkedinIcon />
-                                    </StyledFooterSocialLink>
-                                </li>
-                                <li>
-                                    <StyledFooterSocialLink
-                                        href="https://www.youtube.com/c/Sourcegraph/featured"
-                                        target="_blank"
-                                        rel="nofollow noopener noreferrer"
-                                        aria-label="YouTube"
-                                    >
-                                        <YouTubeIcon />
-                                    </StyledFooterSocialLink>
-                                </li>
-                            </StyledSocialIconsContainer>
-                            <CreativeCommonsNotice />
-                        </StyledLogoFooterColumn>
+                        <StyledFooterColumn />
                     </StyledFooterRow>
                 </>
             )}

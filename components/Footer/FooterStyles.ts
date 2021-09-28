@@ -27,17 +27,16 @@ export const StyledFooterContainer = styled.div`
 export const StyledFooterRow = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -.75rem 0;
+    width: 100%;
 
     & > * {
         max-width: 100%;
     }
 `
 export const StyledFooterColumn = styled.div`
-    flex: 0 0 auto;
+    flex: 0 0 16%;
     margin: 1rem 0;
     padding: 0 .75rem;
-    width: 15%;
 
     @media screen and (max-width: 768px) {
         width: 25%;
@@ -48,11 +47,8 @@ export const StyledFooterColumn = styled.div`
     }
 `
 export const StyledLogoFooterColumn = styled.div`
-    flex: 0 0 auto;
-    margin: 1rem 0 3rem;
-    order: -1;
-    padding: 0 1.5rem;
-    width: 25%;
+    flex: 2 0 16%;
+    margin: 0 3rem;
 
     @media screen and (max-width: 768px) {
         padding: 0 .75rem;
