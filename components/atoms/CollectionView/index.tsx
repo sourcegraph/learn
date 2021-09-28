@@ -7,7 +7,6 @@ import {
     StyledCollectionHeader,
     StyledCollectionBody,
     StyledCollectionTitle,
-    StyledCollectionDescription,
     StyledCollectionList,
     StyledCollectionListItem,
 } from './CollectionViewStyles'
@@ -24,7 +23,6 @@ const CollectionView: FunctionComponent<Props> = props => (
         <StyledCollectionHeader>This article is part of a series:</StyledCollectionHeader>
         <StyledCollectionBody>
             <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
-            {props.description && <StyledCollectionDescription>props.description</StyledCollectionDescription>}
         </StyledCollectionBody>
         <StyledCollectionList>
             {props.members.map((post, index) => {
