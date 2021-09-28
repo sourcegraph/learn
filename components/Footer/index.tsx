@@ -1,9 +1,10 @@
 import CreativeCommonsNotice from '@components/atoms/CreativeCommonsNotice'
 import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
+import SpotifyIcon from 'mdi-react/SpotifyIcon'
+import TwitchIcon from 'mdi-react/TwitchIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import YouTubeIcon from 'mdi-react/YoutubeIcon'
-import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 import {
@@ -78,6 +79,26 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                                         aria-label="YouTube"
                                     >
                                         <YouTubeIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://www.twitch.tv/sourcegraph"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="YouTube"
+                                    >
+                                        <TwitchIcon />
+                                    </StyledFooterSocialLink>
+                                </li>
+                                <li>
+                                    <StyledFooterSocialLink
+                                        href="https://open.spotify.com/user/p3ntuomfda8r7czdbsgy36ogk?si=8095204aefc24587"
+                                        target="_blank"
+                                        rel="nofollow noopener noreferrer"
+                                        aria-label="YouTube"
+                                    >
+                                        <SpotifyIcon />
                                     </StyledFooterSocialLink>
                                 </li>
                             </StyledSocialIconsContainer>
@@ -155,29 +176,31 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                             </StyledFooterColumnList>
                         </StyledFooterColumn>
                         <StyledFooterColumn />
+                        <StyledFooterColumn />
+                        <StyledFooterPostscriptWrapper>
+                            <StyledFooterPostscriptList>
+                                <StyledFooterPostscriptListItem>&copy; 2021 Sourcegraph</StyledFooterPostscriptListItem>
+                                <li>
+                                    <StyledFooterPostscriptLink href="https://about.sourcegraph.com/terms">
+                                        Terms
+                                    </StyledFooterPostscriptLink>
+                                </li>
+                                <li>
+                                    <StyledFooterPostscriptLink href="https://about.sourcegraph.com/security">
+                                        Security
+                                    </StyledFooterPostscriptLink>
+                                </li>
+                                <li>
+                                    <StyledFooterPostscriptLink href="https://about.sourcegraph.com/privacy">
+                                        Privacy
+                                    </StyledFooterPostscriptLink>
+                                </li>
+                            </StyledFooterPostscriptList>
+                        </StyledFooterPostscriptWrapper>
                     </StyledFooterRow>
                 </>
             )}
-            <StyledFooterPostscriptWrapper>
-                <StyledFooterPostscriptList>
-                    <StyledFooterPostscriptListItem>&copy; 2021 Sourcegraph</StyledFooterPostscriptListItem>
-                    <li>
-                        <StyledFooterPostscriptLink href="https://about.sourcegraph.com/terms">
-                            Terms
-                        </StyledFooterPostscriptLink>
-                    </li>
-                    <li>
-                        <StyledFooterPostscriptLink href="https://about.sourcegraph.com/security">
-                            Security
-                        </StyledFooterPostscriptLink>
-                    </li>
-                    <li>
-                        <StyledFooterPostscriptLink href="https://about.sourcegraph.com/privacy">
-                            Privacy
-                        </StyledFooterPostscriptLink>
-                    </li>
-                </StyledFooterPostscriptList>
-            </StyledFooterPostscriptWrapper>
+
         </StyledFooterContainer>
     </StyledFooterWrapper>
 )
