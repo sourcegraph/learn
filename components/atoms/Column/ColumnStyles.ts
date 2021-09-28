@@ -31,7 +31,7 @@ export const StyledColumn = styled.div`
         flex-direction: column;
         width: 50%;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
             width: 100%;
         }
     }
