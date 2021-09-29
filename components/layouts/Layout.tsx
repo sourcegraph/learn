@@ -31,6 +31,12 @@ const Layout: FunctionComponent<Props> = props => (
             <meta property="og:image" content={props.metaTags.image} />
             <meta name="description" content={props.metaTags.description} />
             <meta property="og:description" content={props.metaTags.description} />
+            {props.metaTags.author && (
+                <>
+                    <meta property="article:author" content={props.metaTags.author} />
+                    <meta name="author" content={props.metaTags.author} />
+                </>
+            )}
         </Head>
 
         <NavBar />

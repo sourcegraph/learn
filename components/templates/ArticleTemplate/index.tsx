@@ -51,6 +51,9 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         image: props.image ?? metaDataDefaults.image,
         description: props.description ?? metaDataDefaults.description,
         type: 'article',
+        author: props.author
+            ? slugToTitleCase(props.author)
+            : null
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
