@@ -9,7 +9,7 @@ interface Props extends LayoutProps {
 }
 
 const PageLayout: FunctionComponent<Props> = props => (
-    <Layout documentTitle={props.documentTitle} appendSiteTitle={props.appendSiteTitle} metaTags={props.metaTags}>
+    <Layout metaTags={props.metaTags}>
         <Row className='medium'>
             <Column className='flex-small'>{props.leftColumn}</Column>
             <Column className='flex-medium'>{props.children}</Column>

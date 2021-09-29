@@ -4,9 +4,10 @@ import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
-import { MetaTags } from '@components/layouts/Layout'
 import PageLayout from '@components/layouts/PageLayout'
+import MetaTags from '@interfaces/MetaTags'
 import RecordCollection from '@interfaces/RecordCollection'
+import metaDataDefaults from '@lib/metaDataDefaults'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Link from 'next/link'
@@ -41,8 +42,14 @@ const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, Coll
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
-        image: props.socialImage ?? props.image,
-        description: props.description,
+        // If present, he alternate title is used for the document title without the site title suffix.
+        title: props.alternateTitle
+            ? props.alternateTitle
+            : props.title
+            ? `${props.title} - ${metaDataDefaults.title}`
+            : metaDataDefaults.title,
+        image: props.image ?? metaDataDefaults.image,
+        description: props.description ?? metaDataDefaults.description,
         type: 'article',
     }
 
@@ -53,14 +60,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
     // to be able to override this special behavior.
     const showHeaderImage = !props.tags.includes('video')
 
-    // The alternate title, if present, is used for the document title and it omits the site title suffix.
-    const documentTitle = props.alternateTitle || props.title
-    const appendSiteTitle = !props.alternateTitle
-
     return (
         <PageLayout
-            documentTitle={documentTitle}
-            appendSiteTitle={appendSiteTitle}
             metaTags={metaTags}
             leftColumn={props.toc && (
                 <>
