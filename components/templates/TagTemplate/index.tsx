@@ -3,6 +3,7 @@ import Header from '@components/Header'
 import PageLayout from '@components/layouts/PageLayout'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
+import sluggify from '@util/sluggify'
 import startCase from 'lodash/startCase'
 import { FunctionComponent } from 'react'
 
@@ -13,7 +14,8 @@ export interface Props {
 
 const TagTemplate: FunctionComponent<Props> = props => {
     const tagName = startCase(props.tag)
-    const metaTags = { ...metaDataDefaults, title: `Records tagged with ${tagName}` }
+    const updatedUrl = `${metaDataDefaults.url}/tags/${sluggify(props.tag)}`
+    const metaTags = { ...metaDataDefaults, title: `Records tagged with ${tagName}`, url: updatedUrl }
 
     return (
         <PageLayout metaTags={metaTags}>

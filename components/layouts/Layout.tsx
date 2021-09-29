@@ -29,6 +29,7 @@ const Layout: FunctionComponent<Props> = props => (
             <meta property="og:type" content={props.metaTags.type} />
             <meta property="og:title" content={props.metaTags.title} />
             <meta property="og:image" content={props.metaTags.image} />
+            <meta property="og:url" content={props.metaTags.url} />
             <meta name="description" content={props.metaTags.description} />
             <meta property="og:description" content={props.metaTags.description} />
             {props.metaTags.author && (

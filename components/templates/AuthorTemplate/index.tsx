@@ -3,6 +3,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import AuthorCollection from '@interfaces/AuthorCollection'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
+import sluggify from '@util/sluggify'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import { FunctionComponent } from 'react'
@@ -21,7 +22,8 @@ export interface Props {
 }
 
 const AuthorTemplate: FunctionComponent<Props> = props => {
-    const metaTags = { ...metaDataDefaults, title: props.author.name }
+    const updatedUrl = `${metaDataDefaults.url}/authors/${sluggify(props.author.name)}`
+    const metaTags = { ...metaDataDefaults, title: props.author.name, url: updatedUrl }
 
     return (
         <PageLayout metaTags={metaTags}>

@@ -8,6 +8,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import MetaTags from '@interfaces/MetaTags'
 import RecordCollection from '@interfaces/RecordCollection'
 import metaDataDefaults from '@lib/metaDataDefaults'
+import sluggify from '@util/sluggify'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Link from 'next/link'
@@ -51,6 +52,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         image: props.image ?? metaDataDefaults.image,
         description: props.description ?? metaDataDefaults.description,
         type: 'article',
+        url: `${metaDataDefaults.url}/${props.slug}`,
         author: props.author
             ? slugToTitleCase(props.author)
             : null
@@ -91,7 +93,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 (
                     <StyledTagsWrapper id='tags'>
                         {props.tags.map(tag => (
-                            <Button key={tag} href={`/tags/${tag}`} className='extra-small'>
+                            <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small'>
                                 {tag}
                             </Button>
                         ))}

@@ -1,4 +1,5 @@
 import TagTemplate, { Props as TagTemplateProps } from '@components/templates/TagTemplate'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import getQueryParameter from '@util/getQueryParameters'
@@ -14,7 +15,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<TagTemplateProps> = async context => {
     const tag = getQueryParameter(context.params, 'tag').toLowerCase()
     const posts = await loadAllRecords('posts')
-    const filteredRecords = posts.filter(record => record.frontMatter.tags.includes(tag))
+    const filteredRecords = posts.filter(record => collectTags([record]).includes(tag))
 
     return {
         props: {

@@ -7,5 +7,6 @@ export default interface MetaTags {
     image: string
     description: string
     type: string
+    url: string
     author?: string | null
 }
