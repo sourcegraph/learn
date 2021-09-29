@@ -4,7 +4,7 @@ author: caleb-hock
 tags: [python, types, tutorial]
 publicationDate: September 28. 2021
 description: Type hinting in Python helps others understand and read your code
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-05.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-09.png
 imageAlt: Sourcegraph Learn
 alternateTitle: Type hints in Python programming
 type: posts
@@ -36,12 +36,13 @@ Let’s consider what happens when two strings get passed into the `sum_two_numb
 def sum_two_numbers(num1: int, num2: int) -> int:
     sum: int = num1 + num2
     return sum
+
 sum_two_numbers("Hello ", "World!")
 ```
 
 Using the function like this would not throw an error. Instead, since the addition operator is valid for the string type, it will concatenate the two strings passed to it. Using the `sum_two_numbers()` function like this will return the string `Hello World!`.
 
-If you would like to type check your code, you can use an external tool to do so, like [Mypy](http://mypy-lang.org/). You can use pip to install mypy within your Python 3 programming environment (or alternately use the `pip3` command). 
+If you would like to type check your code, you can use an external tool to do so, like [Mypy](http://mypy-lang.org/). You can use pip to install Mypy within your Python 3 programming environment (or alternately use the `pip3` command). 
 
 ```sh
 pip install mypy
@@ -61,7 +62,7 @@ sum.py:4: error: Argument 2 to "sum_two_numbers" has incompatible type "str"; ex
 Found 2 errors in 1 file (checked 1 source file)
 ```
 
-Code written with type hinting issues will not return any errors. If we put the first version of the `sum_two_numbers()` function that used integer types, we would instead reaceive the following output from Mypy.
+Code written with type hinting issues will not return any errors. If we put the first version of the `sum_two_numbers()` function that used integer types, we would instead receive the following output from Mypy.
 
 ```
 Success: no issues found in 1 source file
@@ -72,7 +73,7 @@ Running Mypy on Python files will help you discover type checking errors.
 
 ## Initializing variables with type hinting
 
-Python’s primitive types included with general type hinting.
+Python’s primitive types are included with general type hinting.
 
 ```python
 my_int: int = 9
@@ -199,7 +200,7 @@ from typing include Optional
 my_string: Optional[str] = None
 ```
 
-This code will create a string object with the value of None.
+This code will create a string object with the value of `None`.
 
 ## Additional resources
 
@@ -209,6 +210,6 @@ Search open source code for type hinting in Python with Sourcegraph to learn how
 
 <SourcegraphSearch query="-> None lang:python" patternType="literal"/>
 
-<SourcegraphSearch query="list[int] = lang:python" patternType="literal"/>
+<SourcegraphSearch query="List[int] = lang:python" patternType="literal"/>
 
 Check out our other tutorials on [Sourcegraph Learn](https://learn.sourcegraph.com).
