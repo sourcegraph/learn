@@ -17,7 +17,9 @@ export const StyledFooterContainer = styled.div`
     padding: 0 .75rem;
 
     @media screen and (max-width: 768px) {
+        margin: 0;
         max-width: 720px;
+        padding: 0;
     }
 
     @media screen and (max-width: 576px) {
@@ -133,6 +135,10 @@ export const StyledFooterPostscriptList = styled.ul`
     flex-wrap: wrap;
     list-style: none;
     margin: 3rem 0;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 .75rem;
+    }
 `
 export const StyledFooterPostscriptListItem = styled.li`
     color: #6c757d;
