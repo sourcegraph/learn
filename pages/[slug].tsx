@@ -5,7 +5,6 @@ import loadRecordCollections from '@lib/loadRecordCollections'
 import serializeMdxSource from '@lib/serializeMdxSource'
 import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
-import slugToTitleCase from '@util/slugToTitleCase'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -25,14 +24,11 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const collections = await loadRecordCollections('posts')
     const { recordCollections } = collections
     const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
-    const recordAuthor = markdownFile.frontMatter.author ?
-        slugToTitleCase(markdownFile.frontMatter.author)
-        : null
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
             alternateTitle: markdownFile.frontMatter.alternateTitle,
-            author: recordAuthor,
+            author: markdownFile.frontMatter.author ?? null,
             tags: markdownFile.frontMatter.tags,
             publicationDate: markdownFile.frontMatter.publicationDate,
             updatedDate: markdownFile.frontMatter.updatedDate, 

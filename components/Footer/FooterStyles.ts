@@ -17,7 +17,9 @@ export const StyledFooterContainer = styled.div`
     padding: 0 .75rem;
 
     @media screen and (max-width: 768px) {
+        margin: 0;
         max-width: 720px;
+        padding: 0;
     }
 
     @media screen and (max-width: 576px) {
@@ -27,17 +29,26 @@ export const StyledFooterContainer = styled.div`
 export const StyledFooterRow = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -.75rem 0;
+    width: 100%;
 
     & > * {
         max-width: 100%;
     }
+
+    @media screen and (max-width: 1250px) {
+        margin: 0 3rem;
+    }
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        margin: unset;
+    }
+
 `
 export const StyledFooterColumn = styled.div`
-    flex: 0 0 auto;
+    flex: 0 0 15%;
     margin: 1rem 0;
     padding: 0 .75rem;
-    width: 15%;
 
     @media screen and (max-width: 768px) {
         width: 25%;
@@ -48,11 +59,12 @@ export const StyledFooterColumn = styled.div`
     }
 `
 export const StyledLogoFooterColumn = styled.div`
-    flex: 0 0 auto;
-    margin: 1rem 0 3rem;
-    order: -1;
-    padding: 0 1.5rem;
-    width: 25%;
+    flex: 2 0 15%;
+    margin: 0 3rem;
+
+    @media screen and (max-width: 1024px) {
+        margin: unset;
+    }
 
     @media screen and (max-width: 768px) {
         padding: 0 .75rem;
@@ -66,7 +78,6 @@ export const StyledLogoFooterColumn = styled.div`
 export const StyledFooterColumnHeader = styled.h3`
     font-size: .8rem;
     font-weight: bolder;
-    opacity: .4;
     text-transform: uppercase;
 `
 export const StyledFooterColumnList = styled.ul`
@@ -115,28 +126,28 @@ export const StyledFooterSocialLink = styled.a`
 `
 export const StyledFooterPostscriptWrapper = styled.div`
     display: flex;
+    flex: 2 0 16%;
     font-size: .875em;
     justify-content: space-between;
-    padding: 1.5rem 0 .5rem;
-
-    @media screen and (min-width: 768px) {
-        padding: 1.5rem;
-    }
 `
 export const StyledFooterPostscriptList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-bottom: 0 auto 0;
-    padding-left: 0;
+    margin: 3rem 0;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 .75rem;
+    }
 `
 export const StyledFooterPostscriptListItem = styled.li`
     color: #6c757d;
-    font-size: 14px;
+    font-size: 12px;
 `
 export const StyledFooterPostscriptLink = styled.a`
     color: #5033e1;
     display: block;
+    font-size: 12px;
     padding: 0 .375rem;
     text-decoration: none;
 `
