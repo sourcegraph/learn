@@ -29,7 +29,7 @@ So, how do branches really work? You can think of branches like the branches of 
 
 Branches can also be merged. Merging a branch into another one brings all the changes that were made in those commits on that branch into another branch. For example, when you're done working on a feature branch and your feature is ready, you might merge it into the main branch.
 
-### Flexible approaches to branchesx
+### Flexible approaches to branches
 
 Branching in Git is really flexible. In projects wiith many collaborators, it’s common to see teams adopt particular branch workflows that they choose, and conventions so that they can collaborate better. Some teams use feature branches for every feature, or they use a long-running development branch and a separate release branch, for example.
 
