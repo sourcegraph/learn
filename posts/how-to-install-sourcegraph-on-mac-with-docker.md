@@ -7,7 +7,7 @@ updatedDate: August 10, 2021
 description: Learn how to install Sourcegraph on your Apple Mac with Docker
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Installing Sourcegraph to search code on a local instance with macOS and Docker
+browserTitle: Installing Sourcegraph to search code on a local instance with macOS and Docker
 type: posts
 ---
 

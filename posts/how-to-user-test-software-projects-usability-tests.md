@@ -6,7 +6,7 @@ publicationDate: September, 25, 2021
 description: User research and usability testing are important aspects of the software development process, this tutorial will guide you through the steps you need to take for a usability test on your software
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
-alternateTitle: UX research for developers
+browserTitle: UX research for developers
 type: posts
 ---
 

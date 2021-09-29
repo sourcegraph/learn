@@ -33,7 +33,7 @@ export interface Props {
     toc?: string[] | null
     collection?: RecordCollection | null
     slug: string
-    alternateTitle?: string | null
+    browserTitle?: string | null
     publicationDate?: string | null
     updatedDate?: string | null
 }
@@ -43,8 +43,8 @@ const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, Coll
 const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
         // If present, he alternate title is used for the document title without the site title suffix.
-        title: props.alternateTitle
-            ? props.alternateTitle
+        title: props.browserTitle
+            ? props.browserTitle
             : props.title
             ? `${props.title} - ${metaDataDefaults.title}`
             : metaDataDefaults.title,
