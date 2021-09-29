@@ -20,10 +20,6 @@ export const StyledCardTagList = styled.p`
     text-transform: capitalize;
     margin: -.25rem 0 .5rem;
 `
-export const StyledCardDescription = styled.p`
-    color: #212529;
-    margin: 0;
-`
 export const StyledCardImage = styled.img`
     height: auto;
     width: 100%;
