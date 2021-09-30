@@ -5,6 +5,7 @@ import Row from '@components/atoms/Row'
 import Header from '@components/Header'
 import Layout from '@components/layouts/Layout'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import metaDataDefaults from '@lib/metaDataDefaults'
 import { FunctionComponent } from 'react'
 
 export interface Props {
@@ -13,7 +14,7 @@ export interface Props {
 }
 
 const HomepageTemplate: FunctionComponent<Props> = props => (
-    <Layout>
+    <Layout metaTags={metaDataDefaults}>
         <Row className='medium'>
             <Header
                 headerImage='https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg'

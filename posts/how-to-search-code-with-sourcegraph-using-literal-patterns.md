@@ -6,7 +6,7 @@ publicationDate: May 28, 2021
 description: Learn how to use literal search patterns to search code on Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Searching code with Sourcegraph using literal search
+browserTitle: Searching code with Sourcegraph using literal search
 type: posts
 ---
 

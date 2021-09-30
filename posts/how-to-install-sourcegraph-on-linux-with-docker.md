@@ -7,7 +7,7 @@ updatedDate: August 10, 2021
 description: Learn how to install Sourcegraph on your own machine with Docker
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Installing a self-hosted Sourcegraph test instance on Linux with Docker
+browserTitle: Installing a self-hosted Sourcegraph test instance on Linux with Docker
 type: posts
 ---
 

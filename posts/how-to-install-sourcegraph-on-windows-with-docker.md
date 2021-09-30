@@ -7,7 +7,7 @@ updatedDate: August 10, 2021
 description: Learn how to install Sourcegraph on your Windows machine with Docker
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Installing Sourcegraph for code search testing on Windows with Docker
+browserTitle: Installing Sourcegraph for code search testing on Windows with Docker
 type: posts
 ---
 
