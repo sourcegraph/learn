@@ -29,7 +29,7 @@ const CollectionView: FunctionComponent<Props> = props => (
                 const isActive = props.activeSlug === record.slug
                 const titleText = `${index + 1}. ${record.frontMatter.title}`
                 return (
-                    <Link href={`/${record.frontMatter.type}/${record.slug}`} key={record.slug} passHref={true}>
+                    <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
                         <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
                     </Link>
                 )

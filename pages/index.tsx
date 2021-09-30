@@ -11,8 +11,8 @@ export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () =>
 
     return {
         props: {
-            searchPosts: searchPosts.map(post => omitUndefinedFields({ ...post, url: `/posts/${post.slug}` })),
-            videoPosts: videoPosts.map(video => omitUndefinedFields({ ...video, url: `/videos/${video.slug}` })),
+            searchPosts: searchPosts.map(post => omitUndefinedFields({ ...post, url: `/${post.slug}` })),
+            videoPosts: videoPosts.map(video => omitUndefinedFields({ ...video, url: `/${video.slug}` })),
         },
     }
 }

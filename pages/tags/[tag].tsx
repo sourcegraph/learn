@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
             tag,
             records: filteredRecords.map(record => omitUndefinedFields({ 
                 ...record, 
-                url: `/${record.frontMatter.type}/${record.slug}`,
+                url: `/${record.slug}`,
             })),
         },
     }
