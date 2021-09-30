@@ -9,7 +9,7 @@ browserTitle: Install self-hosted Sourcegraph for a production environment
 type: posts
 ---
 
-Sourcegraph is a universal code search tool, allowing you to search your own code, or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph through [Sourcegraph cloud](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
+Sourcegraph is a universal code search tool, allowing you to search across your own code or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph through [Sourcegraph cloud](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
 
 Once you know that you would like to self-host your own instance of Sourcegraph to search across your local or cloud repositories, and you want it to be suitable for a production environment, you can follow along with this tutorial that will set you up with a Sourcegraph instance on Docker Compose. This tutorial will assume *nix commands on the command line. 
 
@@ -21,9 +21,9 @@ Installing Sourcegraph into your production environment can allow you to use adv
 
 To install Sourcegraph with Docker Compose, your setup will need to meet certain requirements. We recommend following the official documentation to install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
 
-You have [Docker](https://docs.docker.com/engine/install/) installed, and it’s v20.10.0 or above. 
-You have [Docker Compose](https://docs.docker.com/compose/install/) installed, and it’s v1.22.0 or above.
-Your machine or server has an estimated minimum number of 8 CPU cores.
+* You have [Docker](https://docs.docker.com/engine/install/) installed, and it’s v20.10.0 or above. 
+* You have [Docker Compose](https://docs.docker.com/compose/install/) installed, and it’s v1.22.0 or above.
+* Your machine or server has an estimated minimum number of 8 CPU cores.
 
 Use the [resource estimator](https://docs.sourcegraph.com/admin/install/resource_estimator) to ensure that your machine meets the minimum requirements for your Sourcegraph instance needs based on the number of code repositories and number of users you are planning to set up on your instance. 
 
@@ -44,7 +44,7 @@ With the forked repository, you can make customizations that are tailored to you
 
 ## Step 2 — Clone the forked repository
 
-After forking the reference repository, you may want to create a directory or move to a directory on your machine or host where the fork will live. Clone the forked repository into this directory. This directory is called the configuration directory.
+After forking the reference repository, you may want to create a directory or move to a directory on your machine or host where the fork will live. Clone the forked repository into this directory, which is called the configuration directory.
 
 For our example, we’ll move into a temporary directory, `~/tmp`.
 
@@ -52,7 +52,7 @@ For our example, we’ll move into a temporary directory, `~/tmp`.
 cd ~/tmp
 ```
 
-Enter the following command on your terminal to clone your forked repository:
+Enter the following command on your terminal to clone your forked repository. Be sure to substitute _your username_ where we have `your-username` written out in the URL.
 
 ```sh
 git clone https://github.com/your_username/deploy-sourcegraph-docker/
