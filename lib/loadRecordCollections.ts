@@ -46,7 +46,8 @@ export default async function loadRecordCollections(recordType: string): Promise
     const records = await loadAllRecords(recordType)
     const body = await fs.readFile(collectionsFilePath, 'utf-8')
     const data = yaml.load(body) as { collections: RecordCollectionDefinition[] }
-    const recordCollections = returnRecordCollections(data.collections, records)
+    const recordTypeCollections = data.collections.filter(collection => collection.type === recordType)
+    const recordCollections = returnRecordCollections(recordTypeCollections, records)
    
     return { recordCollections }
 }

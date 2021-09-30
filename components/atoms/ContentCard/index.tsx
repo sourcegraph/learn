@@ -16,7 +16,6 @@ export interface Props {
     image?: string | null
     imageAlt?: string | null
     url: string
-    contentType?: string | null
 }
 
 const ContentCard: FunctionComponent<Props> = props => (

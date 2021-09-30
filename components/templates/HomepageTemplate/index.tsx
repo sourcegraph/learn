@@ -20,7 +20,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                 headerImageAlt='Sourcegraph Learn'
                 headerText='Welcome to Sourcegraph Learn'
                 isHomepage={true} />
-            <Column className='flex-large'>
+            <Column className='flex-large width'>
                 <ContentCardContainer 
                     records={props.searchPosts} 
                     header='Search'
@@ -31,7 +31,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                         </Button>
                     </Column>
             </Column>
-            <Column className='flex-large'>
+            <Column className='flex-large width'>
                 <ContentCardContainer 
                     records={props.videoPosts} 
                     header='Video'

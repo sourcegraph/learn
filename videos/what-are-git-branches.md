@@ -6,7 +6,7 @@ description: Learn about branches in Git.
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-branches-thumbnail.jpg
 imageAlt: Diagram of Git branches
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="7s2oVzeX240" />

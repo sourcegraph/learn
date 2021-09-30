@@ -3,7 +3,13 @@ collections:
       slug: how-to-use-search-patterns-on-sourcegraph
       type: posts
       members:
-        - three-ways-to-search-code-with-sourcegraph
         - how-to-search-code-with-sourcegraph-using-literal-patterns
         - how-to-search-with-sourcegraph-using-regular-expression-patterns
         - how-to-search-with-sourcegraph-using-structural-patterns
+    - title: Understanding Git Basics
+      slug: understanding-git-basics
+      type: videos
+      members:
+        - what-are-diffs-in-git
+        - what-are-git-branches
+        - what-are-git-commits-and-how-do-they-work

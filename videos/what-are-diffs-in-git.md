@@ -6,7 +6,7 @@ description: Learn about diffs in Git and how to understand them.
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-diffs-thumbnail.jpg
 imageAlt: Learning about Git diffs.
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="eRwvO8Qyerk" />

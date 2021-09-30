@@ -7,7 +7,7 @@ description: Install Sourcegraph onto a DigitalOcean Ubuntu cloud server with Do
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/add-oss-to-sourcegraph-cloud-screengrab.jpg
 imageAlt: Demo of how to add install Sourcegraph with Docker on a Linux server
 alternateTitle: Test a Sourcegraph installation with Docker on DigitalOcean to search your code
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="u_SmtOejFkg" />
