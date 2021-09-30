@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const posts = await loadAllRecords('posts')
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
-    const filteredRecords = allRecords.filter(record => record.frontMatter.tags.includes(tag))
+    const filteredRecords = allRecords.filter(record => collectTags([record]).includes(tag))
 
     return {
         props: {

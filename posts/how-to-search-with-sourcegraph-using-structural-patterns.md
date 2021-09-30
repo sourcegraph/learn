@@ -6,7 +6,7 @@ publicationDate: August 13, 2021
 description: Learn how to use structural search patterns to search code on Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-10.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Structural code search with Sourcegraph
+browserTitle: Structural code search with Sourcegraph
 type: posts
 ---
 

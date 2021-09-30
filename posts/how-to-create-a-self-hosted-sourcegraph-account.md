@@ -5,7 +5,7 @@ publicationDate: September 13, 2021
 description: Create an account on self-hosted Sourcegraph to your code
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-05.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Search your code with a Sourcegraph account
+browserTitle: Search your code with a Sourcegraph account
 type: posts
 ---
 

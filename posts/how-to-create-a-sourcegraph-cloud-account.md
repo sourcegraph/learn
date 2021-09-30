@@ -5,7 +5,7 @@ publicationDate: September 10, 2021
 description: Create a Sourcegraph cloud account to search open source and private repos
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-03.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Search code in a browser with a Sourcegraph cloud account
+browserTitle: Search code in a browser with a Sourcegraph cloud account
 type: posts
 ---
 

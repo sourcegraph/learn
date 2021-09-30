@@ -8,7 +8,7 @@
  */
 export default interface FrontMatter {
     title: string
-    alternateTitle?: string | null
+    browserTitle?: string | null
     tags: string[]
     author?: string | null
 

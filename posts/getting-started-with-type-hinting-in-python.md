@@ -6,7 +6,7 @@ publicationDate: September 28. 2021
 description: Type hinting in Python helps others understand and read your code
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-09.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Type hints in Python programming
+browserTitle: Type hints in Python programming
 type: posts
 ---
 

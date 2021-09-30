@@ -6,7 +6,7 @@ publicationDate: August 19, 2021
 description: A guide to help you get up to speed with Sourcegraph's commands quickly
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Getting started with Sourcegraph universal code search
+browserTitle: Getting started with Sourcegraph universal code search
 type: posts
 ---
 

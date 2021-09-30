@@ -37,9 +37,9 @@ export function normalizeString(rawString: unknown): string {
 
 export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatter>['data']): FrontMatter {
     return {
-        title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.alternateTitle) ?? 'Untitled Document',
-        alternateTitle: rawFrontMatter.alternateTitle ? 
-            normalizeString(rawFrontMatter.alternateTitle) 
+        title: normalizeString(rawFrontMatter.title) ?? normalizeString(rawFrontMatter.browserTitle) ?? 'Untitled Document',
+        browserTitle: rawFrontMatter.browserTitle ? 
+            normalizeString(rawFrontMatter.browserTitle) 
             : null,
         tags: normalizeStringArray(rawFrontMatter.tags),
         author: rawFrontMatter.author ?
