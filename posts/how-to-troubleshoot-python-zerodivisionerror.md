@@ -146,7 +146,7 @@ In this example, we have told the user that they cannot divide by 0 if they atte
 
 ## Learn more
 
-Search across open source Python repositories that have hthe `ZeroDivisionError` to understand the message more.
+Search across open source Python repositories that have the `ZeroDivisionError` to understand the message more.
 
 <SourcegraphSearch query="ZeroDivisionError: division by zero lang:python" patternType="literal"/>
 
