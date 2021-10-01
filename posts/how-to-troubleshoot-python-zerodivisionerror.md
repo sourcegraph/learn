@@ -134,7 +134,15 @@ def divide_two_numbers():
 divide_two_numbers()
 ```
 
-Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `ZeroDivisionError` that we have anticipated. Here, we have told the user that they cannot divide by 0 if they attempt to do so.
+Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `ZeroDivisionError` that we have anticipated. 
+
+```python
+Enter an integer: 9
+Enter another integer: 0
+You cannot divide by 0.
+```
+
+In this example, we have told the user that they cannot divide by 0 if they attempt to do so.
 
 ## Learn more
 
