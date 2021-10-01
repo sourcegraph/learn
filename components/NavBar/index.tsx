@@ -32,8 +32,8 @@ const NavBar: FunctionComponent = () => {
                 </StyledNavBarMobileToggle>
                 <StyledNavBarItemsWrapper expandOnMobile={expandOnMobile}>
                     <StyledNavBarItemsContainer>
-                        <StyledNavBarItemLink href="/tags/tutorial">Tutorials </StyledNavBarItemLink>
-                        <StyledNavBarItemLink href="/tags/video">Videos </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="/posts">Tutorials </StyledNavBarItemLink>
+                        <StyledNavBarItemLink href="/videos">Videos </StyledNavBarItemLink>
                         <StyledNavBarItemLink 
                             href="https://docs.sourcegraph.com"
                             target="_blank"

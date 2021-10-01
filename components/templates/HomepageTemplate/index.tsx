@@ -38,7 +38,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                     header='Video'
                     description='Follow along with these video resources' />
                     <Column className='centered'>
-                        <Button className='primary' href='/tags/video'>
+                        <Button className='primary' href='/videos'>
                             Load more
                         </Button>
                     </Column>
