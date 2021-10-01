@@ -7,7 +7,7 @@ description: Learn about connecting your private code repositories to Sourcegrap
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-add-private-code-to-sourcegraph-thumbnail.jpg
 imageAlt: Marek talking about adding private code repositories to Sourcegraph cloud.
 browserTitle: Connecting private software repos to your Sourcegraph cloud account
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="f4jEXHn3T74" />

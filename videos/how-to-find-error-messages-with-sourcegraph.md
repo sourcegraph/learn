@@ -8,7 +8,7 @@ description: Learn about finding error messages in your code with Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-find-error-messages-with-sourcegraph-thumbnail.jpg
 imageAlt: Marek talking about finding error messages with Sourcegraph.
 browserTitle: Finding software error messages with Sourcegraph universal code search
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="r2CpLe1h89I" />

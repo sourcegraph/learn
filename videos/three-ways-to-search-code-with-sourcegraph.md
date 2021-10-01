@@ -7,7 +7,7 @@ description: Demo of how to search code three different ways with Sourcegraph
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/three-ways-to-search-thumbnail.jpg
 imageAlt: Marek Zaluski demos searching with Sourcegraph.
 browserTitle: Searching code with Sourcegraph using literal patterns, regular expressions, and structural search
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="XLfE2YuRwvw" />

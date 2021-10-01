@@ -7,7 +7,7 @@ description: Learn how to switch between your code host (like GitHub), code edit
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-integrate-sourcegraph-into-your-workflows-thumbnail.jpg
 imageAlt: Marek showing Sourcegraph integrations with GitHub and VS Code.
 browserTitle: Integrating Sourcegraph into code host and editor workflows
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="1qa3dyzJ3Go" />

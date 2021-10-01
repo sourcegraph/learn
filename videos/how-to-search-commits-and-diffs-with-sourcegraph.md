@@ -6,7 +6,7 @@ description: Learn about using Sourcegraph to search commits and diffs.
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/commit-search-thumbnail.jpg
 imageAlt: Searching commits and diffs.
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="w-RrDz9hyGI" />

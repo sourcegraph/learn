@@ -25,11 +25,11 @@ const CollectionView: FunctionComponent<Props> = props => (
             <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
         </StyledCollectionBody>
         <StyledCollectionList>
-            {props.members.map((post, index) => {
-                const isActive = props.activeSlug === post.slug
-                const titleText = `${index + 1}. ${post.frontMatter.title}`
+            {props.members.map((record, index) => {
+                const isActive = props.activeSlug === record.slug
+                const titleText = `${index + 1}. ${record.frontMatter.title}`
                 return (
-                    <Link href={`/${post.slug}`} key={post.slug} passHref={true}>
+                    <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
                         <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
                     </Link>
                 )

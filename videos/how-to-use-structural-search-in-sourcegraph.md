@@ -6,7 +6,7 @@ description: Learn about Sourcegraph structural search patterns.
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-use-structural-search-in-sourcegraph-thumbnail.jpg
 imageAlt: Sourcegraph structural search.
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="GnubTdnilbc" />

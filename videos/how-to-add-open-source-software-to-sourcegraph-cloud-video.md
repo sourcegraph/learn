@@ -7,7 +7,7 @@ description: Find out how to add open source repos to Sourcegraph cloud so you c
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/install-sourcegraph-with-docker-screengrab.png
 imageAlt: Demo of how to add open source repositories to Sourcegraph cloud for indexing
 browserTitle: Sourcegraph is indexing open source
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="_dGkagmwZqU" />

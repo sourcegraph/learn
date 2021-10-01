@@ -42,7 +42,6 @@ export const StyledColumn = styled.div`
         flex-wrap: wrap;
         min-height: 15.625rem;
         padding: 0 .75rem;
-        width: 100%;
 
         @media screen and (max-width: 768px) {
             flex-direction: column;
@@ -54,6 +53,10 @@ export const StyledColumn = styled.div`
 
         @media screen and (max-width: 576px) {
             max-width: 320px;
+        }
+
+        &.width {
+            width: 100%;
         }
     }
 `

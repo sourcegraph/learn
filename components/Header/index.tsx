@@ -19,7 +19,9 @@ interface Props {
 
 const Header: FunctionComponent<Props> = props => (
     <>
-        <Column className='flex-large'>
+        <Column className={props.isHomepage 
+            ? 'flex-large width'
+            : 'flex-large'}>
             {props.isHomepage ?
                 (
                     <StyledHeaderSharedContainer>

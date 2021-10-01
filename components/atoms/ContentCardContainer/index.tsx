@@ -34,7 +34,6 @@ const ContentCardContainer: FunctionComponent<Props> = props => (
                     imageAlt={record.frontMatter.imageAlt}
                     url={record.url}
                     key={record.url}
-                    contentType='post'
                 />
             ))}
             </StyledContentCardContainerCards>

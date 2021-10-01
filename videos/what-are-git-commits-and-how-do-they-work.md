@@ -6,7 +6,7 @@ description: Learn about commits in Git and how they work.
 author: marek-zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-commit-thumbnail.jpg
 imageAlt: Diagram of Git commits
-type: posts
+type: videos
 ---
 
 <EmbeddedYoutubeVideo id="zXlNqCioxBY" />
