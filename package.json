@@ -16,7 +16,7 @@
     "clean": "rm -rf out .next"
   },
   "dependencies": {
-    "@mapbox/rehype-prism": "^0.7.0",
+    "@mapbox/rehype-prism": "^0.8.0",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
     "mdi-react": "^7.5.0",
