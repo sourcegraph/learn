@@ -4,13 +4,15 @@ Sourcegraph Learn is Sourcegraph's developer education hub and learning center.
 
 Public URL: [https://learn.sourcegraph.com](https://learn.sourcegraph.com)
 
+**Hacktoberfest contributors**: read how to contribute to this repository in our [Hacktoberfest 2021 contributors' guide](https://github.com/sourcegraph/learn/blob/main/docs/hacktoberfest-2021.md).
+
 ## How the site is built
 
 - The website consists of static content generated using [Next.js](https://nextjs.org) and hosted on [Netlify](https://www.netlify.com/).
 - The website code is written in TypeScript and React.
 - The content is written in Markdown.
 
-## Getting Started
+## Getting started
 
 ### Node.js
 
@@ -107,7 +109,7 @@ The data fields that are supported in the front matter are:
 | `updatedDate` | **string**                 | If and when an article is updated, the date of the new merge should be recorded in this field., following the format of `publicationDate`. |
 | `image`       | **string (URL)**           | Image to display in the article header, the article card, and social preview.              |
 | `imageAlt`    | **string**                 | Alternative textual information for the header image.                           |
-| `alternateTitle` | **string**              | Browser title, which appears on the menu bar, with additional keywords.                                      |
+| `browserTitle` | **string**              | Browser title, which appears on the menu bar, with additional keywords.                                      |
 | `type`        | **string**                 | Content type, currently we are only using `posts`.                           |
 
 In the website code, the front-matter data is accessible as the [`frontMatter`](./util/FrontMatter.ts) field on the [`MarkdownFile`](./util/MarkdownFile.ts) object
