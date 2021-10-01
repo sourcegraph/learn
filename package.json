@@ -28,7 +28,7 @@
     "rehype-autolink-headings": "^5.1.0",
     "rehype-react": "^7.0.2",
     "rehype-slug": "^4.0.1",
-    "remark-rehype": "^9.0.0",
+    "remark-rehype": "^9.1.0",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
