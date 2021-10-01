@@ -4,6 +4,8 @@ Thank you for checking out the [Sourcegraph Learn](https://learn.sourcegraph.com
 
 If you need guidance on contributing to open source, please review the tutorial [How To Create a Pull Request on GitHub](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) or watch the video [Your First Pull Request with Lyn Muldrow](https://www.youtube.com/watch?v=jZtECuvNRiw). 
 
+For additional guidance, review the [official Hacktoberfest site](https://hacktoberfest.digitalocean.com/). 
+
 _Hacktoberfest contributions are limited to what is described below. All other pull requests will be marked as **invalid**._
 
 ## Step 1 — Choose an issue
