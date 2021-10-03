@@ -2,7 +2,7 @@
 title: How to troubleshoot JavaScript InternalError too much recursion
 author: Abhinav Sharma
 tags: [tutorial, JavaScript, troubleshooting]
-publicationDate: 03/08/2021
+publicationDate: October 3, 2021
 description: Learn how to error handle JavaScript InternalError too much recursion
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
