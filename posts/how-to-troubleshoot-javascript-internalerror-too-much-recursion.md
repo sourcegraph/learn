@@ -1,6 +1,6 @@
 ---
 title: How to troubleshoot JavaScript InternalError too much recursion
-author: Abhinav Sharma
+author: abhinav-sharma
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 3, 2021
 description: Learn how to error handle JavaScript InternalError too much recursion
@@ -16,7 +16,7 @@ If you are working in JavaScript, and receive the following output, the JavaScri
 InternalError: too much recursion
 ```
 
-A recursive function is a function that calls itself repeatedly. When a condition is met, the function stops calling itself. This is called a base case. If somehow the condition does not meet that confition, then the function continues calling itself and the above error occurs.
+A recursive function is a function that calls itself repeatedly. When a condition is met, the function stops calling itself. This is called a base case. If somehow the condition does not meet that condition, then the function continues calling itself and the above error occurs.
 
 In this tutorial, we'll reproduce the issue and then go over some solutions.
 
