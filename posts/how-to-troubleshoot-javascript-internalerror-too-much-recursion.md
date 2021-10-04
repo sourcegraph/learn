@@ -6,7 +6,7 @@ publicationDate: October 3, 2021
 description: Learn how to error handle JavaScript InternalError too much recursion
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
-browserTitle: InternalError: too much recursion in JavaScript error handling
+browserTitle: InternalError, too much recursion in JavaScript error handling
 type: posts
 ---
 
