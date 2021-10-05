@@ -20,7 +20,7 @@ const useRepositionOnScroll = (initialElement: Element | null): PositionHookObje
 
     useEffect(() => {
         const options = {
-            threshold: [0.5]
+            threshold: [0]
         }
         const observer = new IntersectionObserver(repositionOnScroll, options)      
         if (element) {

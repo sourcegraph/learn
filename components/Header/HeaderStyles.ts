@@ -34,7 +34,7 @@ export const StyledHeaderImageContainer = styled.div`
 `
 export const StyledHeaderImage = styled.img`
     animation-name: ${logoAnimation};
-    animation-duration: .5s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
     margin-left: .625rem;
@@ -46,7 +46,8 @@ export const StyledHeaderText = styled.div`
     margin-left: 6.25rem;
 
     @media screen and (max-width: 768px) {
-        margin-left: 10rem;
+        font-size: 24px;
+        margin-left: 0;
     }
 `
 export const StyledHeaderTextContainer = styled.div`
