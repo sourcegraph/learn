@@ -1,3 +1,4 @@
+import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
 import Link from 'next/link'
@@ -22,8 +23,8 @@ const HeaderLink: FunctionComponent<Props> = props => {
             <StyledLink>
                 {headers.map(header => (
                     header.includes('`')
-                        ? <StyledLinkCodeSpan>{' '}{header.replace(backtickRegex, '')}{' '}</StyledLinkCodeSpan>
-                        : <StyledLinkSpan>{' '}{header}{' '}</StyledLinkSpan>
+                        ? <StyledLinkCodeSpan key={createRandomId()}>{' '}{header.replace(backtickRegex, '')}{' '}</StyledLinkCodeSpan>
+                        : <StyledLinkSpan key={createRandomId()}>{' '}{header}{' '}</StyledLinkSpan>
                 ))}
             </StyledLink>
         </Link>

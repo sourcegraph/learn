@@ -9,4 +9,5 @@ export const StyledLinkSpan = styled.span`
 `
 export const StyledLinkCodeSpan = styled.span`
     background-color: #e7e7e7;
+    font-family: Monaco, monospace; 
 `
