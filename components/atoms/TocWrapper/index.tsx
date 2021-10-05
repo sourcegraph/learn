@@ -1,11 +1,11 @@
+import HeaderLink from '@components/atoms/HeaderLink'
 import useHighlightOnScroll from '@hooks/highlightOnScroll'
 import useRepositionOnScroll from '@hooks/repositionOnScroll'
 import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
-import Link from 'next/link'
-import { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 
 import { 
     StyledTocWrapperBody,
@@ -59,18 +59,20 @@ const TocWrapper: FunctionComponent<Props> = props => {
                                     <StyledTocItem 
                                         key={createRandomId()}
                                         isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}>
-                                        <Link href={`/${props.slug}/#${sluggify(header.header)}`}>
-                                            <a>{header.header}</a>
-                                        </Link>  
+                                        <HeaderLink
+                                            slug={props.slug}
+                                            header={header.header}
+                                            isNested={header.isNested}/>
                                     </StyledTocItem>
                                 )
                                 : (
                                     <StyledHeaderTocItem
                                         key={createRandomId()}
                                         isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}>
-                                        <Link href={`/${props.slug}/#${sluggifyHeaders(sluggify(header.header))}`}>
-                                            <a>{header.header}</a>
-                                        </Link>   
+                                        <HeaderLink
+                                            slug={props.slug}
+                                            header={header.header}
+                                            isNested={header.isNested}/>
                                     </StyledHeaderTocItem>
                                 )
                             )}
