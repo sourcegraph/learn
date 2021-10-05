@@ -29,9 +29,9 @@ const TocWrapper: FunctionComponent<Props> = props => {
     useEffect(() => {
         if (props.tocContents) {
             const getHeaders = [].slice.call(document.querySelectorAll('h2, h3'))
-            const getTagsContainer = document.querySelector('#tags')
+            const getNav = document.querySelector('#nav')
             setHeaders(getHeaders)
-            setElement(getTagsContainer)
+            setElement(getNav)
         }
     }, [props.tocContents])
 
