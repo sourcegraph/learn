@@ -92,9 +92,10 @@ Depending on the version of Python you are using, you may be able to leverage bu
 
 In Python 3.9, built-in collection types are included as generic types and their respective type hints can be used similarly to the primitive Python types. Here is how you would type hint a list object in Python 3.9.
 
-```python
-my_list: list[int] = [1, 2, 3, 4, 5]
-```
+<Highlighter
+    input='my_list: list[int] = [1, 2, 3, 4, 5]'
+    matcher='2, 3, 4'
+/>
 
 This list is initialized with the integer type by using the `list[int]` syntax.
 

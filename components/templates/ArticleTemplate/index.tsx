@@ -2,6 +2,7 @@ import Button from '@components/atoms/Button'
 import CollectionView from '@components/atoms/CollectionView'
 import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
+import Highlighter from '@components/atoms/Highlighter'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import PageLayout from '@components/layouts/PageLayout'
@@ -39,7 +40,7 @@ export interface Props {
     updatedDate?: string | null
 }
 
-const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView }
+const components = { SourcegraphSearch, EmbeddedYoutubeVideo, GifLikeVideo, CollectionView, Highlighter }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
     const metaTags: MetaTags = {
