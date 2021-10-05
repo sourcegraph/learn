@@ -5,7 +5,7 @@ import convertHeaders from '@util/convertHeaders'
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 
 import { 
     StyledTocWrapperBody,
