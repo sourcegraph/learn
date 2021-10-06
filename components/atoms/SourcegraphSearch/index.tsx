@@ -14,8 +14,8 @@ interface Props {
 const SourcegraphSearch: FunctionComponent<Props> = props => {
     const [query, setQuery] = useState(sanitizeString(props.query))
     const queryString = props.patternType
-        ? `https://sourcegraph.com/search?q=${encodeURIComponent(query+` patternType:${props.patternType}`)}&utm_source=learn`
-        : `https://sourcegraph.com/search?q=${encodeURIComponent(query)}&utm_source=learn`
+        ? `https://sourcegraph.com/search?q=${encodeURIComponent(sanitizeString(query)+` patternType:${props.patternType}`)}&utm_source=learn`
+        : `https://sourcegraph.com/search?q=${encodeURIComponent(sanitizeString(query))}&utm_source=learn`
 
     return (
         <Card showBorder={true}>
