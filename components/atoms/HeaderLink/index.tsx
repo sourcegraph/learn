@@ -23,7 +23,7 @@ const HeaderLink: FunctionComponent<Props> = props => {
             <StyledLink>
                 {headers.map(header => (
                     header.includes('`')
-                        ? <StyledLinkCodeSpan key={createRandomId()}>{' '}{header.replace(backtickRegex, '')}{' '}</StyledLinkCodeSpan>
+                        ? <StyledLinkCodeSpan key={createRandomId()}>{' '}{header.replace(backtickRegex, '')}</StyledLinkCodeSpan>
                         : <StyledLinkSpan key={createRandomId()}>{' '}{header}{' '}</StyledLinkSpan>
                 ))}
             </StyledLink>
