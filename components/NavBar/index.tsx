@@ -18,7 +18,7 @@ const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
 
     return (
-        <StyledNavBarWrapper>
+        <StyledNavBarWrapper id='nav'>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="/">
                     <SyledNavBarLogoImage src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
