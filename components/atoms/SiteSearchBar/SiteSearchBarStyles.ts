@@ -13,11 +13,15 @@ export const StyledSearchForm = styled.form`
     justify-content: space-evenly;
     margin: 0 .625rem;
 
+    @media screen and (max-width: 1024px) {
+        margin: .5rem 0;
+    }
+
     input {
         display: inline-block;
         width: 11.875rem;
         height: 1rem;
-        padding: .438rem .688rem .438rem 1.75rem;
+        padding: 0 2.5rem 0 .3125rem;
         border: transparent;
         font-weight: 400;
         color: #3b454f;
@@ -39,7 +43,7 @@ export const StyledSearchForm = styled.form`
 
 export const StyledKeyboardInput = styled.kbd`
     border: 1px solid #e7e7e7;
-    color: #e7e7e7;
+    color: #5e6e8c;
     background: transparent;
     font-size: .875em;
     padding: .125em .375em;
