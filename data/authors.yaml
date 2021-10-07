@@ -1,19 +1,23 @@
 authors:
-    - slug: marek-zaluski
-      name: Marek Zaluski
-      bio: Marek is a developer education engineer at Sourcegraph.
-      twitterLink: https://twitter.com/marekweb
-      linkedInLink: https://www.linkedin.com/in/marekzaluski
-    - slug: lisa-tagliaferri
-      name: Lisa Tagliaferri
-      bio: Director of Developer Education, Sourcegraph
-      twitterLink: https://twitter.com/lisaironcutter
-      linkedInLink: https://www.linkedin.com/in/lisa-tagliaferri/
-    - slug: oluebube-princess-egbuna
-      name: Oluebube Princess Egbuna
-    - slug: shaili-shah
-      name: Shaili Shah
-      bio: Shaili is a UX writer and writing coach.
-      linkedInLink: https://www.linkedin.com/in/shailishah5632/
-    - slug: caleb-hock
-      name: Caleb Hock
+  - slug: marek-zaluski
+    name: Marek Zaluski
+    bio: Marek is a developer education engineer at Sourcegraph.
+    twitterLink: https://twitter.com/marekweb
+    linkedInLink: https://www.linkedin.com/in/marekzaluski
+  - slug: lisa-tagliaferri
+    name: Lisa Tagliaferri
+    bio: Director of Developer Education, Sourcegraph
+    twitterLink: https://twitter.com/lisaironcutter
+    linkedInLink: https://www.linkedin.com/in/lisa-tagliaferri/
+  - slug: oluebube-princess-egbuna
+    name: Oluebube Princess Egbuna
+  - slug: shaili-shah
+    name: Shaili Shah
+    bio: Shaili is a UX writer and writing coach.
+    linkedInLink: https://www.linkedin.com/in/shailishah5632/
+  - slug: caleb-hock
+    name: Caleb Hock
+  - slug: oussama-salahouelhadj
+    name: Oussama Salahouelhadj
+    bio: CS Student@UC2, Designer, Palm tree climber 🌴.
+    linkedInLink: https://www.linkedin.com/in/salahouelhadj-oussama/
