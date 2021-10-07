@@ -19,7 +19,7 @@ export const StyledSearchForm = styled.form`
 
     input {
         display: inline-block;
-        width: 11.875rem;
+        width: 12.5rem;
         height: 1rem;
         padding: 0 2.5rem 0 .3125rem;
         border: transparent;
