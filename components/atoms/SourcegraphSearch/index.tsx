@@ -1,6 +1,7 @@
 import Button from '@components/atoms/Button'
 import Card from '@components/atoms/Card'
 import Column from '@components/atoms/Column'
+import sanitizeString from '@util/sanitizeString'
 import { FunctionComponent, useState } from 'react'
 
 import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
@@ -11,12 +12,10 @@ interface Props {
 }
 
 const SourcegraphSearch: FunctionComponent<Props> = props => {
-    const [query, setQuery] = useState(props.query)
-    let modifiedQuery = query
-
-    if (props.patternType) {
-        modifiedQuery += ` patternType:${props.patternType}`
-    }
+    const [query, setQuery] = useState(sanitizeString(props.query))
+    const queryString = props.patternType
+        ? `https://sourcegraph.com/search?q=${encodeURIComponent(sanitizeString(query)+` patternType:${props.patternType}`)}&utm_source=learn`
+        : `https://sourcegraph.com/search?q=${encodeURIComponent(sanitizeString(query))}&utm_source=learn`
 
     return (
         <Card showBorder={true}>
@@ -33,9 +32,7 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
                 <Column>
                     <Button
                         className="primary small"
-                        href={`https://sourcegraph.com/search?q=${encodeURIComponent(
-                            modifiedQuery
-                        )}&utm_source=learn`}
+                        href={queryString}
                         target="_blank"
                         rel="noreferrer"
                     >
