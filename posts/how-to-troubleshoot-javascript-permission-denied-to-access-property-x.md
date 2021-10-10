@@ -10,15 +10,15 @@ browserTitle: Error Permission denied to access property "x" in JavaScript error
 type: posts
 ---
 
-If you are reading this then you have come across an error of the form:
+When you are working in JavaScript, you may come across an error similar to the following.
 
-```
+```js
 Error: Permission denied to access property "x"
 ```
 
-Or you may see it in a slightly more verbose form:
+Or, you may see it in a slightly more verbose form:
 
-```
+```js
 Uncaught DOMException: Permission denied to access property "document" on cross-origin object
 ```
 
@@ -49,11 +49,10 @@ An example which causes the above error is this example document:
 
 ## Solution
 
-The easiest way to solve this error is to only try and access properties of an iframe which point to a domain that you control,
-this means that your code will obey the same-origin policy.
+The recommended way to solve this error is to only try and access properties of an iframe which points to a domain that you control, this will ensure that your code obeys the same-origin policy.
 
-If you want to communicate with the iframe, you can use `window.postMessage` - however, the embedded website must have an
-event listener to handle the `message` event and that must be a written in a way to allow communication cross-origin.
+If you want to communicate with the iframe, you can use `window.postMessage` — however, the embedded website must have an
+event listener to handle the `message` event and that must be written in a way to allow communication cross-origin.
 
 An [example is here](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage#example) from Mozilla Developer Network.
 
