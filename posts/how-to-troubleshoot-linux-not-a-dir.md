@@ -10,16 +10,18 @@ browserTitle: Not a directory in Linux error handling
 type: posts
 ---
 
-Introduction with the error message
+The linux programs `cd` or `rmdir` will return the error `Not a directory` if you run them referencing a file that is not a directory, for example a text file or a binary.
 
 ## Reproducing the error
 
-Lets create a text file:
+Lets create a text file.
+
 ```bash
 $ echo "test" > test
 ```
 
 Lets try to change directory to the text file named `test`.
+
 ```bash
 $ cd test
 cd: not a directory: test
@@ -29,11 +31,11 @@ cd: not a directory: test
 
 Now that we've reproduced the error, lets go over some possible solutions.
 
-## Put text file in a directory
+## Move the text file into a directory
 
 The simplest way of avoiding the error is not using `cd` on a regular file.
 
-First we make a directory.
+First we create a directory.
 
 ```bash
 $ mkdir mydir
@@ -51,9 +53,9 @@ Finally we can now change directory into `mydir`.
 $ cd mydir
 ```
 
-## Use ls to only list directories first
+## Use ls to check if the file is a directory first
 
-You can use ls to list all files in your current directory
+You can use ls to list all files in a directory
 ```bash
 $ ls -lAh
 total 1848
