@@ -27,8 +27,11 @@ const TocWrapper: FunctionComponent<Props> = props => {
     const highlightHook = useHighlightOnScroll(headers)
     const repositionHook = useRepositionOnScroll(element)
     const handleClick = (header: string): void => {
-        highlightHook.setActiveHeader(header)
+        highlightHook.setActiveScrollHeader(null)
+        highlightHook.setClickedHeader(header)
     }
+    const checkHighlighting = (header: string): boolean => 
+        highlightHook.activeScrollHeader === header || highlightHook.clickedHeader === header
 
     useEffect(() => {
         if (props.tocContents) {
@@ -62,7 +65,7 @@ const TocWrapper: FunctionComponent<Props> = props => {
                                 ?  (
                                     <StyledTocItem 
                                         key={createRandomId()}
-                                        isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}
+                                        isHighlighted={checkHighlighting(`${sluggify(header.header)}`)}
                                         onClick={() => handleClick(`${sluggify(header.header)}`)}>
                                         <HeaderLink
                                             slug={props.slug}
@@ -73,7 +76,7 @@ const TocWrapper: FunctionComponent<Props> = props => {
                                 : (
                                     <StyledHeaderTocItem
                                         key={createRandomId()}
-                                        isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}
+                                        isHighlighted={checkHighlighting(`${sluggifyHeaders(sluggify(header.header))}`)}
                                         onClick={() => handleClick(`${sluggifyHeaders(sluggify(header.header))}`)}>
                                         <HeaderLink
                                             slug={props.slug}
