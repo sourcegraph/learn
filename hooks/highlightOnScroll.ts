@@ -7,18 +7,17 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
 
     const highlightOnScroll = (entries:IntersectionObserverEntry[]): void => {
         entries.map(entry => {
-            if (entry.isIntersecting) {
+            if (entry.boundingClientRect.top < 1) {
                 setActiveHeader(entry.target.id)
             }
         })
-    }
+    }     
 
     useEffect(() => {
         const options = {
-            rootMargin: '-250px',
             threshold: [0]
         }
-        const observer = new IntersectionObserver(highlightOnScroll, options)      
+        const observer = new IntersectionObserver(highlightOnScroll, options)
         headers?.map(header => {
             observer.observe(header)
         })
@@ -32,6 +31,7 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
 
     return {
         activeHeader,
+        setActiveHeader,
         headers,
         setHeaders,
     }

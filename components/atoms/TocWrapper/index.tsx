@@ -26,6 +26,10 @@ const TocWrapper: FunctionComponent<Props> = props => {
     const convertedHeaders = convertHeaders(props.tocContents)
     const highlightHook = useHighlightOnScroll(headers)
     const repositionHook = useRepositionOnScroll(element)
+    const handleClick = (header: string): void => {
+        highlightHook.setActiveHeader(header)
+    }
+
     useEffect(() => {
         if (props.tocContents) {
             const getHeaders = [].slice.call(document.querySelectorAll('h2, h3'))
@@ -58,7 +62,8 @@ const TocWrapper: FunctionComponent<Props> = props => {
                                 ?  (
                                     <StyledTocItem 
                                         key={createRandomId()}
-                                        isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}>
+                                        isHighlighted={highlightHook.activeHeader === `${sluggify(header.header)}`}
+                                        onClick={() => handleClick(`${sluggify(header.header)}`)}>
                                         <HeaderLink
                                             slug={props.slug}
                                             header={header.header}
@@ -68,7 +73,8 @@ const TocWrapper: FunctionComponent<Props> = props => {
                                 : (
                                     <StyledHeaderTocItem
                                         key={createRandomId()}
-                                        isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}>
+                                        isHighlighted={highlightHook.activeHeader === `${sluggifyHeaders(sluggify(header.header))}`}
+                                        onClick={() => handleClick(`${sluggifyHeaders(sluggify(header.header))}`)}>
                                         <HeaderLink
                                             slug={props.slug}
                                             header={header.header}
