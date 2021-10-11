@@ -11,7 +11,7 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
                 setActiveHeader(entry.target.id)
             }
         })
-    }     
+    }
 
     useEffect(() => {
         const options = {
