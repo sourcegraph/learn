@@ -1,4 +1,5 @@
 import Button from '@components/atoms/Button'
+import SiteSearch from '@components/atoms/SiteSearchBar'
 import MenuIcon from 'mdi-react/MenuIcon'
 import { FunctionComponent, useState } from 'react'
 
@@ -40,6 +41,7 @@ const NavBar: FunctionComponent = () => {
                             rel="noreferrer">
                             Docs
                         </StyledNavBarItemLink>
+                        <SiteSearch />
                     </StyledNavBarItemsContainer>
                     <div>                
                         <Button 
