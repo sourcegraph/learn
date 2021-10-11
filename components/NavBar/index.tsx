@@ -1,4 +1,5 @@
 import Button from '@components/atoms/Button'
+import SiteSearch from '@components/atoms/SiteSearchBar'
 import MenuIcon from 'mdi-react/MenuIcon'
 import { FunctionComponent, useState } from 'react'
 
@@ -18,7 +19,7 @@ const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
 
     return (
-        <StyledNavBarWrapper>
+        <StyledNavBarWrapper id='nav'>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="/">
                     <SyledNavBarLogoImage src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
@@ -40,6 +41,7 @@ const NavBar: FunctionComponent = () => {
                             rel="noreferrer">
                             Docs
                         </StyledNavBarItemLink>
+                        <SiteSearch />
                     </StyledNavBarItemsContainer>
                     <div>                
                         <Button 
