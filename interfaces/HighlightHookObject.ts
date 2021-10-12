@@ -1,5 +1,8 @@
 export default interface HighlightHookObject {
-    activeHeader: string
+    activeScrollHeader: string | null
+    setActiveScrollHeader: (header: string | null) => void
+    clickedHeader: string | null
+    setClickedHeader: (header: string) => void
     headers: Element[] | null
     setHeaders: (headers: Element[]) => void
 }

@@ -2,23 +2,24 @@ import HighlightHookObject from '@interfaces/HighlightHookObject'
 import { useEffect, useState } from 'react'
 
 const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookObject => {
-    const [activeHeader, setActiveHeader ] = useState('')
-    const [headers, setHeaders] = useState(initialHeaders)
+    const [activeScrollHeader, setActiveScrollHeader ] = useState<string | null>(null)
+    const [clickedHeader, setClickedHeader] = useState<string | null>(null)
+    const [headers, setHeaders] = useState<Element[] | null>(initialHeaders)
 
     const highlightOnScroll = (entries:IntersectionObserverEntry[]): void => {
         entries.map(entry => {
-            if (entry.isIntersecting) {
-                setActiveHeader(entry.target.id)
+            if (entry.boundingClientRect.top < 1) {
+                setActiveScrollHeader(entry.target.id)
+                setClickedHeader(null)
             }
         })
     }
 
     useEffect(() => {
         const options = {
-            rootMargin: '-250px',
             threshold: [0]
         }
-        const observer = new IntersectionObserver(highlightOnScroll, options)      
+        const observer = new IntersectionObserver(highlightOnScroll, options)
         headers?.map(header => {
             observer.observe(header)
         })
@@ -28,10 +29,13 @@ const useHighlightOnScroll = (initialHeaders: Element[] | null): HighlightHookOb
                 observer.unobserve(header)
             })
         }
-    }, [headers])
+    }, [headers, clickedHeader])
 
     return {
-        activeHeader,
+        activeScrollHeader,
+        setActiveScrollHeader,
+        clickedHeader,
+        setClickedHeader,
         headers,
         setHeaders,
     }
