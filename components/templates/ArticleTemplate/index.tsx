@@ -11,7 +11,6 @@ import metaDataDefaults from '@lib/metaDataDefaults'
 import sluggify from '@util/sluggify'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 import {
