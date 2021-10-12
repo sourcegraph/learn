@@ -10,7 +10,7 @@ browserTitle: NameError in Python error handling
 type: posts
 ---
 
-If you are working in Python, and receive the following output, your code is attempting to access an identifier that is not defined in the local or global scope.
+If you are working in Python, and receive the following output, your code is attempting to access an identifier that is not defined. This could be in either the local or global scope of the program.
 
 ```python
 NameError: name 'spam' is not defined
@@ -164,7 +164,7 @@ In this example, we have told the user that they cannot use an identifier that i
 
 Search across open source Python repositories that have the `NameError` to understand the message more.
 
-<SourcegraphSearch query="NameError: name 'spam' is not defined lang:python" patternType="literal"/>
+<SourcegraphSearch query="NameError lang:python" patternType="literal"/>
 
 Read the official Python docs on [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html).
 
