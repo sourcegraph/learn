@@ -10,9 +10,9 @@ browserTitle: SyntaxError missing } after function body in JavaScript error hand
 type: posts
 ---
 
-When encountering a `SyntaxError` in Javascript, the interpreter got to a point where it didn't understand the code. In other words, the token or part of the code that got the interpreter stuck did not look like valid syntax.
+When encountering a `SyntaxError` in Javascript, the interpreter got to a point in your program where it didn't understand the code. In other words, the token or part of the code that got the interpreter stuck did not register as valid syntax.
 
-The `SyntaxError: missing } after function body` error is thrown by the JavaScript interpreter when it encounters a syntax error while creating a function. Most of the time, this is because the function's closing curly bracket (`}`), a block statement (conditional block for example) closing curly bracket or some curly brackets or parentheses are missing or not in the correct order.
+The `SyntaxError: missing } after function body` error is thrown by the JavaScript interpreter when it encounters a syntax error while creating a function. Most of the time, this is because the function's closing curly bracket (`}`), a block statement (conditional block for example) closing curly bracket, or some curly brackets or parentheses are missing or not in the correct order.
 
 In this tutorial, we will help you figure out how to solve this problem.
 
@@ -38,7 +38,7 @@ Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16
 ```
 
-In a short program like the one above, it may appear clear that a curly bracket is missing, but as code increasing in complexity with many nested statements, it can be more difficult to find the error in your code prior to running it. 
+In a short program like the one above, it may appear clear that a curly bracket is missing, but as code increases in complexity with many nested statements, it can be more difficult to find the error in your code prior to running it. 
 
 Consider the following example:
 
@@ -90,13 +90,13 @@ A recommended practice that will help you avoid this kind of error when writing 
 function coffee() {}
 ```
 
-By taking this approacb, you can avoid forgetting or missing to close the brackets.
+By taking this approach, you can avoid forgetting or missing the closing brackets.
 
 ## Format code with indentation
 
-Formatting your code using indentation or spaces is another way to locate errors. By doing this, you will be able to visualize the code better and find the error faster.
+Formatting your code using indentation or spaces is another way to locate errors. By doing this, you will be able to visualize the code more readily and find the error faster.
 
-IDEs (code editors) have extensions that can help you do the formatting automatically. One example of such an extension is [Prettier](https://prettier.io/). There is also an option like [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), which colorizes each pair of matching brackets with the same color so you can identify them and avoid errors.
+IDEs (code editors) have extensions that can help you do the formatting automatically. One example of such an extension is [Prettier](https://prettier.io/). There is the [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) extension, which colorizes each pair of matching brackets with the same color so you can identify them and avoid errors.
 
 ## Learn more
 
