@@ -12,7 +12,6 @@ import metaDataDefaults from '@lib/metaDataDefaults'
 import sluggify from '@util/sluggify'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 import {
@@ -104,9 +103,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
 
             {/* Author */}
             {props.author && (
-                <Link href={`/authors/${props.author}`} passHref={true}>
-                    <StyledAuthorByline>{slugToTitleCase(props.author)}</StyledAuthorByline>
-                </Link>
+                <StyledAuthorByline href={`/authors/${props.author}`}>{slugToTitleCase(props.author)}</StyledAuthorByline>
             )}
 
             {/* Dates */}
