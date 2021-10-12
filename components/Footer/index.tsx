@@ -113,7 +113,7 @@ const Footer: FunctionComponent<Props> = ({ minimal }) => (
                                     </StyledFooterColumnListLink>
                                 </li>
                                 <li>
-                                    <StyledFooterColumnListLink href="https://about.sourcegraph.com/company/careers">
+                                    <StyledFooterColumnListLink href="https://handbook.sourcegraph.com/careers">
                                         Careers
                                     </StyledFooterColumnListLink>
                                 </li>
