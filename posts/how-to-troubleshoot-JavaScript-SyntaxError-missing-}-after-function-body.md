@@ -1,6 +1,6 @@
 ---
 title: How to troubleshoot JavaScript SyntaxError missing } after function body
-author: Oussama Salahouelhadj
+author: oussama-salahouelhadj
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 07, 2021
 description: Learn how to error handle JavaScript SyntaxError missing } after function body
@@ -10,20 +10,17 @@ browserTitle: SyntaxError missing } after function body in JavaScript error hand
 type: posts
 ---
 
-When encountering a `SyntaxError` in Javascript, That means the interpreter got to a point where it didn't understand the code, Or in other words, The token or part of the code that got the interpreter stuck did not look like valid syntax.
+When encountering a `SyntaxError` in Javascript, the interpreter got to a point where it didn't understand the code. In other words, the token or part of the code that got the interpreter stuck did not look like valid syntax.
 
-The `SyntaxError: missing } after function body` error is thrown by the JavaScript interpreter when it encounters a syntax error while creating a function. Most of the time, This is because the function's closing curly bracket, A block statement (conditional block for example) closing curly bracket or some curly brackets or parenthesis are missing or not in the correct order.
+The `SyntaxError: missing } after function body` error is thrown by the JavaScript interpreter when it encounters a syntax error while creating a function. Most of the time, this is because the function's closing curly bracket (`}`), a block statement (conditional block for example) closing curly bracket or some curly brackets or parentheses are missing or not in the correct order.
 
-In this tutorial, We will help you figure out how to solve this problem.
+In this tutorial, we will help you figure out how to solve this problem.
 
 ## Reproducing the error
 
-To demonstrate the error, Let us first reproduce it.
-The following are two examples where the error can occur.
+To demonstrate the error, let us first reproduce it. The following are two examples where the error can occur.
 
-### 1. A function without a closing bracket:
-
-let's take a look at this `coffee` function:
+Let's consider this `coffee` function:
 
 ```javascript
 function coffee(){
@@ -32,16 +29,16 @@ function coffee(){
 
 ```
 
-Observe that we did not close the function body with a curly bracket, And this is what is causing the error. The interpreter is extremely strict, It expects anything opening with curly brackets or parentheses to be closed.
+Observe that we did not close the function body with a curly bracket; this is what is causing the error. The interpreter is extremely strict, so it expects anything opened with curly brackets or parentheses to be closed.
 
-As you can see in the example, It failed to find that closing bracket so it returns an error:
+In the example, the interpreter failed to find the expected closing bracket so it returns an error:
 
 ```
 Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16
 ```
 
-### 2. A function with a closing bracket? hmm... really?
+In a short program like the one above, it may appear clear that a curly bracket is missing, but as code increasing in complexity with many nested statements, it can be more difficult to find the error in your code prior to running it. 
 
 Consider the following example:
 
@@ -54,16 +51,14 @@ function coffe(water){
 
 ```
 
-output:
+When you run the above, you'll receive the following output.
 
 ```
 Uncaught SyntaxError: missing } after function body 6:0
 note: { opened at line 1, column 27
 ```
 
-You may be asking yourself "wait a minute, I swear I closed the curly bracket of that function, What is wrong with your interpreter?", Well, Let's not be too hard on that interpreter, He is simply doing his job.
-
-The curly bracket at the end is considered as closing the `if(water.isHot)` conditional block. In other words, The interpreter uses the Last-In-First-Out (LIFO) technique; therefore, The last closed curly bracket in the example above closes the last opened curly bracket, Which is the conditional block statement, So we can write it this way:
+The curly bracket at the end of our example program — that returned an error message — is considered to be closing the nested `if(water.isHot)` conditional block. The interpreter follows the **l**ast-**i**n-**f**irst-**o**ut (LIFO) order: the last closed curly bracket in the example above closes the last opened curly bracket, which is the conditional block statement. This version of the program makes the purpose of the single closed curly bracket clearer.
 
 ```javascript
 function coffe(water){
@@ -76,32 +71,32 @@ function coffe(water){
 
 This is what causes the error.
 
-## Make sure that block statements are closed
+## Ensure that block statements are closed
 
-Fortunately, This error is pretty simple to fix, Plus, Javascript errors are easy to understand and helpful for debugging, So always try to read them for more information. In the error messages, You'll always see the line number where the error occurred, Like this one:
+JavaScript error messages tend to be helpful for debugging, so always try to read them for more information. In the error messages, you'll receive the line number where the error occurred in the output.
 
 ```
 Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16
 ```
 
-See that the error message mentions the line where the error occurred (line 4). Try to parse your code from that line and figure out which curly bracket closes which, Or you can start from the first line of the function where the error occurred.
+In the example above, the line where the error occurred is line 4. Try to parse your code from that line and figure out which curly bracket closes which statement. Alternately, you can start debugging from the first line of the function where the error occurred.
 
-## First close, Then write code
+## First close, then write code
 
-A good tip that will help you avoid this kind of error when writing code is that when opening a block statement, Such as a function or some parentheses, Try always to open and close the body first, Then write your code inside it, So it should look similar to this:
+A recommended practice that will help you avoid this kind of error when writing code is, when opening a block statement — such as a function or some parentheses — try to always open and close the body first, then write your code inside it. Using this approach, the sample code above would start out like the following.
 
 ```javascript
 function coffee() {}
 ```
 
-By doing so, You avoid forgetting or missing to close the brackets.
+By taking this approacb, you can avoid forgetting or missing to close the brackets.
 
-## Format code, Indentation
+## Format code with indentation
 
-Formatting your code using indentation or spaces is another way to locate errors. By doing this you will be able to visualise the code better and find the error faster.
+Formatting your code using indentation or spaces is another way to locate errors. By doing this, you will be able to visualize the code better and find the error faster.
 
-IDEs (code editors) have extensions that can help you do the formatting automatically. A good example of such an extension is [Prettier](https://prettier.io/). There is also an option like [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), Which colourizes each pair of matching brackets with the same colour so you can identify them.
+IDEs (code editors) have extensions that can help you do the formatting automatically. One example of such an extension is [Prettier](https://prettier.io/). There is also an option like [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), which colorizes each pair of matching brackets with the same color so you can identify them and avoid errors.
 
 ## Learn more
 
