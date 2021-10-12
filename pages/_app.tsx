@@ -1,3 +1,4 @@
+import { GoogleTagManagerScriptTag } from '@components/atoms/GoogleTagManager'
 import { AppProps } from 'next/app'
 import Script from 'next/script'
 import { FunctionComponent } from 'react'
@@ -6,6 +7,7 @@ import '@styles/styles.scss'
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
     <>
+        <GoogleTagManagerScriptTag />
         <Script strategy='lazyOnload'>
         {`
             (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

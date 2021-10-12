@@ -1,7 +1,6 @@
 import createRandomId from '@util/createRandomId'
 import sluggify from '@util/sluggify'
 import sluggifyHeaders from '@util/sluggifyHeaders'
-import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 import { StyledLink, StyledLinkSpan, StyledLinkCodeSpan } from './HeaderLinkStyles'
@@ -17,9 +16,9 @@ const HeaderLink: FunctionComponent<Props> = props => {
     const backtickRegex = /`/gi
 
     return (
-        <Link href={props.isNested
-            ? `/${props.slug}/#${sluggify(props.header)}`
-            : `/${props.slug}/#${sluggifyHeaders(sluggify(props.header))}`} passHref={true}>
+        <a href={props.isNested
+            ? `#${sluggify(props.header)}`
+            : `#${sluggifyHeaders(sluggify(props.header))}`}>
             <StyledLink>
                 {headers.map(header => (
                     header.includes('`')
@@ -27,7 +26,7 @@ const HeaderLink: FunctionComponent<Props> = props => {
                         : <StyledLinkSpan key={createRandomId()}>{' '}{header}{' '}</StyledLinkSpan>
                 ))}
             </StyledLink>
-        </Link>
+        </a>
     )
 }
 
