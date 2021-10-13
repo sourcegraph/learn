@@ -10,54 +10,72 @@ browserTitle: Not a directory in Linux error handling
 type: posts
 ---
 
-The linux programs `cd` or `rmdir` will return the error `Not a directory` if you run them referencing a file that is not a directory, for example a text file or a binary.
+The Linux commands `cd` or `rmdir` will return the error `Not a directory` if you run them referencing a file that is not a directory (or folder). This can include a text file or a binary.
 
 ## Reproducing the error
 
 Lets create a text file.
 
 ```bash
-$ echo "test" > test
+echo "test" > test
 ```
 
-Lets try to change directory to the text file named `test`.
+Let's try to change directory to the text file named `test` with the **c**hange **d**irectory (`cd`) command.
 
 ```bash
-$ cd test
+cd test
+```
+
+We'll receive the following error message.
+
+```
 cd: not a directory: test
 ```
 
-`cd` fails because you've tried to change directory, but a text file was provided instead of a directory.
+The `cd` command fails because you've tried to change directory but passed a text file as an argument instead of a directory.
 
-Now that we've reproduced the error, lets go over some possible solutions.
+Now that we've reproduced the error, let's go over some possible solutions.
 
 ## Move the text file into a directory
 
-The simplest way of avoiding the error is not using `cd` on a regular file.
+The most straightforward way of avoiding this error is by using `cd` only on known directories.
 
-First we create a directory.
+First, we create a directory.
 
 ```bash
-$ mkdir mydir
+mkdir mydir
 ```
 
-Then we move our text file into the dir.
+Then we can move our text file, `test` into that directory.
 
 ```bash
-$ mv test mydir/test
+mv test mydir/test
 ```
 
 Finally we can now change directory into `mydir`.
 
 ```bash
-$ cd mydir
+cd mydir
 ```
 
-## Use ls to check if the file is a directory first
+You can ensure that the file is in `mydir` by running the `ls` — or _list_ — command.
 
-You can use ls to list all files in a directory
+## Use `ls` to check if the file is a directory first
+
+You can use `ls` to list all files in a directory. We will append the flags `-lah`:
+
+* `-l` — list files verbosely in long-form, showing more detail
+* `-a` — list all files, not ignoring files that begin with `.`
+* `-h` — list file sizes in a human-readable format, as in `5K`, `250M`, `96B`
+
+
 ```bash
-$ ls -lAh
+ls -lah
+```
+
+Once you run the command, you should receive output similar to the following based on your own file structure. 
+
+```
 total 1848
 -rw-r--r--    1 user  Users   156B 11 Oct 12:17 .babelrc
 -rw-r--r--    1 user  Users    72B 11 Oct 12:24 .env
@@ -69,21 +87,31 @@ drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...
 ```
 
-The start of each output lets you know if it's a directory or not. `-` means it's a regular file and `d` means it is a directory.
+The start of each output lets you know if it's a directory or not. `-` means it's a regular file (as in `-rw-r--r--`) and `d` means it is a directory (as in `drwxr-xr-x`). Be sure to use `cd` only on directories that are indicated as such. 
 
-You can use grep to list only directories. This way if you use `cd` on any of those, it should succeed. `grep` is used to filter out all regular files so only directories remain in the list.
+## Use `grep` to filter only directories
+
+You can use the `grep` command to list only directories. This way if you use `cd` on any of those, it should succeed. `grep` is used to filter out all regular files so only directories remain in the list.
 
 ```bash
-$ ls -lAh | grep "^d"
+ls -lAh | grep "^d"
+```
+
+After running this comand, you'll only receive the output of directories in the example of the section above. 
+
+```
 drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...
 ```
 
+With `grep` you can filter out the files and directories you are looking for to ensure you are not using a command that will not run on a given type. 
+
+
 ## Learn more
 
-Search across open source JavaScript repositories that have the `Not a directory` to understand the message more.
+Search across open source Linux repositories that have the `Not a directory` to understand the message more.
 
 <SourcegraphSearch query="Not a directory" patternType="literal"/>
 
