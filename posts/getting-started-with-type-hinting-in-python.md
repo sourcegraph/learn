@@ -93,17 +93,21 @@ Depending on the version of Python you are using, you may be able to leverage bu
 In Python 3.9, built-in collection types are included as generic types and their respective type hints can be used similarly to the primitive Python types. Here is how you would type hint a list object in Python 3.9.
 
 <Highlighter
+    language='python'
     input='my_list: list[int] = [1, 2, 3, 4, 5]'
-    matcher='2, 3, 4'
+    matcher='[1, 2, 3, 4, 5]'
 />
 
 This list is initialized with the integer type by using the `list[int]` syntax.
 
 Below is an example of a tuple that we have type hinted as being composed of an integer, float, and string.
 
-```python
-my_tuple: tuple[int, float, str] = (1, 9.5, "Red")
-```
+<Highlighter
+    language='python'
+    input='my_tuple: tuple[int, float, str] = (1, 9.5, "Red")'
+    matcher='int'
+/>
+
 For a tuple object of unknown size, ellipses are used to describe the type of objects stored within it. Here is a tuple with an unknown number of integers stored.
 
 ```python
