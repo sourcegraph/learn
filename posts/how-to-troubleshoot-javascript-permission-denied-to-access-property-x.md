@@ -16,7 +16,7 @@ When you are working in JavaScript, you may come across an error similar to the 
 Error: Permission denied to access property "x"
 ```
 
-Or, you may see it in a slightly more verbose form:
+Or, you may receive the error in a slightly more verbose form, like the following.
 
 ```js
 Uncaught DOMException: Permission denied to access property "document" on cross-origin object
@@ -36,30 +36,99 @@ An example which causes the above error is this example document:
   <head>
     <title>Example code</title>
     <meta charset="utf-8" />
-    <iframe src="http://example.com"></iframe>
     <script>
       window.onload = function() {
         console.log(window.frames[0].document);
       }
     </script>
   </head>
-  <body></body>
+  <body>
+    <iframe src="http://sourcegraph.com"></iframe>
+  </body>
 </html>
 ```
 
+Depending on the browser you are using, you may receive a warning or a blank box where the site would normally be loaded.
+
+![Iframe output error rendered on Firefox](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/iframe-javascript-firefox-error.png)
+![Iframe output error, blank iframe in browser](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/iframe-javascript-browser-error.png)
+
+Now that we have reproduced the error, let's discuss possible solutions. 
+
 ## Solution
 
-The recommended way to solve this error is to only try and access properties of an iframe which points to a domain that you control, this will ensure that your code obeys the same-origin policy.
+The recommended way to solve this error is to access properties that you control via an iframe. This will ensure that your code obeys the same-origin policy.
 
-If you want to communicate with the iframe, you can use `window.postMessage` — however, the embedded website must have an
-event listener to handle the `message` event and that must be written in a way to allow communication cross-origin.
+If you want to communicate with the iframe, you can use `window.postMessage()` if the embedded website has an event listener to handle the `message` event. Additionally, that message must be written in a way to allow communication cross-origin. 
 
-An [example is here](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage#example) from Mozilla Developer Network.
+_Please be sure to review the terms of service of websites you intend to incorporate onto your own domains. This tutorial is for demonstration purposes only._
+
+For example, you can use the following HTML if you would like your website, `https://www.my-sourcegraph-website.com/` to be able to embed an html page hosted online at `https://www.a-third-party-page.com/`, you could write the file below. 
+
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A third party website</title>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener("message", (event) => {
+          if (event.origin !== "https://www.my-sourcegraph-website.com/") {
+            return;
+          }
+
+          event.source.postMessage("Hello, " + event.data, event.origin)
+      }, false)
+    </script>
+  </head>
+  <body>
+    <p>Hello world</p>
+  </body>
+</html>
+```
+
+Your website hosted on `https://www.my-sourcegraph-website.com/` will have the soucecode below. 
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Sourcegraph website</title>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.origin !== "https://www.a-third-party-page.com/") {
+          // we don't trust the sender of the message
+          return
+        }
+
+        const replyText = document.createElement("p");
+        const textContent = document.createTextNode(event.data);
+        replyText.appendChild(textContent);
+
+        document.body.appendChild(replyText);
+      }, false)
+
+      window.onload = () => {
+        const iframe = window.frames[0];
+        iframe.postMessage("world!", "https://www.a-third-party-page.com/");
+      }
+    </script>
+  </head>
+  <body>
+    <iframe src="https://www.a-third-party-page.com/"></iframe>
+    <p>My very cool website</p>
+  </body>
+</html>
+```
+
+Notice how there is specific code to check who the message sender is, this would require an agreement with the owner of `https://www.a-third-party-page.com/` to allow you to communicate in a secure way. 
 
 ## Learn more
 
-Search across open source JavaScript repositories that have the `Error: Permission denied to access property "x"` to understand the message more.
+Search across open source JavaScript repositories that have the `Permission denied to access property "x"` error to understand the message more.
 
-<SourcegraphSearch query="Error: Permission denied to access property x" patternType="literal"/>
+<SourcegraphSearch query="Permission denied to access property x" patternType="literal"/>
 
 Check out more Sourcegraph Learn tutorials on [JavaScript](https://learn.sourcegraph.com/tags/javascript).
