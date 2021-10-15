@@ -1,4 +1,5 @@
 import createRandomId from '@util/createRandomId'
+import returnHighlightIndices from '@util/returnHighlightIndices'
 import toStringSet from '@util/toStringSet'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { FunctionComponent } from 'react'
@@ -9,18 +10,18 @@ interface Props {
     input: string
     matcher: string
     language: Language
-    punctuationIndices: string
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
     const punctuationRegex = new RegExp(/\W/)
-    const punctuationSet = toStringSet(props.punctuationIndices.split(', '))
-    const matcherSet = toStringSet(props.matcher.split(/(\W)/).filter(item => item !== '' && item !== ' '))
-    const checkToken = (token: string, index: number): boolean => {
-        if (punctuationRegex.test(token) && props.punctuationIndices && punctuationSet.has(index.toString())) {
+    const matcherArrayFiltered = props.matcher.split(/(\W)/).filter(item => item !== '' && item !== ' ')
+    const matcherSet = toStringSet(matcherArrayFiltered)
+    const getPunctuationIndices = returnHighlightIndices(props.input, props.matcher, matcherSet, punctuationRegex)
+    const checkToken = (token: string, index: number, ): boolean => {
+        if (!punctuationRegex.test(token) && getPunctuationIndices.has(index)) {
             return true
         } 
-        if (punctuationRegex.test(token) && props.punctuationIndices && !punctuationSet.has(index.toString())) {
+        if (punctuationRegex.test(token) && !getPunctuationIndices.has(index)) {
             return false
         }
 
