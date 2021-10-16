@@ -10,7 +10,8 @@ browserTitle: StackOverflowError in Java error handling
 type: posts
 ---
 
-The StackOverflowError is one of the most common runtime errors one can encounter in Java. This error occurs when we haven’t provided the proper terminating condition to our recursive function that results in an infinite loop.<br>
+The StackOverflowError is one of the most common runtime errors one can encounter in Java. This error occurs when we haven’t provided the proper terminating condition to our recursive function that results in an infinite loop.
+
 When we call a method, a new stack frame is created on the call stack. This stack frame holds parameters of the called method, mostly the local variables and the return address of the method. The creation of these stack frames is iterative. During this process, if JVM runs out of space for the new stack frames, it throws a StackOverflowError.
 
 ## Reproducing the error
@@ -54,9 +55,9 @@ Exception in thread "main" java.lang.StackOverflowError
 ```  
 
 
-In the example shown above, we define a recursive method, called recursion that prints an integer and then, calls itself with the successive integer as its argument. It starts printing numbers starting from 1 and thus, the recursion never terminates. Depending on the JVM, the results may differ, but eventually the StackOverflowError is thrown.<br>
+In the example shown above, we define a recursive method, called recursion that prints an integer and then, calls itself with the successive integer as its argument. It starts printing numbers starting from 1 and thus, the recursion never terminates. Depending on the JVM, the results may differ, but eventually the StackOverflowError is thrown.
 
-Having cyclic relationships between classes is also another situation where the StackOverFlowError commonly occurs. Here's an example:
+Having cyclic relationships between classes is also another situation where the StackOverflowError commonly occurs. Here's an example:
 
 
 ```java
@@ -83,7 +84,8 @@ class B {
 ```
 
 
-Cyclic Relationships between classes is the result of two different classes instantiating each other inside their constructors. In the example, classes A and B instantiate each other in their contructors repeatedly until we get a StackOverFlowError. This error is mainly due to unecessary constructor calls, so we can just avoid introducing them in the codes.<br>
+Cyclic Relationships between classes is the result of two different classes instantiating each other inside their constructors. In the example, classes A and B instantiate each other in their contructors repeatedly until we get a StackOverflowError. This error is mainly due to unecessary constructor calls, so we can just avoid introducing them in the codes.
+
 Now, let's see the solution to prevent this error. 
 
 ## Fix your Code
@@ -114,9 +116,10 @@ This will print only the numbers from 1 to 5.
 
 ## Increasing the Stack Size
 
-We can increase the stack’s size, in order to allow a larger number of invocations. The default thread stack size may vary depending on the JVM installed. We can increase this stack size by using the ```-Xss``` flag.<br>
+We can increase the stack’s size, in order to allow a larger number of invocations. The default thread stack size may vary depending on the JVM installed. We can increase this stack size by using the ```-Xss``` flag.
+
 The format of the ```-Xss``` argument is: 
-```-Xss<size>[g|G|m|M|k|K]```<br>
+```-Xss<size>[g|G|m|M|k|K]```
 
 This argument needs to be passed when you start the application and can be specified either via the project’s configuration, or the command line.
 
