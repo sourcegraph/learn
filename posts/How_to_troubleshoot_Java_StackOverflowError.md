@@ -2,7 +2,7 @@
 title: How to troubleshoot Java StackOverflowError
 author: Yashesvinee
 tags: [tutorial, Java, troubleshooting]
-publicationDate: 16-10-21
+publicationDate: October 16, 2021
 description: Learn how to error handle the Java StackOverflowError
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
