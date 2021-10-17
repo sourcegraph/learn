@@ -104,7 +104,7 @@ In Python 3.9, built-in collection types are included as generic types and their
 <Highlighter
     language='python'
     input='my_list: list[int] = [1, 2, 3, 4, 5]'
-    matcher='list[int]'
+    matcher='[1, 2, 3, 4, 5]'
 />
 
 This list is initialized with the integer type by using the `list[int]` syntax.
@@ -114,7 +114,7 @@ Below is an example of a tuple that we have type hinted as being composed of an 
 <Highlighter
     language='python'
     input='my_tuple: tuple[int, float, str] = (1, 9.5, "Red")'
-    matcher='my_tuple: tuple[int, float, str]'
+    matcher='(1, 9.5, "Red")'
 />
 
 For a tuple object of unknown size, ellipses are used to describe the type of objects stored within it. Here is a tuple with an unknown number of integers stored.

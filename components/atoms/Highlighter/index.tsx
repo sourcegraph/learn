@@ -18,8 +18,8 @@ const Highlighter: FunctionComponent<Props> = props => {
         if (!props.matcher) {
             return false
         }
-        const punctuationRegex = new RegExp(/\W/)
-        const matcherArrayFiltered = props.matcher.split(/(\W)/).filter(item => item !== '' && item !== ' ')
+        const punctuationRegex = new RegExp(/[^\w".]/)
+        const matcherArrayFiltered = props.matcher.split(/([^\w".])/)
         const matcherSet = toStringSet(matcherArrayFiltered)
         const getPunctuationIndices = returnHighlightIndices(props.input, props.matcher, matcherSet, punctuationRegex)
         if (!punctuationRegex.test(token) && getPunctuationIndices.has(index)) {
