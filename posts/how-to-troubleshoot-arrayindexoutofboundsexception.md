@@ -29,19 +29,28 @@ public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7,6,5,4,3,2,1};
 
-        System.out.print("There are " + numbers.length + " numbers in the array. How many numbers should be printed ? ");
+        System.out.print(
+            "There are " + numbers.length + 
+            " numbers in the array. How many numbers should be printed ? "
+            );
         Scanner scanner = new Scanner(System.in);
 
         int value = scanner.nextInt();
 
         for (int index = 0; index < value; index++) {
-            System.out.println("Index " + index +" has value "+ numbers[index]);
+            System.out.println(
+                "Index " + index +" has value "+ numbers[index]
+                );
         }
-        System.out.println("Printed " + value + " numbers out of " + numbers.length);
+        System.out.println(
+            "Printed " + value + " numbers out of " + numbers.length
+            );
     }
 }
 ```
-The program initializes the `numbers[]` array with 7 integers and then asks the user how many values from the number array should be printed. If the user enters a valid number, then the program enters a `for` loop which will increase the index from 0 by one and print the number at that index until the index is larger than the user given number.
+The program initializes the `numbers[]` array with 7 integers and then asks the user how many values from the array should be printed. 
+
+If the user enters a valid number, then the program enters a `for` loop which will increase the index from 0 by one and print the number at that index until the index is larger than the user-provided number.
 
 Below is the output of our program printing out all the numbers after we entered the value `7`. Notice that the index starts at 0 and ends at 6 (the length of the array minus one).
 
@@ -57,7 +66,7 @@ Index 6 has value 1
 Printed 7 numbers out of 7
 ```
 
-If, instead, the user enter a value outside of the array, such as `8`, our program will print all the numbers up until it tries to print the number at index `7`. At this point, it will fail with `ArrayIndexArrayIndexOutOfBoundsException`.
+If, instead, the user enters a value outside of the array, such as `8`, our program will print all the numbers up until it tries to print the number at index `7`. At this point, it will fail with `ArrayIndexArrayIndexOutOfBoundsException`.
 
 ```
 There are 7 numbers in the array. How many numbers should be printed ? 8
@@ -81,7 +90,7 @@ Regardless of the array type in Java, the index value must adhere to the above r
 
 Let's go over how we can ensure that the index value is always valid.
 
-## Ensure the user provided value is within the array boundaries
+## Check that the user-provided value is within the array boundaries
 
 By using flow control and `if`-`else` statements, we can check that the value provided by the user adheres to the index value criteria discussed above.
 
@@ -92,27 +101,44 @@ public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7, 6, 5, 4, 3, 2, 1};
 
-        System.out.print("There are " + numbers.length + " numbers in the array. How many numbers should be printed ? ");
+        System.out.print(
+            "There are " + numbers.length + 
+            " numbers in the array. How many numbers should be printed ? "
+            );
         Scanner scanner = new Scanner(System.in);
 
         int value = scanner.nextInt();
         if (value < 0) {
-            System.out.println("Only positive values are allowed!");
+            System.out.println(
+                "Only positive values are allowed!"
+                );
             System.exit(1);
         } else if (value > numbers.length) {
-            System.out.println("The given value of " + value + " is too large! Value has to be less than or equal to " + numbers.length);
+            System.out.println(
+                "The given value of " + value + 
+                " is too large! Value has to be less than or equal to " + 
+                numbers.length
+                );
             System.exit(1);
         }
 
         for (int index = 0; index < value; index++) {
-            System.out.println("Index " + index + " has value " + numbers[index]);
+            System.out.println(
+                "Index " + index + " has value " + 
+                numbers[index]
+                );
         }
-        System.out.println("Printed " + value + " numbers out of " + numbers.length);
+        System.out.println(
+            "Printed " + value + 
+            " numbers out of " + numbers.length
+            );
     }
 }
 ```
 
-In the code above, before we print the amount of values the user opted to be printed, we perform some validation. We first check that the value adheres to the first index value restriction, which is "The index value should be greater than or equal to `0`". If the value doesn't adhere to this restriction, we print out a message telling the user that we only accept positive values.
+In the code above, before we print the amount of values the user opted to be printed, we perform some validation. 
+
+We first check that the value adheres to the first index value restriction, which is "The index value should be greater than or equal to 0". If the value doesn't adhere to this restriction, we print out a message telling the user that we only accept positive values.
 
 If the value is positive, we then check that the value isn't too large by comparing the value to the length of the `numbers[]` array, since the second restriction states that "The index value cannot be larger than the length of the array." Once again, if the value doesn't adhere to this restriction, we print out an informative message to the user.
 
@@ -134,9 +160,11 @@ You could further iterate on this solution so that the program does not quit fol
 
 ## Pick the lowest value between the user value and the array size
 
-By using `Math.abs()`, we can take care of the first restriction since it will force any value given by the user to always be positive.
+We can take the solution above further to solve for these user-input concerns by translating all inputs to fit within our parameters.
 
-With regard to the second restriction, if we say that when a user inputs a number that is larger than the length of our array, then we can take that to mean that the user wants all the numbers to be printed. We can accomplish that by taking the smallest value between the user given input and the length of the array.
+First, we will use `Math.abs()`, which returns the absolute value of a given argument, to take care of the first restriction since it will force any value given by the user to always be positive.
+
+With regard to the second restriction, if we say that when a user inputs a number that is larger than the length of our array, we can then take that to mean that the user wants all the numbers to be printed. We can accomplish that by taking the smallest value between the user given input and the length of the array.
 
 Ultimately, we prefer the lower value, be it the user given value or the length of the array. In the program below this approach is implemented.
 
@@ -147,7 +175,10 @@ public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7,6,5,4,3,2,1};
 
-        System.out.print("There are " + numbers.length + " numbers in the array. How many numbers should be printed ? ");
+        System.out.print(
+            "There are " + numbers.length + 
+            " numbers in the array. How many numbers should be printed ? "
+            );
         Scanner scanner = new Scanner(System.in);
 
         int userVal = Math.abs(scanner.nextInt());
@@ -157,7 +188,10 @@ public class NumberPrinter {
         for (int index = 0; index < value; index++) {
             System.out.println(numbers[index]);
         }
-        System.out.println("Printed " + value + " numbers out of " + numbers.length);
+        System.out.println(
+            "Printed " + value + " numbers out of " + 
+            numbers.length
+            );
     }
 }
 ```
