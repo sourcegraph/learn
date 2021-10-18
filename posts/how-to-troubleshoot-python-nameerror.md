@@ -158,7 +158,7 @@ Here, we first have the program attempt our original workflow, but use the `exce
 You are attempting to access an identifier that is not defined in the local or global scope.
 ```
 
-In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to definint it.
+In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to defining it.
 
 ## Learn more
 
