@@ -14,22 +14,14 @@ interface Props {
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
-    const checkToken = (token: string, index: number): boolean => {
+    const checkToken = (index: number): boolean => {
         if (!props.matcher) {
             return false
         }
-        const punctuationRegex = new RegExp(/[^\w".]/)
         const matcherArrayFiltered = props.matcher.split(/([^\w".])/)
         const matcherSet = toStringSet(matcherArrayFiltered)
-        const getPunctuationIndices = returnHighlightIndices(props.input, props.matcher, matcherSet, punctuationRegex)
-        if (!punctuationRegex.test(token) && getPunctuationIndices.has(index)) {
-            return true
-        } 
-        if (punctuationRegex.test(token) && !getPunctuationIndices.has(index)) {
-            return false
-        }
-
-       return matcherSet.has(token)
+        const getPunctuationIndices = returnHighlightIndices(props.input, props.matcher, matcherSet)
+        return getPunctuationIndices.has(index)
     }
     
     return (
@@ -39,7 +31,7 @@ const Highlighter: FunctionComponent<Props> = props => {
                     {tokens.map((line, index) => (
                         <StyledCodeBlock key={createRandomId()} {...getLineProps({ line, key: index })}>
                             {line.map((token, key) => (
-                                checkToken(token.content, key)
+                                checkToken(key)
                                     ? (<StyledHighlighterMatch key={createRandomId()} {...getTokenProps({ token, key })} />)
                                     : (<span key={createRandomId()} {...getTokenProps({ token, key })} />)
                             ))}
