@@ -15,6 +15,7 @@ With tech-focused podcasts increasing in popularity within the developer communi
 In this tutorial, we will use the example podcast, _The Open Ollie Show_, which is about all things open source hosted by Ollie, the open source kitty.
 
 We will first walk through hosting the audio files for each episode on a cloud object storage service, for us to include in the RSS feed we create. Then, we will write the RSS feed line by line using XML, bringing our episodes together and providing various data for platforms to use. Finally, we will validate the RSS feed and submit it to Spotify so that we can distribute our tech podcast using their platform in order to reach our listeners.
+
 ## Prerequisites
 
 In order to follow the steps of this tutorial, you should have the following:
@@ -24,6 +25,7 @@ In order to follow the steps of this tutorial, you should have the following:
 * An image (sized between 1400x1400 pixels and 3000x3000 pixels) that will serve as the podcast’s logo.
 
 With these prerequisites in place, let’s begin. 
+
 ## Step 1 — Uploading audio files to object storage
 
 We will begin by uploading our first episode’s MP3 audio file to our cloud object storage. You can use any cloud data store that makes sense for you, we’ll be using an S3-compatible storage. If you already have your file uploaded in a publicly-accessible data store with CDN, feel free to skip this step. We’ll be demonstrating how to do this with the S3-compatible buckets available via Google Cloud Platform and DigitalOcean. Feel free to use an alternate provider, the steps may differ across hosts, so be sure to follow recommended practices from their respective official documentation. 
@@ -45,6 +47,7 @@ Starting on the **Files** tab on our Space’s web page we will press the **Uplo
 The file we uploaded was named `episode1.mp3` to make it easier to reference when writing our RSS feed. We can always rename any file we upload by pressing the **More** dropdown on the file we want to rename.
 
 We will need to save the link to our first episode’s file for later by hovering over the file and pressing **Copy URL**. Our Space has CDN enabled, so we will copy our Edge URL. That said, the Origin URL would also work. Now that we have our file’s URL saved we can go ahead and begin writing our podcast’s RSS feed.
+
 ## Step 2 — Writing the RSS feed
 
 
@@ -52,10 +55,10 @@ Next, we’ll be creating our RSS feed. You can title your RSS feed after your p
 RSS feeds are written within an XML document. Therefore, we will begin by writing an XML declaration followed by an opening and closing RSS tag in which we will define our XML namespace.
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
 
-    </rss>
+</rss>
 ```    
 
 The first line in our code above is our XML declaration. 
@@ -65,26 +68,25 @@ The second line is our opening RSS tag which will include all of our content and
 Next, let’s define our podcast show using the `<channel>` tag as shown in the XML below.
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
-        <channel>
-            <title>The Open Ollie Show</title>
-            <link>learn.sourchegraph.com</link>
-            <description>A podcast about open source repositories hosted by Ollie the Open Source Kitty.</description>
-            <language>en</language>
-            <itunes:image href="https://i.imgur.com/zvFIqdf.png" />
-            <itunes:author>Open Ollie</itunes:author>
-            <itunes:owner>
-                <itunes:name>Open Ollie</itunes:name>
-                <itunes:email>OpenOllie@email.com</itunes:email>
-            </itunes:owner>
-            <itunes:explicit>no</itunes:explicit>
-            <itunes:category text="Technology"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
+    <channel>
+        <title>The Open Ollie Show</title>
+        <link>learn.sourchegraph.com</link>
+        <description>A podcast about open source repositories hosted by Ollie the Open Source Kitty.</description>
+        <language>en</language>
+        <itunes:image href="https://i.imgur.com/zvFIqdf.png" />
+        <itunes:author>Open Ollie</itunes:author>
+        <itunes:owner>
+            <itunes:name>Open Ollie</itunes:name>
+            <itunes:email>OpenOllie@email.com</itunes:email>
+        </itunes:owner>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:category text="Technology"/>
 
-        </channel>
-    </rss>
+    </channel>
+</rss>
 ```
-
 
 The following tags are used to help describe our podcast further:
 
@@ -106,20 +108,20 @@ Now, it is time to add our first episode to our podcast which we will do using a
 Starting two lines below our `<itunes:category>` tag, as shown below, we will begin to define our first episode.
 
 ```xml
-        <channel>
-            ...
-            <itunes:category text="Technology"/>
-            
-            <!-- EPISODE 1 -->
-            <item>
-                <title>Episode 1: Life as a Keyboard Cat</title>
-                <description>Ollie the Open Source Kitty discusses their approach to programming open source software with their paws.</description>
-                <link></link>
-                <enclosure type="audio/mpeg" url="https://sammys-podcast.nyc3.cdn.digitaloceanspaces.com/episode1.mp3"/>
-                <guid isPermaLink="false">dcc051a2-adc9-4e6e-9fd3-ecbec2f7cf72</guid>
+    <channel>
+        ...
+        <itunes:category text="Technology"/>
+        
+        <!-- EPISODE 1 -->
+        <item>
+            <title>Episode 1: Life as a Keyboard Cat</title>
+            <description>Ollie the Open Source Kitty discusses their approach to programming open source software with their paws.</description>
+            <link></link>
+            <enclosure type="audio/mpeg" url="https://sammys-podcast.nyc3.cdn.digitaloceanspaces.com/episode1.mp3"/>
+            <guid isPermaLink="false">dcc051a2-adc9-4e6e-9fd3-ecbec2f7cf72</guid>
 
-            </item>
-        </channel>
+        </item>
+    </channel>
 ```
 
 We begin by defining the title of this podcast episode as shown above using the `<title>` tag along with a brief summary of the episode using the `<description>` tag.
@@ -131,20 +133,20 @@ Finally, we set a global unique identifier using the `<guid>` tag. This is to ma
 Let’s finish defining the rest of our first episode.
 
 ```xml
-        <channel>
+    <channel>
+        ...
+        <!-- EPISODE 1 -->
+        <item>
             ...
-            <!-- EPISODE 1 -->
-            <item>
-                ...
-                <itunes:duration></itunes:duration>
-                <itunes:author>Open Ollie</itunes:author>
-                <itunes:explicit>no</itunes:explicit>
-                <itunes:season>1</itunes:season>
-                <itunes:episode>1</itunes:episode>
-                <itunes:episodeType>full</itunes:episodeType>
-                <pubDate>Wed, 1 Jan 2020 12:00:00 +0000</pubDate>
-            </item>
-        </channel>
+            <itunes:duration></itunes:duration>
+            <itunes:author>Open Ollie</itunes:author>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:season>1</itunes:season>
+            <itunes:episode>1</itunes:episode>
+            <itunes:episodeType>full</itunes:episodeType>
+            <pubDate>Wed, 1 Jan 2020 12:00:00 +0000</pubDate>
+        </item>
+    </channel>
 ```
 
 Now that the initial XML declarations are complete, we have now set a few extra variables which are explained below.
@@ -152,15 +154,21 @@ Now that the initial XML declarations are complete, we have now set a few extra 
 | Tag | Description |
 |---|---|
 | `<itunes:duration>` | the duration of our episode in seconds |
+
 | `<itunes:author>` | the author or host of this specific episode, notice this can be different from the overall show author |
+
 | `<itunes:explicit>` | whether or not this episode uses any vulgar language, notice this is also different from the overall show setting |
+
 | `<itunes:season>` | in case you ever want to have multiple seasons for your podcast it is good to specify a season for each episode, even if it will always be season 1 |
+
 | `<itunes:episode>` | which episode number this is for the aforementioned season number |
+
 | `<itunes:episodeType>` | `full` specifies that this is a full length episode; we can also use `bonus` to specify this as bonus content which is separate from our regular episodes. Bonus content can have the same season and episode number as a full episode. This is useful if our bonus content is a clip from a longer full episode |
+
 | `<pubDate>` | used for ordering our podcast episodes, the date above sets this episode’s publish date and time to Wednesday, January 1st, 2020 at noon UTC |
 
-
 At this point, we can save our XML RSS feed file and submit it to our distributors.
+
 ## Step 3 — Submitting the podcast for review on Spotify
 
 Now that we have created our RSS feed and uploaded our first episode and RSS feed to our cloud object storage bucket, we can submit our podcast and its first episode to Spotify for our listeners to enjoy.
