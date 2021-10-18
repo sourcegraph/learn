@@ -34,8 +34,8 @@ We can interpret the message as follows.
 
 * `On branch main` — Our current branch
 * `Your branch is up to date with 'origin/main'.` — Our local branch has the same commit history as the remote branch
-* `nothing to commit`— There are no changes in the staging area
-* `working tree clean`— There are no changes in the working directory, which means that the working directory is an exact copy of the latest commit
+* `nothing to commit` — There are no changes in the staging area
+* `working tree clean` — There are no changes in the working directory, which means that the working directory is an exact copy of the latest commit
 
 After running one command, we’ve learned about the current branch, its state relative to the remote branch, the state of the staging area, and the state of the working directory.
 
