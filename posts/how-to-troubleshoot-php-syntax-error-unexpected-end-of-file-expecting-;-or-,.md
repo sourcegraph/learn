@@ -27,7 +27,6 @@ Let's see this in practice. Assuming that you have PHP installed on your machine
 
 echo 'Hello World'
 
->
 ```
 Now, you just need to run the file on terminal (in the same path of the file) and you'll see the error on output:
 
@@ -48,7 +47,6 @@ As we saw before, PHP language use some characters to define the end of a comman
 
 echo 'Hello World';
 
->
 ```
 
 So, now the output of this file is just `Hello World`. 
@@ -62,7 +60,6 @@ You may noticed that the error message suggests the characters that been missing
 
 echo 'Hello World',
 
->
 ```
 
 ```shell
@@ -82,7 +79,6 @@ $name = 'Sourcegraph.';
 
 echo 'Hello World ', $name;
 
->
 ```
 
 The output of the file execution:
