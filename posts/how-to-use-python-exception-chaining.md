@@ -98,10 +98,10 @@ Now you can easily differentiate the two types of chained exception tracebacks. 
 
 ## Learn more
 
-Search across open source Python repositories that have the `raise ... from` motif to understand the message more.
+Search across open source Python repositories that have the `raise ... from` motif to understand exception chaining more.
 
 <SourcegraphSearch query="Exception Chaining lang:python" patternType="literal"/>
 
-Read the official Python docs on [Exception Chaining](https://docs.python.org/3/tutorial/errors.html#exception-chaining.
+Read the official Python docs on [Exception Chaining](https://docs.python.org/3/tutorial/errors.html#exception-chaining).
 
 Check out more Sourcegraph Learn tutorials on [Python](https://learn.sourcegraph.com/tags/python).
