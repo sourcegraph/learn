@@ -92,15 +92,15 @@ The following tags are used to help describe our podcast further:
 
 | Tag | Description |
 |---|---|
-| `<title>` | the title of our podcast show, this is separate from the titles of each episode |
-| `<link>` | a link to our podcast, this can be a seperate website, or a link to the Spotify page or anywhere else we decide to distribute our podcast |
-| `<description>` | a sentence or two describing what our podcast is about |
-| `<language>` | specifies the language we will be speaking in our podcast, in this case it’s `en` for English, you can find the relevant two-letter language code relevant to you in the [ISO 639.2 standards document](https://www.loc.gov/standards/iso639-2/php/code_list.php) |
-| `<itunes:image>` | the logo of the podcast (this must be between 1400x1400 pixels and 3000x3000 pixels) |
-| `<itunes:author>` | the publicly displayed author or host of the podcast |
-| `<itunes:owner>` | the name and email of the owner of the podcast which is kept private and may be used in case Apple, Spotify, or any other platform needed to contact us |
-| `<itunes:explicit>` | set to `yes` if any vulgar language is used throughout our podcast and `no` if no vulgar language is used |
-| `<itunes:category>` | which category Apple Podcasts would put our podcast under if we choose to distribute using their platform; see a [list of available categories via Apple](https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12) |
+| `<title>` | The title of our podcast show, this is separate from the titles of each episode |
+| `<link>` | A link to our podcast, this can be a seperate website, or a link to the Spotify page or anywhere else we decide to distribute our podcast |
+| `<description>` | A sentence or two describing what our podcast is about |
+| `<language>` | Specifies the language we will be speaking in our podcast, in this case it’s `en` for English, you can find the relevant two-letter language code relevant to you in the [ISO 639.2 standards document](https://www.loc.gov/standards/iso639-2/php/code_list.php) |
+| `<itunes:image>` | The logo of the podcast (this must be between 1400x1400 pixels and 3000x3000 pixels) |
+| `<itunes:author>` | The publicly displayed author or host of the podcast |
+| `<itunes:owner>` | The name and email of the owner of the podcast which is kept private and may be used in case Apple, Spotify, or any other platform needed to contact us |
+| `<itunes:explicit>` | Set to `yes` if any vulgar language is used throughout our podcast and `no` if no vulgar language is used |
+| `<itunes:category>` | Which category Apple Podcasts would put our podcast under if we choose to distribute using their platform; see a [list of available categories via Apple](https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12) |
 
 
 Now, it is time to add our first episode to our podcast which we will do using an `<item>` tag. All episodes we define will be inside of their own `<item>` tag and because this can get messy once you have multiple episodes, we will be using line spacing and comments to help us keep this straightforward to read for ourselves and anyone else who looks at our RSS feed in the future.
@@ -153,19 +153,14 @@ Now that the initial XML declarations are complete, we have now set a few extra 
 
 | Tag | Description |
 |---|---|
-| `<itunes:duration>` | the duration of our episode in seconds |
-
-| `<itunes:author>` | the author or host of this specific episode, notice this can be different from the overall show author |
-
-| `<itunes:explicit>` | whether or not this episode uses any vulgar language, notice this is also different from the overall show setting |
-
-| `<itunes:season>` | in case you ever want to have multiple seasons for your podcast it is good to specify a season for each episode, even if it will always be season 1 |
-
-| `<itunes:episode>` | which episode number this is for the aforementioned season number |
-
+| `<itunes:duration>` | The duration of our episode in seconds |
+| `<itunes:author>` | tThe author or host of this specific episode, notice this can be different from the overall show author |
+| `<itunes:explicit>` | Whether or not this episode uses any vulgar language, notice this is also different from the overall show setting |
+| `<itunes:season>` | In case you ever want to have multiple seasons for your podcast it is good to specify a season for each episode, even if it will always be season 1 |
+| `<itunes:episode>` | Which episode number this is for the aforementioned season number |
 | `<itunes:episodeType>` | `full` specifies that this is a full length episode; we can also use `bonus` to specify this as bonus content which is separate from our regular episodes. Bonus content can have the same season and episode number as a full episode. This is useful if our bonus content is a clip from a longer full episode |
+| `<pubDate>` | Used for ordering our podcast episodes, the date above sets this episode’s publish date and time to Wednesday, January 1st, 2020 at noon UTC |
 
-| `<pubDate>` | used for ordering our podcast episodes, the date above sets this episode’s publish date and time to Wednesday, January 1st, 2020 at noon UTC |
 
 At this point, we can save our XML RSS feed file and submit it to our distributors.
 
