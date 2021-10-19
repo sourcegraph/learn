@@ -1,3 +1,4 @@
+import PrismLibrary from '@languages/index'
 import createRandomId from '@util/createRandomId'
 import returnHighlightIndices from '@util/returnHighlightIndices'
 import toStringSet from '@util/toStringSet'
@@ -25,7 +26,7 @@ const Highlighter: FunctionComponent<Props> = props => {
     }
     
     return (
-        <Highlight {...defaultProps} theme={theme} code={props.input} language={props.language}>
+        <Highlight {...defaultProps} Prism={PrismLibrary} theme={theme} code={props.input} language={props.language}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <StyledCodeWrapper className={className} style={style}>
                     {tokens.map((line, index) => (
