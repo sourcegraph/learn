@@ -10,37 +10,41 @@ browserTitle: No such file or directory in Linux error handling
 type: posts
 ---
 
-If you are working on a Linux terminal and you recieve the following output, you are probably trying to access a file from the wrong directory. You should ensure that you have correct filename.
+If you are working on a Linux terminal and you receive the following output, you are probably trying to access a file from the wrong directory. 
 
 ```sh
 No such file or directory
 ```
 
-In this tutorial, we'll reproduce the issue and then go over some solutions.
+In this tutorial, we'll reproduce the issue and then go over some solutions. Before we get started, you should ensure that you have correct filename and that it is free from typos.
 
 ## Reproducing the error
 
-Let's create a directory `foo` and a file `bar.txt` inside of the `foo` directory. We can add some text data to the file so that it is not empty. Open your terminal and execute the following commands.
+Let's create a directory `foo` and a file `bar.txt` inside of the `foo` directory. We can add some text data to the file so that it is not empty. 
 
-Create directory `foo`.
+Open your terminal and execute the following commands.
+
+Create directory `foo` with the `mkdir` command. The `mkdir` command stands for "make directory" and will create a new directory in the directory you are currently located within on the terminal. 
 
 ```sh
 mkdir foo
 ```
 
-Create file `bar.txt` inside the `foo` directory.
+Create file `bar.txt` inside the `foo` directory. We will use the [`touch` command](https://en.wikipedia.org/wiki/Touch_(command)) to create this file.
 
 ```sh
 touch foo/bar.txt
 ```
 
-Write some data to the file `bar.txt`.
+Write some data to the file `bar.txt` with the `echo` command, which returns back what we request.
 
 ```sh
-echo "Hello, World!" >> foo/bar.txt
+echo "Hello, World" > foo/bar.txt
 ```
 
-Let's try to access the data using the `cat` or concatenate command that will read data from the file and give its content as output.
+The above command uses `echo`, then the text we would like to add to our file in quotes, then the redirection operator `>`, and finally the name of our newly created text file, `bar.txt`.
+
+Let's try to access the data using the `cat` or con**cat**enate command that will read data from the file and give its content as output.
 
 ```sh
 cat foo/bar.txt
@@ -49,7 +53,7 @@ cat foo/bar.txt
 In this case, our ouput will be the following.
 
 ```
-Hello, World!
+Hello, World
 ```
 
 Now, let's try to acess the file with an incorrect path.
@@ -121,15 +125,15 @@ Now that you are in the correct directory, you can check the contents of the fil
 cat bar.txt
 ```
 
-Your output will be. 
+Your output will now be what we had expected.
 
 ```
-Hello, World!
+Hello, World
 ```
 
 If you are still experiencing issues finding your file or directory, always check for typos in the file name. Also check the path for the file and your current working directory.
 
-## Use whereis command
+## Use `whereis` command
 
 It's possible that the file you are trying to access is a binary executable file, in this case you can use the `whereis` command to locate the binary. Open your terminal and type the following command, with `filename` standing in for the file you are looking for.
 
