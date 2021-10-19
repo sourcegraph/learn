@@ -13,7 +13,7 @@ const returnHighlightIndices = (input: string, matcher: string, matcherSet: Set<
     }
     if (indices.length > 1) {
         for (index of indices) {
-            // If this item and the next are in the matching string, this is the beginning of the matching subarray
+            // If this item and the next are in the passed matching set, then this is the beginning of the matching subarray
             if (matcherSet.has(inputArray[index]) && matcherSet.has(inputArray[index + 1])) {
                 startingIndex = index
             }
