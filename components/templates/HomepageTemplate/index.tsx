@@ -24,7 +24,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
             <Column className='flex-large width'>
                 <ContentCardContainer 
                     records={props.searchPosts} 
-                    header='Search'
+                    header='Code search'
                     description='Learn about search principles with these guides' />
                     <Column className='centered'>
                         <Button className='primary' href='/tags/search'>
