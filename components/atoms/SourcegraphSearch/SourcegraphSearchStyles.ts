@@ -38,7 +38,7 @@ export const StyledSearchInput = styled.textarea`
         margin: 1rem 0;
     }
 
-    @media screen and (max-width: 576px) {
-        width: 16rem;
+    @media screen and (max-width: 767px) {
+        width: auto;
     }
 `
