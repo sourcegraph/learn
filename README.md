@@ -122,7 +122,7 @@ The component looks like this:
 
 ```
 <Highlighter
-    // For blocks with spaces & strings, use a template literal for input (like {`this`}) to preserve spacing. Also be sure to add a couple of additional spaces to the blank line.
+    // For blocks with spaces & strings, use a template literal for input (like {`this`}) to preserve spacing. Also be sure to an additional space to the blank line.
     input='Your code here'  
     language='Your language here'
     matcher='The code you would like to highlight (optional)

@@ -147,8 +147,8 @@ language='python'
 Some other types in Python 3.8 that need to leverage the typing library include set, dictionary (`dict`), and tuple. Since both dictionary and tuple types can have multiple types involved, you must specify each type. Here is an example of a tuple that has an integer, float, and string.
 
 <Highlighter
-input={`from typing import Tuple  
-    
+input={`from typing import Tuple
+ 
 my_tuple: Tuple[int, float, str] = (1, 9.5, "Red")`}
 language='python'
 />
