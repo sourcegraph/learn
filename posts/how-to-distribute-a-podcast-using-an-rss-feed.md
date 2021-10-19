@@ -170,7 +170,7 @@ Now that we have created our RSS feed and uploaded our first episode and RSS fee
 
 Start by creating a [free Spotify account](https://accounts.spotify.com/en/login?continue=https:%2F%2Fpodcasters.spotify.com%2Fgateway) if you do not have one already. To keep things intuitive, we will use the same email for the Spotify account that was used in the `<itunes:email>` tag in the RSS feed.
 
-Next, we will go to [Spotify’s podcast submission page](https://podcasters.spotify.com/submit) and press *Get Started* followed by pasting the link to our RSS feed hosted on ___ in the *Link to RSS feed* field. For example, the link to The Open Ollie Show would be ____.
+Next, we will go to [Spotify’s podcast submission page](https://podcasters.spotify.com/submit) and press *Get Started* followed by pasting the link to our RSS feed hosted on the cloud of our choice in the *Link to RSS feed* field that we discussed in [Step 1](#step-1--uploading-audio-files-to-object-storage).
 
 All that is left is inputting our podcast’s details including category, language, and country, and finally reviewing our podcast’s information and submitting our podcast.
 
