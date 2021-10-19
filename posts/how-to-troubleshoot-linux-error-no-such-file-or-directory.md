@@ -2,7 +2,7 @@
 title: How to troubleshoot Linux error No such file or directory
 author: amit-agrawal
 tags: [tutorial, Linux, troubleshooting]
-publicationDate: today's date
+publicationDate: October 19, 2021
 description: Learn how to error handle No such file or directory in Linux
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -10,116 +10,150 @@ browserTitle: No such file or directory in Linux error handling
 type: posts
 ---
 
-If you are working on Linux Terminal and you recive following output ,you are trying to aceess the wrong file or probably trying to access it from wrong directory.
+If you are working on a Linux terminal and you recieve the following output, you are probably trying to access a file from the wrong directory. You should ensure that you have correct filename.
 
-```bash: No such file or directory```
+```sh
+No such file or directory
+```
 
 In this tutorial, we'll reproduce the issue and then go over some solutions.
+
 ## Reproducing the error
 
-Let's create a directory foo and file bar.txt inside foo directory.Add some text data to the file. Open your terminal and execute the following commands.
+Let's create a directory `foo` and a file `bar.txt` inside of the `foo` directory. We can add some text data to the file so that it is not empty. Open your terminal and execute the following commands.
 
-Create directory foo
+Create directory `foo`.
 
-```
+```sh
 mkdir foo
 ```
 
-Create file bar.txt inside foo directory.
+Create file `bar.txt` inside the `foo` directory.
 
-```touch foo/bar.txt```
+```sh
+touch foo/bar.txt
+```
 
-Write some data to the file bar.txt
+Write some data to the file `bar.txt`.
 
-```echo "Hello Wrold" >> foo/bar.txt```
+```sh
+echo "Hello, World!" >> foo/bar.txt
+```
 
-Let's try to access the data using cat command
+Let's try to access the data using the `cat` or concatenate command that will read data from the file and give its content as output.
 
-``cat foo/bar.txt``
+```sh
+cat foo/bar.txt
+```
 
-The ouput will be 
+In this case, our ouput will be the following.
 
-```Hello Wrold```
+```
+Hello, World!
+```
 
-Now, let's try to acess the file with incorrect path
+Now, let's try to acess the file with an incorrect path.
 
-```cat bar.txt```
+```sh
+cat bar.txt
+```
 
-The output will be
-```cat: bar.txt: No such file or directory```
+Because we have not changed directories into the `foo` directory, we'll receive the following output.
+
+```
+cat: bar.txt: No such file or directory
+```
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
 
-## Check Current working directory
+## Check current working directory
 
-You can use ```pwd``` command to check your current working directory & use ```ls``` command to list all the files present in the present directory.You will get a idea whether you are trying to accees it through right filepath or not.
+You can use the `pwd` command to check your current working directory. The `pwd` command stands for **p**resent **w**orking **d**irectory. You can then use the `ls` command to **l**i**s**t all the files present in the present directory. With these commands, you will get a better idea as to whether you are trying to access a given file through the correct filepath or not.
 
-```pwd```
+```sh
+pwd
+```
 
-This will return your current working directory
+This command will return your current working directory.
 
-```/home/gopheramit```
+```
+/home/your-username
+```
+
+Next, type `ls` to list the contents of the present working directory.
+
+```sh
+ls
+```
+
+This will return a list of all directories and files present in your current directory. You may find output similar to the following, but note that output will be dependent on your actual directory.
+
+```
+Desktop foo Music Public Videos Documents Pictures Downloads Templates
+```
+
+Through observating the output above, you will notice that the file `bar.txt` is not present in current directory. You will need to move inside of the `foo` directory to access that file, as this is where you created `bar.txt`.
+
+Use the `cd` command, which stands for **c**hange **d**irectory, to move inside the `foo` directory.
+
+```sh
+cd foo
+```
+
+This will move you into the `foo` directory, and your command prompt will change. In our example case, where we are in the user directory, the prompt will now be `~/foo$`.
 
 
-```ls```
+Now we can check for files present in the `foo` directory.
 
-This will return list of directory and files present in your current directory,typically this is the output however output will be dependent on your current directory
+```sh
+ls
+```
 
-```Desktop foo Music Public Videos Documents Pictures Downloads Templates```
+In our example, we have only one file in this directory, so our output will return the one file we have initialized there. 
 
-By simple observation you can see the file bar.txt is not present in current directory.
-You need to move inside foo directory(where you created bar.txt)
+```
+bar.txt
+```
 
-Use ```cd``` to move inside direcotry
+Now that you are in the correct directory, you can check the contents of the file with `cat`. 
 
-```cd foo```
+```
+cat bar.txt
+```
 
-This will move you in foo and your command prompt would be like```~/foo$```
+Your output will be. 
 
+```
+Hello, World!
+```
 
-Check for files present in foo directory
-
-```ls```
-
-This will return
-
-```bar.txt```
-
-Now you can check the contents of file
-
-```cat bar.txt```
-
-Hello World
-
-## Usefull Commands and Observations
-To navigate into the directory,use ```cd directory_name```
-
-To navigate into the root directory, use ```cd /```
-
-To navigate to your home directory, use ```cd``` or ```cd ~```
-
-To navigate up one directory level, use ```cd ..```
-
-To navigate to the previous directory,use ```cd -```
-
-To check current directory ```pwd``
-
-To list directory's and files in current directory,use ```pwd```
-
-Always check typo for file name,Check the path for the file and current directory.
+If you are still experiencing issues finding your file or directory, always check for typos in the file name. Also check the path for the file and your current working directory.
 
 ## Use whereis command
 
-It's possible that the file you are trying to access is binary executable file,in this case use ```whereis``` command to locate the binary.Open you terminal and type the following command.
+It's possible that the file you are trying to access is a binary executable file, in this case you can use the `whereis` command to locate the binary. Open your terminal and type the following command, with `filename` standing in for the file you are looking for.
 
-```whereis filename```
+```sh
+whereis filename
+```
 
-It will return all the path where the binary executable is stored,this way you can check particular binary exists on your system or not then use above commands to reach the particular bianry and execute is.
+For example, you can search for the location of `netstat`, which is a command-line utility that displays active TCP connections and more.
 
+```sh
+whereis netstat
+```
+
+When you run the above command, you'll get the path to the location of `netstat`, which may be similar to the following output.
+
+```
+/usr/sbin/netstat
+```
+
+The `whereis` command will return all relevant paths where the binary executable is stored. This way you can check whether a particular binary exists on your system or not, then use Linux navigation commands, like the ones we went through above, to reach the particular binary and execute it.
 
 ## Learn more
 
-Search across open source JavaScript repositories that have the `No such file or directory` to understand the message more.
+Search across open source repositories that have the `No such file or directory` to understand the message more.
 
 <SourcegraphSearch query="No such file or directory" patternType="literal"/>
 
