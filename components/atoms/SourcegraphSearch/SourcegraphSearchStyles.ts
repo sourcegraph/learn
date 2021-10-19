@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const StyledSearchLogo = styled.img`
+    @media screen and (max-width: 1240px) {
+        margin: 0 0 .5rem;
+    }
+`
 export const StyledSearchBody = styled.div`
     align-items: center;
     flex: 1 1 auto;
@@ -24,6 +29,10 @@ export const StyledSearchInput = styled.textarea`
     font-weight: 400;
     line-height: 1.5;
     width: 22rem;
+
+    @media screen and (max-width: 1240px) {
+        margin: 0 0 .5rem;
+    }
 
     @media screen and (max-width: 1024px) {
         margin: 1rem 0;
