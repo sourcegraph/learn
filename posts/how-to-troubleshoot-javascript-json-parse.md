@@ -35,11 +35,13 @@ function printInfo(text) {
     console.log(`${person.name} lives in ${person.country}`);
 }
 
-let person = '{ "name" = "William" }';
+let person = '{ "name" = "William", "country" = "South Africa" }';
 printInfo(person);
 ```
 
-Our program tries to parse the JSON text `'{ "name" = "William", "country" = "South Africa" }'` and print the name value of the resulting object parsed from the JSON text. Unfortunately, our program fails and exits with `SyntaxError`. The JSON text were are trying to parse is  invalid JSON since keys and values should be separated by `:` characters and not with `=` characters, hence the reason our method encounters the `SyntaxError` and reason above.
+Our program tries to parse the JSON text `'{ "name" = "William", "country" = "South Africa" }'` and print the name value of the resulting object parsed from the JSON. Unfortunately, our program fails and exits with `SyntaxError`.
+
+The JSON we are trying to parse is invalid JSON since keys and values should be separated by `:` characters and not with `=` characters, hence the reason our method encounters the `SyntaxError` above.
 
 ## Catch the error
 Since we know there is a possibility that `JSON.parse` can throw an error, we can catch the error and check whether it is an instance of Syntax Error and notify the user about the invalid JSON. Otherwise, if the error is something we do not expect, we can also let the user know we encountered an unexpected error. Below, our program has been updated to do just this.
