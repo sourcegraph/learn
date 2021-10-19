@@ -39,7 +39,7 @@ If the program had `print` as it was meant to be, then the output is as indicate
 <Highlighter
 input={`Enter a spam message: It's a spam!!
 It's a spam!!`}
-language='shell'
+language='bash'
 />
 
 With the misspelled function `prnt`, we are able to reproduce the `NameError`.
@@ -52,7 +52,7 @@ Traceback (most recent call last):
   File "name_error.py", line 3, in handler
     prnt(spam)
 NameError: name 'prnt' is not defined`}
-language='shell'
+language='bash'
 />
 
 There are several causes for the Python `NameError`, which we'll describe in more detail below.
@@ -81,7 +81,7 @@ In this case, you'll receive output similar to the following.
 
 <Highlighter
 input={`NameError: name 'b' is not defined`}
-language='shell'
+language='bash'
 />
 
 One way to recover from this error would be to ensure that you are only calling defined variables, or to define the missing variable after receiving the above error. 
@@ -101,7 +101,7 @@ Here, you will receive the guidance that `a` is not defined.
 
 <Highlighter
 input={`NameError: name 'a' is not defined`}
-language='shell'
+language='bash'
 />
 
 In these cases, you can be sure that you define variables prior to usage. You will often want to define all variables early on in the writing of your program.
@@ -127,7 +127,7 @@ input={`Traceback (most recent call last):
   File "name_error.py", line 6, in <module>
     print(spam)
 NameError: name 'spam' is not defined`}
-language='shell'
+language='bash'
 />
 
 In this case, we coud rewrite the program to make `spam` a global variable, defining it outside of the context of the `handler()` function. This ensures that both the function and the rest of the program can access the `spam` variable.
@@ -168,7 +168,7 @@ Here, we first have the program attempt our original workflow, but use the `exce
 
 <Highlighter
 input='You are attempting to access an identifier that is not defined in the local or global scope.'
-language='shell'
+language='bash'
 />
 
 In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to definint it.

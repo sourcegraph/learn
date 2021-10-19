@@ -18,21 +18,21 @@ Lets create a text file.
 
 <Highlighter
 input='echo "test" > test'
-language='shell'
+language='bash'
 />
 
 Let's try to change directory to the text file named `test` with the **c**hange **d**irectory (`cd`) command.
 
 <Highlighter
 input='cd test'
-language='shell'
+language='bash'
 />
 
 We'll receive the following error message.
 
 <Highlighter
 input='cd: not a directory: test'
-language='shell'
+language='bash'
 />
 
 The `cd` command fails because you've tried to change directory but passed a text file as an argument instead of a directory.
@@ -47,21 +47,21 @@ First, we create a directory.
 
 <Highlighter
 input='mkdir mydir'
-language='shell'
+language='bash'
 />
 
 Then we can move our text file, `test` into that directory.
 
 <Highlighter
 input='mv test mydir/test'
-language='shell'
+language='bash'
 />
 
 Finally we can now change directory into `mydir`.
 
 <Highlighter
 input='cd mydir'
-language='shell'
+language='bash'
 />
 
 You can ensure that the file is in `mydir` by running the `ls` — or _list_ — command.
@@ -77,7 +77,7 @@ You can use `ls` to list all files in a directory. We will append the flags `-la
 
 <Highlighter
 input='ls -lah'
-language='shell'
+language='bash'
 />
 
 Once you run the command, you should receive output similar to the following based on your own file structure. 
@@ -92,7 +92,7 @@ drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...'
-language='shell'
+language='bash'
 />
 
 The start of each output lets you know if it's a directory or not. `-` means it's a regular file (as in `-rw-r--r--`) and `d` means it is a directory (as in `drwxr-xr-x`). Be sure to use `cd` only on directories that are indicated as such. 
@@ -103,7 +103,7 @@ You can use the `grep` command to list only directories. This way if you use `cd
 
 <Highlighter
 input='ls -lAh | grep "^d"'
-language='shell'
+language='bash'
 />
 
 After running this comand, you'll only receive the output of directories in the example of the section above. 
@@ -113,7 +113,7 @@ input='drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...'
-language='shell'
+language='bash'
 />
 
 With `grep` you can filter out the files and directories you are looking for to ensure you are not using a command that will not run on a given type. 

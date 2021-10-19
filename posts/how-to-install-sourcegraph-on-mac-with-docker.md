@@ -53,7 +53,7 @@ input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.29.0'
-language='shell'
+language='bash'
 />
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -62,7 +62,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='shell'
+language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.
@@ -78,7 +78,7 @@ input='docker run \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.30.4'
-language='shell'
+language='bash'
 />
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -87,7 +87,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='shell'
+language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

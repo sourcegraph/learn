@@ -55,7 +55,7 @@ If you are not signed into your GitLab account, you will be redirected to log in
 
 If you are logged into GitLab, you will need to login so that you can authorize GitLab as the method to create a Sourcegraph cloud account.
 
-![Authroize Sourcegraph cloud with GitLab](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/authorize-sourcegraph-on-gitlab.png)
+![Authorize Sourcegraph cloud with GitLab](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/authorize-sourcegraph-on-gitlab.png)
 
 Clicking on **Authorize** will allow Sourcegraph to have access to the GitLab details that are mentioned in the signup form for your account creation.
 

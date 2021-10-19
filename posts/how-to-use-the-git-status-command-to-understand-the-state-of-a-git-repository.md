@@ -20,7 +20,7 @@ To get a summary of the status of the repository, run `git status` in your termi
 
 <Highlighter
 input='git status'
-language='shell'
+language='bash'
 />
 
 If you run the command on a freshly cloned repository, you will get the following output.
@@ -29,7 +29,7 @@ If you run the command on a freshly cloned repository, you will get the followin
 input={`On branch main
 Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean`}
-language='shell'
+language='bash'
 />
 
 We can interpret the message as follows.
@@ -68,7 +68,7 @@ Untracked files:
         style.css
      
 no changes added to commit (use "git add" and/or "git commit -a")`}
-language='shell'
+language='bash'
 />
 
 We can learn the following from the above output.
@@ -92,7 +92,7 @@ Changes to be committed:
         modified:   index.html
         deleted:    script.js
         new file:   style.css'
-language='shell'
+language='bash'
 />
 
 Note that a new section is now present, titled `Changes to be committed`. The sections that appeared previously, titled `Changes not staged for commit` and `Untracked files`, are no longer present. This reflects the fact that there are no unstaged changes remaining in the working directory. The file which was previously considered untracked is now in the staging area, so it’s labeled `new file` and is no longer untracked.
@@ -114,7 +114,7 @@ input={`Changes not staged for commit:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
         README2.md`}
-language='shell'
+language='bash'
 />
 
 After you stage both of these changes, Git is able to determine that the contents of both files are identical. Based on this, Git will then list the change as a single entry  `Changes to be committed` section.
@@ -123,7 +123,7 @@ After you stage both of these changes, Git is able to determine that the content
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    README.md -> README2.md'
-language='shell'
+language='bash'
 />
 
 The `renamed` label displays the file’s original name followed by its new name.
@@ -134,7 +134,7 @@ When moving files across directories, the change is displayed in a similar way. 
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    README.md -> docs/pages/README.md'
-language='shell'
+language='bash'
 />
 
 Git doesn’t differentiate between renaming and moving files. It represents both types of changes as “renamed” files.
@@ -148,7 +148,7 @@ If your current branch is in an identical state to the remote branch, `git statu
 <Highlighter
 input={`On branch main
 Your branch is up to date with 'origin/main'.`}
-language='shell'
+language='bash'
 />
 
 In the above example, `origin/main` is the name of the remote branch. It’s prefixed with the name of the remote repository, which is `origin` by default.
@@ -159,7 +159,7 @@ If you’ve created some commits on your local branch and haven’t yet pushed t
 input={`On branch main
 Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)`}
-language='shell'
+language='bash'
 />
 
 On the other hand, if the remote branch contains commits that haven’t yet been pulled into your local branch, the output will indicate that your branch is behind the remote branch.
@@ -168,7 +168,7 @@ On the other hand, if the remote branch contains commits that haven’t yet been
 input={`On branch main
 Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)`}
-language='shell'
+language='bash'
 />
 
 Both of the above situations are possible at the same time. You can have local commits that aren’t yet pushed while also having commits on the remote branch that you haven’t yet pulled. In this case, the output will describe the branches as having “diverged” and will display the number of commits on each.
@@ -178,7 +178,7 @@ input={`On branch main
 Your branch and 'origin/main' have diverged,
 and have 2 and 3 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)`}
-language='shell'
+language='bash'
 />
 
 When collaborating with others or contributing to a remote repository, it’s useful to pay attention to the status of your local branch compared to the remote branch. This information lets you keep track of local commits that you can push and remote commits that need to be pulled.
@@ -191,7 +191,7 @@ To run `git status` with the short output option, add the `-s` flag (which stand
 
 <Highlighter
 input='git status -s'
-language='shell'
+language='bash'
 />
 
 In a repository with a modified, deleted, and created file, the output will be similar to the following.
@@ -200,7 +200,7 @@ In a repository with a modified, deleted, and created file, the output will be s
 input='M index.html
  D script.js
 ?? demo.js'
-language='shell'
+language='bash'
 />
 
 The short output format provides the same list of files and their statuses as the default output format but in an abbreviated form. It displays a letter or symbol to indicate the state of each listed file, as described below.
@@ -219,7 +219,7 @@ To enable the verbose output option, run `git status` with the `-v` flag (short 
 
 <Highlighter
 input='git status -v'
-language='shell'
+language='bash'
 />
 
 If you don’t have any staged changes, this will produce the same output as `git status` without the verbose option. However, if you do have staged changes, the command will describe every staged change by displaying the diff of the change.
@@ -241,7 +241,7 @@ index a39afed..d8c7d8f 100644
 +<p>Please click the button below to begin.</p>
    
  <button id="begin">Begin</button>`}
-language='shell'
+language='bash'
 />
 
 The above output indicates that the `index.html` file is staged and displays the details of the lines that were changed.

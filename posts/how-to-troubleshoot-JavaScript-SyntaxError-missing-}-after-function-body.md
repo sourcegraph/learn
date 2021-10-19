@@ -57,7 +57,7 @@ When you run the above, you'll receive the following output.
 <Highlighter
 input='Uncaught SyntaxError: missing } after function body 6:0
 note: { opened at line 1, column 27'
-language='shell'
+language='bash'
 />
 
 The curly bracket at the end of our example program — that returned an error message — is considered to be closing the nested `if(water.isHot)` conditional block. The interpreter follows the **l**ast-**i**n-**f**irst-**o**ut (LIFO) order: the last closed curly bracket in the example above closes the last opened curly bracket, which is the conditional block statement. This version of the program makes the purpose of the single closed curly bracket clearer.
@@ -81,7 +81,7 @@ JavaScript error messages tend to be helpful for debugging, so always try to rea
 <Highlighter
 input='Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16'
-language='shell'
+language='bash'
 />
 
 In the example above, the line where the error occurred is line 4. Try to parse your code from that line and figure out which curly bracket closes which statement. Alternately, you can start debugging from the first line of the function where the error occurred.

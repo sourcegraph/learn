@@ -66,7 +66,7 @@ Index 4 has value 3
 Index 5 has value 2
 Index 6 has value 1
 Printed 7 numbers out of 7'
-language='shell'
+language='bash'
 />
 
 If, instead, the user enters a value outside of the array, such as `8`, our program will print all the numbers up until it tries to print the number at index `7`. At this point, it will fail with `ArrayIndexArrayIndexOutOfBoundsException`.
@@ -82,7 +82,7 @@ Index 5 has value 2
 Index 6 has value 1
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7
 	at NumberPrinter.main(NumberPrinter.java:13)`}
-language='shell'
+language='bash'
 />
 
 Our program failed because the index `8` value is outside the "boundaries" of our `numbers[]` array. The boundary for our array restricts the value of the index according to the following criteria:
@@ -152,13 +152,13 @@ In the output below, we are given the result of a user entering the invalid valu
 <Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Only positive values are allowed!'
-language='shell'
+language='bash'
 />
 
 <Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 8
 The given value of 8 is too large! Value has to be less than or equal to 7'
-language='shell'
+language='bash'
 />
 
 These two user feedback strings are loaded into the `System.out.println()` methods within the `if` and `else if` statements, respectively. 
@@ -216,14 +216,14 @@ Index 4 has value 3
 Index 5 has value 2
 Index 6 has value 1
 Printed 7 numbers out of 7'
-language='shell'
+language='bash'
 />
 
 <Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Index 0 has value 7
 Printed 1 numbers out of 7'
-language='shell'
+language='bash'
 />
 
 Now, whether the user gives the program negative numbers or large numbers outside of the array, it doesn't fail or throw `ArrayIndexOutOfBoundsException` since our program is resillient to invalid index numbers.

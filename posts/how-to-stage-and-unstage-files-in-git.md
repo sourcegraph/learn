@@ -37,7 +37,7 @@ For example, to add a modified file named `license.txt`, run `git add` with the 
 
 <Highlighter
 input='git add license.txt'
-language='shell'
+language='bash'
 />
 
 While the command is called `git add`, note that this use of the word “add” doesn’t only refer to adding new files to the repository. It refers to adding any changed files to the staging area. The staging area can contain created, deleted, or modified files. You can use `git add` on a deleted file, for example.
@@ -46,7 +46,7 @@ You can list multiple filenames as arguments to `git add` to stage them all in o
 
 <Highlighter
 input='git add first.txt second.txt third.txt'
-language='shell'
+language='bash'
 />
 
 The above is equivalent to running `git add` on each one individually, as follows.
@@ -55,14 +55,14 @@ The above is equivalent to running `git add` on each one individually, as follow
 input='git add first.txt
 git add second.txt
 git add third.txt'
-language='shell'
+language='bash'
 />
 
 You can stage a file that is deep in the directory structure by providing its entire path. For example, to stage a file located at `static/pages/docs/index.html`, you can provide that full path to `git add`.
 
 <Highlighter
 input='git add static/pages/docs/index.html'
-language='shell'
+language='bash'
 />
 
 The argument to `git add` is always interpreted as relative to the current directory. This means that as an alternative to the above deeply nested path, you can switch to the file’s directory first and then use `git add` on the file name directly. Here’s how you can do this by changing the current directory with `cd` and then staging `index.html` from there:
@@ -70,7 +70,7 @@ The argument to `git add` is always interpreted as relative to the current direc
 <Highlighter
 input='cd static/pages/docs
 git add index.html'
-language='shell'
+language='bash'
 />
 
 By using relative file paths in this way, you can stage changes from any directory in the repository tree.
@@ -83,14 +83,14 @@ For example, to add all changes in the `docs` directory, provide the directory n
 
 <Highlighter
 input='git add docs'
-language='shell'
+language='bash'
 />
 
 Similar to staging files, you can specify multiple directories in the same command by listing them. The following example shows how to stage two directories: `docs` and `assets`.
 
 <Highlighter
 input='git add docs assets'
-language='shell'
+language='bash'
 />
 
 After running the above command, all changes contained within these two directories will be staged.
@@ -101,7 +101,7 @@ When you don’t need to select specific files or directories for a commit, you 
 
 <Highlighter
 input='git add -A'
-language='shell'
+language='bash'
 />
 
 This will stage all changes in the repository directory and all subdirectories. It will include all files that are modified, created, or deleted.
@@ -125,7 +125,7 @@ Suppose you have an empty directory named `output` that you want to add to a rep
 <Highlighter
 input='touch output/.gitkeep
 git add output'
-language='shell'
+language='bash'
 />
 
 This will stage the `output` directory, which is empty except for the placeholder file, to be committed to the repository.
@@ -138,14 +138,14 @@ Glob patterns use the star symbol (`*`) as a wildcard to match file names. For e
 
 <Highlighter
 input='git add *.py'
-language='shell'
+language='bash'
 />
 
 The double star pattern (`**`) is a wildcard that matches any subdirectories in a file’s path. For example, to recursively stage all files named `index.js` in all subdirectories of the project, you can run `git add` with the following pattern.
 
 <Highlighter
 input='git add **/index.js'
-language='shell'
+language='bash'
 />
 
 This will find all files named `index.js`, regardless of their subdirectory, and stage them.
@@ -154,7 +154,7 @@ The above two patterns can be combined. For example, you can run the following c
 
 <Highlighter
 input='git add **/*.py'
-language='shell'
+language='bash'
 />
 
 The double star (`**`) pattern will search across all subdirectories recursively and the single star (`*`) pattern will match all filenames with a `.py` extension in the project.
@@ -172,7 +172,7 @@ For example, to remove and stage a file named `license.txt`, you can run `git rm
 
 <Highlighter
 input='git rm license.txt'
-language='shell'
+language='bash'
 />
 
 The `license.txt` file will now be in the staging area as a deleted file.
@@ -194,7 +194,7 @@ For example, to rename a file named `todo.txt` to `done.txt`, you can run `git m
 
 <Highlighter
 input='git mv todo.txt done.txt'
-language='shell'
+language='bash'
 />
 
 This will perform three tasks in one command:
@@ -219,14 +219,14 @@ Like `git add`, `git restore --staged` takes a file name as an argument. For exa
 
 <Highlighter
 input='git add README.md'
-language='shell'
+language='bash'
 />
 
 To unstage this file, use `git restore --staged` with the same file name.
 
 <Highlighter
 input='git restore --staged README.md'
-language='shell'
+language='bash'
 />
 
 The file’s changes will remain in the working directory, but the file will no longer be present in the staging area.
@@ -241,7 +241,7 @@ The `git reset` command removes all changes from the staging area.
 
 <Highlighter
 input='git reset'
-language='shell'
+language='bash'
 />
 
 After running the above command, all changes will be unstaged but will remain in the working directory. The output gives you a summary of those changes, as in the example below.
@@ -251,7 +251,7 @@ input='Unstaged changes after reset:
 M       index.html
 D       script.js
 D       style.css'
-language='shell'
+language='bash'
 />
 
 From here, you can start staging changes again.

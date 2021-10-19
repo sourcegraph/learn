@@ -50,14 +50,14 @@ For our example, we’ll move into a temporary directory, `~/tmp`.
 
 <Highlighter
 input='cd ~/tmp'
-language='shell'
+language='bash'
 />
 
 Enter the following command on your terminal to clone your forked repository. Be sure to substitute _your username_ where we have `your-username` written out in the URL.
 
 <Highlighter
 input='git clone https://github.com/your_username/deploy-sourcegraph-docker/'
-language='shell'
+language='bash'
 />
 
 You should receive output similar to the following:
@@ -66,7 +66,7 @@ You should receive output similar to the following:
 input={`Cloning into 'deploy-sourcegraph-docker'...
 ...
 Resolving deltas: 100% (4418/4418), done.`}
-language='shell'
+language='bash'
 />
 
 Once you clone the Git repository, all the relevant code lives locally on your machine or server. You now have a copy of the reference repository that you can configure to suit your needs.
@@ -80,14 +80,14 @@ To set up your reference to the remote upstream repository, you’ll first need 
 
 <Highlighter
 input='cd ~/tmp/deploy-sourcegraph-docker/'
-language='shell'
+language='bash'
 />
 
 From within the `/deploy-sourcegraph-docker` directory, use the following command that passes in the URL of the `sourcegraph/deploy-sourcegraph-docker` project to set up the remote upstream. 
 
 <Highlighter
 input='git remote add upstream https://github.com/sourcegraph/deploy-sourcegraph-docker'
-language='shell'
+language='bash'
 />
 
 
@@ -101,14 +101,14 @@ Move to the configuration directory (the file path on your machine that contains
 
 <Highlighter
 input='cd ~/tmp/deploy-sourcegraph-docker/docker-compose'
-language='shell'
+language='bash'
 />
 
 Within this directory, you can spin up the Sourcegraph instance on your host with Docker Compose. Here, `up -d` refers to starting the containers in the background and leaving them running; the `-d` flag refers to running the containers in a **d**etached mode.
 
 <Highlighter
 input='sudo docker-compose up -d'
-language='shell'
+language='bash'
 />
 
 Once you run this, you will know that your installation was successful when you receive output that generates `done` messaging, and output that notifies you that Sourcegraph is ready. This will display with your server or localhost IP address and the relevant port.
@@ -116,7 +116,7 @@ Once you run this, you will know that your installation was successful when you 
 
 <Highlighter
 input='Sourcegraph is ready at: [an-address-and-port-created-by-your-server]'
-language='shell'
+language='bash'
 />
 
 You can access Sourcegraph using the relevant IP address and port number. 
@@ -129,14 +129,14 @@ Sometimes, a service may be running but cannot respond to requests because a req
 
 <Highlighter
 input='docker ps'
-language='shell'
+language='bash'
 />
 
 The instance is healthy when the `sourcegraph-frontend-0` image is running and is marked as “healthy” on your host’s terminal.
 
 <Highlighter
 input='[your-container-id]  sourcegraph-frontend-0  "/sbin/tini -- /usr/…"  Up 20 minutes(healthy)'
-language='shell'
+language='bash'
 />
 
 A service will be marked as healthy if it has fulfilled all the checks that it needs to run.

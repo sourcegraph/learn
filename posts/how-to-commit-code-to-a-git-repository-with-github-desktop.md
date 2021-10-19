@@ -104,7 +104,7 @@ For example, we can write the following commit summary for our changed files:
 
 <Highlighter
 input='Update README and demo script'
-language='shell'
+language='bash'
 />
 
 We’ll enter this message into the **Summary** field. When committing complex changes, it can be useful to include more details in the **Description** field. This field is optional, so we can leave it blank.

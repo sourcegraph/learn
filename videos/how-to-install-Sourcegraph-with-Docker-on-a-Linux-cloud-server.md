@@ -26,7 +26,7 @@ I set up this DigitalOcean Droplet with a [non-root sudo user](https://www.digit
 
 <Highlighter
 input='sudo apt update'
-language='shell'
+language='bash'
 />
 
 I’ll enter the password when prompted to use my sudo user. 
@@ -35,21 +35,21 @@ Now we know everything is up to date, and I can move ahead to installing Docker.
 
 <Highlighter
 input='sudo apt install snapd'
-language='shell'
+language='bash'
 />
 
 With that installed and set up, I want to make sure I have the core libraries I need, so I’ll run sudo snap install core.
 
 <Highlighter
 input='sudo snap install core'
-language='shell'
+language='bash'
 />
 
 Now that snap is installed, we’ll install Docker using snap.
 
 <Highlighter
 input='sudo snap install docker'
-language='shell'
+language='bash'
 />
 
 Now that we have Docker installed, we can move on to installing Sourcegraph with Docker.
@@ -66,7 +66,7 @@ input={`sudo docker run -d --publish 80:7080 --publish 443:7443 \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.30.4`}
-language='shell'
+language='bash'
 />
 
 This command is telling your server to install and run Sourcegraph, binding port 7080 to TCP port 80 of your server; it’s calling up the relevant files from the Docker image of Sourcegraph. Since this is a cloud server, we can keep our instance of Sourcegraph up and running even after closing our Terminal connection to the server, and that was one of the details we pass to this command. It is also setting up a store for your Sourcegraph data.

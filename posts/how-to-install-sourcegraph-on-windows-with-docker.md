@@ -43,7 +43,7 @@ Due to limitations with Docker for Windows, Sourcegraph can only be tested on Wi
 <Highlighter
 input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 `
 --rm sourcegraph/server:3.29.0'
-language='shell'
+language='bash'
 />
 
 _The above command with backtick assumes use of PowerShell. If you're using the Windows Command Prompt, substitute `^` as below._
@@ -51,7 +51,7 @@ _The above command with backtick assumes use of PowerShell. If you're using the 
 <Highlighter
 input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 ^
 --rm sourcegraph/server:3.29.0'
-language='shell'
+language='bash'
 />
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph.
@@ -60,7 +60,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='shell'
+language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

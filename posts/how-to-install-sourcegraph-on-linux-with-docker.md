@@ -31,14 +31,14 @@ Ensure that you have the [snap package manager](https://snapcraft.io/) installed
 input='sudo apt update
 sudo apt install snapd
 sudo snap install core'
-language='shell'
+language='bash'
 />
 
 Once snap is fully installed, you can install Docker using snap.
 
 <Highlighter
 input='sudo snap install docker'
-language='shell'
+language='bash'
 />
 
 Alternatively, you can install Docker through its packages available through the Docker installation page for [Ubuntu](https://docs.docker.com/engine/install/ubuntu/) or for [Debian](https://docs.docker.com/engine/install/debian/).
@@ -51,14 +51,14 @@ If you are using **Fedora**, ensure that snap is installed by running the follow
 
 <Highlighter
 input='sudo dnf install snapd'
-language='shell'
+language='bash'
 />
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
 <Highlighter
 input='sudo snap install docker'
-language='shell'
+language='bash'
 />
 
 Alternatively, you can install Docker through its packages available through the [Docker installation page for Fedora](https://docs.docker.com/engine/install/fedora/).
@@ -73,14 +73,14 @@ If you are using **CentOs**, you can ensure that snap is installed and ready by 
 input={`sudo yum install epel-release
 sudo yum install snapd
 sudo systemctl enable --now snapd.socket`}
-language='shell'
+language='bash'
 />
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
 <Highlighter
 input='sudo snap install docker'
-language='shell'
+language='bash'
 />
 
 Alternatively, you can install Docker through its packages available through the [Docker installation page for CentOs](https://docs.docker.com/engine/install/centos/).
@@ -102,7 +102,7 @@ input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \  
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \  
 sourcegraph/server:3.30.4'
-language='shell'
+language='bash'
 />
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -111,7 +111,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='shell'
+language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.
@@ -126,7 +126,7 @@ input='docker run -d --publish 80:7080 --publish 443:7443 \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.30.4'
-language='shell'
+language='bash'
 />
 
 This command is telling your server to install and run Sourcegraph in port 7080 of your server and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
@@ -135,7 +135,7 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://your-server-ip-address:7080'
-language='shell'
+language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

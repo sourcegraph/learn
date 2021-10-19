@@ -23,14 +23,14 @@ The version of Git used in the examples in this tutorial is 2.32.0. You can chec
 
 <Highlighter
 input='git version'
-language='shell'
+language='bash'
 />
 
 You’ll receive output similar to the following, which states your version number.
 
 <Highlighter
 input='git version 2.32.0'
-language='shell'
+language='bash'
 />
 
 Note that when talking about Git, the word “commit” can be used both as a noun (as in: “Here is the latest commit.”) and a verb meaning “to create a commit” (as in: “I will commit this change.”).
@@ -41,7 +41,7 @@ First, it’s useful to get a summary of the changes that we’ve made in our pr
 
 <Highlighter
 input='git status'
-language='shell'
+language='bash'
 />
 
 The output of the command tells us about the changes that are available to be added to our commit. The first section of the output that we’ll pay attention to is titled `Changes not staged for commit`.
@@ -51,7 +51,7 @@ input={`Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)  
         modified:   README.md`}
-language='shell'
+language='bash'
 />
 
 This section lists files that already exist in the repository and have been modified since the last commit. It tells us that we have one modified file, `README.md`.
@@ -62,7 +62,7 @@ The second section that is relevant to us is titled `Untracked files`. It lists 
 input={`Untracked files:
   (use "git add <file>..." to include in what will be committed)
         getting-started.txt`}
-language='shell'
+language='bash'
 />
 
 The above output tells us that there’s one new file in the working directory, `getting-started.txt`.
@@ -79,7 +79,7 @@ To add a modified file to the staging area, we use the `git add` command. The `g
 
 <Highlighter
 input='git add README.md'
-language='shell'
+language='bash'
 />
 
 If we run `git status` again at this point, `README.md` will be gone from the “Changes not staged for commit” section and will instead be present under “Changes to be committed.” This confirms that it has been added to the staging area.
@@ -88,7 +88,7 @@ We can continue by adding more files using `git add`. For example, we’ll add t
 
 <Highlighter
 input='git add getting-started.txt'
-language='shell'
+language='bash'
 />
 
 After this command, `getting-started.txt` will also be included in the “Changes to be committed” section of the `git status` output. By using `git add` in this way, we can include as many changed files as we want in our commit.
@@ -101,7 +101,7 @@ We can add all files by providing the `-A` flag (which is short for `--all`) to 
 
 <Highlighter
 input='git add -A'
-language='shell'
+language='bash'
 />
 
 The above command will recursively add all the repository's modified files in all subdirectories to the staging area, regardless of where we are running the command. We can run this from any location within the repository.
@@ -114,7 +114,7 @@ The `git restore` command expects a file name, similarly to `git add`, and requi
 
 <Highlighter
 input='git restore --staged README.md'
-language='shell'
+language='bash'
 />
 
 This will remove `README.md` from the staging area. The changes to the file won’t be lost. They will remain in the working directory.
@@ -130,7 +130,7 @@ input={`Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   README.md
         new file:   getting-started.txt`}
-language='shell'
+language='bash'
 />
 
 The output confirms that we have two changes in the staging area: `README.md`, which is modified, and `getting-started.txt`, which is new.
@@ -159,7 +159,7 @@ Suppose that we’re committing changes to update the `README.md` file and add a
 
 <Highlighter
 input='Update README and add getting-started file'
-language='shell'
+language='bash'
 />
 
 We’ll use this message with the `git commit` command in the next step.
@@ -174,7 +174,7 @@ With our example commit message, the command would look like this:
 
 <Highlighter
 input='git commit -m “Update README and add getting-started file”'
-language='shell'
+language='bash'
 />
 
 Here’s the output when we run this command:
@@ -183,7 +183,7 @@ Here’s the output when we run this command:
 input={`[main 5388e04d38] Update README and add getting-started file   
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 getting-started.txt`}
-language='shell'
+language='bash'
 />
 
 The above output tells us a few things about the commit that we just created: the number of files changed, the number of insertions and deletions (which is a count of lines affected), and the list of created files.
@@ -198,7 +198,7 @@ The `git log` command outputs a list of recent commits. Since we’re only inter
 
 <Highlighter
 input='git log -1'
-language='shell'
+language='bash'
 />
 
 This helps us confirm that the last commit is, in fact, the one that we just created. Here’s the result when we run `git log -1` after creating our commit:
@@ -209,7 +209,7 @@ Author: Marek <marek@example.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400   
     
     Update README and add getting-started file`}
-language='shell'
+language='bash'
 />
 
 In the above output of `git log -1`, we see the commit ID and the branch name (`main`) on the first line. The output also includes the author and date, followed by the commit message.
