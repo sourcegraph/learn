@@ -19,10 +19,10 @@ In this tutorial, we’ll go through a type hinting example with guidance on how
 First, let's start with this function. This math function is designed to take in two integers and return the sum.
 
 <Highlighter 
-    input={`def sum_two_numbers(num1: int = 0, num2: int = 0) -> int:
+input={`def sum_two_numbers(num1: int = 0, num2: int = 0) -> int:
     sum: int = num1 + num2  
     return sum`}
-    language='python'
+language='python'
 />
 
 In this example, both values passed into our `sum_two_numbers()` function — the sum object and return value — are all designated as integers, as indicated with `int` in each case. Default values come after the type hint for function parameters.
@@ -34,12 +34,12 @@ Because the Python interpreter does not enforce type hinting, unexpected types c
 Let’s consider what happens when two strings get passed into the `sum_two_numbers()` function.
 
 <Highlighter
-    input={`def sum_two_numbers(num1: int, num2: int) -> int:
+input={`def sum_two_numbers(num1: int, num2: int) -> int:
     sum: int = num1 + num2
     return sum
     
 sum_two_numbers("Hello ", "World!")`}
-    language='python'
+language='python'
 />
 
 Using the function like this would not throw an error. Instead, since the addition operator is valid for the string type, it will concatenate the two strings passed to it. Using the `sum_two_numbers()` function like this will return the string `Hello World!`.
@@ -47,22 +47,22 @@ Using the function like this would not throw an error. Instead, since the additi
 If you would like to type check your code, you can use an external tool to do so, like [Mypy](http://mypy-lang.org/). You can use pip to install Mypy within your Python 3 programming environment (or alternately use the `pip3` command). 
 
 <Highlighter
-    language='shell'
-    input='pip install mypy'
+language='shell'
+input='pip install mypy'
 />
 
 Let the previously written code be in a file called `sum.py`. You can run Mypy on the file by typing the following command.
 
 <Highlighter
-    language='shell'
-    input='mypy sum.py'
+language='shell'
+input='mypy sum.py'
 />
 
 Running Mypy on the code will return the following errors.
 
 <Highlighter
-    language='shell'
-    input=
+language='shell'
+input=
     'sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
 sum.py:4: error: Argument 2 to "sum_two_numbers" has incompatible type "str"; expected "int"
 Found 2 errors in 1 file (checked 1 source file)'
@@ -71,8 +71,8 @@ Found 2 errors in 1 file (checked 1 source file)'
 Code written with type hinting issues will not return any errors. If we put the first version of the `sum_two_numbers()` function that used integer types, we would instead receive the following output from Mypy.
 
 <Highlighter
-    language='shell'
-    input='Success: no issues found in 1 source file'
+language='shell'
+input='Success: no issues found in 1 source file'
 />
 
 Running Mypy on Python files will help you discover type checking errors.
@@ -83,8 +83,8 @@ Running Mypy on Python files will help you discover type checking errors.
 Python’s primitive types are included with general type hinting.
 
 <Highlighter
-    language='python'
-    input=
+language='python'
+input=
     'my_int: int = 9
 my_float: float = 2.2
 my_string: str = "Hello World!"
@@ -102,9 +102,9 @@ Depending on the version of Python you are using, you may be able to leverage bu
 In Python 3.9, built-in collection types are included as generic types and their respective type hints can be used similarly to the primitive Python types. Here is how you would type hint a list object in Python 3.9.
 
 <Highlighter
-    language='python'
-    input='my_list: list[int] = [1, 2, 3, 4, 5]'
-    matcher='[1, 2, 3, 4, 5]'
+language='python'
+input='my_list: list[int] = [1, 2, 3, 4, 5]'
+matcher='[1, 2, 3, 4, 5]'
 />
 
 This list is initialized with the integer type by using the `list[int]` syntax.
@@ -112,23 +112,23 @@ This list is initialized with the integer type by using the `list[int]` syntax.
 Below is an example of a tuple that we have type hinted as being composed of an integer, float, and string.
 
 <Highlighter
-    language='python'
-    input='my_tuple: tuple[int, float, str] = (1, 9.5, "Red")'
-    matcher='(1, 9.5, "Red")'
+language='python'
+input='my_tuple: tuple[int, float, str] = (1, 9.5, "Red")'
+matcher='(1, 9.5, "Red")'
 />
 
 For a tuple object of unknown size, ellipses are used to describe the type of objects stored within it. Here is a tuple with an unknown number of integers stored.
 
 <Highlighter
-    language='python'
-    input='my_big_tuple: tuple[int, ...] = (1, 2, 3)'
+language='python'
+input='my_big_tuple: tuple[int, ...] = (1, 2, 3)'
 />
 
 It is possible to stack multiple types together as well. Here is a tuple that has sets of two integers.
 
 <Highlighter
-    language='python'
-    input='my_set: set[tuple[int, int]] = {(1, 2), (2, 3), (3, 4)}'
+language='python'
+input='my_set: set[tuple[int, int]] = {(1, 2), (2, 3), (3, 4)}'
 />
 
 Because we are working in Python 3.9 in these examples, we can set up these data structures as we did with other data types above, using the built-in functionality.
@@ -138,37 +138,37 @@ Because we are working in Python 3.9 in these examples, we can set up these data
 In Python 3.8, built-in collection type hints are not built directly into Python and must be imported to use. These types can be imported using the typing module. Using that module, below is how you would type hint a list object in Python 3.8. Note the use of title case in `List[int]`. 
 
 <Highlighter
-    input={`from typing import List   
+input={`from typing import List   
       
 my_list: List[int] = [1, 2, 3, 4, 5]`}
-    language='python'
+language='python'
 />
 
 Some other types in Python 3.8 that need to leverage the typing library include set, dictionary (`dict`), and tuple. Since both dictionary and tuple types can have multiple types involved, you must specify each type. Here is an example of a tuple that has an integer, float, and string.
 
 <Highlighter
-    input={`from typing import Tuple  
+input={`from typing import Tuple  
     
 my_tuple: Tuple[int, float, str] = (1, 9.5, "Red")`}
-    language='python'
+language='python'
 />
 
 For a tuple object of unknown size, ellipses are used to describe the type of objects stored within it. Here is a tuple with an unknown number of integers stored.
 
 <Highlighter
-    input={`from typing import Tuple   
+input={`from typing import Tuple   
      
 my_big_tuple: Tuple[int, ...] = (1, 2, 3)`}
-    language='python'
+language='python'
 />
 
 You can also stack multiple types together as well, as in this tuple that uses two integers.
 
 <Highlighter
-    input={`from typing import Set, Tuple   
+input={`from typing import Set, Tuple   
      
 my_set: Set[Tuple[int, int]] = {(1, 2), (2, 3), (3, 4)}`}
-    language='python'
+language='python'
 />
 
 When working with Python 3.8, be sure to import the typing module prior to type hinting on data collections. Python 3.9 is backwards compatible, and will run the code above. 
@@ -176,7 +176,7 @@ When working with Python 3.8, be sure to import the typing module prior to type 
 It is also valid to type hint user-defined classes. In terms of type hinting, user-defined classes work in the same way as the primitive Python types. For example, here is a coordinate class definition and implementation.
 
 <Highlighter
-    input={`class Coordinate:    
+input={`class Coordinate:    
     x: int    
     y: int    
      
@@ -185,7 +185,7 @@ It is also valid to type hint user-defined classes. In terms of type hinting, us
         self.y = y_    
      
 c1: Coordinate = Coordinate(1, 2)`}
-    language='python'
+language='python'
 />
 
 In the above example, the user-defined classes use type hinting. To learn more about the `-> None` annotation with `__init__`, review [PEP 484 - Type Hints](https://www.python.org/dev/peps/pep-0484/). 
@@ -195,12 +195,12 @@ As may happen with an application that takes user input, sometimes you may prefe
 Below is an example of how you would make the `sum_two_numbers()` function support both integers and floats.
 
 <Highlighter
-    input={`from typing import Union    
+input={`from typing import Union    
     
 def sum_two(num1: Union[int, float], num2: Union[int, float]) -> Union[int, float]:
     sum: Union[int, float] = num1 + num2
     return sum`}
-    language='python'
+language='python'
 />
 
 In the example above, `num1` and `num2` can be either an integer or float type. 
@@ -208,10 +208,10 @@ In the example above, `num1` and `num2` can be either an integer or float type.
 If it is unclear what type an object is going to be, you can use the `Any` keyword to describe it.
 
 <Highlighter
-    input={`from typing import Any     
+input={`from typing import Any     
      
 my_variable: Any`}
-    language='python'
+language='python'
 />
 
 In the above example, `my_variable` can be any type.
@@ -219,10 +219,10 @@ In the above example, `my_variable` can be any type.
 Some objects may have a value of `None`. To allow this, type hint using the `Optional` keyword to specify that a variable may have a defined value or be None.
 
 <Highlighter
-    input={`from typing include Optional    
+input={`from typing include Optional    
      
 my_string: Optional[str] = None`}
-    language='python'
+language='python'
 />
 
 This code will create a string object with the value of `None`.

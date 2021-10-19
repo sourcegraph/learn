@@ -12,9 +12,10 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, the JavaScript engine detects an excessive level of recursion in your code.
 
-```javascript
-InternalError: too much recursion
-```
+<Highlighter
+input='InternalError: too much recursion'
+language='javascript'
+/>
 
 A recursive function is a function that calls itself repeatedly. When a condition is met, the function stops calling itself. This is called a base case. If somehow the condition does not meet that condition, then the function continues calling itself and the above error occurs.
 
@@ -24,20 +25,21 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 
 Let's write the following program, `factorial.js`.
 
-```javascript
-function factorial(x) {
+<Highlighter
+input='function factorial(x) {
   return x * factorial(x - 1)
 }
 num = 5
-console.log(factorial(num))
-```
+console.log(factorial(num))'
+language='javascript'
+/>
 
 This small program calculates the factorial of number `num` which is initialized as `5` in this case. This recursive function is missing a base case. As there is no exit condition, the function will call itself infinitely.
 
-```javascript
-factorial.js:1
+<Highlighter
+input={`factorial.js:1
 function factorial(x) {
-                  ^
+                     ^
 RangeError: Maximum call stack size exceeded
     at factorial (factorial.js:1:19)
     at factorial (/runtime/javascript/3xdbg257u/factorial.js:3:12)
@@ -49,8 +51,9 @@ RangeError: Maximum call stack size exceeded
     at factorial (/runtime/javascript/3xdbg257u/factorial.js:3:12)
     at factorial (/runtime/javascript/3xdbg257u/factorial.js:3:12)
     at factorial (/runtime/javascript/3xdbg257u/factorial.js:3:12)
-...
-```
+...`}
+language='javascript'
+/>
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
 
@@ -58,22 +61,24 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 We know that in mathematics, a factorial of negative numbers is not defined, so we can use this as our base case condition.
 
-```javascript
-function factorial(x) {
+<Highlighter
+input='function factorial(x) {
   if (x === 0) {
     return 1
   }
   return x * factorial(x - 1)
 }
 num = 5
-console.log(factorial(num))
-```
+console.log(factorial(num))'
+language='javascript'
+/>
 
 In this example, `factorial(5)` asks for `factorial(4)`, `factorial(4)` asks for `factorial(3)` and so on. At some point we arrive at `factorial(0)` which returns `1`. The following is the output we receive.
 
-```javascript
-Output: 120
-```
+<Highlighter
+input='Output: 120'
+language='javascript'
+/>
 
 Hence, by explicitly providing the condition where the recursion will stop, we won't receive the `too much recursion` error.
 
@@ -81,23 +86,25 @@ Hence, by explicitly providing the condition where the recursion will stop, we w
 
 We can also implement the following program using a `while` loop. In this example, we are calculating the factorial of number using while loop.
 
-```javascript
-num = 5
+<Highlighter
+input={`num = 5
 factorial = 1
-
+  
 while (num > 0) {
   factorial = factorial * num
   num--
 }
-
-console.log(factorial)
-```
+  
+console.log(factorial)`}
+language='javascript'
+/>
 
 In each iteration we are multiplying the current value `num` with `factorial` and then decrementing `num` by 1.
 
-```javascript
-Output: 120
-```
+<Highlighter
+input='Output: 120'
+language='javascript'
+/>
 
 Since the base condition that will stop the recursion is also specified here (`num > 0`), we avoid the `too much recursion` error.
 

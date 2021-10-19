@@ -102,9 +102,10 @@ GitHub Desktop lets us provide the commit message in two parts:
 
 For example, we can write the following commit summary for our changed files:
 
-```
-Update README and demo script
-```
+<Highlighter
+input='Update README and demo script'
+language='shell'
+/>
 
 We’ll enter this message into the **Summary** field. When committing complex changes, it can be useful to include more details in the **Description** field. This field is optional, so we can leave it blank.
 
