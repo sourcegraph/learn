@@ -116,21 +116,22 @@ In the website code, the front-matter data is accessible as the [`frontMatter`](
 
 ## Code blocks
 
-When adding code blocks to your file, you can use the `<Highlighter>` component, which will allow you to pass a language selection, for syntax highlighting, as well as a `matcher` input, for any code you would like to emphasize (the code is styled as a `<mark>` element). 
-
-## Deploy previews (staging branches)
-
-When a pull request is created in this repository, Netlify will automatically build and deploy the branch. You can find the link to the deploy preview in the Checks section of the pull request.
+When adding code blocks to your file, you can use the `<Highlighter>` component, which will allow you to pass a language selection for syntax highlighting, as well as a `matcher` input for any code you would like to emphasize (the code is styled as a `<mark>` element). 
 
 The component looks like this:
 
 ```
 <Highlighter
-    input='Your code here'  # For blocks with spaces, use a template literal like {`this`}, which will preserve spacing
+    // For blocks with spaces & strings, use a template literal for input (like {`this`}) to preserve spacing. Also be sure to add a couple of additional spaces to the blank line.
+    input='Your code here'  
     language='Your language here'
     matcher='The code you would like to highlight (optional)
 />
 ```
+
+## Deploy previews (staging branches)
+
+When a pull request is created in this repository, Netlify will automatically build and deploy the branch. You can find the link to the deploy preview in the Checks section of the pull request.
 
 ## Building the production version of the site
 
