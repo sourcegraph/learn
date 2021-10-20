@@ -37,9 +37,18 @@ authors:
       name: Arun Kc
       bio: Data Engineer ✨ | Student Forever - Still learning!!❤️| Coder💻 | Tech Enthusiast🚀 | Dreamer💭
       linkedInLink: https://www.linkedin.com/in/arun-kc/
+    - slug: angelina-tresca
+      name: Angelina Tresca
+      bio: Software developer
+      linkedInLink: https://www.linkedin.com/in/angelinatresca/
     - slug: dean-coakley
       name: Dean Coakley
     - slug: anthony-tagliaferri
       name: Anthony Tagliaferri
       linkedInLink: https://www.linkedin.com/in/anthonnytag/
       twitterLink: https://twitter.com/AnthonnyTag
+    - slug: tom-benevides
+      name: Tom Benevides
+      bio: Web developer, DevOps padawan and writer very rarely.
+      twitterLink: https://twitter.com/tongedev
+      linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
