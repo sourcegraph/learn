@@ -111,6 +111,6 @@ You have now solved the error message and can be sure to end your expressions as
 
 Search across open source PHP repositories that have this `SyntaxError` to understand the message more.
 
-<SourcegraphSearch query="unexpected end of file, expecting ';' or ',' lang:php" patternType="literal"/>
+<SourcegraphSearch query="&quot;unexpected end of file, expecting ';' or ','&quot; lang:php" patternType="literal"/>
 
 Check out more Sourcegraph Learn tutorials on [PHP](https://learn.sourcegraph.com/tags/php).
