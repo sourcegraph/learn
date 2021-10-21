@@ -67,7 +67,7 @@ public class A {
 	public B type2;
 	public A()
 	{
-		type2 = new B();    // Constructor of B is called hence object of A2 is created
+		type2 = new B();    // Constructor of B is called hence object of A is created
 	}
 
 	public static void main(String[] args)
@@ -139,6 +139,28 @@ Your terminating condition should make sense for the program you are building. T
 ## Avoid unnecessary constructor calls
 
 In our second example of cyclic relationships, the error is mainly due to unecessary constructor calls, so work to avoid introducing them in your code.
+Another way of resolving this is to specify one as the parent and the other as the dependent. We can put class A in charge and make class B the child. This would prevent the recursive constructor calls and avoid the error.
+
+```java
+public class A {
+	public B type2;
+	public A()
+	{
+		this.type2 = new B(this);  
+        }  
+	public static void main(String[] args)
+	{
+		A type1 = new A();    
+        }
+}
+class B {
+	public A type1;
+	public B(A parent)
+	{
+		this.type1 = parent;    
+        }
+}
+```
 
 ## Increasing the stack size
 
