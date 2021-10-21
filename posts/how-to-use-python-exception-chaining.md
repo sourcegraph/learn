@@ -119,9 +119,9 @@ Now you can differentiate the two types of chained exception tracebacks.
 
 ## Learn more
 
-Search across open source Python repositories that have the `raise ... from` motif to understand exception chaining more.
+Search across open source Python repositories that have the `raise ... from` motif to understand how developers are working with exceptions.
 
-<SourcegraphSearch query="Exception Chaining lang:python" patternType="literal"/>
+<SourcegraphSearch query="raise ... from lang:python" patternType="structural"/>
 
 Read the official Python docs on [Exception Chaining](https://docs.python.org/3/tutorial/errors.html#exception-chaining).
 
