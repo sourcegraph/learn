@@ -35,7 +35,26 @@ authors:
       linkedInLink: https://www.linkedin.com/in/salahouelhadj-oussama/
     - slug: arun-kc
       name: Arun Kc
-      bio: Data Engineer ✨ | Student Forever - Still learning!!❤️| Coder💻 | Tech Enthusiast🚀 | Dreamer💭
+      bio: Data Engineer ✨ | Student Forever - Still learning!! ❤️| Coder 💻 | Tech Enthusiast 🚀 | Dreamer 💭
       linkedInLink: https://www.linkedin.com/in/arun-kc/
+    - slug: angelina-tresca
+      name: Angelina Tresca
+      bio: Software developer
+      linkedInLink: https://www.linkedin.com/in/angelinatresca/
     - slug: dean-coakley
       name: Dean Coakley
+    - slug: david-lee
+      name: David Lee
+      bio: DevOps Engineer in the SV
+      linkedInLink: https://www.linkedin.com/in/david-young-lee/
+    - slug: amit-agrawal
+      name: Amit Agrawal
+    - slug: anthony-tagliaferri
+      name: Anthony Tagliaferri
+      linkedInLink: https://www.linkedin.com/in/anthonnytag/
+      twitterLink: https://twitter.com/AnthonnyTag
+    - slug: tom-benevides
+      name: Tom Benevides
+      bio: Web developer, DevOps padawan and writer very rarely.
+      twitterLink: https://twitter.com/tongedev
+      linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
