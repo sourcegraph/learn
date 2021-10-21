@@ -44,12 +44,13 @@ public class Program {
                 companies[i].name + " has been in business for " + 
                 companies[i].yearsInBusiness() + " years."
             );
+
         }
     }
 }
 ```
 
-When we execute the above program, we will encounter a `NullPointerException` in our `for` loop. Once the loop tries to print how long the _second_ company (`c2`) has been in business, it fails and prints the exception below.
+When we execute the above program, we will encounter a `NullPointerException` in our `for` loop. We add two companies to an array and then we iterate over the companies in a loop. Once the loop tries to print how long the _second_ company (`c2`) has been in business, it fails and prints the exception below.
 
 ```
 Sourcegraph has been in business for 8 years.
@@ -57,7 +58,7 @@ Exception in thread "main" java.lang.NullPointerException
 	at Program.main(Program.java:26)
 ```
 
-Our `companies` array is made up of two companies `c1` and `c2`. When the `for` loop starts, it prints out information about the first company and then proceeds to the next company, `c2`. Unfortunately, `c2` has a `null` value so when we try to access anything that we expect a company object to have — like a `name` — we'll encounter a `NullPointerException` since `c2` does not point to _anything_.
+Our `companies[]` array is made up of two companies `c1` and `c2`. When the `for` loop starts, it prints out information about the first company and then proceeds to the next company, `c2`. Unfortunately, `c2` has a `null` value so when we try to access anything that we expect a company object to have — like a `name` — we'll encounter a `NullPointerException` since `c2` does not point to _anything_.
 
 ## `If`-`else` to the rescue
 
@@ -152,7 +153,9 @@ public class Program {
 
 ```
 
-In our earlier programs, our second company `c2` had a `null` value, but in our above program, we initialize `c2` to a proper company object. With all our values in our program initialized, we don't encounter the `NullPointerException` anymore as can be indicated in the output below.
+In our earlier programs, our second company `c2` had a `null` value, but in our above program, we initialize `c2` to a proper company object. 
+
+With all our values in our program initialized, we don't encounter the `NullPointerException` anymore as can be indicated in the output below.
 
 ```
 Sourcegraph has been in business for 8 years.
