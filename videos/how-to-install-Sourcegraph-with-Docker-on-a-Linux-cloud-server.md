@@ -24,28 +24,33 @@ Installing Sourcegraph with Docker is appropriate for testing and fairly quick t
 
 I set up this DigitalOcean Droplet with a [non-root sudo user](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04), Sammy. First, I want to make sure that everything is up to date by running the following command. 
 
-```sh
-sudo apt update
-```
+<Highlighter
+input='sudo apt update'
+language='bash'
+/>
 
 I’ll enter the password when prompted to use my sudo user. 
 
 Now we know everything is up to date, and I can move ahead to installing Docker. I am going to use the snap package manager, so let’s make sure that’s installed. 
 
-```sh
-sudo apt install snapd
-```
+<Highlighter
+input='sudo apt install snapd'
+language='bash'
+/>
 
 With that installed and set up, I want to make sure I have the core libraries I need, so I’ll run sudo snap install core.
 
-```sh
-sudo snap install core
-```
+<Highlighter
+input='sudo snap install core'
+language='bash'
+/>
 
 Now that snap is installed, we’ll install Docker using snap.
-```sh
-sudo snap install docker
-```
+
+<Highlighter
+input='sudo snap install docker'
+language='bash'
+/>
 
 Now that we have Docker installed, we can move on to installing Sourcegraph with Docker.
 
@@ -55,13 +60,14 @@ We have a multi-line Docker command that we need to run, and we’ll demonstrate
 
 We’ll run the following Docker run command:
 
-```sh
-sudo docker run -d --publish 80:7080 --publish 443:7443 \
+<Highlighter
+input={`sudo docker run -d --publish 80:7080 --publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.30.4
-```
+sourcegraph/server:3.30.4`}
+language='bash'
+/>
 
 This command is telling your server to install and run Sourcegraph, binding port 7080 to TCP port 80 of your server; it’s calling up the relevant files from the Docker image of Sourcegraph. Since this is a cloud server, we can keep our instance of Sourcegraph up and running even after closing our Terminal connection to the server, and that was one of the details we pass to this command. It is also setting up a store for your Sourcegraph data.
 
