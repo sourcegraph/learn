@@ -6,7 +6,7 @@ import { GetStaticProps } from 'next'
 export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () => {
     const posts = await loadAllRecords('posts')
     const searchPosts = posts.filter(record => record.frontMatter.tags.includes('search')).slice(0,3)
-    const sourcegraphPosts = posts.filter(record => record.frontMatter.tags.includes('sourcegraph')).slice(0,3)
+    const sourcegraphPosts = posts.filter(record => record.frontMatter.tags.includes('Sourcegraph')).slice(0,3)
 
     return {
         props: {
