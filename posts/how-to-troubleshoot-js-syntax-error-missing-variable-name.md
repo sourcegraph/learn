@@ -2,7 +2,7 @@
 title: How to troubleshoot JavaScript SyntaxError missing variable name
 author: angelina-tresca
 tags: [tutorial, JavaScript, troubleshooting]
-publicationDate: October 19, 2021
+publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError missing variable name
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -10,67 +10,123 @@ browserTitle: SyntaxError missing variable name in JavaScript error handling
 type: posts
 ---
 
-If you are working in Javascript, and receive the following output, your code probably has a typo or you forgot to give a name to a variable.
+If you are working in JavaScript, and receive the following output, your code probably has a typo or you forgot to give a name to a variable.
 
-```js
-SyntaxError: missing variable name
-SyntaxError: Unexpected token = 
-```
+<Highlighter
+input={`SyntaxError: missing variable name
+SyntaxError: Unexpected token = `}
+language='bash'
+/>
 
 Depending on the browser, the message of the error will vary between the two outputs described before.
 
 ## Reproducing the error and its solutions
+
 There are some common mistakes that can raise this exception.
 
-### You forgot to write the variable name:
-```js
-var = "foo";
+### Missing variable name
 
-// SyntaxError: missing variable name
-```
+In this example, we have initialized a variable but did not pass a name to that variable.
 
-**Solution**
-```js
-var description = "foo";
-```
+<Highlighter
+input='var = "foo";'
+language='javascript'
+/>
 
-### You are using a reserved keyword as the variable name:
-```js
-var debugger = "foo";
+We'll receive output that the name for that variable is missing.
 
-// SyntaxError: missing variable name
-```
+<Highlighter
+input={`SyntaxError: missing variable name`}
+language='bash'
+/>
 
-**Solution**
-```js
-var debug_variable = "foo";
-```
+To solve this isse, we will need to ensure that we have declared our variable with a name in addition to passing a value for that variable.
+           
+<Highlighter
+input='var description = "foo";'
+language='javascript'
+/>
 
-### When declaring multiple variables at the same time, you ended the previous line with a comma instead of a semi-colon:
-```js
-var a, b = "foo",
-var c, = "bar"
+With our variable now declared with the name `description`, we will no longer receive an error message.
 
-// SyntaxError: missing variable name
-```
+### Using a reserved keyword as the variable name:
 
-**Solution**
+Some words are reserverd in JavaScript, and you can't use them as variable, label, or function names. You can review the [list of reserved JavaScript words at W3SChools](https://www.w3schools.com/js/js_reserved.asp). 
 
-```js
-var a, b = "foo";
-var c = "bar";
-```
+In this example, when we use the reserved word `debugger` to initialize our variable, we receive an error that the name is missing. 
 
-### When creating an array you forgot to write the square brackets around the values:
-```js
-var array = 1, 2, 3, 4, 5;
+<Highlighter
+input='var debugger = "foo";'
+language='javascript'
+/>
 
-// SyntaxError: missing variable name
-```
-**Solution**
-```js
-var array = [1, 2, 3, 4, 5];
-```
+<Highlighter
+input={`SyntaxError: missing variable name`}
+language='bash'
+/>
+
+We can solve this issue by using an alternate name. 
+
+<Highlighter
+input='var debug_variable = "foo";'
+language='javascript'
+/>
+
+We were able to still gesture towards the debugging functionality we intended but without using the reserved keyword so that we don't receive an error when we run this code. 
+
+### Ending the previous line with a comma instead of a semicolon
+
+When declaring multiple variables at the same time, you may erroneously end a line with a comma or some other punctuation instead of a semicolon.
+
+Here, we initialize two variables — `a` and `b` — with the value `"foo"`, and a third variable — `c` — with the value `"bar"`. 
+
+<Highlighter
+input='var a, b = "foo",
+var c, = "bar"'
+language='javascript'
+/>
+
+Again, you will encounter the `SyntaxError.
+
+<Highlighter
+input={`SyntaxError: missing variable name`}
+language='bash'
+/>
+
+To remedy this issue, be sure to use semicolons to end your lines. 
+
+<Highlighter
+input='var a, b = "foo";
+var c = "bar";'
+language='javascript'
+/>
+
+With this solution, we will no longer encounter an error. 
+
+### Missing brackets around arrays
+
+When creating an array you may forget to write the square brackets around the values, as in the example below.
+
+<Highlighter
+input='var array = 1, 2, 3, 4, 5;'
+language='javascript'
+/>
+
+Array syntax requires square brackets — `[]` — around values in order for it to be read by JavaScript. Running the above code will cause you to run into the `SyntaxError`. 
+
+<Highlighter
+input={`SyntaxError: missing variable name`}
+language='bash'
+/>
+
+The solution to this is to be sure you are following correct JavaScript syntax. In the case of arrays, be sure to use square brackets.
+
+<Highlighter
+input='var array = [1, 2, 3, 4, 5;]'
+language='javascript'
+/>
+
+With the square brackets in place, the syntax for the array is corrected and your code will run as expected.
 
 ## Learn more
 
