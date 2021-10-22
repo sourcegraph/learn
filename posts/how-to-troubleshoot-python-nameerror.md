@@ -171,7 +171,7 @@ input='You are attempting to access an identifier that is not defined in the loc
 language='bash'
 />
 
-In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to definint it.
+In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to defining it.
 
 ## Learn more
 
