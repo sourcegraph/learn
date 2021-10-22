@@ -7,7 +7,7 @@ description: Learn how to handle the Java
 error: reached end of file while parsing
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
-browserTitle: error: reached end of file while parsing in Java error handling
+browserTitle: error reached end of file while parsing in Java error handling
 type: posts
 ---
 
