@@ -10,8 +10,8 @@ import { StyledHighlighterMatch, StyledCodeBlock, StyledCodeWrapper } from './Hi
 
 interface Props {
     input: string
-    matcher?: string
     language: Language
+    matcher?: string
 }
 
 const Highlighter: FunctionComponent<Props> = props => {

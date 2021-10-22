@@ -25,19 +25,19 @@ Let's write a small program called `NumberPrinter.java` to understand when the e
 
 <Highlighter
 input={`import java.util.Scanner;
-   
+ 
 public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7,6,5,4,3,2,1};
-   
+ 
         System.out.print(
             "There are " + numbers.length + 
             " numbers in the array. How many numbers should be printed ? "
             );
         Scanner scanner = new Scanner(System.in);
-   
-        int value = scanner.nextInt();
   
+        int value = scanner.nextInt();
+ 
         for (int index = 0; index < value; index++) {
             System.out.println(
                 "Index " + index +" has value "+ numbers[index]
@@ -100,17 +100,17 @@ By using flow control and `if`-`else` statements, we can check that the value pr
 
 <Highlighter
 input={`import java.util.Scanner;
-   
+ 
 public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7, 6, 5, 4, 3, 2, 1};
-   
+ 
         System.out.print(
             "There are " + numbers.length + 
             " numbers in the array. How many numbers should be printed ? "
             );
         Scanner scanner = new Scanner(System.in);
-  
+ 
         int value = scanner.nextInt();
         if (value < 0) {
             System.out.println(
@@ -125,7 +125,7 @@ public class NumberPrinter {
                 );
             System.exit(1);
         }
-  
+ 
         for (int index = 0; index < value; index++) {
             System.out.println(
                 "Index " + index + " has value " + 
@@ -177,21 +177,21 @@ Ultimately, we prefer the lower value, be it the user given value or the length 
 
 <Highlighter
 input={`import java.util.Scanner;
-  
+ 
 public class NumberPrinter {
     public static void main(String[] args) {
         int numbers[] = new int[]{7,6,5,4,3,2,1};
-  
+ 
         System.out.print(
             "There are " + numbers.length + 
             " numbers in the array. How many numbers should be printed ? "
             );
         Scanner scanner = new Scanner(System.in);
-  
+ 
         int userVal = Math.abs(scanner.nextInt());
-  
+ 
         int value = Math.min(userVal, numbers.length);
-  
+ 
         for (int index = 0; index < value; index++) {
             System.out.println(numbers[index]);
         }

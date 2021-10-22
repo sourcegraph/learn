@@ -106,14 +106,14 @@ input={`<!DOCTYPE html>
           // we don't trust the sender of the message
           return
         }
-  
+ 
         const replyText = document.createElement("p");
         const textContent = document.createTextNode(event.data);
         replyText.appendChild(textContent);
-  
+ 
         document.body.appendChild(replyText);
       }, false)
-  
+ 
       window.onload = () => {
         const iframe = window.frames[0];
         iframe.postMessage("world!", "https://www.a-third-party-page.com/");

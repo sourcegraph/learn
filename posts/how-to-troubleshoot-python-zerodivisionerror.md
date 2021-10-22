@@ -29,7 +29,7 @@ Let's write the following program, `divide.py`.
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
-   
+ 
     c = int(a)/int(b)
     print(c)
   
@@ -70,7 +70,7 @@ You can use flow control in the form of an `if` / `else` statement to reach an a
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
-  
+ 
     c = (int(a)/int(b)) if int(b) != 0 else 0
     print(c)
   
@@ -97,13 +97,13 @@ Flow control and an `if` / `else` statement can also be used to print output to 
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
-  
+ 
     if int(b) == 0:
         c = "This expression is undefined."
-  
+ 
     else:
         c = int(a)/int(b)
-  
+ 
     print(c)
   
 divide_two_numbers()`}
@@ -127,18 +127,18 @@ A third approach is to handle the exception with a `try` / `except` clause that 
 
 <Highlighter
 input={`def divide_two_numbers():
-  
+ 
     try:
         a = input("Enter an integer: ")
         b = input("Enter another integer: ")
-  
+ 
         c = int(a)/int(b)
-  
+ 
     except ZeroDivisionError:
         c = "You cannot divide by 0."
-  
+ 
     print(c)
-  
+ 
 divide_two_numbers()`}
 language='python'
 />

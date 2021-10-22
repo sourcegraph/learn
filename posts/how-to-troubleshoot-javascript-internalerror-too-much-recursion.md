@@ -39,7 +39,7 @@ This small program calculates the factorial of number `num` which is initialized
 <Highlighter
 input={`factorial.js:1
 function factorial(x) {
-                     ^
+                  ^
 RangeError: Maximum call stack size exceeded
     at factorial (factorial.js:1:19)
     at factorial (/runtime/javascript/3xdbg257u/factorial.js:3:12)
@@ -89,7 +89,7 @@ We can also implement the following program using a `while` loop. In this exampl
 <Highlighter
 input={`num = 5
 factorial = 1
-  
+ 
 while (num > 0) {
   factorial = factorial * num
   num--

@@ -24,18 +24,18 @@ Let's write the following Java program `ShowChar.java`.
 
 <Highlighter
 input={`import java.util.Scanner;   
-    
+ 
 public class ShowChar {   
-   
+ 
     public static void main(String[] args) {
         String word = "sourcegraph";
         Scanner scanner = new Scanner(System.in);   
-   
+ 
         System.out.println("The word is: '" + word + "'");
         System.out.print("show character at index? ");   
-  
+ 
         int index = scanner.nextInt();     
-    
+ 
         System.out.println(word + " has '" + word.charAt(index) + "' at index " + index);   
     }    
 }`}
@@ -73,18 +73,18 @@ By using flow control and `if`-`else` statements, we can check that the index li
 
 <Highlighter
 input={`import java.util.Scanner;
-   
+ 
 public class ShowChar {
-     
+ 
     public static void main(String[] args) {
         String word = "sourcegraph";
         Scanner scanner = new Scanner(System.in);  
-   
+ 
         System.out.println("The word is '" + word + "' and has " + word.length() + " characters");
         System.out.print("Show character at index? ");  
-   
+ 
         int index = scanner.nextInt();   
-   
+ 
         int min = 0;
         int max = word.length() - 1;
         if (index >= min && index <= max) {
@@ -94,7 +94,7 @@ public class ShowChar {
             System.out.println("The given index " + index + " is incorrect.");
             System.out.println("The index can have a minimum value of 0 and a maximum value of " + max);
         }   
-   
+ 
     }
 }`}
 language='java'
@@ -124,24 +124,24 @@ We can also ensure that the given index is always positive by taking the absolut
 
 <Highlighter
 input={`import java.util.Scanner;  
-  
+ 
 public class ShowChar {  
-  
+ 
     public static void main(String[] args) {
         String word = "sourcegraph";
         Scanner scanner = new Scanner(System.in);  
-  
+ 
         System.out.println("The word is '" + word + "' and has " + word.length() + " characters");
         System.out.print("Show character at index? ");   
-  
+ 
         int value = scanner.nextInt();
         int max = word.length();
         value = Math.abs(value);  
-  
+ 
         int index = value % max;
         char wordChar = word.charAt(index);
         System.out.println(word + " has the character '" + wordChar + "' at index " + index);
-  
+ 
     }
 }`}
 language='java'
@@ -153,7 +153,7 @@ The above program is able to handle positive and negative values for the given i
 input={`The word is 'sourcegraph' and has 11 characters
 Show character at index? 12
 sourcegraph has the character 'o' at index 1
-   
+ 
 The word is 'sourcegraph' and has 11 characters
 Show character at index? -1
 sourcegraph has the character 'o' at index 1`}

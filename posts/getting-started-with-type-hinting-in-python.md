@@ -104,7 +104,6 @@ In Python 3.9, built-in collection types are included as generic types and their
 <Highlighter
 language='python'
 input='my_list: list[int] = [1, 2, 3, 4, 5]'
-matcher='[1, 2, 3, 4, 5]'
 />
 
 This list is initialized with the integer type by using the `list[int]` syntax.
@@ -114,7 +113,6 @@ Below is an example of a tuple that we have type hinted as being composed of an 
 <Highlighter
 language='python'
 input='my_tuple: tuple[int, float, str] = (1, 9.5, "Red")'
-matcher='(1, 9.5, "Red")'
 />
 
 For a tuple object of unknown size, ellipses are used to describe the type of objects stored within it. Here is a tuple with an unknown number of integers stored.
@@ -165,8 +163,8 @@ language='python'
 You can also stack multiple types together as well, as in this tuple that uses two integers.
 
 <Highlighter
-input={`from typing import Set, Tuple   
-     
+input={`from typing import Set, Tuple
+ 
 my_set: Set[Tuple[int, int]] = {(1, 2), (2, 3), (3, 4)}`}
 language='python'
 />
@@ -176,14 +174,14 @@ When working with Python 3.8, be sure to import the typing module prior to type 
 It is also valid to type hint user-defined classes. In terms of type hinting, user-defined classes work in the same way as the primitive Python types. For example, here is a coordinate class definition and implementation.
 
 <Highlighter
-input={`class Coordinate:    
-    x: int    
-    y: int    
-     
+input={`class Coordinate:
+    x: int
+    y: int
+  
     def __init__(self, x_: int, y_: int) -> None:
         self.x = x_   
         self.y = y_    
-     
+ 
 c1: Coordinate = Coordinate(1, 2)`}
 language='python'
 />
@@ -195,8 +193,8 @@ As may happen with an application that takes user input, sometimes you may prefe
 Below is an example of how you would make the `sum_two_numbers()` function support both integers and floats.
 
 <Highlighter
-input={`from typing import Union    
-    
+input={`from typing import Union
+ 
 def sum_two(num1: Union[int, float], num2: Union[int, float]) -> Union[int, float]:
     sum: Union[int, float] = num1 + num2
     return sum`}
@@ -208,8 +206,8 @@ In the example above, `num1` and `num2` can be either an integer or float type.
 If it is unclear what type an object is going to be, you can use the `Any` keyword to describe it.
 
 <Highlighter
-input={`from typing import Any     
-     
+input={`from typing import Any
+ 
 my_variable: Any`}
 language='python'
 />
@@ -219,8 +217,8 @@ In the above example, `my_variable` can be any type.
 Some objects may have a value of `None`. To allow this, type hint using the `Optional` keyword to specify that a variable may have a defined value or be None.
 
 <Highlighter
-input={`from typing include Optional    
-     
+input={`from typing include Optional
+ 
 my_string: Optional[str] = None`}
 language='python'
 />

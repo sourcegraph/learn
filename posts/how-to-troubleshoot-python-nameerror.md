@@ -114,7 +114,7 @@ When writing programs in Python, you should be aware of the scope of your variab
 input={`def handler():
     spam = input("Enter a spam message: ")
     print(spam)
-  
+ 
 handler()
 print(spam) #using spam outside the handler function`}
 language='python'
@@ -134,10 +134,10 @@ In this case, we coud rewrite the program to make `spam` a global variable, defi
 
 <Highlighter
 input={`spam = input("Enter a spam message: ")
-   
+ 
 def handler():
     print(spam)
-   
+ 
 handler()
 print(spam)`}
 language='python'
@@ -156,7 +156,7 @@ input={`def handler():
     try:
         print(spam)
         spam = input("Enter a spam message: ")
-      
+ 
     except NameError:
         print('You are attempting to access an identifier that is not defined in the local or global scope.')
   
