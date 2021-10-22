@@ -18,7 +18,7 @@ SyntaxError: Unexpected token = `}
 language='bash'
 />
 
-Depending on the browser, the message of the error will vary between the two outputs described before.
+Depending on the browser you are using, the message of the error will vary between the two outputs described before.
 
 ## Reproducing the error and its solutions
 
@@ -51,7 +51,7 @@ With our variable now declared with the name `description`, we will no longer re
 
 ### Using a reserved keyword as the variable name:
 
-Some words are reserverd in JavaScript, and you can't use them as variable, label, or function names. You can review the [list of reserved JavaScript words at W3SChools](https://www.w3schools.com/js/js_reserved.asp). 
+Some words are reserverd in JavaScript, and you can't use them as variable, label, or function names. You can review the [list of reserved JavaScript words at W3Schools](https://www.w3schools.com/js/js_reserved.asp). 
 
 In this example, when we use the reserved word `debugger` to initialize our variable, we receive an error that the name is missing. 
 
@@ -72,7 +72,7 @@ input='var debug_variable = "foo";'
 language='javascript'
 />
 
-We were able to still gesture towards the debugging functionality we intended but without using the reserved keyword so that we don't receive an error when we run this code. 
+We were able to still gesture towards the debugging functionality we intended but without using the reserved keyword. This way, we don't receive an error when we run this code. 
 
 ### Ending the previous line with a comma instead of a semicolon
 
@@ -82,11 +82,11 @@ Here, we initialize two variables — `a` and `b` — with the value `"foo"`, an
 
 <Highlighter
 input='var a, b = "foo",
-var c, = "bar"'
+var c = "bar"'
 language='javascript'
 />
 
-Again, you will encounter the `SyntaxError.
+Again, you will encounter the `SyntaxError`.
 
 <Highlighter
 input={`SyntaxError: missing variable name`}
@@ -122,7 +122,7 @@ language='bash'
 The solution to this is to be sure you are following correct JavaScript syntax. In the case of arrays, be sure to use square brackets.
 
 <Highlighter
-input='var array = [1, 2, 3, 4, 5;]'
+input='var array = [1, 2, 3, 4, 5];'
 language='javascript'
 />
 
