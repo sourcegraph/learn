@@ -37,9 +37,6 @@ export default async function serializeMdxSource(
 
                 // Add classes to some elements for styling.
                 [rehypeAddClasses, classesToAddToElements],
-
-                // Highlight code blocks.
-                [rehypePrism, { ignoreMissing: true }],
             ],
         },
     })
