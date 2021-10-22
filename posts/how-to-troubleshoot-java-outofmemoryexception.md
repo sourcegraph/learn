@@ -65,9 +65,12 @@ In this case, there are a multitude of good performance evaluation tools to use 
 
 To use a tool like VisualVM to diagnose a memory leak issue, we must first perform what is called a "heap dump," which essentially causes the JVM to produce a record of all the "live" objects that currently reside on the heap. This can either be done manually through VisualVM's user interface, or set to trigger when an `OutOfMemoryError` occurs. For the latter, we can use the following command: 
 
-``` java -XX:+HeapDumpOnOutOfMemoryError ``` 
+<Highlighter
+input='java -XX:+HeapDumpOnOutOfMemoryError'
+language='bash'
+/>
 
-This commandn instructs the machine to produce these logs the next time it throws an `OutOfMemoryError`, which can then be analyzed via VisualVM. 
+This command instructs the machine to produce these logs the next time it throws an `OutOfMemoryError`, which can then be analyzed via VisualVM. 
 
 ## Learn more
 
