@@ -63,7 +63,7 @@ language='bash'
 The curly bracket at the end of our example program — that returned an error message — is considered to be closing the nested `if(water.isHot)` conditional block. The interpreter follows the **l**ast-**i**n-**f**irst-**o**ut (LIFO) order: the last closed curly bracket in the example above closes the last opened curly bracket, which is the conditional block statement. This version of the program makes the purpose of the single closed curly bracket clearer.
 
 <Highlighter
-input={`function coffe(water){
+input={`function coffee(water){
     if(water.isHot){
         /* Make a cup of cappuccino
         if water is got*/
