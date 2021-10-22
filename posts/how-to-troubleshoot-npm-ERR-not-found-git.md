@@ -1,6 +1,6 @@
 ---
 title: How to troubleshoot npm ERR! not found git
-author: Akinleye Oyinbayode
+author: akinleye-oyinbayode
 tags: [tutorial, JavaScript, npm, troubleshooting]
 publicationDate: October 20, 2021
 description: Learn how to error handle npm ERR not found git
@@ -10,8 +10,7 @@ browserTitle: npm ERR not found git, write in JavaScript error handling
 type: posts
 ---
 
-The `npm ERR! not found: git` is an error that occurs when you try to install an npm package. The error indicates that git is not installed in your system. This error can also be due to permission issues like not having administrator rights in your system environment. It can also be due to the path/system variable not set correctly
-
+The `npm ERR! not found: git` is an error that occurs when you try to install an npm package. The error indicates that Git is not installed in your system. This error can also be due to permission issues like not having administrator rights in your system environment. It can also be due to the path or system variable not being set correctly
 
 In this tutorial, we will help you figure out how to solve this problem.
 
