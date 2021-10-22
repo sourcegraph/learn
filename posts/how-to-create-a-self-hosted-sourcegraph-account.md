@@ -29,9 +29,10 @@ If you have just set up your own instance of Sourcegraph, you should have receiv
 
 ![Sourcegraph terminal output after installation](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
-```
-Sourcegraph is ready at: http://the-server-ip-address:7080
-```
+<Highlighter
+input='Sourcegraph is ready at: http://the-server-ip-address:7080'
+language='bash'
+/>
 
 Using your preferred browser, navigate to the relevant IP address or URL. At this point, you should be at the signup screen if you have not made an account already.
 
