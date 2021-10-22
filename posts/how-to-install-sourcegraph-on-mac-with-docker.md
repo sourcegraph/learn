@@ -48,20 +48,22 @@ The first section is for macOS machines with [Intel chips](#on-macos-with-intel-
 
 On local machines with an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command.
 
-```sh
-docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
+<Highlighter
+input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.29.0
-```
+sourcegraph/server:3.29.0'
+language='bash'
+/>
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
 
-```sh
-✱ Sourcegraph is ready at: http://127.0.0.1:7080
-```
+<Highlighter
+input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
+language='bash'
+/>
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
@@ -69,22 +71,24 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 On a macOS machine with an Apple M1 chip, you’ll need to add an extra argument to your Docker command so that the platform does not interfere with the installation and running of Sourcegraph. Run the following command with the `--platform linux/amd64` argument as demonstrated below.
 
-```sh
-docker run \
+<Highlighter
+input='docker run \
 --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
 --platform linux/amd64 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.30.4
-```
+sourcegraph/server:3.30.4'
+language='bash'
+/>
 
 This command is telling your computer to install and run Sourcegraph in port 7080 of your localhost (127.0.0.1) and is calling up the relevant files from the Docker image of Sourcegraph. It is also setting up a store for your Sourcegraph data.
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
-```sh
-✱ Sourcegraph is ready at: http://127.0.0.1:7080
-```
+<Highlighter
+input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
+language='bash'
+/>
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 

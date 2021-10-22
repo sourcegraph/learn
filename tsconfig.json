@@ -19,6 +19,7 @@
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
       "@interfaces/*": ["interfaces/*"],
+      "@languages/*": ["languages/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
       "@util/*": ["util/*"]
