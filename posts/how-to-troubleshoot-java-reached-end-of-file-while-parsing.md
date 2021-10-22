@@ -1,10 +1,9 @@
 ---
-title: How to troubleshoot Java error: reached end of file while parsing
+title: How to troubleshoot Java error reached end of file while parsing
 author: M.L. Narayana Rao
 tags: [tutorial, Java, troubleshooting]
 publicationDate: Oct 20,2021
-description: Learn how to handle the Java 
-error: reached end of file while parsing
+description: Learn how to handle the Java error reached end of file while parsing
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
 browserTitle: error reached end of file while parsing in Java error handling
