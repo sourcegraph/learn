@@ -10,7 +10,7 @@ import { FunctionComponent } from 'react'
 
 export interface Props {
     searchPosts: MarkdownFileWithUrl[]
-    videoPosts: MarkdownFileWithUrl[]
+    sourcegraphPosts: MarkdownFileWithUrl[]
 }
 
 const HomepageTemplate: FunctionComponent<Props> = props => (
@@ -24,7 +24,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
             <Column className='flex-large width'>
                 <ContentCardContainer 
                     records={props.searchPosts} 
-                    header='Search'
+                    header='Code search'
                     description='Learn about search principles with these guides' />
                     <Column className='centered'>
                         <Button className='primary' href='/tags/search'>
@@ -34,11 +34,11 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
             </Column>
             <Column className='flex-large width'>
                 <ContentCardContainer 
-                    records={props.videoPosts} 
-                    header='Video'
-                    description='Follow along with these video resources' />
+                    records={props.sourcegraphPosts} 
+                    header='Sourcegraph'
+                    description='Search all of your code and open source' />
                     <Column className='centered'>
-                        <Button className='primary' href='/videos'>
+                        <Button className='primary' href='/tags/sourcegraph'>
                             Load more
                         </Button>
                     </Column>

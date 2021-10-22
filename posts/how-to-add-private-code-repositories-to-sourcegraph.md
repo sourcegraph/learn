@@ -34,7 +34,6 @@ A drop-down menu will be displayed. From here, click on **Settings**.
 ![Sourcegraph home with user menu](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-home-user-menu.png)
 
 
-
 You’ll be taken to a page that indicates that you are in your settings with a header of **User Settings** displayed towards the top of the page, and a panel with options regarding your user account on the left hand side of the window.
 
 ## Step 2 — Add private repositories
@@ -42,7 +41,6 @@ You’ll be taken to a page that indicates that you are in your settings with a 
 From the panel on the left hand side of the interface, you can click on **Repositories** in order to be taken to the page where you can manage repositories. If you already have repositories added, you’ll need to click on the **Manage Repositories** button in order to access this page.
 
 ![Sourcegraph repositories section under settings](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-repositories-section.png)
-
 
 
 If you have no repositories yet, click on **+ Add repositories**. You’ll be presented with the option to connect with a code host in the **Your repositories** section. Here, you can sync _your_ repositories using GitHub or GitLab. This will include both your public repositories and your private repositories.

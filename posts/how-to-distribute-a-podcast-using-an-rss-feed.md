@@ -54,12 +54,13 @@ We will need to save the link to our first episode’s file for later by hoverin
 Next, we’ll be creating our RSS feed. You can title your RSS feed after your podcast. In our example podcast, we’ll call it `open-ollie.rss`.
 RSS feeds are written within an XML document. Therefore, we will begin by writing an XML declaration followed by an opening and closing RSS tag in which we will define our XML namespace.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<Highlighter
+input={`<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
-
-</rss>
-```    
+   
+</rss>`}
+language='xml'
+/>
 
 The first line in our code above is our XML declaration. 
 
@@ -67,8 +68,8 @@ The second line is our opening RSS tag which will include all of our content and
 
 Next, let’s define our podcast show using the `<channel>` tag as shown in the XML below.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<Highlighter
+input={`<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
     <channel>
         <title>The Open Ollie Show</title>
@@ -83,10 +84,11 @@ Next, let’s define our podcast show using the `<channel>` tag as shown in the 
         </itunes:owner>
         <itunes:explicit>no</itunes:explicit>
         <itunes:category text="Technology"/>
-
+   
     </channel>
-</rss>
-```
+</rss>`}
+language='xml'
+/>
 
 The following tags are used to help describe our podcast further:
 
@@ -107,11 +109,11 @@ Now, it is time to add our first episode to our podcast which we will do using a
 
 Starting two lines below our `<itunes:category>` tag, as shown below, we will begin to define our first episode.
 
-```xml
-    <channel>
+<Highlighter
+input={`    <channel>
         ...
         <itunes:category text="Technology"/>
-        
+           
         <!-- EPISODE 1 -->
         <item>
             <title>Episode 1: Life as a Keyboard Cat</title>
@@ -119,10 +121,11 @@ Starting two lines below our `<itunes:category>` tag, as shown below, we will be
             <link></link>
             <enclosure type="audio/mpeg" url="https://sammys-podcast.nyc3.cdn.digitaloceanspaces.com/episode1.mp3"/>
             <guid isPermaLink="false">dcc051a2-adc9-4e6e-9fd3-ecbec2f7cf72</guid>
-
+   
         </item>
-    </channel>
-```
+    </channel>`}
+language='xml'
+/>
 
 We begin by defining the title of this podcast episode as shown above using the `<title>` tag along with a brief summary of the episode using the `<description>` tag.
 
@@ -132,8 +135,8 @@ Finally, we set a global unique identifier using the `<guid>` tag. This is to ma
 
 Let’s finish defining the rest of our first episode.
 
-```xml
-    <channel>
+<Highlighter
+input={`   <channel>
         ...
         <!-- EPISODE 1 -->
         <item>
@@ -146,8 +149,9 @@ Let’s finish defining the rest of our first episode.
             <itunes:episodeType>full</itunes:episodeType>
             <pubDate>Wed, 1 Jan 2020 12:00:00 +0000</pubDate>
         </item>
-    </channel>
-```
+    </channel>`}
+language='xml'
+/>
 
 Now that the initial XML declarations are complete, we have now set a few extra variables which are explained below.
 
