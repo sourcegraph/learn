@@ -18,8 +18,8 @@ When we call a method, a new stack frame is created on the call stack. This stac
 
 In our example Java file, we’ll define a recursive method, called `recursion()` that prints an integer and then calls itself with the successive integer as its argument. 
 
-``` java
-public class Main {
+<Highlighter
+input={`public class Main {
      
     public static void recursion(int num) {
         System.out.println("Number: " + num);
@@ -33,13 +33,14 @@ public class Main {
     public static void main(String[] args) {
         Main.recursion(1);
     }
-}
-```
+}`}
+language='java'
+/>
 
 When we compile and run the program, it starts printing numbers starting from 1 on, and thus the recursion never terminates. Depending on the JVM, the results may differ, but eventually the `StackOverflowError` is thrown.
 
-```
-Number: 1
+<Highlighter
+input='Number: 1
 Number: 2
 Number: 3
 Number: 4
@@ -55,46 +56,49 @@ Exception in thread "main" java.lang.StackOverflowError
     at Main.recursion(Main.java:4)
     at Main.recursion(Main.java:9)
     ...
-    at Main.recursion(Main.java:9)
-```  
+    at Main.recursion(Main.java:9)'
+    language='bash'
+/>
 
 You may need to scroll through considerable output to find the error. 
 
 A program that has cyclic relationships between classes is also another situation where the `StackOverflowError` commonly occurs. Here's an example:
 
-```java
-public class A {
+<Highlighter
+input={`public class A {
 	public B type2;
 	public A()
 	{
 		type2 = new B();    // Constructor of B is called hence object of A is created
 	}
-
+ 
 	public static void main(String[] args)
 	{
 			A type1 = new A();    // Cycle is started by invoking constructor of class A
 	}
 }
-
+ 
 class B {
 	public A type1;
 	public B()
 	{
 		type1 = new A();    // Constructor of A is called hence object of A is created
 	}
-}
-```
+}`}
+language='java'
+/>
 
 Once we compile and run the above program, we'll receive output similar to the following. 
 
-```
-...
+<Highlighter
+input='...
 Exception in thread "main" java.lang.StackOverflowError
 	at B.<init>(A.java:18)
 	at A.<init>(A.java:5)
 	at B.<init>(A.java:18)
-...
-```
+...'
+language='bash'
+/>
 
 Cyclic relationships between classes is the result of two different classes instantiating each other inside their constructors. In the example, classes A and B instantiate each other in their contructors repeatedly until we get a `StackOverflowError`. 
 
@@ -104,9 +108,9 @@ Now, let's review the solution to prevent this error.
 
 We must carefully inspect the stack, trace and detect the repetitive calls and try to introduce a proper terminating condition to ensure that the recursion terminates. We can avoid the error in the first example by adding a terminating condition.
 
-```java
-public class Main {
-     
+<Highlighter
+input={`public class Main {
+  
     public static void recursion(int num) {
         System.out.println("Number: " + num);
          
@@ -117,22 +121,24 @@ public class Main {
         else
             recursion(++num);
     }
-     
+      
     public static void main(String[] args) {
         Main.recursion(1);
     }
-}
-```
+}`}
+language='java'
+/>
 
 This program will print the numbers from 1 to 5:
 
-```
-Number: 1
+<Highlighter
+input='Number: 1
 Number: 2
 Number: 3
 Number: 4
-Number: 5
-```
+Number: 5'
+language='bash'
+/>
 
 Your terminating condition should make sense for the program you are building. Thinking through what would stop a given loop will make your program more effective and help you avoid the `StackOverflowError`. 
 
@@ -141,8 +147,8 @@ Your terminating condition should make sense for the program you are building. T
 In our second example of cyclic relationships, the error is mainly due to unecessary constructor calls, so work to avoid introducing them in your code.
 Another way of resolving this is to specify one as the parent and the other as the dependent. We can construct class `A` as the parent class and make class B the child, as demonstrated in the rewrite of the program below.
 
-```java
-public class A {
+<Highlighter
+input={`public class A {
 	public B type2;
 	public A()
 	{
@@ -159,8 +165,9 @@ class B {
 	{
 		this.type1 = parent;    
         }
-}
-```
+}`}
+language='java'
+/>
 
 This solution prevents the recursive constructor calls and avoids the error.
 
@@ -170,17 +177,19 @@ If we expect we will need a lot of compute power ro tun our program, and anticip
 
 The format of the `-Xss` argument is as follows. 
 
-```sh
--Xss<size>[g|G|m|M|k|K]
-```
+<Highlighter
+input='-Xss<size>[g|G|m|M|k|K]'
+language='bash'
+/>
 
 This introduces the flag, and expects the size of the stack to be in gigabytes, megabytes, or kilobytes. 
 
 For example, the following command sets the default stack size to 10 megabytes. 
 
-```sh
-java -Xss:10m myJavaApp.java
-```
+<Highlighter
+input='java -Xss:10m myJavaApp.java'
+language='bash'
+/>
 
 This argument needs to be passed when you start the application and can be specified either via the project’s configuration, or the command line. 
 

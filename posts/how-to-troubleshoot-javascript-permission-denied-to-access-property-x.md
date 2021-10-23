@@ -12,15 +12,17 @@ type: posts
 
 When you are working in JavaScript, you may come across an error similar to the following.
 
-```js
-Error: Permission denied to access property "x"
-```
+<Highlighter
+input='Error: Permission denied to access property "x"'
+language='javascript'
+/>
 
 Or, you may receive the error in a slightly more verbose form, like the following.
 
-```js
-Uncaught DOMException: Permission denied to access property "document" on cross-origin object
-```
+<Highlighter
+input='Uncaught DOMException: Permission denied to access property "document" on cross-origin object'
+language='javascript'
+/>
 
 This error usually occurs when you try to access an object for which you have no permission, the most common
 case is when you try to access a property of an `<iframe>` loaded from another domain for which you violated
@@ -30,8 +32,8 @@ the [same origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/S
 
 An example which causes the above error is this example document:
 
-```html
-<!DOCTYPE html>
+<Highlighter
+input={`<!DOCTYPE html>
 <html>
   <head>
     <title>Example code</title>
@@ -45,8 +47,9 @@ An example which causes the above error is this example document:
   <body>
     <iframe src="http://sourcegraph.com"></iframe>
   </body>
-</html>
-```
+</html>`}
+language='html'
+/>
 
 Depending on the browser you are using, you may receive a warning or a blank box where the site would normally be loaded.
 
@@ -66,8 +69,8 @@ _Please be sure to review the terms of service of websites you intend to incorpo
 For example, you can use the following HTML if you would like your website, `https://www.my-sourcegraph-website.com/` to be able to embed an html page hosted online at `https://www.a-third-party-page.com/`, you could write the file below. 
 
 
-```html
-<!DOCTYPE html>
+<Highlighter
+input={`<!DOCTYPE html>
 <html>
   <head>
     <title>A third party website</title>
@@ -77,7 +80,7 @@ For example, you can use the following HTML if you would like your website, `htt
           if (event.origin !== "https://www.my-sourcegraph-website.com/") {
             return;
           }
-
+  
           event.source.postMessage("Hello, " + event.data, event.origin)
       }, false)
     </script>
@@ -85,13 +88,14 @@ For example, you can use the following HTML if you would like your website, `htt
   <body>
     <p>Hello world</p>
   </body>
-</html>
-```
+</html>`}
+language='html'
+/>
 
 Your website hosted on `https://www.my-sourcegraph-website.com/` will have the soucecode below. 
 
-```html
-<!DOCTYPE html>
+<Highlighter
+input={`<!DOCTYPE html>
 <html>
   <head>
     <title>My Sourcegraph website</title>
@@ -102,14 +106,14 @@ Your website hosted on `https://www.my-sourcegraph-website.com/` will have the s
           // we don't trust the sender of the message
           return
         }
-
+ 
         const replyText = document.createElement("p");
         const textContent = document.createTextNode(event.data);
         replyText.appendChild(textContent);
-
+ 
         document.body.appendChild(replyText);
       }, false)
-
+ 
       window.onload = () => {
         const iframe = window.frames[0];
         iframe.postMessage("world!", "https://www.a-third-party-page.com/");
@@ -120,8 +124,9 @@ Your website hosted on `https://www.my-sourcegraph-website.com/` will have the s
     <iframe src="https://www.a-third-party-page.com/"></iframe>
     <p>My very cool website</p>
   </body>
-</html>
-```
+</html>`}
+language='html'
+/>
 
 Notice how there is specific code to check who the message sender is, this would require an agreement with the owner of `https://www.a-third-party-page.com/` to allow you to communicate in a secure way. 
 
