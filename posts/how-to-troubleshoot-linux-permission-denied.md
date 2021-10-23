@@ -1,8 +1,8 @@
 ---
 title: How to troubleshoot the Linux Permission denied error
-author: Jack Newman
+author: jack-newman
 tags: [tutorial, Linux, troubleshooting]
-publicationDate: October 21, 2021
+publicationDate: October 23, 2021
 description: Learn how to handle Permission denied error in Linux
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -10,207 +10,208 @@ browserTitle: Permission denied in Linux error handling
 type: posts
 ---
 
-If you are working on a Linux terminal and you receive the following output, 
-you were probably dealing with a file whose permissions have been configured 
-incorrectly
+If you are working on a Linux terminal and you receive the following output, you are probably trying to work with a file where the permissions have not been properly configured.
 
-```sh
-<filename>: Permission denied
-```
+<Highlighter
+input='<filename>: Permission denied'
+language='bash'
+/>
 
-In this tutorial, you'll learn how to reproduce this error, what's causing it,
-and how you can fix it - forever!
+In this tutorial, we'll reproduce this error, go over what's causing it, and provide solutions for how you can fix it.
 
-Before we get started, you need to be completely sure that the file you're 
-trying to access **is not important** - please don't modify permissions for 
-system files, unless you know what you're doing
+Before we get started, it's important to understand that **making permission modifications can be permanent** and you should always exercise caution.
+
+We'll be demonstrating permissions with an unimportant test file, and you should only work with files that you know are backed up and _are not system files_. **Do not modify permissions for files you are not sure about, especially system files that are required for your computer to run.**
+
+With that word of caution, let's get started. 
 
 ## Reproducing the error
 
-This bit is pretty simple - we'll be using the `chmod` command to modify 
-permissions of a temporary file to cause the Permission Denied error, and 
-then rectify the error explaining each step of the process
+We'll be using the `chmod` command to modify permissions of a temporary file to cause the `Permission denied` error, and then rectify the error explaining each step of the process.
 
-Start by creating a temporary file to play around with - fill it with random
-data while we're at it! Here's what I've done on my end;
+Start by creating a temporary file to test with; we'll fill it with random data/
 
-```sh
-echo "Hello World" > test-file.txt
-```
+<Highlighter
+input='echo "Hello World" > test-file.txt'
+language='bash'
+/>
 
-This will create a file named `test-file.txt` in the working directory, and 
-fill the file with the text "Hello World" - you can skip the command and
-follow along by manually creating the file if you wish to!
+This will create a file named `test-file.txt` in the working directory, and fill the file with the text "Hello World."
 
 Check the default permissions for this temporary file using
 
-```sh
-ls -l
-```
+<Highlighter
+input='ls -l'
+language='bash'
+/>
 
-On my end, this results in
+Depending on what else is in your working directory, you may have several lines of output, but you should be able to identify the file we just created, and review output for that line that is similar to the following.
 
-```sh
--rw-r--r--  1 jack jack    12 Oct 21 23:10 test-file.txt
-```
+<Highlighter
+input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+language='bash'
+matcher='your-user your-user'
+/>
 
-We're interested in the first column of this output - the text `rw-r--r--`
-represents the permissions of this newly created file. Let's break this down 
-into three parts (you'll see why three parts in some time)
+We're interested in the first column of this output — the text `rw-r--r--` — which represents the permissions of this newly created file. Let's break this down into three parts.
 
  - `rw-`
  - `r--`
  - `r--`
 
-These strings can consist of three characters at most - `r`, `w`, and `x` - each
-of them representing a permission type.
+These strings can consist of three letters at most — `r`, `w`, and `x` — each of them representing a permission type. These correspond to the three spaces allotted (including the hyphens), where `rw-` means read and write but not execute. 
  
- - `r` implies *read* - i.e. users can read the file
- - `w` implies *write* - users can write to the file
- - `x` implies *execute* - users can execute the file. Not every file needs the 
- execute permission
+ - `r` indicates *read*; users can read the file.
+ - `w` indicates *write*; users can write to the file.
+ - `x` indicates *execute*; users can execute the file. Not every file needs the execute permission.
 
-Before moving on, a *user* here refers to a `user type` in Linux - it can be an
-individual user or a group of users. 
+Before moving on, a *user* here refers to a `user type` in Linux — it can be an individual user or a group of users. 
 
-There are three permission groups (this is why we divided the permissions into 
-three sections - each section represents a permission group);
+There are three permission groups. We divided the permissions into three sections because of this: each section represents a permission group.
 
- - Owner: The one who created the file or directory
- - Groups: Anyone who is in the same group as the owner
- - Others: Any user that isn't a part of the previous categories ends up here
+| User   | Description |
+|--------|-------------|
+| Owner  | The one who created the file or directory |
+| Groups | Anyone who is in the same group as the owner |
+| Others | Any user that isn't a part of the previous categories ends up here |
 
-The file permissions above relate to each of these groups in the same order,
-for example - the `rw-` permission above meant that the owner of the file 
-(that being me), can read and write to the file. While the other two groups can
-just read the file!
+The file permissions above relate to each of these groups in the same order. For example, the `rw-` permission above means that the owner of the file (`your-user`), can read and write to the file, while the other two groups only have access to read the file as they have the `r--` permission. 
 
-Coming back on to the issue, to reproduce the Permission Denied error, we'll
-modify the temporary file we created (`test-file.txt` in my case) - and remove
-the *read* permission for the same
+With that background in mind, to reproduce the `Permission denied` error, we'll modify the temporary file we created —`test-file.txt` — and remove
+the *read* permission.
 
-To do this, simply use the command
+To do this, we'll use the following command which uses `chmod` (change mode) to update user permissions and removes read access with `-r`. We'll pass the filename to the command.
 
-```sh
-chmod -r <filename>
-```
+<Highlighter
+input='chmod -r test-file.txt'
+language='bash'
+/>
 
-For me, that would be
+Now, review the updated file permissions, using the `ls -l` command as before. You will receive output next to that file that is similar to the following. 
 
-```sh
-chmod -r test-file.txt
-```
+<Highlighter
+input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+language='bash'
+matcher='your-user your-user'
+/>
 
-And that would be it! To view the updated file permissions, use the `ls -l`
-command as before. For me, this results in
+Notice that the file permissions for the owner (and other groups) have been modified. The missing `r` permission for all groups indicates that no one can
+read the file anymore and only the owner(`your-user`) can write to the file.
 
-```sh
---w-------  1 jack jack    12 Oct 21 23:10 test-file.txt
-```
+To verify this, try using the `cat` command. If you are not familiar, the `cat` command displays the contents of a file on the terminal. 
 
-Notice that the file permissions for the owner (and other groups) have been 
-modified. The missing `r` permission for all groups implies that no one can
-read the file anymore - and just the owner can write to the file.
+<Highlighter
+input='cat test-file.txt'
+language='bash'
+/>
 
-To verify this, try using the `cat` command!
+Once you enter the above command, you'll receive the `Permission denied` error message.
 
-```sh
-cat test-file.txt
+<Highlighter
+input='cat: test-file.txt: Permission denied'
+language='bash'
+/>
 
-> cat: test-file.txt: Permission denied
-```
+Since no one can read the file anymore, the command fails with an error. You can try opening the file with a text editor or any other application, and you will still arrive at the same result.
 
-The `cat` command will simply dump the contents of a file on the terminal. Since
-no one can read the file anymore, the command fails with an error. You can 
-try opening the file with a text editor or any other application - and will
-still arrive at the same result :)
+## Solution — Modifying file permissions
 
-## Solution: Modifying file permissions
+The first solution we'll go over is similar to how we reproduced the error, and that is to assign the required permissions to the file. This is exactly what you need to do for most cases!
 
-The easiest (and obvious) solution would be to simply assign the required 
-permissions to the file - and this is exactly what you need to do for most 
-cases!
+Following the previous example, to read the file normally we will need to assign the read permission back to the file. Again, we'll be using the `chmod` 
+command and this time will be adding back read access via the `+r` parameter and pass back in the relevant filename. 
 
-Following the previous example - to read the file normally, we simply need
-to assign the read permission back to the file! Again, using the `chmod` 
-command, this becomes
+<Highlighter
+input='chmod +r test-file.txt'
+language='bash'
+matcher='test-file.txt'
+/>
 
-```sh
-chmod +r test-file.txt
-```
+To verify that the file has now has read permissions, we'll use `ls -l`. This should display output similar to the following.
 
-Note that `test-file.txt` is the name of the temporary file I created to 
-reproduce the error.
+<Highlighter
+input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+language='bash'
+matcher='your-user your-user'
+/>
 
-To verify that the file has read permissions, we use `ls -l`. This should 
-display the output
+Notice the added `r` permission for every group; this indicates that every user group can read the file.
 
-```sh
--rw-r--r--  1 jack jack    12 Oct 21 23:10 test-file.txt
-```
+To test out whether your user can read the file at this point, use the `cat` command.
 
-Notice the added `r` permission for every group - this implies everyone
-can read the file - same as before!
+<Highlighter
+input='cat test-file.txt'
+language='bash'
+/>
 
-To test this out, simply use the `cat` command
+The command should now display the contents of the file to your terminal.
 
-```sh
-cat test-file.txt 
+<Highlighter
+input='Hello World'
+language='bash'
+/>
 
-> Hello World
-```
+This output verifies that the file can be read normally.
 
-This verifies that the file can be read normally, like before!
+Depending on why you received the error, you would need to update permsisions other than read access. In many cases, this would most likely be needing to use the `chmod` command to add the executable permission to files, which you can do with the folowing command.
 
-In your case, you would most likely be needing to use the `chmod` command to
-add the executable permission to files - this can be done using 
-`chmod +x <filename>`
+<Highlighter
+input='chmod +x filename'
+language='bash'
+matcher='filename'
+/>
 
-Please be sure that you trust the file before adding the executable permission
-to it - there is a reason why files aren't executable by default!
+**Be sure that you trust the file before adding the executable permission to it**: there is a reason why files aren't executable by default.
 
-## Solution: Using `sudo`
+## Solution — Using `sudo`
 
-Like with everything in Linux - using the magic word `sudo` will allow you to
-do anything - including using files even if you don't have the permission to!
+Like with many situations in Linux, using the magic word `sudo` will allow you to do nearly anything, including using files even if you don't have the permission to use them.
 
-**Sidenote:** As a general warning, make sure that you really, really trust a 
-file before using `sudo` with it!
+**Note:** As a general warning, make sure that you _really_ trust a file before using `sudo` with it.
 
-We'll be continuing with the original example - I have a file `test-file.txt` - 
-with the permissions
+We'll be continuing with the original example, `test-file.txt`, with the following permissions.
 
-```sh
---w-------  1 jack jack    12 Oct 21 23:10 test-file.txt
-```
+<Highlighter
+input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+language='bash'
+matcher='your-user your-user'
+/>
 
-Notice that no user has the *read* permission on this file. We can verify this
-using `cat`
+Notice that no user has the *read* permission on this file. We can verify this using `cat`
 
-```sh
-cat test-file.txt
+<Highlighter
+input='cat test-file.txt'
+language='bash'
+/>
 
-> cat: test-file.txt: Permission denied
-```
+<Highlighter
+input='cat: test-file.txt: Permission denied'
+language='bash'
+/>
 
-As expected, no one - including us, can read the file.
+As expected, no one — including your current users — can read the file.
 
-But, using `sudo`, we can simply ignore this restriction!
+However, if we use `sudo` we can override this restriction.
 
-```sh
-sudo cat test-file.txt
+<Highlighter
+input='sudo cat test-file.txt'
+language='bash'
+/>
 
-> Hello World
-```
+Using the `sudo` command will open the file up to us. 
 
-Even though no one can read the file, using `sudo`, we can read the file 
-directly without having to modify the file permissions. The same goes for
-being able to write-to, or execute a file directly without needing the 
-appropriate permissions!
+<Highlighter
+input='Hello World'
+language='bash'
+/>
+
+Even though no one can read the file, using `sudo`, we can read the file directly without having to modify the file permissions. The same goes for being able to write-to, or execute a file directly without needing the appropriate permissions.
+
+Again, be sure that you are aware of what a file will do prior to writing something new to it, or executing the file. 
 
 ## Learn more
 
-Search across open source repositories that have the `Permission denied` to understand the message more.
+Search across open source repositories that use `Permission denied` messaging to understand the error more.
 
 <SourcegraphSearch query="Permission denied" patternType="literal"/>
 
