@@ -154,7 +154,7 @@ Because we have explictly caught the error message in our `try` ... `catch` logi
 <Highlighter
 input={`Loading bar.Foo class
 bar.Foo class not found. Please ensure that the class exists.`}
-language='java'
+language='bash'
 />
 
 With `try` and `catch` statements we are able to recover quickly without exiting the program or preventing compiling. This enables us to continue working while we are still figuring out all the design decisions we want to make for our program. 
