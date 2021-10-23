@@ -48,8 +48,7 @@ input={`class HelloWorld
 	{
 		System.out.println("Hello World");
 	} //this closes the main method
-    //notice how a closing curly bracket "}" for the class is missing
-`}
+    //notice how a closing curly bracket "}" for the class is missing`}
 language='java'
 />
 
@@ -163,8 +162,7 @@ input={`class HelloReaders
         String greeting = "Hello Readers";
         return greeting;
     } //closes the world() method
-} //added the missing bracket here to close the class
-`}
+} //added the missing bracket here to close the class`}
 language='java'
 />
 
