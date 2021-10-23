@@ -15,10 +15,10 @@ Parsing is the process by which a compiler analyses the code for correct syntax 
 The error may appear as the following.
 
 <Highlighter
-input='Main.java:13: error: reached end of file while parsing
+input={`Main.java:13: error: reached end of file while parsing
 	}
 	 ^
-1 error'
+1 error`}
 language='bash'
 />
 
@@ -75,10 +75,10 @@ language='java'
 The error is encountered at line 11 as follows.
 
 <Highlighter
-input='HelloReaders.java:11: error: reached end of file while parsing
+input={`HelloReaders.java:11: error: reached end of file while parsing
 }
  ^
-1 error'
+1 error`}
 language='bash'
 />
 
@@ -111,10 +111,10 @@ language='java'
 If you compile or run the program above, you'll receive the following error. 
 
 <Highlighter
-input='HelloReaders.java:14: error: reached end of file while parsing
+input={`HelloReaders.java:14: error: reached end of file while parsing
 }
  ^
-1 error'
+1 error`}
 language='bash'
 />
 
@@ -174,6 +174,7 @@ When you run and compile the above program, you'll receive the following expecte
 input='Hello Readers'
 language='bash'
 />
+
 It's important to remember that every opening bracket '{' requires a closing bracket '}'.
 
 ## Use IDEs to autoformat code
