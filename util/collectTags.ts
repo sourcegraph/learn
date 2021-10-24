@@ -1,8 +1,9 @@
 import MarkdownFile from '@interfaces/MarkdownFile'
 import sluggify from '@util/sluggify'
-import uniq from 'lodash/uniq'
 
-export default function collectTags(markdownFiles: MarkdownFile[]): string[] {
-    const tags = markdownFiles.flatMap(file => file.frontMatter.tags.map(tag => sluggify(tag)))
-    return uniq(tags)
+export default function collectTags(markdownFiles: MarkdownFile[], slug?: boolean): Set<string> {
+    if (slug) {
+        return new Set(markdownFiles.flatMap(file => file.frontMatter.tags.map(tag => sluggify(tag))))
+    }
+    return new Set(markdownFiles.flatMap(file => file.frontMatter.tags.map(tag => tag)))
 }
