@@ -35,38 +35,43 @@ To stage a modified file, use the `git add` command followed by a filename as th
 
 For example, to add a modified file named `license.txt`, run `git add` with the name of the file.
 
-```sh
-git add license.txt
-```
+<Highlighter
+input='git add license.txt'
+language='bash'
+/>
 
 While the command is called `git add`, note that this use of the word “add” doesn’t only refer to adding new files to the repository. It refers to adding any changed files to the staging area. The staging area can contain created, deleted, or modified files. You can use `git add` on a deleted file, for example.
 
 You can list multiple filenames as arguments to `git add` to stage them all in one step. For example, to stage a set of files named `first.txt`, `second.txt`, and `third.txt`, you can run the following `git add` command.
 
-```sh
-git add first.txt second.txt third.txt
-```
+<Highlighter
+input='git add first.txt second.txt third.txt'
+language='bash'
+/>
 
 The above is equivalent to running `git add` on each one individually, as follows.
 
-```sh
-git add first.txt
+<Highlighter
+input='git add first.txt
 git add second.txt
-git add third.txt
-```
+git add third.txt'
+language='bash'
+/>
 
 You can stage a file that is deep in the directory structure by providing its entire path. For example, to stage a file located at `static/pages/docs/index.html`, you can provide that full path to `git add`.
 
-```sh
-git add static/pages/docs/index.html
-```
+<Highlighter
+input='git add static/pages/docs/index.html'
+language='bash'
+/>
 
 The argument to `git add` is always interpreted as relative to the current directory. This means that as an alternative to the above deeply nested path, you can switch to the file’s directory first and then use `git add` on the file name directly. Here’s how you can do this by changing the current directory with `cd` and then staging `index.html` from there:
 
-```sh
-cd static/pages/docs
-git add index.html
-```
+<Highlighter
+input='cd static/pages/docs
+git add index.html'
+language='bash'
+/>
 
 By using relative file paths in this way, you can stage changes from any directory in the repository tree.
 
@@ -76,15 +81,17 @@ Similarly to staging a file, you can stage a directory by providing its path to 
 
 For example, to add all changes in the `docs` directory, provide the directory name to the `git add` command.
 
-```sh
-git add docs
-```
+<Highlighter
+input='git add docs'
+language='bash'
+/>
 
 Similar to staging files, you can specify multiple directories in the same command by listing them. The following example shows how to stage two directories: `docs` and `assets`.
 
-```sh
-git add docs assets
-```
+<Highlighter
+input='git add docs assets'
+language='bash'
+/>
 
 After running the above command, all changes contained within these two directories will be staged.
 
@@ -92,9 +99,10 @@ After running the above command, all changes contained within these two director
 
 When you don’t need to select specific files or directories for a commit, you can stage all changes at once. To do that, run `git add` with the `-A` flag (or its synonym, `-all`). No other arguments are necessary when using this flag.
 
-```sh
-git add -A
-```
+<Highlighter
+input='git add -A'
+language='bash'
+/>
 
 This will stage all changes in the repository directory and all subdirectories. It will include all files that are modified, created, or deleted.
 
@@ -114,10 +122,11 @@ If you would like to leverage this method for adding directories to your staging
 
 Suppose you have an empty directory named `output` that you want to add to a repository. You can first create a placeholder file named `.gitkeep` within that directory by using the [`touch`](<https://en.wikipedia.org/wiki/Touch_(command)>) command in the terminal, which creates a blank file. Then, you can use the `git add` command to stage the directory.
 
-```sh
-touch output/.gitkeep
-git add output
-```
+<Highlighter
+input='touch output/.gitkeep
+git add output'
+language='bash'
+/>
 
 This will stage the `output` directory, which is empty except for the placeholder file, to be committed to the repository.
 
@@ -127,23 +136,26 @@ If you want to stage all files that match a pattern, like all files that end in 
 
 Glob patterns use the star symbol (`*`) as a wildcard to match file names. For example, to stage all files with a `.py` extension in the current directory, you can provide the following pattern to `git add`:
 
-```sh
-git add *.py
-```
+<Highlighter
+input='git add *.py'
+language='bash'
+/>
 
 The double star pattern (`**`) is a wildcard that matches any subdirectories in a file’s path. For example, to recursively stage all files named `index.js` in all subdirectories of the project, you can run `git add` with the following pattern.
 
-```sh
-git add **/index.js
-```
+<Highlighter
+input='git add **/index.js'
+language='bash'
+/>
 
 This will find all files named `index.js`, regardless of their subdirectory, and stage them.
 
 The above two patterns can be combined. For example, you can run the following command to stage all files ending in the `.py` extension in all subdirectories.
 
-```sh
-git add **/*.py
-```
+<Highlighter
+input='git add **/*.py'
+language='bash'
+/>
 
 The double star (`**`) pattern will search across all subdirectories recursively and the single star (`*`) pattern will match all filenames with a `.py` extension in the project.
 
@@ -158,9 +170,10 @@ Like the `git add` command, `git rm` can be used with files, directories, or pat
 
 For example, to remove and stage a file named `license.txt`, you can run `git rm` as follows.
 
-```sh
-git rm license.txt
-```
+<Highlighter
+input='git rm license.txt'
+language='bash'
+/>
 
 The `license.txt` file will now be in the staging area as a deleted file.
 
@@ -179,9 +192,10 @@ The `git mv` command renames or moves files and also stages the change in one st
 
 For example, to rename a file named `todo.txt` to `done.txt`, you can run `git mv` with the original name and new name as arguments.
 
-```sh
-git mv todo.txt done.txt
-```
+<Highlighter
+input='git mv todo.txt done.txt'
+language='bash'
+/>
 
 This will perform three tasks in one command:
 
@@ -203,15 +217,17 @@ It’s necessary to include the `--staged` flag to indicate that you want to rem
 
 Like `git add`, `git restore --staged` takes a file name as an argument. For example, suppose you previously staged a file named `README.md` using `git add`.
 
-```sh
-git add README.md
-```
+<Highlighter
+input='git add README.md'
+language='bash'
+/>
 
 To unstage this file, use `git restore --staged` with the same file name.
 
-```sh
-git restore --staged README.md
-```
+<Highlighter
+input='git restore --staged README.md'
+language='bash'
+/>
 
 The file’s changes will remain in the working directory, but the file will no longer be present in the staging area.
 
@@ -223,18 +239,20 @@ To start the staging process over from the beginning, you can unstage all change
 
 The `git reset` command removes all changes from the staging area.
 
-```sh
-git reset
-```
+<Highlighter
+input='git reset'
+language='bash'
+/>
 
 After running the above command, all changes will be unstaged but will remain in the working directory. The output gives you a summary of those changes, as in the example below.
 
-```
-Unstaged changes after reset:
+<Highlighter
+input='Unstaged changes after reset:
 M       index.html
 D       script.js
-D       style.css
-```
+D       style.css'
+language='bash'
+/>
 
 From here, you can start staging changes again.
 
