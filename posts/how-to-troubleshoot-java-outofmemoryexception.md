@@ -24,23 +24,33 @@ The explanatory note at the end of the error message noted "heap space" as the c
 An example of a short program that could cause an error similar to the one above, could be similar to the following. 
 
 <Highlighter
-input={`public class OutOfMemoryTest {
+input={`import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) {
-        Integer[] newArray = new Integer[1000 * 1000 * 1000];
-    }
+public class test {
+
+	public static void main(String[] args) {
+
+			List<byte[]> list = new ArrayList<>();
+			while (true) {
+					byte[] n = new byte[7777777];
+					list.add(n);
+			}
+
+	}
 }`}
 language='java'
 />
 
-The issue here is that we are trying to work with very large objects; they take up a lot of room, and the JVM doesn't have enough room to initialize an array of so many integers (certainly not `1^9` of them). Thus, it throws the `Exception in thread "main" java.lang.OutOfMemoryError: Java heap space` error message. 
-
-## Monitoring garbage collection
-
-First, it is a good idea to enable garbage collection (GC) monitoring, so that more precise diagnostics can be run when this type of error is thrown. GC monitoring provides logs of garbage collection activity by the JVM that we can view to determine what's going on with the objects on the heap. This will allow us to more accurately define the cause of the error so we can remedy it. 
+Now, the issue with this program is that we failed to give it an exit function, or something to tell it to stop adding bytes to the list after a certain amount of time. Therefore it will keep adding more and more until it eventually runs out of memory and causes the compiler to throw the `Exception in thread "main" java.lang.OutOfMemoryError: Java heap space` error message. 
 
 ## We're going to need a bigger heap
 
+There are two possible methods of solving this. The first thing to do is try to make the heap bigger. This can be done via a bash command in the command terminal:
+
+ <Highlighter input=‘java -Xmx1g -classpath “.:${THE_CLASSPATH}” ${PROGRAM_NAME}’/>
+
+“1g” represents the amount of space we want to allocate in the heap as 1GB. This amount is just an example, and can be modified to increase or decrease depending on individual cases. It’s important to remember, however, that it shouldn’t be greater than 75% of our device’s available storage.
 If the cause is the heap size, like it was for our program, we may be able to increase the size of the heap on the command line with the following command: 
 
 <Highlighter
@@ -57,20 +67,13 @@ language='bash'
 
 It's important to note that the heap size can't exceed the capacity of our device's storage, so we need to keep those limitations in mind when attempting to increase our heap size. 
 
-## Finding the leak
+## Where's the leak?
 
-If the issue is not with the heap size but a matter of our program causing what is known as _memory leaks_, this can be a little harder to fix. A memory leak is when a program continually consumes more and more memory space by creating more objects that it never releases to be collected in GC, so these objects end up sitting on the heap forever. This doesn't leave enough room for new objects.
+But our program doesn’t care about the size of the heap – it will just keep adding integers to our list forever, and because we haven’t given it an exit function, it will hold onto the references interminably, so that the objects are never collected by the garbage collector. A logic error like this that continually fills up memory space is called a “memory leak,” and they can be difficult to diagnose in large and complex programs. Aside from manually digging through the code line-by-line to try to figure out the problem, it’s helpful to use a tool to automate the process.
 
-In this case, there are a multitude of good performance evaluation tools to use that can help identify where in the program the issue is being caused. One of these is [VisualVM](https://visualvm.github.io/), which is part of the JDK package, and can be used in both development and production environments to monitor performance of a Java program. 
+Some IDEs have tools that allow users to monitor the lifetimes of objects added to and removed from the heap. Eclipse IDE is a very popular IDE for Java programmers, and has a tool called Memory Analysis Tool (MAT) that is used to analyze heap dumps (snapshots) of objects currently residing in the heap. Heap dumps can be also be created and analyzed via another tool called Java VisualVM, which can be downloaded [here](https://visualvm.github.io/). 
 
-To use a tool like VisualVM to diagnose a memory leak issue, we must first perform what is called a "heap dump," which essentially causes the JVM to produce a record of all the "live" objects that currently reside on the heap. This can either be done manually through VisualVM's user interface, or set to trigger when an `OutOfMemoryError` occurs. For the latter, we can use the following command: 
-
-<Highlighter
-input='java -XX:+HeapDumpOnOutOfMemoryError'
-language='bash'
-/>
-
-This command instructs the machine to produce these logs the next time it throws an `OutOfMemoryError`, which can then be analyzed via VisualVM. 
+We can create a heap dump within the application window of VisualVM, then save the file locally. When examining the dump file, VisualVM provides the user with the option to view a “Summary,” a “Classes” and an “Instances” page. “Summary” contains information such as the current running environment when the snapshot was taken. “Classes” contains a list of the classes and related subclasses within the program, as well as the number and percentage of references within the program to those classes. By selected a class, we are able to get a detailed list of those instances that refer to that class. The “Instances” page provides detailed information regarding a selected instance, such as fields and references to particular classes, in addition to the nearest garbage collection root object.
 
 ## Learn more
 
