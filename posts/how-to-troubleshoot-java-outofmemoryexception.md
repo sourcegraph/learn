@@ -2,7 +2,7 @@
 title: How to troubleshoot Java OutOfMemoryError
 author: grace-mcnerney
 tags: [tutorial, Java, troubleshooting]
-publicationDate: today's date
+publicationDate: October 25, 2021
 description: Learn how to error handle the Java OutOfMemoryError
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -46,11 +46,14 @@ Now, the issue with this program is that we failed to give it an exit function, 
 
 ## We're going to need a bigger heap
 
-There are two possible methods of solving this. The first thing to do is try to make the heap bigger. This can be done via a bash command in the command terminal:
+There are two possible methods of solving this. The first thing to do is to evaluate whether the right approach is making the heap bigger. If we decide that this is the appropriate next step, we can do this via a bash command in the command terminal:
 
- <Highlighter input=‘java -Xmx1g -classpath “.:${THE_CLASSPATH}” ${PROGRAM_NAME}’/>
+ <Highlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
+ language='bash'
+ />
 
-“1g” represents the amount of space we want to allocate in the heap as 1GB. This amount is just an example, and can be modified to increase or decrease depending on individual cases. It’s important to remember, however, that it shouldn’t be greater than 75% of our device’s available storage.
+Here, `1g` represents the amount of space we want to allocate to the heap, `1g` stands for 1GB. This amount is just an example, and can be modified to increase or decrease depending on individual cases. It’s important to remember, however, that it shouldn’t be greater than 75% of our device’s available storage.
+
 If the cause is the heap size, like it was for our program, we may be able to increase the size of the heap on the command line with the following command: 
 
 <Highlighter
@@ -69,11 +72,13 @@ It's important to note that the heap size can't exceed the capacity of our devic
 
 ## Where's the leak?
 
-But our program doesn’t care about the size of the heap – it will just keep adding integers to our list forever, and because we haven’t given it an exit function, it will hold onto the references interminably, so that the objects are never collected by the garbage collector. A logic error like this that continually fills up memory space is called a “memory leak,” and they can be difficult to diagnose in large and complex programs. Aside from manually digging through the code line-by-line to try to figure out the problem, it’s helpful to use a tool to automate the process.
+But our example program doesn’t care about the size of the heap — it will keep adding integers to our list forever, and because we haven’t given it an exit function, it will hold onto the references interminably, so that the objects are never collected by the garbage collector. A logic error like this that continually fills up memory space is called a “memory leak.” Memory leaks can be difficult to diagnose in large and complex programs. Aside from manually digging through the code line-by-line to try to figure out the problem, it’s helpful to use a tool to automate the process.
 
-Some IDEs have tools that allow users to monitor the lifetimes of objects added to and removed from the heap. Eclipse IDE is a very popular IDE for Java programmers, and has a tool called Memory Analysis Tool (MAT) that is used to analyze heap dumps (snapshots) of objects currently residing in the heap. Heap dumps can be also be created and analyzed via another tool called Java VisualVM, which can be downloaded [here](https://visualvm.github.io/). 
+Some IDEs have tools that allow users to monitor the lifetimes of objects added to and removed from the heap. The [Eclipse IDE](https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers) is a very popular IDE for Java programmers, and has a tool called [Memory Analysis Tool (MAT)](https://www.eclipse.org/mat/) that is used to analyze heap dumps (snapshots) of objects currently residing in the heap. Heap dumps can be also be created and analyzed via another tool called Java VisualVM, which can be downloaded [from the VisualVM site](https://visualvm.github.io/). 
 
-We can create a heap dump within the application window of VisualVM, then save the file locally. When examining the dump file, VisualVM provides the user with the option to view a “Summary,” a “Classes” and an “Instances” page. “Summary” contains information such as the current running environment when the snapshot was taken. “Classes” contains a list of the classes and related subclasses within the program, as well as the number and percentage of references within the program to those classes. By selected a class, we are able to get a detailed list of those instances that refer to that class. The “Instances” page provides detailed information regarding a selected instance, such as fields and references to particular classes, in addition to the nearest garbage collection root object.
+We can create a heap dump within the application window of VisualVM, then save the file locally. When examining the dump file, VisualVM provides the user with the option to view **Summary**, **Classes**, and **Instances** pages. **Summary** contains information such as the current running environment when the snapshot was taken.**Classes** contains a list of the classes and related subclasses within the program, as well as the number and percentage of references within the program to those classes. By selecting a class, we are able to get a detailed list of those instances that refer to that class. The **Instances** page provides detailed information regarding a selected instance, such as fields and references to particular classes, in addition to the nearest garbage collection root object.
+
+You can review more details of how to use VisualVM to effectively troubleshoot memory issues by reading the official [VisualVM documentation](https://visualvm.github.io/documentation.html).
 
 ## Learn more
 
