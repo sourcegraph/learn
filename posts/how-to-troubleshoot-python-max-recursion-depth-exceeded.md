@@ -26,14 +26,12 @@ Let's reproduce this error by creating a Python file called `fibonacci.py`.
 [Fibonacci series](https://en.wikipedia.org/wiki/Fibonacci_number#Sequence_properties) computation is generally a standard algorithm, which can be solved in various ways, and each of the implementations is useful for demonstrating certain behaviors. In our case, we'll be using this algorithm to demonstate the `RecursionError` through creating a recursive function.
 
 <Highlighter
-input={`
-def recursive_fibonacci(n):
+input={`def recursive_fibonacci(n):
     if n <= 1:
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
  
-print(recursive_fibonacci(123456))
- 
+print(recursive_fibonacci(123456)) 
 `}
 language='python'
 />
@@ -41,8 +39,7 @@ language='python'
 Run this script using the command `python3 fibonacci.py` command. You will get output similar to the following, including the error message. 
 
 <Highlighter
-input='
-Traceback (most recent call last):
+input='Traceback (most recent call last):
   File "fibonacci.py", line 9, in <module>
     recursive_fibonacci(123456)
   File "fibonacci.py", line 6, in recursive_fibonacci
@@ -54,8 +51,7 @@ Traceback (most recent call last):
   [Previous line repeated 995 more times]
   File "fibonacci.py", line 3, in recursive_fibonacci
     if n <= 1:
-RecursionError: maximum recursion depth exceeded in comparison
-'
+RecursionError: maximum recursion depth exceeded in comparison'
 language='bash'
 />
 
@@ -72,8 +68,7 @@ Note that our Fibonacci implementation has a time complexity of `O(2^n)`, which 
 Let's explore our example program through increasing the stack size.
 
 <Highlighter
-input={`
-import sys
+input={`import sys
   
  
 sys.setrecursionlimit(10**5)
@@ -85,8 +80,7 @@ def recursive_fibonacci(n):
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
  
 print(recursive_fibonacci(32))
- 
-`}
+ `}
 language='python'
 />
 
