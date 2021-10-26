@@ -103,8 +103,7 @@ Let us take a step back and work to improve our solution from an algorithmic per
 One way to improve on our implementation is to convert a recursive problem into an iterative one. We can refactor our code to use an iterative version, and this version will be more robust as it would not allocate memory on stack.
 
 <Highlighter
-input={`
-def iterative_fibonacci(n):
+input={`def iterative_fibonacci(n):
     if n <= 1:
         return n
     n1, n2 = 0, 1
@@ -114,7 +113,6 @@ def iterative_fibonacci(n):
  
 print(iterative_fibonacci(9))
 print(iterative_fibonacci(123456))
- 
 `}
 language='python'
 />
