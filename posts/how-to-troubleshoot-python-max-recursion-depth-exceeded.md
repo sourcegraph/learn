@@ -73,9 +73,7 @@ Let's explore our example program through increasing the stack size.
 input={`
 import sys
 
-
 sys.setrecursionlimit(10**5)
-
 
 def recursive_fibonacci(n):
     if n <= 1:
