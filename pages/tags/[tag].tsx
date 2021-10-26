@@ -1,8 +1,7 @@
 import ArticleListTemplate, { Props as ArticleListTemplateProps } from '@components/templates/ArticleListTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
-import capitalize from '@util/capitalize'
 import collectTags from '@util/collectTags'
-import filterRecordsForTags from '@util/filterRecordsForTag'
+import filterRecordsWithTag from '@util/filterRecordsWithTag'
 import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -19,7 +18,7 @@ export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async co
     const posts = await loadAllRecords('posts')
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
-    const filteredRecordsWithTag = filterRecordsForTags(allRecords, tag)
+    const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
     const url = `/tags/${tag}`
     const headerText = `Records tagged with ${filteredRecordsWithTag.title}`
 

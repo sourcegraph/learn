@@ -8,7 +8,7 @@ interface FilteredRecords {
     title: string
 }
 
-const filterRecordsForTags = (records: MarkdownFile[], tag: string): FilteredRecords => {
+const filterRecordsWithTag = (records: MarkdownFile[], tag: string): FilteredRecords => {
     const transformedTag = transformTag(tag)
     let titleTag: string = capitalize(transformedTag)
     const checkRecordSet = (record: MarkdownFile, tag: string): boolean => {
@@ -27,4 +27,4 @@ const filterRecordsForTags = (records: MarkdownFile[], tag: string): FilteredRec
     }
 }
 
-export default filterRecordsForTags
+export default filterRecordsWithTag

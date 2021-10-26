@@ -1,5 +1,5 @@
-const capitalize = (tagString: string): string => {
-    const transformedTags = tagString.split(' ').map((string:string) => {
+const capitalize = (string: string): string => {
+    const capitalizedString = string.split(' ').map((string:string) => {
         const regex = /[A-Z]/
         if (regex.test(string.charAt(1))) {
             return string
@@ -8,7 +8,7 @@ const capitalize = (tagString: string): string => {
         return string.charAt(0).toUpperCase() + string.slice(1)
     })
 
-    return transformedTags.join(' ')
+    return capitalizedString.join(' ')
 }
 
 export default capitalize
