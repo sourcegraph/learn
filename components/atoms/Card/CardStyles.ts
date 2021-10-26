@@ -21,7 +21,7 @@ export const StyledCard = styled.div<Props>`
     border-radius: .25rem;
     margin: ${props => props.addMargin
         ? '1.5rem 0'
-        : '0 .625rem 1.5rem'};
+        : '0'};
     text-align: ${props => props.leftAlign
         ? 'left'
         : 'center'};
