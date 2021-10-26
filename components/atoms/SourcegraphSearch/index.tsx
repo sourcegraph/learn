@@ -4,7 +4,7 @@ import Column from '@components/atoms/Column'
 import sanitizeString from '@util/sanitizeString'
 import { FunctionComponent, useState } from 'react'
 
-import { StyledSearchBody, StyledSearchInput } from './SourcegraphSearchStyles'
+import { StyledSearchBody, StyledSearchInput, StyledSearchLogo } from './SourcegraphSearchStyles'
 
 interface Props {
     query: string
@@ -20,16 +20,16 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
     return (
         <Card showBorder={true}>
             <StyledSearchBody>
-                <Column>
-                    <img width="32" src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg" alt="Sourcegraph logo" />
+                <Column className='flex-medium-static'>
+                    <StyledSearchLogo width="32" src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-mark.svg" alt="Sourcegraph logo" />
                 </Column>
-                <Column>
+                <Column className='flex-medium-static'>
                     <StyledSearchInput
                         value={query}
                         onChange={event => setQuery(event.target.value)}
                     />
                 </Column>
-                <Column>
+                <Column className='flex-medium-static'>
                     <Button
                         className="primary small"
                         href={queryString}
