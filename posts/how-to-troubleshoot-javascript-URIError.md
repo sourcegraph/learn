@@ -10,24 +10,28 @@ browserTitle: URIError URI malformed in JavaScript error handling
 type: posts
 ---
 
-`URIError: URI malformed` is an error that you get when the URI encoding or decoding of an argument wasn't successful. It occurs when the argument given to either the `encodeURI`, `decodeURI`, `encodeURIComponent` or `decodeURIComponent` function was not valid, which makes the function unable to encode or decode the argument properly.  In this tutorial, we will learn how to solve this problem.
+`URIError: URI malformed` is an error that you get when the URI encoding or decoding of an argument wasn't successful. URI refers to **U**niform **R**esource **I**dentifier, a unique sequence of characters that identifies a resource used by web technologies; a URL is a form of URI. 
 
+The `URI malformed` error occurs when the argument given to either the `encodeURI()`, `decodeURI()`, `encodeURIComponent()` or `decodeURIComponent()` function was not valid, which makes the function unable to encode or decode the argument properly.  In this tutorial, we will learn how to solve this problem.
 
 ## Reproducing the error
 
-To start with, we will attempt to recreate the error. A possible point of encounter of the error is during decoding. Each escape sequence in an encoded URI component is replaced with the character it represents during decoding. If such a character does not exist, an error will be thrown. The code below will throw an `URIError: URI malformed` error.
+To start with, we will attempt to recreate the error. A possible point of encounter of the error is during decoding. Each escape sequence in an encoded URI component is replaced with the character it represents during decoding. If such a character does not exist, an error will be thrown. 
+
+The code below will throw an `URIError: URI malformed` error.
 
 <Highlighter
 input={`decodeURIComponent('%E0%A4%A');`}
 language='javascript'
 /> 
 
-How do we solve this problem then? Here are several ways of doing that.
+Now that we have reproduced the error, let's go over several ways to troubleshoot it.
 
+## Ensure the argument is valid
 
-## Ensure the Argument is valid
+If you are trying to encode or decode an input, you should ensure that the input argument isn't corrupted, truncated, or contain unsupported charcters in any way.
 
-If you are trying to encode or decode an input, you should ensure that the input argument isn't corrupted, truncated or contain unsupported charcters in any way. An example is the solution to the above `decodeURIComponent` error. The function runs without error when the code becomes.
+An example is the solution to the above `decodeURIComponent` error. The function runs without error when the argument passed to the function is not truncated.
 
 <Highlighter
     input={`decodeURIComponent('JS_%E5%8D%98%20%E7%B4%94');`}
@@ -36,7 +40,7 @@ If you are trying to encode or decode an input, you should ensure that the input
 
 This returns `JS_単 純`, the correct output without any error.
 
-## Catch and Handle the error
+## Catch and handle the error
 
 If you are not in control of the text that you feed into the functions, the best you can do might be to catch and handle the error appropriately without breaking the code. One could return an appropriate error message. An example is shown below.
 
