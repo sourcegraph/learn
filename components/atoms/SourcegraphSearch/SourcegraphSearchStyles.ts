@@ -15,6 +15,8 @@ export const StyledSearchBody = styled.div`
 
     @media screen and (max-width: 1240px) {
         flex-direction: column;
+        padding: unset;
+        margin: 1rem 0;
     }
 `
 export const StyledSearchInput = styled.textarea`
