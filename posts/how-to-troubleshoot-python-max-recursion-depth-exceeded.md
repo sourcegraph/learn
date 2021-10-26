@@ -1,5 +1,5 @@
 ---
-title: How to troubleshoot Python Recursion Error 
+title: How to troubleshoot Python recursion error 
 author: yashrsharma44
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 26, 2021
@@ -32,7 +32,6 @@ def recursive_fibonacci(n):
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
 print(recursive_fibonacci(123456))
-
 `}
 language='python'
 />
@@ -84,7 +83,6 @@ def recursive_fibonacci(n):
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
 
 print(recursive_fibonacci(32))
-
 `}
 language='python'
 />
@@ -113,7 +111,6 @@ def iterative_fibonacci(n):
 
 print(iterative_fibonacci(9))
 print(iterative_fibonacci(123456))
-
 `}
 language='python3'
 />
