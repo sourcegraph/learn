@@ -31,6 +31,7 @@ def recursive_fibonacci(n):
     if n <= 1:
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
+    
 print(recursive_fibonacci(123456))
  
 `}
@@ -73,11 +74,16 @@ Let's explore our example program through increasing the stack size.
 <Highlighter
 input={`
 import sys
+
+
 sys.setrecursionlimit(10**5)
+
+
 def recursive_fibonacci(n):
     if n <= 1:
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
+
 print(recursive_fibonacci(32))
  
 `}
@@ -105,6 +111,7 @@ def iterative_fibonacci(n):
     for i in range(n):
         n1, n2 = n2, n1 + n2
     return n1
+    
 print(iterative_fibonacci(9))
 print(iterative_fibonacci(123456))
  
