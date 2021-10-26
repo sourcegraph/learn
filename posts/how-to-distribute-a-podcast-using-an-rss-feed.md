@@ -158,7 +158,7 @@ Now that the initial XML declarations are complete, we have now set a few extra 
 | Tag | Description |
 |---|---|
 | `<itunes:duration>` | The duration of our episode in seconds |
-| `<itunes:author>` | tThe author or host of this specific episode, notice this can be different from the overall show author |
+| `<itunes:author>` | The author or host of this specific episode, notice this can be different from the overall show author |
 | `<itunes:explicit>` | Whether or not this episode uses any vulgar language, notice this is also different from the overall show setting |
 | `<itunes:season>` | In case you ever want to have multiple seasons for your podcast it is good to specify a season for each episode, even if it will always be season 1 |
 | `<itunes:episode>` | Which episode number this is for the aforementioned season number |
