@@ -10,7 +10,27 @@ browserTitle: TypeError invalid assignment to const "x" in JavaScript error hand
 type: posts
 ---
 
-If you are working in Javascript and receive the following output, it means you are redeclaring the const value.
+The JavaScript exception ```js invalid assignment to const ``` occurs when it was attempted to alter a constant value. JavaScript const declarations can't be re-assigned or redeclared.
+
+## Message
+
+```js
+TypeError: invalid assignment to const "x" (Firefox)
+TypeError: Assignment to constant variable. (Chrome)
+TypeError: Assignment to const (Edge)
+TypeError: Redeclaration of const 'x' (IE)
+```
+
+### Error type
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
+
+## What went wrong?
+
+If you are working in Javascript and receive the following output, it means you are redeclaring the const value, a constant is a value that cannot be altered by the program during normal execution. It cannot change through re-assignment, and it can't be redeclared. In JavaScript, constants are declared using the const keyword.
+
+## Example
+
+### Invalid redeclaration
 
 ```js
 TypeError: invalid assignment to const x
@@ -25,6 +45,9 @@ There are some common mistakes that can raise this exception.
 const x = 80;
 x = 120; // TypeError: invalid assignment to const x
 ```
+
+## Fixing the error
+There are multiple options to fix this error. Check what was intended to be achieved with the constant in question.
 
 ## Solution 1
 
@@ -54,6 +77,22 @@ const x = 80;
 function setupBigScreenEnvironment() {
   const x = 120;
 }
+```
+
+### const and immutability
+
+The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. For instance, in case the content is an object, this means the object itself can still be altered. This means that you can't mutate the value stored in a variable:
+
+```js
+const obj = {foo: 'bar'};
+obj = {foo: 'baz'}; // TypeError: invalid assignment to const `obj'
+```
+
+But you can mutate the properties in a variable:
+
+```js
+obj.foo = 'baz';
+obj; // Object { foo: "baz" }
 ```
 
 ## Learn more
