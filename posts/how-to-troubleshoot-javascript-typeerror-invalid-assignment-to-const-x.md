@@ -22,7 +22,7 @@ TypeError: Redeclaration of const 'x' (IE)
 ```
 
 ### Error type
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
+[TypeError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError).
 
 ## What went wrong?
 
