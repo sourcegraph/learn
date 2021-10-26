@@ -36,6 +36,11 @@ export const StyledColumn = styled.div`
         }
     }
 
+    &.flex-medium-static {
+        flex-direction: column;
+        width: auto;
+    }
+
     &.flex-large {
         align-items: center;
         flex: 0 0 auto;
