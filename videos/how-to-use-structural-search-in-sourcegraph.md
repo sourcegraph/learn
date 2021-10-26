@@ -3,7 +3,8 @@ title: How to use structural search in Sourcegraph
 tags: [video, search, sourcegraph]
 publicationDate: September 17, 2021
 description: Learn about Sourcegraph structural search patterns.
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-use-structural-search-in-sourcegraph-thumbnail.jpg
 imageAlt: Sourcegraph structural search.
 type: videos

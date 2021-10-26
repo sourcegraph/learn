@@ -24,7 +24,8 @@ import {
 
 export interface Props {
     title: string
-    author?: string | null
+    authorSlug?: string | null
+    authorDisplayName?: string | null
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
     image?: string | null
@@ -53,9 +54,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         description: props.description ?? metaDataDefaults.description,
         type: 'article',
         url: `${metaDataDefaults.url}/${props.slug}`,
-        author: props.author
-            ? slugToTitleCase(props.author)
-            : null
+        author: props.authorDisplayName ?? null
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
@@ -102,8 +101,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 : null}
 
             {/* Author */}
-            {props.author && (
-                <StyledAuthorByline href={`/authors/${props.author}`}>{slugToTitleCase(props.author)}</StyledAuthorByline>
+            {props.authorSlug && props.authorDisplayName && (
+                <StyledAuthorByline href={`/authors/${props.authorSlug}`}>{props.authorDisplayName}</StyledAuthorByline>
             )}
 
             {/* Dates */}
