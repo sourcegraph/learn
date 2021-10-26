@@ -13,7 +13,7 @@ type: posts
 If you are working in Javascript and receive the following output, it means you are redeclaring the const value.
 
 ```js
-TypeError: invalid assignment to const `x'
+TypeError: invalid assignment to const x
 ```
 
 ## Reproducing the error
