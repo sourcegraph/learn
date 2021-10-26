@@ -2,7 +2,7 @@
 title: How to troubleshoot Java OutOfMemoryError
 author: grace-mcnerney
 tags: [tutorial, Java, troubleshooting]
-publicationDate: October 25, 2021
+publicationDate: October 26, 2021
 description: Learn how to error handle the Java OutOfMemoryError
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -29,15 +29,15 @@ import java.util.List;
 
 public class test {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-			List<byte[]> list = new ArrayList<>();
-			while (true) {
-					byte[] n = new byte[7777777];
-					list.add(n);
-			}
+            List<byte[]> list = new ArrayList<>();
+                while (true) {
+                    byte[] n = new byte[7777777];
+                    list.add(n);
+            }
 
-	}
+    }
 }`}
 language='java'
 />
