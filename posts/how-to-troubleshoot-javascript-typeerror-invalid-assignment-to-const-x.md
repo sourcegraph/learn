@@ -10,7 +10,7 @@ browserTitle: TypeError invalid assignment to const "x" in JavaScript error hand
 type: posts
 ---
 
-The JavaScript exception ```js invalid assignment to const ``` occurs when it was attempted to alter a constant value. JavaScript const declarations can't be re-assigned or redeclared.
+The JavaScript exception ```js invalid assignment to const``` occurs when it was attempted to alter a constant value. JavaScript const declarations can't be re-assigned or redeclared.
 
 ## Message
 
@@ -22,7 +22,7 @@ TypeError: Redeclaration of const 'x' (IE)
 ```
 
 ### Error type
-[TypeError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError).
+[TypeError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
 
 ## What went wrong?
 
