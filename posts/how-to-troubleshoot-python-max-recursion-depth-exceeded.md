@@ -32,6 +32,7 @@ def recursive_fibonacci(n):
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
 print(recursive_fibonacci(123456))
+ 
 `}
 language='python'
 />
@@ -78,6 +79,7 @@ def recursive_fibonacci(n):
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
 print(recursive_fibonacci(32))
+ 
 `}
 language='python'
 />
@@ -105,8 +107,9 @@ def iterative_fibonacci(n):
     return n1
 print(iterative_fibonacci(9))
 print(iterative_fibonacci(123456))
+ 
 `}
-language='python3'
+language='python'
 />
 
 The above implementation doesn't have a chain of recursive calls, hence we can be confident that our method will not create a `RecursionError`. In fact, the implementation is so flawless that we can run for values of `n` as `n <= 10**8` because our new implementation has a time complexity of `O(N)`, which is one of the best time complexities you can have for your implementation.
