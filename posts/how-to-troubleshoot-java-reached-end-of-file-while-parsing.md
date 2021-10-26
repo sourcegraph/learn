@@ -16,8 +16,8 @@ The error may appear as the following.
 
 <Highlighter
 input={`Main.java:13: error: reached end of file while parsing
-	}
-	 ^
+    }
+     ^
 1 error`}
 language='bash'
 />
@@ -44,10 +44,10 @@ The below blocks of code all result in this error..
 <Highlighter
 input={`class HelloWorld
 {
-	public static void main(String[] args) 
-	{
-		System.out.println("Hello World");
-	} //this closes the main method
+    public static void main(String[] args) 
+    {
+        System.out.println("Hello World");
+    } //this closes the main method
     //notice how a closing curly bracket "}" for the class is missing`}
 language='java'
 />
