@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python recursion error 
-author: yashrsharma44
+authorSlug: yashrsharma44
+authorDisplayName: Yash Sharma
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle Python RecursionError - maximum recursion depth exceeded in comparison

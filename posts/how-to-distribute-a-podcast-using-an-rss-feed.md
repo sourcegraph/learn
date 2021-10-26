@@ -1,6 +1,7 @@
 ---
 title: How to distribute a podcast using an RSS feed
-author: anthony-tagliaferri
+authorSlug: anthony-tagliaferri
+authorDisplayName: Anthony Tagliaferri
 tags: [podcast, rss, object storage]
 publicationDate: October 18, 2021
 description: Set up an RSS feed for your podcast

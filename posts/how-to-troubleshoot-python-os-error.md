@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python OSError
-author: angelina-tresca
+authorSlug: angelina-tresca
+authorDisplayName: Angelina Tresca
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 15, 2021
 description: Learn how to error handle the Python OSError

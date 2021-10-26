@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot PHP syntax error unexpected end of file, expecting ';' or ','
-author: tom-benevides
+authorSlug: tom-benevides
+authorDisplayName: Tom Benevides
 tags: [tutorial, php, troubleshooting]
 publicationDate: October 15, 2021
 description: Learn how to error handle PHP syntax error, unexpected end of file, expecting ';' or ','

@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java NullPointerException
-author: william-bezuidenhout
+authorSlug: william-bezuidenhout
+authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 20, 2021
 description: Learn how to error handle the Java NullPointerException

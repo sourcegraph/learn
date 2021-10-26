@@ -1,6 +1,7 @@
 ---
 title: How to search code with Sourcegraph using literal patterns
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [tutorial, search, Sourcegraph]
 publicationDate: May 28, 2021
 description: Learn how to use literal search patterns to search code on Sourcegraph.
