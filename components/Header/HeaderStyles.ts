@@ -113,5 +113,14 @@ export const StyledHeaderCard = styled.div`
     flex-grow: 1;
     display: flex;
     min-height: 15.625rem;
-    margin-bottom: 2rem;
+    margin: 0 .75rem 2rem;
+
+    @media screen and (max-width: 768px) {
+        width: 97%;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: unset;
+        width: 92%;
+    }
 `
