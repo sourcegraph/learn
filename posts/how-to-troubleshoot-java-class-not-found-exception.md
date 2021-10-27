@@ -82,7 +82,6 @@ From the output, we can understand that the exception is raised because we did n
 <Highlighter
 input={`// foo/Foo.java
 package foo;
-
 public class Foo{}`}
 language='java'
 />
@@ -123,7 +122,6 @@ In our example, we can modify our `Main` class to explicitly catch the `ClassNot
 <Highlighter
 input={`// main/Main.java
 package main;
-
 public class Main {
     public static final void main(String argv[]) {
         System.out.println("Loading bar.Foo class ");
