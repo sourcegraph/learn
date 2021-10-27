@@ -83,11 +83,12 @@ input='8192'
 language='bash'
 />
 
-To temporarily set a new limit, you can run the following command. This will temporarily reset your limit to `524288`. **Note**, be aware of the memory of the machine you are using to not over-extend your system.
+To temporarily set a new limit, you can run the following command. This will temporarily reset your limit to `524288`. 
+
+**Note**: be aware of the memory of the machine you are using to not over-extend your system.
 
 <Highlighter
 input='sysctl fs.inotify.max_user_watches=524288 && sudo sysctl -p
-# now restart the server and see if it works'
 language='bash'
 />
 
