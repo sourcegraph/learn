@@ -5,7 +5,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent } from 'react'
 
 export interface Props {
     url: string
