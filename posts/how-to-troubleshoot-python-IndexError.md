@@ -1,8 +1,8 @@
 ---
 title: How to troubleshoot Python IndexError
-author: Shailesh Kumar
+author: shailesh-kumar
 tags: [tutorial, Python, troubleshooting]
-publicationDate: October 26, 2021
+publicationDate: October 27, 2021
 description: Learn how to error handle Python IndexError
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -14,7 +14,7 @@ You may sometimes get an `IndexError` such as the following when running Python 
 
 <Highlighter
 input='IndexError: list index out of range'
-language='python'
+language='bash'
 />
 
 An `IndexError` means that your code is trying to access an index in a list or other iterable that is invalid. This is usually because the index your program is attempting to access is out of bounds.
@@ -42,7 +42,7 @@ If the user enter any number between `0` and `4` then there will be no errors re
 <Highlighter
 input='Enter an integer to print an element at a given index: 1
 Python'
-language='python'
+language='bash'
 />
 
 If, however, the user enters `5`, we will be able to reproduce the `IndexError`.
@@ -52,7 +52,7 @@ input={`Traceback (most recent call last):
   File "indexerr.py", line 3, in <module>
     print(programming_languages[index])
 IndexError: list index out of range`}
-language='python'
+language='bash'
 />
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
@@ -78,7 +78,7 @@ Here, we first check whether `index` is greater than 4 and, if so, we print a st
 <Highlighter
 input='Enter an integer to print an element at a given index: 5
 The number you have entered is out of bound for the list'
-language='python'
+language='bash'
 />
 
 Now, if the user enters `5` or any number greater than `5`, they will receive this guidance rather than having the program exit out with the `IndexError` message. 
@@ -104,7 +104,7 @@ Here, we first have the program attempt our original workflow by wrapping it in 
 <Highlighter
 input='Enter an integer to print an element at a given index: 5
 list index out of range'
-language='python'
+language='bash'
 />
 
 You can read more about using `try` and `catch` by reading about [handling exceptions in the Python documentation](https://docs.python.org/3/tutorial/errors.html#handling-exceptions).
