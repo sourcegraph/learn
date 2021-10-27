@@ -88,7 +88,7 @@ To temporarily set a new limit, you can run the following command. This will tem
 **Note**: be aware of the memory of the machine you are using to not over-extend your system.
 
 <Highlighter
-input='sysctl fs.inotify.max_user_watches=524288 && sudo sysctl -p
+input='sysctl fs.inotify.max_user_watches=524288 && sudo sysctl -p'
 language='bash'
 />
 
