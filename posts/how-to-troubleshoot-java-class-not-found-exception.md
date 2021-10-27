@@ -25,9 +25,9 @@ This exception is thrown when your code tries to load a class through its string
 
 However, no definition for the class with the specified name could be found when compiling or running the given program.
 
-This may happen when you are programming something that has a dependency that you did not create yet as you are still working. This error message can be handled, however, so that you can continue to move forward with your work and compile and run code while your program isn't entirely finished yet. 
+This may happen when you are programming something that has a dependency that you did not create yet as you are still working. This error message can be handled, however, so that you can continue to move forward with your work and compile and run code while your program isn't entirely finished yet.
 
-In this tutorial, we'll reproduce the error and go through a few solutions so you can continue coding without being blocked by this error. 
+In this tutorial, we'll reproduce the error and go through a few solutions so you can continue coding without being blocked by this error.
 
 ## Reproducing the error
 
@@ -36,7 +36,6 @@ To reproduce this error, let's create a program with a class called `Main` that 
 <Highlighter
 input={`// main/Main.java
 package main;
-
 public class Main {
     public static final void main(String argv[]) {
         System.out.println("Loading foo.Foo class ");
@@ -59,7 +58,7 @@ java -cp . main/Main`}
 language='bash'
 />
 
-Once we run these commands, we'll receive the following exception. 
+Once we run these commands, we'll receive the following exception.
 
 <Highlighter
 input={`Loading Foo class
@@ -78,7 +77,7 @@ Now that we have been able to reproduce the `ClassNotFoundException` error, let'
 
 ## Create the class that the compiler tried to load
 
-From the output, we can understand that the exception is raised because we did not create the class `Foo` yet. One solution to avoiding this error is to create all relevant classes before attempting to compile and run our Java programs. 
+From the output, we can understand that the exception is raised because we did not create the class `Foo` yet. One solution to avoiding this error is to create all relevant classes before attempting to compile and run our Java programs.
 
 <Highlighter
 input={`// foo/Foo.java
@@ -97,7 +96,7 @@ input='javac foo/Foo.java'
 language='bash'
 />
 
-With the `Foo` class compiled, we can compile and execute the `Main` class again so that the JVM can find the `Foo` class we initialized. 
+With the `Foo` class compiled, we can compile and execute the `Main` class again so that the JVM can find the `Foo` class we initialized.
 
 <Highlighter
 input={`javac main/Main
@@ -105,7 +104,7 @@ java -cp . main/Main`}
 language='bash'
 />
 
-Now `Main` will compile and run without any errors as it has loaded the `Foo` class. 
+Now `Main` will compile and run without any errors as it has loaded the `Foo` class.
 
 <Highlighter
 input={`Loading foo.Foo class
@@ -117,7 +116,7 @@ At this point you have resolved the `ClassNotFoundException` and continue workin
 
 ## Explicitly catch the exception
 
-An alternate approach is to catch the error that JVM will throw with a `try` ... `catch` block. 
+An alternate approach is to catch the error that JVM will throw with a `try` ... `catch` block.
 
 In our example, we can modify our `Main` class to explicitly catch the `ClassNotFoundException` and print a message to warn the user to ensure that the class they are trying to load exists.
 
@@ -149,7 +148,7 @@ java -cp . main.Main`}
 language='bash'
 />
 
-Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class. 
+Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class.
 
 <Highlighter
 input={`Loading bar.Foo class
@@ -157,7 +156,7 @@ bar.Foo class not found. Please ensure that the class exists.`}
 language='bash'
 />
 
-With `try` and `catch` statements we are able to recover quickly without exiting the program or preventing compiling. This enables us to continue working while we are still figuring out all the design decisions we want to make for our program. 
+With `try` and `catch` statements we are able to recover quickly without exiting the program or preventing compiling. This enables us to continue working while we are still figuring out all the design decisions we want to make for our program.
 
 ## Learn more
 
