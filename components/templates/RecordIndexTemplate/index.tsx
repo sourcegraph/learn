@@ -13,7 +13,7 @@ export interface Props {
     records: MarkdownFileWithUrl[]
 }
 
-const ArticleListTemplate: FunctionComponent<Props> = props => {
+const RecordIndexTemplate: FunctionComponent<Props> = props => {
     const metaTags = { ...metaDataDefaults, title: props.headerText, url: metaDataDefaults.url.concat(props.url) }
     const loadMoreHook = useLoadMore(props.records, 10)
 
@@ -21,6 +21,7 @@ const ArticleListTemplate: FunctionComponent<Props> = props => {
         <PageLayout metaTags={metaTags}>
             <Header
                 headerText={props.headerText}
+                isRecordIndex={true}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
             <Button 
@@ -32,4 +33,4 @@ const ArticleListTemplate: FunctionComponent<Props> = props => {
     )
 }
 
-export default ArticleListTemplate
+export default RecordIndexTemplate

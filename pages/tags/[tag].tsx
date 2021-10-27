@@ -1,4 +1,4 @@
-import ArticleListTemplate, { Props as ArticleListTemplateProps } from '@components/templates/ArticleListTemplate'
+import TagTemplate, { Props as TagTemplateProps } from '@components/templates/TagTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import getQueryParameter from '@util/getQueryParameters'
@@ -14,7 +14,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return { paths: tags.map(tag => `/tags/${tag}`), fallback: false }
 }
 
-export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async context => {
+export const getStaticProps: GetStaticProps<TagTemplateProps> = async context => {
     const tag = getQueryParameter(context.params, 'tag').toLowerCase()
     const posts = await loadAllRecords('posts')
     const videos = await loadAllRecords('videos')
@@ -35,4 +35,4 @@ export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async co
     }
 }
 
-export default ArticleListTemplate
+export default TagTemplate
