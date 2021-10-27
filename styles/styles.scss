@@ -18,3 +18,19 @@ body {
     line-height: 1.5;
     color: #212529;
 }
+
+table {
+    line-height: 2;
+
+    @media screen and (max-width: 767px) {
+        line-height: 1.5;
+    }
+
+    th, td {
+        padding: 0 1rem;
+
+        @media screen and (max-width: 767px) {
+            padding: unset;
+        }
+    }
+}
