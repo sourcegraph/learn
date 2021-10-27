@@ -8,7 +8,7 @@ const useLoadMore = (initialRecords: MarkdownFileWithUrl[], initialPage: number)
     const [currentRecords, setCurrentRecords] = useState<MarkdownFileWithUrl[]>(records.slice(page, 10))
 
     useEffect(() => {
-        setCurrentRecords(records.slice(page, 10))
+        setCurrentRecords(records.slice(0, page))
     }, [page, records])
 
     return {

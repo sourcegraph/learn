@@ -1,10 +1,11 @@
+import Button from '@components/atoms/Button'
 import ContentCardList from '@components/atoms/ContentCardList'
 import Header from '@components/Header'
 import PageLayout from '@components/layouts/PageLayout'
 import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 export interface Props {
     url: string
@@ -14,7 +15,7 @@ export interface Props {
 
 const ArticleListTemplate: FunctionComponent<Props> = props => {
     const metaTags = { ...metaDataDefaults, title: props.headerText, url: metaDataDefaults.url.concat(props.url) }
-    const loadMoreHook = useLoadMore(props.records, 0)
+    const loadMoreHook = useLoadMore(props.records, 10)
 
     return (
         <PageLayout metaTags={metaTags}>
@@ -22,6 +23,11 @@ const ArticleListTemplate: FunctionComponent<Props> = props => {
                 headerText={props.headerText}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
+            <Button 
+                onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
+                className='primary'>
+                    Load More
+                </Button>
         </PageLayout>
     )
 }
