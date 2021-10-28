@@ -20,12 +20,11 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const allRecords = posts.concat(videos)
     const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
     const url = `/tags/${tag}`
-    const headerText = `Records tagged with ${filteredRecordsWithTag.title}`
 
     return {
         props: {
             url,
-            headerText,
+            headerText: filteredRecordsWithTag.title,
             records: filteredRecordsWithTag.records.map(record => omitUndefinedFields({ 
                 ...record, 
                 url: `/${record.slug}`,
