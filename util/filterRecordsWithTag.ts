@@ -28,7 +28,7 @@ const filterRecordsWithTag = (records: MarkdownFile[], tag: string): FilteredRec
                 titleTag = item
             }
 
-            return regexTestString(item, tag)
+            return regexTestString(item, tag) && item.length === tag.length
         })
     }
     const filteredRecords = records.filter(record => checkRecordSet(record, transformedTag))
