@@ -1,12 +1,12 @@
 ---
-title: How to troubleshoot Python ValueError: invalid literal for int() with base 10
+title: "How to troubleshoot Python ValueError: invalid literal for int() with base 10"
 author: angelina-tresca
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 28, 2021
-description: Learn how to error handle Python ValueError: invalid literal for int() with base 10
+description: "Learn how to error handle Python ValueError: invalid literal for int() with base 10"
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
-browserTitle: ValueError: invalid literal for int() with base 10 in Python error handling
+browserTitle: "ValueError: invalid literal for int() with base 10 in Python error handling"
 type: posts
 ---
 
