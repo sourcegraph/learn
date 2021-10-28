@@ -1,10 +1,8 @@
 import MarkdownFile from '@interfaces/MarkdownFile'
+import regexTestString from '@util/regexTestString'
 
-const returnHomepageContent = (records: MarkdownFile[], term: string): MarkdownFile[] => {
-    const termRegex = new RegExp(`${term}`, 'i')
-    const testTags = (tagString: string): boolean => termRegex.test(tagString)
-
-    return records.filter(record => testTags(record.frontMatter.tags.join(' '))).slice(0,3)
-}
+const returnHomepageContent = (records: MarkdownFile[], term: string): MarkdownFile[] => records
+    .filter(record => regexTestString(record.frontMatter.tags.join(' '), term))
+    .slice(0,3)
 
 export default returnHomepageContent
