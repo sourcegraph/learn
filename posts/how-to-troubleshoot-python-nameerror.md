@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python NameError
-author: arun-kc
+authorSlug: arun-kc
+authorDisplayName: Arun Kc
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 10, 2021
 description: Learn how to error handle the Python NameError

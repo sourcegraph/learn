@@ -54,10 +54,13 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
         browserTitle: rawFrontMatter.browserTitle ? 
             normalizeString(rawFrontMatter.browserTitle) 
             : null,
-        tags: trimStringArray(rawFrontMatter.tags),
-        author: rawFrontMatter.author ?
-            normalizeString(rawFrontMatter.author)
+        authorSlug: rawFrontMatter.authorSlug ?
+            normalizeString(rawFrontMatter.authorSlug)
             : null,
+        authorDisplayName: rawFrontMatter.authorDisplayName ?
+            normalizeString(rawFrontMatter.authorDisplayName)
+            : null,
+        tags: trimStringArray(rawFrontMatter.tags),
         publicationDate: rawFrontMatter.publicationDate ? 
             normalizeString(rawFrontMatter.publicationDate) 
             : null,

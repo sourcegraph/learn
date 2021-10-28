@@ -1,7 +1,8 @@
 ---
 title: How to add private code repositories to Sourcegraph cloud
 tags: [tutorial, security, Sourcegraph]
-author: lisa-tagliaferri
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 publicationDate: August 19, 2021
 description: Learn how to add private software repositories to Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png

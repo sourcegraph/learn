@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot the Linux Permission denied error
-author: jack-newman
+authorSlug: jack-newman
+authorDisplayName: Jack Newman
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 23, 2021
 description: Learn how to handle Permission denied error in Linux

@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python ZeroDivisionError
-author: lisa-tagliaferri
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 tags: [tutorial, Python, troubleshooting]
 publicationDate: September 30, 2021
 description: Learn how to error handle the Python ZeroDivisionError, division by zero
