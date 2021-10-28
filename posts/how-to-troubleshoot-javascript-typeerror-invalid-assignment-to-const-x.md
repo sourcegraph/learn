@@ -1,8 +1,8 @@
 ---
 title: How to troubleshoot JavaScript TypeError invalid assignment to const "x"
-author: Shubham Bhatt
+author: shubham-bhatt
 tags: [tutorial, JavaScript, troubleshooting]
-publicationDate: October 22, 2021
+publicationDate: October 28, 2021
 description: Learn how to error handle JavaScript TypeError invalid assignment to const "x"
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -10,53 +10,44 @@ browserTitle: TypeError invalid assignment to const "x" in JavaScript error hand
 type: posts
 ---
 
-The JavaScript exception ```js invalid assignment to const``` occurs when it was attempted to alter a constant value. JavaScript const declarations can't be re-assigned or redeclared.
+The following JavaScript exception occurs when it was attempted to alter a constant value. In JavaScript, constants are declared using the `const` keyword. The message will vary depending on the browser you are using with some examples below. 
 
-## Message
+<Highlighter
+    input={`TypeError: invalid assignment to const "x" // Firefox
+TypeError: Assignment to constant variable. // Chrome
+TypeError: Assignment to const // Edge
+TypeError: Redeclaration of const 'x' // IE`}  
+    language='bash'
+/>
 
-```js
-TypeError: invalid assignment to const "x" (Firefox)
-TypeError: Assignment to constant variable. (Chrome)
-TypeError: Assignment to const (Edge)
-TypeError: Redeclaration of const 'x' (IE)
-```
-
-### Error type
-[TypeError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-
-## What went wrong?
-
-If you are working in Javascript and receive the following output, it means you are redeclaring the const value, a constant is a value that cannot be altered by the program during normal execution. It cannot change through re-assignment, and it can't be redeclared. In JavaScript, constants are declared using the const keyword.
-
-## Example
-
-### Invalid redeclaration
-
-```js
-TypeError: invalid assignment to const x
-```
+You are likely receiving this error because JavaScript `const` variable declarations can't be re-assigned or redeclared. A constant in JavaScript is a value that cannot be altered by the program during normal execution. It cannot change through re-assignment, and it can't be redeclared. 
 
 ## Reproducing the error
-There are some common mistakes that can raise this exception.
 
-### Assigning a value to the same constant name in the same block-scope will throw.
+There are some common mistakes that can raise this exception. One way to reproduce this error is through assigning a value to the same constant name in the same block-scope.
 
-```js
-const x = 80;
-x = 120; // TypeError: invalid assignment to const x
-```
+<Highlighter
+    input={`const x = 80;
+x = 120;`}  
+    language='javascript'
+/>
 
-## Fixing the error
-There are multiple options to fix this error. Check what was intended to be achieved with the constant in question.
+Here, the program is written in a way that asks for `x` to be reassigned to a constant, which cannot be done. When you attempt to run this program, you may receive output similar to the following.
 
-## Solution 1
+<Highlighter
+    input={`Uncaught TypeError: invalid assignment to const 'x'`}  
+    language='bash'
+/>
 
-### Rename the variable name
+Now that we have reproduced the error, let's consider the approaches you can use to recover from this error. It's important to think through what was intended to be achieved with the constant in question.
 
-```js
-const x = 80;
-const y = 120;
-```
+## Rename the variable name
+
+<Highlighter
+    input={`const x = 80;
+const y = 120;`}  
+    language='javascript'
+/>
 
 ## Solution 2
 
@@ -80,6 +71,8 @@ function setupBigScreenEnvironment() {
 ```
 
 ### const and immutability
+
+// This is plagiarized from Moz Docs
 
 The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. For instance, in case the content is an object, this means the object itself can still be altered. This means that you can't mutate the value stored in a variable:
 
