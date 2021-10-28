@@ -11,7 +11,6 @@ import RecordCollection from '@interfaces/RecordCollection'
 import metaDataDefaults from '@lib/metaDataDefaults'
 import capitalize from '@util/capitalize'
 import sluggify from '@util/sluggify'
-import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
 
