@@ -41,6 +41,10 @@ authors:
       name: Angelina Tresca
       bio: Software developer
       linkedInLink: https://www.linkedin.com/in/angelinatresca/
+    - slug: macarena-pecha
+      name: Macarena Pecha
+      bio: Software developer
+      linkedInLink: https://www.linkedin.com/in/macarena-pecha-62aaa7170/
     - slug: dean-coakley
       name: Dean Coakley
     - slug: david-lee
@@ -60,6 +64,13 @@ authors:
       linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
     - slug: yashesvinee-v
       name: Yashesvinee V
+    - slug: jack-newman
+      name: Jack Newman
+    - slug: grace-mcnerney
+      name: Grace McNerney
+      bio: Wife, Mom, InfoSec Student, Gamer
+      twitterLink: https://twitter.com/Miss_Claptrap
+      linkedInLink: https://www.linkedin.com/in/grace-mcnerney-69201488/
     - slug: yashrsharma44
       name: Yash Sharma
       twitterLink: https://twitter.com/yashrsharma44
@@ -67,3 +78,7 @@ authors:
     - slug: shubham-bhatt
       name: Shubham Bhatt
       bio: Web developer
+    - slug: cristian-vera
+      name: Cristian Vera
+      bio: Backend developer, roller skate lover.
+      linkedInLink: https://www.linkedin.com/in/cristian-vera-5ba0ab155/
