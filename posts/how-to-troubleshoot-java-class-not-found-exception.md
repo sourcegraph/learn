@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java ClassNotFoundException
-author: cristian-vera
+authorSlug: cristian-vera
+authorDisplayName: Cristian Vera
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 23, 2021
 description: Learn how to error handle the Java ClassNotFoundException

@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot npm ERR Error ENOSPC
-author: macarena-pecha
+authorSlug: macarena-pecha
+authorDisplayName: Macarena Pecha
 tags: [tutorial, JavaScript, npm, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle npm ERR Error ENOSPC, write
