@@ -1,6 +1,7 @@
 ---
 title: How to integrate Sourcegraph into your workflows
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [video, sourcegraph, IDE, git]
 publicationDate: August 27, 2021
 description: Learn how to switch between your code host (like GitHub), code editor or IDE (like VS Code), and Sourcegraph.

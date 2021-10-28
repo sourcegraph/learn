@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Linux error No such file or directory
-author: amit-agrawal
+authorSlug: amit-agrawal
+authorDisplayName: Amit Agrawal 
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 19, 2021
 description: Learn how to error handle No such file or directory in Linux

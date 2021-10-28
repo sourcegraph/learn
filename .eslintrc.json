@@ -7,7 +7,8 @@
     "react/forbid-dom-props": "warn",
     "@typescript-eslint/require-await": "warn",
     "react/react-in-jsx-scope": "off",
-    "multiline-ternary": "error"
+    "multiline-ternary": "error",
+    "unicorn/prefer-spread": "off"
   },
   "parserOptions": {
     "project": "tsconfig.json"

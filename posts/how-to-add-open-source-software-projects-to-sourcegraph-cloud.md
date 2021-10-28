@@ -1,7 +1,8 @@
 ---
 title: How to add open source software projects to Sourcegraph cloud
 tags: [tutorial, open source, Sourcegraph]
-author: lisa-tagliaferri
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 publicationDate: May 11, 2021
 description: Learn how to add public, open source repositories to Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png

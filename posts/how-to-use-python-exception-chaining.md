@@ -1,6 +1,7 @@
 ---
 title: How to use Exception Chaining in Python
-author: david-lee
+authorSlug: david-lee
+authorDisplayName: David Lee
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 18, 2021
 description: Learn how to use Exception Chaining in Python
