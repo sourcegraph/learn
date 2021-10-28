@@ -69,7 +69,6 @@ export const StyledButton = styled.a`
         padding: .35em .65em;
         margin-right: .25rem;
         text-decoration: none;
-        text-transform: capitalize;
         text-align: center;
         white-space: nowrap;
         vertical-align: baseline;

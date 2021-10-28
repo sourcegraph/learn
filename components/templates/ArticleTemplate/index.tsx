@@ -9,6 +9,7 @@ import PageLayout from '@components/layouts/PageLayout'
 import MetaTags from '@interfaces/MetaTags'
 import RecordCollection from '@interfaces/RecordCollection'
 import metaDataDefaults from '@lib/metaDataDefaults'
+import capitalize from '@util/capitalize'
 import sluggify from '@util/sluggify'
 import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -93,7 +94,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     <StyledTagsWrapper>
                         {props.tags.map(tag => (
                             <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small'>
-                                {tag}
+                                {capitalize(tag)}
                             </Button>
                         ))}
                     </StyledTagsWrapper>
