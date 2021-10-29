@@ -1,8 +1,8 @@
 ---
 title: How to troubleshoot Python IndexError
-author: Shailesh Kumar
+author: shailesh-kumar
 tags: [tutorial, Python, troubleshooting]
-publicationDate: October 26, 2021
+publicationDate: October 27, 2021
 description: Learn how to error handle Python IndexError
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
@@ -14,7 +14,7 @@ You may sometimes get an `IndexError` such as the following when running Python 
 
 <Highlighter
 input='IndexError: list index out of range'
-language='python'
+language='bash'
 />
 
 An `IndexError` means that your code is trying to access an index in a list or other iterable that is invalid. This is usually because the index your program is attempting to access is out of bounds.
@@ -52,7 +52,7 @@ input={`Traceback (most recent call last):
   File "indexerr.py", line 3, in <module>
     print(programming_languages[index])
 IndexError: list index out of range`}
-language='python'
+language='bash'
 />
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
