@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java OutOfMemoryError
-author: grace-mcnerney
+authorSlug: grace-mcnerney
+authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java OutOfMemoryError

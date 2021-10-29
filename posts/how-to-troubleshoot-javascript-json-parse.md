@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot JavaScript SyntaxError JSON.parse
-author: william-bezuidenhout
+authorSlug: william-bezuidenhout
+authorDisplayName: William Bezuidenhout
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError JSON.parse

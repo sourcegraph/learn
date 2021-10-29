@@ -1,6 +1,7 @@
 ---
 title: How to use the Git status command to understand the state of a Git repository
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [tutorial, git, open source]
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-05.png
 publicationDate: October 18, 2021

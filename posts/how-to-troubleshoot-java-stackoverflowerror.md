@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java StackOverflowError
-author: yashesvinee-v
+authorSlug: yashesvinee-v
+authorDisplayName: Yashesvinee V
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 16, 2021
 description: Learn how to error handle the Java StackOverflowError

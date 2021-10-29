@@ -31,7 +31,8 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
             browserTitle: markdownFile.frontMatter.browserTitle,
-            author: markdownFile.frontMatter.author ?? null,
+            authorSlug: markdownFile.frontMatter.authorSlug ?? null,
+            authorDisplayName: markdownFile.frontMatter.authorDisplayName ?? null,
             tags: markdownFile.frontMatter.tags,
             publicationDate: markdownFile.frontMatter.publicationDate,
             updatedDate: markdownFile.frontMatter.updatedDate, 
