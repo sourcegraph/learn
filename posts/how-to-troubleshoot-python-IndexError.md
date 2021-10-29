@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python IndexError
-author: shailesh-kumar
+authorSlug: shailesh-kumar
+authorDisplayName: Shailesh Kumar
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 27, 2021
 description: Learn how to error handle Python IndexError
@@ -29,8 +30,9 @@ Let's write the following program, `indexerr.py` .
 <Highlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
-
-print(programming_languages[index])`}
+ 
+print(programming_languages[index])
+ `}
 language='python'
 />
 
@@ -50,7 +52,8 @@ If, however, the user enters `5`, we will be able to reproduce the `IndexError`.
 input={`Traceback (most recent call last):
   File "indexerr.py", line 3, in <module>
     print(programming_languages[index])
-IndexError: list index out of range`}
+IndexError: list index out of range
+ `}
 language='bash'
 />
 
@@ -67,7 +70,8 @@ index = input("Enter an integer to print an element at a given index: ")
 if (index > 4):
     print("The number you have entered is out of bounds for the list")
 else:
-     print(programming_languages[index])`}
+     print(programming_languages[index])
+ `}
 language='python'
 />
 
@@ -90,9 +94,10 @@ input={`try:
     programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
     index = input("Enter an integer to print an element at a given index: ")
     print(programming_languages[index])
-
+ 
 except IndexError as e:
-    print e`}
+    print e
+ `}
 language='python'
 />
 
