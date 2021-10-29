@@ -30,8 +30,7 @@ Let's write the following program, `indexerr.py` .
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
 
-print(programming_languages[index])
-`}
+print(programming_languages[index])`}
 language='python'
 />
 
@@ -68,8 +67,7 @@ index = input("Enter an integer to print an element at a given index: ")
 if (index > 4):
     print("The number you have entered is out of bounds for the list")
 else:
-     print(programming_languages[index])
-`}
+     print(programming_languages[index])`}
 language='python'
 />
 
@@ -94,8 +92,7 @@ input={`try:
     print(programming_languages[index])
 
 except IndexError as e:
-    print e
-`}
+    print e`}
 language='python'
 />
 
