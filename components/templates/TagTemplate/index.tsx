@@ -23,7 +23,7 @@ const TagTemplate: FunctionComponent<Props> = props => {
                 headerText={props.headerText}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
-            {props.records.length > 10 && (
+            {props.records.length > 10 && loadMoreHook.records.length !== loadMoreHook.currentRecords.length && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
                     className='primary'>

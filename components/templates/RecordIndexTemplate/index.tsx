@@ -24,7 +24,7 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
                 isRecordIndex={true}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
-            {props.records.length > 10 && (
+            {props.records.length > 10 && loadMoreHook.records.length !== loadMoreHook.currentRecords.length && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
                     className='primary'>
