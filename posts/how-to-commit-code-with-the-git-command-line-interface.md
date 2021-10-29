@@ -1,6 +1,7 @@
 ---
 title: How to commit code with the Git command-line interface
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [tutorial, git, open source]
 description: Learn how to create commits with the Git command-line tools in the terminal.
 publicationDate: September 10, 2021

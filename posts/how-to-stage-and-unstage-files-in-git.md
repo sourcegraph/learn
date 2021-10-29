@@ -1,6 +1,7 @@
 ---
 title: How to stage and unstage files in Git
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [tutorial, git, open source]
 publicationDate: September 14, 2021
 description: Learn how to add and remove changes from the Git staging area.

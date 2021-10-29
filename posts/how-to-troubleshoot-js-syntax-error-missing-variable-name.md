@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot JavaScript SyntaxError missing variable name
-author: angelina-tresca
+authorSlug: angelina-tresca
+authorDisplayName: Angelina Tresca
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError missing variable name

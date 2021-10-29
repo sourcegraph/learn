@@ -16,6 +16,10 @@ export const StyledAuthorByline = styled.a`
     }
 `
 
+export const StyledTitle = styled.h1`
+    overflow-wrap: break-word;
+`
+
 export const StyledDates = styled.div`
     font-size: 12px;
     margin: 0 0 1rem;
@@ -30,6 +34,10 @@ export const StyledMarkdownWrapper = styled.div`
         font-size: inherit;
         color: #000000;
         background: #e7e7e7;
+    }
+
+    p {
+        overflow-wrap: break-word;
     }
     
     pre {

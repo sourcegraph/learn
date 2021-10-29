@@ -9,8 +9,8 @@ import PageLayout from '@components/layouts/PageLayout'
 import MetaTags from '@interfaces/MetaTags'
 import RecordCollection from '@interfaces/RecordCollection'
 import metaDataDefaults from '@lib/metaDataDefaults'
+import capitalize from '@util/capitalize'
 import sluggify from '@util/sluggify'
-import slugToTitleCase from '@util/slugToTitleCase'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FunctionComponent } from 'react'
 
@@ -20,11 +20,13 @@ import {
     StyledDates,
     StyledTagsWrapper,
     StyledMarkdownWrapper,
+    StyledTitle,
 } from './ArticleTemplateStyles'
 
 export interface Props {
     title: string
-    author?: string | null
+    authorSlug?: string | null
+    authorDisplayName?: string | null
     tags: string[]
     mdxSource: MDXRemoteSerializeResult
     image?: string | null
@@ -53,9 +55,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
         description: props.description ?? metaDataDefaults.description,
         type: 'article',
         url: `${metaDataDefaults.url}/${props.slug}`,
-        author: props.author
-            ? slugToTitleCase(props.author)
-            : null
+        author: props.authorDisplayName ?? null
     }
 
     // Special behavior on a video page (which is a page with the "video" tag):
@@ -86,7 +86,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             )}
 
             {/* Title */}
-            <h1>{props.title}</h1>
+            <StyledTitle>{props.title}</StyledTitle>
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
@@ -94,7 +94,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     <StyledTagsWrapper>
                         {props.tags.map(tag => (
                             <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small'>
-                                {tag}
+                                {capitalize(tag)}
                             </Button>
                         ))}
                     </StyledTagsWrapper>
@@ -102,8 +102,8 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 : null}
 
             {/* Author */}
-            {props.author && (
-                <StyledAuthorByline href={`/authors/${props.author}`}>{slugToTitleCase(props.author)}</StyledAuthorByline>
+            {props.authorSlug && props.authorDisplayName && (
+                <StyledAuthorByline href={`/authors/${props.authorSlug}`}>{props.authorDisplayName}</StyledAuthorByline>
             )}
 
             {/* Dates */}

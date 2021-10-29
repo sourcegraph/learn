@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot JavaScript SyntaxError missing } after function body
-author: oussama-salahouelhadj
+authorSlug: oussama-salahouelhadj
+authorDisplayName: Oussama Salahouelhadj
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 07, 2021
 description: Learn how to error handle JavaScript SyntaxError missing } after function body
