@@ -42,13 +42,13 @@ The compiler throws the error if a closing curly bracket of a   *class,main meth
 The below blocks of code all result in this error..
 
 <Highlighter
-input={`class HelloWorld
+input='class HelloWorld
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         System.out.println("Hello World");
     } //this closes the main method
-    //notice how a closing curly bracket "}" for the class is missing`}
+    //notice how a closing curly bracket "}" for the class is missing'
 language='java'
 />
 
@@ -57,7 +57,7 @@ In the above code, the class "`HelloWorld` opens with a curly bracket but doesn'
 In the following example, although the `world()` method has only the opening curly bracket, the compiler considers the nearest closing curly bracket to enclose the `world()` code block, and thus the main class doesn't end with a curly bracket.
 
 <Highlighter
-input={`class HelloReaders
+input='class HelloReaders
 {
     public static void main(String[] args)
     {
@@ -67,17 +67,17 @@ input={`class HelloReaders
     {
         String greeting = "Hello Readers";
     return greeting;
-}`}
+}'
 language='java'
 />
 
 The error is encountered at line 11 as follows.
 
 <Highlighter
-input={`HelloReaders.java:11: error: reached end of file while parsing
+input='HelloReaders.java:11: error: reached end of file while parsing
 }
  ^
-1 error`}
+1 error'
 language='bash'
 />
 
@@ -90,7 +90,7 @@ The error is also thrown by the compiler if a closing curly bracket in a loop or
 The code block below generates this error as the code in the `for` loop is not properly enclosed within the curly brackets, and thus the nearest closing curly bracket is used to enclose the statements of the loop and this results in the `reached end of file while parsing` error.
 
 <Highlighter
-input={`class HelloReaders
+input='class HelloReaders
 {
     public static void main(String[] args) 
     {
@@ -103,24 +103,24 @@ input={`class HelloReaders
         {
             System.out.println(greeting);
     }
-}`}
+}'
 language='java'
 />
 
 If you compile or run the program above, you'll receive the following error. 
 
 <Highlighter
-input={`HelloReaders.java:14: error: reached end of file while parsing
+input='HelloReaders.java:14: error: reached end of file while parsing
 }
  ^
-1 error`}
+1 error'
 language='bash'
 />
 
 Similarly, in an `if` (shown below) or `if else` code structure, this error is common and can be produced as follows.
 
 <Highlighter
-input={`class HelloReaders
+input='class HelloReaders
 {
     String readers="good";
     public static void main(String[] args)
@@ -137,7 +137,7 @@ input={`class HelloReaders
               System.out.println(greeting);
            } // closes the for-loop
     }
-}`}
+}'
 language='java'
 />
 
@@ -150,7 +150,7 @@ To solve this error, check for the opening and closing pairs of the curly bracke
 Adding the closing bracket removes the errors we received above, as shown in the example below.
 
 <Highlighter
-input={`class HelloReaders
+input='class HelloReaders
 {
     public static void main(String[] args)
     {
@@ -162,7 +162,7 @@ input={`class HelloReaders
         String greeting = "Hello Readers";
         return greeting;
     } //closes the world() method
-} //added the missing bracket here to close the class`}
+} //added the missing bracket here to close the class'
 language='java'
 />
 
