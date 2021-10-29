@@ -13,7 +13,6 @@ interface Props {
 }
 
 const CopyToClipboard: FunctionComponent<Props> = props => {
-    console.log('Clipboard copy component rendered')
     const [showIcon, setShowIcon] = useState<boolean>(false)
 
     useEffect(() => {
