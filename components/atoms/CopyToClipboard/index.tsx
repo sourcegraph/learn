@@ -30,7 +30,6 @@ const CopyToClipboard: FunctionComponent<Props> = props => {
                 .then(() => setShowIcon(true))
                 .catch()
         }
-        console.log('copy triggered')
     }, [props.codeReference, showIcon])
 
     return (
