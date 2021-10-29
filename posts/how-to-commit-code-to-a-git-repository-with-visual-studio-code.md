@@ -1,6 +1,7 @@
 ---
 title: How to commit code to a Git repository with Visual Studio Code
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 publicationDate: September 10, 2021
 tags: [tutorial, git, IDE, open source]
 description: Learn how to create commits in a Git repository with VS Code.

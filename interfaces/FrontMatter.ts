@@ -10,7 +10,8 @@ export default interface FrontMatter {
     title: string
     browserTitle?: string | null
     tags: string[]
-    author?: string | null
+    authorSlug?: string | null
+    authorDisplayName?: string | null
 
     /** First publication date and updated publication date */
     publicationDate?: string | null 

@@ -15,6 +15,19 @@ export function isBoolean(value: unknown): value is boolean {
     return typeof value === 'boolean'
 }
 
+export function trimStringArray(rawItems: unknown): string[] {
+    if (!rawItems) {
+        return []
+    }
+    if (isString(rawItems)) {
+        return [rawItems.trim()]
+    }
+    if (isStringArray(rawItems)) {
+        return rawItems.map(item => item.trim())
+    }
+    throw new Error('Items must be an array of strings.')
+}
+
 export function normalizeStringArray(rawItems: unknown): string[] {
     if (!rawItems) {
         return []
@@ -41,10 +54,13 @@ export function normalizeFrontMatter(rawFrontMatter: ReturnType<typeof greyMatte
         browserTitle: rawFrontMatter.browserTitle ? 
             normalizeString(rawFrontMatter.browserTitle) 
             : null,
-        tags: normalizeStringArray(rawFrontMatter.tags),
-        author: rawFrontMatter.author ?
-            normalizeString(rawFrontMatter.author)
+        authorSlug: rawFrontMatter.authorSlug ?
+            normalizeString(rawFrontMatter.authorSlug)
             : null,
+        authorDisplayName: rawFrontMatter.authorDisplayName ?
+            normalizeString(rawFrontMatter.authorDisplayName)
+            : null,
+        tags: trimStringArray(rawFrontMatter.tags),
         publicationDate: rawFrontMatter.publicationDate ? 
             normalizeString(rawFrontMatter.publicationDate) 
             : null,

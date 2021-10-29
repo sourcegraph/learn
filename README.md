@@ -81,7 +81,8 @@ At the top of the file, copy the following markdown block as a template to get s
 ```md
 ---
 title: Your title
-author: Your Name
+authorSlug: Desired slug for your author page
+authorDisplayName: Name you want displayed on your post
 tags: [relevant, tags]
 publicationDate: Date of merge into project
 image: [bucket URL]
@@ -103,7 +104,8 @@ The data fields that are supported in the front matter are:
 | Field         | Type                       | Description                                                                                                                   |
 | ------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `title`       | **string**                 | Title of the article, which is displayed in the `h1` tag and the html document title, and on the article's card.              |
-| `author`      | **string**                 | Name of the author, which is displayed on the article page.                                                                   |
+| `authorDisplayName` | **string**           | Name of the author, which is displayed on the article page.                                                                   |
+| `authorSlug`      | **string**             | Slug of the author page, where `authorDisplayName` links.                                                                     |
 | `tags`        | **array of strings**       | List of tags which will be displayed on the article page and card. Each tag has an index page that lists all tagged articles. |
 | `publicationDate` | **string**             | Date that the article is merged into the project to be public-facing. Written as a string in `Month, Day, Year` format in alignment with [strings: the Sourcegraph blog](https://about.sourcegraph.com/blog/). |
 | `updatedDate` | **string**                 | If and when an article is updated, the date of the new merge should be recorded in this field., following the format of `publicationDate`. |
