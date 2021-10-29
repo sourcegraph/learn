@@ -24,11 +24,13 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
                 isRecordIndex={true}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
-            <Button 
-                onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
-                className='primary'>
+            {props.records.length > 10 && (
+                <Button 
+                    onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
+                    className='primary'>
                     Load More
                 </Button>
+            )}
         </PageLayout>
     )
 }

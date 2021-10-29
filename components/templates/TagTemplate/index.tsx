@@ -23,11 +23,13 @@ const TagTemplate: FunctionComponent<Props> = props => {
                 headerText={props.headerText}
             />
             <ContentCardList records={loadMoreHook.currentRecords} />
-            <Button 
-                onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
-                className='primary'>
+            {props.records.length > 10 && (
+                <Button 
+                    onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
+                    className='primary'>
                     Load More
                 </Button>
+            )}
         </PageLayout>
     )
 }
