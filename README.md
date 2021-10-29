@@ -124,8 +124,18 @@ The component looks like this:
 
 ```
 <Highlighter
-    // For blocks with spaces & strings, use a template literal for input (like {`this`}) to preserve spacing. Also be sure to an additional space to the blank line.
     input='Your code here'  
+    language='Your language here'
+    matcher='The code you would like to highlight (optional)'
+/>
+```
+When you have input with line spacing that you would like to preserve, use a template literal for the `input` instead. Also be sure to add an additional blank space to any line where you would like to preserve spacing. For example:
+
+```
+<Highlighter
+    input={`Your code input
+     // Be sure to add a space here!
+    with multiple lines`} 
     language='Your language here'
     matcher='The code you would like to highlight (optional)'
 />
