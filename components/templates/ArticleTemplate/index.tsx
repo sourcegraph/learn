@@ -20,6 +20,7 @@ import {
     StyledDates,
     StyledTagsWrapper,
     StyledMarkdownWrapper,
+    StyledTitle,
 } from './ArticleTemplateStyles'
 
 export interface Props {
@@ -85,7 +86,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             )}
 
             {/* Title */}
-            <h1>{props.title}</h1>
+            <StyledTitle>{props.title}</StyledTitle>
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
