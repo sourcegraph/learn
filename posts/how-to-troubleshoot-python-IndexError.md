@@ -66,7 +66,7 @@ Flow control and an `if`-`else` statement can be used to print output to give gu
 <Highlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
-
+ 
 if (index > 4):
     print("The number you have entered is out of bounds for the list")
 else:
