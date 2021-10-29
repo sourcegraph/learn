@@ -40,9 +40,9 @@ In this code, there is a list with five items in it, their index numbers range b
 If the user enter any number between `0` and `4` then there will be no errors returned, as indicated in the output below.
 
 <Highlighter
-input='Enter an integer to print an element at a given index: 1
-Python'
-language='python'
+input={`Enter an integer to print an element at a given index: 1
+Python`}
+language='bash'
 />
 
 If, however, the user enters `5`, we will be able to reproduce the `IndexError`.
@@ -76,9 +76,9 @@ language='python'
 Here, we first check whether `index` is greater than 4 and, if so, we print a string that states `The number you have entered is out of bounds for the list`.
 
 <Highlighter
-input='Enter an integer to print an element at a given index: 5
-The number you have entered is out of bound for the list'
-language='python'
+input={`Enter an integer to print an element at a given index: 5
+The number you have entered is out of bound for the list`}
+language='bash'
 />
 
 Now, if the user enters `5` or any number greater than `5`, they will receive this guidance rather than having the program exit out with the `IndexError` message. 
@@ -102,9 +102,9 @@ language='python'
 Here, we first have the program attempt our original workflow by wrapping it in a `try` statement. Next, we use the `except` clause to handle the `IndexError` that we have anticipated. 
 
 <Highlighter
-input='Enter an integer to print an element at a given index: 5
-list index out of range'
-language='python'
+input={`Enter an integer to print an element at a given index: 5
+list index out of range`}
+language='bash'
 />
 
 You can read more about using `try` and `catch` by reading about [handling exceptions in the Python documentation](https://docs.python.org/3/tutorial/errors.html#handling-exceptions).
