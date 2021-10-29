@@ -24,7 +24,7 @@ const filterRecordsWithTag = (records: MarkdownFile[], tag: string): FilteredRec
         const recordTagArray = Array.from(recordTagSet)
         
         return recordTagArray.some(item => {
-            if (checkMatch(item, tag)) {
+            if (checkMatch(item, tag) && item.length === tag.length) {
                 titleTag = item
             }
 
