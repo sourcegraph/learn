@@ -155,7 +155,7 @@ input={`class HelloReaders
     public static void main(String[] args)
     {
         System.out.println(world());
-    }//closes the main method
+    } //closes the main method
 
     static String world()
     {
