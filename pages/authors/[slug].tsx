@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<AuthorTemplateProps> = async context
     const posts = await loadAllRecords('posts')
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
-    const filteredRecords = allRecords.filter(record => record.frontMatter.author === authorSlug)
+    const filteredRecords = allRecords.filter(record => record.frontMatter.authorSlug === authorSlug)
     const records = filteredRecords.map(record => omitUndefinedFields(
         { ...record, url: `/${record.slug}` }
     ))

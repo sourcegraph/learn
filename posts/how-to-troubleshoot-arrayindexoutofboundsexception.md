@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java ArrayIndexOutOfBoundsException
-author: william-bezuidenhout
+authorSlug: william-bezuidenhout
+authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java, troubleshooting]
 publicationDate: Oct 11, 2021
 description: Learn how to error handle the Java ArrayIndexOutOfBoundsException

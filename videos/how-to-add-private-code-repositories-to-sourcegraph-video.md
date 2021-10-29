@@ -1,6 +1,7 @@
 ---
 title: How to add private code repositories to Sourcegraph cloud (video)
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 tags: [video, sourcegraph, cloud]
 publicationDate: August 19, 2021
 description: Learn about connecting your private code repositories to Sourcegraph cloud and searching your own code.

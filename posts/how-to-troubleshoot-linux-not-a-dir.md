@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Linux error Not a directory
-author: dean-coakley
+authorSlug: dean-coakley
+authorDisplayName: Dean Coakley
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 11, 2021
 description: Learn how to error handle Not a directory in Linux

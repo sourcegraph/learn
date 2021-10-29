@@ -1,6 +1,7 @@
 ---
 title: How to install Sourcegraph on Linux with Docker
-author: lisa-tagliaferri
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 publicationDate: July 1, 2021
 updatedDate: August 10, 2021
