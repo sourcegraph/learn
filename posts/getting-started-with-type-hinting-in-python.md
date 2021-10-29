@@ -63,6 +63,7 @@ Running Mypy on the code will return the following errors.
 
 <Highlighter
 language='bash'
+output='true'
 input=
     'sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
 sum.py:4: error: Argument 2 to "sum_two_numbers" has incompatible type "str"; expected "int"
