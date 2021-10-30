@@ -47,8 +47,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 We can avoid this exception being raised by checking the value of the codePoint inside of an `if-statement`.
 
 <Highlighter
-input=
-{`var codePoint=1114111;
+input={`var codePoint=1114111;
 
 if(codePoint>=0&&x<1114112){
 String.fromCodePoint(codePoint); 
@@ -67,8 +66,7 @@ If the code point is not in the valid range, the log message inside of the else-
 A second approach is to handle the exception with a `try` / `catch` clause that catches the error.
 
 <Highlighter
-input=
-{`var x=-1;
+input={`var x=-1;
 
 try{
 console.log(String.fromCodePoint(x)); 
