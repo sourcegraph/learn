@@ -13,10 +13,9 @@ type: posts
 If you are working in JavaScript, and receive the following error, your code is using an invalid value with the method String.fromCodePoint().
 
 <Highlighter
-input=
-'RangeError: {0} is not a valid code point'
-language='javascript
-RangeError: Invalid code point {0}'
+input={`RangeError: {0} is not a valid code point
+RangeError: Invalid code point {0}`}
+language='javascript'
 />
 
 {0} is a placeholder for the value you used as an argument in the String.fromCodePoint() method. The value passed to the method needs to be a value in the Unicode codespace, which is in the range of integers from 0 to 0x10FFFF (1114111).
@@ -30,14 +29,14 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 Let's execute the following in a JavaScript console. In this example, we will pass -1 to the method, which will throw the error.
 
 <Highlighter
-input={`String.fromCodePoint(-1);  // RangeError: -1 is not a valid code point}
+input={`String.fromCodePoint(-1); //RangeError: -1 is not a valid code point`}
 language='javascript'
 />
 
 In this second example, we will use 0 as the argument and a star will appear as expected.
 
 <Highlighter
-input={`String.fromCodePoint(9733); //★}
+input={`String.fromCodePoint(9733); //★`}
 language='javascript'
 />
 
@@ -49,7 +48,7 @@ We can avoid this exception being raised by checking the value of the codePoint 
 
 <Highlighter
 input=
-var codePoint=1114111;
+{`var codePoint=1114111;
 
 if(codePoint>=0&&x<1114112){
 String.fromCodePoint(codePoint); 
@@ -57,7 +56,7 @@ String.fromCodePoint(codePoint);
 
 else{
 console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
-}
+`}
 language='javascript'
 />
 
@@ -69,7 +68,7 @@ A second approach is to handle the exception with a `try` / `catch` clause that 
 
 <Highlighter
 input=
-var x=-1;
+{`var x=-1;
 
 try{
 console.log(String.fromCodePoint(x)); 
@@ -77,7 +76,7 @@ console.log(String.fromCodePoint(x));
 
 catch(error){
   console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
-}
+`}
 language='javascript'
 />
 
