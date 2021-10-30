@@ -55,6 +55,7 @@ String.fromCodePoint(codePoint);
 
 else{
 console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
+                             }
 `}
 language='javascript'
 />
