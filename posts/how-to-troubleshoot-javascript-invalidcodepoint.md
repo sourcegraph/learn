@@ -18,7 +18,7 @@ RangeError: Invalid code point {0}`}
 language='javascript'
 />
 
-{0} is a placeholder for the value you used as an argument in the String.fromCodePoint() method. The value passed to the method needs to be a value in the Unicode codespace, which is in the range of integers from 0 to 0x10FFFF (1114111).
+{0} is a placeholder for the value you used as an argument in the String.fromCodePoint() method. The argument passed to the method needs to be a value in the Unicode codespace, which is in the range of integers from 0 to 0x10FFFF (1114111).
 
 Depending on the browser, the message of the error will vary between the outputs described before.
 
@@ -26,14 +26,14 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 
 ## Reproducing the error
 
-Let's execute the following in a JavaScript console. In this example, we will pass -1 to the method, which will throw the error.
+Let's execute the following code in a JavaScript console. In this example, we will pass -1 to the method, which will throw the error.
 
 <Highlighter
 input={`String.fromCodePoint(-1); //RangeError: -1 is not a valid code point`}
 language='javascript'
 />
 
-In this second example, we will use 0 as the argument and a star will appear as expected.
+In this second example, we will use 9733 as the argument and a star will appear as expected.
 
 <Highlighter
 input={`String.fromCodePoint(9733); //★`}
@@ -42,9 +42,9 @@ language='javascript'
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
 
-## Check before accessing
+## Check before passing
 
-We can avoid this exception being raised by checking the value of the codePoint inside of an `if-statement`.
+We can avoid the exception by checking the value of the codePoint inside of an `if-statement`.
 
 ```javascript
 var codePoint=1114111;
@@ -54,7 +54,7 @@ String.fromCodePoint(codePoint);
 }
 
 else{
-console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
+console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111)")
 }
 ```  
 
@@ -72,7 +72,7 @@ console.log(String.fromCodePoint(x));
 }
 
 catch(error){
-  console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
+  console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111)")
 }
 ```
 
