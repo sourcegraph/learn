@@ -46,8 +46,8 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 We can avoid this exception being raised by checking the value of the codePoint inside of an `if-statement`.
 
-<Highlighter
-input=var codePoint=1114111;
+```javascript
+var codePoint=1114111;
 
 if(codePoint>=0&&x<1114112){
 String.fromCodePoint(codePoint); 
@@ -55,9 +55,8 @@ String.fromCodePoint(codePoint);
 
 else{
 console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
-                             }
-language='javascript'
-/>
+}
+```  
 
 If the code point is not in the valid range, the log message inside of the else-statement will be printed to the console. Depending on your programs requirements, you could also enclose the if/else-statement in a loop, so that the user can then enter a valid code point.   
 
@@ -65,8 +64,8 @@ If the code point is not in the valid range, the log message inside of the else-
 
 A second approach is to handle the exception with a `try` / `catch` clause that catches the error.
 
-<Highlighter
-input=var x=-1;
+```javascript
+var x=-1;
 
 try{
 console.log(String.fromCodePoint(x)); 
@@ -74,8 +73,8 @@ console.log(String.fromCodePoint(x));
 
 catch(error){
   console.log("The argument passed to fromCodePoint() method is not in the valid range(0 to 1114111")
-language='javascript'
-/>
+}
+```
 
 This program will throw the `RangeError invalid code point` and then fetch it in the catch clause. The described log message will be shown to the user. 
 
