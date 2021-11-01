@@ -129,7 +129,7 @@ The component looks like this:
     matcher='The code you would like to highlight (optional)'
 />
 ```
-When you have input with line spacing that you would like to preserve, use a template literal for the `input` instead. Also be sure to add an additional blank space to any line where you would like to preserve spacing. For example:
+When you have input with line spacing that you would like to preserve, use a template literal for your input and preserve the spacing there. To do this, add an additional blank space to any line where you would like to preserve spacing. For example:
 
 ```
 <Highlighter
