@@ -17,10 +17,9 @@ It’s also important to remember that Java is a “strongly typed” language, 
 
 This tutorial will help you resolve the following error message.
 
-<Highlighter
-input='error: class X is public, should be declared in a file named X.java'
-language='bash'
-/>
+```
+error: class X is public, should be declared in a file named X.java
+```
 
 When encountering this error, it’s important to make sure not only that our public classes match those of their file names, but also that there are no spelling errors or unintended white spaces (as in `Main Activity` instead of `MainActivity`). We'll go through approaches to ensuring you can recover from this error quickly. 
 

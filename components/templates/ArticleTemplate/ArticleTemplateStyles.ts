@@ -46,6 +46,7 @@ export const StyledMarkdownWrapper = styled.div`
         font-family: 'Monaco', monospace;
         padding: 10px;
         border-radius:10px;
+        margin: .5rem 0;
     }
 
     img {

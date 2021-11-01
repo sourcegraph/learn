@@ -51,10 +51,9 @@ language='javascript'
 
 Our program tries to parse the JSON text `'{ "name" = "William", "country" = "South Africa" }'` and print the name value of the resulting object parsed from the JSON. Unfortunately, our program fails and exits with `SyntaxError`.
 
-<Highlighter
-input={`Uncaught SyntaxError: JSON.parse: expected ':' after property name in object at line 1 column 10 of the JSON data`}
-language='bash'
-/>
+```
+Uncaught SyntaxError: JSON.parse: expected ':' after property name in object at line 1 column 10 of the JSON data
+```
 
 The JSON we are trying to parse is invalid JSON since keys and values should be separated by `:` characters and not with `=` characters, hence the reason our method encounters the `SyntaxError` above.
 
@@ -84,10 +83,9 @@ language='javascript'
 
 When we run our program now, we get the following output as soon as the `printInfo()` function encounters `SyntaxError` due to malformed JSON.
 
-<Highlighter
-input={`The text "{ "name" = "William", "country" = "South Africa" }" is not valid JSON.`}
-language='bash'
-/>
+```
+The text "{ "name" = "William", "country" = "South Africa" }" is not valid JSON.
+```
 
 In this example, we have caught the error and alerted our user of this issue.
 
@@ -109,10 +107,9 @@ language='javascript'
 
 In our program above we fixed the JSON by changing the `=` character to a `:` character and now we're able to use `JSON.parse` to parse the given text! Below is the output of our program after we have parsed the JSON. 
 
-<Highlighter
-input='William lives in South Africa'
-language='bash'
-/>
+```
+William lives in South Africa
+```
 
 With this fix in the JSON syntax, we're able to access the name property of the JSON object.
 

@@ -15,20 +15,18 @@ Parsing is the process by which a compiler analyses the code for correct syntax 
 
 The error may appear as the following.
 
-<Highlighter
-input={`Main.java:13: error: reached end of file while parsings
+```
+Main.java:13: error: reached end of file while parsings
     }
      ^
-1 error`}
-language='bash'
-/>
+1 error
+```
 
 Or, the error may read as follows. 
 
-<Highlighter
-input='java: reached end of file while parsing'
-language='bash'
-/>
+```
+java: reached end of file while parsing
+```
 
 The error is usually thrown at the line of code where the compiler interprets the last part of the code.
 
@@ -74,13 +72,12 @@ language='java'
 
 The error is encountered at line 11 as follows.
 
-<Highlighter
-input='HelloReaders.java:11: error: reached end of file while parsing
+```
+HelloReaders.java:11: error: reached end of file while parsing
 }
  ^
-1 error'
-language='bash'
-/>
+1 error
+```
 
 The error message provides us with a relevant line number where we can start to figure out a solution. 
 
@@ -110,13 +107,12 @@ language='java'
 
 If you compile or run the program above, you'll receive the following error. 
 
-<Highlighter
-input='HelloReaders.java:14: error: reached end of file while parsing
+```
+HelloReaders.java:14: error: reached end of file while parsing
 }
  ^
-1 error'
-language='bash'
-/>
+1 error
+```
 
 Similarly, in an `if` (shown below) or `if else` code structure, this error is common and can be produced as follows.
 
@@ -169,10 +165,9 @@ language='java'
 
 When you run and compile the above program, you'll receive the following expected output. 
 
-<Highlighter
-input='Hello Readers'
-language='bash'
-/>
+```
+Hello Readers
+```
 
 It's important to remember that every opening bracket '{' requires a closing bracket '}'.
 

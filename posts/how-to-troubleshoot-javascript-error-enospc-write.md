@@ -13,10 +13,9 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, then there is no space on the drive. 
 
-<Highlighter
-input='Error: ENOSPC.'
-language='bash'
-/>
+```
+Error: ENOSPC.
+```
 
 This is likely to be a limit on the number of file watches. The system has a limit to how many files can be watched by a user. The npm package manager, or a process controlled by it, is watching too many files. 
 
@@ -79,10 +78,9 @@ language='bash'
 
 Your output will be a number, such as:
 
-<Highlighter
-input='8192'
-language='bash'
-/>
+```
+8192
+```
 
 To temporarily set a new limit, you can run the following command. This will temporarily reset your limit to `524288`. 
 

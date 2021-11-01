@@ -247,13 +247,12 @@ language='bash'
 
 After running the above command, all changes will be unstaged but will remain in the working directory. The output gives you a summary of those changes, as in the example below.
 
-<Highlighter
-input='Unstaged changes after reset:
+```
+Unstaged changes after reset:
 M       index.html
 D       script.js
 D       style.css'
-language='bash'
-/>
+```
 
 From here, you can start staging changes again.
 

@@ -41,7 +41,7 @@ const CopyToClipboard: FunctionComponent<Props> = props => {
                         <StyledCopyMessage>Copied!</StyledCopyMessage>
                     ) :
                     (
-                        <StyledCopyIcon />
+                        <StyledCopyIcon size={18} />
                     )}
                 </StyledCopyButton>
             </StyledCopyButtonContainer>

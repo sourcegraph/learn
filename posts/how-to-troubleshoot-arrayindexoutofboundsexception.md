@@ -13,10 +13,9 @@ type: posts
 
 In Java, to access an element in an array you use an index. However, if that index does not exist in the array, you'll get the following exception.
 
-<Highlighter
-input={`Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7`}
-language='java'
-/>
+```
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7
+```
 
 Arrays in Java are zero-based, which means the first position of an array is at index `0` and the last index is the length of the array minus one. So a valid index is any value between `0` and the length of the array. All other values will lead to an `ArrayIndexOutOfBoundsException`.
 
@@ -57,8 +56,8 @@ If the user enters a valid number, then the program enters a `for` loop which wi
 
 Below is the output of our program printing out all the numbers after we entered the value `7`. Notice that the index starts at 0 and ends at 6 (the length of the array minus one).
 
-<Highlighter
-input='There are 7 numbers in the array. How many numbers should be printed ? 7
+```
+There are 7 numbers in the array. How many numbers should be printed ? 7
 Index 0 has value 7
 Index 1 has value 6
 Index 2 has value 5
@@ -66,14 +65,13 @@ Index 3 has value 4
 Index 4 has value 3
 Index 5 has value 2
 Index 6 has value 1
-Printed 7 numbers out of 7'
-language='bash'
-/>
+Printed 7 numbers out of 7
+```
 
 If, instead, the user enters a value outside of the array, such as `8`, our program will print all the numbers up until it tries to print the number at index `7`. At this point, it will fail with `ArrayIndexArrayIndexOutOfBoundsException`.
 
-<Highlighter
-input={`There are 7 numbers in the array. How many numbers should be printed ? 8
+```
+There are 7 numbers in the array. How many numbers should be printed ? 8
 Index 0 has value 7
 Index 1 has value 6
 Index 2 has value 5
@@ -82,9 +80,8 @@ Index 4 has value 3
 Index 5 has value 2
 Index 6 has value 1
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7
-	at NumberPrinter.main(NumberPrinter.java:13)`}
-language='bash'
-/>
+	at NumberPrinter.main(NumberPrinter.java:13)
+```
 
 Our program failed because the index `8` value is outside the "boundaries" of our `numbers[]` array. The boundary for our array restricts the value of the index according to the following criteria:
 
@@ -150,17 +147,15 @@ If the value is positive, we then check that the value isn't too large by compar
 
 In the output below, we are given the result of a user entering the invalid values of first `-1` and then `8`.
 
-<Highlighter
-input='There are 7 numbers in the array. How many numbers should be printed ? -1
-Only positive values are allowed!'
-language='bash'
-/>
+```
+There are 7 numbers in the array. How many numbers should be printed ? -1
+Only positive values are allowed!
+```
 
-<Highlighter
-input='There are 7 numbers in the array. How many numbers should be printed ? 8
-The given value of 8 is too large! Value has to be less than or equal to 7'
-language='bash'
-/>
+```
+There are 7 numbers in the array. How many numbers should be printed ? 8
+The given value of 8 is too large! Value has to be less than or equal to 7
+```
 
 These two user feedback strings are loaded into the `System.out.println()` methods within the `if` and `else if` statements, respectively. 
 
@@ -207,8 +202,8 @@ language='java'
 
 Below is the output of the above program for if a user enters the value of `999` or `-1`, respectively.
 
-<Highlighter
-input='There are 7 numbers in the array. How many numbers should be printed ? 999
+```
+There are 7 numbers in the array. How many numbers should be printed ? 999
 Index 0 has value 7
 Index 1 has value 6
 Index 2 has value 5
@@ -216,16 +211,14 @@ Index 3 has value 4
 Index 4 has value 3
 Index 5 has value 2
 Index 6 has value 1
-Printed 7 numbers out of 7'
-language='bash'
-/>
+Printed 7 numbers out of 7
+```
 
-<Highlighter
+```
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Index 0 has value 7
-Printed 1 numbers out of 7'
-language='bash'
-/>
+Printed 1 numbers out of 7
+```
 
 Now, whether the user gives the program negative numbers or large numbers outside of the array, it doesn't fail or throw `ArrayIndexOutOfBoundsException` since our program is resillient to invalid index numbers.
 

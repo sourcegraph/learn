@@ -99,7 +99,8 @@ We’ll go over two approaches below; the first which is recommended for [Linux 
 On local machines that use a Linux distribution, you’ll be able to install Sourcegraph by running the following Docker command.
 
 <Highlighter
-input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \  
+input='docker run --publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 \  
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \  
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \  
 sourcegraph/server:3.30.4'
@@ -110,10 +111,9 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
 
-<Highlighter
-input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='bash'
-/>
+```
+✱ Sourcegraph is ready at: http://127.0.0.1:7080
+```
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 
@@ -122,7 +122,8 @@ At this point, you’ll be able to move onto the next section to verify your ins
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
 <Highlighter
-input='docker run -d --publish 80:7080 --publish 443:7443 \
+input='docker run -d --publish 80:7080 \
+--publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
@@ -134,10 +135,9 @@ This command is telling your server to install and run Sourcegraph in port 7080 
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following. Your server’s IP address will display in place of `your-server-ip-address`.
 
-<Highlighter
-input='✱ Sourcegraph is ready at: http://your-server-ip-address:7080'
-language='bash'
-/>
+```
+✱ Sourcegraph is ready at: http://your-server-ip-address:7080
+```
 
 At this point, you’ll be able to move onto the next section to verify your installation.
 

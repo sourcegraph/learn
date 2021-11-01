@@ -61,22 +61,17 @@ input='mypy sum.py'
 
 Running Mypy on the code will return the following errors.
 
-<Highlighter
-language='bash'
-output='true'
-input=
-    'sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
+```
+sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
 sum.py:4: error: Argument 2 to "sum_two_numbers" has incompatible type "str"; expected "int"
 Found 2 errors in 1 file (checked 1 source file)'
-/>
+```
 
 Code written with type hinting issues will not return any errors. If we put the first version of the `sum_two_numbers()` function that used integer types, we would instead receive the following output from Mypy.
 
-<Highlighter
-language='bash'
-input='Success: no issues found in 1 source file'
-/>
-
+```
+Success: no issues found in 1 source file
+```
 Running Mypy on Python files will help you discover type checking errors.
 
 

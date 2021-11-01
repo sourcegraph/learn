@@ -32,8 +32,8 @@ language='python'
 
 When we run this program, we'll call it `my_file.py`, we'll receive output similar to the following.
 
-<Highlighter
-input={`Traceback (most recent call last):
+```
+Traceback (most recent call last):
   File "my_file.py", line 3, in example_mistake
    [][1]
 IndexError: list index out of range
@@ -46,16 +46,14 @@ Traceback (most recent call last):
    print('Indexing error', mistake)
 NameError: name 'mistake' is not defined
  
-NameError: name 'mistake' is not defined`}
-language='bash'
-/>
+NameError: name 'mistake' is not defined
+```
 
 Notice the key phrase between the two tracebacks:
 
-<Highlighter
-input='During handling of the above exception, another exception occurred:'
-language='bash'
-/>
+```
+During handling of the above exception, another exception occurred:
+```
 
 Here, we observe the __context__ attribute of the exception object showing that another exception occurred within the handling of the original exception.
 
@@ -78,8 +76,8 @@ language='python'
 
 When you run this program, you'll receive output similar to the following. 
 
-<Highlighter
-input={`Traceback (most recent call last):
+```
+Traceback (most recent call last):
   File "my_file.py", line 3, in exampl_chaining
     [][1]
 IndexError: list index out of range
@@ -91,9 +89,8 @@ Traceback (most recent call last):
     example_chaining()
   File "my_file.py", line 5, in example_chaining
     raise ValueError('Here is additional info: Invalid value') from e
-ValueError: Here is additional info: Invalid value`}
-language='bash'
-/>
+ValueError: Here is additional info: Invalid value
+```
 
 Again, notice the key phrase between the two tracebacks (`The above exception was the direct cause of the following exception:`). Here, that exception was wrapped with another one. Both exceptions are captured in the traceback.
 
@@ -114,14 +111,13 @@ language='python'
 
 When you run this program, you will get output that is similar to what is below.
 
-<Highlighter
-input='Traceback (most recent call last):
+```
+Traceback (most recent call last):
   File "my_file.py", line 7, in <module> example_chaining_disabled()
   File "my_file.py", line 5, in example_chaining_disabled
     raise ValueError from None
-ValueError'
-language='bash'
-/>
+ValueError
+```
 
 Now you can differentiate the two types of chained exception tracebacks. 
 

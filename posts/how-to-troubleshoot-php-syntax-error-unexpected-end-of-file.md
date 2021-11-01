@@ -13,10 +13,9 @@ type: posts
 
 When you are working with PHP, you may receive this message:
 
-<Highlighter
-input={`unexpected end of file, expecting ';' or ','`}
-language='bash'
-/>
+```
+unexpected end of file, expecting ';' or ','
+```
 
 This means that you haven't finished your command or haven't written it completely. Programming languages ​​like PHP use a specific character to define the end of a command (`;`), so they can understand what to run at what time. When you don't enter this character, the PHP interpreter thinks it's an unfinished command and throws an error.
 
@@ -40,10 +39,9 @@ language='bash'
 
 Then you'll receive the error on output:
 
-<Highlighter
-input='Parse error:  syntax error, unexpected end of file, expecting "," or ";" in /path/to/hello.php on line 4'
-language='bash'
-/>
+```
+Parse error:  syntax error, unexpected end of file, expecting "," or ";" in /path/to/hello.php on line 4
+```
 
 Now that we reproduced the error, let's find out how to fix it.
 
@@ -80,10 +78,9 @@ language='bash'
 
 You'll now receive a new error message.
 
-<Highlighter
-input='Parse error:  syntax error, unexpected end of file in /path/to/hello.php on line 4'
-language='bash'
-/>
+```
+Parse error:  syntax error, unexpected end of file in /path/to/hello.php on line 4
+```
 
 This experiment didn't work at all, but why? 
 
@@ -109,10 +106,9 @@ language='bash'
 
 The output of the file execution will be the following.
 
-<Highlighter
-input='Hello Sourcegraph'
-language='bash'
-/>
+```
+Hello Sourcegraph
+```
 
 You have now solved the error message and can be sure to end your expressions as needed. If you encounter this error again, check the end of your file. 
 
