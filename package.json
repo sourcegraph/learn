@@ -30,7 +30,7 @@
     "rehype-react": "^7.0.3",
     "rehype-slug": "^4.0.1",
     "remark-rehype": "^10.0.0",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^11.1.2",
