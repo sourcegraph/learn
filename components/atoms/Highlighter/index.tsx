@@ -18,7 +18,6 @@ interface Props {
     input: string
     language: Language
     matcher?: string
-    output?: string
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
@@ -50,9 +49,7 @@ const Highlighter: FunctionComponent<Props> = props => {
                     </StyledCodeWrapper>
                 )}
             </Highlight>
-            {props.output !== 'true' && (
-                <CopyToClipboard codeReference={codeReference} />
-            )}
+            <CopyToClipboard codeReference={codeReference} />
         </StyledHighlighterWrapper>
     )
 }
