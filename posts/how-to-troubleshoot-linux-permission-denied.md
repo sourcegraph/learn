@@ -13,9 +13,9 @@ type: posts
 
 If you are working on a Linux terminal and you receive the following output, you are probably trying to work with a file where the permissions have not been properly configured.
 
-```
-<filename>: Permission denied
-```
+<OutputHighlighter
+input='<filename>: Permission denied'
+/>
 
 In this tutorial, we'll reproduce this error, go over what's causing it, and provide solutions for how you can fix it.
 
@@ -47,9 +47,10 @@ language='bash'
 
 Depending on what else is in your working directory, you may have several lines of output, but you should be able to identify the file we just created, and review output for that line that is similar to the following.
 
-```
-input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt
-```
+<OutputHighlighter
+input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+matcher='your-user'
+/>
 
 We're interested in the first column of this output — the text `rw-r--r--` — which represents the permissions of this newly created file. Let's break this down into three parts.
 
@@ -87,9 +88,10 @@ language='bash'
 
 Now, review the updated file permissions, using the `ls -l` command as before. You will receive output next to that file that is similar to the following. 
 
-```
-input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt
-```
+<OutputHighlighter
+input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+matcher='your-user'
+/>
 
 Notice that the file permissions for the owner (and other groups) have been modified. The missing `r` permission for all groups indicates that no one can
 read the file anymore and only the owner(`your-user`) can write to the file.
@@ -103,9 +105,9 @@ language='bash'
 
 Once you enter the above command, you'll receive the `Permission denied` error message.
 
-```
-cat: test-file.txt: Permission denied
-```
+<OutputHighlighter
+input='cat: test-file.txt: Permission denied'
+/>
 
 Since no one can read the file anymore, the command fails with an error. You can try opening the file with a text editor or any other application, and you will still arrive at the same result.
 
@@ -124,9 +126,10 @@ matcher='test-file.txt'
 
 To verify that the file has now has read permissions, we'll use `ls -l`. This should display output similar to the following.
 
-```
--rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt
-```
+<OutputHighlighter
+input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+matcher='your-user'
+/>
 
 Notice the added `r` permission for every group; this indicates that every user group can read the file.
 
@@ -139,9 +142,9 @@ language='bash'
 
 The command should now display the contents of the file to your terminal.
 
-```
-Hello World
-```
+<OutputHighlighter
+input='Hello World'
+/>
 
 This output verifies that the file can be read normally.
 
@@ -163,9 +166,10 @@ Like with many situations in Linux, using the magic word `sudo` will allow you t
 
 We'll be continuing with the original example, `test-file.txt`, with the following permissions.
 
-```
---w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt
-```
+<OutputHighlighter
+input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
+matcher='your-user'
+/>
 
 Notice that no user has the *read* permission on this file. We can verify this using `cat`
 
@@ -174,9 +178,9 @@ input='cat test-file.txt'
 language='bash'
 />
 
-```
-cat: test-file.txt: Permission denied
-```
+<OutputHighlighter
+input='cat: test-file.txt: Permission denied'
+/>
 
 As expected, no one — including your current users — can read the file.
 
@@ -189,9 +193,9 @@ language='bash'
 
 Using the `sudo` command will open the file up to us. 
 
-```
-Hello World
-```
+<OutputHighlighter
+input='Hello World'
+/>
 
 Even though no one can read the file, using `sudo`, we can read the file directly without having to modify the file permissions. The same goes for being able to write-to, or execute a file directly without needing the appropriate permissions.
 

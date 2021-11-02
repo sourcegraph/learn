@@ -40,7 +40,11 @@ export const StyledMarkdownWrapper = styled.div`
     p {
         overflow-wrap: break-word;
     }
-    
+
+    span {
+        overflow: scroll;
+    }
+
     pre {
         background-color: #e7e7e7;
         display: flex;
