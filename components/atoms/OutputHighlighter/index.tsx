@@ -9,8 +9,8 @@ interface Props {
 }
 
 const OutputHighlighter: FunctionComponent<Props> = props => {
-    let parts = props.input.split(/(\s)/)
-    let regex = new RegExp(`/${props.input}/`, 'gi')
+    let parts: string | string[] = props.input
+    let regex = new RegExp('')
     if (props.matcher) {
         regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
         parts = props.input.split(regex)
@@ -19,11 +19,17 @@ const OutputHighlighter: FunctionComponent<Props> = props => {
     return (
         <StyledCodeWrapper>
             <StyledCodeBlock>
-                {parts.map(part => (
-                    regex.test(part)
-                        ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
-                        : <span key={createRandomId()}>{part}</span>
-                ))}
+                {typeof parts === 'string' ?
+                (
+                    <span>{parts}</span>
+                ) :
+                (
+                    parts.map(part => (
+                        regex.test(part)
+                            ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
+                            : <span key={createRandomId()}>{part}</span>
+                    ))
+                )}
             </StyledCodeBlock>
         </StyledCodeWrapper>
     )
