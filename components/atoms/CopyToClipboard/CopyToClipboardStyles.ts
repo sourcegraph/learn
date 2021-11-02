@@ -21,6 +21,6 @@ export const StyledCopyButton = styled.button`
 `
 export const StyledCopyIcon = styled(ContentCopyIcon)`
     :hover {
-        color: #a112ff;
+        color: #3826cc;
     }
 `
