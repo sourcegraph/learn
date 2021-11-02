@@ -29,9 +29,9 @@ language='bash'
 
 You’ll receive output similar to the following, which states your version number.
 
-```
-git version 2.32.0
-```
+<OutputHighlighter
+input='git version 2.32.0'
+/>
 
 Note that when talking about Git, the word “commit” can be used both as a noun (as in: “Here is the latest commit.”) and a verb meaning “to create a commit” (as in: “I will commit this change.”).
 
@@ -46,22 +46,22 @@ language='bash'
 
 The output of the command tells us about the changes that are available to be added to our commit. The first section of the output that we’ll pay attention to is titled `Changes not staged for commit`.
 
-```
-Changes not staged for commit:
+<OutputHighlighter
+input='Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)  
-        modified:   README.md
-```
+        modified:   README.md'
+/>
 
 This section lists files that already exist in the repository and have been modified since the last commit. It tells us that we have one modified file, `README.md`.
 
 The second section that is relevant to us is titled `Untracked files`. It lists newly created files that don’t yet exist in the repository.
 
-```
-Untracked files:
+<OutputHighlighter
+input='Untracked files:
   (use "git add <file>..." to include in what will be committed)
-        getting-started.txt
-```
+        getting-started.txt'
+/>
 
 The above output tells us that there’s one new file in the working directory, `getting-started.txt`.
 
@@ -123,12 +123,12 @@ Once we’ve selected the changes that we want to commit, it’s a good idea to 
 
 Now that we’ve added two files, `README.md` and `getting-started.txt`, we can check the status of the repository by running `git status` again. The output now includes a section called `Changes to be committed`:
 
-```
-Changes to be committed:
+<OutputHighlighter
+input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   README.md
-        new file:   getting-started.txt
-```
+        new file:   getting-started.txt'
+/>
 
 The output confirms that we have two changes in the staging area: `README.md`, which is modified, and `getting-started.txt`, which is new.
 
@@ -176,11 +176,11 @@ language='bash'
 
 Here’s the output when we run this command:
 
-```
-[main 5388e04d38] Update README and add getting-started file   
+<OutputHighlighter
+input='[main 5388e04d38] Update README and add getting-started file   
  2 files changed, 1 insertion(+), 1 deletion(-)
- create mode 100644 getting-started.txt
-```
+ create mode 100644 getting-started.txt'
+/>
 
 The above output tells us a few things about the commit that we just created: the number of files changed, the number of insertions and deletions (which is a count of lines affected), and the list of created files.
 
@@ -199,13 +199,13 @@ language='bash'
 
 This helps us confirm that the last commit is, in fact, the one that we just created. Here’s the result when we run `git log -1` after creating our commit:
 
-```
-commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)   
+<OutputHighlighter
+input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)   
 Author: Marek <marek@example.com>   
 Date:   Tue Aug 31 18:47:11 2021 -0400   
     
-    Update README and add getting-started file
-```
+    Update README and add getting-started file`}
+/>
 
 In the above output of `git log -1`, we see the commit ID and the branch name (`main`) on the first line. The output also includes the author and date, followed by the commit message.
 

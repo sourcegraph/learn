@@ -32,22 +32,22 @@ language='python'
 
 When we run this program, we'll call it `my_file.py`, we'll receive output similar to the following.
 
-```
-Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in example_mistake
    [][1]
-IndexError: list index out of range
- 
+IndexError: list index out of range'
+/>
+  
 During handling of the above exception, another exception occurred:
- 
-Traceback (most recent call last):
+
+<OutputHighlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
   File "my_file.py", line 5, in example_mistake
    print('Indexing error', mistake)
-NameError: name 'mistake' is not defined
- 
-NameError: name 'mistake' is not defined
-```
+NameError: name 'mistake' is not defined`}
+/>
 
 Notice the key phrase between the two tracebacks:
 
@@ -76,21 +76,23 @@ language='python'
 
 When you run this program, you'll receive output similar to the following. 
 
-```
-Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in exampl_chaining
     [][1]
-IndexError: list index out of range
+IndexError: list index out of range'
+/>
  
 The above exception was the direct cause of the following exception:
- 
-Traceback (most recent call last):
+
+<OutputHighlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
     example_chaining()
   File "my_file.py", line 5, in example_chaining
     raise ValueError('Here is additional info: Invalid value') from e
-ValueError: Here is additional info: Invalid value
-```
+ValueError: Here is additional info: Invalid value`}
+/>
 
 Again, notice the key phrase between the two tracebacks (`The above exception was the direct cause of the following exception:`). Here, that exception was wrapped with another one. Both exceptions are captured in the traceback.
 
@@ -111,13 +113,13 @@ language='python'
 
 When you run this program, you will get output that is similar to what is below.
 
-```
-Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "my_file.py", line 7, in <module> example_chaining_disabled()
   File "my_file.py", line 5, in example_chaining_disabled
     raise ValueError from None
-ValueError
-```
+ValueError'
+/>
 
 Now you can differentiate the two types of chained exception tracebacks. 
 

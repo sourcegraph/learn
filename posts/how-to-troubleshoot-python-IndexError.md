@@ -13,9 +13,9 @@ type: posts
 
 You may sometimes get an `IndexError` such as the following when running Python code.
 
-```
-IndexError: list index out of range
-```
+<OutputHighlighter
+input='IndexError: list index out of range'
+/>
 
 An `IndexError` means that your code is trying to access an index in a list or other iterable that is invalid. This is usually because the index your program is attempting to access is out of bounds.
 
@@ -39,19 +39,19 @@ In this code, there is a list with five items in it, their index numbers range b
 
 If the user enter any number between `0` and `4` then there will be no errors returned, as indicated in the output below.
 
-```
-Enter an integer to print an element at a given index: 1
-Python
-```
+<OutputHighlighter
+input='Enter an integer to print an element at a given index: 1
+Python'
+/>
 
 If, however, the user enters `5`, we will be able to reproduce the `IndexError`.
 
-```
-Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "indexerr.py", line 3, in <module>
     print(programming_languages[index])
-IndexError: list index out of range
-```
+IndexError: list index out of range'
+/>
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
 
@@ -73,10 +73,10 @@ language='python'
 
 Here, we first check whether `index` is greater than 4 and, if so, we print a string that states `The number you have entered is out of bounds for the list`.
 
-```
-Enter an integer to print an element at a given index: 5
-The number you have entered is out of bound for the list
-```
+<OutputHighlighter
+input='Enter an integer to print an element at a given index: 5
+The number you have entered is out of bound for the list'
+/>
 
 Now, if the user enters `5` or any number greater than `5`, they will receive this guidance rather than having the program exit out with the `IndexError` message. 
 
@@ -98,10 +98,10 @@ language='python'
 
 Here, we first have the program attempt our original workflow by wrapping it in a `try` statement. Next, we use the `except` clause to handle the `IndexError` that we have anticipated. 
 
-```
-Enter an integer to print an element at a given index: 5
-list index out of range
-```
+<OutputHighlighter
+input='Enter an integer to print an element at a given index: 5
+list index out of range'
+/>
 
 You can read more about using `try` and `catch` by reading about [handling exceptions in the Python documentation](https://docs.python.org/3/tutorial/errors.html#handling-exceptions).
 

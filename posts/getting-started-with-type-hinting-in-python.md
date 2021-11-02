@@ -61,17 +61,18 @@ input='mypy sum.py'
 
 Running Mypy on the code will return the following errors.
 
-```
-sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
+<OutputHighlighter
+input='sum.py:4: error: Argument 1 to "sum_two_numbers" has incompatible type "str"; expected "int"
 sum.py:4: error: Argument 2 to "sum_two_numbers" has incompatible type "str"; expected "int"
 Found 2 errors in 1 file (checked 1 source file)'
-```
+/>
 
 Code written with type hinting issues will not return any errors. If we put the first version of the `sum_two_numbers()` function that used integer types, we would instead receive the following output from Mypy.
 
-```
-Success: no issues found in 1 source file
-```
+<OutputHighlighter
+input='Success: no issues found in 1 source file'
+/>
+
 Running Mypy on Python files will help you discover type checking errors.
 
 
@@ -166,8 +167,10 @@ my_set: Set[Tuple[int, int]] = {(1, 2), (2, 3), (3, 4)}`}
 language='python'
 />
 
-When working with Python 3.8, be sure to import the typing module prior to type hinting on data collections. Python 3.9 is backwards compatible, and will run the code above. 
+When working with Python 3.8, be sure to import the typing module prior to type hinting on data collections. Python 3.9 is backwards compatible, and will run the code above.
+
 ## User-created types
+
 It is also valid to type hint user-defined classes. In terms of type hinting, user-defined classes work in the same way as the primitive Python types. For example, here is a coordinate class definition and implementation.
 
 <Highlighter
@@ -183,8 +186,10 @@ c1: Coordinate = Coordinate(1, 2)`}
 language='python'
 />
 
-In the above example, the user-defined classes use type hinting. To learn more about the `-> None` annotation with `__init__`, review [PEP 484 - Type Hints](https://www.python.org/dev/peps/pep-0484/). 
+In the above example, the user-defined classes use type hinting. To learn more about the `-> None` annotation with `__init__`, review [PEP 484 - Type Hints](https://www.python.org/dev/peps/pep-0484/).
+
 ## Multiple and optional types
+
 As may happen with an application that takes user input, sometimes you may prefer for an object to be one of many types. This is possible using a union. 
 
 Below is an example of how you would make the `sum_two_numbers()` function support both integers and floats.

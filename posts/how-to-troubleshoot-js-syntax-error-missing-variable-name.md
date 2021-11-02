@@ -13,10 +13,10 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, your code probably has a typo or you forgot to give a name to a variable.
 
-```
-SyntaxError: missing variable name
-SyntaxError: Unexpected token =
-```
+<OutputHighlighter
+input='SyntaxError: missing variable name
+SyntaxError: Unexpected token ='
+/>
 
 Depending on the browser you are using, the message of the error will vary between the two outputs described before.
 
@@ -35,9 +35,9 @@ language='javascript'
 
 We'll receive output that the name for that variable is missing.
 
-```
-SyntaxError: missing variable name
-```
+<OutputHighlighter
+input='SyntaxError: missing variable name'
+/>
 
 To solve this isse, we will need to ensure that we have declared our variable with a name in addition to passing a value for that variable.
            
@@ -59,9 +59,9 @@ input='var debugger = "foo";'
 language='javascript'
 />
 
-```
-SyntaxError: missing variable name
-```
+<OutputHighlighter
+input='SyntaxError: missing variable name'
+/>
 
 We can solve this issue by using an alternate name. 
 
@@ -86,9 +86,9 @@ language='javascript'
 
 Again, you will encounter the `SyntaxError`.
 
-```
-SyntaxError: missing variable name
-```
+<OutputHighlighter
+input='SyntaxError: missing variable name'
+/>
 
 To remedy this issue, be sure to use semicolons to end your lines. 
 
@@ -111,9 +111,9 @@ language='javascript'
 
 Array syntax requires square brackets — `[]` — around values in order for it to be read by JavaScript. Running the above code will cause you to run into the `SyntaxError`. 
 
-```
-SyntaxError: missing variable name
-```
+<OutputHighlighter
+input='SyntaxError: missing variable name'
+/>
 
 The solution to this is to be sure you are following correct JavaScript syntax. In the case of arrays, be sure to use square brackets.
 

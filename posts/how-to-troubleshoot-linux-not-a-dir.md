@@ -31,9 +31,9 @@ language='bash'
 
 We'll receive the following error message.
 
-```
-cd: not a directory: test
-```
+<OutputHighlighter
+input='cd: not a directory: test'
+/>
 
 The `cd` command fails because you've tried to change directory but passed a text file as an argument instead of a directory.
 
@@ -82,8 +82,8 @@ language='bash'
 
 Once you run the command, you should receive output similar to the following based on your own file structure. 
 
-```
-total 1848
+<OutputHighlighter
+input='total 1848
 -rw-r--r--    1 user  Users   156B 11 Oct 12:17 .babelrc
 -rw-r--r--    1 user  Users    72B 11 Oct 12:24 .env
 -rw-r--r--    1 user  Users   204B 11 Oct 20:12 .eslintrc.js
@@ -91,8 +91,8 @@ total 1848
 drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
-...
-```
+...'
+/>
 
 The start of each output lets you know if it's a directory or not. `-` means it's a regular file (as in `-rw-r--r--`) and `d` means it is a directory (as in `drwxr-xr-x`). Be sure to use `cd` only on directories that are indicated as such. 
 
@@ -107,12 +107,12 @@ language='bash'
 
 After running this comand, you'll only receive the output of directories in the example of the section above. 
 
-```
-drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
+<OutputHighlighter
+input='drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
-...
-```
+...'
+/>
 
 With `grep` you can filter out the files and directories you are looking for to ensure you are not using a command that will not run on a given type. 
 

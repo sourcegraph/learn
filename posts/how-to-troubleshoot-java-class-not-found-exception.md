@@ -13,9 +13,9 @@ type: posts
 
 If you are working in Java, and receive the following output, your code is trying load a class but it does not find it in the classpath, which specifies the location of user-defined classes and packages to the Java compiler or Java virtual machine (JVM).
 
-```
-java.lang.ClassNotFoundException: foo.Foo
-```
+<OutputHighlighter
+input='java.lang.ClassNotFoundException: foo.Foo'
+/>
 
 This exception is thrown when your code tries to load a class through its string name using one of the following approaches.
 
@@ -60,8 +60,8 @@ language='bash'
 
 Once we run these commands, we'll receive the following exception.
 
-```
-Loading Foo class
+<OutputHighlighter
+input='Loading Foo class
 java.lang.ClassNotFoundException: foo.Foo
         at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
         at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
@@ -69,8 +69,8 @@ java.lang.ClassNotFoundException: foo.Foo
         at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
         at java.lang.Class.forName0(Native Method)
         at java.lang.Class.forName(Class.java:264)
-        at main.Main.main(Main.java:7)
-```
+        at main.Main.main(Main.java:7)'
+/>
 
 Now that we have been able to reproduce the `ClassNotFoundException` error, let's go over possible solutions.
 
@@ -104,10 +104,10 @@ language='bash'
 
 Now `Main` will compile and run without any errors as it has loaded the `Foo` class.
 
-```
-Loading foo.Foo class
-foo.Foo loaded
-```
+<OutputHighlighter
+input='Loading foo.Foo class
+foo.Foo loaded'
+/>
 
 At this point you have resolved the `ClassNotFoundException` and continue working on your program.
 
@@ -146,10 +146,10 @@ language='bash'
 
 Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class.
 
-```
-Loading bar.Foo class
-bar.Foo class not found. Please ensure that the class exists.
-```
+<OutputHighlighter
+input='Loading bar.Foo class
+bar.Foo class not found. Please ensure that the class exists.'
+/>
 
 With `try` and `catch` statements we are able to recover quickly without exiting the program or preventing compiling. This enables us to continue working while we are still figuring out all the design decisions we want to make for our program.
 

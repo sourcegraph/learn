@@ -40,8 +40,8 @@ language='java'
 
 When we compile and run the program, it starts printing numbers starting from 1 on, and thus the recursion never terminates. Depending on the JVM, the results may differ, but eventually the `StackOverflowError` is thrown.
 
-```
-Number: 1
+<OutputHighlighter
+input='Number: 1
 Number: 2
 Number: 3
 Number: 4
@@ -57,8 +57,8 @@ Exception in thread "main" java.lang.StackOverflowError
     at Main.recursion(Main.java:4)
     at Main.recursion(Main.java:9)
     ...
-    at Main.recursion(Main.java:9)
-```
+    at Main.recursion(Main.java:9)'
+/>
 
 You may need to scroll through considerable output to find the error. 
 
@@ -90,14 +90,14 @@ language='java'
 
 Once we compile and run the above program, we'll receive output similar to the following. 
 
-```
-...
+<OutputHighlighter
+input='...
 Exception in thread "main" java.lang.StackOverflowError
 	at B.<init>(A.java:18)
 	at A.<init>(A.java:5)
 	at B.<init>(A.java:18)
-...
-```
+...'
+/>
 
 Cyclic relationships between classes is the result of two different classes instantiating each other inside their constructors. In the example, classes A and B instantiate each other in their contructors repeatedly until we get a `StackOverflowError`. 
 
@@ -130,13 +130,13 @@ language='java'
 
 This program will print the numbers from 1 to 5:
 
-```
-Number: 1
+<OutputHighlighter
+input='Number: 1
 Number: 2
 Number: 3
 Number: 4
-Number: 5
-```
+Number: 5'
+/>
 
 Your terminating condition should make sense for the program you are building. Thinking through what would stop a given loop will make your program more effective and help you avoid the `StackOverflowError`. 
 
