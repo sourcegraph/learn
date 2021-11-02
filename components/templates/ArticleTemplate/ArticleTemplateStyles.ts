@@ -41,18 +41,13 @@ export const StyledMarkdownWrapper = styled.div`
         overflow-wrap: break-word;
     }
 
-    span {
-        overflow: scroll;
-    }
-
     pre {
         background-color: #e7e7e7;
-        display: flex;
         overflow: auto;
         font-family: 'Monaco', monospace;
-        padding: 10px;
         border-radius:10px;
         margin: .5rem 0;
+        padding: 1.2rem .5rem;
     }
 
     img {

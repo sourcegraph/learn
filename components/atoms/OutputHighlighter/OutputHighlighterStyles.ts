@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const StyledCodeBlock = styled.div`
     background-color: #e7e7e7;
-    padding: 1rem 0;
-    overflow: auto;
 `
 export const StyledCodeWrapper = styled.pre`
     background-color: #e7e7e7 !important;
