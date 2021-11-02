@@ -1,5 +1,5 @@
 ---
-title: How to use Exception Chaining in Python
+title: How to use exception chaining in Python
 authorSlug: david-lee
 authorDisplayName: David Lee
 tags: [tutorial, Python, troubleshooting]
