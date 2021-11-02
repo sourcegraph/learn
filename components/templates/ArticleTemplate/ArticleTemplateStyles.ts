@@ -34,6 +34,7 @@ export const StyledMarkdownWrapper = styled.div`
         font-size: inherit;
         color: #000000;
         background: #e7e7e7;
+        overflow: scroll;
     }
 
     p {
@@ -42,6 +43,7 @@ export const StyledMarkdownWrapper = styled.div`
     
     pre {
         background-color: #e7e7e7;
+        display: flex;
         overflow: auto;
         font-family: 'Monaco', monospace;
         padding: 10px;
