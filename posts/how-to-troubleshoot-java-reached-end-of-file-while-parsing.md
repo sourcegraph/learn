@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java error reached end of file while parsing
-author: ml-narayana-rao
+authorSlug: ml-narayana-rao
+authorDisplayName: M.L. Narayana Rao
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to handle the Java error reached end of file while parsing
@@ -156,7 +157,7 @@ input={`class HelloReaders
     {
         System.out.println(world());
     } //closes the main method
-
+ 
     static String world()
     {
         String greeting = "Hello Readers";
