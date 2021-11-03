@@ -15,11 +15,11 @@ Sourcegraph is a universal code search tool, enabling you to search across both 
 
 This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
 
-You can use these commands on either [Sourcegraph cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
+You can use these commands on either [Sourcegraph Cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
 
 ## Searching an organization’s repository
 
-By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. On Sourcegraph cloud, this includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
+By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. On Sourcegraph Cloud, this includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
 
 ### Searching for or within a repository
 
@@ -283,7 +283,7 @@ When logged into Sourcegraph, you can change your context to your username and t
 
 <SourcegraphSearch query="visibility:private" />
 
-This can allow you to search across the code that is private to only you. _Please note that searching private code on Sourcegraph cloud is currently in Public Beta._
+This can allow you to search across the code that is private to only you. _Please note that searching private code on Sourcegraph Cloud is currently in Public Beta._
 
 ## Further resources
 

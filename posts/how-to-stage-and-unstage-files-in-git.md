@@ -115,7 +115,7 @@ Git repositories cannot contain empty directories. This means that if you create
 
 Empty directories can often be useful as temporary storage areas, for example, or as locations for build output. A common workaround to include an empty directory in a Git repository is to put a placeholder file inside so that it’s not truly empty. By convention, this placeholder is usually named `.gitkeep`. 
 
-You can get a sense of how common this convention is by performing a Sourcegraph cloud search to find the presence of files named `.gitkeep` in many popular open source repositories, as demonstrated by the following search query.
+You can get a sense of how common this convention is by performing a Sourcegraph Cloud search to find the presence of files named `.gitkeep` in many popular open source repositories, as demonstrated by the following search query.
 
 <SourcegraphSearch query="file:.gitkeep"/>
 
