@@ -2,7 +2,7 @@ import ContentCopyIcon from 'mdi-react/ContentCopyIcon'
 import styled from 'styled-components'
 
 export const StyledCopyMessage = styled.span`
-    color: #a112ff;
+    color: #3826cc;
 `
 export const StyledCopyContainer = styled.div`
     align-items: center;
