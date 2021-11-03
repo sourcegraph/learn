@@ -1,7 +1,8 @@
 import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
+import { ThemeContext } from '@hooks/contexts/theme'
 import MenuIcon from 'mdi-react/MenuIcon'
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState, useContext } from 'react'
 
 import {
     StyledNavBarWrapper,
@@ -17,6 +18,7 @@ import {
 
 const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
+    const theme = useContext(ThemeContext)
 
     return (
         <StyledNavBarWrapper id='nav'>
@@ -50,7 +52,14 @@ const NavBar: FunctionComponent = () => {
                             target="_blank"
                             rel="noreferrer">
                             Search on Sourcegraph
-                        </Button>                     
+                        </Button>
+                        <Button
+                            className="outline-primary"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={() => theme.toggleTheme()}>
+                            Dark Mode
+                        </Button>                        
                     </div>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
