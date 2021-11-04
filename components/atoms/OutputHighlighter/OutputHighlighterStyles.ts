@@ -10,6 +10,3 @@ export const StyledHighlighterMatch = styled.mark`
     background-color: #ffdb45 !important;
     color: #000 !important;
 `
-export const StyledHighlighterWrapper = styled.div`
-    position: relative;
-`
