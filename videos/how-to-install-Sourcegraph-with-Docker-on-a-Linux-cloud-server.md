@@ -62,11 +62,12 @@ We have a multi-line Docker command that we need to run, and we’ll demonstrate
 We’ll run the following Docker run command:
 
 <Highlighter
-input={`sudo docker run -d --publish 80:7080 --publish 443:7443 \
+input='sudo docker run -d --publish 80:7080 \
+--publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
-sourcegraph/server:3.30.4`}
+sourcegraph/server:3.30.4'
 language='bash'
 />
 
