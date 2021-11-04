@@ -18,6 +18,8 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "baseUrl": ".",
+    "outDir": "builds",
+    "incremental": true,
     "paths": {
       "@components/*": [
         "components/*"
