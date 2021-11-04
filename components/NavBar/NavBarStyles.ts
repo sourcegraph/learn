@@ -48,7 +48,7 @@ export const StyledNavBarContainer = styled.div`
 `
 
 export const StyledNavBarLogoLink = styled.a`
-    color: #000;
+    color: var(--text-color);
     font-size: 1.25rem;
     margin-right: 1rem;
     padding: .3125rem 0;
@@ -66,7 +66,7 @@ export const StyledNavBarMobileToggle = styled.button`
     border: 1px solid #d0d2d4;
     border-radius: .25rem;
     cursor: pointer;
-    color: #000;
+    color: var(--text-color);
     display: none;
     opacity: .55;
     font-size: 1.25rem;
@@ -83,7 +83,7 @@ export const StyledNavBarMobileToggle = styled.button`
     }
 `
 export const StyledNavBarMobileIcon = styled.span`
-    color: #000;
+    color: var(--text-color);
     cursor: pointer;
     display: inline-block;
     font-size: 1.25rem;
@@ -121,14 +121,14 @@ export const StyledNavBarItemsContainer = styled.div`
     }
 `
 export const StyledNavBarItemLink = styled.a`
-    color: #000;
+    color: var(--text-color);
     display: block;
     opacity: .55;
     padding: .5rem;
     text-decoration: none;
 
     :hover {
-        color: #000;
+        color: var(--text-color);
         opacity: unset;
     }
 
@@ -152,7 +152,7 @@ export const StyledNavBarDropDownContainer = styled.div`
 `
 export const StyledNavBarDropDownToggle = styled.div<Props>`
     align-items: center;
-    color: #000;
+    color: var(--text-color);
     cursor: pointer;
     display: flex;
     opacity: ${props => props.expandDropdown
@@ -163,7 +163,7 @@ export const StyledNavBarDropDownToggle = styled.div<Props>`
     white-space: nowrap;
 
     :hover {
-        color: #000;
+        color: var(--text-color);
     }
 
     @media screen and (max-width: 768px) {

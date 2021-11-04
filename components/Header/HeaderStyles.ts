@@ -55,9 +55,7 @@ export const StyledHeaderText = styled.div`
     }
 `
 export const StyledHeaderTextContainer = styled.div<Props>`
-    color: ${props => props.isRecordIndex
-        ? '#fff'
-        : '#000'};
+    color: var(--text-color);
     font-size: 2.2rem;
     font-weight: 500;
     display: flex;
@@ -80,7 +78,7 @@ export const StyledHeaderTextContainerAnimated = styled(StyledHeaderTextContaine
         right: 0;
         width: 50%;
         height: 100%;
-        background: #fff;
+        background: var(--background-color);
         animation: ${textBefore} 2s cubic-bezier(.77,0,.18,1) forwards;
         transform: translateX(0);
     }

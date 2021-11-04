@@ -6,7 +6,7 @@ export const StyledCardLink = styled.a`
     display: flex;
     flex-direction: column;
     min-width: 0;
-    background-color: #fff;
+    background-color: var(--background-color);
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
