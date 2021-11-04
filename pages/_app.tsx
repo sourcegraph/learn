@@ -37,7 +37,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
     <AppWrapper>
         <>
             <GoogleTagManagerScriptTag />
-            <Script strategy='lazyOnload'>
+            <Script id="Swiftype" strategy='lazyOnload'>
             {`
                 (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
                     (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
