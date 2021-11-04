@@ -10,6 +10,17 @@ h6 {
     line-height: 1.2;
 }
 
+body {
+    font-family: "Open Sans","Arial","Helvetica",sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .015rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: all .3s linear;
+}
+
 table {
     line-height: 2;
 

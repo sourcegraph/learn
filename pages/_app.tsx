@@ -1,6 +1,4 @@
 import { GoogleTagManagerScriptTag } from '@components/atoms/GoogleTagManager'
-import { GlobalStyles } from '@components/themes/globalStyles'
-import { lightTheme, darkTheme } from '@components/themes/themes'
 import { ThemeContext } from '@hooks/contexts/theme'
 import useDarkMode from '@hooks/darkMode'
 import { AppProps } from 'next/app'
@@ -15,29 +13,20 @@ interface Props {
 
 const AppWrapper: FunctionComponent<Props> = ({ children }) => {
     const theme = useDarkMode()
-    const themeStyles = theme.theme === 'light'
-        ? lightTheme
-        : darkTheme
-
-    if (!theme.mounted) {
-        return (
-            <div />
-        )
-    }
 
     return (
         <ThemeContext.Provider value={theme}>
-            <GlobalStyles text={themeStyles.text} background={themeStyles.background} />
             {children}
         </ThemeContext.Provider>
     )
 }
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
-    <AppWrapper>
-        <>
+    <>
+        <Script strategy='beforeInteractive' type='text/javascript' src='/static/theme.js' />
+        <AppWrapper>
             <GoogleTagManagerScriptTag />
-            <Script id="Swiftype" strategy='lazyOnload'>
+            <Script id='Swiftype' strategy='lazyOnload'>
             {`
                 (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
                     (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
@@ -48,9 +37,8 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
             `}
             </Script>
             <Component {...pageProps} />
-
-        </>
-    </AppWrapper>
+        </AppWrapper>
+    </>
 )
 
 export default App

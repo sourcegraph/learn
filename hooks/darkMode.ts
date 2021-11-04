@@ -3,37 +3,47 @@ import { useState, useEffect, useCallback } from 'react'
 
 export const useDarkMode = (): DarkModeHookObject => {
     const [theme, setTheme] = useState<string>('light')
-    const [mounted, setMounted] = useState<boolean>(false)
+    const isDark = theme === 'dark'
 
     const setCurrentTheme = (theme: string): void => {
         window.localStorage.setItem('theme', theme)
         setTheme(theme)
     }
 
-    const checkLocal = useCallback(() => {
-        const localTheme = window.localStorage.getItem('theme')
+    const updateTheme = useCallback(() => {
+        const root = document.documentElement
+        if (isDark) {
+            root.style.setProperty('--text-color', '#fff')
+            root.style.setProperty('--background-color', '#14171f')
+        } else {
+            root.style.setProperty('--text-color', '#212529')
+            root.style.setProperty('--background-color', '#fff')
+        }
+
+    }, [isDark])
+
+    const checkLocalInitial = useCallback(() => {
+        const localTheme = getComputedStyle(document.documentElement).getPropertyValue('--theme')
         return localTheme
             ? setCurrentTheme(localTheme)
             : setCurrentTheme('light')
     }, [])
 
-    const toggleTheme = (): void => theme === 'light'
-        ? setCurrentTheme('dark')
-        : setCurrentTheme('light')
+    const toggleTheme = (): void => isDark ?
+        setCurrentTheme('light')
+        : setCurrentTheme('dark')
 
     useEffect(() => {
-        checkLocal()
-        setMounted(true)
-    }, [checkLocal])
+        checkLocalInitial()
+    }, [checkLocalInitial])
 
     useEffect(() => {
-        checkLocal()
-    }, [theme, checkLocal])
+        updateTheme()
+    }, [theme, updateTheme])
 
     return {
         theme,
-        toggleTheme,
-        mounted
+        toggleTheme
     }
 }
 
