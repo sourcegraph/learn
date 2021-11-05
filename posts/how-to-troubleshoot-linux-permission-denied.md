@@ -13,9 +13,8 @@ type: posts
 
 If you are working on a Linux terminal and you receive the following output, you are probably trying to work with a file where the permissions have not been properly configured.
 
-<Highlighter
+<OutputHighlighter
 input='<filename>: Permission denied'
-language='bash'
 />
 
 In this tutorial, we'll reproduce this error, go over what's causing it, and provide solutions for how you can fix it.
@@ -30,7 +29,7 @@ With that word of caution, let's get started.
 
 We'll be using the `chmod` command to modify permissions of a temporary file to cause the `Permission denied` error, and then rectify the error explaining each step of the process.
 
-Start by creating a temporary file to test with; we'll fill it with random data/
+Start by creating a temporary file to test with; we'll fill it with random data:
 
 <Highlighter
 input='echo "Hello World" > test-file.txt'
@@ -48,10 +47,9 @@ language='bash'
 
 Depending on what else is in your working directory, you may have several lines of output, but you should be able to identify the file we just created, and review output for that line that is similar to the following.
 
-<Highlighter
+<OutputHighlighter
 input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-language='bash'
-matcher='your-user your-user'
+matcher='your-user'
 />
 
 We're interested in the first column of this output — the text `rw-r--r--` — which represents the permissions of this newly created file. Let's break this down into three parts.
@@ -90,10 +88,9 @@ language='bash'
 
 Now, review the updated file permissions, using the `ls -l` command as before. You will receive output next to that file that is similar to the following. 
 
-<Highlighter
+<OutputHighlighter
 input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-language='bash'
-matcher='your-user your-user'
+matcher='your-user'
 />
 
 Notice that the file permissions for the owner (and other groups) have been modified. The missing `r` permission for all groups indicates that no one can
@@ -108,9 +105,8 @@ language='bash'
 
 Once you enter the above command, you'll receive the `Permission denied` error message.
 
-<Highlighter
+<OutputHighlighter
 input='cat: test-file.txt: Permission denied'
-language='bash'
 />
 
 Since no one can read the file anymore, the command fails with an error. You can try opening the file with a text editor or any other application, and you will still arrive at the same result.
@@ -130,10 +126,9 @@ matcher='test-file.txt'
 
 To verify that the file has now has read permissions, we'll use `ls -l`. This should display output similar to the following.
 
-<Highlighter
+<OutputHighlighter
 input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-language='bash'
-matcher='your-user your-user'
+matcher='your-user'
 />
 
 Notice the added `r` permission for every group; this indicates that every user group can read the file.
@@ -147,9 +142,8 @@ language='bash'
 
 The command should now display the contents of the file to your terminal.
 
-<Highlighter
+<OutputHighlighter
 input='Hello World'
-language='bash'
 />
 
 This output verifies that the file can be read normally.
@@ -172,10 +166,9 @@ Like with many situations in Linux, using the magic word `sudo` will allow you t
 
 We'll be continuing with the original example, `test-file.txt`, with the following permissions.
 
-<Highlighter
+<OutputHighlighter
 input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-language='bash'
-matcher='your-user your-user'
+matcher='your-user'
 />
 
 Notice that no user has the *read* permission on this file. We can verify this using `cat`
@@ -185,9 +178,8 @@ input='cat test-file.txt'
 language='bash'
 />
 
-<Highlighter
+<OutputHighlighter
 input='cat: test-file.txt: Permission denied'
-language='bash'
 />
 
 As expected, no one — including your current users — can read the file.
@@ -201,9 +193,8 @@ language='bash'
 
 Using the `sudo` command will open the file up to us. 
 
-<Highlighter
+<OutputHighlighter
 input='Hello World'
-language='bash'
 />
 
 Even though no one can read the file, using `sudo`, we can read the file directly without having to modify the file permissions. The same goes for being able to write-to, or execute a file directly without needing the appropriate permissions.

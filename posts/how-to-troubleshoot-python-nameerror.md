@@ -13,9 +13,8 @@ type: posts
 
 If you are working in Python, and receive the following output, your code is attempting to access an identifier that is not defined. This could be in either the local or global scope of the program.
 
-<Highlighter
+<OutputHighlighter
 input={`NameError: name 'spam' is not defined`}
-language='python'
 />
 
 In this tutorial, we'll reproduce the issue and then go over some solutions.
@@ -37,15 +36,14 @@ This small program creates a function that reads a spam message from the user an
 
 If the program had `print` as it was meant to be, then the output is as indicated below.
 
-<Highlighter
+<OutputHighlighter
 input={`Enter a spam message: It's a spam!!
 It's a spam!!`}
-language='bash'
 />
 
 With the misspelled function `prnt`, we are able to reproduce the `NameError`.
 
-<Highlighter
+<OutputHighlighter
 input={`Enter a spam message: It's a spam!!
 Traceback (most recent call last):
   File "name_error.py", line 5, in <module>
@@ -53,7 +51,6 @@ Traceback (most recent call last):
   File "name_error.py", line 3, in handler
     prnt(spam)
 NameError: name 'prnt' is not defined`}
-language='bash'
 />
 
 There are several causes for the Python `NameError`, which we'll describe in more detail below.
@@ -80,9 +77,8 @@ language='python'
 
 In this case, you'll receive output similar to the following.
 
-<Highlighter
+<OutputHighlighter
 input={`NameError: name 'b' is not defined`}
-language='bash'
 />
 
 One way to recover from this error would be to ensure that you are only calling defined variables, or to define the missing variable after receiving the above error. 
@@ -100,9 +96,8 @@ language='python'
 Here, you will receive the guidance that `a` is not defined. 
 
 
-<Highlighter
+<OutputHighlighter
 input={`NameError: name 'a' is not defined`}
-language='bash'
 />
 
 In these cases, you can be sure that you define variables prior to usage. You will often want to define all variables early on in the writing of your program.
@@ -123,12 +118,11 @@ language='python'
 
 Because we have attempted to use `spam` within a global context outside of the function it belongs to, we receive the following `NameError` message as output, which states that `spam` is not defined.
 
-<Highlighter
+<OutputHighlighter
 input={`Traceback (most recent call last):
   File "name_error.py", line 6, in <module>
     print(spam)
 NameError: name 'spam' is not defined`}
-language='bash'
 />
 
 In this case, we coud rewrite the program to make `spam` a global variable, defining it outside of the context of the `handler()` function. This ensures that both the function and the rest of the program can access the `spam` variable.
@@ -167,9 +161,8 @@ language='python'
 
 Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `NameError` that we have anticipated. 
 
-<Highlighter
+<OutputHighlighter
 input='You are attempting to access an identifier that is not defined in the local or global scope.'
-language='bash'
 />
 
 In this example, we have told the user that they cannot use an identifier that is not defined, because they are calling the `spam` variable prior to defining it.
