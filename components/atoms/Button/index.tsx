@@ -8,6 +8,7 @@ interface Props {
     children?: ReactNode
     target?: string
     rel?: string
+    onClick?: () => void
 }
 
 const Button: FunctionComponent<Props> = props => (
@@ -15,7 +16,8 @@ const Button: FunctionComponent<Props> = props => (
         href={props.href} 
         target={props.target} 
         rel={props.rel}
-        className={props.className}>
+        className={props.className}
+        onClick={props.onClick}>
         {props.children}
     </StyledButton>
 )

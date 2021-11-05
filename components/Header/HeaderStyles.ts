@@ -1,5 +1,9 @@
 import styled, { keyframes } from 'styled-components'
 
+interface Props {
+    isRecordIndex?: boolean
+}
+
 const logoAnimation = keyframes`
     from {
         transform: rotate(0deg);
@@ -50,7 +54,10 @@ export const StyledHeaderText = styled.div`
         margin-left: 0;
     }
 `
-export const StyledHeaderTextContainer = styled.div`
+export const StyledHeaderTextContainer = styled.div<Props>`
+    color: ${props => props.isRecordIndex
+        ? '#fff'
+        : '#000'};
     font-size: 2.2rem;
     font-weight: 500;
     display: flex;
@@ -97,5 +104,23 @@ export const StyledHeaderSharedContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         margin-top: 3.125rem;
+    }
+`
+export const StyledHeaderCard = styled.div`
+    align-items: center;
+    background-image: url("https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png");
+    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.15);
+    flex-grow: 1;
+    display: flex;
+    min-height: 15.625rem;
+    margin: 0 .75rem 2rem;
+
+    @media screen and (max-width: 768px) {
+        width: 97%;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: unset;
+        width: 92%;
     }
 `
