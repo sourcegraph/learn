@@ -288,10 +288,11 @@ language='bash'
 />
 
 The compiler terminates the execution of the code when it encounters the `NegativeArraySizeException` in the try block at line 8 and executes the catch block which will print a message to the user and continue execution by taking the input again.
+
 ## Learn more
 
 Search across open source Java repositories that have the `NegativeArraySizeException` to understand the message more.
 
-<SourcegraphSearch query=NegativeArraySizeException lang:java" patternType="literal"/>
+<SourcegraphSearch query="NegativeArraySizeException lang:java" patternType="literal"/>
 
 Check out more Sourcegraph Learn tutorials on [Java](https://learn.sourcegraph.com/tags/java).
