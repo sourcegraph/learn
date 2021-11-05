@@ -126,7 +126,7 @@ The compiler throws the ‘NegativeArraySizeException’ when the input for eith
 
 <Highlighter
 input={` 
-
+ 
     Enter the starting position and ending position
     -1
     -7
@@ -141,31 +141,30 @@ The **Maths class** of the **Java.lang package** contains the **abs()** method, 
 
 A user might only enter a negative input unknowingly, thus ignoring the sign while initializing the array size is a good way to troubleshoot this, for example-
 <Highlighter
-input={`
-
-      import java.util.Arrays;
-      import java.io.*; 
-      class sorting
-       {
-         public static void main(String [] args) throws IOException
-          {
-            System.out.println("The sorted array is"+ Arrays.toString(input()));
-          }
-              static int[] input()throws IOException //A function to accept input from the user
-               {
-                 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-                 System.out.println("Enter the array size");
-                 int size=Math.abs( Integer.parseInt(br.readLine()) ); //Accepting the size of the array from the user
-                 int[] arr= new int[size];
-                 
-                 System.out.println("Now Enter the elements one by one that are to be sorted");
-                 for(int i=0;i<size;i++)
-                   { arr[i]=Integer.parseInt(br.readLine()); }
-                 Arrays.sort(arr);
-                return arr;
-               }
-        }
-  `}
+input={`import java.util.Arrays;
+import java.io.*;
+ 
+class sorting
+    {
+      public static void main(String [] args) throws IOException
+      {
+        System.out.println("The sorted array is"+ Arrays.toString(input()));
+      }
+          static int[] input()throws IOException //A function to accept input from the user
+            {
+              BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+              System.out.println("Enter the array size");
+              int size=Math.abs( Integer.parseInt(br.readLine()) ); //Accepting the size of the array from the user
+              int[] arr= new int[size];
+              
+              System.out.println("Now Enter the elements one by one that are to be sorted");
+              for(int i=0;i<size;i++)
+                { arr[i]=Integer.parseInt(br.readLine()); }
+              Arrays.sort(arr);
+            return arr;
+            }
+    }
+`}
 language='java'
 />
 
@@ -173,126 +172,118 @@ Here the negative input is converted to a positive one and the array is initiali
 Now we get a valid output-
 
 <Highlighter
-input={` 
-
-    Enter the array size
-    -5
-    Now Enter the elements one by one that are to be sorted
-    -100
-    0
-    55000
-    45
-    2
-    The sorted array is[-100, 0, 2, 45, 55000]
-   `}
+input={`Enter the array size
+-5
+Now Enter the elements one by one that are to be sorted
+-100
+0
+55000
+45
+2
+The sorted array is[-100, 0, 2, 45, 55000]
+`}
 language='bash'
 />
 
 For the second example, using the abs() function in the arithmetic expression troubleshoots this error.
 <Highlighter
-input={`
-
-    import java.util.Arrays;
-    import java.io.*;
-    class speeds
+input={`import java.util.Arrays;
+import java.io.*;
+ 
+class speeds
+{
+    public static void main(String [] args) throws IOException
     {
-       public static void main(String [] args) throws IOException
-       {
-        System.out.println("The speeds in m/s are\n"+Arrays.toString(speed_input()));
-       }
-       
-       static int[] speed_input()throws IOException //A function to accept input from the user
-        {
-          BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-          System.out.println("Enter the starting position and ending position");
-          int start=Integer.parseInt(br.readLine()); //accepting the starting position
-          int end=Integer.parseInt(br.readLine());  // and ending position from the user
-        
-         int size=(Math.abs(end-start)/2)+1;
-           if((end-start)%2 !=0)  //If the input is an even-odd pair..
-               size++;
-         int[] speed= new int[size];
-         System.out.println("Now Enter the speeds in m/s one after the other");
-         for(int i=0;i<size;i++)
-         { speed[i]=Integer.parseInt(br.readLine()); }
-         
-         return speed;
-         } //closes speed_input method
+    System.out.println("The speeds in m/s are\n"+Arrays.toString(speed_input()));
     }
-  `}
+    
+    static int[] speed_input()throws IOException //A function to accept input from the user
+    {
+      BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+      System.out.println("Enter the starting position and ending position");
+      int start=Integer.parseInt(br.readLine()); //accepting the starting position
+      int end=Integer.parseInt(br.readLine());  // and ending position from the user
+    
+      int size=(Math.abs(end-start)/2)+1;
+        if((end-start)%2 !=0)  //If the input is an even-odd pair..
+            size++;
+      int[] speed= new int[size];
+      System.out.println("Now Enter the speeds in m/s one after the other");
+      for(int i=0;i<size;i++)
+      { speed[i]=Integer.parseInt(br.readLine()); }
+      
+      return speed;
+      } //closes speed_input method
+}
+`}
 language='java'
 />
 
 <Highlighter
-input={` 
-
-    Enter the starting position and ending position
-    -1
-    -7
-    Now Enter the speeds in m/s one after the other
-     0
-    20
-    40
-    80
-    The speeds in m/s are
-    [0, 20, 40, 80]
-   `}
+input={`Enter the starting position and ending position
+-1
+-7
+Now Enter the speeds in m/s one after the other
+  0
+20
+40
+80
+The speeds in m/s are
+[0, 20, 40, 80]
+`}
 language='bash'
 />
 
 ## Use try&catch block
 Using **try and catch block** for the user input is the best way to handle such(and many other) exceptions as shown below-
 <Highlighter
-input={`
-
-      import java.util.Arrays;
-      import java.io.*; 
-      class sorting
-       {
-         public static void main(String [] args) throws IOException
+input={`import java.util.Arrays;
+import java.io.*;
+ 
+class sorting
+{
+    public static void main(String [] args) throws IOException
+    {
+      try {
+        System.out.println("The sorted array is"+ Arrays.toString(input()));
+          } 
+          catch (NegativeArraySizeException e)
           {
-           try {
-              System.out.println("The sorted array is"+ Arrays.toString(input()));
-               } 
-               catch (NegativeArraySizeException e)
-               {
-                 System.out.println("Array size cannot be negative, please try again");
-                 System.out.println("The sorted array is"+ Arrays.toString(input()));
-                }
-           }
-              static int[] input()throws IOException //A function to accept input from the user
-               {
-                 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-                 System.out.println("Enter the array size");
-                 int size=Integer.parseInt(br.readLine()); //Accepting the size of the array from the user
-                 int[] arr= new int[size];
-                 
-                 System.out.println("Now Enter the elements one by one that are to be sorted");
-                 for(int i=0;i<size;i++)
-                   { arr[i]=Integer.parseInt(br.readLine()); }
-                 Arrays.sort(arr);
-                return arr;
-               }
-        }
-  `}
+            System.out.println("Array size cannot be negative, please try again");
+            System.out.println("The sorted array is"+ Arrays.toString(input()));
+          }
+      }
+        static int[] input()throws IOException //A function to accept input from the user
+          {
+            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter the array size");
+            int size=Integer.parseInt(br.readLine()); //Accepting the size of the array from the user
+            int[] arr= new int[size];
+            
+            System.out.println("Now Enter the elements one by one that are to be sorted");
+            for(int i=0;i<size;i++)
+              { arr[i]=Integer.parseInt(br.readLine()); }
+            Arrays.sort(arr);
+          return arr;
+          }
+  }
+`}
 language='java'
 />
 
-input={` 
-
-    Enter the array size
-    -5
-    Array size cannot be negative, please try again
-    Enter the array size
-    5
-    Now Enter the elements one by one that are to be sorted
-    -100
-    0
-    55000
-    45
-    2
-    The sorted array is[-100, 0, 2, 45, 55000]
-   `}
+input={`Enter the array size
+-5
+Array size cannot be negative, please try again
+Enter the array size
+5
+Now Enter the elements one by one that are to be sorted
+-100
+0
+55000
+45
+2
+The sorted array is[-100, 0, 2, 45, 55000]
+`}
 language='bash'
 />
 
