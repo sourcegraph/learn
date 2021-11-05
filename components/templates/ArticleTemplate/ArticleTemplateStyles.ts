@@ -34,18 +34,20 @@ export const StyledMarkdownWrapper = styled.div`
         font-size: inherit;
         color: #000000;
         background: #e7e7e7;
+        overflow: scroll;
     }
 
     p {
         overflow-wrap: break-word;
     }
-    
+
     pre {
         background-color: #e7e7e7;
         overflow: auto;
         font-family: 'Monaco', monospace;
-        padding: 10px;
         border-radius:10px;
+        margin: .5rem 0;
+        padding: 1.2rem .5rem;
     }
 
     img {
