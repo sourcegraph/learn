@@ -3,111 +3,122 @@ title: How to troubleshoot Java error: NegativeArraySizeException
 authorSlug: ml-narayana-rao
 authorDisplayName: M.L. Narayana Rao
 tags: [tutorial, Java, troubleshooting]
-publicationDate: today's date
-description: Learn how to error handle the Java error: NegativeArraySizeException
+publicationDate: November 5, 2021
+description: Learn how to error handle the Java error NegativeArraySizeException
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
 browserTitle: NegativeArraySizeException in Java error handling
 type: posts
 ---
 
-**NegativeArraySizeException** is a run time exception thrown by the compiler if the Array size is initialized with a negative integer. As the input given while initializing the array size is an integer, a negative integer is also a valid input as the compiler only checks if the given input is an integer or not. The compiler throws this exception during the run time as an array size cannot be less than Zero. The exception appears as follows-
+The Java `NegativeArraySizeException` is a runtime exception thrown by the compiler if the array size is initialized with a negative integer. As the input given while initializing the array size is an integer, a negative integer is also a valid input as the compiler only checks if the given input is an integer or not. The compiler throws this exception during the runtime as an array size cannot be less than zero. 
+
+You may encounter the exception as follows.
 
 <Highlighter
 input={`
-         
+ 
          Exception in thread "main" java.lang.NegativeArraySizeException: -2
          at example.main(example.java:6) 
    `}
 language='bash'
 />
 
-## Reproducing the error
-This error can arise either when the user inputs a negative integer for the array size or the array size is the result of a mathematical expression(or an arithmetic operation). Let’s consider both cases-
-## User Input
+This error can arise either when the user inputs a negative integer for the array size or the array size is the result of a mathematical expression(or an arithmetic operation). Let’s consider both cases.
 
-This error arises when the array length is initialized with a negative input by the user, the below code is one such example
+## Reproducing the error — user input
+
+This error arises when the array length is initialized with a negative input by the user.
 
 The following program accepts the size of an array and the array elements from the user and then returns a sorted array.
 
 <Highlighter
-input={`
-
-      import java.util.Arrays;
-      import java.io.*; 
-      class sorting
-       {
-         public static void main(String [] args) throws IOException
-          {
-            System.out.println("The sorted array is"+ Arrays.toString(input()));
-          }
-              static int[] input()throws IOException //A function to accept input from the user
-               {
-                 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-                 System.out.println("Enter the array size");
-                 int size=Integer.parseInt(br.readLine()); //Accepting the size of the array from the user
-                 int[] arr= new int[size];
-                 
-                 System.out.println("Now Enter the elements one by one that are to be sorted");
-                 for(int i=0;i<size;i++)
-                   { arr[i]=Integer.parseInt(br.readLine()); }
-                 Arrays.sort(arr);
-                return arr;
-               }
+input={`import java.util.Arrays;
+import java.io.*; 
+ 
+    class sorting
+      {
+        public static void main(String [] args) throws IOException
+        {
+          System.out.println(
+            "The sorted array is " + Arrays.toString(
+              input())
+          );
         }
-  `}
+            static int[] input()throws IOException // A function to accept input from the user
+              {
+                BufferedReader br=new BufferedReader(
+                  new InputStreamReader(System.in)
+                );
+                System.out.println("Enter the array size");
+                int size=Integer.parseInt(
+                  br.readLine()
+                ); // Accepting the size of the array from the user
+                int[] arr= new int[size];
+                
+                System.out.println(
+                  "Now Enter the elements one by one that are to be sorted"
+                );
+                for(int i=0;i<size;i++)
+                  { arr[i]=Integer.parseInt(br.readLine()); }
+                Arrays.sort(arr);
+              return arr;
+              }
+      }
+ `}
 language='java'
 />
 
-This is a simple program to accept an array from the user and to display the sorted array. Now let's enter a negative input for the array size, this produces the **NegativeArraySizeException** as shown below
+This is a program that accepts an array from the user and will sort and output the array. Now, let's enter a negative input for the array size, this produces the **NegativeArraySizeException** as below.
  
  <Highlighter
-input={` 
-
-         Enter the array size
-         -5
-         Exception in thread "main" java.lang.NegativeArraySizeException: -5
-         at sorting.input(sorting.java:14)
-         at sorting.main(sorting.java:7)
-   `}
+input={`Enter the array size
+-5
+Exception in thread "main" java.lang.NegativeArraySizeException: -5
+at sorting.input(sorting.java:14)
+at sorting.main(sorting.java:7)`}
 language='bash'
 />
 
-## Arithmetic input
+This program has thrown an error due to input from the user not having been anticipated by the program. 
+
+## Reproducing the error — arithmetic input
+
 This error arises when the array size is initialized with an arithmetic result. Let's consider an example to understand.
 
-Write a program to store the speeds of a body in the uniform intervals of 2m from the starting to the ending positions during its journey in either direction of X&Y axes.
+We'll write a program to store the speeds of a body in the uniform intervals of 2M from the starting to the ending positions during its journey in either direction of `X` and `Y` axes.
 
 <Highlighter
-input={`
-
-    import java.util.Arrays;
-    import java.io.*;
-    class speeds
+input={`import java.util.Arrays;
+import java.io.*;
+ 
+class speeds
+{
+    public static void main(String [] args) throws IOException
     {
-       public static void main(String [] args) throws IOException
-       {
-        System.out.println("The speeds in m/s are\n"+Arrays.toString(speed_input()));
-       }
-       static int[] speed_input()throws IOException //A function to accept input from the user
-        {
-          BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-          System.out.println("Enter the starting position and ending position");
-          int start=Integer.parseInt(br.readLine()); //accepting the starting position
-          int end=Integer.parseInt(br.readLine());  // and ending position from the user
-        
-         int size=((end-start)/2)+1;
-           if((end-start)%2 !=0)  //If the input is an even-odd pair..
-               size++;
-         int[] speed= new int[size];
-         System.out.println("Now Enter the speeds in m/s one after the other");
-         for(int i=0;i<size;i++)
-         { speed[i]=Integer.parseInt(br.readLine()); }
-         
-         return speed;
-         } //closes speed_input method
+    System.out.println(
+      "The speeds in m/s are\n " + Arrays.toString(speed_input())
+    );
     }
-  `}
+    static int[] speed_input()throws IOException // A function to accept input from the user
+    {
+      BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+      System.out.println("Enter the starting position and ending position");
+      int start=Integer.parseInt(br.readLine()); // accepting the starting position
+      int end=Integer.parseInt(br.readLine());  // and ending position from the user
+    
+      int size=((end-start)/2)+1;
+        if((end-start)%2 !=0)  // If the input is an even-odd pair
+            size++;
+      int[] speed= new int[size];
+      System.out.println("Now Enter the speeds in m/s one after the other ");
+      for(int i=0;i<size;i++)
+      { speed[i]=Integer.parseInt(br.readLine()); }
+      
+      return speed;
+      } //closes speed_input method
+}
+`}
 language='java'
 />
 
