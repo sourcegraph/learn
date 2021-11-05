@@ -1,5 +1,5 @@
 ---
-title: How to troubleshoot Java error: NegativeArraySizeException
+title: How to troubleshoot Java error NegativeArraySizeException
 authorSlug: ml-narayana-rao
 authorDisplayName: M.L. Narayana Rao
 tags: [tutorial, Java, troubleshooting]
