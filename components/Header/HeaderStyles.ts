@@ -55,7 +55,9 @@ export const StyledHeaderText = styled.div`
     }
 `
 export const StyledHeaderTextContainer = styled.div<Props>`
-    color: var(--text-color);
+    color: ${props => props.isRecordIndex
+        ? '#fff'
+        : '(--text-color)'};
     font-size: 2.2rem;
     font-weight: 500;
     display: flex;
