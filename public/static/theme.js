@@ -1,7 +1,14 @@
 (function () {
     const localTheme = window.localStorage.getItem('theme')
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    const prefersDarkFromMQ = mql.matches
     const isDark = localTheme === 'dark'
     const root = document.documentElement
+    if (prefersDarkFromMQ && !localTheme) {
+        root.style.setProperty('--theme', 'dark')
+        root.style.setProperty('--text-color', '#fff')
+        root.style.setProperty('--background-color', '#14171f')
+    }
     if (localTheme) {
         root.style.setProperty('--theme', localTheme)
         if (isDark) {
