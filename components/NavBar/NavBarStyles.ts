@@ -210,3 +210,6 @@ export const StyledNavBarDropDownItem = styled.a`
         color: #212529;
     }
 `
+export const StyledButtonsWrapper = styled.div`
+    display: flex;
+`

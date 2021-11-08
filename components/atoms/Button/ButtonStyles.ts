@@ -4,7 +4,7 @@ export const StyledButton = styled.a`
     background-color: transparent;
     border-radius: .25rem;
     border: 1px solid transparent;
-    color: #000;
+    color: var(--text-color);
     cursor: pointer;
     display: inline-block;
     font-size: 1rem;
@@ -35,12 +35,6 @@ export const StyledButton = styled.a`
     &.small {
         font-size: 12px;
         padding: .563rem;
-    }
-
-    &.header-cta {
-        color: white;
-        background-color: #a112ff;
-        max-width: 50%;
     }
 
     &.outline-primary {
@@ -77,6 +71,14 @@ export const StyledButton = styled.a`
             color: #5033e1;
             background-color: #fff;
             border-color: #5033e1;
+        }
+    }
+
+    &.flex {
+        display: flex;
+        
+        :hover {
+            color: #5033e1;
         }
     }
 `

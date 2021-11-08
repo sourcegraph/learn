@@ -1,6 +1,7 @@
 import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
 import { ThemeContext } from '@hooks/contexts/theme'
+import LighteningBoltOutlineIcon from 'mdi-react/LightningBoltOutlineIcon'
 import MenuIcon from 'mdi-react/MenuIcon'
 import { FunctionComponent, useState, useContext } from 'react'
 
@@ -14,6 +15,7 @@ import {
     StyledNavBarItemsWrapper,
     StyledNavBarItemsContainer,
     StyledNavBarItemLink,
+    StyledButtonsWrapper,
 } from './NavBarStyles'
 
 const NavBar: FunctionComponent = () => {
@@ -45,7 +47,7 @@ const NavBar: FunctionComponent = () => {
                         </StyledNavBarItemLink>
                         <SiteSearch />
                     </StyledNavBarItemsContainer>
-                    <div>                
+                    <StyledButtonsWrapper>                
                         <Button 
                             href="https://sourcegraph.com/search" 
                             className="outline-primary"
@@ -54,13 +56,14 @@ const NavBar: FunctionComponent = () => {
                             Search on Sourcegraph
                         </Button>
                         <Button
-                            className="outline-primary"
+                            className="flex"
                             target="_blank"
                             rel="noreferrer"
                             onClick={() => theme.toggleTheme()}>
+                            <LighteningBoltOutlineIcon />
                             Dark Mode
                         </Button>                        
-                    </div>
+                    </StyledButtonsWrapper>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
         </StyledNavBarWrapper>
