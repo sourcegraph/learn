@@ -45,7 +45,7 @@ export const StyledTocWrapperBody = styled.div<Props>`
             text-decoration: none;
 
             :hover {
-                color: #000;
+                color: var(--text-color);
                 opacity: 1;
             }
         }
@@ -55,12 +55,12 @@ export const StyledTocWrapperBody = styled.div<Props>`
 export const StyledHeaderTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
-        : '#fff'};
+        : 'transparent'};
     padding: .4rem 0;
 `
 export const StyledTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
-        : '#fff'};
+        : 'transparent'};
     padding: .2rem 1.5rem;
 `

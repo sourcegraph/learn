@@ -7,7 +7,7 @@ export const StyledHeaderImage = styled.img`
     width: 100%;
 `
 export const StyledAuthorByline = styled.a`
-    color: #212529;
+    color: var(--text-color);
     margin: 0 0 0.5rem;
     text-decoration: none;
 

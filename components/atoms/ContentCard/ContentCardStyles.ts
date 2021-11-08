@@ -11,7 +11,7 @@ export const StyledCardTitle = styled.h5`
     font-size: 1.25rem;
 
     :hover {
-        color: #212529;
+        color: var(--text-color);
     }
 `
 export const StyledCardTagList = styled.p`

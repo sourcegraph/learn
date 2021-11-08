@@ -27,7 +27,7 @@ export const StyledButton = styled.a`
 
         :hover {
             color: #5033e1;
-            background-color: #fff;
+            background-color: transparent;
             border-color: #5033e1;
         }
     }
