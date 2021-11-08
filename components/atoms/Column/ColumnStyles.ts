@@ -23,13 +23,13 @@ export const StyledColumn = styled.div`
 
     &.flex-small {
         flex: 0 0 auto;
-        width: 25%;
+        width: 20%;
     }
 
     &.flex-medium {
         flex: 0 0 auto;
         flex-direction: column;
-        width: 50%;
+        width: 60%;
 
         @media screen and (max-width: 1024px) {
             width: 100%;
