@@ -118,9 +118,11 @@ In the website code, the front-matter data is accessible as the [`frontMatter`](
 
 ## Code blocks
 
-When adding code blocks to your file, you can use the `<Highlighter>` component, which will allow you to pass a language selection for syntax highlighting, as well as a `matcher` input for any code you would like to emphasize (the code is styled as a `<mark>` element). 
+### Code
 
-The component looks like this:
+When working with code blocks, we use two components: `<Highlighter>` anbd `<OutputHighlighter>`. `<Highlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular language (including `bash`). We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
+
+The `<Highlighter>` component looks like this:
 
 ```
 <Highlighter
@@ -134,12 +136,25 @@ When you have input with line spacing that you would like to preserve, use a tem
 ```
 <Highlighter
     input={`Your code input
-     // Be sure to add a space here!
+     // Be sure to add a space bar space here!
     with multiple lines`} 
     language='Your language here'
     matcher='The code you would like to highlight (optional)'
 />
 ```
+
+### Output
+
+When displaying output, please use the `<OutputHighlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
+
+```
+<OutputHighlighter
+    input='Your code here'
+    matcher='The code you would like to highlight (optional)'
+/>
+```
+
+The points about spacing above also apply to this component.
 
 ## Deploy previews (staging branches)
 
