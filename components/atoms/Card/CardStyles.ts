@@ -19,6 +19,7 @@ export const StyledCard = styled.div<Props>`
         ? '1px solid rgba(0,0,0,.125)'
         : ''};
     border-radius: .25rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     margin: ${props => props.addMargin
         ? '1.5rem 0'
         : '0'};

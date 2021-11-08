@@ -13,9 +13,8 @@ type: posts
 
 If you are working on a Linux terminal and you receive the following output, you are probably trying to access a file from the wrong directory. 
 
-<Highlighter
+<OutputHighlighter
 input='No such file or directory'
-language='bash'
 />
 
 In this tutorial, we'll reproduce the issue and then go over some solutions. Before we get started, you should ensure that you have correct filename and that it is free from typos.
@@ -58,12 +57,11 @@ language='bash'
 
 In this case, our ouput will be the following.
 
-<Highlighter
+<OutputHighlighter
 input='Hello, World'
-language='bash'
 />
 
-Now, let's try to acess the file with an incorrect path.
+Now, let's try to access the file with an incorrect path.
 
 <Highlighter
 input='cat bar.txt'
@@ -72,9 +70,8 @@ language='bash'
 
 Because we have not changed directories into the `foo` directory, we'll receive the following output.
 
-<Highlighter
+<OutputHighlighter
 input='cat: bar.txt: No such file or directory'
-language='bash'
 />
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
@@ -90,9 +87,8 @@ language='bash'
 
 This command will return your current working directory.
 
-<Highlighter
+<OutputHighlighter
 input='/home/your-username'
-language='bash'
 />
 
 Next, type `ls` to list the contents of the present working directory.
@@ -104,9 +100,8 @@ language='bash'
 
 This will return a list of all directories and files present in your current directory. You may find output similar to the following, but note that output will be dependent on your actual directory.
 
-<Highlighter
+<OutputHighlighter
 input='Desktop foo Music Public Videos Documents Pictures Downloads Templates'
-language='bash'
 />
 
 Through observating the output above, you will notice that the file `bar.txt` is not present in current directory. You will need to move inside of the `foo` directory to access that file, as this is where you created `bar.txt`.
@@ -130,9 +125,8 @@ language='bash'
 
 In our example, we have only one file in this directory, so our output will return the one file we have initialized there. 
 
-<Highlighter
+<OutputHighlighter
 input='bar.txt'
-language='bash'
 />
 
 Now that you are in the correct directory, you can check the contents of the file with `cat`. 
@@ -144,9 +138,8 @@ language='bash'
 
 Your output will now be what we had expected.
 
-<Highlighter
+<OutputHighlighter
 input='Hello, World'
-language='bash'
 />
 
 If you are still experiencing issues finding your file or directory, always check for typos in the file name. Also check the path for the file and your current working directory.
@@ -169,9 +162,8 @@ language='bash'
 
 When you run the above command, you'll get the path to the location of `netstat`, which may be similar to the following output.
 
-<Highlighter
+<OutputHighlighter
 input='/usr/sbin/netstat'
-language='bash'
 />
 
 The `whereis` command will return all relevant paths where the binary executable is stored. This way you can check whether a particular binary exists on your system or not, then use Linux navigation commands, like the ones we went through above, to reach the particular binary and execute it.

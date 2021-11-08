@@ -1,5 +1,5 @@
 ---
-title: How to use Exception Chaining in Python
+title: How to use exception chaining in Python
 authorSlug: david-lee
 authorDisplayName: David Lee
 tags: [tutorial, Python, troubleshooting]
@@ -32,30 +32,28 @@ language='python'
 
 When we run this program, we'll call it `my_file.py`, we'll receive output similar to the following.
 
-<Highlighter
-input={`Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in example_mistake
    [][1]
-IndexError: list index out of range
- 
+IndexError: list index out of range'
+/>
+  
 During handling of the above exception, another exception occurred:
- 
-Traceback (most recent call last):
+
+<OutputHighlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
   File "my_file.py", line 5, in example_mistake
    print('Indexing error', mistake)
-NameError: name 'mistake' is not defined
- 
 NameError: name 'mistake' is not defined`}
-language='bash'
 />
 
 Notice the key phrase between the two tracebacks:
 
-<Highlighter
-input='During handling of the above exception, another exception occurred:'
-language='bash'
-/>
+```
+During handling of the above exception, another exception occurred:
+```
 
 Here, we observe the __context__ attribute of the exception object showing that another exception occurred within the handling of the original exception.
 
@@ -78,21 +76,22 @@ language='python'
 
 When you run this program, you'll receive output similar to the following. 
 
-<Highlighter
-input={`Traceback (most recent call last):
+<OutputHighlighter
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in exampl_chaining
     [][1]
-IndexError: list index out of range
+IndexError: list index out of range'
+/>
  
 The above exception was the direct cause of the following exception:
- 
-Traceback (most recent call last):
+
+<OutputHighlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
     example_chaining()
   File "my_file.py", line 5, in example_chaining
     raise ValueError('Here is additional info: Invalid value') from e
 ValueError: Here is additional info: Invalid value`}
-language='bash'
 />
 
 Again, notice the key phrase between the two tracebacks (`The above exception was the direct cause of the following exception:`). Here, that exception was wrapped with another one. Both exceptions are captured in the traceback.
@@ -114,13 +113,12 @@ language='python'
 
 When you run this program, you will get output that is similar to what is below.
 
-<Highlighter
+<OutputHighlighter
 input='Traceback (most recent call last):
   File "my_file.py", line 7, in <module> example_chaining_disabled()
   File "my_file.py", line 5, in example_chaining_disabled
     raise ValueError from None
 ValueError'
-language='bash'
 />
 
 Now you can differentiate the two types of chained exception tracebacks. 
