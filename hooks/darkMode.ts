@@ -1,4 +1,6 @@
+import { ColorObject } from '@interfaces/Colors'
 import DarkModeHookObject from '@interfaces/DarkModeHookObject'
+import { COLORS } from '@public/static/colors'
 import { useState, useEffect, useCallback } from 'react'
 
 export const useDarkMode = (): DarkModeHookObject => {
@@ -21,16 +23,19 @@ export const useDarkMode = (): DarkModeHookObject => {
 
     const updateTheme = useCallback(() => {
         const root = document.documentElement
+        const setColors = (object: ColorObject, theme: string): void => {
+            for (const [key, value] of Object.entries(object)) {
+                const cssVarName = `--${key}`
+            
+                root.style.setProperty(cssVarName, value[theme])
+            }
+        }
         if (isDark) {
-            root.style.setProperty('--text-color', '#fff')
-            root.style.setProperty('--background-color', '#14171f')
-            root.style.setProperty('--primary-link-color', '#bfbfff')
+            setColors(COLORS, 'dark')
             setLogo('/static/images/sourcegraph-learn-dark.svg')
             setSgLogo('/static/images/sourcegraph-logo-dark.svg')
         } else {
-            root.style.setProperty('--text-color', '#212529')
-            root.style.setProperty('--background-color', '#fff')
-            root.style.setProperty('--primary-link-color', '#5033e1')
+            setColors(COLORS, 'light')
             setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
         }

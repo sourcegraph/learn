@@ -39,6 +39,9 @@
       "@lib/*": [
         "lib/*"
       ],
+      "@public/*": [
+        "public/*"
+      ],
       "@styles/*": [
         "styles/*"
       ],
