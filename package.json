@@ -29,7 +29,7 @@
     "rehype-autolink-headings": "^5.1.0",
     "rehype-react": "^7.0.3",
     "rehype-slug": "^4.0.1",
-    "remark-rehype": "^10.0.0",
+    "remark-rehype": "^10.0.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
