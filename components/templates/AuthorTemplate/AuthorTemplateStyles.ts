@@ -18,7 +18,7 @@ export const StyledAuthorBio = styled.p`
     text-align: center;
 `
 export const StyledAuthorSocialLink = styled.a`
-    color: #5033e1;
+    color: var(--primary-link-color);
     margin: 0 .25rem;
 
     :hover {

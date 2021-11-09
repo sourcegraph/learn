@@ -12,7 +12,7 @@ export const StyledAuthorByline = styled.a`
     text-decoration: none;
 
     :hover {
-        color: #5033e1;
+        color: var(--primary-link-color);
     }
 `
 

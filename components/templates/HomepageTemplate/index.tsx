@@ -27,7 +27,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                     header='Code search'
                     description='Learn about search principles with these guides' />
                     <Column className='centered'>
-                        <Button className='primary' href='/tags/search'>
+                        <Button className='outline-primary' href='/tags/search'>
                             Load more
                         </Button>
                     </Column>
@@ -38,7 +38,7 @@ const HomepageTemplate: FunctionComponent<Props> = props => (
                     header='Sourcegraph'
                     description='Search all of your code and open source' />
                     <Column className='centered'>
-                        <Button className='primary' href='/tags/sourcegraph'>
+                        <Button className='outline-primary' href='/tags/sourcegraph'>
                             Load more
                         </Button>
                     </Column>

@@ -149,7 +149,7 @@ export const StyledFooterPostscriptListItem = styled.li`
     font-size: 12px;
 `
 export const StyledFooterPostscriptLink = styled.a`
-    color: #5033e1;
+    color: var(--primary-link-color);
     display: block;
     font-size: 12px;
     padding: 0 .375rem;

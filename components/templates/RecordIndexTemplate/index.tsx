@@ -27,7 +27,7 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
             {props.records.length > 10 && loadMoreHook.records.length !== loadMoreHook.currentRecords.length && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
-                    className='primary'>
+                    className='outline-primary'>
                     Load More
                 </Button>
             )}

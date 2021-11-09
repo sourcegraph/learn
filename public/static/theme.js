@@ -14,9 +14,11 @@
         if (isDark) {
             root.style.setProperty('--text-color', '#fff')
             root.style.setProperty('--background-color', '#14171f')
+            root.style.setProperty('--primary-link-color', '#bfbfff')
         } else {
             root.style.setProperty('--text-color', '#212529')
             root.style.setProperty('--background-color', '#fff')
+            root.style.setProperty('--primary-link-color', '#5033e1')
         }
     }
 })()

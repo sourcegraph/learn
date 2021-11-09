@@ -24,11 +24,13 @@ export const useDarkMode = (): DarkModeHookObject => {
         if (isDark) {
             root.style.setProperty('--text-color', '#fff')
             root.style.setProperty('--background-color', '#14171f')
+            root.style.setProperty('--primary-link-color', '#bfbfff')
             setLogo('/static/images/sourcegraph-learn-dark.svg')
             setSgLogo('/static/images/sourcegraph-logo-dark.svg')
         } else {
             root.style.setProperty('--text-color', '#212529')
             root.style.setProperty('--background-color', '#fff')
+            root.style.setProperty('--primary-link-color', '#5033e1')
             setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
         }

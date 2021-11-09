@@ -22,13 +22,13 @@ export const StyledButton = styled.a`
 
     &.primary {
         color: #fff;
-        background-color: #5033e1;
-        border-color: #5033e1;
+        background-color: var(--primary-link-color);
+        border-color: var(--primary-link-color);
 
         :hover {
-            color: #5033e1;
+            color: var(--primary-link-color);
             background-color: transparent;
-            border-color: #5033e1;
+            border-color: var(--primary-link-color);
         }
     }
 
@@ -38,12 +38,12 @@ export const StyledButton = styled.a`
     }
 
     &.outline-primary {
-        color: #5033e1;
-        border-color: #5033e1;
+        color: var(--primary-link-color);
+        border-color: var(--primary-link-color);
 
         :hover {
-            background-color: #5033e1;
-            border-color: #5033e1;
+            background-color: var(--primary-link-color);
+            border-color: var(--primary-link-color);
             color: #fff;
         }
 
@@ -54,7 +54,7 @@ export const StyledButton = styled.a`
 
     &.extra-small {
         color: #fff;
-        background-color: #5033e1;
+        background-color: var(--primary-link-color);
         border-radius: .25rem;
         display: inline-block;
         font-size: .75em;
@@ -68,9 +68,9 @@ export const StyledButton = styled.a`
         vertical-align: baseline;
 
         :hover {
-            color: #5033e1;
+            color: var(--primary-link-color);
             background-color: #fff;
-            border-color: #5033e1;
+            border-color: var(--primary-link-color);
         }
     }
 
@@ -78,7 +78,7 @@ export const StyledButton = styled.a`
         display: flex;
         
         :hover {
-            color: #5033e1;
+            color: var(--primary-link-color);
         }
     }
 `
