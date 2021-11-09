@@ -22,7 +22,7 @@ export const StyledAuthorSocialLink = styled.a`
     margin: 0 .25rem;
 
     :hover {
-        color: #080516;
+        color: var(--text-color);
     }
 `
 export const StyledAuthorSocialLinksContainer = styled.div`

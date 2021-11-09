@@ -13,15 +13,7 @@ export const useDarkMode = (): DarkModeHookObject => {
     }
 
     const setCurrentLogo = (theme: string): void => {
-        const logo = window.localStorage.getItem('logo')
-        const sgLogo = window.localStorage.getItem('sg-logo')
         if (theme === 'dark') {
-            if (!logo) {
-                window.localStorage.setItem('logo', '/static/images/sourcegraph-learn-dark.svg')
-            }
-            if (!sgLogo) {
-                window.localStorage.setItem('sg-logo', '/static/images/sourcegraph-logo-dark.svg')
-            }
             setLogo('/static/images/sourcegraph-learn-dark.svg')
             setSgLogo('/static/images/sourcegraph-logo-dark.svg')
         }

@@ -38,17 +38,6 @@ export const StyledTocWrapperBody = styled.div<Props>`
         list-style-type: none;
         margin: 0;
         padding: 0;
-    
-        a {
-            color: #6c757d;
-            opacity: .85;
-            text-decoration: none;
-
-            :hover {
-                color: var(--text-color);
-                opacity: 1;
-            }
-        }
     }
 `
 
@@ -57,10 +46,40 @@ export const StyledHeaderTocItem = styled.li<Props>`
         ? '#edeafc'
         : 'transparent'};
     padding: .4rem 0;
+
+    a {
+        opacity: .55;
+        text-decoration: none;
+        color: ${props => props.isHighlighted
+            ? '#212529'
+            : 'var(--text-color)'};
+
+        :hover {
+            opacity: 1;
+            color: ${props => props.isHighlighted
+                ? '#212529'
+                : 'var(--text-color)'};
+        }
+    }
 `
 export const StyledTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
         : 'transparent'};
     padding: .2rem 1.5rem;
+
+    a {
+        opacity: .55;
+        text-decoration: none;
+        color: ${props => props.isHighlighted
+            ? '#212529'
+            : 'var(--text-color)'};
+
+        :hover {
+            opacity: 1;
+            color: ${props => props.isHighlighted
+                ? '#212529'
+                : 'var(--text-color)'};
+        }
+    }
 `
