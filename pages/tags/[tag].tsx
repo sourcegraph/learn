@@ -1,4 +1,5 @@
 import TagTemplate, { Props as TagTemplateProps } from '@components/templates/TagTemplate'
+import MarkdownFile from '@interfaces/MarkdownFile'
 import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import filterRecordsWithTag from '@util/filterRecordsWithTag'
@@ -19,16 +20,20 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
     const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
+    const records = filteredRecordsWithTag.records.map((record: MarkdownFile) => omitUndefinedFields(
+        { ...record, url: `/${record.slug}` }
+    ))
+    const [ featuredRecord ] = records.slice(0,2)
+    const secondaryRecords = records.slice(2,4)
     const url = `/tags/${tag}`
 
     return {
         props: {
             url,
             headerText: filteredRecordsWithTag.title,
-            records: filteredRecordsWithTag.records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            featuredRecord,
+            secondaryRecords,
+            records,
         },
     }
 }
