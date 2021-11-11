@@ -4,7 +4,11 @@ export const StyledSideBarRecordWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0 20px;
+    margin: 0 1.25rem;
+
+    @media screen and (max-width: 768px) {
+        margin: unset;
+    }
 `
 export const StyledSideBarRecord = styled.div`
     display: flex;

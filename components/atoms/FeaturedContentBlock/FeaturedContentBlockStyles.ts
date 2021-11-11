@@ -16,10 +16,19 @@ export const StyledFeaturedContentList = styled.ul`
 
     li {
         list-style: none;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin: 0 1.25rem;
+        }
     }
 
     a {
         margin: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
     }
 `
 export const StyledFeaturedContentItem = styled.li`
@@ -27,6 +36,12 @@ export const StyledFeaturedContentItem = styled.li`
     flex-direction: column;
     align-items: center;
     max-width: 500px;
+
+    @media screen and (max-width: 768px) {
+        max-width: unset;
+        width: 100%;
+        margin: 0 1.25rem;
+    }
 `
 export const StyledHeaderText = styled.h5`
     font-size: 36px;
