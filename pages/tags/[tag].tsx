@@ -4,7 +4,7 @@ import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import filterRecordsWithTag from '@util/filterRecordsWithTag'
 import getQueryParameter from '@util/getQueryParameters'
-import omitUndefinedFields from '@util/omitUndefinedFields'
+import markdownWithUrls from '@util/markdownWithUrls'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -20,9 +20,7 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
     const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
-    const records = filteredRecordsWithTag.records.map((record: MarkdownFile) => omitUndefinedFields(
-        { ...record, url: `/${record.slug}` }
-    ))
+    const records = markdownWithUrls(filteredRecordsWithTag.records)
     const [ featuredRecord ] = records.slice(0,2)
     const secondaryRecords = records.slice(2,4)
     const url = `/tags/${tag}`

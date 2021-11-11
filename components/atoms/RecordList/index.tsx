@@ -1,45 +1,40 @@
+import RecordListTab from '@components/atoms/RecordListTab'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
-import createRandomId from '@util/createRandomId'
-import { FunctionComponent } from 'react'
+import filterRecordsWithTag from '@util/filterRecordsWithTag'
+import markdownWithUrls from '@util/markdownWithUrls'
+import { FunctionComponent, useState, useRef, RefObject } from 'react'
 
 import {
     StyledRecordWrapper,
-    StyledRecord,
-    StyledRecordTitle,
-    StyledRecordTags,
     StyledRecordNav,
     StyledRecordNavLink,
-    StyledRecordDates,
-    StyledRecordAuthor,
 } from './RecordListStyles'
 
 interface Props {
     records: MarkdownFileWithUrl[]
 }
 
-const RecordList: FunctionComponent<Props> = props => (
-    <StyledRecordWrapper>
-        <StyledRecordNav>
-            <StyledRecordNavLink>Posts</StyledRecordNavLink>
-            <StyledRecordNavLink>Videos</StyledRecordNavLink>
-        </StyledRecordNav>
-        {props.records.map(record => (
-            <StyledRecord key={createRandomId()}>
-                <StyledRecordTitle>{record.frontMatter.title}</StyledRecordTitle>
-                {record.frontMatter.publicationDate && (
-                    <StyledRecordDates> Published on {record.frontMatter.publicationDate}
-                        {record.frontMatter.updatedDate && (
-                            <> • Updated on {record.frontMatter.updatedDate}</>
-                        )} 
-                    </StyledRecordDates>
+const RecordList: FunctionComponent<Props> = props => {
+    const [showTab, setShowTab] = useState<string>('posts')
+    const videos = markdownWithUrls(filterRecordsWithTag(props.records, 'video').records)
+    const posts = markdownWithUrls(filterRecordsWithTag(props.records, 'tutorial').records)
+    const isPosts = showTab === 'posts'
+
+    return (
+        <StyledRecordWrapper>
+            <StyledRecordNav>
+                <StyledRecordNavLink active={isPosts} onClick={() => setShowTab('posts')}>Posts</StyledRecordNavLink>
+                <StyledRecordNavLink active={!isPosts} onClick={() => setShowTab('videos')}>Videos</StyledRecordNavLink>
+            </StyledRecordNav>
+                {showTab === 'posts' ?
+                (
+                    <RecordListTab records={posts}/>
+                ) :
+                (
+                    <RecordListTab records={videos}/>
                 )}
-                {record.frontMatter.authorDisplayName && record.frontMatter.authorSlug && (
-                    <StyledRecordAuthor href={`/authors/${record.frontMatter.authorSlug}`}>{record.frontMatter.authorDisplayName}</StyledRecordAuthor>
-                )}
-                <StyledRecordTags>{record.frontMatter.tags?.join(' • ')}</StyledRecordTags>
-            </StyledRecord>
-        ))}
-    </StyledRecordWrapper>
-)
+        </StyledRecordWrapper>
+    )
+}
 
 export default RecordList
