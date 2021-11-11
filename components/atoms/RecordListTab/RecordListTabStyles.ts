@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StyledRecordTabWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
 `
 export const StyledRecord = styled.div`
     display: flex;
@@ -39,4 +40,9 @@ export const StyledRecordAuthor = styled.a`
     :hover {
         color: #5033e1;
     }
+`
+export const StyledNoRecordsMessage = styled.div`
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
 `
