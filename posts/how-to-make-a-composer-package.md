@@ -3,7 +3,7 @@ title: How to make a Composer package
 authorSlug: tom-benevides
 authorDisplayName: Tom Benevides
 tags: [tutorial, PHP, composer]
-publicationDate: November 09, 2021
+publicationDate: November 14, 2021
 description: Learn how to make a Composer package
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
