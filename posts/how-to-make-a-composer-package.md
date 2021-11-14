@@ -242,6 +242,7 @@ In the end, we will check the composer.json content and confirm that it's correc
 ├── src/
 └── vendor/
 ```
+
 ## Step 2: Write tests based on what we expect
 
 Now that our project was created, let's think about what we want to do. The mainly idea is that our package will provide a class with a `getQuote()` method that will return a random quote from specific person and an error message when no author is provided or it doesn't find any matching quotes for the given author. Finally, those quotes will come from an open API called [Quotable.io](https://api.quotable.io/). With that in mind, we will create a test file that will test this three cases for us, which means that we will simulate three scenarios and see if our code meets our expectations for each one of them. But first, we need to install a test framework. 
