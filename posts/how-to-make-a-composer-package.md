@@ -45,7 +45,7 @@ So, what this code does is run a composer container inside our project folder. T
 chmod +x sg
 ```
 
-## Step 1: Initializing the project
+## Initializing the project
 
 Now we have our environment configured, we can start by creating our project. So, let's run the following command:
 
@@ -243,7 +243,7 @@ In the end, we will check the composer.json content and confirm that it's correc
 └── vendor/
 ```
 
-## Step 2: Write tests based on what we expect
+## Write tests
 
 Now that our project was created, let's think about what we want to do. The mainly idea is that our package will provide a class with a `getQuote()` method that will return a random quote from specific person and an error message when no author is provided or it doesn't find any matching quotes for the given author. Finally, those quotes will come from an open API called [Quotable.io](https://api.quotable.io/). With that in mind, we will create a test file that will test this three cases for us, which means that we will simulate three scenarios and see if our code meets our expectations for each one of them. But first, we need to install a test framework. 
 
@@ -357,7 +357,7 @@ it('returns a message when was not given an author name', function() {
 
 This is a more simple test, because we don't need a Guzzle client and the reason is because this variable needs to be checked before the call to the API.
 
-## Step 3: Implement the package class
+## Implement the package class
 
 Until now, we have only configured the package and written the tests. Now, we need to actual implement the package class. We will start by creating a new file in the `src/` folder and name it `SaidQuote.php`. After that, copy the following code to the beginning of the file:
 
@@ -428,7 +428,7 @@ Now, if we run the tests, we will see that the package works as expected.
 
 Great! We have successfully implemented the package. Now, we can use it in any PHP project. But how can we do that?
 
-## Step 4: Publish the package
+## Publish the package
 
 To make our package available via Composer, we will need to publish it. We will use the Github and Packagist platforms for that. First of all, we need to create a new repository that will contain the package code. If you don't know to do that, you can read more about it [here](https://docs.github.com/en/get-started/quickstart/create-a-repo) (just remember to give your repository the same name as the package). Then, we will follow the given instructions to push the code to the repository.
 
