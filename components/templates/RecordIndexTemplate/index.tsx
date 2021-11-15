@@ -12,13 +12,15 @@ export interface Props {
     url: string
     headerText: string
     recordType: string
-    videoRecords: MarkdownFileWithUrl[]
-    postRecords: MarkdownFileWithUrl[]
+    videoRecords?: MarkdownFileWithUrl[]
+    postRecords?: MarkdownFileWithUrl[]
 }
 
 const RecordIndexTemplate: FunctionComponent<Props> = props => {
     const metaTags = { ...metaDataDefaults, title: props.headerText, url: metaDataDefaults.url.concat(props.url) }
-    const loadMoreHook = useLoadMore(props.videoRecords, props.postRecords, 10)
+    const videos = props.videoRecords ?? null
+    const posts = props.postRecords ?? null
+    const loadMoreHook = useLoadMore(videos, posts, 10)
 
     return (
         <PageLayout metaTags={metaTags}>
@@ -29,7 +31,7 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
             <ContentCardList records={props.recordType === 'posts'
                 ? loadMoreHook.currentPosts
                 : loadMoreHook.currentVideos} />
-            {showMoreButton(props.videoRecords, props.postRecords, props.recordType, loadMoreHook) && (
+            {showMoreButton(videos, posts, props.recordType, loadMoreHook) && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
                     className='primary'>

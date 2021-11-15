@@ -7,7 +7,6 @@ import { GetStaticProps } from 'next'
 export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
     const records = await loadAllRecords('videos')
     const videoRecords = markdownWithUrls(filterRecordsWithTag(records, 'video').records)
-    const postRecords = markdownWithUrls(filterRecordsWithTag(records, 'tutorial').records)
     const url = '/videos'
     const headerText = 'Videos'
 
@@ -17,7 +16,6 @@ export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async ()
             headerText,
             recordType: 'videos',
             videoRecords,
-            postRecords,
         },
     }
 }
