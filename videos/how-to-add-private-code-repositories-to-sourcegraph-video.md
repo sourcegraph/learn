@@ -1,13 +1,13 @@
 ---
-title: How to add private code repositories to Sourcegraph cloud (video)
+title: How to add private code repositories to Sourcegraph Cloud (video)
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
 tags: [video, sourcegraph, cloud]
 publicationDate: August 19, 2021
-description: Learn about connecting your private code repositories to Sourcegraph cloud and searching your own code.
+description: Learn about connecting your private code repositories to Sourcegraph Cloud and searching your own code.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-add-private-code-to-sourcegraph-thumbnail.jpg
-imageAlt: Marek talking about adding private code repositories to Sourcegraph cloud.
-browserTitle: Connecting private software repos to your Sourcegraph cloud account
+imageAlt: Marek talking about adding private code repositories to Sourcegraph Cloud.
+browserTitle: Connecting private software repos to your Sourcegraph Cloud account
 type: videos
 ---
 
@@ -47,4 +47,4 @@ I can click on search results and start browsing my codebase on Sourcegraph. Thi
 
 If you want to learn more about the kinds of things that you can search for, and how to use different search features like filters and types of search, I invite you to take a look at the [documentation](https://docs.sourcegraph.com/) and learn more there.
 
-_For a full tutorial, read "[How to add private code repositories to Sourcegraph cloud](/how-to-add-private-code-repositories-to-sourcegraph)."_
+_For a full tutorial, read "[How to add private code repositories to Sourcegraph Cloud](/how-to-add-private-code-repositories-to-sourcegraph)."_
