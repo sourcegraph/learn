@@ -1,8 +1,9 @@
+import Button from '@components/atoms/Button'
 import RecordListTab from '@components/atoms/RecordListTab'
+import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
-import filterRecordsWithTag from '@util/filterRecordsWithTag'
-import markdownWithUrls from '@util/markdownWithUrls'
-import { FunctionComponent, useState, useRef, RefObject } from 'react'
+import showMoreButton from '@util/showMoreButton'
+import { FunctionComponent, useState } from 'react'
 
 import {
     StyledRecordWrapper,
@@ -11,14 +12,14 @@ import {
 } from './RecordListStyles'
 
 interface Props {
-    records: MarkdownFileWithUrl[]
+    videos: MarkdownFileWithUrl[]
+    posts: MarkdownFileWithUrl[]
 }
 
 const RecordList: FunctionComponent<Props> = props => {
     const [showTab, setShowTab] = useState<string>('posts')
-    const videos = markdownWithUrls(filterRecordsWithTag(props.records, 'video').records)
-    const posts = markdownWithUrls(filterRecordsWithTag(props.records, 'tutorial').records)
     const isPosts = showTab === 'posts'
+    const loadMoreHook = useLoadMore(props.videos, props.posts, 10)
 
     return (
         <StyledRecordWrapper>
@@ -26,12 +27,18 @@ const RecordList: FunctionComponent<Props> = props => {
                 <StyledRecordNavLink active={isPosts} onClick={() => setShowTab('posts')}>Posts</StyledRecordNavLink>
                 <StyledRecordNavLink active={!isPosts} onClick={() => setShowTab('videos')}>Videos</StyledRecordNavLink>
             </StyledRecordNav>
-                {showTab === 'posts' ?
+                {isPosts ?
                 (
-                    <RecordListTab records={posts}/>
+                    <RecordListTab
+                        records={loadMoreHook.currentPosts}
+                        showButton={showMoreButton(props.videos, props.posts, 'posts', loadMoreHook)}
+                        loadMore={loadMoreHook} />
                 ) :
                 (
-                    <RecordListTab records={videos}/>
+                    <RecordListTab
+                        records={loadMoreHook.currentVideos}
+                        showButton={showMoreButton(props.videos, props.posts, 'videos', loadMoreHook)}
+                        loadMore={loadMoreHook} />
                 )}
         </StyledRecordWrapper>
     )

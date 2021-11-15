@@ -14,12 +14,12 @@ export interface Props {
     headerText: string
     featuredRecord: MarkdownFileWithUrl
     secondaryRecords: MarkdownFileWithUrl[]
-    records: MarkdownFileWithUrl[]
+    videoRecords: MarkdownFileWithUrl[]
+    postRecords: MarkdownFileWithUrl[]
 }
 
 const TagTemplate: FunctionComponent<Props> = props => {
     const metaTags = { ...metaDataDefaults, title: props.headerText, url: metaDataDefaults.url.concat(props.url) }
-    const loadMoreHook = useLoadMore(props.records, 10)
 
     return (
         <PageLayout metaTags={metaTags}>
@@ -27,14 +27,7 @@ const TagTemplate: FunctionComponent<Props> = props => {
                 featuredRecord={props.featuredRecord} 
                 secondaryRecords={props.secondaryRecords}
                 headerText={props.headerText} />
-            <RecordList records={loadMoreHook.currentRecords} />
-            {props.records.length > 10 && loadMoreHook.records.length !== loadMoreHook.currentRecords.length && (
-                <Button 
-                    onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
-                    className='primary'>
-                    Load More
-                </Button>
-            )}
+            <RecordList videos={props.videoRecords} posts={props.postRecords} />
         </PageLayout>
     )
 }

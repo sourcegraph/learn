@@ -1,10 +1,13 @@
 import RecordIndexTemplate, { Props as RecordIndexTemplateProps } from '@components/templates/RecordIndexTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
-import omitUndefinedFields from '@util/omitUndefinedFields'
+import filterRecordsWithTag from '@util/filterRecordsWithTag'
+import markdownWithUrls from '@util/markdownWithUrls'
 import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
     const records = await loadAllRecords('posts')
+    const videoRecords = markdownWithUrls(filterRecordsWithTag(records, 'video').records)
+    const postRecords = markdownWithUrls(filterRecordsWithTag(records, 'tutorial').records)
     const url = '/posts'
     const headerText = 'Tutorials'
 
@@ -12,10 +15,9 @@ export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async ()
         props: {
             url,
             headerText,
-            records: records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            recordType: 'posts',
+            videoRecords,
+            postRecords,
         },
     }
 }

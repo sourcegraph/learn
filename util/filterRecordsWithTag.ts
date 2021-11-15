@@ -1,11 +1,13 @@
 import MarkdownFile from '@interfaces/MarkdownFile'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import capitalize from '@util/capitalize'
 import collectTags from '@util/collectTags'
+import markdownWithUrls from '@util/markdownWithUrls'
 import regexTestString from '@util/regexTestString'
 import transformTag from '@util/transformTag'
 
 interface FilteredRecords {
-    records: MarkdownFile[]
+    records: MarkdownFileWithUrl[]
     title: string
 }
 
@@ -31,7 +33,7 @@ const filterRecordsWithTag = (records: MarkdownFile[], tag: string): FilteredRec
             return regexTestString(item, tag) && item.length === tag.length
         })
     }
-    const filteredRecords = records.filter(record => checkRecordSet(record, transformedTag))
+    const filteredRecords = markdownWithUrls(records.filter(record => checkRecordSet(record, transformedTag)))
 
     return {
         records: filteredRecords, 

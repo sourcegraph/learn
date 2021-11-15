@@ -20,9 +20,10 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
     const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
-    const records = markdownWithUrls(filteredRecordsWithTag.records)
-    const [ featuredRecord ] = records.slice(0,2)
-    const secondaryRecords = records.slice(2,4)
+    const [ featuredRecord ] = filteredRecordsWithTag.records.slice(0,2)
+    const secondaryRecords = filteredRecordsWithTag.records.slice(2,4)
+    const videoRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'video').records
+    const postRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'tutorial').records
     const url = `/tags/${tag}`
 
     return {
@@ -31,7 +32,8 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
             headerText: filteredRecordsWithTag.title,
             featuredRecord,
             secondaryRecords,
-            records,
+            videoRecords,
+            postRecords,
         },
     }
 }
