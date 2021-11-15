@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const StyledCardLink = styled.a`
+interface Props {
+    setHeight?: boolean
+}
+
+export const StyledCardLink = styled.a<Props>`
     cursor: pointer;
     position: relative;
     display: flex;
@@ -16,6 +20,9 @@ export const StyledCardLink = styled.a`
     text-decoration: none;
     word-wrap: break-word;
     width: 100%;
+    min-height: ${props => props.setHeight
+        ? '11.25rem'
+        :''};
 
     :hover {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.40);

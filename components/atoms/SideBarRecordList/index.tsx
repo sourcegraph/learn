@@ -19,7 +19,8 @@ const SideBarRecordList: FunctionComponent<Props> = props => (
                 <ContentCard 
                     title={record.frontMatter.title} 
                     url={record.url}
-                    tags={record.frontMatter.tags} />
+                    tags={record.frontMatter.tags}
+                    setHeight={true} />
             </StyledSideBarRecord>
         ))}
     </StyledSideBarRecordWrapper>

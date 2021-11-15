@@ -26,7 +26,8 @@ const FeaturedContentBlock: FunctionComponent<Props> = props => (
                         url={props.featuredRecord.url}
                         image={props.featuredRecord.frontMatter.image}
                         imageAlt={props.featuredRecord.frontMatter.imageAlt}
-                        tags={props.featuredRecord.frontMatter.tags} />
+                        tags={props.featuredRecord.frontMatter.tags}
+                        setHeight={true} />
                 </StyledFeaturedContentItem>
                 <li>
                     <SideBarRecordList records={props.secondaryRecords} />
