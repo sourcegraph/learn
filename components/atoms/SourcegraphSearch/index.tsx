@@ -1,8 +1,9 @@
 import Button from '@components/atoms/Button'
 import Card from '@components/atoms/Card'
 import Column from '@components/atoms/Column'
+import { ThemeContext } from '@hooks/contexts/theme'
 import sanitizeString from '@util/sanitizeString'
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState, useContext } from 'react'
 
 import { StyledSearchBody, StyledSearchInput, StyledSearchLogo } from './SourcegraphSearchStyles'
 
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const SourcegraphSearch: FunctionComponent<Props> = props => {
+    const theme = useContext(ThemeContext)
     const [query, setQuery] = useState(sanitizeString(props.query))
     const queryString = props.patternType
         ? `https://sourcegraph.com/search?q=${encodeURIComponent(sanitizeString(query)+` patternType:${props.patternType}`)}&utm_source=learn`
@@ -35,6 +37,7 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
                         href={queryString}
                         target="_blank"
                         rel="noreferrer"
+                        isDark={theme.theme === 'dark'}
                     >
                         <span>Search on Sourcegraph</span>
                     </Button>

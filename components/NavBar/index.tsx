@@ -52,7 +52,8 @@ const NavBar: FunctionComponent = () => {
                             href="https://sourcegraph.com/search" 
                             className="outline-primary"
                             target="_blank"
-                            rel="noreferrer">
+                            rel="noreferrer"
+                            isDark={theme.theme === 'dark'}>
                             Search on Sourcegraph
                         </Button>
                         <Button

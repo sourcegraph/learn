@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const StyledButton = styled.a`
+interface Props {
+    isDark?: boolean
+}
+
+export const StyledButton = styled.a<Props>`
     background-color: transparent;
     border-radius: .25rem;
     border: 1px solid transparent;
@@ -21,7 +25,9 @@ export const StyledButton = styled.a`
     }
 
     &.primary {
-        color: #fff;
+        color: ${props => props.isDark
+            ? '#212529'
+            : '#fff'};
         background-color: var(--primary-link-color);
         border-color: var(--primary-link-color);
 
@@ -44,7 +50,9 @@ export const StyledButton = styled.a`
         :hover {
             background-color: var(--primary-link-color);
             border-color: var(--primary-link-color);
-            color: #fff;
+            color: ${props => props.isDark
+                ? '#212529'
+                : '#fff'};
         }
 
         @media screen and (max-width: 768px) {
@@ -53,7 +61,9 @@ export const StyledButton = styled.a`
     }
 
     &.extra-small {
-        color: #fff;
+        color: ${props => props.isDark
+            ? '#212529'
+            : '#fff'};
         background-color: var(--primary-link-color);
         border-radius: .25rem;
         display: inline-block;
@@ -68,7 +78,9 @@ export const StyledButton = styled.a`
         vertical-align: baseline;
 
         :hover {
-            color: var(--primary-link-color);
+            color: ${props => props.isDark
+                ? '#212529'
+                : 'var(--primary-link-color)'};
             background-color: #fff;
             border-color: var(--primary-link-color);
         }
