@@ -2,7 +2,7 @@
 title: How to commit code to a Git repository with GitHub Desktop
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [tutorial, git, github, open source]
+tags: [tutorial, git, GitHub, open source]
 description: Learn how to create commits in a Git repository with GitHub Desktop
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-04.png
 publicationDate: September 13, 2021

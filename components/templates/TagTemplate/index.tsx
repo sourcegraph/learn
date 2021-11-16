@@ -1,38 +1,29 @@
-import Button from '@components/atoms/Button'
-import ContentCardList from '@components/atoms/ContentCardList'
-import Header from '@components/Header'
+import FeaturedContentBlock from '@components/atoms/FeaturedContentBlock'
+import RecordList from '@components/atoms/RecordList'
 import PageLayout from '@components/layouts/PageLayout'
-import { ThemeContext } from '@hooks/contexts/theme'
-import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
-import { FunctionComponent, useContext } from 'react'
+import { FunctionComponent } from 'react'
 
 export interface Props {
     url: string
     headerText: string
-    records: MarkdownFileWithUrl[]
+    featuredRecord: MarkdownFileWithUrl
+    secondaryRecords: MarkdownFileWithUrl[]
+    videoRecords: MarkdownFileWithUrl[]
+    postRecords: MarkdownFileWithUrl[]
 }
 
 const TagTemplate: FunctionComponent<Props> = props => {
     const metaTags = { ...metaDataDefaults, title: props.headerText, url: metaDataDefaults.url.concat(props.url) }
-    const loadMoreHook = useLoadMore(props.records, 10)
-    const theme = useContext(ThemeContext)
 
     return (
         <PageLayout metaTags={metaTags}>
-            <Header
-                headerText={props.headerText}
-            />
-            <ContentCardList records={loadMoreHook.currentRecords} />
-            {props.records.length > 10 && loadMoreHook.records.length !== loadMoreHook.currentRecords.length && (
-                <Button 
-                    onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
-                    className='outline-primary'
-                    isDark={theme.isDark}>
-                    Load More
-                </Button>
-            )}
+            <FeaturedContentBlock 
+                featuredRecord={props.featuredRecord} 
+                secondaryRecords={props.secondaryRecords}
+                headerText={props.headerText} />
+            <RecordList videos={props.videoRecords} posts={props.postRecords} />
         </PageLayout>
     )
 }

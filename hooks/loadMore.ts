@@ -2,20 +2,32 @@ import LoadMoreHookObject from '@interfaces/LoadMoreHookObject'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import { useEffect, useState } from 'react'
 
-const useLoadMore = (initialRecords: MarkdownFileWithUrl[], initialPage: number): LoadMoreHookObject => {
-    const [records, setRecords] = useState<MarkdownFileWithUrl[]>(initialRecords)
+const useLoadMore = (initialVideos: MarkdownFileWithUrl[] | null, initialPosts: MarkdownFileWithUrl[] | null, initialPage: number): LoadMoreHookObject => {
+    const [videos, setVideos] = useState<MarkdownFileWithUrl[] | null>(initialVideos)
+    const [posts, setPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
     const [page, setPage] = useState<number>(initialPage)
-    const [currentRecords, setCurrentRecords] = useState<MarkdownFileWithUrl[]>(records.slice(page, 10))
+    const [currentVideos, setCurrentVideos] = useState<MarkdownFileWithUrl[] | null>(videos?.slice(page, 10) ?? null)
+    const [currentPosts, setCurrentPosts] = useState<MarkdownFileWithUrl[] | null>(posts?.slice(page, 10) ?? null)
 
     useEffect(() => {
-        setCurrentRecords(records.slice(0, page))
-    }, [page, records])
+        if (videos) {
+            setCurrentVideos(videos.slice(0, page))
+        }
+    }, [page, videos])
+
+    useEffect(() => {
+        if (posts) {
+            setCurrentPosts(posts.slice(0, page))
+        }
+    }, [page, posts])
 
     return {
-        records,
+        videos,
+        posts,
+        currentVideos,
+        currentPosts,
         page,
         setPage,
-        currentRecords
     }
 }
 

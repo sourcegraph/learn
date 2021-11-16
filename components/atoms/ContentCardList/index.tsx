@@ -5,12 +5,12 @@ import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import { FunctionComponent } from 'react'
 
 interface Props {
-    records: MarkdownFileWithUrl[]
+    records: MarkdownFileWithUrl[] | null
 }
 
 const ContentCardList: FunctionComponent<Props> = props => (
     <Row>
-        {props.records.map(record => (
+        {props.records?.map(record => (
             <Column className='medium' key={record.url}>
                 <ContentCard
                     title={record.frontMatter.title}
