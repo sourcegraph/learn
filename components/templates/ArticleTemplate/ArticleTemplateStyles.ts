@@ -73,7 +73,7 @@ export const StyledMarkdownWrapper = styled.div<Props>`
     }
 
     a {
-        color: #3826cc;
+        color: var(--primary-link-color);
         text-decoration: none;
     }
     
