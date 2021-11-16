@@ -213,3 +213,8 @@ export const StyledNavBarDropDownItem = styled.a`
 export const StyledButtonsWrapper = styled.div`
     display: flex;
 `
+export const StyledToggleButtonWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

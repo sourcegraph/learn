@@ -2,6 +2,8 @@ import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
 import { ThemeContext } from '@hooks/contexts/theme'
 import MenuIcon from 'mdi-react/MenuIcon'
+import MoonWaningCresentIcon from 'mdi-react/MoonWaningCrescentIcon'
+import WeatherSunnyIcon from 'mdi-react/WeatherSunnyIcon'
 import { FunctionComponent, useState, useContext, useEffect } from 'react'
 
 import {
@@ -15,6 +17,7 @@ import {
     StyledNavBarItemsContainer,
     StyledNavBarItemLink,
     StyledButtonsWrapper,
+    StyledToggleButtonWrapper,
 } from './NavBarStyles'
 
 const NavBar: FunctionComponent = () => {
@@ -63,14 +66,25 @@ const NavBar: FunctionComponent = () => {
                             isDark={theme.isDark}>
                             Search on Sourcegraph
                         </Button>
-                        <Button
-                            className="flex"
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={() => theme.toggleTheme()}>
-                            <img src={theme.toggleLogo} alt="Dark Mode Toggle" />
-                            {toggleText}
-                        </Button>
+                        <StyledToggleButtonWrapper>
+                            <Button
+                                className="flex"
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={() => theme.toggleTheme('dark')}>
+                                <MoonWaningCresentIcon />
+                                Dark
+                            </Button>
+                            |
+                            <Button
+                                className="flex"
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={() => theme.toggleTheme('light')}>
+                                <WeatherSunnyIcon />
+                                Light
+                            </Button>
+                        </StyledToggleButtonWrapper>
                     </StyledButtonsWrapper>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>

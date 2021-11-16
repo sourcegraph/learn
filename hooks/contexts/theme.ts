@@ -2,9 +2,9 @@ import { createContext } from 'react'
 
 export const ThemeContext = createContext({
     theme: '',
-    toggleTheme: () => {},
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    toggleTheme: (theme: string) => {},
     logo: '',
     sgLogo: '',
     isDark: false,
-    toggleLogo: '',
 })

@@ -89,9 +89,10 @@ export const StyledButton = styled.a<Props>`
 
     &.flex {
         display: flex;
+        padding: .375rem .5rem;
 
-        img {
-            padding: 0 .3125rem;
+        :hover {
+          color: var(--primary-link-color);  
         }
     }
 `
