@@ -6,4 +6,5 @@ export default interface DarkModeHookObject {
     logo: string
     sgLogo: string
     isDark: boolean
+    toggleLogo: string
 }

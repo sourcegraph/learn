@@ -12,7 +12,13 @@
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "error",
     "unicorn/prefer-spread": "off",
-    "no-console": "error"
+    "no-console": "error",
+    "@next/next/no-img-element": "off",
+    "no-unused-expressions": [
+      "error", { 
+        "allowTernary": true 
+      }
+    ]
   },
   "parserOptions": {
     "project": "tsconfig.json"

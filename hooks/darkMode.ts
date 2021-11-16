@@ -7,6 +7,7 @@ export const useDarkMode = (): DarkModeHookObject => {
     const [theme, setTheme] = useState<string>('light')
     const [logo, setLogo] = useState<string>('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
     const [sgLogo, setSgLogo] = useState<string>('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
+    const [toggleLogo, setToggleLogo] = useState<string>('/static/images/moon.svg')
     const isDark = theme === 'dark'
 
     const setCurrentTheme = (theme: string): void => {
@@ -18,9 +19,11 @@ export const useDarkMode = (): DarkModeHookObject => {
         if (theme === 'dark') {
             setLogo('/static/images/sourcegraph-learn-dark.svg')
             setSgLogo('/static/images/sourcegraph-logo-dark.svg')
+            setToggleLogo('/static/images/sun.svg')
         } else {
             setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
+            setToggleLogo('/static/images/moon.svg')
         }
     }
 
@@ -69,6 +72,7 @@ export const useDarkMode = (): DarkModeHookObject => {
         logo,
         sgLogo,
         isDark,
+        toggleLogo,
     }
 }
 

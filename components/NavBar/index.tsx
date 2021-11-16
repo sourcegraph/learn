@@ -2,8 +2,7 @@ import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
 import { ThemeContext } from '@hooks/contexts/theme'
 import MenuIcon from 'mdi-react/MenuIcon'
-import dynamic from 'next/dynamic'
-import { FunctionComponent, useState, useContext } from 'react'
+import { FunctionComponent, useState, useContext, useEffect } from 'react'
 
 import {
     StyledNavBarWrapper,
@@ -18,11 +17,17 @@ import {
     StyledButtonsWrapper,
 } from './NavBarStyles'
 
-const DarkModeToggle = dynamic(() => import('@components/atoms/DarkModeToggle'))
-
 const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
+    const [toggleText, setToggleText] = useState<string>()
     const theme = useContext(ThemeContext)
+
+    useEffect(() => {
+        theme.isDark
+            ? setToggleText('Light Mode')
+            : setToggleText('Dark Mode')
+ 
+    }, [theme.isDark])
 
     return (
         <StyledNavBarWrapper id='nav'>
@@ -58,7 +63,14 @@ const NavBar: FunctionComponent = () => {
                             isDark={theme.isDark}>
                             Search on Sourcegraph
                         </Button>
-                        <DarkModeToggle />
+                        <Button
+                            className="flex"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={() => theme.toggleTheme()}>
+                            <img src={theme.toggleLogo} alt="Dark Mode Toggle" />
+                            {toggleText}
+                        </Button>
                     </StyledButtonsWrapper>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>

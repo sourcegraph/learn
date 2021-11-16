@@ -21,10 +21,6 @@ export const StyledButton = styled.a<Props>`
     user-select: none;
     vertical-align: middle;
 
-    svg {
-        padding: 0 .3125rem;
-    }
-
     :hover {
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
@@ -93,9 +89,9 @@ export const StyledButton = styled.a<Props>`
 
     &.flex {
         display: flex;
-        
-        :hover {
-            color: var(--primary-link-color);
+
+        img {
+            padding: 0 .3125rem;
         }
     }
 `

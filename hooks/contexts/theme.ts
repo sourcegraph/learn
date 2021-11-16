@@ -1,4 +1,3 @@
-import MoonWaningCrescentIcon from 'mdi-react/MoonWaningCrescentIcon'
 import { createContext } from 'react'
 
 export const ThemeContext = createContext({
@@ -7,4 +6,5 @@ export const ThemeContext = createContext({
     logo: '',
     sgLogo: '',
     isDark: false,
+    toggleLogo: '',
 })
