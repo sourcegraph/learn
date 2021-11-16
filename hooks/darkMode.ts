@@ -1,6 +1,6 @@
+import { COLORS } from '@components/themes/colors'
 import { ColorObject } from '@interfaces/Colors'
 import DarkModeHookObject from '@interfaces/DarkModeHookObject'
-import { COLORS } from '@public/static/colors'
 import { useState, useEffect, useCallback } from 'react'
 
 export const useDarkMode = (): DarkModeHookObject => {
@@ -14,10 +14,13 @@ export const useDarkMode = (): DarkModeHookObject => {
         setTheme(theme)
     }
 
-    const setCurrentLogo = (theme: string): void => {
+    const setCurrentAssets = (theme: string): void => {
         if (theme === 'dark') {
             setLogo('/static/images/sourcegraph-learn-dark.svg')
             setSgLogo('/static/images/sourcegraph-logo-dark.svg')
+        } else {
+            setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
+            setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
         }
     }
 
@@ -32,19 +35,17 @@ export const useDarkMode = (): DarkModeHookObject => {
         }
         if (isDark) {
             setColors(COLORS, 'dark')
-            setLogo('/static/images/sourcegraph-learn-dark.svg')
-            setSgLogo('/static/images/sourcegraph-logo-dark.svg')
+            setCurrentAssets(theme)
         } else {
             setColors(COLORS, 'light')
-            setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
-            setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
+            setCurrentAssets(theme)
         }
 
-    }, [isDark])
+    }, [isDark, theme])
 
     const checkLocalInitial = useCallback(() => {
         const localTheme = getComputedStyle(document.documentElement).getPropertyValue('--theme')
-        setCurrentLogo(localTheme)
+        setCurrentAssets(localTheme)
         return localTheme
             ? setCurrentTheme(localTheme)
             : setCurrentTheme('light')
@@ -66,7 +67,8 @@ export const useDarkMode = (): DarkModeHookObject => {
         theme,
         toggleTheme,
         logo,
-        sgLogo
+        sgLogo,
+        isDark,
     }
 }
 

@@ -54,7 +54,6 @@ const components = {
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
     const theme = useContext(ThemeContext)
-    const isDark = theme.theme === 'dark'
     const metaTags: MetaTags = {
         // If present, the alternate title is used for the document title without the site title suffix.
         title: props.browserTitle
@@ -97,14 +96,14 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             )}
 
             {/* Title */}
-            <StyledTitle isDark={isDark}>{props.title}</StyledTitle>
+            <StyledTitle isDark={theme.isDark}>{props.title}</StyledTitle>
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
                 (
                     <StyledTagsWrapper>
                         {props.tags.map(tag => (
-                            <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small' isDark={isDark}>
+                            <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small' isDark={theme.isDark}>
                                 {capitalize(tag)}
                             </Button>
                         ))}
@@ -114,12 +113,12 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
 
             {/* Author */}
             {props.authorSlug && props.authorDisplayName && (
-                <StyledAuthorByline href={`/authors/${props.authorSlug}`} isDark={isDark}>{props.authorDisplayName}</StyledAuthorByline>
+                <StyledAuthorByline href={`/authors/${props.authorSlug}`} isDark={theme.isDark}>{props.authorDisplayName}</StyledAuthorByline>
             )}
 
             {/* Dates */}
             {props.publicationDate && (
-                <StyledDates isDark={isDark}> Published on {props.publicationDate}
+                <StyledDates isDark={theme.isDark}> Published on {props.publicationDate}
                     {props.updatedDate && (
                         <> • Updated on {props.updatedDate}</>
                     )} 
@@ -134,7 +133,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 />
             )}
 
-            <StyledMarkdownWrapper isDark={isDark}>
+            <StyledMarkdownWrapper isDark={theme.isDark}>
                 <MDXRemote {...props.mdxSource} components={components} />
             </StyledMarkdownWrapper>
         </PageLayout>

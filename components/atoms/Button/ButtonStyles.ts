@@ -5,6 +5,7 @@ interface Props {
 }
 
 export const StyledButton = styled.a<Props>`
+    align-items: center;
     background-color: transparent;
     border-radius: .25rem;
     border: 1px solid transparent;
@@ -19,6 +20,10 @@ export const StyledButton = styled.a<Props>`
     text-decoration: none;
     user-select: none;
     vertical-align: middle;
+
+    svg {
+        padding: 0 .3125rem;
+    }
 
     :hover {
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

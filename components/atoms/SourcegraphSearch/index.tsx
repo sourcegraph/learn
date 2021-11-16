@@ -37,7 +37,7 @@ const SourcegraphSearch: FunctionComponent<Props> = props => {
                         href={queryString}
                         target="_blank"
                         rel="noreferrer"
-                        isDark={theme.theme === 'dark'}
+                        isDark={theme.isDark}
                     >
                         <span>Search on Sourcegraph</span>
                     </Button>

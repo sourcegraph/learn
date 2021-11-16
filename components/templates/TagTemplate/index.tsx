@@ -29,7 +29,7 @@ const TagTemplate: FunctionComponent<Props> = props => {
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
                     className='outline-primary'
-                    isDark={theme.theme === 'dark'}>
+                    isDark={theme.isDark}>
                     Load More
                 </Button>
             )}

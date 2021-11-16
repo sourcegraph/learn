@@ -1,8 +1,8 @@
 import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
 import { ThemeContext } from '@hooks/contexts/theme'
-import LighteningBoltOutlineIcon from 'mdi-react/LightningBoltOutlineIcon'
 import MenuIcon from 'mdi-react/MenuIcon'
+import dynamic from 'next/dynamic'
 import { FunctionComponent, useState, useContext } from 'react'
 
 import {
@@ -17,6 +17,8 @@ import {
     StyledNavBarItemLink,
     StyledButtonsWrapper,
 } from './NavBarStyles'
+
+const DarkModeToggle = dynamic(() => import('@components/atoms/DarkModeToggle'))
 
 const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
@@ -53,17 +55,10 @@ const NavBar: FunctionComponent = () => {
                             className="outline-primary"
                             target="_blank"
                             rel="noreferrer"
-                            isDark={theme.theme === 'dark'}>
+                            isDark={theme.isDark}>
                             Search on Sourcegraph
                         </Button>
-                        <Button
-                            className="flex"
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={() => theme.toggleTheme()}>
-                            <LighteningBoltOutlineIcon />
-                            Dark Mode
-                        </Button>                        
+                        <DarkModeToggle />
                     </StyledButtonsWrapper>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
