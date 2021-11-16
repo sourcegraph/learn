@@ -1,4 +1,5 @@
 import { GoogleTagManagerNoscriptFrame } from '@components/atoms/GoogleTagManager'
+import { SetThemeTag } from '@components/themes/theme'
 import Document, { Head, Html, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -18,6 +19,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
         </Head>
         <body>
+          <SetThemeTag />
           <GoogleTagManagerNoscriptFrame />
           <Main />
           <NextScript />

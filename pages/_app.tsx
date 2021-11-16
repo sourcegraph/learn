@@ -23,7 +23,6 @@ const AppWrapper: FunctionComponent<Props> = ({ children }) => {
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
     <>
-        <Script strategy='beforeInteractive' type='module' src='/static/theme.js' />
         <AppWrapper>
             <GoogleTagManagerScriptTag />
             <Script id='Swiftype' strategy='lazyOnload'>
