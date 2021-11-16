@@ -10,6 +10,7 @@ export const StyledCardLink = styled.a`
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     margin: 0 .625rem 1.5rem;
     text-align: center;
     text-decoration: none;

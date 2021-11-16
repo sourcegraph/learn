@@ -12,7 +12,7 @@ browserTitle: Installing a self-hosted Sourcegraph test instance on Linux with D
 type: posts
 ---
 
-Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install your own instance of Sourcegraph locally or on a cloud server or virtual machine.
+Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph Cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install your own instance of Sourcegraph locally or on a cloud server or virtual machine.
 
 By installing Sourcegraph on your own hardware, you’ll be able to manage your own instance of Sourcegraph, providing you with complete control over who has access to your code. Your own installation will also allow you to connect your local (or server-side) code as well as any relevant Git servers. Git servers that you can connect to include GitHub, GitHub Enterprise, GitLab, Bitbucket, AWS CodeCommit, Perforce, and more.
 
@@ -99,7 +99,8 @@ We’ll go over two approaches below; the first which is recommended for [Linux 
 On local machines that use a Linux distribution, you’ll be able to install Sourcegraph by running the following Docker command.
 
 <Highlighter
-input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \  
+input='docker run --publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 \  
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \  
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \  
 sourcegraph/server:3.30.4'
@@ -110,9 +111,8 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive the output similar to the following:
 
-<Highlighter
+<OutputHighlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.
@@ -122,7 +122,8 @@ At this point, you’ll be able to move onto the next section to verify your ins
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
 <Highlighter
-input='docker run -d --publish 80:7080 --publish 443:7443 \
+input='docker run -d --publish 80:7080 \
+--publish 443:7443 \
 --restart unless-stopped \
 --volume /root/.sourcegraph/config:/etc/sourcegraph \
 --volume /root/.sourcegraph/data:/var/opt/sourcegraph \
@@ -134,9 +135,9 @@ This command is telling your server to install and run Sourcegraph in port 7080 
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following. Your server’s IP address will display in place of `your-server-ip-address`.
 
-<Highlighter
+<OutputHighlighter
 input='✱ Sourcegraph is ready at: http://your-server-ip-address:7080'
-language='bash'
+matcher='your-server-ip-address'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

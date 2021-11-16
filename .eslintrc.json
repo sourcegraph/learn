@@ -1,5 +1,8 @@
 {
-  "extends": "@sourcegraph/eslint-config",
+  "extends": [
+    "@sourcegraph/eslint-config",
+    "plugin:@next/next/recommended"
+  ],
   "rules": {
     "jsx-a11y/alt-text": "warn",
     "jsx-a11y/anchor-is-valid": "off",
@@ -8,7 +11,8 @@
     "@typescript-eslint/require-await": "warn",
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "error",
-    "unicorn/prefer-spread": "off"
+    "unicorn/prefer-spread": "off",
+    "no-console": "error"
   },
   "parserOptions": {
     "project": "tsconfig.json"

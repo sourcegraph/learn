@@ -9,7 +9,7 @@ browserTitle: Install self-hosted Sourcegraph for a production environment
 type: posts
 ---
 
-Sourcegraph is a universal code search tool, allowing you to search across your own code or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph through [Sourcegraph cloud](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
+Sourcegraph is a universal code search tool, allowing you to search across your own code or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph through [Sourcegraph Cloud](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
 
 Once you know that you would like to self-host your own instance of Sourcegraph to search across your local or cloud repositories, and you want it to be suitable for a production environment, you can follow along with this tutorial that will set you up with a Sourcegraph instance on Docker Compose. This tutorial will assume *nix commands on the command line. 
 
@@ -62,11 +62,10 @@ language='bash'
 
 You should receive output similar to the following:
 
-<Highlighter
+<OutputHighlighter
 input={`Cloning into 'deploy-sourcegraph-docker'...
 ...
 Resolving deltas: 100% (4418/4418), done.`}
-language='bash'
 />
 
 Once you clone the Git repository, all the relevant code lives locally on your machine or server. You now have a copy of the reference repository that you can configure to suit your needs.
@@ -114,9 +113,9 @@ language='bash'
 Once you run this, you will know that your installation was successful when you receive output that generates `done` messaging, and output that notifies you that Sourcegraph is ready. This will display with your server or localhost IP address and the relevant port.
 
 
-<Highlighter
+<OutputHighlighter
 input='Sourcegraph is ready at: [an-address-and-port-created-by-your-server]'
-language='bash'
+matcher='an-address-and-port-created-by-your-server'
 />
 
 You can access Sourcegraph using the relevant IP address and port number. 
@@ -134,9 +133,9 @@ language='bash'
 
 The instance is healthy when the `sourcegraph-frontend-0` image is running and is marked as “healthy” on your host’s terminal.
 
-<Highlighter
+<OutputHighlighter
 input='[your-container-id]  sourcegraph-frontend-0  "/sbin/tini -- /usr/…"  Up 20 minutes(healthy)'
-language='bash'
+matcher='your-container-id'
 />
 
 A service will be marked as healthy if it has fulfilled all the checks that it needs to run.

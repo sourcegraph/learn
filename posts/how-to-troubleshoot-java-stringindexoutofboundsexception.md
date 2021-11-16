@@ -13,9 +13,8 @@ type: posts
 
 In Java, whenever you try to get a character from a string and you specify a character index that is not within the string, you will get the following exception.
 
-<Highlighter
+<OutputHighlighter
 input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range:'
-language='bash'
 />
 
 A String in Java is an array of characters and each character can be accessed by an index using the `.charAt()` method. When we use the `.charAt()` method and specify an index that does not exist in the underlying array of characters, Java will raise the above exception.
@@ -47,23 +46,21 @@ The program displays the word `sourcegraph` and allows the user to call a charac
 
 If the user enters `5` as the index, they won't encounter the `StringIndexOutOfBoundsException` as per the following output.
 
-<Highlighter
+<OutputHighlighter
 input={`The word is: 'sourcegraph'
 show character at index? 5
 sourcegraph has 'e' at index 5`}
-language='bash'
 />
 
 The length of the word `sourcegraph` is 11, which means there are 11 characters in the string.
 
 A string consists of an array of characters and at each index is a character. Arrays in Java are zero indexed, which means the first index and consequently the first character in a string is at index 0 and the last character is at index 10. So if a user were to enter an index value larger than 10 or less than 0, like 12, they would be able to repoduce the `StringIndexOutOfBboundsException`.
 
-<Highlighter
+<OutputHighlighter
 input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 12
 	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
 	at java.base/java.lang.String.charAt(String.java:693)
 	at ShowChar.main(ShowChar.java:14)'
-language='bash'
 />
 
 Now that we've been able to reproduce the error, let's go over possible solutions.
@@ -105,12 +102,11 @@ In the above program, we get the index value from the user and then we check tha
 
 If the user gives us an index value that is not within our minimum and maximum range, we print a message informing them what the minimum and maximum values are as indicated in the output below.
 
-<Highlighter
+<OutputHighlighter
 input={`The word is 'sourcegraph' and has 11 characters
 Show character at position? -1
 The given index -1 is incorrect.
 The index can have a minimum value of 0 and a maximum value of 10`}
-language='bash'
 />
 
 Here we have handled the exception through providing feedback to the user via flow control.
@@ -150,7 +146,7 @@ language='java'
 
 The above program is able to handle positive and negative values for the given index. We ensure the given value is positive with `Math.abs`. The modulus operator is used to ensure that the value is less than our maximum. 
 
-<Highlighter
+<OutputHighlighter
 input={`The word is 'sourcegraph' and has 11 characters
 Show character at index? 12
 sourcegraph has the character 'o' at index 1
@@ -158,7 +154,6 @@ sourcegraph has the character 'o' at index 1
 The word is 'sourcegraph' and has 11 characters
 Show character at index? -1
 sourcegraph has the character 'o' at index 1`}
-language='bash'
 />
 
 As per the output above, an index larger than our maximum is wrapped around, which happens because `12 % 11` is `1`.
