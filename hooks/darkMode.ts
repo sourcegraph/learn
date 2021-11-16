@@ -16,8 +16,8 @@ export const useDarkMode = (): DarkModeHookObject => {
 
     const setCurrentAssets = (theme: string): void => {
         if (theme === 'dark') {
-            setLogo('/static/images/sourcegraph-learn-dark.svg')
-            setSgLogo('/static/images/sourcegraph-logo-dark.svg')
+            setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn-dark.svg')
+            setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo-dark.svg')
         } else {
             setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
