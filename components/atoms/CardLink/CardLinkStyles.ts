@@ -9,6 +9,7 @@ export const StyledCardLink = styled.a<Props>`
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-width: 0;
     background-color: #fff;
     background-clip: border-box;
