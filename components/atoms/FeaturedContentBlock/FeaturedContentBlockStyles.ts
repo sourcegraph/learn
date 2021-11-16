@@ -35,7 +35,7 @@ export const StyledFeaturedContentItem = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
+    max-width: 65%;
 
     @media screen and (max-width: 768px) {
         max-width: unset;
