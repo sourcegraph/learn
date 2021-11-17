@@ -1,5 +1,4 @@
 import MarkdownFile from '@interfaces/MarkdownFile'
-import rehypePrism from '@mapbox/rehype-prism'
 import returnHeaders from '@util/returnHeaders'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'

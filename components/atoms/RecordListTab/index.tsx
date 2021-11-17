@@ -1,9 +1,10 @@
 import Button from '@components/atoms/Button'
+import { ThemeContext } from '@hooks/contexts/theme'
 import LoadMoreHookObject from '@interfaces/LoadMoreHookObject'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import createRandomId from '@util/createRandomId'
 import Link from 'next/link'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useContext } from 'react'
 
 import {
     StyledRecord,
@@ -21,7 +22,10 @@ interface Props {
     loadMore: LoadMoreHookObject
 }
 
-const RecordListTab: FunctionComponent<Props> = props => (
+const RecordListTab: FunctionComponent<Props> = props => {
+    const theme = useContext(ThemeContext)
+
+    return (
         <StyledRecordTabWrapper>
             {props.records && props.records.length > 0 && (
                 props.records.map((record: MarkdownFileWithUrl) => (
@@ -46,7 +50,8 @@ const RecordListTab: FunctionComponent<Props> = props => (
             {props.showButton && (               
                 <Button 
                     onClick={() => props.loadMore.setPage(props.loadMore.page + 5)}
-                    className='primary'>
+                    className='primary'
+                    isDark={theme.isDark}>
                     Load More
                 </Button>              
             )}
@@ -54,6 +59,7 @@ const RecordListTab: FunctionComponent<Props> = props => (
                 <StyledNoRecordsMessage>No records to display at this time.</StyledNoRecordsMessage>
             )}     
         </StyledRecordTabWrapper>
-)
+    )
+}
 
 export default RecordListTab

@@ -18,6 +18,6 @@ export const StyledRecordNavLink = styled.a<Props>`
     font-weight: 700;
     margin: 0 2rem 0 0;
     border-bottom: ${props => props.active
-        ? '1px solid #5033e1'
+        ? '1px solid var(--primary-link-color)'
         : ''};
 `

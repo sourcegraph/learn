@@ -16,7 +16,9 @@ body {
     font-weight: 400;
     letter-spacing: .015rem;
     line-height: 1.5;
-    color: #212529;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: all .3s linear;
 }
 
 table {

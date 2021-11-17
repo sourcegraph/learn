@@ -8,6 +8,7 @@ interface Props {
     children?: ReactNode
     target?: string
     rel?: string
+    isDark?: boolean
     onClick?: () => void
 }
 
@@ -17,6 +18,7 @@ const Button: FunctionComponent<Props> = props => (
         target={props.target} 
         rel={props.rel}
         className={props.className}
+        isDark={props.isDark}
         onClick={props.onClick}>
         {props.children}
     </StyledButton>

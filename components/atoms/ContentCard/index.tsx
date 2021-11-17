@@ -40,7 +40,7 @@ const ContentCard: FunctionComponent<Props> = props => (
                 )}
             </StyledCardBody>
         </CardLink>
-    </Link> 
+    </Link>
 )
 
 export default ContentCard
