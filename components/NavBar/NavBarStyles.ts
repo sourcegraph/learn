@@ -60,6 +60,7 @@ export const SyledNavBarLogoImage = styled.div`
     height: 1.56rem;
     vertical-align: -.3rem;
     width: 12.19rem;
+    margin-bottom: .125rem;
 `
 
 export const StyledNavBarMobileToggle = styled.button`
