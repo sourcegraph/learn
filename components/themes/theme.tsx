@@ -1,12 +1,5 @@
+import { ColorObject } from '@interfaces/Colors'
 import { FunctionComponent } from 'react'
-
-interface Color {
-    [dark: string]: string
-    light: string
-}
-interface ColorObject {
-    [index: string]: Color
-}
 
 const getLocalTheme = (): void => {
     const COLORS = {

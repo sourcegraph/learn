@@ -4,7 +4,7 @@ import { ThemeContext } from '@hooks/contexts/theme'
 import MenuIcon from 'mdi-react/MenuIcon'
 import MoonWaningCresentIcon from 'mdi-react/MoonWaningCrescentIcon'
 import WeatherSunnyIcon from 'mdi-react/WeatherSunnyIcon'
-import { FunctionComponent, useState, useContext, useEffect } from 'react'
+import { FunctionComponent, useState, useContext } from 'react'
 
 import {
     StyledNavBarWrapper,
@@ -22,15 +22,7 @@ import {
 
 const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
-    const [toggleText, setToggleText] = useState<string>()
     const theme = useContext(ThemeContext)
-
-    useEffect(() => {
-        theme.isDark
-            ? setToggleText('Light Mode')
-            : setToggleText('Dark Mode')
- 
-    }, [theme.isDark])
 
     return (
         <StyledNavBarWrapper id='nav'>

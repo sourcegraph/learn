@@ -2,11 +2,11 @@
  * Colors for themes (light/dark mode)
  */
 
-export interface ColorObject {
-    [property: string]: Color
+export interface Color {
+    [dark: string]: string
+    light: string
 }
 
-export interface Color {
-    [light: string]: string
-    dark: string
+export interface ColorObject {
+    [index: string]: Color
 }
