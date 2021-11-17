@@ -22,6 +22,10 @@ const getLocalTheme = (): void => {
             light: '#5033e1',
             dark: '#bfbfff',
         },
+        'logo-image': {
+            light: "url('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')",
+            dark: "url('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn-dark.svg')"
+        }
     }
     const localTheme = window.localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches

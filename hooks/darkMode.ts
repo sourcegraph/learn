@@ -5,7 +5,6 @@ import { useState, useEffect, useCallback } from 'react'
 
 export const useDarkMode = (): DarkModeHookObject => {
     const [theme, setTheme] = useState<string>('light')
-    const [logo, setLogo] = useState<string>('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
     const [sgLogo, setSgLogo] = useState<string>('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
     const isDark = theme === 'dark'
 
@@ -16,10 +15,8 @@ export const useDarkMode = (): DarkModeHookObject => {
 
     const setCurrentAssets = (theme: string): void => {
         if (theme === 'dark') {
-            setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn-dark.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo-dark.svg')
         } else {
-            setLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')
             setSgLogo('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-logo.svg')
         }
     }
@@ -64,7 +61,6 @@ export const useDarkMode = (): DarkModeHookObject => {
     return {
         theme,
         toggleTheme,
-        logo,
         sgLogo,
         isDark,
     }

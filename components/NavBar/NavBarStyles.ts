@@ -55,10 +55,11 @@ export const StyledNavBarLogoLink = styled.a`
     text-decoration: none;
     white-space: nowrap;
 `
-export const SyledNavBarLogoImage = styled.img`
-    height: auto;
+export const SyledNavBarLogoImage = styled.div`
+    background: var(--logo-image);
+    height: 1.56rem;
     vertical-align: -.3rem;
-    width: 12.5rem;
+    width: 12.19rem;
 `
 
 export const StyledNavBarMobileToggle = styled.button`

@@ -11,4 +11,8 @@ export const COLORS = {
         light: '#5033e1',
         dark: '#bfbfff',
     },
+    'logo-image': {
+        light: "url('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg')",
+        dark: "url('https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn-dark.svg')"
+    }
 }
