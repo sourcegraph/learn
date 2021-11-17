@@ -1,4 +1,3 @@
-import Button from '@components/atoms/Button'
 import RecordListTab from '@components/atoms/RecordListTab'
 import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'

@@ -17,9 +17,9 @@ export default class MyDocument extends Document {
           />
           {/* Prism theme for syntax highlighting */}
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
+          <SetThemeTag />
         </Head>
         <body>
-          <SetThemeTag />
           <GoogleTagManagerNoscriptFrame />
           <Main />
           <NextScript />
