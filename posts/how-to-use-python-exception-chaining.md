@@ -19,7 +19,7 @@ Here, we will observe the difference between this type of chaining and cases whe
 
 Consider the following exception for an index error:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_mistake():
 	try:
 		[][1]
@@ -63,7 +63,7 @@ Now consider this next case where a developer can provide an improved error mess
 
 We know that when we are debugging it's useful to have information about all exceptions. The __cause__ attribute of the exception makes it possible to obtain the chaining by using the `raise ... from` statement in Python:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_chaining():
 	try:
 		[][1]
@@ -100,7 +100,7 @@ Again, notice the key phrase between the two tracebacks (`The above exception wa
 
 Chaining can be disabled by using the `from None` motif within the `raise` clause. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_chaining_disabled():
 	try:
 		[][1]

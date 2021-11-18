@@ -31,8 +31,9 @@ We'll be using the `chmod` command to modify permissions of a temporary file to 
 
 Start by creating a temporary file to test with; we'll fill it with random data:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='echo "Hello World" > test-file.txt'
+matcher='test-file'
 language='bash'
 />
 
@@ -40,7 +41,7 @@ This will create a file named `test-file.txt` in the working directory, and fill
 
 Check the default permissions for this temporary file using
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls -l'
 language='bash'
 />
@@ -81,8 +82,9 @@ the *read* permission.
 
 To do this, we'll use the following command which uses `chmod` (change mode) to update user permissions and removes read access with `-r`. We'll pass the filename to the command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='chmod -r test-file.txt'
+matcher='test-file'
 language='bash'
 />
 
@@ -98,8 +100,9 @@ read the file anymore and only the owner(`your-user`) can write to the file.
 
 To verify this, try using the `cat` command. If you are not familiar, the `cat` command displays the contents of a file on the terminal. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat test-file.txt'
+matcher='test-file'
 language='bash'
 />
 
@@ -118,10 +121,10 @@ The first solution we'll go over is similar to how we reproduced the error, and 
 Following the previous example, to read the file normally we will need to assign the read permission back to the file. Again, we'll be using the `chmod` 
 command and this time will be adding back read access via the `+r` parameter and pass back in the relevant filename. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='chmod +r test-file.txt'
 language='bash'
-matcher='test-file.txt'
+matcher='test-file'
 />
 
 To verify that the file has now has read permissions, we'll use `ls -l`. This should display output similar to the following.
@@ -135,8 +138,9 @@ Notice the added `r` permission for every group; this indicates that every user 
 
 To test out whether your user can read the file at this point, use the `cat` command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat test-file.txt'
+matcher='test-file'
 language='bash'
 />
 
@@ -150,7 +154,7 @@ This output verifies that the file can be read normally.
 
 Depending on why you received the error, you would need to update permsisions other than read access. In many cases, this would most likely be needing to use the `chmod` command to add the executable permission to files, which you can do with the folowing command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='chmod +x filename'
 language='bash'
 matcher='filename'
@@ -173,21 +177,24 @@ matcher='your-user'
 
 Notice that no user has the *read* permission on this file. We can verify this using `cat`
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat test-file.txt'
+matcher='test-file'
 language='bash'
 />
 
 <OutputHighlighter
 input='cat: test-file.txt: Permission denied'
+matcher='test-file'
 />
 
 As expected, no one — including your current users — can read the file.
 
 However, if we use `sudo` we can override this restriction.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo cat test-file.txt'
+matcher='test-file'
 language='bash'
 />
 

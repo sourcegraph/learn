@@ -48,14 +48,14 @@ After forking the reference repository, you may want to create a directory or mo
 
 For our example, we’ll move into a temporary directory, `~/tmp`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd ~/tmp'
 language='bash'
 />
 
 Enter the following command on your terminal to clone your forked repository. Be sure to substitute _your username_ where we have `your-username` written out in the URL.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git clone https://github.com/your_username/deploy-sourcegraph-docker/'
 language='bash'
 />
@@ -77,14 +77,14 @@ A connection to the upstream repository you forked in [Step 1](#step-1--fork-the
 
 To set up your reference to the remote upstream repository, you’ll first need to move into the directory of your cloned repo. For our example, the path is the following, but be sure to use the path relevant to your machine and file structure. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd ~/tmp/deploy-sourcegraph-docker/'
 language='bash'
 />
 
 From within the `/deploy-sourcegraph-docker` directory, use the following command that passes in the URL of the `sourcegraph/deploy-sourcegraph-docker` project to set up the remote upstream. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git remote add upstream https://github.com/sourcegraph/deploy-sourcegraph-docker'
 language='bash'
 />
@@ -98,14 +98,14 @@ Because you have pull access, you can keep up with changes on the reference repo
 
 Move to the configuration directory (the file path on your machine that contains the clone to the fork you created), and navigate to the Docker Compose folder.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd ~/tmp/deploy-sourcegraph-docker/docker-compose'
 language='bash'
 />
 
 Within this directory, you can spin up the Sourcegraph instance on your host with Docker Compose. Here, `up -d` refers to starting the containers in the background and leaving them running; the `-d` flag refers to running the containers in a **d**etached mode.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo docker-compose up -d'
 language='bash'
 />
@@ -126,7 +126,7 @@ After receiving the message that Sourcegraph is ready, you will need to check th
 
 Sometimes, a service may be running but cannot respond to requests because a required step is not complete. Running a health check lets you know the actual state of the service.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker ps'
 language='bash'
 />

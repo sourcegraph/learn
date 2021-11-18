@@ -19,7 +19,7 @@ When we call a method, a new stack frame is created on the call stack. This stac
 
 In our example Java file, we’ll define a recursive method, called `recursion()` that prints an integer and then calls itself with the successive integer as its argument. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class Main {
      
     public static void recursion(int num) {
@@ -64,7 +64,7 @@ You may need to scroll through considerable output to find the error.
 
 A program that has cyclic relationships between classes is also another situation where the `StackOverflowError` commonly occurs. Here's an example:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class A {
 	public B type2;
 	public A()
@@ -107,7 +107,7 @@ Now, let's review the solution to prevent this error.
 
 We must carefully inspect the stack, trace and detect the repetitive calls and try to introduce a proper terminating condition to ensure that the recursion terminates. We can avoid the error in the first example by adding a terminating condition.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class Main {
   
     public static void recursion(int num) {
@@ -145,7 +145,7 @@ Your terminating condition should make sense for the program you are building. T
 In our second example of cyclic relationships, the error is mainly due to unecessary constructor calls, so work to avoid introducing them in your code.
 Another way of resolving this is to specify one as the parent and the other as the dependent. We can construct class `A` as the parent class and make class B the child, as demonstrated in the rewrite of the program below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class A {
 	public B type2;
 	public A()
@@ -175,7 +175,7 @@ If we expect we will need a lot of compute power ro tun our program, and anticip
 
 The format of the `-Xss` argument is as follows. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='-Xss<size>[g|G|m|M|k|K]'
 language='bash'
 />
@@ -184,7 +184,7 @@ This introduces the flag, and expects the size of the stack to be in gigabytes, 
 
 For example, the following command sets the default stack size to 10 megabytes. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='java -Xss:10m myJavaApp.java'
 language='bash'
 />

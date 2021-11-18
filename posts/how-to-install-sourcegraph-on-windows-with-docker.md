@@ -41,7 +41,7 @@ Please note that Sourcegraph can only be tested on Windows 10 as data will not b
 
 Due to limitations with Docker for Windows, Sourcegraph can only be tested on Windows as data cannot persist on a Windows installation. Due to that, we won't be using the `--volume` argument in our command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker run --publish 7080:7080 \
 --publish 127.0.0.1:3370:3370 ` \
 --rm sourcegraph/server:3.29.0'
@@ -50,7 +50,7 @@ language='bash'
 
 _The above command with backtick assumes use of PowerShell. If you're using the Windows Command Prompt, substitute `^` as below._
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker run --publish 7080:7080 \
 --publish 127.0.0.1:3370:3370 ^ \
 --rm sourcegraph/server:3.29.0'

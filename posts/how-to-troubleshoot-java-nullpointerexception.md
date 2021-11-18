@@ -17,7 +17,7 @@ The `NullPointerException` (NPE) is quite a common and dreaded exception that yo
 
 Below is a program which will recreate a `NullPointerException`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {
@@ -68,7 +68,7 @@ We can make our `for` loop a little bit more robust by informing the user that a
 
 We can do this through the use of flow control by adding an `if`-`else` statement to our `for` loop.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {
@@ -122,7 +122,7 @@ Here, we have prevented the error from occurring by providing user feedback for 
 
 We can also avoid the `NullPointerException` by ensuring that all the values that we use in our program are initialized.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {

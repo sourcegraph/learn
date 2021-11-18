@@ -14,7 +14,9 @@ type: posts
 In Java, to access an element in an array you use an index. However, if that index does not exist in the array, you'll get the following exception.
 
 ```
+
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7
+
 ```
 
 Arrays in Java are zero-based, which means the first position of an array is at index `0` and the last index is the length of the array minus one. So a valid index is any value between `0` and the length of the array. All other values will lead to an `ArrayIndexOutOfBoundsException`.
@@ -23,7 +25,7 @@ Arrays in Java are zero-based, which means the first position of an array is at 
 
 Let's write a small program called `NumberPrinter.java` to understand when the exception occurs.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;
  
 public class NumberPrinter {
@@ -96,7 +98,7 @@ Let's go over how we can ensure that the index value is always valid.
 
 By using flow control and `if`-`else` statements, we can check that the value provided by the user adheres to the index value criteria discussed above.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;
  
 public class NumberPrinter {
@@ -145,12 +147,14 @@ We first check that the value adheres to the first index value restriction, whic
 
 If the value is positive, we then check that the value isn't too large by comparing the value to the length of the `numbers[]` array, since the second restriction states that "The index value cannot be larger than the length of the array." Once again, if the value doesn't adhere to this restriction, we print out an informative message to the user.
 
-In the output below, we are given the result of a user entering the invalid values of first `-1` and then `8`.
+In the output below, we are given the result of a user entering the invalid values of first `-1`:
 
 <OutputHighlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Only positive values are allowed!'
 />
+
+and then `8`:
 
 <OutputHighlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 8
@@ -171,7 +175,7 @@ With regard to the second restriction, if we say that when a user inputs a numbe
 
 Ultimately, we prefer the lower value, be it the user given value or the length of the array. In the program below this approach is implemented.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;
  
 public class NumberPrinter {
@@ -200,7 +204,7 @@ public class NumberPrinter {
 language='java'
 />
 
-Below is the output of the above program for if a user enters the value of `999` or `-1`, respectively.
+Below is the output of the above program for if a user enters the value of `999`:
 
 <OutputHighlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 999
@@ -213,6 +217,8 @@ Index 5 has value 2
 Index 6 has value 1
 Printed 7 numbers out of 7'
 />
+
+or `-1`:
 
 <OutputHighlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1

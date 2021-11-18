@@ -10,7 +10,7 @@ import {
     StyledCodeBlock,
     StyledCodeWrapper,
     StyledHighlighterWrapper,
-} from './HighlighterStyles'
+} from './PrismSyntaxHighlighterStyles'
 
 interface Props {
     input: string
@@ -18,7 +18,7 @@ interface Props {
     matcher?: string
 }
 
-const Highlighter: FunctionComponent<Props> = props => {
+const PrismSyntaxHighlighter: FunctionComponent<Props> = props => {
     const codeReference = createRef<HTMLPreElement>()
     
     return (
@@ -43,4 +43,4 @@ const Highlighter: FunctionComponent<Props> = props => {
     )
 }
 
-export default Highlighter
+export default PrismSyntaxHighlighter

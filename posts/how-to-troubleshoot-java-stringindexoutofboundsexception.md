@@ -22,7 +22,7 @@ A String in Java is an array of characters and each character can be accessed by
 ## Reproducing the error
 Let's write the following Java program `ShowChar.java`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;   
  
 public class ShowChar {   
@@ -69,7 +69,7 @@ Now that we've been able to reproduce the error, let's go over possible solution
 
 By using flow control and `if`-`else` statements, we can check that the index lies within the string. If the index does not lie within the string we can tell the user the minimum and maximum values we're expecting.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;
  
 public class ShowChar {
@@ -119,7 +119,7 @@ If we mod the given index with the length of the word, we can ensure that a give
 
 We can also ensure that the given index is always positive by taking the absolute value of the index using `Math.abs`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;  
  
 public class ShowChar {  

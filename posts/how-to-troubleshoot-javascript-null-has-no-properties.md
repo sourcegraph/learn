@@ -13,13 +13,12 @@ type: posts
 
 If you are working in JavaScript, and receive one of the following outputs, your code is attempting to access properties of `null` and `undefined`.
 
-<Highlighter
+<OutputHighlighter
 input='TypeError: null has no properties 
 TypeError: undefined has no properties 
 TypeError: Cannot read property {x} of null
 TypeError: Cannot read property {x} of undefined
 TypeError: Unable to get property {x} of undefined or null reference'
-language='javascript'
 />
 
 In JavaScript, `null` and `undefined` have no properties. This is why this error is being raised.
@@ -32,14 +31,14 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 
 Let's execute the following in a JavaScript console. In this first example, we will use `null`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`console.log(null.name);  // TypeError: Cannot read property 'name' of null`}
 language='javascript'
 />
 
 In this second example, we will use `undefined`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`console.log(undefined.name);  // TypeError: Cannot read property 'name' of undefined`}
 language='javascript'
 />
@@ -50,7 +49,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 In the examples above, it is pretty clear that we are trying to access a property of `null` or `undefined`. But in other cases this will be less obvious. Let's consider another example.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`let person = null;
  
 if (Date.now() < new Date(2022,11,01)) {
@@ -72,7 +71,7 @@ So, we need to be careful about this kind of code that can have different values
 
 If we have a program like the one in the previous section, we can avoid this exception being raised by checking if the variable is what we are expecting, before using it.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`let person = null;
  
 if (Date.now() < new Date(2021,11,01)) {
@@ -97,7 +96,7 @@ This way we can let the user know that something is missing but with a more huma
 
 A third approach is to handle the exception with a `try` / `catch` clause that catches the `TypeError` and shows a human-readable message for the user.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`let person = null;
  
 if (Date.now() < new Date(2022,11,01)) {

@@ -17,14 +17,14 @@ The Linux commands `cd` or `rmdir` will return the error `Not a directory` if yo
 
 Lets create a text file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='echo "test" > test'
 language='bash'
 />
 
 Let's try to change directory to the text file named `test` with the **c**hange **d**irectory (`cd`) command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd test'
 language='bash'
 />
@@ -45,21 +45,21 @@ The most straightforward way of avoiding this error is by using `cd` only on kno
 
 First, we create a directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mkdir mydir'
 language='bash'
 />
 
 Then we can move our text file, `test` into that directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mv test mydir/test'
 language='bash'
 />
 
 Finally we can now change directory into `mydir`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd mydir'
 language='bash'
 />
@@ -75,7 +75,7 @@ You can use `ls` to list all files in a directory. We will append the flags `-la
 * `-h` — list file sizes in a human-readable format, as in `5K`, `250M`, `96B`
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls -lah'
 language='bash'
 />
@@ -100,7 +100,7 @@ The start of each output lets you know if it's a directory or not. `-` means it'
 
 You can use the `grep` command to list only directories. This way if you use `cd` on any of those, it should succeed. `grep` is used to filter out all regular files so only directories remain in the list.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls -lAh | grep "^d"'
 language='bash'
 />

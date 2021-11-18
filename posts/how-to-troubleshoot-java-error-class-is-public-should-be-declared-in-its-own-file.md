@@ -27,7 +27,7 @@ When encountering this error, it’s important to make sure not only that our pu
 
 If we create a program called `Main.java` and write the following code inside of the program, we will encounter the `error: class X is public, should be declared in a file named “test”` message as output.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class test {
     public static void main (String[] args) {
     //…
@@ -48,7 +48,7 @@ Remember to be consistent with capitalization and spelling, as the Java compiler
 
 For example, saving the above example code as `test.java` would allow it to compile. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`public class test {
     public static void main (String[] args) {
     //…
@@ -59,7 +59,7 @@ language='java'
 
 We can alternatively rename our file on the command line with the `cp` command, passing the data from the first file to a second file. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cp Main.java test.java'
 language='bash'
 />

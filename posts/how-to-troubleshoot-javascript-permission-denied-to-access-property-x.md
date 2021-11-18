@@ -13,14 +13,14 @@ type: posts
 
 When you are working in JavaScript, you may come across an error similar to the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Error: Permission denied to access property "x"'
 language='javascript'
 />
 
 Or, you may receive the error in a slightly more verbose form, like the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Uncaught DOMException: Permission denied to access property "document" on cross-origin object'
 language='javascript'
 />
@@ -33,7 +33,7 @@ the [same origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/S
 
 An example which causes the above error is this example document:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<!DOCTYPE html>
 <html>
   <head>
@@ -70,7 +70,7 @@ _Please be sure to review the terms of service of websites you intend to incorpo
 For example, you can use the following HTML if you would like your website, `https://www.my-sourcegraph-website.com/` to be able to embed an html page hosted online at `https://www.a-third-party-page.com/`, you could write the file below. 
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<!DOCTYPE html>
 <html>
   <head>
@@ -95,7 +95,7 @@ language='html'
 
 Your website hosted on `https://www.my-sourcegraph-website.com/` will have the soucecode below. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<!DOCTYPE html>
 <html>
   <head>

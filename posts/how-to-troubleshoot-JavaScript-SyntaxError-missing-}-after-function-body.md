@@ -23,7 +23,7 @@ To demonstrate the error, let us first reproduce it. The following are two examp
 
 Let's consider this `coffee` function:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`function coffee(){
   /* Script that makes a cup of cappuccino
    without parameters. */`}
@@ -43,7 +43,7 @@ In a short program like the one above, it may appear clear that a curly bracket 
 
 Consider the following example:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`function coffee(water){
     if(water.isHot){
         /* Make a cup of cappuccino
@@ -61,7 +61,7 @@ note: { opened at line 1, column 27'
 
 The curly bracket at the end of our example program — that returned an error message — is considered to be closing the nested `if(water.isHot)` conditional block. The interpreter follows the **l**ast-**i**n-**f**irst-**o**ut (LIFO) order: the last closed curly bracket in the example above closes the last opened curly bracket, which is the conditional block statement. This version of the program makes the purpose of the single closed curly bracket clearer.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`function coffee(water){
     if(water.isHot){
         /* Make a cup of cappuccino
@@ -88,7 +88,7 @@ In the example above, the line where the error occurred is line 4. Try to parse 
 
 A recommended practice that will help you avoid this kind of error when writing code is, when opening a block statement — such as a function or some parentheses — try to always open and close the body first, then write your code inside it. Using this approach, the sample code above would start out like the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function coffee() {}'
 language='javascript'
 />

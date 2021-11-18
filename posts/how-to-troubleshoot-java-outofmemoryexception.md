@@ -23,7 +23,7 @@ The explanatory note at the end of the error message noted "heap space" as the c
 
 An example of a short program that could cause an error similar to the one above, could be similar to the following. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.ArrayList;
 import java.util.List;
  
@@ -48,7 +48,7 @@ Now, the issue with this program is that we failed to give it an exit function, 
 
 There are two possible methods of solving this. The first thing to do is to evaluate whether the right approach is making the heap bigger. If we decide that this is the appropriate next step, we can do this via a bash command in the command terminal:
 
-<Highlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
+<PrismSyntaxHighlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
 language='bash'
 />
 
@@ -56,14 +56,14 @@ Here, `1g` represents the amount of space we want to allocate to the heap, `1g` 
 
 If the cause is the heap size, like it was for our program, we may be able to increase the size of the heap on the command line with the following command: 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='java -Xmx2048m'
 language='bash'
 />
 
 The above command instructs the heap size to increase to 2048 MB (or 2GB) and is an example memory increase. We should check the current size of our heap using this command:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='java -XX:+PrintFlagsFinal -version | findstr /i "HeapSize"'
 language='bash'
 />

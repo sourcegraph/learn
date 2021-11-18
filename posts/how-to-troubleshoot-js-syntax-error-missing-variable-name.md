@@ -28,7 +28,7 @@ There are some common mistakes that can raise this exception.
 
 In this example, we have initialized a variable but did not pass a name to that variable.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var = "foo";'
 language='javascript'
 />
@@ -41,7 +41,7 @@ input='SyntaxError: missing variable name'
 
 To solve this isse, we will need to ensure that we have declared our variable with a name in addition to passing a value for that variable.
            
-<Highlighter
+<PrismSyntaxHighlighter
 input='var description = "foo";'
 language='javascript'
 />
@@ -54,7 +54,7 @@ Some words are reserverd in JavaScript, and you can't use them as variable, labe
 
 In this example, when we use the reserved word `debugger` to initialize our variable, we receive an error that the name is missing. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var debugger = "foo";'
 language='javascript'
 />
@@ -65,7 +65,7 @@ input='SyntaxError: missing variable name'
 
 We can solve this issue by using an alternate name. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var debug_variable = "foo";'
 language='javascript'
 />
@@ -78,7 +78,7 @@ When declaring multiple variables at the same time, you may erroneously end a li
 
 Here, we initialize two variables — `a` and `b` — with the value `"foo"`, and a third variable — `c` — with the value `"bar"`. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var a, b = "foo",
 var c = "bar"'
 language='javascript'
@@ -92,7 +92,7 @@ input='SyntaxError: missing variable name'
 
 To remedy this issue, be sure to use semicolons to end your lines. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var a, b = "foo";
 var c = "bar";'
 language='javascript'
@@ -104,7 +104,7 @@ With this solution, we will no longer encounter an error.
 
 When creating an array you may forget to write the square brackets around the values, as in the example below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var array = 1, 2, 3, 4, 5;'
 language='javascript'
 />
@@ -117,7 +117,7 @@ input='SyntaxError: missing variable name'
 
 The solution to this is to be sure you are following correct JavaScript syntax. In the case of arrays, be sure to use square brackets.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='var array = [1, 2, 3, 4, 5];'
 language='javascript'
 />

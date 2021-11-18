@@ -19,7 +19,7 @@ In this guide, we’ll explore how to use `git status` and understand its output
 
 To get a summary of the status of the repository, run `git status` in your terminal in your repository directory. It doesn’t require any arguments.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status'
 language='bash'
 />
@@ -180,7 +180,7 @@ Once you’re used to reading the output of `git status`, you can use the short 
 
 To run `git status` with the short output option, add the `-s` flag (which stands for “short”) to the command. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status -s'
 language='bash'
 />
@@ -207,7 +207,7 @@ The `git status` command also supports a verbose option that provides more detai
 
 To enable the verbose output option, run `git status` with the `-v` flag (short for “**v**erbose”).
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status -v'
 language='bash'
 />

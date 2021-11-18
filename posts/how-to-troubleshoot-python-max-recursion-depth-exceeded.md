@@ -25,7 +25,7 @@ Let's reproduce this error by creating a Python file called `fibonacci.py`.
 
 [Fibonacci series](https://en.wikipedia.org/wiki/Fibonacci_number#Sequence_properties) computation is generally a standard algorithm, which can be solved in various ways, and each of the implementations is useful for demonstrating certain behaviors. In our case, we'll be using this algorithm to demonstate the `RecursionError` through creating a recursive function.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def recursive_fibonacci(n):
     if n <= 1:
         return n
@@ -66,7 +66,7 @@ Note that our Fibonacci implementation has a time complexity of `O(2^n)`, which 
 
 Let's explore our example program through increasing the stack size.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import sys
   
  
@@ -95,7 +95,7 @@ Let us take a step back and work to improve our solution from an algorithmic per
 
 One way to improve on our implementation is to convert a recursive problem into an iterative one. We can refactor our code to use an iterative version, and this version will be more robust as it would not allocate memory on stack.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def iterative_fibonacci(n):
     if n <= 1:
         return n

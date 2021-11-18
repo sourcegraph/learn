@@ -28,7 +28,7 @@ On a Linux cloud server or local computer, you can install Docker via the comman
 
 Ensure that you have the [snap package manager](https://snapcraft.io/) installed by running the following commands in your terminal for **Ubuntu or Debian Linux**:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo apt update
 sudo apt install snapd
 sudo snap install core'
@@ -37,7 +37,7 @@ language='bash'
 
 Once snap is fully installed, you can install Docker using snap.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo snap install docker'
 language='bash'
 />
@@ -50,14 +50,14 @@ With Docker installed, you are ready to procceed to [Step 2](#step-2--install-so
 
 If you are using **Fedora**, ensure that snap is installed by running the following command:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo dnf install snapd'
 language='bash'
 />
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo snap install docker'
 language='bash'
 />
@@ -70,7 +70,7 @@ With Docker installed, you are ready to procceed to [Step 2](#step-2--install-so
 
 If you are using **CentOs**, you can ensure that snap is installed and ready by running the following commands. For more guidance on these commands, please visit snap’s [official documentation](https://snapcraft.io/install/docker/centos).
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`sudo yum install epel-release
 sudo yum install snapd
 sudo systemctl enable --now snapd.socket`}
@@ -79,7 +79,7 @@ language='bash'
 
 Once you confirm that snap is fully installed, you can install Docker using snap.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sudo snap install docker'
 language='bash'
 />
@@ -98,7 +98,7 @@ We’ll go over two approaches below; the first which is recommended for [Linux 
 
 On local machines that use a Linux distribution, you’ll be able to install Sourcegraph by running the following Docker command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker run --publish 7080:7080 \
 --publish 127.0.0.1:3370:3370 \  
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \  
@@ -121,7 +121,7 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 On a Linux cloud server, you can run the following command to keep your instance of Sourcegraph up and running even after you close your Terminal connection to the server.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker run -d --publish 80:7080 \
 --publish 443:7443 \
 --restart unless-stopped \

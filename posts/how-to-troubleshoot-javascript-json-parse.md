@@ -38,7 +38,7 @@ In the example above there is a reason provided for why `JSON.parse` failed. The
 
 Let's write a small JavaScript program that parses some JSON and prints out the value of the name property from the parsed JSON object.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function printInfo(text) {
     let person = JSON.parse(text);
     console.log(`${person.name} lives in ${person.country}`);
@@ -62,7 +62,7 @@ Since we know there is a possibility that `JSON.parse` can throw an error, we ca
 
 Below, our program has been updated to do just this.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function printInfo(text) {
     try {
         let person = JSON.parse(text);
@@ -94,7 +94,7 @@ Depending on where the JSON is malformed, the `SyntaxError` will tell you what c
 
 We can use this guidance to fix the JSON where the error occurred.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function printInfo(text) {
     let person = JSON.parse(text);
     console.log(`${person.name} lives in ${person.country}`);

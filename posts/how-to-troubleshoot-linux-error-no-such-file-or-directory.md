@@ -27,21 +27,21 @@ Open your terminal and execute the following commands.
 
 Create directory `foo` with the `mkdir` command. The `mkdir` command stands for "make directory" and will create a new directory in the directory you are currently located within on the terminal. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mkdir foo'
 language='bash'
 />
 
 Create file `bar.txt` inside the `foo` directory. We will use the [`touch` command](https://en.wikipedia.org/wiki/Touch_(command)) to create this file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='touch foo/bar.txt'
 language='bash'
 />
 
 Write some data to the file `bar.txt` with the `echo` command, which returns back what we request.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='echo "Hello, World" > foo/bar.txt'
 language='bash'
 />
@@ -50,7 +50,7 @@ The above command uses `echo`, then the text we would like to add to our file in
 
 Let's try to access the data using the `cat` or con**cat**enate command that will read data from the file and give its content as output.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat foo/bar.txt'
 language='bash'
 />
@@ -63,7 +63,7 @@ input='Hello, World'
 
 Now, let's try to access the file with an incorrect path.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat bar.txt'
 language='bash'
 />
@@ -80,7 +80,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 You can use the `pwd` command to check your current working directory. The `pwd` command stands for **p**resent **w**orking **d**irectory. You can then use the `ls` command to **l**i**s**t all the files present in the present directory. With these commands, you will get a better idea as to whether you are trying to access a given file through the correct filepath or not.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='pwd'
 language='bash'
 />
@@ -93,7 +93,7 @@ input='/home/your-username'
 
 Next, type `ls` to list the contents of the present working directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls'
 language='bash'
 />
@@ -108,7 +108,7 @@ Through observating the output above, you will notice that the file `bar.txt` is
 
 Use the `cd` command, which stands for **c**hange **d**irectory, to move inside the `foo` directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd foo'
 language='bash'
 />
@@ -118,7 +118,7 @@ This will move you into the `foo` directory, and your command prompt will change
 
 Now we can check for files present in the `foo` directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls'
 language='bash'
 />
@@ -131,7 +131,7 @@ input='bar.txt'
 
 Now that you are in the correct directory, you can check the contents of the file with `cat`. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat bar.txt'
 language='bash'
 />
@@ -148,14 +148,14 @@ If you are still experiencing issues finding your file or directory, always chec
 
 It's possible that the file you are trying to access is a binary executable file, in this case you can use the `whereis` command to locate the binary. Open your terminal and type the following command, with `filename` standing in for the file you are looking for.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='whereis filename'
 language='bash'
 />
 
 For example, you can search for the location of `netstat`, which is a command-line utility that displays active TCP connections and more.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='whereis netstat'
 language='bash'
 />

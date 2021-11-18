@@ -26,7 +26,7 @@ This can happen with strings, tuples, lists, and generally any data type that is
 
 Let's write the following program, `indexerr.py` .
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
  
@@ -59,7 +59,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 Flow control and an `if`-`else` statement can be used to print output to give guidance, or give the user direction.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
  
@@ -84,7 +84,7 @@ Now, if the user enters `5` or any number greater than `5`, they will receive th
 
 A second approach to troubleshoot this error is to handle the exception with a `try`-`except` clause that calls and catches the `IndexError`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`try:
     programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
     index = input("Enter an integer to print an element at a given index: ")

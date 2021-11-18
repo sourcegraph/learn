@@ -40,7 +40,7 @@ The compiler throws the error if a closing curly bracket of a   *class,main meth
 
 The below blocks of code all result in this error..
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`class HelloWorld
 {
     public static void main(String[] args)
@@ -55,7 +55,7 @@ In the above code, the class "`HelloWorld` opens with a curly bracket but doesn'
 
 In the following example, although the `world()` method has only the opening curly bracket, the compiler considers the nearest closing curly bracket to enclose the `world()` code block, and thus the main class doesn't end with a curly bracket.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`class HelloReaders
 {
     public static void main(String[] args)
@@ -87,7 +87,7 @@ The error is also thrown by the compiler if a closing curly bracket in a loop or
 
 The code block below generates this error as the code in the `for` loop is not properly enclosed within the curly brackets, and thus the nearest closing curly bracket is used to enclose the statements of the loop and this results in the `reached end of file while parsing` error.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`class HelloReaders
 {
     public static void main(String[] args)
@@ -116,7 +116,7 @@ input='HelloReaders.java:14: error: reached end of file while parsing
 
 Similarly, in an `if` (shown below) or `if else` code structure, this error is common and can be produced as follows.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`class HelloReaders
 {
     String readers="good";
@@ -146,7 +146,7 @@ To solve this error, check for the opening and closing pairs of the curly bracke
 
 Adding the closing bracket removes the errors we received above, as shown in the example below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`class HelloReaders
 {
     public static void main(String[] args)

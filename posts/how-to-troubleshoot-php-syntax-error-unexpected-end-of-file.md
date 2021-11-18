@@ -23,7 +23,7 @@ This means that you haven't finished your command or haven't written it complete
 
 Let's consider this in practice. Assuming that you have PHP installed on your machine, write this little piece of code in a `hello.php` file:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 echo 'Hello World'`}
@@ -32,7 +32,7 @@ language='php'
 
 Now, you can run the file on terminal in the same path of the file. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='php hello.php'
 language='bash'
 />
@@ -49,7 +49,7 @@ Now that we reproduced the error, let's find out how to fix it.
 
 As we saw before, the PHP programming language uses some characters to define the end of a command or a concatenation of commands. So, in our `hello.php` file, add `;` at the end of the `echo` command:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 echo 'Hello World';`}
@@ -62,7 +62,7 @@ If you run this file, the output of will now be `Hello World`.
 
 You may have noticed that the error message suggests two characters that may have been missing in the code: `syntax error, unexpected end of file, expecting "," or ";"`. So, if we put a `;` at the end of the `echo` expression works, what happens when we put a `,`? Let's run this experiment by writing the program with a comma at the end of the expression.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 echo 'Hello World',`}
@@ -71,7 +71,7 @@ language='php'
 
 Run the command with `php`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='php hello.php'
 language='bash'
 />
@@ -88,7 +88,7 @@ Because in PHP, the `,` character is used to concatenate expressions in the `ech
 
 So, let's review a program that uses both characters (`,` and `;`):
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 $name = 'Sourcegraph';
@@ -99,7 +99,7 @@ language='php'
 
 Run the program again.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='php hello.php'
 language='bash'
 />
