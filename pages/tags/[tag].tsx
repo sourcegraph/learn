@@ -1,10 +1,8 @@
 import TagTemplate, { Props as TagTemplateProps } from '@components/templates/TagTemplate'
-import MarkdownFile from '@interfaces/MarkdownFile'
 import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import filterRecordsWithTag from '@util/filterRecordsWithTag'
 import getQueryParameter from '@util/getQueryParameters'
-import markdownWithUrls from '@util/markdownWithUrls'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {

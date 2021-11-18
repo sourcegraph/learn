@@ -13,10 +13,10 @@ export const StyledRecord = styled.div`
 export const StyledRecordTitle = styled.a`
     font-weight: 600;
     text-decoration: none;
-    color: #212529;
+    color: var(--text-color);
 
     :hover {
-        color: #5033e1;
+        color: var(--primary-link-color);
     }
 `
 export const StyledRecordTags = styled.p`
@@ -35,10 +35,10 @@ export const StyledRecordAuthor = styled.a`
     margin-bottom: .5rem;
     text-decoration: none;
     cursor: pointer;
-    color: #212529;
+    color: var(--text-color);
 
     :hover {
-        color: #5033e1;
+        color: var(--primary-link-color);
     }
 `
 export const StyledNoRecordsMessage = styled.div`
