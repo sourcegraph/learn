@@ -30,7 +30,9 @@ const PrismSyntaxHighlighter: FunctionComponent<Props> = props => {
                         <StyledCodeBlock key={createRandomId()} {...getLineProps({ line, key: index })}>
                             {line.map((token, key) => (
                                 <span {...getTokenProps({ token, key })} key={createRandomId()}>
+                                {token.content !== ' ' && (
                                     <Highlighter input={token.content} matcher={props.matcher} prismSyntax={true} />
+                                )}
                                 </span>
                             ))}
                         </StyledCodeBlock>
