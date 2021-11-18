@@ -50,7 +50,7 @@ Depending on what else is in your working directory, you may have several lines 
 
 <Highlighter
 input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-matcher='your-user'
+matcher='your-user, test-file'
 />
 
 We're interested in the first column of this output — the text `rw-r--r--` — which represents the permissions of this newly created file. Let's break this down into three parts.
@@ -92,7 +92,7 @@ Now, review the updated file permissions, using the `ls -l` command as before. Y
 
 <Highlighter
 input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-matcher='your-user'
+matcher='your-user, test-file'
 />
 
 Notice that the file permissions for the owner (and other groups) have been modified. The missing `r` permission for all groups indicates that no one can
@@ -131,7 +131,7 @@ To verify that the file has now has read permissions, we'll use `ls -l`. This sh
 
 <Highlighter
 input='-rw-r--r--  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-matcher='your-user'
+matcher='your-user, test-file'
 />
 
 Notice the added `r` permission for every group; this indicates that every user group can read the file.
@@ -172,7 +172,7 @@ We'll be continuing with the original example, `test-file.txt`, with the followi
 
 <Highlighter
 input='--w-------  1 your-user your-user    12 Oct 21 23:10 test-file.txt'
-matcher='your-user'
+matcher='your-user, test-file'
 />
 
 Notice that no user has the *read* permission on this file. We can verify this using `cat`

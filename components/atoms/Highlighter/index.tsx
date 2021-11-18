@@ -15,34 +15,40 @@ interface Props {
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
-    let parts: string | string[] = props.input
+    let parts: string[] = [ props.input ]
     let regex = new RegExp('')
     if (props.matcher) {
-        regex = new RegExp(`(${props.matcher})|(?=${props.matcher})`, 'gi')
-        parts = props.input.split(regex)
+        let matcherString = ''
+        props.matcher.split(',').map(part => {
+            matcherString = matcherString.concat('|', `(${part.trim()})|(?=${part.trim()})`)
+            matcherString = matcherString.replace(/^\|/, '')
+            regex = new RegExp(`${matcherString}`, 'gi')
+            parts = props.input.split(regex)
+        })
     }
+    const hasHighlighting = parts.length > 1
 
     return (
         <StyledCodeWrapper>
             <StyledCodeBlock>
-                {props.prismSyntax && typeof parts !== 'string' && (
-                    parts.map(part => (
+                {props.prismSyntax && hasHighlighting && (
+                    parts.map((part: string) => (
                         regex.test(part)
                             ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
                             : <span key={createRandomId()}>{part}</span>
                     ))
                 )}
-                {props.prismSyntax && typeof parts === 'string' && (
+                {props.prismSyntax && !hasHighlighting && (
                     <span>{parts}</span>
                 )}
-                {!props.prismSyntax && typeof parts !== 'string' && (
-                    parts.map(part => (
+                {!props.prismSyntax && hasHighlighting && (
+                    parts.map((part: string) => (
                         regex.test(part)
                             ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
                             : <StyledNonHighlighterMatch key={createRandomId()}>{part}</StyledNonHighlighterMatch>
                     ))
                 )}
-                {!props.prismSyntax && typeof parts === 'string' && (
+                {!props.prismSyntax && !hasHighlighting && (
                     <StyledNonHighlighterMatch>{parts}</StyledNonHighlighterMatch>
                 )}
             </StyledCodeBlock>
