@@ -13,7 +13,7 @@ type: posts
 
 The `OutOfMemoryError` is an error message in the Java language, and is thrown by the compiler when the heap is full. The heap is where objects reside within the JVM (Java virtual machine). You can run out of memory either because the heap size is insufficient for the size of the program, or there is at least one process causing a memory leak. Typically, a stack trace will be printed with the exception, along with an explanatory statement at the end of the `java.lang.OutOfMemoryError`, which will indicate why it is being thrown. Here is an example of the error: 
 
-<OutputHighlighter
+<Highlighter
 input='Exception in thread "main" java.lang.OutOfMemoryError: Java heap space'
 />
 

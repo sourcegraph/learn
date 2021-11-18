@@ -13,7 +13,7 @@ type: posts
 
 While using Python, you may face this issue if you use up the stack memory more than allocated. This occurs when your program is attempting to use considerable available memory.
 
-<OutputHighlighter
+<Highlighter
 input='RecursionError: maximum recursion depth exceeded'
 />
 
@@ -38,7 +38,7 @@ language='python'
 
 Run this script using the command `python3 fibonacci.py` command. You will get output similar to the following, including the error message. 
 
-<OutputHighlighter
+<Highlighter
 input='Traceback (most recent call last):
   File "fibonacci.py", line 9, in <module>
     recursive_fibonacci(123456)

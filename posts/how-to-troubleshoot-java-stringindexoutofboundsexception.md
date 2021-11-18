@@ -13,7 +13,7 @@ type: posts
 
 In Java, whenever you try to get a character from a string and you specify a character index that is not within the string, you will get the following exception.
 
-<OutputHighlighter
+<Highlighter
 input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range:'
 />
 
@@ -46,7 +46,7 @@ The program displays the word `sourcegraph` and allows the user to call a charac
 
 If the user enters `5` as the index, they won't encounter the `StringIndexOutOfBoundsException` as per the following output.
 
-<OutputHighlighter
+<Highlighter
 input={`The word is: 'sourcegraph'
 show character at index? 5
 sourcegraph has 'e' at index 5`}
@@ -56,7 +56,7 @@ The length of the word `sourcegraph` is 11, which means there are 11 characters 
 
 A string consists of an array of characters and at each index is a character. Arrays in Java are zero indexed, which means the first index and consequently the first character in a string is at index 0 and the last character is at index 10. So if a user were to enter an index value larger than 10 or less than 0, like 12, they would be able to repoduce the `StringIndexOutOfBboundsException`.
 
-<OutputHighlighter
+<Highlighter
 input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 12
 	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
 	at java.base/java.lang.String.charAt(String.java:693)
@@ -102,7 +102,7 @@ In the above program, we get the index value from the user and then we check tha
 
 If the user gives us an index value that is not within our minimum and maximum range, we print a message informing them what the minimum and maximum values are as indicated in the output below.
 
-<OutputHighlighter
+<Highlighter
 input={`The word is 'sourcegraph' and has 11 characters
 Show character at position? -1
 The given index -1 is incorrect.
@@ -146,7 +146,7 @@ language='java'
 
 The above program is able to handle positive and negative values for the given index. We ensure the given value is positive with `Math.abs`. The modulus operator is used to ensure that the value is less than our maximum. 
 
-<OutputHighlighter
+<Highlighter
 input={`The word is 'sourcegraph' and has 11 characters
 Show character at index? 12
 sourcegraph has the character 'o' at index 1

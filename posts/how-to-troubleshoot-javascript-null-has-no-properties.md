@@ -13,7 +13,7 @@ type: posts
 
 If you are working in JavaScript, and receive one of the following outputs, your code is attempting to access properties of `null` and `undefined`.
 
-<OutputHighlighter
+<Highlighter
 input='TypeError: null has no properties 
 TypeError: undefined has no properties 
 TypeError: Cannot read property {x} of null

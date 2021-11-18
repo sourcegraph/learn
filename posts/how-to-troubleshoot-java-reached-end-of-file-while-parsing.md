@@ -15,7 +15,7 @@ Parsing is the process by which a compiler analyses the code for correct syntax 
 
 The error may appear as the following.
 
-<OutputHighlighter
+<Highlighter
 input='Main.java:13: error: reached end of file while parsing
     }
      ^
@@ -24,7 +24,7 @@ input='Main.java:13: error: reached end of file while parsing
 
 Or, the error may read as follows. 
 
-<OutputHighlighter
+<Highlighter
 input='java: reached end of file while parsing'
 />
 
@@ -72,7 +72,7 @@ language='java'
 
 The error is encountered at line 11 as follows.
 
-<OutputHighlighter
+<Highlighter
 input='HelloReaders.java:11: error: reached end of file while parsing
 }
  ^
@@ -107,7 +107,7 @@ language='java'
 
 If you compile or run the program above, you'll receive the following error. 
 
-<OutputHighlighter
+<Highlighter
 input='HelloReaders.java:14: error: reached end of file while parsing
 }
  ^
@@ -165,7 +165,7 @@ language='java'
 
 When you run and compile the above program, you'll receive the following expected output. 
 
-<OutputHighlighter
+<Highlighter
 input='Hello Readers'
 />
 

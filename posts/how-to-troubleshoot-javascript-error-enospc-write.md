@@ -13,7 +13,7 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, then there is no space on the drive. 
 
-<OutputHighlighter
+<Highlighter
 input='Error: ENOSPC.'
 />
 
@@ -78,7 +78,7 @@ language='bash'
 
 Your output will be a number, such as:
 
-<OutputHighlighter
+<Highlighter
 input='8192'
 />
 

@@ -61,7 +61,7 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
-<OutputHighlighter
+<Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
 />
 

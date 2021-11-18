@@ -29,7 +29,7 @@ language='bash'
 
 You’ll receive output similar to the following, which states your version number.
 
-<OutputHighlighter
+<Highlighter
 input='git version 2.32.0'
 />
 
@@ -46,7 +46,7 @@ language='bash'
 
 The output of the command tells us about the changes that are available to be added to our commit. The first section of the output that we’ll pay attention to is titled `Changes not staged for commit`.
 
-<OutputHighlighter
+<Highlighter
 input='Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)  
@@ -57,7 +57,7 @@ This section lists files that already exist in the repository and have been modi
 
 The second section that is relevant to us is titled `Untracked files`. It lists newly created files that don’t yet exist in the repository.
 
-<OutputHighlighter
+<Highlighter
 input='Untracked files:
   (use "git add <file>..." to include in what will be committed)
         getting-started.txt'
@@ -123,7 +123,7 @@ Once we’ve selected the changes that we want to commit, it’s a good idea to 
 
 Now that we’ve added two files, `README.md` and `getting-started.txt`, we can check the status of the repository by running `git status` again. The output now includes a section called `Changes to be committed`:
 
-<OutputHighlighter
+<Highlighter
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   README.md
@@ -176,7 +176,7 @@ language='bash'
 
 Here’s the output when we run this command:
 
-<OutputHighlighter
+<Highlighter
 input='[main 5388e04d38] Update README and add getting-started file   
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 getting-started.txt'
@@ -199,7 +199,7 @@ language='bash'
 
 This helps us confirm that the last commit is, in fact, the one that we just created. Here’s the result when we run `git log -1` after creating our commit:
 
-<OutputHighlighter
+<Highlighter
 input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)   
 Author: Marek <marek@example.com>   
 Date:   Tue Aug 31 18:47:11 2021 -0400   

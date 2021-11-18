@@ -13,7 +13,7 @@ type: posts
 
 If you are working in Python, and receive the following output, your code is attempting to access an identifier that is not defined. This could be in either the local or global scope of the program.
 
-<OutputHighlighter
+<Highlighter
 input={`NameError: name 'spam' is not defined`}
 />
 
@@ -36,14 +36,14 @@ This small program creates a function that reads a spam message from the user an
 
 If the program had `print` as it was meant to be, then the output is as indicated below.
 
-<OutputHighlighter
+<Highlighter
 input={`Enter a spam message: It's a spam!!
 It's a spam!!`}
 />
 
 With the misspelled function `prnt`, we are able to reproduce the `NameError`.
 
-<OutputHighlighter
+<Highlighter
 input={`Enter a spam message: It's a spam!!
 Traceback (most recent call last):
   File "name_error.py", line 5, in <module>
@@ -77,7 +77,7 @@ language='python'
 
 In this case, you'll receive output similar to the following.
 
-<OutputHighlighter
+<Highlighter
 input={`NameError: name 'b' is not defined`}
 />
 
@@ -96,7 +96,7 @@ language='python'
 Here, you will receive the guidance that `a` is not defined. 
 
 
-<OutputHighlighter
+<Highlighter
 input={`NameError: name 'a' is not defined`}
 />
 
@@ -118,7 +118,7 @@ language='python'
 
 Because we have attempted to use `spam` within a global context outside of the function it belongs to, we receive the following `NameError` message as output, which states that `spam` is not defined.
 
-<OutputHighlighter
+<Highlighter
 input={`Traceback (most recent call last):
   File "name_error.py", line 6, in <module>
     print(spam)
@@ -161,7 +161,7 @@ language='python'
 
 Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `NameError` that we have anticipated. 
 
-<OutputHighlighter
+<Highlighter
 input='You are attempting to access an identifier that is not defined in the local or global scope.'
 />
 

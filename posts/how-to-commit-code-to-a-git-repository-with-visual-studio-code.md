@@ -98,7 +98,7 @@ Before we can commit our changes, we need to write a commit message. The commit 
 
 For example, we can write the following commit message for our changed files:
 
-<OutputHighlighter
+<Highlighter
 input='Update Readme and Getting Started docs'
 />
 
@@ -129,7 +129,7 @@ language='bash'
 
 Here’s the result of the command:
 
-<OutputHighlighter
+<Highlighter
 input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
 Author: Marek <marek@sourcegraph.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400     

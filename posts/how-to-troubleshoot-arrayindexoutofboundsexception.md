@@ -58,7 +58,7 @@ If the user enters a valid number, then the program enters a `for` loop which wi
 
 Below is the output of our program printing out all the numbers after we entered the value `7`. Notice that the index starts at 0 and ends at 6 (the length of the array minus one).
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 7
 Index 0 has value 7
 Index 1 has value 6
@@ -72,7 +72,7 @@ Printed 7 numbers out of 7'
 
 If, instead, the user enters a value outside of the array, such as `8`, our program will print all the numbers up until it tries to print the number at index `7`. At this point, it will fail with `ArrayIndexArrayIndexOutOfBoundsException`.
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 8
 Index 0 has value 7
 Index 1 has value 6
@@ -149,14 +149,14 @@ If the value is positive, we then check that the value isn't too large by compar
 
 In the output below, we are given the result of a user entering the invalid values of first `-1`:
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Only positive values are allowed!'
 />
 
 and then `8`:
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 8
 The given value of 8 is too large! Value has to be less than or equal to 7'
 />
@@ -206,7 +206,7 @@ language='java'
 
 Below is the output of the above program for if a user enters the value of `999`:
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? 999
 Index 0 has value 7
 Index 1 has value 6
@@ -220,7 +220,7 @@ Printed 7 numbers out of 7'
 
 or `-1`:
 
-<OutputHighlighter
+<Highlighter
 input='There are 7 numbers in the array. How many numbers should be printed ? -1
 Index 0 has value 7
 Printed 1 numbers out of 7'

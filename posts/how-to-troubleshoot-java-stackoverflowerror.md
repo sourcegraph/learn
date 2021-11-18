@@ -40,7 +40,7 @@ language='java'
 
 When we compile and run the program, it starts printing numbers starting from 1 on, and thus the recursion never terminates. Depending on the JVM, the results may differ, but eventually the `StackOverflowError` is thrown.
 
-<OutputHighlighter
+<Highlighter
 input='Number: 1
 Number: 2
 Number: 3
@@ -90,7 +90,7 @@ language='java'
 
 Once we compile and run the above program, we'll receive output similar to the following. 
 
-<OutputHighlighter
+<Highlighter
 input='...
 Exception in thread "main" java.lang.StackOverflowError
 	at B.<init>(A.java:18)
@@ -130,7 +130,7 @@ language='java'
 
 This program will print the numbers from 1 to 5:
 
-<OutputHighlighter
+<Highlighter
 input='Number: 1
 Number: 2
 Number: 3

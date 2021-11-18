@@ -54,7 +54,7 @@ language='java'
 
 When we execute the above program, we will encounter a `NullPointerException` in our `for` loop. We add two companies to an array and then we iterate over the companies in a loop. Once the loop tries to print how long the _second_ company (`c2`) has been in business, it fails and prints the exception below.
 
-<OutputHighlighter
+<Highlighter
 input='Sourcegraph has been in business for 8 years.
 Exception in thread "main" java.lang.NullPointerException
 	at Program.main(Program.java:26)'
@@ -111,7 +111,7 @@ language='java'
 
 In the output we receive below when our program executes, a message is printed to the user when it reaches a company whose value is `null` instead of throwing a `NullPointerException`.
 
-<OutputHighlighter
+<Highlighter
 input='Sourcegraph has been in business for 8 years.
 Company at index 1 is null. Cannot print any information on null company'
 />
@@ -160,7 +160,7 @@ In our earlier programs, our second company `c2` had a `null` value, but in our 
 
 With all our values in our program initialized, we don't encounter the `NullPointerException` anymore as can be indicated in the output below.
 
-<OutputHighlighter
+<Highlighter
 input='Sourcegraph has been in business for 8 years.
 Y2K! has been in business for 21 years.'
 />

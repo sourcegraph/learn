@@ -1,5 +1,5 @@
 import CopyToClipboard from '@components/atoms/CopyToClipboard'
-import OutputHighlighter from '@components/atoms/OutputHighlighter'
+import Highlighter from '@components/atoms/Highlighter'
 import PrismLibrary from '@languages/index'
 import createRandomId from '@util/createRandomId'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
@@ -30,7 +30,7 @@ const PrismSyntaxHighlighter: FunctionComponent<Props> = props => {
                         <StyledCodeBlock key={createRandomId()} {...getLineProps({ line, key: index })}>
                             {line.map((token, key) => (
                                 <span {...getTokenProps({ token, key })} key={createRandomId()}>
-                                    <OutputHighlighter input={token.content} matcher={props.matcher} />
+                                    <Highlighter input={token.content} matcher={props.matcher} prismSyntax={true} />
                                 </span>
                             ))}
                         </StyledCodeBlock>

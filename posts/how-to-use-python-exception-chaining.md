@@ -32,7 +32,7 @@ language='python'
 
 When we run this program, we'll call it `my_file.py`, we'll receive output similar to the following.
 
-<OutputHighlighter
+<Highlighter
 input='Traceback (most recent call last):
   File "my_file.py", line 3, in example_mistake
    [][1]
@@ -41,7 +41,7 @@ IndexError: list index out of range'
   
 During handling of the above exception, another exception occurred:
 
-<OutputHighlighter
+<Highlighter
 input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
   File "my_file.py", line 5, in example_mistake
@@ -76,7 +76,7 @@ language='python'
 
 When you run this program, you'll receive output similar to the following. 
 
-<OutputHighlighter
+<Highlighter
 input='Traceback (most recent call last):
   File "my_file.py", line 3, in exampl_chaining
     [][1]
@@ -85,7 +85,7 @@ IndexError: list index out of range'
  
 The above exception was the direct cause of the following exception:
 
-<OutputHighlighter
+<Highlighter
 input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
     example_chaining()
@@ -113,7 +113,7 @@ language='python'
 
 When you run this program, you will get output that is similar to what is below.
 
-<OutputHighlighter
+<Highlighter
 input='Traceback (most recent call last):
   File "my_file.py", line 7, in <module> example_chaining_disabled()
   File "my_file.py", line 5, in example_chaining_disabled

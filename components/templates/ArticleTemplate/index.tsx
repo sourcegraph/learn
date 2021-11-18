@@ -2,7 +2,7 @@ import Button from '@components/atoms/Button'
 import CollectionView from '@components/atoms/CollectionView'
 import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
-import OutputHighlighter from '@components/atoms/OutputHighlighter'
+import Highlighter from '@components/atoms/Highlighter'
 import PrismSyntaxHighlighter from '@components/atoms/PrismSyntaxHighlighter'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
@@ -48,7 +48,7 @@ const components = {
     EmbeddedYoutubeVideo,
     GifLikeVideo,
     CollectionView,
-    OutputHighlighter,
+    Highlighter,
     PrismSyntaxHighlighter,
 }
 

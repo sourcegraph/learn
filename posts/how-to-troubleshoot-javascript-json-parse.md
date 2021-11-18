@@ -15,7 +15,7 @@ JSON (JavaScript Object Notation) is a convenient text format that allows us to 
 
 In JavaScript, we use the method `JSON.parse` to parse JSON text into an object. If the JSON text given to the method is invalid, the method will throw a `SyntaxError: JSON.parse` error, as in the output below.
 
-<OutputHighlighter
+<Highlighter
 input={`SyntaxError: Unexpected token = in JSON at position 8
     at JSON.parse (<anonymous>)
     at printInfo (/home/user/programming/javascript/test.js:2:17)
@@ -50,7 +50,7 @@ language='javascript'
 
 Our program tries to parse the JSON text `'{ "name" = "William", "country" = "South Africa" }'` and print the name value of the resulting object parsed from the JSON. Unfortunately, our program fails and exits with `SyntaxError`.
 
-<OutputHighlighter
+<Highlighter
 input={`Uncaught SyntaxError: JSON.parse: expected ':' after property name in object at line 1 column 10 of the JSON data`}
 />
 
@@ -82,7 +82,7 @@ language='javascript'
 
 When we run our program now, we get the following output as soon as the `printInfo()` function encounters `SyntaxError` due to malformed JSON.
 
-<OutputHighlighter
+<Highlighter
 input='The text "{ "name" = "William", "country" = "South Africa" }" is not valid JSON.'
 />
 
@@ -106,7 +106,7 @@ language='javascript'
 
 In our program above we fixed the JSON by changing the `=` character to a `:` character and now we're able to use `JSON.parse` to parse the given text! Below is the output of our program after we have parsed the JSON. 
 
-<OutputHighlighter
+<Highlighter
 input='William lives in South Africa'
 />
 

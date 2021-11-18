@@ -13,7 +13,7 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, your code probably has a typo or you forgot to give a name to a variable.
 
-<OutputHighlighter
+<Highlighter
 input='SyntaxError: missing variable name
 SyntaxError: Unexpected token ='
 />
@@ -35,7 +35,7 @@ language='javascript'
 
 We'll receive output that the name for that variable is missing.
 
-<OutputHighlighter
+<Highlighter
 input='SyntaxError: missing variable name'
 />
 
@@ -59,7 +59,7 @@ input='var debugger = "foo";'
 language='javascript'
 />
 
-<OutputHighlighter
+<Highlighter
 input='SyntaxError: missing variable name'
 />
 
@@ -86,7 +86,7 @@ language='javascript'
 
 Again, you will encounter the `SyntaxError`.
 
-<OutputHighlighter
+<Highlighter
 input='SyntaxError: missing variable name'
 />
 
@@ -111,7 +111,7 @@ language='javascript'
 
 Array syntax requires square brackets — `[]` — around values in order for it to be read by JavaScript. Running the above code will cause you to run into the `SyntaxError`. 
 
-<OutputHighlighter
+<Highlighter
 input='SyntaxError: missing variable name'
 />
 

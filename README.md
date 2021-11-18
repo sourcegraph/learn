@@ -145,10 +145,10 @@ When you have input with line spacing that you would like to preserve, use a tem
 
 ### Output
 
-When displaying output, please use the `<OutputHighlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
+When displaying output, please use the `<Highlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
 
 ```
-<OutputHighlighter
+<Highlighter
     input='Your code here'
     matcher='The code you would like to highlight (optional)'
 />

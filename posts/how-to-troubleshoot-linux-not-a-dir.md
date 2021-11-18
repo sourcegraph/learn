@@ -31,7 +31,7 @@ language='bash'
 
 We'll receive the following error message.
 
-<OutputHighlighter
+<Highlighter
 input='cd: not a directory: test'
 />
 
@@ -82,7 +82,7 @@ language='bash'
 
 Once you run the command, you should receive output similar to the following based on your own file structure. 
 
-<OutputHighlighter
+<Highlighter
 input='total 1848
 -rw-r--r--    1 user  Users   156B 11 Oct 12:17 .babelrc
 -rw-r--r--    1 user  Users    72B 11 Oct 12:24 .env
@@ -107,7 +107,7 @@ language='bash'
 
 After running this comand, you'll only receive the output of directories in the example of the section above. 
 
-<OutputHighlighter
+<Highlighter
 input='drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github

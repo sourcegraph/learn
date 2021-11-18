@@ -13,7 +13,7 @@ type: posts
 
 If you are working on a Linux terminal and you receive the following output, you are probably trying to access a file from the wrong directory. 
 
-<OutputHighlighter
+<Highlighter
 input='No such file or directory'
 />
 
@@ -57,7 +57,7 @@ language='bash'
 
 In this case, our ouput will be the following.
 
-<OutputHighlighter
+<Highlighter
 input='Hello, World'
 />
 
@@ -70,7 +70,7 @@ language='bash'
 
 Because we have not changed directories into the `foo` directory, we'll receive the following output.
 
-<OutputHighlighter
+<Highlighter
 input='cat: bar.txt: No such file or directory'
 />
 
@@ -87,7 +87,7 @@ language='bash'
 
 This command will return your current working directory.
 
-<OutputHighlighter
+<Highlighter
 input='/home/your-username'
 />
 
@@ -100,7 +100,7 @@ language='bash'
 
 This will return a list of all directories and files present in your current directory. You may find output similar to the following, but note that output will be dependent on your actual directory.
 
-<OutputHighlighter
+<Highlighter
 input='Desktop foo Music Public Videos Documents Pictures Downloads Templates'
 />
 
@@ -125,7 +125,7 @@ language='bash'
 
 In our example, we have only one file in this directory, so our output will return the one file we have initialized there. 
 
-<OutputHighlighter
+<Highlighter
 input='bar.txt'
 />
 
@@ -138,7 +138,7 @@ language='bash'
 
 Your output will now be what we had expected.
 
-<OutputHighlighter
+<Highlighter
 input='Hello, World'
 />
 
@@ -162,7 +162,7 @@ language='bash'
 
 When you run the above command, you'll get the path to the location of `netstat`, which may be similar to the following output.
 
-<OutputHighlighter
+<Highlighter
 input='/usr/sbin/netstat'
 />
 

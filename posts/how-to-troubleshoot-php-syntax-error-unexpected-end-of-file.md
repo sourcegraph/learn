@@ -13,7 +13,7 @@ type: posts
 
 When you are working with PHP, you may receive this message:
 
-<OutputHighlighter
+<Highlighter
 input={`unexpected end of file, expecting ';' or ','`}
 />
 
@@ -39,7 +39,7 @@ language='bash'
 
 Then you'll receive the error on output:
 
-<OutputHighlighter
+<Highlighter
 input='Parse error:  syntax error, unexpected end of file, expecting "," or ";" in /path/to/hello.php on line 4'
 />
 
@@ -78,7 +78,7 @@ language='bash'
 
 You'll now receive a new error message.
 
-<OutputHighlighter
+<Highlighter
 input='Parse error:  syntax error, unexpected end of file in /path/to/hello.php on line 4'
 />
 
@@ -106,7 +106,7 @@ language='bash'
 
 The output of the file execution will be the following.
 
-<OutputHighlighter
+<Highlighter
 input='Hello Sourcegraph'
 />
 

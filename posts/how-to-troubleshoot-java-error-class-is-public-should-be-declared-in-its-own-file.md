@@ -17,7 +17,7 @@ It’s also important to remember that Java is a “strongly typed” language, 
 
 This tutorial will help you resolve the following error message.
 
-<OutputHighlighter
+<Highlighter
 input='error: class X is public, should be declared in a file named X.java'
 />
 

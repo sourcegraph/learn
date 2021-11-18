@@ -34,7 +34,7 @@ Observe that we did not close the function body with a curly bracket; this is wh
 
 In the example, the interpreter failed to find the expected closing bracket so it returns an error:
 
-<OutputHighlighter
+<Highlighter
 input='Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16'
 />
@@ -54,7 +54,7 @@ language='javascript'
 
 When you run the above, you'll receive the following output.
 
-<OutputHighlighter
+<Highlighter
 input='Uncaught SyntaxError: missing } after function body 6:0
 note: { opened at line 1, column 27'
 />
@@ -77,7 +77,7 @@ This is what causes the error.
 
 JavaScript error messages tend to be helpful for debugging, so always try to read them for more information. In the error messages, you'll receive the line number where the error occurred in the output.
 
-<OutputHighlighter
+<Highlighter
 input='Uncaught SyntaxError: missing } after function body 4:0
 note: { opened at line 1, column 16'
 />

@@ -62,7 +62,7 @@ language='bash'
 
 You should receive output similar to the following:
 
-<OutputHighlighter
+<Highlighter
 input={`Cloning into 'deploy-sourcegraph-docker'...
 ...
 Resolving deltas: 100% (4418/4418), done.`}
@@ -113,7 +113,7 @@ language='bash'
 Once you run this, you will know that your installation was successful when you receive output that generates `done` messaging, and output that notifies you that Sourcegraph is ready. This will display with your server or localhost IP address and the relevant port.
 
 
-<OutputHighlighter
+<Highlighter
 input='Sourcegraph is ready at: [an-address-and-port-created-by-your-server]'
 matcher='an-address-and-port-created-by-your-server'
 />
@@ -133,7 +133,7 @@ language='bash'
 
 The instance is healthy when the `sourcegraph-frontend-0` image is running and is marked as “healthy” on your host’s terminal.
 
-<OutputHighlighter
+<Highlighter
 input='[your-container-id]  sourcegraph-frontend-0  "/sbin/tini -- /usr/…"  Up 20 minutes(healthy)'
 matcher='your-container-id'
 />

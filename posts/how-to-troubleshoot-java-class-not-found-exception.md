@@ -13,7 +13,7 @@ type: posts
 
 If you are working in Java, and receive the following output, your code is trying load a class but it does not find it in the classpath, which specifies the location of user-defined classes and packages to the Java compiler or Java virtual machine (JVM).
 
-<OutputHighlighter
+<Highlighter
 input='java.lang.ClassNotFoundException: foo.Foo'
 />
 
@@ -60,7 +60,7 @@ language='bash'
 
 Once we run these commands, we'll receive the following exception.
 
-<OutputHighlighter
+<Highlighter
 input='Loading Foo class
 java.lang.ClassNotFoundException: foo.Foo
         at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
@@ -104,7 +104,7 @@ language='bash'
 
 Now `Main` will compile and run without any errors as it has loaded the `Foo` class.
 
-<OutputHighlighter
+<Highlighter
 input='Loading foo.Foo class
 foo.Foo loaded'
 />
@@ -146,7 +146,7 @@ language='bash'
 
 Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class.
 
-<OutputHighlighter
+<Highlighter
 input='Loading bar.Foo class
 bar.Foo class not found. Please ensure that the class exists.'
 />
