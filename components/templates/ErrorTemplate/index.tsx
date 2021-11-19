@@ -19,10 +19,11 @@ const ErrorTemplate: FunctionComponent = () => {
             </StyledErrorPageImageHeader>
             <StyledHeaderText>Not what you were ... searching for?</StyledHeaderText>
             <StyledErrorPageText isDark={theme.isDark}>
-                Head back over to the {' '}
+                Head back to {' '}
                 <Link href='/'>
-                    <a>Learn homepage</a>
+                    <a>Sourcegraph Learn</a>
                 </Link>
+                .
             </StyledErrorPageText>
         </StyledErrorPageWrapper>
     )
