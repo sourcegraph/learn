@@ -73,6 +73,11 @@ export const StyledMarkdownWrapper = styled.div<Props>`
     a {
         color: var(--primary-link-color);
         text-decoration: none;
+
+        :hover {
+            color: ${props => props.isDark
+                ? '#5033e1'
+                : '#bfbfff'};
     }
     
     .reveal-on-hover-child {
