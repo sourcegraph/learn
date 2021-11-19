@@ -7,13 +7,14 @@ import OutputHighlighter from '@components/atoms/OutputHighlighter'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import PageLayout from '@components/layouts/PageLayout'
+import { ThemeContext } from '@hooks/contexts/theme'
 import MetaTags from '@interfaces/MetaTags'
 import RecordCollection from '@interfaces/RecordCollection'
 import metaDataDefaults from '@lib/metaDataDefaults'
 import capitalize from '@util/capitalize'
 import sluggify from '@util/sluggify'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useContext } from 'react'
 
 import {
     StyledHeaderImage,
@@ -52,6 +53,7 @@ const components = {
 }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
+    const theme = useContext(ThemeContext)
     const metaTags: MetaTags = {
         // If present, the alternate title is used for the document title without the site title suffix.
         title: props.browserTitle
@@ -94,14 +96,14 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
             )}
 
             {/* Title */}
-            <StyledTitle>{props.title}</StyledTitle>
+            <StyledTitle isDark={theme.isDark}>{props.title}</StyledTitle>
 
             {/* Tags list */}
             {props.tags.length > 0 ? 
                 (
                     <StyledTagsWrapper>
                         {props.tags.map(tag => (
-                            <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small'>
+                            <Button key={tag} href={`/tags/${sluggify(tag)}`} className='extra-small' isDark={theme.isDark}>
                                 {capitalize(tag)}
                             </Button>
                         ))}
@@ -111,12 +113,12 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
 
             {/* Author */}
             {props.authorSlug && props.authorDisplayName && (
-                <StyledAuthorByline href={`/authors/${props.authorSlug}`}>{props.authorDisplayName}</StyledAuthorByline>
+                <StyledAuthorByline href={`/authors/${props.authorSlug}`} isDark={theme.isDark}>{props.authorDisplayName}</StyledAuthorByline>
             )}
 
             {/* Dates */}
             {props.publicationDate && (
-                <StyledDates> Published on {props.publicationDate}
+                <StyledDates isDark={theme.isDark}> Published on {props.publicationDate}
                     {props.updatedDate && (
                         <> • Updated on {props.updatedDate}</>
                     )} 
@@ -131,7 +133,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                 />
             )}
 
-            <StyledMarkdownWrapper>
+            <StyledMarkdownWrapper isDark={theme.isDark}>
                 <MDXRemote {...props.mdxSource} components={components} />
             </StyledMarkdownWrapper>
         </PageLayout>
