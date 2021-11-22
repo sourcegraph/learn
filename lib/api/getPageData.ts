@@ -5,7 +5,7 @@ import { PageData, Records } from '@interfaces/PageData'
 import fetchPageData from '@lib/api/fetchPageData'
 
 export const getPageData = async (page?: number | null, type?: string): Promise<PageData | Records> => {
-    const CACHE_PATH = path.join(process.cwd(), '/builds/globalData.json')
+    const CACHE_PATH = path.join(process.cwd(), '/public/builds/globalData.json')
     let cachedData: PageData
 
     try {
@@ -33,12 +33,12 @@ export const getPageData = async (page?: number | null, type?: string): Promise<
         if (type === 'posts') {
             return {
                 posts: cachedData.records.posts?.slice(0, page),
-                length: cachedData.records.posts?.length,
+                totalRecords: cachedData.records.posts?.length,
             }
         }
         return {
             videos: cachedData.records.videos?.slice(0, page),
-            length: cachedData.records.videos?.length,
+            totalRecords: cachedData.records.videos?.length,
         }
     }
 
@@ -56,12 +56,12 @@ export const getCachedData = async (page?: number | null, type?: string): Promis
                 if (type === 'posts') {
                     return {
                         posts: response.records.posts?.slice(0, page),
-                        length: response.records.posts?.length,
+                        totalRecords: response.records.posts?.length,
                     }
                 }
                 return {
                     videos: response.records.videos?.slice(0, page),
-                    length: response.records.videos?.length,
+                    totalRecords: response.records.videos?.length,
                 }
             }
 

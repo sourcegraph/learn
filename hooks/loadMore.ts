@@ -1,42 +1,45 @@
 import LoadMoreHookObject from '@interfaces/LoadMoreHookObject'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import { PageData } from '@interfaces/PageData'
 import { getCachedData } from '@lib/api/getPageData'
 import { useEffect, useState } from 'react'
 
 const useLoadMore = (initialVideos: MarkdownFileWithUrl[] | null, initialPosts: MarkdownFileWithUrl[] | null, initialPage: number): LoadMoreHookObject => {
     const [videos, setVideos] = useState<MarkdownFileWithUrl[] | null>(initialVideos)
     const [posts, setPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
+    const [allRecords, setAllRecords] = useState<PageData>()
     const [page, setPage] = useState<number>(initialPage)
     const [currentVideos, setCurrentVideos] = useState<MarkdownFileWithUrl[] | null>(initialVideos)
     const [currentPosts, setCurrentPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
 
     useEffect(() => {
-        if (videos) {
-            const getNewVideos = async (): Promise<MarkdownFileWithUrl[]> => {
-                const fetchedVideos = await getCachedData(page, 'videos') as MarkdownFileWithUrl[]
-                return fetchedVideos
-            }
-            getNewVideos()
-                .then(response => setCurrentVideos(response))
-                .catch(error => {
-                    throw new Error(`error: ${String(error)}`)
-                })
+        const getAllRecords = async (): Promise<PageData> => {
+            const fetchedRecords = await getCachedData() as PageData
+            return fetchedRecords
         }
-    }, [page, videos])
-
-    useEffect(() => {
-        if (posts) {
-            const getNewPosts = async (): Promise<MarkdownFileWithUrl[]> => {
-                const fetchedPosts = await getCachedData(page, 'posts') as MarkdownFileWithUrl[]
-                return fetchedPosts
-            }
-            getNewPosts()
-            .then(response => setCurrentPosts(response))
+        getAllRecords()
+            .then(response => setAllRecords(response))
             .catch(error => {
                 throw new Error(`error: ${String(error)}`)
             })
+    }, [])
+
+    useEffect(() => {
+        if (allRecords) {
+            if (videos) {
+                const getNewVideos =  allRecords?.records.videos?.slice(0, page)
+                if (getNewVideos) {
+                    setCurrentVideos(getNewVideos)
+                }
+            }
+            if (posts) {
+                const getNewPosts = allRecords?.records.posts?.slice(0, page)
+                if (getNewPosts) {
+                    setCurrentPosts(getNewPosts)
+                } 
+            }
         }
-    }, [page, posts])
+    }, [page, allRecords, posts, videos])
 
     return {
         videos,

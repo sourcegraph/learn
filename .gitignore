@@ -12,8 +12,11 @@ coverage
 .next
 out
 
-# build info
+# ts build info
 builds
+
+# static build
+public/builds
 
 # misc
 .DS_Store
