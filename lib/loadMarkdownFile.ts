@@ -5,7 +5,7 @@ import MarkdownFile from '@interfaces/MarkdownFile'
 import { normalizeFrontMatter } from '@util/validators'
 import greyMatter from 'gray-matter'
 
-function removeExtension(filename: string): string {
+export function removeExtension(filename: string): string {
     const parts = filename.split('.')
     if (parts.length > 1) {
         return parts.slice(0, -1).join('.')
@@ -13,7 +13,7 @@ function removeExtension(filename: string): string {
     return filename
 }
 
-function filenameToSlug(filepath: string): string {
+export function filenameToSlug(filepath: string): string {
     const basename = path.basename(filepath)
     return removeExtension(basename)
 }

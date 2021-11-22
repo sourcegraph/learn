@@ -1,12 +1,11 @@
 import RecordIndexTemplate, { Props as RecordIndexTemplateProps } from '@components/templates/RecordIndexTemplate'
-import loadAllRecords from '@lib/loadAllRecords'
-import filterRecordsWithTag from '@util/filterRecordsWithTag'
-import markdownWithUrls from '@util/markdownWithUrls'
+import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import { getPageData } from '@lib/api/getPageData'
 import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
-    const records = await loadAllRecords('posts')
-    const postRecords = markdownWithUrls(filterRecordsWithTag(records, 'tutorial').records)
+    const postRecords = await getPageData(10, 'posts') as MarkdownFileWithUrl[]
+    const totalRecordsNumber = postRecords.length
     const url = '/posts'
     const headerText = 'Tutorials'
 
@@ -16,6 +15,7 @@ export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async ()
             headerText,
             recordType: 'posts',
             postRecords,
+            totalRecordsNumber,
         },
     }
 }

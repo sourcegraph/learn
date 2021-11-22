@@ -1,16 +1,21 @@
 import Column from '@components/atoms/Column'
 import ContentCard from '@components/atoms/ContentCard'
 import Row from '@components/atoms/Row'
-import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
+import { Records } from '@interfaces/PageData'
 import { FunctionComponent } from 'react'
 
 interface Props {
-    records: MarkdownFileWithUrl[] | null
+    records: Records | null
+    recordType: string
 }
 
-const ContentCardList: FunctionComponent<Props> = props => (
+const ContentCardList: FunctionComponent<Props> = props => {
+    const records = props.recordType === 'posts'
+        ? props.records?.posts
+        : props.records?.videos
+    return (
     <Row>
-        {props.records?.map(record => (
+        {records?.map(record => (
             <Column className='medium' key={record.url}>
                 <ContentCard
                     title={record.frontMatter.title}
@@ -22,6 +27,6 @@ const ContentCardList: FunctionComponent<Props> = props => (
             </Column>
         ))}
     </Row>
-)
+)}
 
 export default ContentCardList

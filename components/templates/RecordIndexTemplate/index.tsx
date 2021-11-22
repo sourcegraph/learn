@@ -15,6 +15,7 @@ export interface Props {
     recordType: string
     videoRecords?: MarkdownFileWithUrl[]
     postRecords?: MarkdownFileWithUrl[]
+    totalRecordsNumber: number
 }
 
 const RecordIndexTemplate: FunctionComponent<Props> = props => {
@@ -31,9 +32,10 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
                 isRecordIndex={true}
             />
             <ContentCardList records={props.recordType === 'posts'
-                ? loadMoreHook.currentPosts
-                : loadMoreHook.currentVideos} />
-            {showMoreButton(videos, posts, props.recordType, loadMoreHook) && (
+                ? posts
+                : videos}
+                recordType={props.recordType} />
+            {showMoreButton(props.recordType, loadMoreHook, props.totalRecordsNumber) && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
                     className='outline-primary'
