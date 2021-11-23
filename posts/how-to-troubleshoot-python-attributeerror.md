@@ -29,7 +29,7 @@ Let's write a program called `find_length_of_list.py`.
 <Highlighter
 input={`def find_length_of_list(num):
     num.length()
-    
+ 
 find_length_of_list([5, 10, 20])`}
 language='python'
 />
@@ -49,7 +49,7 @@ Here is one more example of this error in the program `sort_people_by_age.py`.
 input={`def sort_people_by_age():
     people = {"John": 25, "Sara": 34, "George": 16}
     people.sort()
-    
+ 
 sort_people_by_age()`}
 language='python'
 />
@@ -106,7 +106,7 @@ language='python'
 Here, we have sorted the items of the `people` dictionary and passed that value into a `people_list` which we return back into a dictionary. Finally, we printed it out so that we can verify that it is correct. 
 
 <Highlighter
-input='{'John': 25, 'Sara': 34, 'George': 16}'
+input={`{'John': 25, 'Sara': 34, 'George': 16}`}
 language='bash'
 />
 
@@ -118,6 +118,8 @@ You can read more about `sorted()` via the official Python docs on [sorting func
 
 Other recommendations for fixing `AttributeErrors` include checking your code for typos, utilizing IDEs with intelligent
 code completion, and reading the official Python documentation on [built-in types](https://docs.python.org/2/library/stdtypes.html).
+
+You can also review how developers are handling the Python `AttributeError` across open source by searching across code:
 
 <SourcegraphSearch query="AttributeError lang:python" patternType="literal"/>
 
