@@ -120,7 +120,7 @@ In the website code, the front-matter data is accessible as the [`frontMatter`](
 
 ### Code
 
-When working with code blocks, we use two components: `<PrismSyntaxHighlighter>` and `<OutputHighlighter>`. `<PrismSyntaxHighlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular programming language (including `bash`). We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
+When working with code blocks, we use two components: `<PrismSyntaxHighlighter>` and `<Highlighter>`. `<PrismSyntaxHighlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular programming language (including `bash`) that readers can copy. We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
 
 The `<PrismSyntaxHighlighter>` component looks like this:
 
