@@ -257,7 +257,7 @@ The PSR-4 autoload mapping option is interesting; we will choose `src/` because 
 <Highlighter
 input={`Welcome to the Composer config generator
  
-This command will guide you through creating your `composer.json` configuration.
+This command will guide you through creating your composer.json configuration.
  
 Package name (<vendor>/<name>) [root/app]: your-username/said-quotes
 Description []: A simple package to get quotes
