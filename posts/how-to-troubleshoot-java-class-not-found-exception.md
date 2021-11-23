@@ -13,7 +13,7 @@ type: posts
 
 If you are working in Java, and receive the following output, your code is trying load a class but it does not find it in the classpath, which specifies the location of user-defined classes and packages to the Java compiler or Java virtual machine (JVM).
 
-<OutputHighlighter
+<Highlighter
 input='java.lang.ClassNotFoundException: foo.Foo'
 />
 
@@ -33,7 +33,7 @@ In this tutorial, we'll reproduce the error and go through a few solutions so yo
 
 To reproduce this error, let's create a program with a class called `Main` that tries to load the `Foo` class.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// main/Main.java
 package main;
 public class Main {
@@ -52,7 +52,7 @@ language='java'
 
 Compile and execute the Main class. We'll pass the `-cp` flag to Java to tell the JVM which class to use for the main thread and where to find relevant libraries.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main.java
 java -cp . main/Main`}
 language='bash'
@@ -60,7 +60,7 @@ language='bash'
 
 Once we run these commands, we'll receive the following exception.
 
-<OutputHighlighter
+<Highlighter
 input='Loading Foo class
 java.lang.ClassNotFoundException: foo.Foo
         at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
@@ -78,7 +78,7 @@ Now that we have been able to reproduce the `ClassNotFoundException` error, let'
 
 From the output, we can understand that the exception is raised because we did not create the class `Foo` yet. One solution to avoiding this error is to create all relevant classes before attempting to compile and run our Java programs.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// foo/Foo.java
 package foo;
 public class Foo{}`}
@@ -89,14 +89,14 @@ Here, we have initialized the class without giving it any functionality, which c
 
 Now, let's compile the `Foo` class:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='javac foo/Foo.java'
 language='bash'
 />
 
 With the `Foo` class compiled, we can compile and execute the `Main` class again so that the JVM can find the `Foo` class we initialized.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main
 java -cp . main/Main`}
 language='bash'
@@ -104,7 +104,7 @@ language='bash'
 
 Now `Main` will compile and run without any errors as it has loaded the `Foo` class.
 
-<OutputHighlighter
+<Highlighter
 input='Loading foo.Foo class
 foo.Foo loaded'
 />
@@ -117,7 +117,7 @@ An alternate approach is to catch the error that JVM will throw with a `try` ...
 
 In our example, we can modify our `Main` class to explicitly catch the `ClassNotFoundException` and print a message to warn the user to ensure that the class they are trying to load exists.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// main/Main.java
 package main;
 public class Main {
@@ -138,7 +138,7 @@ In this case we modified the package name of the class to `bar` so that it is no
 
 Now, compile and execute the Main class.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main.java
 java -cp . main.Main`}
 language='bash'
@@ -146,7 +146,7 @@ language='bash'
 
 Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class.
 
-<OutputHighlighter
+<Highlighter
 input='Loading bar.Foo class
 bar.Foo class not found. Please ensure that the class exists.'
 />

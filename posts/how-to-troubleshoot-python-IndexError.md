@@ -13,7 +13,7 @@ type: posts
 
 You may sometimes get an `IndexError` such as the following when running Python code.
 
-<OutputHighlighter
+<Highlighter
 input='IndexError: list index out of range'
 />
 
@@ -26,7 +26,7 @@ This can happen with strings, tuples, lists, and generally any data type that is
 
 Let's write the following program, `indexerr.py` .
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
  
@@ -39,14 +39,14 @@ In this code, there is a list with five items in it, their index numbers range b
 
 If the user enter any number between `0` and `4` then there will be no errors returned, as indicated in the output below.
 
-<OutputHighlighter
+<Highlighter
 input='Enter an integer to print an element at a given index: 1
 Python'
 />
 
 If, however, the user enters `5`, we will be able to reproduce the `IndexError`.
 
-<OutputHighlighter
+<Highlighter
 input='Traceback (most recent call last):
   File "indexerr.py", line 3, in <module>
     print(programming_languages[index])
@@ -59,7 +59,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 Flow control and an `if`-`else` statement can be used to print output to give guidance, or give the user direction.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
 index = input("Enter an integer to print an element at a given index: ")
  
@@ -73,7 +73,7 @@ language='python'
 
 Here, we first check whether `index` is greater than 4 and, if so, we print a string that states `The number you have entered is out of bounds for the list`.
 
-<OutputHighlighter
+<Highlighter
 input='Enter an integer to print an element at a given index: 5
 The number you have entered is out of bound for the list'
 />
@@ -84,7 +84,7 @@ Now, if the user enters `5` or any number greater than `5`, they will receive th
 
 A second approach to troubleshoot this error is to handle the exception with a `try`-`except` clause that calls and catches the `IndexError`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`try:
     programming_languages = ["Java", "Python", "C++", "JavaScript", "Go"]
     index = input("Enter an integer to print an element at a given index: ")
@@ -98,7 +98,7 @@ language='python'
 
 Here, we first have the program attempt our original workflow by wrapping it in a `try` statement. Next, we use the `except` clause to handle the `IndexError` that we have anticipated. 
 
-<OutputHighlighter
+<Highlighter
 input='Enter an integer to print an element at a given index: 5
 list index out of range'
 />

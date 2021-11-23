@@ -64,8 +64,6 @@ export const StyledMarkdownWrapper = styled.div<Props>`
         overflow: auto;
         font-family: 'Monaco', monospace;
         border-radius:10px;
-        margin: .5rem 0;
-        padding: 1.2rem .5rem;
     }
 
     img {

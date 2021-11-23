@@ -29,7 +29,7 @@ If you have just set up your own instance of Sourcegraph, you should have receiv
 
 ![Sourcegraph terminal output after installation](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/sourcegraph-logo-terminal.png)
 
-<OutputHighlighter
+<Highlighter
 input='Sourcegraph is ready at: http://the-server-ip-address:7080'
 matcher='the-server-ip-address'
 />

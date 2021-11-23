@@ -120,12 +120,12 @@ In the website code, the front-matter data is accessible as the [`frontMatter`](
 
 ### Code
 
-When working with code blocks, we use two components: `<Highlighter>` and `<OutputHighlighter>`. `<Highlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular programming language (including `bash`). We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
+When working with code blocks, we use two components: `<PrismSyntaxHighlighter>` and `<Highlighter>`. `<PrismSyntaxHighlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular programming language (including `bash`) that readers can copy. We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
 
-The `<Highlighter>` component looks like this:
+The `<PrismSyntaxHighlighter>` component looks like this:
 
 ```
-<Highlighter
+<PrismSyntaxHighlighter
     input='Your code here'  
     language='Your language here'
     matcher='The code you would like to highlight (optional)'
@@ -134,7 +134,7 @@ The `<Highlighter>` component looks like this:
 When you have input with line spacing that you would like to preserve, use a template literal for your input and preserve the spacing there. To do this, add an additional blank space to any line where you would like to preserve spacing. For example:
 
 ```
-<Highlighter
+<PrismSyntaxHighlighter
     input={`Your code input
      // Be sure to add a blank space by pressing the spacebar at least once here!
     with multiple lines`} 
@@ -145,10 +145,10 @@ When you have input with line spacing that you would like to preserve, use a tem
 
 ### Output
 
-When displaying output, please use the `<OutputHighlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
+When displaying output, please use the `<Highlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
 
 ```
-<OutputHighlighter
+<Highlighter
     input='Your code here'
     matcher='The code you would like to highlight (optional)'
 />

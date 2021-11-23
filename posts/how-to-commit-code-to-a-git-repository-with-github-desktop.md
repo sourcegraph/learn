@@ -103,7 +103,7 @@ GitHub Desktop lets us provide the commit message in two parts:
 
 For example, we can write the following commit summary for our changed files:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Update README and demo script'
 language='bash'
 />

@@ -27,7 +27,7 @@ Once structural search is enabled, the icon will be highlighted and you can begi
 
 Suppose we're debugging a program's error output and trying to figure out where that output is coming from in the code. We want to find calls to the `fprintf` function that writes to the standard error stream (`stderr`), which look like this:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='fprintf(stderr, "%s", message)'
 language='c'
 />
