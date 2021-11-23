@@ -104,7 +104,7 @@ With the environment configured, we can move onto initializing our project.
 We can now start creating our project. Let's run the following command:
 
 <Highlighter
-input='sg init'
+input='./sg init'
 language='bash'
 />
 
