@@ -16,12 +16,8 @@ const useLoadMore = (
     const [posts, setPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
     const [allRecords, setAllRecords] = useState<PageData>()
     const [page, setPage] = useState<number>(initialPage)
-    const [currentVideos, setCurrentVideos] = useState<MarkdownFileWithUrl[] | null>(tag
-        ? filterRecordsWithTag(initialVideos ?? [], tag).records
-        : initialVideos)
-    const [currentPosts, setCurrentPosts] = useState<MarkdownFileWithUrl[] | null>(tag
-        ? filterRecordsWithTag(initialPosts ?? [], tag).records
-        : initialPosts)
+    const [currentVideos, setCurrentVideos] = useState<MarkdownFileWithUrl[] | null>(initialVideos)
+    const [currentPosts, setCurrentPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
 
     useEffect(() => {
         const getAllRecords = async (): Promise<PageData> => {

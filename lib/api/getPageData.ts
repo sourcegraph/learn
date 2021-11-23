@@ -4,7 +4,7 @@ import path from 'path'
 import { PageData, Records } from '@interfaces/PageData'
 import fetchPageData from '@lib/api/fetchPageData'
 
-export const getPageData = async (page?: number | null, type?: string): Promise<PageData | Records> => {
+export const getPageData = async (): Promise<PageData | Records> => {
     const CACHE_PATH = path.join(process.cwd(), '/public/builds/globalData.json')
     let cachedData: PageData
 
@@ -27,19 +27,6 @@ export const getPageData = async (page?: number | null, type?: string): Promise<
         }
     } catch (error) {
         throw new Error(`error: ${String(error)}`)
-    }
-
-    if (page && type) {
-        if (type === 'posts') {
-            return {
-                posts: cachedData.records.posts?.slice(0, page),
-                totalRecords: cachedData.records.posts?.length,
-            }
-        }
-        return {
-            videos: cachedData.records.videos?.slice(0, page),
-            totalRecords: cachedData.records.videos?.length,
-        }
     }
 
     return cachedData

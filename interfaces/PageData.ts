@@ -9,11 +9,3 @@ export interface Records {
     videos?: MarkdownFileWithUrl[]
     totalRecords?: number
 }
-
-export interface PostRecord {
-    [index: number]: MarkdownFileWithUrl
-}
-
-export interface VideoRecord {
-    [index: number]: MarkdownFileWithUrl
-}

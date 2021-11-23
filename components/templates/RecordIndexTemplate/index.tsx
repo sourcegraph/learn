@@ -5,7 +5,6 @@ import PageLayout from '@components/layouts/PageLayout'
 import { ThemeContext } from '@hooks/contexts/theme'
 import useLoadMore from '@hooks/loadMore'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
-import { PageData } from '@interfaces/PageData'
 import metaDataDefaults from '@lib/metaDataDefaults'
 import showMoreButton from '@util/showMoreButton'
 import { FunctionComponent, useContext } from 'react'
@@ -17,7 +16,6 @@ export interface Props {
     videoRecords?: MarkdownFileWithUrl[]
     postRecords?: MarkdownFileWithUrl[]
     totalRecordsNumber: number
-    allRecords?: PageData
 }
 
 const RecordIndexTemplate: FunctionComponent<Props> = props => {
@@ -34,8 +32,8 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
                 isRecordIndex={true}
             />
             <ContentCardList records={props.recordType === 'posts'
-                    ? loadMoreHook.currentPosts
-                    : loadMoreHook.currentVideos} />
+                ? loadMoreHook.currentPosts
+                : loadMoreHook.currentVideos} />
             {showMoreButton(props.recordType, loadMoreHook, props.totalRecordsNumber) && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}
