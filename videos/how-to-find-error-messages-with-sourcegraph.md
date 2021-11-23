@@ -16,7 +16,7 @@ type: videos
 
 ## Related links
 
-- [Sourcegraph cloud code search](https://sourcegraph.com/search)
+- [Sourcegraph Cloud code search](https://sourcegraph.com/search)
 - [Sourcegraph docs](https://docs.sourcegraph.com)
 - [Read about literal search patterns](/how-to-search-code-with-sourcegraph-using-literal-patterns)
 - [Watch: Three Ways to Search with Sourcegraph (Video)](/three-ways-to-search-code-with-sourcegraph)

@@ -12,14 +12,14 @@ export const StyledTocTopWrapper = styled.div`
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
-    left: 0;
+    left: -1.25rem;
 `
 
 export const StyledTocWrapperBody = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: left;
-    max-width: 15.62rem;
+    max-width: 14rem;
     padding-right: 1.5rem;
     position: fixed;
     top: ${props => props.setTop
@@ -38,29 +38,48 @@ export const StyledTocWrapperBody = styled.div<Props>`
         list-style-type: none;
         margin: 0;
         padding: 0;
-    
-        a {
-            color: #6c757d;
-            opacity: .85;
-            text-decoration: none;
-
-            :hover {
-                color: #000;
-                opacity: 1;
-            }
-        }
     }
 `
 
 export const StyledHeaderTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
-        : '#fff'};
+        : 'transparent'};
     padding: .4rem 0;
+
+    a {
+        opacity: .55;
+        text-decoration: none;
+        color: ${props => props.isHighlighted
+            ? '#212529'
+            : 'var(--text-color)'};
+
+        :hover {
+            opacity: 1;
+            color: ${props => props.isHighlighted
+                ? '#212529'
+                : 'var(--text-color)'};
+        }
+    }
 `
 export const StyledTocItem = styled.li<Props>`
     background-color: ${props => props.isHighlighted
         ? '#edeafc'
-        : '#fff'};
+        : 'transparent'};
     padding: .2rem 1.5rem;
+
+    a {
+        opacity: .55;
+        text-decoration: none;
+        color: ${props => props.isHighlighted
+            ? '#212529'
+            : 'var(--text-color)'};
+
+        :hover {
+            opacity: 1;
+            color: ${props => props.isHighlighted
+                ? '#212529'
+                : 'var(--text-color)'};
+        }
+    }
 `

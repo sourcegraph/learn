@@ -22,11 +22,6 @@ export const StyledCollectionDescription = styled.p`
     margin: 0 0 1rem 0;
 `
 export const StyledCollectionList = styled.div`
-    border: inherit;
-    border-bottom-width: 0;
-    border-bottom-right-radius: calc(.25rem - 1px);
-    border-bottom-left-radius: calc(.25rem - 1px);
-    border-radius: .25rem;
     display: flex;
     flex-direction: column;
     padding-left: 0;
@@ -35,12 +30,12 @@ export const StyledCollectionList = styled.div`
 export const StyledCollectionListItem = styled.a<Props>`
     background-color: ${props => props.isActive
     ? '#edeafc'
-    : '#fff'};
+    : 'transparent'};
     border: 1px solid rgba(0,0,0,.125);
     border-width: 0 0 1px;
     color: ${props => props.isActive
     ? '#20145a'
-    : '#212529'};
+    : 'var(--text-color)'};
     display: block;
     padding: .5rem 1rem;
     position: relative;

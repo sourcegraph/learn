@@ -3,7 +3,6 @@ import loadAllRecords from '@lib/loadAllRecords'
 import collectTags from '@util/collectTags'
 import filterRecordsWithTag from '@util/filterRecordsWithTag'
 import getQueryParameter from '@util/getQueryParameters'
-import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,16 +18,20 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const videos = await loadAllRecords('videos')
     const allRecords = posts.concat(videos)
     const filteredRecordsWithTag = filterRecordsWithTag(allRecords, tag)
+    const [ featuredRecord ] = filteredRecordsWithTag.records.slice(0,2)
+    const secondaryRecords = filteredRecordsWithTag.records.slice(2,4)
+    const videoRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'video').records
+    const postRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'tutorial').records
     const url = `/tags/${tag}`
 
     return {
         props: {
             url,
             headerText: filteredRecordsWithTag.title,
-            records: filteredRecordsWithTag.records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            featuredRecord,
+            secondaryRecords,
+            videoRecords,
+            postRecords,
         },
     }
 }

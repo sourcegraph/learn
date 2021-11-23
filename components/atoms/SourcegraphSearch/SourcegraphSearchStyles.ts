@@ -6,6 +6,7 @@ export const StyledSearchLogo = styled.img`
     }
 `
 export const StyledSearchBody = styled.div`
+    background-color: var(--background-color);
     align-items: center;
     flex: 1 1 auto;
     flex-wrap: wrap;
@@ -20,11 +21,11 @@ export const StyledSearchBody = styled.div`
     }
 `
 export const StyledSearchInput = styled.textarea`
-    background-color: #fff;
+    background-color: var(--background-color);
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    color: #212529;
+    color: var(--text-color);
     display: block;
     font-family: monospace;
     font-size: 1rem;

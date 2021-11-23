@@ -1,4 +1,3 @@
-import Card from '@components/atoms/Card'
 import Column from '@components/atoms/Column'
 import { FunctionComponent } from 'react'
 
