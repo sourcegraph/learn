@@ -35,8 +35,7 @@ const RecordIndexTemplate: FunctionComponent<Props> = props => {
             />
             <ContentCardList records={props.recordType === 'posts'
                     ? loadMoreHook.currentPosts
-                    : loadMoreHook.currentVideos} 
-                recordType={props.recordType} />
+                    : loadMoreHook.currentVideos} />
             {showMoreButton(props.recordType, loadMoreHook, props.totalRecordsNumber) && (
                 <Button 
                     onClick={() => loadMoreHook.setPage(loadMoreHook.page + 10)}

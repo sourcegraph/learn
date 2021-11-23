@@ -6,7 +6,6 @@ import { FunctionComponent } from 'react'
 
 interface Props {
     records: MarkdownFileWithUrl[] | null
-    recordType: string
 }
 
 const ContentCardList: FunctionComponent<Props> = props => (

@@ -9,7 +9,8 @@ const useLoadMore = (
         initialVideos: MarkdownFileWithUrl[] | null,
         initialPosts: MarkdownFileWithUrl[] | null,
         initialPage: number,
-        initialTag?: string): LoadMoreHookObject => {
+        initialTag?: string
+): LoadMoreHookObject => {
     const [tag, setTag] = useState<string | null>(initialTag ?? null)
     const [videos, setVideos] = useState<MarkdownFileWithUrl[] | null>(initialVideos)
     const [posts, setPosts] = useState<MarkdownFileWithUrl[] | null>(initialPosts)
@@ -39,12 +40,12 @@ const useLoadMore = (
             if (videos) {
                 if (tag && allRecords.records.videos) {
                     const getNewVideos = filterRecordsWithTag(allRecords?.records.videos, tag).records.slice(0, page)
-                    setCurrentPosts(getNewVideos)
+                    setCurrentVideos(getNewVideos)
 
                 }
-                const getNewVideos = allRecords?.records.posts?.slice(0, page)
+                const getNewVideos = allRecords?.records.videos?.slice(0, page)
                 if (getNewVideos && !tag) {
-                    setCurrentPosts(getNewVideos)
+                    setCurrentVideos(getNewVideos)
                 }
             }
             if (posts) {
