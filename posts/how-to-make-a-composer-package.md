@@ -50,7 +50,7 @@ chmod +x sg
 Now we have our environment configured, we can start by creating our project. So, let's run the following command:
 
 ```bash
-sg init
+./sg init
 ```
 
 This command will actually run a `composer init` inside the container. When we do that, the composer will ask a few questions about our project, like the name of the project, the description, and the author. So, let's answer those questions.
