@@ -12,6 +12,9 @@ export interface Props {
     secondaryRecords: MarkdownFileWithUrl[]
     videoRecords: MarkdownFileWithUrl[]
     postRecords: MarkdownFileWithUrl[]
+    totalVideosNumber: number
+    totalPostsNumber: number
+    tag: string
 }
 
 const TagTemplate: FunctionComponent<Props> = props => {
@@ -23,7 +26,12 @@ const TagTemplate: FunctionComponent<Props> = props => {
                 featuredRecord={props.featuredRecord} 
                 secondaryRecords={props.secondaryRecords}
                 headerText={props.headerText} />
-            <RecordList videos={props.videoRecords} posts={props.postRecords} />
+            <RecordList 
+                videos={props.videoRecords} 
+                posts={props.postRecords}
+                totalVideosNumber={props.totalVideosNumber}
+                totalPostsNumber={props.totalPostsNumber}
+                tag={props.tag} />
         </PageLayout>
     )
 }

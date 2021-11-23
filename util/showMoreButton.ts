@@ -1,9 +1,8 @@
 import LoadMoreHookObject from '@interfaces/LoadMoreHookObject'
 
-const showMoreButton = (recordType: string, hook: LoadMoreHookObject, limit: number): boolean => (
+const showMoreButton = (recordType: string, hook: LoadMoreHookObject, limit: number): boolean => 
     recordType === 'videos'
-        ? limit !== hook.videos?.length
-        : limit !== hook.posts?.length
-)
+        ? limit !== hook.currentVideos?.length
+        : limit !== hook.currentPosts?.length
 
 export default showMoreButton

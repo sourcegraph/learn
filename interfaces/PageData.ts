@@ -6,7 +6,7 @@ export interface PageData {
 
 export interface Records {
     posts?: MarkdownFileWithUrl[]
-    videos?: MarkdownFileWithUrl[],
+    videos?: MarkdownFileWithUrl[]
     totalRecords?: number
 }
 

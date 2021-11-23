@@ -4,9 +4,9 @@ import { getPageData } from '@lib/api/getPageData'
 import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
-    const totalPostRecords = await getPageData() as PageData
-    const postRecords = totalPostRecords.records.posts?.slice(0, 10)
-    const totalRecordsNumber = totalPostRecords.records.posts?.length ?? 0
+    const totalRecords = await getPageData() as PageData
+    const postRecords = totalRecords.records.posts?.slice(0, 10)
+    const totalRecordsNumber = totalRecords.records.posts?.length ?? 0
     const url = '/posts'
     const headerText = 'Tutorials'
 
