@@ -13,7 +13,7 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, the JavaScript engine detects an excessive level of recursion in your code.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='InternalError: too much recursion'
 language='javascript'
 />
@@ -26,7 +26,7 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 
 Let's write the following program, `factorial.js`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function factorial(x) {
   return x * factorial(x - 1)
 }
@@ -37,7 +37,7 @@ language='javascript'
 
 This small program calculates the factorial of number `num` which is initialized as `5` in this case. This recursive function is missing a base case. As there is no exit condition, the function will call itself infinitely.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`factorial.js:1
 function factorial(x) {
                   ^
@@ -62,7 +62,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 We know that in mathematics, a factorial of negative numbers is not defined, so we can use this as our base case condition.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='function factorial(x) {
   if (x === 0) {
     return 1
@@ -76,7 +76,7 @@ language='javascript'
 
 In this example, `factorial(5)` asks for `factorial(4)`, `factorial(4)` asks for `factorial(3)` and so on. At some point we arrive at `factorial(0)` which returns `1`. The following is the output we receive.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Output: 120'
 language='javascript'
 />
@@ -87,7 +87,7 @@ Hence, by explicitly providing the condition where the recursion will stop, we w
 
 We can also implement the following program using a `while` loop. In this example, we are calculating the factorial of number using while loop.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`num = 5
 factorial = 1
  
@@ -102,7 +102,7 @@ language='javascript'
 
 In each iteration we are multiplying the current value `num` with `factorial` and then decrementing `num` by 1.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Output: 120'
 language='javascript'
 />

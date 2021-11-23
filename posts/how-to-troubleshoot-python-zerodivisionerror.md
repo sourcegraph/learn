@@ -13,7 +13,7 @@ type: posts
 
 If you are working in Python, and receive the following output, your code is attempting to divide a given number by zero.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ZeroDivisionError: division by zero'
 language='python'
 />
@@ -26,7 +26,7 @@ In this tutorial, we'll reproduce the issue and then go over some solutions.
 
 Let's write the following program, `divide.py`. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
@@ -42,7 +42,7 @@ This small program creates a function that divides `a` by `b` to return `c`. The
 
 If the user enters `9` and then `3`, there will be no errors returned, as indicated in the output below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Enter an integer: 9
 Enter another integer: 3
 3.0'
@@ -51,7 +51,7 @@ language='python'
 
 If, however, the user enters `9` and then `0`, we will be able to reproduce the `ZeroDivisionError`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`Traceback (most recent call last):
   File "divide.py", line 8, in <module>
     divide_two_numbers()
@@ -67,7 +67,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 You can use flow control in the form of an `if` / `else` statement to reach an alternate outcome. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
@@ -81,7 +81,7 @@ language='python'
 
 In this example, we have the program check to ensure that `b` is not equal to `0`, and if it is to instead print `0`. In this case, our output with a `0` denominator would be a `0`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Enter an integer: 9
 Enter another integer: 0
 0'
@@ -94,7 +94,7 @@ While this solution prevents an error, it does not give the feedback that our ex
 
 Flow control and an `if` / `else` statement can also be used to print output to give guidance, or give the user direction.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def divide_two_numbers():
     a = input("Enter an integer: ")
     b = input("Enter another integer: ")
@@ -113,7 +113,7 @@ language='python'
 
 Here, we first check whether `b` is equivalent to `0`, and if so, we initialize `c` as a string that states that `This expression is undefined.`
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Enter an integer: 9
 Enter another integer: 0
 This expression is undefined.'
@@ -126,7 +126,7 @@ You may want to provide even more guidance to the user, to let them know that th
 
 A third approach is to handle the exception with a `try` / `except` clause that calls the `ZeroDivisionError`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def divide_two_numbers():
  
     try:
@@ -146,7 +146,7 @@ language='python'
 
 Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `ZeroDivisionError` that we have anticipated. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Enter an integer: 9
 Enter another integer: 0
 You cannot divide by 0.'

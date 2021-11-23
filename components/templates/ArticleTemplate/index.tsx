@@ -3,7 +3,7 @@ import CollectionView from '@components/atoms/CollectionView'
 import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
 import Highlighter from '@components/atoms/Highlighter'
-import OutputHighlighter from '@components/atoms/OutputHighlighter'
+import PrismSyntaxHighlighter from '@components/atoms/PrismSyntaxHighlighter'
 import SourcegraphSearch from '@components/atoms/SourcegraphSearch'
 import TocWrapper from '@components/atoms/TocWrapper'
 import PageLayout from '@components/layouts/PageLayout'
@@ -48,8 +48,8 @@ const components = {
     EmbeddedYoutubeVideo,
     GifLikeVideo,
     CollectionView,
-    OutputHighlighter,
     Highlighter,
+    PrismSyntaxHighlighter,
 }
 
 const ArticleTemplate: FunctionComponent<Props> = props => {
