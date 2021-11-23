@@ -8,6 +8,3 @@ echo "Creating local env file"
 
 printf "NEXT_PUBLIC_URL='http://localhost:3000'\nNEXT_PUBLIC_GTM_ID='GTM-TB4NLS7'" > .env
 
-echo "Creating a placeholder static build file"
-
-echo "{}" > public/builds/globalData.json
