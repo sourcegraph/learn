@@ -19,14 +19,14 @@ In this guide, we’ll explore how to use `git status` and understand its output
 
 To get a summary of the status of the repository, run `git status` in your terminal in your repository directory. It doesn’t require any arguments.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status'
 language='bash'
 />
 
 If you run the command on a freshly cloned repository, you will get the following output.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean`}
@@ -53,7 +53,7 @@ Suppose you run `git status` in a repository after making the following three ch
 
 The following output demonstrates how `git status` represents these changes.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch is up to date with 'origin/main'.
  
@@ -84,7 +84,7 @@ After you stage some changes, the output of `git status` will reflect this. Supp
 
 The output will now describe the contents of the staging area as follows.
 
-<OutputHighlighter
+<Highlighter
 input='On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -103,7 +103,7 @@ After you move or rename files in the working directory, Git can’t initially d
 
 Here’s the output from `git status` after renaming a file named `README.md` to `README2.md`:
 
-<OutputHighlighter
+<Highlighter
 input={`Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -116,7 +116,7 @@ Untracked files:
 
 After you stage both of these changes, Git is able to determine that the contents of both files are identical. Based on this, Git will then list the change as a single entry  `Changes to be committed` section.
 
-<OutputHighlighter
+<Highlighter
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    README.md -> README2.md'
@@ -126,7 +126,7 @@ The `renamed` label displays the file’s original name followed by its new name
 
 When moving files across directories, the change is displayed in a similar way. For example, if you move `README.md` to a new directory called `docs/pages`, the output will also list it as `renamed` and will display the file’s new location.
 
-<OutputHighlighter
+<Highlighter
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    README.md -> docs/pages/README.md'
@@ -140,7 +140,7 @@ In addition to describing local changes, `git status` also reports the status of
 
 If your current branch is in an identical state to the remote branch, `git status` will state that the branch is up to date at the top of its output.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch is up to date with 'origin/main'.`}
 />
@@ -149,7 +149,7 @@ In the above example, `origin/main` is the name of the remote branch. It’s pre
 
 If you’ve created some commits on your local branch and haven’t yet pushed them to the remote branch, `git status` will reflect this by indicating that your branch is ahead of the remote branch.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)`}
@@ -157,7 +157,7 @@ Your branch is ahead of 'origin/main' by 2 commits.
 
 On the other hand, if the remote branch contains commits that haven’t yet been pulled into your local branch, the output will indicate that your branch is behind the remote branch.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)`}
@@ -165,7 +165,7 @@ Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
 
 Both of the above situations are possible at the same time. You can have local commits that aren’t yet pushed while also having commits on the remote branch that you haven’t yet pulled. In this case, the output will describe the branches as having “diverged” and will display the number of commits on each.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch main
 Your branch and 'origin/main' have diverged,
 and have 2 and 3 different commits each, respectively.
@@ -180,14 +180,14 @@ Once you’re used to reading the output of `git status`, you can use the short 
 
 To run `git status` with the short output option, add the `-s` flag (which stands for “short”) to the command. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status -s'
 language='bash'
 />
 
 In a repository with a modified, deleted, and created file, the output will be similar to the following.
 
-<OutputHighlighter
+<Highlighter
 input='M index.html
 D script.js
 ?? demo.js'
@@ -207,14 +207,14 @@ The `git status` command also supports a verbose option that provides more detai
 
 To enable the verbose output option, run `git status` with the `-v` flag (short for “**v**erbose”).
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status -v'
 language='bash'
 />
 
 If you don’t have any staged changes, this will produce the same output as `git status` without the verbose option. However, if you do have staged changes, the command will describe every staged change by displaying the diff of the change.
 
-<OutputHighlighter
+<Highlighter
 input={`On branch update-readme
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)

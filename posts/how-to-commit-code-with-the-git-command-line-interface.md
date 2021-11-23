@@ -22,14 +22,14 @@ You will need to have the Git command-line tools installed and configured. For i
 
 The version of Git used in the examples in this tutorial is 2.32.0. You can check that you have Git installed and verify its version by running `git version` in your terminal.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git version'
 language='bash'
 />
 
 You’ll receive output similar to the following, which states your version number.
 
-<OutputHighlighter
+<Highlighter
 input='git version 2.32.0'
 />
 
@@ -39,14 +39,14 @@ Note that when talking about Git, the word “commit” can be used both as a no
 
 First, it’s useful to get a summary of the changes that we’ve made in our project’s working directory. This will help us select the changes that we want to add to our commit. Run the `git status` command:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git status'
 language='bash'
 />
 
 The output of the command tells us about the changes that are available to be added to our commit. The first section of the output that we’ll pay attention to is titled `Changes not staged for commit`.
 
-<OutputHighlighter
+<Highlighter
 input='Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)  
@@ -57,7 +57,7 @@ This section lists files that already exist in the repository and have been modi
 
 The second section that is relevant to us is titled `Untracked files`. It lists newly created files that don’t yet exist in the repository.
 
-<OutputHighlighter
+<Highlighter
 input='Untracked files:
   (use "git add <file>..." to include in what will be committed)
         getting-started.txt'
@@ -75,7 +75,7 @@ In a Git repository, the **staging area** is the collection of changes that will
 
 To add a modified file to the staging area, we use the `git add` command. The `git add` command, in its simplest form, expects a file name as an argument. Here’s an example in which we add the file named `README.md` to the staging area:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git add README.md'
 language='bash'
 />
@@ -84,7 +84,7 @@ If we run `git status` again at this point, `README.md` will be gone from the �
 
 We can continue by adding more files using `git add`. For example, we’ll add the newly created file, `getting-started.txt`:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git add getting-started.txt'
 language='bash'
 />
@@ -97,7 +97,7 @@ Rather than adding each changed file one by one to the staging area, a common al
 
 We can add all files by providing the `-A` flag (which is short for `--all`) to `git add` instead of specifying a file name:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git add -A'
 language='bash'
 />
@@ -110,7 +110,7 @@ It’s possible to remove changes from the staging area using the `git restore` 
 
 The `git restore` command expects a file name, similarly to `git add`, and requires the `--staged` flag to indicate that we intend to unstage a file that is currently staged. Here’s an example:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git restore --staged README.md'
 language='bash'
 />
@@ -123,7 +123,7 @@ Once we’ve selected the changes that we want to commit, it’s a good idea to 
 
 Now that we’ve added two files, `README.md` and `getting-started.txt`, we can check the status of the repository by running `git status` again. The output now includes a section called `Changes to be committed`:
 
-<OutputHighlighter
+<Highlighter
 input='Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   README.md
@@ -154,7 +154,7 @@ Commit messages are helpful when you’re browsing through the commit history of
 
 Suppose that we’re committing changes to update the `README.md` file and add a `getting-started.txt` file. Our commit message could be:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Update README and add getting-started file'
 language='bash'
 />
@@ -169,14 +169,14 @@ We specify the commit message by providing it as an argument to `git commit`. Th
 
 With our example commit message, the command would look like this:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git commit -m “Update README and add getting-started file”'
 language='bash'
 />
 
 Here’s the output when we run this command:
 
-<OutputHighlighter
+<Highlighter
 input='[main 5388e04d38] Update README and add getting-started file   
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 getting-started.txt'
@@ -192,14 +192,14 @@ After running `git commit`, we can check that it was created successfully with t
 
 The `git log` command outputs a list of recent commits. Since we’re only interested in checking the last commit, we can shorten the output by adding the `-1` option, which will display only the most recent entry.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git log -1'
 language='bash'
 />
 
 This helps us confirm that the last commit is, in fact, the one that we just created. Here’s the result when we run `git log -1` after creating our commit:
 
-<OutputHighlighter
+<Highlighter
 input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)   
 Author: Marek <marek@example.com>   
 Date:   Tue Aug 31 18:47:11 2021 -0400   

@@ -15,7 +15,7 @@ The Java `NegativeArraySizeException` is a runtime exception thrown by the compi
 
 You may encounter the exception as follows.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`Exception in thread "main" java.lang.NegativeArraySizeException: -2
 at example.main(example.java:6) 
 `}
@@ -30,7 +30,7 @@ This error arises when the array length is initialized with a negative input by 
 
 The following program accepts the size of an array and the array elements from the user and then returns a sorted array.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Arrays;
 import java.io.*; 
  
@@ -69,7 +69,7 @@ language='java'
 
 This is a program that accepts an array from the user and will sort and output the array. Now, let's enter a negative input for the array size, this produces the **NegativeArraySizeException** as below.
  
- <Highlighter
+ <PrismSyntaxHighlighter
 input={`Enter the array size
 -5
 Exception in thread "main" java.lang.NegativeArraySizeException: -5
@@ -86,7 +86,7 @@ This error arises when the array size is initialized with an arithmetic result. 
 
 We'll write a program to store the speeds of a body in the uniform intervals of 2M from the starting to the ending positions during its journey in either direction of `X` and `Y` axes.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Arrays;
 import java.io.*;
  
@@ -122,7 +122,7 @@ language='java'
 
 The compiler throws the `NegativeArraySizeException` when the input for either *start and end* or only *end* is negative. The negative input signifies that the body translated in the negative sense of the axis, so it is a valid input but the arithmetic for the size results in a negative integer too, thus the array length of ‘speed’ is initialized with the negative integer. This makes the compiler throw the error as indicated below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`Enter the starting position and ending position
 -1
 -7
@@ -142,7 +142,7 @@ A user may only enter a negative input unknowingly, thus ignoring the sign while
 
 To solve the first example via `abs()`, let's rewrite `sorting.java` to be the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Arrays;
 import java.io.*;
  
@@ -176,7 +176,7 @@ Here, by using `Math.abs()`, if the user enters a negative number for the size o
 
 Now, if we test the above program with a negative number for the array length, we get a valid output.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`Enter the array size
 -5
 Now Enter the elements one by one that are to be sorted
@@ -192,7 +192,7 @@ language='bash'
 
 For the second example, `speeds.java`, we will be using the `abs()` function in the arithmetic expression in order to troubleshoot this error.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Arrays;
 import java.io.*;
  
@@ -227,7 +227,7 @@ language='java'
 
 Here, we have converted the start and end positions to their absolute values in order to handle a negative number input from the user. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`Enter the starting position and ending position
 -1
 -7
@@ -248,7 +248,7 @@ This user entered a starting position of `-1`, which was converted to `1`, and a
 
 Using a `try` and `catch` block for the user input is often the recommended way to handle many exceptions such as the `NegativeArraySizeException`. This logic allows the program to continue to run depsite encountering errors.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Arrays;
 import java.io.*;
  
