@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot JavaScript SyntaxError JSON.parse
-author: william-bezuidenhout
+authorSlug: william-bezuidenhout
+authorDisplayName: William Bezuidenhout
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError JSON.parse
@@ -14,7 +15,7 @@ JSON (JavaScript Object Notation) is a convenient text format that allows us to 
 
 In JavaScript, we use the method `JSON.parse` to parse JSON text into an object. If the JSON text given to the method is invalid, the method will throw a `SyntaxError: JSON.parse` error, as in the output below.
 
-<Highlighter
+<OutputHighlighter
 input={`SyntaxError: Unexpected token = in JSON at position 8
     at JSON.parse (<anonymous>)
     at printInfo (/home/user/programming/javascript/test.js:2:17)
@@ -25,7 +26,6 @@ input={`SyntaxError: Unexpected token = in JSON at position 8
     at Function.Module._load (node:internal/modules/cjs/loader:816:12)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)
     at node:internal/main/run_main_module:17:47`}
-language='javascript'
 />
 
 There are a multitude of reasons on why `JSON.parse` can fail with `SyntaxError` but ultimately, it means the JSON you're trying to parse is invalid. 
@@ -50,9 +50,8 @@ language='javascript'
 
 Our program tries to parse the JSON text `'{ "name" = "William", "country" = "South Africa" }'` and print the name value of the resulting object parsed from the JSON. Unfortunately, our program fails and exits with `SyntaxError`.
 
-<Highlighter
+<OutputHighlighter
 input={`Uncaught SyntaxError: JSON.parse: expected ':' after property name in object at line 1 column 10 of the JSON data`}
-language='bash'
 />
 
 The JSON we are trying to parse is invalid JSON since keys and values should be separated by `:` characters and not with `=` characters, hence the reason our method encounters the `SyntaxError` above.
@@ -83,9 +82,8 @@ language='javascript'
 
 When we run our program now, we get the following output as soon as the `printInfo()` function encounters `SyntaxError` due to malformed JSON.
 
-<Highlighter
-input={`The text "{ "name" = "William", "country" = "South Africa" }" is not valid JSON.`}
-language='bash'
+<OutputHighlighter
+input='The text "{ "name" = "William", "country" = "South Africa" }" is not valid JSON.'
 />
 
 In this example, we have caught the error and alerted our user of this issue.
@@ -108,9 +106,8 @@ language='javascript'
 
 In our program above we fixed the JSON by changing the `=` character to a `:` character and now we're able to use `JSON.parse` to parse the given text! Below is the output of our program after we have parsed the JSON. 
 
-<Highlighter
+<OutputHighlighter
 input='William lives in South Africa'
-language='bash'
 />
 
 With this fix in the JSON syntax, we're able to access the name property of the JSON object.

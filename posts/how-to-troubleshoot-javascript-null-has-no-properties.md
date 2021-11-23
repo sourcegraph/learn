@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot JavaScript TypeError null has no properties
-author: angelina-tresca
+authorSlug: angelina-tresca
+authorDisplayName: Angelina Tresca
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 19, 2021
 description: Learn how to error handle JavaScript TypeError null has no properties

@@ -1,6 +1,7 @@
 ---
 title: How to commit code to a Git repository with Visual Studio Code
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 publicationDate: September 10, 2021
 tags: [tutorial, git, IDE, open source]
 description: Learn how to create commits in a Git repository with VS Code.
@@ -97,9 +98,9 @@ Before we can commit our changes, we need to write a commit message. The commit 
 
 For example, we can write the following commit message for our changed files:
 
-```
-Update Readme and Getting Started docs
-```
+<OutputHighlighter
+input='Update Readme and Getting Started docs'
+/>
 
 We’ll use the **Message** input box at the top of the **Source Control** panel to enter this commit message.
 
@@ -128,13 +129,12 @@ language='bash'
 
 Here’s the result of the command:
 
-<Highlighter
+<OutputHighlighter
 input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
 Author: Marek <marek@sourcegraph.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400     
     
     Update Readme and Getting Started docs`}
-language='bash'
 />
 
 In the above output of `git log -1`, we receive the commit ID and the branch name (`main`) on the first line. The output also includes the author and date, followed by the commit message.

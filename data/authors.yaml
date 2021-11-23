@@ -62,8 +62,18 @@ authors:
       bio: Web developer, DevOps padawan and writer very rarely.
       twitterLink: https://twitter.com/tongedev
       linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
+    - slug: ml-narayana-rao
+      name: M.L. Narayana Rao
+      bio: Student
+      linkedInLink: https://www.linkedin.com/in/lakshminarayana-malyala/
     - slug: yashesvinee-v
       name: Yashesvinee V
+    - slug: shailesh-kumar
+      name: Shailesh Kumar
+    - slug: yashrsharma44
+      name: Yash Sharma
+      twitterLink: https://twitter.com/yashrsharma44
+      linkedInLink: https://www.linkedin.com/in/yashrsharma44
     - slug: jack-newman
       name: Jack Newman
     - slug: grace-mcnerney
@@ -83,3 +93,5 @@ authors:
       name: Mason Woodford
       bio: University computer engineering student, web developer
       linkedInLink: https://www.linkedin.com/in/mason-woodford/
+    - slug: arash-afghahi
+      name: Arash Afghahi

@@ -3,7 +3,8 @@ title: What are diffs in Git?
 tags: [video, git, open source]
 publicationDate: September 17, 2021
 description: Learn about diffs in Git and how to understand them.
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-diffs-thumbnail.jpg
 imageAlt: Learning about Git diffs.
 type: videos

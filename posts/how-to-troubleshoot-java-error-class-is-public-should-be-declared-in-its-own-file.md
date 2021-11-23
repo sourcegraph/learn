@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java error class X is public should be declared in a file named X
-author: grace-mcnerney
+authorSlug: grace-mcnerney
+authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java error class X is public, should be declared in a file named X
@@ -16,9 +17,8 @@ It’s also important to remember that Java is a “strongly typed” language, 
 
 This tutorial will help you resolve the following error message.
 
-<Highlighter
+<OutputHighlighter
 input='error: class X is public, should be declared in a file named X.java'
-language='bash'
 />
 
 When encountering this error, it’s important to make sure not only that our public classes match those of their file names, but also that there are no spelling errors or unintended white spaces (as in `Main Activity` instead of `MainActivity`). We'll go through approaches to ensuring you can recover from this error quickly. 

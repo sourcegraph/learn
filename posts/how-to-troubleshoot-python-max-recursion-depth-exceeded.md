@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python recursion error 
-author: yashrsharma44
+authorSlug: yashrsharma44
+authorDisplayName: Yash Sharma
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle Python RecursionError - maximum recursion depth exceeded in comparison
@@ -12,12 +13,11 @@ type: posts
 
 While using Python, you may face this issue if you use up the stack memory more than allocated. This occurs when your program is attempting to use considerable available memory.
 
-<Highlighter
+<OutputHighlighter
 input='RecursionError: maximum recursion depth exceeded'
-language='bash'
 />
 
- Python's interpreter limits memory allocation and stack in order to prevent overflow, so this error generally happens when the user-defined methods allocates more memory in the stack than the set stack limit.
+Python's interpreter limits memory allocation and stack in order to prevent overflow, so this error generally happens when the user-defined methods allocates more memory in the stack than the set stack limit.
 
 ## Reproducing the error
 
@@ -38,7 +38,7 @@ language='python'
 
 Run this script using the command `python3 fibonacci.py` command. You will get output similar to the following, including the error message. 
 
-<Highlighter
+<OutputHighlighter
 input='Traceback (most recent call last):
   File "fibonacci.py", line 9, in <module>
     recursive_fibonacci(123456)
@@ -52,7 +52,6 @@ input='Traceback (most recent call last):
   File "fibonacci.py", line 3, in recursive_fibonacci
     if n <= 1:
 RecursionError: maximum recursion depth exceeded in comparison'
-language='bash'
 />
 
 You may alternately receive a `RuntimeError: maximum recursion depth exceeded` message.

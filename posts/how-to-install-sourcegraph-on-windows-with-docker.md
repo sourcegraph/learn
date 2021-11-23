@@ -1,6 +1,7 @@
 ---
 title: How to install Sourcegraph on Windows with Docker
-author: lisa-tagliaferri
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 tags: [tutorial, Docker, installation, Sourcegraph]
 publicationDate: July 1, 2021
 updatedDate: August 10, 2021
@@ -11,7 +12,7 @@ browserTitle: Installing Sourcegraph for code search testing on Windows with Doc
 type: posts
 ---
 
-Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.
+Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph Cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.
 
 By installing Sourcegraph on your own hardware, you’ll be able to manage your own instance of Sourcegraph, providing you with complete control over who has access to your code. Your own installation will also allow you to connect your local (or server-side) code as well as any relevant Git servers. Git servers that you can connect to include GitHub, GitHub Enterprise, GitLab, Bitbucket, AWS CodeCommit, Perforce, and more.
 
@@ -41,7 +42,8 @@ Please note that Sourcegraph can only be tested on Windows 10 as data will not b
 Due to limitations with Docker for Windows, Sourcegraph can only be tested on Windows as data cannot persist on a Windows installation. Due to that, we won't be using the `--volume` argument in our command.
 
 <Highlighter
-input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 `
+input='docker run --publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 ` \
 --rm sourcegraph/server:3.29.0'
 language='bash'
 />
@@ -49,7 +51,8 @@ language='bash'
 _The above command with backtick assumes use of PowerShell. If you're using the Windows Command Prompt, substitute `^` as below._
 
 <Highlighter
-input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 ^
+input='docker run --publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 ^ \
 --rm sourcegraph/server:3.29.0'
 language='bash'
 />
@@ -58,9 +61,8 @@ This command is telling your computer to install and run Sourcegraph in port 708
 
 Once you run the command, you’ll receive some output indicating that Sourcegraph is getting set up. Sourcegraph will be ready when you receive output similar to the following:
 
-<Highlighter
+<OutputHighlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

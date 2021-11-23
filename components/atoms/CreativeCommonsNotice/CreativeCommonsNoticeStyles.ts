@@ -8,18 +8,14 @@ export const StyledCreativeCommonsNoticeContainer = styled.div`
     }
 `
 export const StyledCreativeCommonsNoticeText = styled.div`
-    color: #6c757d;
+    color: var(--text-color);
     font-size: .875em;
     margin-bottom: 1rem;
-
+    opacity: .8;
 `
 export const StyledCreativeCommonsLink = styled.a`
-    color: #6c757d;
+    color: var(--text-color);
     text-decoration: none;
-
-    :hover {
-        color: #6c757d;
-    }
 `
 export const StyledCreativeCommonsImage = styled.img`
     display: block;

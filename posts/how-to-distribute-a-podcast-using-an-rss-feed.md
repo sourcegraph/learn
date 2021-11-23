@@ -1,7 +1,8 @@
 ---
 title: How to distribute a podcast using an RSS feed
-author: anthony-tagliaferri
-tags: [podcast, rss, object storage]
+authorSlug: anthony-tagliaferri
+authorDisplayName: Anthony Tagliaferri
+tags: [podcast, RSS, object storage]
 publicationDate: October 18, 2021
 description: Set up an RSS feed for your podcast
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-07.png

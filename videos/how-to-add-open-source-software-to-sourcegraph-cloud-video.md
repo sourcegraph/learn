@@ -1,11 +1,12 @@
 ---
-title: How to add open source software to Sourcegraph cloud (video)
-author: lisa-tagliaferri
+title: How to add open source software to Sourcegraph Cloud (video)
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 tags: [video, Sourcegraph, open source]
 publicationDate: August 30, 2021
-description: Find out how to add open source repos to Sourcegraph cloud so you can search across all the code you care about.
+description: Find out how to add open source repos to Sourcegraph Cloud so you can search across all the code you care about.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/install-sourcegraph-with-docker-screengrab.png
-imageAlt: Demo of how to add open source repositories to Sourcegraph cloud for indexing
+imageAlt: Demo of how to add open source repositories to Sourcegraph Cloud for indexing
 browserTitle: Sourcegraph is indexing open source
 type: videos
 ---
@@ -16,11 +17,11 @@ type: videos
 
 Reading and searching open source code really helps me understand my project dependencies, it helps me optimize my code, and it helps me figure out how to best implement a new feature. I also find that real-life examples in open source code help new developers learn effectively, and can encourage them to become contributors to open source, too!
 
-I’m Lisa, Director of Developer Education at Sourcegraph, and the team here is working on indexing every open source repository on GitHub and GitLab with at least one star. You, too, can add open source repositories to Sourcegraph cloud to help others be able to search across many repos. I’ll walk you through the process.
+I’m Lisa, Director of Developer Education at Sourcegraph, and the team here is working on indexing every open source repository on GitHub and GitLab with at least one star. You, too, can add open source repositories to Sourcegraph Cloud to help others be able to search across many repos. I’ll walk you through the process.
 
-### Manage repositories from your Sourcegraph cloud account
+### Manage repositories from your Sourcegraph Cloud account
 
-First, you’ll need to have an account on Sourcegraph cloud. Once you sign up or login, you’ll click on your user icon on the top right corner of the page. From the drop-down menu, click on **Repositories**. If you have repositories on your account already, click through to **Manage Repositories**.
+First, you’ll need to have an account on Sourcegraph Cloud. Once you sign up or login, you’ll click on your user icon on the top right corner of the page. From the drop-down menu, click on **Repositories**. If you have repositories on your account already, click through to **Manage Repositories**.
 
 From here you will be able to connect your own repositories to Sourcegraph, but for now, we’re going to scroll down to **Other public repositories**. We’ll click on the checkbox **Sync specific public repositories by URL**. 
 
@@ -42,4 +43,4 @@ Looking forward to seeing the open source repositories that you’ll add to Sour
 
 ## Related links
 
-To learn more about Sourcegraph cloud, check out our full written tutorial on [How to add open source software projects to Sourcegraph cloud](https://learn.sourcegraph.com/how-to-add-open-source-software-projects-to-sourcegraph-cloud) and our tutorial on [How to add private code repositories to Sourcegraph cloud](https://learn.sourcegraph.com/how-to-add-private-code-repositories-to-sourcegraph).
+To learn more about Sourcegraph Cloud, check out our full written tutorial on [How to add open source software projects to Sourcegraph Cloud](https://learn.sourcegraph.com/how-to-add-open-source-software-projects-to-sourcegraph-cloud) and our tutorial on [How to add private code repositories to Sourcegraph Cloud](https://learn.sourcegraph.com/how-to-add-private-code-repositories-to-sourcegraph).

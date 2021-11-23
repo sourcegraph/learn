@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java OutOfMemoryError
-author: grace-mcnerney
+authorSlug: grace-mcnerney
+authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java OutOfMemoryError
@@ -12,9 +13,8 @@ type: posts
 
 The `OutOfMemoryError` is an error message in the Java language, and is thrown by the compiler when the heap is full. The heap is where objects reside within the JVM (Java virtual machine). You can run out of memory either because the heap size is insufficient for the size of the program, or there is at least one process causing a memory leak. Typically, a stack trace will be printed with the exception, along with an explanatory statement at the end of the `java.lang.OutOfMemoryError`, which will indicate why it is being thrown. Here is an example of the error: 
 
-<Highlighter
+<OutputHighlighter
 input='Exception in thread "main" java.lang.OutOfMemoryError: Java heap space'
-language='bash'
 />
 
 The explanatory note at the end of the error message noted "heap space" as the culprit. And as we mentioned, there could be a number of reasons for the error, so how do we accuractly pinpoint the source? 
@@ -48,9 +48,9 @@ Now, the issue with this program is that we failed to give it an exit function, 
 
 There are two possible methods of solving this. The first thing to do is to evaluate whether the right approach is making the heap bigger. If we decide that this is the appropriate next step, we can do this via a bash command in the command terminal:
 
- <Highlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
- language='bash'
- />
+<Highlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
+language='bash'
+/>
 
 Here, `1g` represents the amount of space we want to allocate to the heap, `1g` stands for 1GB. This amount is just an example, and can be modified to increase or decrease depending on individual cases. It’s important to remember, however, that it shouldn’t be greater than 75% of our device’s available storage.
 

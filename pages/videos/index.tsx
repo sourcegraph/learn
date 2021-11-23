@@ -1,14 +1,12 @@
-import ArticleListTemplate, { Props as ArticleListTemplateProps } from '@components/templates/ArticleListTemplate'
+import RecordIndexTemplate, { Props as RecordIndexTemplateProps } from '@components/templates/RecordIndexTemplate'
 import loadAllRecords from '@lib/loadAllRecords'
-import collectTags from '@util/collectTags'
-import getQueryParameter from '@util/getQueryParameters'
-import omitUndefinedFields from '@util/omitUndefinedFields'
-import sluggify from '@util/sluggify'
-import startCase from 'lodash/startCase'
+import filterRecordsWithTag from '@util/filterRecordsWithTag'
+import markdownWithUrls from '@util/markdownWithUrls'
 import { GetStaticProps } from 'next'
 
-export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async () => {
+export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
     const records = await loadAllRecords('videos')
+    const videoRecords = markdownWithUrls(filterRecordsWithTag(records, 'video').records)
     const url = '/videos'
     const headerText = 'Videos'
 
@@ -16,12 +14,10 @@ export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async ()
         props: {
             url,
             headerText,
-            records: records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            recordType: 'videos',
+            videoRecords,
         },
     }
 }
 
-export default ArticleListTemplate
+export default RecordIndexTemplate
