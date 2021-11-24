@@ -120,7 +120,7 @@ Sourcegraph can help you find reasons behind specific error messages that pop up
 You may have encountered this common error:
 
 <Highligher
-input={`Maximum update depth exceeded. This can happen when a component repeatedly calls `setState` inside `componentWillUpdate` or `componentDidUpdate`. React limits the number of nested updates to prevent infinite loops.`}
+input='Maximum update depth exceeded. This can happen when a component repeatedly calls `setState` inside `componentWillUpdate` or `componentDidUpdate`. React limits the number of nested updates to prevent infinite loops.'
 />
 
 This error message pops up when re-rendering repeatedly occurs, especially when a method that uses `setState` is called in the `render` method. You can find the origin of this method with Sourcegraph.
