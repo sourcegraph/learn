@@ -43,9 +43,7 @@
 
 [build]
   command="NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL npm run build"
-
-[functions]
-  included_files=["public/builds/*.json"]
+  publish="out"
 
 ## Non-sensitive env vars
 [context.production]
@@ -58,3 +56,4 @@
   [context.deploy-preview.environment]
     NEXT_PUBLIC_URL="$DEPLOY_URL"
     NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
+    NEXT_PLUGIN_FORCE_RUN="false"
