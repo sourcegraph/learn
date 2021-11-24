@@ -15,19 +15,19 @@ React, also known as ReactJS or React.js, is a popular front-end JavaScript libr
 
 There are many ways to learn React, including via the [official Learn React docs](https://beta.reactjs.org/learn). In this tutorial, we will support you in beginning to learn this library through using [Sourcegraph](https://sourcegraph.com) to delve into foundational concepts that are crucial to being able to implement React effectively.
 
-We’ll be using [Sourcegraph Cloud](https://sourcegraph.com) throughout this tutorial, which you don’t need an account to use. If you would like to [create an account](https://learn.sourcegraph.com/how-to-create-a-sourcegraph-cloud-account) to save your search history or learn more about the tool, feel free to review our [Sourcegraph Cloud tutorials and videos](https://learn.sourcegraph.com/tags/sourcegraph-learn). 
+We’ll be using [Sourcegraph Cloud](https://sourcegraph.com) throughout this tutorial, which you don’t need an account to use. If you would like to [create an account](https://learn.sourcegraph.com/how-to-create-a-sourcegraph-cloud-account) to save your search history or learn more about the tool, feel free to review our [Sourcegraph Cloud tutorials and videos](https://learn.sourcegraph.com/tags/sourcegraph-cloud). 
 
 ## Forms
 
-Many frontend developers will need to build forms. React provides a built-in way to work with [forms using controlled components](https://reactjs.org/docs/forms.html), but there are a number of React form libraries that can provide you with more features. 
+Many front-end developers will need to build web forms to intake information from users. React provides a built-in way to work with [forms using controlled components](https://reactjs.org/docs/forms.html), but there are a number of React form libraries that can provide you with more features. 
 
-With Sourcegraph, you can ramp up your knowledge with using React form libraries through searching across code that implement these libraries. You can also use Sourcegraph to review library documentation. 
+With Sourcegraph, you can ramp up your knowledge of React form libraries through searching across code that implement these libraries. You can also use Sourcegraph to review library documentation. 
 
-[Formik](https://formik.org/) is the most popular open source library for building forms with React and React Native, with over 28,000 stars on its [GitHub repository](https://github.com/formium/formik). Use Sourcegraph to search across code that makes use of Formik.
+[Formik](https://formik.org/) is the most popular open source library for building forms with React and React Native, with over 28,000 stars on its [GitHub repository](https://github.com/formium/formik). Let's use Sourcegraph to search across code that makes use of Formik so we can understand how develoeprs are using this library.
 
 <SourcegraphSearch query="Formik lang:JavaScript" patternType="literal"/>
 
-[KendoReact Form](https://www.telerik.com/kendo-react-ui/components/form/) is a small package that helps you manage forms and has no dependencies. Search across repositories that are making use of this package using Sourcegraph.
+Another library you may consider is [KendoReact Form](https://www.telerik.com/kendo-react-ui/components/form/), which helps you manage forms while also being a small package with no dependencies. Search across repositories that are making use of this package using Sourcegraph.
 
 <SourcegraphSearch query="kendo-react-form lang:JavaScript" patternType="literal"/>
 
@@ -37,7 +37,7 @@ You can read more about [React form libraries on DEV](https://dev.to/pmbanugo/lo
 
 State management is an extensive topic in front-end development that allows the sharing of data across components, creating a concrete data structure to represent your React app’s state that you can read and write. You can read more about [state and lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) via the React docs. 
 
-The way you approach state management mostly depends on the complexity of your app. Many React developers benefit from implementing [hooks](https://reactjs.org/docs/hooks-overview.html), which are functions that allow you to _hook into_ React state features from function components so that you can use React without classes.
+The way you will approach state management for your app mostly depends on its complexity. Many React developers benefit from implementing [hooks](https://reactjs.org/docs/hooks-overview.html), which are functions that allow you to _hook into_ React state features from function components so that you can use React without classes.
 
 In React, you will likely come across the following hooks: `useState`, `useEffect`, `useRef`, `useCallback`, `useMemo`, `useContext`, and `useReducer`.
 
@@ -61,9 +61,9 @@ From here, you can use Sourcegraph to find how the other hooks mentioned above a
 
 ## Error boundaries
 
-React 16 introduced [error boundaries](https://reactjs.org/docs/error-boundaries.html), which are React components that catch JavaScript errors upon rendering, log the errors, and display a fallback UI (or user interface) to replace the what failed.
+React 16 introduced [error boundaries](https://reactjs.org/docs/error-boundaries.html), which are React components that catch JavaScript errors upon rendering, log the errors, and display a fallback UI (or user interface) to replace what failed.
 
-If a class component defines either or both of the lifecycle methods of `static getDerivedStateFromError()` and `componentDidCatch()`, it becomes an error boundary. The first method can be used to render a fallbach user interface after an error has been thrown, while the second method is used to log error information to an error reporting service.
+If a class component defines either or both of the lifecycle methods of `static getDerivedStateFromError()` and `componentDidCatch()`, it becomes an error boundary. The first method can be used to render a fallback user interface after an error has been thrown, while the second method is used to log error information to an error reporting service.
 
 Let’s discover how error boundaries are used in different projects with Sourcegraph:
 
@@ -75,7 +75,7 @@ You can click on a specific [file](https://sourcegraph.com/github.com/streamich/
 
 [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) are React’s way of providing type checking to your components. With React PropTypes, you can set the types for your props to avoid unexpected behavior.
 
-We’ll perform two types of searches for `propTypes` to give us enough context on how developers use PropTypes in their codebase.
+We’ll perform two types of searches for `propTypes` to give us context on how developers use PropTypes in their codebase.
 
 First, let’s use a [literal pattern search in Sourcegraph](https://learn.sourcegraph.com/how-to-search-code-with-sourcegraph-using-literal-patterns). 
 
@@ -85,7 +85,7 @@ Using Sourcegraph’s [structural search](https://learn.sourcegraph.com/how-to-s
 
 <SourcegraphSearch query=".propTypes = { ... }" patternType="structural" />
 
-In this second search, you’ll find that developers are writing code that checks whether values are a given type and sometimes requiring that a prop be provided.
+In this second search, you’ll find that developers are writing code that checks whether values are a given type. Additionally, they sometimes require that a prop be provided.
 
 ## Redux
 
@@ -103,11 +103,11 @@ We can find how standard Redux toolkit APIs are used by searching API functions.
 
 <SourcegraphSearch query="createAsyncThunk" patternType="literal"/>
 
-This query returns many results about the usage of the `createAsyncThunk`’s API, but a good number of these are markdown files.  Let’s exclude markdown files from showing up in these results with a query that removes the `.md` and `.mdx` extensions. 
+This query returns many results about the usage of the `createAsyncThunk`’s API, but a good number of these are markdown files.  Let’s exclude markdown files from showing up in these results with a query that removes files with the `.md` and `.mdx` extensions. 
 
 <SourcegraphSearch query="createAsyncThunk -file:\.md|.mdx$" patternType="literal"/>
 
-The `file` keyword specifies files ending `.md` or `.mdx` and the  `-file` syntax excludes them from the search results. Now, you’ll receive results that are primarily TypeScript and JavaScript code files. 
+The `file` keyword specifies files ending in `.md` or `.mdx` and the  `-file` syntax excludes them from the search results. Now, you’ll receive results that are primarily TypeScript and JavaScript code files. 
 
 From here, you can use Sourcegraph to find out how `createSlice`, `createApi` and other Redux APIs are used in React apps.
 
@@ -119,9 +119,9 @@ Sourcegraph can help you find reasons behind specific error messages that pop up
 
 You may have encountered this common error:
 
-<Highligher
-input='Maximum update depth exceeded. This can happen when a component repeatedly calls `setState` inside `componentWillUpdate` or `componentDidUpdate`. React limits the number of nested updates to prevent infinite loops.'
-/>
+```
+Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+```
 
 This error message pops up when re-rendering repeatedly occurs, especially when a method that uses `setState` is called in the `render` method. You can find the origin of this method with Sourcegraph.
 
@@ -129,27 +129,10 @@ This error message pops up when re-rendering repeatedly occurs, especially when 
 
 In the search results, you can find where and how this React error message pops up and how developers are handling this error.
 
-## Code Search in Your Default Browser
-
-The [Sourcegraph browser extension](https://github.com/sourcegraph/sourcegraph/tree/main/client/browser) adds code intelligence to files and diffs on GitHub, GitHub Enterprise, GitLab, Phabricator, and Bitbucket Server.
-
-After installation, it provides the following:
-
-- Code Intelligence: A tooltip is displayed when you hover over code in pull requests, diffs, and files with:
-   - Documentation and the type signature for the hovered token.
-   - **Go to definition** button.
-   - **Find references** button.
-
-- A search engine shortcut in your web browser that performs a search on your Sourcegraph instance.
-
-
-![Browser](https://res.cloudinary.com/unicodeveloper/video/upload/v1636379879/BrowserShortcutDark_qbuc3y.gif)
-
-
 ## Learn more
 
 Learning how to use a new library or framework can be challenging, but with the right tools, you can speed up this process and get a better understanding of how different components can be connected.
 
-If you'd like to learn more about Sourcegraph code search queries, check out [https://learn.sourcegraph.com/tags/search](https://learn.sourcegraph.com/tags/search)
+If you'd like to learn more about Sourcegraph code search queries, check out more [search tutorials](https://learn.sourcegraph.com/tags/search)
 
 From here, we recommend that you install [Sourcegraph’s browser extension](https://docs.sourcegraph.com/integration/browser_extension) so that you can readily search across your code and open source code.
