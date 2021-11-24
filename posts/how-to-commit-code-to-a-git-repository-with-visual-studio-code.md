@@ -98,7 +98,7 @@ Before we can commit our changes, we need to write a commit message. The commit 
 
 For example, we can write the following commit message for our changed files:
 
-<OutputHighlighter
+<Highlighter
 input='Update Readme and Getting Started docs'
 />
 
@@ -122,14 +122,14 @@ Open the integrated terminal in VS Code by clicking on the **View** menu and cli
 
 To display the commit log in the terminal, run the `git log` command. By default, the command will display a scrollable list of all previous commits. In this case, we’re only interested in checking the latest changes we made, so we can provide the `-1` flag to the command to limit its output to one commit.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git log -1'
 language='bash'
 />
 
 Here’s the result of the command:
 
-<OutputHighlighter
+<Highlighter
 input={`commit 5388e04d38e5de13e3968f8d5e1932a9b41e5e53 (HEAD -> main)
 Author: Marek <marek@sourcegraph.com>
 Date:   Tue Aug 31 18:47:11 2021 -0400     

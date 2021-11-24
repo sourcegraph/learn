@@ -21,14 +21,14 @@ TypeScript requires a Node.js development environment. There are many different 
 
 If you are not sure if you have Node.js installed, you can open your terminal and type the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm -v'
 language='javascript'
 />
 
 This command checks the version of npm that is installed on your machine. If you have it previously installed you should receive output similar to the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='8.0.0'
 language='javascript'
 />
@@ -45,7 +45,7 @@ To initialize this project, we are going to be using the React Native documentat
 
 To install Expo, type the following:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm install -g expo-cli'
 language='bash'
 />
@@ -56,7 +56,7 @@ Once we have Expo installed, navigate to the directory where you want your proje
 
 In this case, we will assume a `Projects` folder on the `Desktop`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd ~Desktop/Projects'
 language='bash'
 />
@@ -66,14 +66,14 @@ If you don’t have a directory for your projects already, you can create one wi
 Once within the directory where you would like your project to be, use the Expo command line app to initialize the project. 
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='expo init LifeCounter'
 language='bash'
 />
 
 Once you run the above command, you should receive output similar to the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`? Choose a template: › - Use arrow-keys. Return to submit.
     ----- Managed workflow -----
 ❯   blank               a minimal app as clean as an empty canvas
@@ -88,21 +88,21 @@ We are going to press `ENTER` to confirm that we would like to initialize a blan
 
 Once you receive the following output, you’ll be ready to continue.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='✅ Your project is ready!'
 language='bash'
 />
 
 Let’s now list the contents of the directory that Expo initialized for us.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls LifeCounter'
 language='bash'
 />
 
 We should receive output with the following directories and files.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`App.js        assets        node_modules    yarn.lock
 app.json    babel.config.js    package.json`}
 language='bash'
@@ -114,7 +114,7 @@ We have successfully initialized our LifeCounter app and are ready to add TypeSc
 
 With our app initialized, move into the `LifeCounter` directory. For our example, the full path is `~/Desktop/Projects/LifeCounter`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd LifeCounter'
 language='bash'
 />
@@ -122,7 +122,7 @@ language='bash'
 At this point, we can install TypeScript with npm. 
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm install --save-dev typescript'
 language='bash'
 />
@@ -131,14 +131,14 @@ The `--save-dev` flag after the install is to ensure that the package, and more 
 
 To check that TypeScript was successfully installed, type the following.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npx tsc -v'
 language='bash'
 />
 
 Once you run the above command, you should receive output with the relevant version number.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='Version 4.4.4'
 language='bash'
 />
@@ -147,7 +147,7 @@ The package manager npx is automatically installed alongside npm when you set up
 
 If later on in the project you want to upgrade to the latest version of TypeScript you can do so by running:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm install typescript@latest'
 language='bash'
 />
@@ -161,14 +161,14 @@ Before our environment is fully set up, we need to create a TypeScript configura
 
 To generate a `tsconfig.json`, we are going to once again use the `npx tsc` command. Be sure that you are in the root of your TypeScript project; the same directory that houses your `package.json` file. In this case it is our `LifeCounter` directory. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npx tsc --init'
 language='bash'
 />
 
 We’ll receive the following output.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='message TS6071: Successfully created a tsconfig.json file.'
 language='bash'
 />
@@ -177,7 +177,7 @@ Let’s review the generated `tsconfig.json` file. You can open it up in VS Code
 
 Without the commented out lines (lines that begin with `//`), the generated configuration file will be similar to the following. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`{
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -206,7 +206,7 @@ language='bash'
 We are going to edit the file. Feel free to delete the lines currently in the file, and type or paste in the following.
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`{
   "compilerOptions": {
     "target": "es6",

@@ -13,7 +13,7 @@ type: posts
 
 If you are working in JavaScript, and receive the following output, then there is no space on the drive. 
 
-<OutputHighlighter
+<Highlighter
 input='Error: ENOSPC.'
 />
 
@@ -29,7 +29,7 @@ You can reproduce it through opening multiple NodeJS or ReactJS projects simulta
 
 Using npm, you can verify that all the items in the cache are necessary with the following command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm cache verify'
 language='bash'
 />
@@ -46,7 +46,7 @@ If you are debugging and want to start with a clean cache, you can empty your cu
 
 You can configure npm to use a different temporary folder by setting that up specifically, with the following command. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm config set tmp /path/to/some/other/dir'
 language='bash'
 />
@@ -71,14 +71,14 @@ The recommended approach is to try increasing the file watch limit temporarily w
 
 Run the below command to get output of your current limit:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sysctl fs.inotify.max_user_watches'
 language='bash'
 />
 
 Your output will be a number, such as:
 
-<OutputHighlighter
+<Highlighter
 input='8192'
 />
 
@@ -86,7 +86,7 @@ To temporarily set a new limit, you can run the following command. This will tem
 
 **Note**: be aware of the memory of the machine you are using to not over-extend your system.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sysctl fs.inotify.max_user_watches=524288 && sudo sysctl -p'
 language='bash'
 />

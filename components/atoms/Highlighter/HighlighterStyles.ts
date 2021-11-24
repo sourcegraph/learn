@@ -5,11 +5,13 @@ export const StyledCodeBlock = styled.div`
 `
 export const StyledCodeWrapper = styled.pre`
     background-color: #e7e7e7 !important;
+    padding: 1rem .25rem;
+    margin: 0;
 `
 export const StyledHighlighterMatch = styled.mark`
     background-color: #ffdb45 !important;
     color: #000 !important;
 `
-export const StyledHighlighterWrapper = styled.div`
-    position: relative;
+export const StyledNonHighlighterMatch = styled.span`
+    color: #000;
 `
