@@ -13,7 +13,7 @@ type: posts
 
 React, also known as ReactJS or React.js, is a popular front-end JavaScript library that helps developers build user interfaces. 
 
-There are many ways to learn React, including via the [official Learn React docs](https://beta.reactjs.org/learn). In this tutorial, we will support you in beginning to learn this library through using [Sourcegraph](https://sourcegraph.com) to delve into foundational concepts that are crucial to being able to implement React effectively.
+There are many ways to learn React, including via the [official Learn React docs](https://beta.reactjs.org/learn). In this tutorial, we will support you in beginning to learn this library through using [Sourcegraph](https://sourcegraph.com). Sourcegraph enables you to search across open source code written in React so that you can delve into foundational concepts that are crucial to being able to implement React effectively.
 
 We’ll be using [Sourcegraph Cloud](https://sourcegraph.com) throughout this tutorial, which you don’t need an account to use. If you would like to [create an account](https://learn.sourcegraph.com/how-to-create-a-sourcegraph-cloud-account) to save your search history or learn more about the tool, feel free to review our [Sourcegraph Cloud tutorials and videos](https://learn.sourcegraph.com/tags/sourcegraph-cloud). 
 
@@ -23,7 +23,7 @@ Many front-end developers will need to build web forms to intake information fro
 
 With Sourcegraph, you can ramp up your knowledge of React form libraries through searching across code that implement these libraries. You can also use Sourcegraph to review library documentation. 
 
-[Formik](https://formik.org/) is the most popular open source library for building forms with React and React Native, with over 28,000 stars on its [GitHub repository](https://github.com/formium/formik). Let's use Sourcegraph to search across code that makes use of Formik so we can understand how develoeprs are using this library.
+[Formik](https://formik.org/) is the most popular open source library for building forms with React and React Native, with over 28,000 stars on its [GitHub repository](https://github.com/formium/formik). Let's use Sourcegraph to search across code that makes use of Formik so we can understand how developers are using this library.
 
 <SourcegraphSearch query="Formik lang:JavaScript" patternType="literal"/>
 
