@@ -2,7 +2,7 @@
 title: How to add private code repositories to Sourcegraph Cloud (video)
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [video, sourcegraph, cloud]
+tags: [video, Sourcegraph, cloud, Sourcegraph Cloud]
 publicationDate: August 19, 2021
 description: Learn about connecting your private code repositories to Sourcegraph Cloud and searching your own code.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-add-private-code-to-sourcegraph-thumbnail.jpg

@@ -1,6 +1,6 @@
 ---
 title: How to search commits and diffs with Sourcegraph
-tags: [video, search, sourcegraph]
+tags: [video, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: September 17, 2021
 description: Learn about using Sourcegraph to search commits and diffs.
 authorSlug: marek-zaluski
