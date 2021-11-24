@@ -2,7 +2,7 @@
 title: How to find error messages with Sourcegraph (video)
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [video, search, sourcegraph]
+tags: [video, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: August 11, 2021
 updatedDate: August 13, 2021
 description: Learn about finding error messages in your code with Sourcegraph.

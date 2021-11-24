@@ -1,6 +1,6 @@
 ---
 title: How to add open source software projects to Sourcegraph Cloud
-tags: [tutorial, open source, Sourcegraph]
+tags: [tutorial, open source, Sourcegraph, Sourcegraph Cloud]
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
 publicationDate: May 11, 2021

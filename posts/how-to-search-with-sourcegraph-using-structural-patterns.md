@@ -1,8 +1,8 @@
 ---
-title: How to search with Sourcegraph using structural patterns
+title: How to search code with Sourcegraph using structural patterns
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [tutorial, search, Sourcegraph]
+tags: [tutorial, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: August 13, 2021
 description: Learn how to use structural search patterns to search code on Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-10.png
