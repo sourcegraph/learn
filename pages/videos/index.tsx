@@ -4,9 +4,9 @@ import { getPageData } from '@lib/api/getPageData'
 import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
-    const totalRecords = await getPageData() as PageData
-    const videoRecords = totalRecords.records.videos?.slice(0, 10)
-    const totalRecordsNumber = totalRecords.records.videos?.length ?? 0
+    const allRecords = await getPageData() as PageData
+    const videoRecords = allRecords.records.videos?.slice(0, 10)
+    const totalRecordsNumber = allRecords.records.videos?.length ?? 0
     const url = '/videos'
     const headerText = 'Videos'
 

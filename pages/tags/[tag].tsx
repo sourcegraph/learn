@@ -7,9 +7,9 @@ import getQueryParameter from '@util/getQueryParameters'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const totalRecords = await getPageData() as PageData
-    const posts = totalRecords.records.posts
-    const videos = totalRecords.records.videos
+    const allRecords = await getPageData() as PageData
+    const posts = allRecords.records.posts
+    const videos = allRecords.records.videos
     const tags = videos
         ? collectTags(posts?.concat(videos), true)
         : collectTags(posts, true)
@@ -19,13 +19,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<TagTemplateProps> = async context => {
     const tag = getQueryParameter(context.params, 'tag')
-    const totalRecords = await getPageData() as PageData
-    const posts = totalRecords.records.posts
-    const videos = totalRecords.records.videos
-    const allRecords = videos
+    const allRecords = await getPageData() as PageData
+    const posts = allRecords.records.posts
+    const videos = allRecords.records.videos
+    const records = videos
         ? posts?.concat(videos)
         : posts
-    const filteredRecordsWithTag = filterRecordsWithTag(allRecords ?? [], tag)
+    const filteredRecordsWithTag = filterRecordsWithTag(records ?? [], tag)
     const [ featuredRecord ] = filteredRecordsWithTag.records.slice(0,2)
     const secondaryRecords = filteredRecordsWithTag.records.slice(2,4)
     const filteredVideoRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'video').records

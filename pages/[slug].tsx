@@ -1,7 +1,7 @@
 import ArticleTemplate, { Props as ArticleTemplateProps } from '@components/templates/ArticleTemplate'
 import getBaseDirectory from '@lib/getBaseDirectory'
-import loadAllRecords from '@lib/loadAllRecords'
-import loadMarkdownFile from '@lib/loadMarkdownFile'
+import listAllRecords from '@lib/listAllRecords'
+import loadMarkdownFile, { filenameToSlug } from '@lib/loadMarkdownFile'
 import loadRecordCollections from '@lib/loadRecordCollections'
 import serializeMdxSource from '@lib/serializeMdxSource'
 import getQueryParameter from '@util/getQueryParameters'
@@ -9,10 +9,10 @@ import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await loadAllRecords('posts')
-    const videos = await loadAllRecords('videos')
-    const allRecords = posts.concat(videos)
-    const paths = allRecords.map(record => ({ params: { slug: record.slug } }))
+    const posts = await listAllRecords('posts')
+    const videos = await listAllRecords('videos')
+    const allRecordSlugs = posts.concat(videos).map(file => filenameToSlug(file))
+    const paths = allRecordSlugs.map(slug => ({ params: { slug } }))
     return {
         paths,
         fallback: false,

@@ -5,8 +5,8 @@ import filterRecordsWithTag from '@util/filterRecordsWithTag'
 import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps<HomepageTemplateProps> = async () => {
-    const totalRecords = await getPageData() as PageData
-    const posts = totalRecords.records.posts ?? []
+    const allRecords = await getPageData() as PageData
+    const posts = allRecords.records.posts ?? []
     const searchPosts = filterRecordsWithTag(posts, 'search').records.slice(0, 3)
     const sourcegraphPosts = filterRecordsWithTag(posts, 'sourcegraph').records.slice(0, 3)
 
