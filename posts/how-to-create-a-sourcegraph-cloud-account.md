@@ -1,6 +1,6 @@
 ---
 title: How to create a Sourcegraph Cloud account
-tags: [tutorial, Sourcegraph, cloud]
+tags: [tutorial, Sourcegraph, cloud, Sourcegraph Cloud]
 publicationDate: September 10, 2021
 description: Create a Sourcegraph Cloud account to search open source and private repos
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-03.png

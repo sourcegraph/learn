@@ -1,6 +1,6 @@
 ---
 title: Three ways to search code with Sourcegraph
-tags: [video, search, sourcegraph]
+tags: [video, search, Sourcegraph, Sourcegraph Cloud]
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
 publicationDate: June 17, 2021
