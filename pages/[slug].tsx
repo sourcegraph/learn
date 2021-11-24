@@ -24,9 +24,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const baseDirectory = await getBaseDirectory(['posts', 'videos'], `${slug}.md`) ?? 'posts'
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
-    const collections = await loadRecordCollections(baseDirectory)
-    const { recordCollections } = collections
-    const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
+    const [ collection]  = await loadRecordCollections(slug)
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
@@ -42,7 +40,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             description: markdownFile.frontMatter.description,
             toc: toc ?? null,
             mdxSource: serializeResult,
-            collection: parentCollection ?? null,
+            collection: collection ?? null,
             slug,
         }),
     }
