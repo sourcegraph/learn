@@ -13,5 +13,5 @@ export const StyledHighlighterWrapper = styled.div`
     border-radius: .625rem;
     background-color: #e7e7e7;
     position: relative;
-    padding: .75rem;
+    padding: .5rem;
 `

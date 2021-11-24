@@ -29,7 +29,7 @@ const Highlighter: FunctionComponent<Props> = props => {
     const hasHighlighting = parts.length > 1
 
     return (
-        <StyledCodeWrapper>
+        <StyledCodeWrapper isPrism={props.prismSyntax}>
             <StyledCodeBlock isPrism={props.prismSyntax}>
                 {props.prismSyntax && hasHighlighting && (
                     parts.map((part: string) => (
