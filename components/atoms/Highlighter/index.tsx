@@ -30,7 +30,7 @@ const Highlighter: FunctionComponent<Props> = props => {
 
     return (
         <StyledCodeWrapper>
-            <StyledCodeBlock>
+            <StyledCodeBlock isPrism={props.prismSyntax}>
                 {props.prismSyntax && hasHighlighting && (
                     parts.map((part: string) => (
                         regex.test(part)
