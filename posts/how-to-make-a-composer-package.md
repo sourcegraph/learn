@@ -365,11 +365,11 @@ Now that we have a test framework, we can start writing our tests. We will renam
 input={`<?php
  
 use GuzzleHttp\\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use Tombenevides\SaidQuotes\SaidQuote;
+use GuzzleHttp\\Exception\\ClientException;
+use GuzzleHttp\\Handler\\MockHandler;
+use GuzzleHttp\\Psr7\\Request;
+use GuzzleHttp\\Psr7\\Response;
+use Tombenevides\\SaidQuotes\\SaidQuote;
  
 beforeEach(function () {
     $this->mockHandler = new MockHandler();
@@ -456,10 +456,10 @@ Until now, we have only configured the package and written the tests. Now, we ne
 <PrismSyntaxHighlighter
 input={`<?php
  
-namespace Tombenevides\SaidQuotes;
+namespace Tombenevides\\SaidQuotes;
  
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\\Client;
+use GuzzleHttp\\Exception\\ClientException;
  
 class SaidQuote
 {
