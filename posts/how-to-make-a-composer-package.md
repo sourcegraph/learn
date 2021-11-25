@@ -365,7 +365,11 @@ Now that we have a test framework, we can start writing our tests. We will renam
 input={`<?php
  
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use Tombenevides\SaidQuotes\SaidQuote;
  
 beforeEach(function () {
     $this->mockHandler = new MockHandler();
