@@ -5,7 +5,7 @@ authorDisplayName: Tom Benevides
 tags: [tutorial, PHP, composer]
 publicationDate: November 14, 2021
 description: Learn how to make a Composer package
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
 browserTitle: Making a Composer package
 type: posts
@@ -28,7 +28,7 @@ First, we need Git, which is a version control system (you can read more about i
 
 You can check if you have Git already installed by running the following command in your terminal:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='git --version'
 language='bash'
 />
@@ -39,14 +39,14 @@ For our next prerequisites, we will need [Docker](https://docs.docker.com/engine
 
 You can check whether these are installed by confirming whether there is output when you check for version number. First, check that Docker is installed.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker -v'
 language='bash'
 />
 
 If you receive output with a version number you are all set. Next, check if Docker Compose is installed.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker-compose -v'
 language='bash'
 />
@@ -57,7 +57,7 @@ If you received an error message or no version number, then either or both are n
 
 Finally, you will need to install [Composer](https://getcomposer.org/), a dependency manager for PHP. You can read about [installing Composer on the official download guide](https://getcomposer.org/download/). If you are on Ubuntu or Debian Linux, you can use the following commansd to install Compose from your operating system's package manager.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`sudo apt update
 sudo apt install composer`}
 language='bash'
@@ -69,7 +69,7 @@ With these prerequisites in place on your machine, you're ready to move forward 
 
 We'll start with configuring our environment. First, we will create a directory for our project. So, let's create a directory called `said-quotes`. After that, we need a file called `sg` inside the created folder.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`mkdir said-quotes
 cd said-quotes/
 touch sg`}
@@ -78,7 +78,7 @@ language='bash'
 
 This `sg` file will contain the code that we will use to run our container. So, let's add the following code to our `sg` file:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`#!/usr/bin/env bash
  
 docker run -it --rm \
@@ -92,7 +92,7 @@ This code runs a Composer container inside our project folder. The `--user` flag
 
 Now, we need to give the `sg` file the right permissions so that it can be executed.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='chmod +x sg'
 language='bash'
 />
@@ -361,7 +361,7 @@ You should receive output regarding the status of your tests.
 
 Now that we have a test framework, we can start writing our tests. We will rename the `ExampleTest.php` file to `QuoteTest.php` and write our tests in it. We will start preparing the environment for our tests. So, copy the following code to the beginning of our test file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 use GuzzleHttp\Client;
@@ -381,7 +381,7 @@ This code seems a bit verbose, but it's not. We will use the `beforeEach()` func
 
 With the environment ready, let's describe our scenarios, starting with the first which is getting a random quote from a specific person. We will use the following test, which you can add below the code above. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`...
 it('returns a Jane Austen quote', function() {
     $this->mockHandler->append(
@@ -406,7 +406,7 @@ In this test, we will define a response for Guzzle client, which Pest will use t
 
 The second scenario is to get an error message when no quote is found for a given author. We will use the following test, which you can add directly under the test case above.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`...
 it("returns a message when it doesn't find a matching quote.", function() {
     $this->mockHandler->append(
@@ -431,7 +431,7 @@ In this test, we will also define a response for the Guzzle client, but instead 
 
 The last scenario is to get an error message when no author is provided. We will use the following test, which we will add to the bottom of our file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`...
 it('returns a message when was not given an author name', function() {
     $quotes = new SaidQuote('');
@@ -449,7 +449,7 @@ This is a less complex test because we don't need a Guzzle client because this v
 
 Until now, we have only configured the package and written the tests. Now, we need to actual implement the package class. We will start by creating a new file in the `src/` folder and name it `SaidQuote.php`. After that, copy the following code to the beginning of the file:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?php
  
 namespace Tombenevides\SaidQuotes;
@@ -503,7 +503,7 @@ Then, we created the class using `SaidQuote` as the class name. In the class con
 
 After that, we have our `getQuote()` function. The `try`-`catch` inside the function will handle the exceptions to return an appropriate message. Inside the `try` block, we will check if the author name is empty. If it is, we will throw an exception. If it is not, we will make a request to the API using the Guzzle client. In this request, we pass the author name as a parameter using a snake-case format. Finally, we decode the response and return the content concatenated with the author name.
 
-Now, if we run the tests, we will confirm that the package works as expected.
+Now, if we run the tests, we will confirm that the package works as expected. Return back to your project's root directory before running the following,
 
 <Highlighter
 input={`./sg vendor/bin/pest
