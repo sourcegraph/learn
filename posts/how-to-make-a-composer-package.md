@@ -364,7 +364,7 @@ Now that we have a test framework, we can start writing our tests. We will renam
 <PrismSyntaxHighlighter
 input={`<?php
  
-use GuzzleHttp\Client;
+use GuzzleHttp\\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Request;
