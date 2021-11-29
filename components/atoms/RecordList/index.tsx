@@ -13,12 +13,15 @@ import {
 interface Props {
     videos: MarkdownFileWithUrl[]
     posts: MarkdownFileWithUrl[]
+    totalVideosNumber: number
+    totalPostsNumber: number
+    tag: string
 }
 
 const RecordList: FunctionComponent<Props> = props => {
     const [showTab, setShowTab] = useState<string>('posts')
     const isPosts = showTab === 'posts'
-    const loadMoreHook = useLoadMore(props.videos, props.posts, 10)
+    const loadMoreHook = useLoadMore(props.videos, props.posts, 5, props.tag)
 
     return (
         <StyledRecordWrapper>
@@ -30,13 +33,13 @@ const RecordList: FunctionComponent<Props> = props => {
                 (
                     <RecordListTab
                         records={loadMoreHook.currentPosts}
-                        showButton={showMoreButton(props.videos, props.posts, 'posts', loadMoreHook)}
+                        showButton={showMoreButton('posts', loadMoreHook, props.totalPostsNumber)}
                         loadMore={loadMoreHook} />
                 ) :
                 (
                     <RecordListTab
                         records={loadMoreHook.currentVideos}
-                        showButton={showMoreButton(props.videos, props.posts, 'videos', loadMoreHook)}
+                        showButton={showMoreButton('videos', loadMoreHook, props.totalVideosNumber)}
                         loadMore={loadMoreHook} />
                 )}
         </StyledRecordWrapper>
