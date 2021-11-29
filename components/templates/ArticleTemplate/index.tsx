@@ -78,12 +78,21 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
     return (
         <PageLayout
             metaTags={metaTags}
+            bannerColumn={props.collection && (
+                <CollectionView
+                    title={props.collection.title}
+                    members={props.collection.members}
+                    activeSlug={props.slug}
+                    isDark={theme.isDark}
+                />
+            )}
             leftColumn={props.toc && (
                 <>
                     <TocWrapper tocContents={props.toc} slug={props.slug} />
                 </>
             )}
         >
+
             {/* Header image */}
             {props.image && showHeaderImage && (
                 <StyledHeaderImage
@@ -123,14 +132,6 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                         <> • Updated on {props.updatedDate}</>
                     )} 
                 </StyledDates>
-            )}
-
-            {props.collection && (
-                <CollectionView
-                    title={props.collection.title}
-                    members={props.collection.members}
-                    activeSlug={props.slug}
-                />
             )}
 
             <StyledMarkdownWrapper isDark={theme.isDark}>
