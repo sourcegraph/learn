@@ -26,6 +26,9 @@ export const StyledCollectionHeaderContainer = styled.div`
     display: flex;
     align-items: center;
 `
+export const StyledCollectionContentWrapper = styled.div`
+    position: relative;
+`
 export const StyledCollectionContent = styled.div<Props>`
     display: ${props => props.showItems
         ? 'block'
@@ -33,7 +36,7 @@ export const StyledCollectionContent = styled.div<Props>`
     border: 1px solid #212529;
     border-radius: 3px;
     position: absolute;
-    left: 38rem;
+    left: 23rem;
     overflow: auto;
     z-index: 5;
     background-color: #fff;
@@ -48,9 +51,6 @@ export const StyledCollectionToggleHeader = styled.div`
     font-size: 15px;
     font-weight: 400;
     text-transform: capitalize;
-`
-export const StyledCollectionDescription = styled.p`
-    margin: 0 0 1rem 0;
 `
 export const StyledCollectionListItem = styled.a<Props>`
     background-color: ${props => props.isActive

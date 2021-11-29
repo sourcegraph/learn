@@ -12,6 +12,7 @@ import {
     StyledCollectionToggleHeader,
     StyledIconWrapper,
     StyledCollectionContent,
+    StyledCollectionContentWrapper,
 } from './CollectionViewStyles'
 
 interface Props {
@@ -37,17 +38,19 @@ const CollectionView: FunctionComponent<Props> = props => {
                     <ChevronDownBoxOutlineIcon />
                 </StyledIconWrapper>
             </StyledCollectionHeaderContainer>
-            <StyledCollectionContent showItems={showItems}>
-                {props.members.map(record => {
-                    const isActive = props.activeSlug === record.slug
-                    const titleText = `${record.frontMatter.title}`
-                    return (
-                        <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
-                            <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
-                        </Link>
-                    )
-                })}
-            </StyledCollectionContent>
+            <StyledCollectionContentWrapper>
+                <StyledCollectionContent showItems={showItems}>
+                    {props.members.map(record => {
+                        const isActive = props.activeSlug === record.slug
+                        const titleText = `${record.frontMatter.title}`
+                        return (
+                            <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
+                                <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
+                            </Link>
+                        )
+                    })}
+                </StyledCollectionContent>
+            </StyledCollectionContentWrapper>
         </StyledCollectionWrapper>
     )
 }
