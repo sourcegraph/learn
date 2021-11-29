@@ -36,15 +36,21 @@ export const StyledCollectionContent = styled.div<Props>`
     border: 1px solid #212529;
     border-radius: 3px;
     position: absolute;
-    left: 23rem;
     overflow: auto;
     z-index: 5;
     background-color: #fff;
     padding: .625rem;
-    margin-top: .625rem;
+    top: 2rem;
+    width: 31.25rem;
 
     @media screen and (max-width: 768px) {
-        left: 0;
+        width: 12.5rem;
+        margin-top: .5rem;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin-top: 1.5rem;
+        width: 9.375rem;
     }
 `
 export const StyledCollectionTitle = styled.div`

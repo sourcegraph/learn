@@ -27,33 +27,33 @@ const CollectionView: FunctionComponent<Props> = props => {
     const [showItems, setShowItems] = useState<boolean>(false)
 
     return (
-        <StyledCollectionWrapper>
-            <StyledCollectionHeaderContainer>
-                <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
-                <StyledIconWrapper isDark={props.isDark}>
-                    <ChevronRightIcon />
-                </StyledIconWrapper>
-                <StyledCollectionToggleHeader>
-                {[props.members.slice(0, 1)][0][0].frontMatter.title}
-                </StyledCollectionToggleHeader>
-                <StyledIconWrapper onClick={() => setShowItems(!showItems)} isDark={props.isDark}>
-                    <ChevronDownBoxOutlineIcon />
-                </StyledIconWrapper>
-            </StyledCollectionHeaderContainer>
-            <StyledCollectionContentWrapper>
-                <StyledCollectionContent showItems={showItems}>
-                    {props.members.map(record => {
-                        const isActive = props.activeSlug === record.slug
-                        const titleText = `${record.frontMatter.title}`
-                        return (
-                            <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
-                                <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
-                            </Link>
-                        )
-                    })}
-                </StyledCollectionContent>
-            </StyledCollectionContentWrapper>
-        </StyledCollectionWrapper>
+            <StyledCollectionWrapper>
+                <StyledCollectionHeaderContainer>
+                    <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
+                    <StyledIconWrapper isDark={props.isDark}>
+                        <ChevronRightIcon />
+                    </StyledIconWrapper>
+                    <StyledCollectionContentWrapper>
+                        <StyledCollectionContent showItems={showItems}>
+                            {props.members.map(record => {
+                                const isActive = props.activeSlug === record.slug
+                                const titleText = `${record.frontMatter.title}`
+                                return (
+                                    <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
+                                        <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
+                                    </Link>
+                                )
+                            })}
+                        </StyledCollectionContent>
+                    </StyledCollectionContentWrapper>
+                    <StyledCollectionToggleHeader>
+                    {[props.members.slice(0, 1)][0][0].frontMatter.title}
+                    </StyledCollectionToggleHeader>
+                    <StyledIconWrapper onClick={() => setShowItems(!showItems)} isDark={props.isDark}>
+                        <ChevronDownBoxOutlineIcon />
+                    </StyledIconWrapper>
+                </StyledCollectionHeaderContainer>
+            </StyledCollectionWrapper>
     )
 }
 
