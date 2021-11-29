@@ -1,7 +1,8 @@
 ---
 title: How to troubleshoot npm ERR Error ENOSPC
-author: macarena-pecha
-tags: [tutorial, JavaScript, npm, troubleshooting]
+authorSlug: macarena-pecha
+authorDisplayName: Macarena Pecha
+tags: [tutorial, JavaScript, NPM, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle npm ERR Error ENOSPC, write
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
@@ -14,7 +15,6 @@ If you are working in JavaScript, and receive the following output, then there i
 
 <Highlighter
 input='Error: ENOSPC.'
-language='bash'
 />
 
 This is likely to be a limit on the number of file watches. The system has a limit to how many files can be watched by a user. The npm package manager, or a process controlled by it, is watching too many files. 
@@ -29,7 +29,7 @@ You can reproduce it through opening multiple NodeJS or ReactJS projects simulta
 
 Using npm, you can verify that all the items in the cache are necessary with the following command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm cache verify'
 language='bash'
 />
@@ -46,7 +46,7 @@ If you are debugging and want to start with a clean cache, you can empty your cu
 
 You can configure npm to use a different temporary folder by setting that up specifically, with the following command. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='npm config set tmp /path/to/some/other/dir'
 language='bash'
 />
@@ -71,7 +71,7 @@ The recommended approach is to try increasing the file watch limit temporarily w
 
 Run the below command to get output of your current limit:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sysctl fs.inotify.max_user_watches'
 language='bash'
 />
@@ -80,14 +80,13 @@ Your output will be a number, such as:
 
 <Highlighter
 input='8192'
-language='bash'
 />
 
 To temporarily set a new limit, you can run the following command. This will temporarily reset your limit to `524288`. 
 
 **Note**: be aware of the memory of the machine you are using to not over-extend your system.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='sysctl fs.inotify.max_user_watches=524288 && sudo sysctl -p'
 language='bash'
 />

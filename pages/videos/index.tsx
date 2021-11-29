@@ -1,14 +1,12 @@
-import ArticleListTemplate, { Props as ArticleListTemplateProps } from '@components/templates/ArticleListTemplate'
-import loadAllRecords from '@lib/loadAllRecords'
-import collectTags from '@util/collectTags'
-import getQueryParameter from '@util/getQueryParameters'
-import omitUndefinedFields from '@util/omitUndefinedFields'
-import sluggify from '@util/sluggify'
-import startCase from 'lodash/startCase'
+import RecordIndexTemplate, { Props as RecordIndexTemplateProps } from '@components/templates/RecordIndexTemplate'
+import { PageData } from '@interfaces/PageData'
+import { getPageData } from '@lib/api/getPageData'
 import { GetStaticProps } from 'next'
 
-export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async () => {
-    const records = await loadAllRecords('videos')
+export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
+    const allRecords = await getPageData() as PageData
+    const videoRecords = allRecords.records.videos?.slice(0, 10)
+    const totalRecordsNumber = allRecords.records.videos?.length ?? 0
     const url = '/videos'
     const headerText = 'Videos'
 
@@ -16,12 +14,11 @@ export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async ()
         props: {
             url,
             headerText,
-            records: records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            recordType: 'videos',
+            videoRecords,
+            totalRecordsNumber,
         },
     }
 }
 
-export default ArticleListTemplate
+export default RecordIndexTemplate
