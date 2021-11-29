@@ -22,7 +22,6 @@ export const StyledIconWrapper = styled.span<Props>`
 `
 export const StyledCollectionHeaderContainer = styled.div`
     flex: 1 1 auto;
-    padding: 0 1rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -34,7 +33,7 @@ export const StyledCollectionContent = styled.div<Props>`
     border: 1px solid #212529;
     border-radius: 3px;
     position: absolute;
-    right: 17.5rem;
+    left: 38rem;
     overflow: auto;
     z-index: 5;
     background-color: #fff;
