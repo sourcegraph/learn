@@ -50,12 +50,10 @@ export const StyledCollectionContent = styled.div<Props>`
 export const StyledCollectionTitle = styled.div`
     font-size: 15px;
     font-weight: 600;
-    text-transform: capitalize;
 `
 export const StyledCollectionToggleHeader = styled.div`
     font-size: 15px;
     font-weight: 400;
-    text-transform: capitalize;
 `
 export const StyledCollectionListItem = styled.a<Props>`
     background-color: ${props => props.isActive
