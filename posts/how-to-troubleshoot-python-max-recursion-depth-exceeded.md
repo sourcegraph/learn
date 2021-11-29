@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python recursion error 
-author: yashrsharma44
+authorSlug: yashrsharma44
+authorDisplayName: Yash Sharma
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle Python RecursionError - maximum recursion depth exceeded in comparison
@@ -14,10 +15,9 @@ While using Python, you may face this issue if you use up the stack memory more 
 
 <Highlighter
 input='RecursionError: maximum recursion depth exceeded'
-language='bash'
 />
 
- Python's interpreter limits memory allocation and stack in order to prevent overflow, so this error generally happens when the user-defined methods allocates more memory in the stack than the set stack limit.
+Python's interpreter limits memory allocation and stack in order to prevent overflow, so this error generally happens when the user-defined methods allocates more memory in the stack than the set stack limit.
 
 ## Reproducing the error
 
@@ -25,13 +25,13 @@ Let's reproduce this error by creating a Python file called `fibonacci.py`.
 
 [Fibonacci series](https://en.wikipedia.org/wiki/Fibonacci_number#Sequence_properties) computation is generally a standard algorithm, which can be solved in various ways, and each of the implementations is useful for demonstrating certain behaviors. In our case, we'll be using this algorithm to demonstate the `RecursionError` through creating a recursive function.
 
-<Highlighter
-input={`
-def recursive_fibonacci(n):
+<PrismSyntaxHighlighter
+input={`def recursive_fibonacci(n):
     if n <= 1:
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
-print(recursive_fibonacci(123456))
+ 
+print(recursive_fibonacci(123456)) 
 `}
 language='python'
 />
@@ -39,8 +39,7 @@ language='python'
 Run this script using the command `python3 fibonacci.py` command. You will get output similar to the following, including the error message. 
 
 <Highlighter
-input='
-Traceback (most recent call last):
+input='Traceback (most recent call last):
   File "fibonacci.py", line 9, in <module>
     recursive_fibonacci(123456)
   File "fibonacci.py", line 6, in recursive_fibonacci
@@ -52,9 +51,7 @@ Traceback (most recent call last):
   [Previous line repeated 995 more times]
   File "fibonacci.py", line 3, in recursive_fibonacci
     if n <= 1:
-RecursionError: maximum recursion depth exceeded in comparison
-'
-language='bash'
+RecursionError: maximum recursion depth exceeded in comparison'
 />
 
 You may alternately receive a `RuntimeError: maximum recursion depth exceeded` message.
@@ -69,16 +66,20 @@ Note that our Fibonacci implementation has a time complexity of `O(2^n)`, which 
 
 Let's explore our example program through increasing the stack size.
 
-<Highlighter
-input={`
-import sys
+<PrismSyntaxHighlighter
+input={`import sys
+  
+ 
 sys.setrecursionlimit(10**5)
+ 
+ 
 def recursive_fibonacci(n):
     if n <= 1:
         return n
     return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
+ 
 print(recursive_fibonacci(32))
-`}
+ `}
 language='python'
 />
 
@@ -94,19 +95,19 @@ Let us take a step back and work to improve our solution from an algorithmic per
 
 One way to improve on our implementation is to convert a recursive problem into an iterative one. We can refactor our code to use an iterative version, and this version will be more robust as it would not allocate memory on stack.
 
-<Highlighter
-input={`
-def iterative_fibonacci(n):
+<PrismSyntaxHighlighter
+input={`def iterative_fibonacci(n):
     if n <= 1:
         return n
     n1, n2 = 0, 1
     for i in range(n):
         n1, n2 = n2, n1 + n2
     return n1
+ 
 print(iterative_fibonacci(9))
 print(iterative_fibonacci(123456))
 `}
-language='python3'
+language='python'
 />
 
 The above implementation doesn't have a chain of recursive calls, hence we can be confident that our method will not create a `RecursionError`. In fact, the implementation is so flawless that we can run for values of `n` as `n <= 10**8` because our new implementation has a time complexity of `O(N)`, which is one of the best time complexities you can have for your implementation.

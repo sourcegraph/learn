@@ -41,6 +41,10 @@ authors:
       name: Angelina Tresca
       bio: Software developer
       linkedInLink: https://www.linkedin.com/in/angelinatresca/
+    - slug: macarena-pecha
+      name: Macarena Pecha
+      bio: Software developer
+      linkedInLink: https://www.linkedin.com/in/macarena-pecha-62aaa7170/
     - slug: dean-coakley
       name: Dean Coakley
     - slug: david-lee
@@ -58,8 +62,20 @@ authors:
       bio: Web developer, DevOps padawan and writer very rarely.
       twitterLink: https://twitter.com/tongedev
       linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
+    - slug: ml-narayana-rao
+      name: M.L. Narayana Rao
+      bio: Student
+      linkedInLink: https://www.linkedin.com/in/lakshminarayana-malyala/
     - slug: yashesvinee-v
       name: Yashesvinee V
+    - slug: shailesh-kumar
+      name: Shailesh Kumar
+    - slug: yashrsharma44
+      name: Yash Sharma
+      twitterLink: https://twitter.com/yashrsharma44
+      linkedInLink: https://www.linkedin.com/in/yashrsharma44
+    - slug: jack-newman
+      name: Jack Newman
     - slug: grace-mcnerney
       name: Grace McNerney
       bio: Wife, Mom, InfoSec Student, Gamer
@@ -69,3 +85,18 @@ authors:
       name: Yash Sharma
       twitterLink: https://twitter.com/yashrsharma44
       linkedInLink: https://www.linkedin.com/in/yashrsharma44
+    - slug: cristian-vera
+      name: Cristian Vera
+      bio: Backend developer, roller skate lover.
+      linkedInLink: https://www.linkedin.com/in/cristian-vera-5ba0ab155/
+    - slug: mason-woodford
+      name: Mason Woodford
+      bio: University computer engineering student, web developer
+      linkedInLink: https://www.linkedin.com/in/mason-woodford/
+    - slug: arash-afghahi
+      name: Arash Afghahi
+    - slug: prosper-otemuyiwa
+      name: Prosper Otemuyiwa
+      bio: Staff Developer Advocate, Sourcegraph
+      twitterLink: https://twitter.com/unicodeveloper
+      linkedInLink: https://www.linkedin.com/in/prosperotemuyiwa/

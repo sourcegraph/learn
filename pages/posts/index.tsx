@@ -1,10 +1,12 @@
-import ArticleListTemplate, { Props as ArticleListTemplateProps } from '@components/templates/ArticleListTemplate'
-import loadAllRecords from '@lib/loadAllRecords'
-import omitUndefinedFields from '@util/omitUndefinedFields'
+import RecordIndexTemplate, { Props as RecordIndexTemplateProps } from '@components/templates/RecordIndexTemplate'
+import { PageData } from '@interfaces/PageData'
+import { getPageData } from '@lib/api/getPageData'
 import { GetStaticProps } from 'next'
 
-export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async () => {
-    const records = await loadAllRecords('posts')
+export const getStaticProps: GetStaticProps<RecordIndexTemplateProps> = async () => {
+    const allRecords = await getPageData() as PageData
+    const postRecords = allRecords.records.posts?.slice(0, 10)
+    const totalRecordsNumber = allRecords.records.posts?.length ?? 0
     const url = '/posts'
     const headerText = 'Tutorials'
 
@@ -12,12 +14,11 @@ export const getStaticProps: GetStaticProps<ArticleListTemplateProps> = async ()
         props: {
             url,
             headerText,
-            records: records.map(record => omitUndefinedFields({ 
-                ...record, 
-                url: `/${record.slug}`,
-            })),
+            recordType: 'posts',
+            postRecords,
+            totalRecordsNumber,
         },
     }
 }
 
-export default ArticleListTemplate
+export default RecordIndexTemplate

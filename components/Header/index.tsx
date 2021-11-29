@@ -8,6 +8,7 @@ import {
     StyledHeaderText,
     StyledHeaderSharedContainer,
     StyledHeaderTextContainer,
+    StyledHeaderCard,
 } from './HeaderStyles'
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
     headerImageAlt?: string
     headerText: string
     isHomepage?: boolean
+    isRecordIndex?: boolean
 }
 
 const Header: FunctionComponent<Props> = props => (
@@ -35,8 +37,16 @@ const Header: FunctionComponent<Props> = props => (
                         </StyledHeaderImageContainer>
                     </StyledHeaderSharedContainer>
                 ) :
+                props.isRecordIndex ?
                 (
-                    <StyledHeaderTextContainer>
+                    <StyledHeaderCard>
+                        <StyledHeaderTextContainer isRecordIndex={props.isRecordIndex}>
+                            {props.headerText}
+                        </StyledHeaderTextContainer>
+                    </StyledHeaderCard>
+                ) :
+                (
+                    <StyledHeaderTextContainer isRecordIndex={props.isRecordIndex}>
                         {props.headerText}
                     </StyledHeaderTextContainer>
                 )}

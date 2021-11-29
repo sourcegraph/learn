@@ -1,5 +1,3 @@
-import { isPlainObject } from 'lodash'
-
 /**
  * Returns a copy of the object which does not contain any fields that have a value of `undefined`. Those fields are omitted entirely in the returned object.
  *
