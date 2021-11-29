@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java OutOfMemoryError
-author: grace-mcnerney
+authorSlug: grace-mcnerney
+authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java OutOfMemoryError
@@ -14,7 +15,6 @@ The `OutOfMemoryError` is an error message in the Java language, and is thrown b
 
 <Highlighter
 input='Exception in thread "main" java.lang.OutOfMemoryError: Java heap space'
-language='bash'
 />
 
 The explanatory note at the end of the error message noted "heap space" as the culprit. And as we mentioned, there could be a number of reasons for the error, so how do we accuractly pinpoint the source? 
@@ -23,20 +23,20 @@ The explanatory note at the end of the error message noted "heap space" as the c
 
 An example of a short program that could cause an error similar to the one above, could be similar to the following. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.ArrayList;
 import java.util.List;
-
+ 
 public class test {
-
+ 
     public static void main(String[] args) {
-
+ 
             List<byte[]> list = new ArrayList<>();
                 while (true) {
                     byte[] n = new byte[7777777];
                     list.add(n);
             }
-
+ 
     }
 }`}
 language='java'
@@ -48,22 +48,22 @@ Now, the issue with this program is that we failed to give it an exit function, 
 
 There are two possible methods of solving this. The first thing to do is to evaluate whether the right approach is making the heap bigger. If we decide that this is the appropriate next step, we can do this via a bash command in the command terminal:
 
- <Highlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
- language='bash'
- />
+<PrismSyntaxHighlighter input='java -Xmx1g -classpath ".:${THE_CLASSPATH}" ${PROGRAM_NAME}'
+language='bash'
+/>
 
 Here, `1g` represents the amount of space we want to allocate to the heap, `1g` stands for 1GB. This amount is just an example, and can be modified to increase or decrease depending on individual cases. It’s important to remember, however, that it shouldn’t be greater than 75% of our device’s available storage.
 
 If the cause is the heap size, like it was for our program, we may be able to increase the size of the heap on the command line with the following command: 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='java -Xmx2048m'
 language='bash'
 />
 
 The above command instructs the heap size to increase to 2048 MB (or 2GB) and is an example memory increase. We should check the current size of our heap using this command:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='java -XX:+PrintFlagsFinal -version | findstr /i "HeapSize"'
 language='bash'
 />
