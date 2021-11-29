@@ -1,14 +1,17 @@
-import Card from '@components/atoms/Card'
 import MarkdownFile from '@interfaces/MarkdownFile'
+import ChevronDownBoxOutlineIcon from 'mdi-react/ChevronDownBoxOutlineIcon'
+import ChevronRightIcon from 'mdi-react/ChevronRightIcon'
 import Link from 'next/link'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import {
-    StyledCollectionHeader,
-    StyledCollectionBody,
+    StyledCollectionWrapper,
+    StyledCollectionHeaderContainer,
     StyledCollectionTitle,
-    StyledCollectionList,
     StyledCollectionListItem,
+    StyledCollectionToggleHeader,
+    StyledIconWrapper,
+    StyledCollectionContent,
 } from './CollectionViewStyles'
 
 interface Props {
@@ -18,24 +21,34 @@ interface Props {
     activeSlug?: string
 }
 
-const CollectionView: FunctionComponent<Props> = props => (
-    <Card addMargin={true} showBorder={true} leftAlign={true}>
-        <StyledCollectionHeader>This article is part of a series:</StyledCollectionHeader>
-        <StyledCollectionBody>
-            <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
-        </StyledCollectionBody>
-        <StyledCollectionList>
-            {props.members.map((record, index) => {
-                const isActive = props.activeSlug === record.slug
-                const titleText = `${index + 1}. ${record.frontMatter.title}`
-                return (
-                    <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
-                        <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
-                    </Link>
-                )
-            })}
-        </StyledCollectionList>
-    </Card>
-)
+const CollectionView: FunctionComponent<Props> = props => {
+    const [showItems, setShowItems] = useState<boolean>(false)
+
+    return (
+        <StyledCollectionWrapper>
+            <StyledCollectionHeaderContainer>
+                <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
+                <ChevronRightIcon />
+                <StyledCollectionToggleHeader>
+                {[props.members.slice(0, 1)][0][0].frontMatter.title}
+                </StyledCollectionToggleHeader>
+                <StyledIconWrapper onClick={() => setShowItems(!showItems)}>
+                    <ChevronDownBoxOutlineIcon />
+                </StyledIconWrapper>
+            </StyledCollectionHeaderContainer>
+            <StyledCollectionContent showItems={showItems}>
+                {props.members.map(record => {
+                    const isActive = props.activeSlug === record.slug
+                    const titleText = `${record.frontMatter.title}`
+                    return (
+                        <Link href={`/${record.slug}`} key={record.slug} passHref={true}>
+                            <StyledCollectionListItem isActive={isActive}>{titleText}</StyledCollectionListItem>
+                        </Link>
+                    )
+                })}
+            </StyledCollectionContent>
+        </StyledCollectionWrapper>
+    )
+}
 
 export default CollectionView
