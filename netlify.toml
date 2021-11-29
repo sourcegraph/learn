@@ -51,6 +51,7 @@
   [context.production.environment]
     NEXT_PUBLIC_URL="https://learn.sourcegraph.com"
     NEXT_PUBLIC_GTM_ID="GTM-TB4NLS7"
+    NEXT_PLUGIN_FORCE_RUN="false"
 [context.deploy-preview]
   command="NEXT_PUBLIC_URL=$DEPLOY_URL npm run build"
   [context.deploy-preview.environment]
