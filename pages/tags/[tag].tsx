@@ -28,8 +28,8 @@ export const getStaticProps: GetStaticProps<TagTemplateProps> = async context =>
     const filteredRecordsWithTag = filterRecordsWithTag(records ?? [], tag)
     const [ featuredRecord ] = filteredRecordsWithTag.records.slice(0,2)
     const secondaryRecords = filteredRecordsWithTag.records.slice(2,4)
-    const filteredVideoRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'video').records
-    const filteredPostRecords = filterRecordsWithTag(filteredRecordsWithTag.records, 'tutorial').records
+    const filteredVideoRecords = filteredRecordsWithTag.records.filter(record => record.frontMatter.tags.includes('video'))
+    const filteredPostRecords = filteredRecordsWithTag.records.filter(record => record.frontMatter.tags.includes('tutorial'))
     const videoRecords = filteredVideoRecords.slice(0, 5)
     const postRecords = filteredPostRecords.slice(0, 5)
     const totalVideosNumber = filteredVideoRecords.length
