@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface Props {
     isActive?: boolean
     showItems?: boolean
+    isDark?: boolean
 }
 
 export const StyledCollectionWrapper = styled.div`
@@ -11,10 +12,13 @@ export const StyledCollectionWrapper = styled.div`
     margin-bottom: 3.125rem;
     width: 100%;
 `
-export const StyledIconWrapper = styled.span`
+export const StyledIconWrapper = styled.span<Props>`
+    cursor: pointer;
     display: flex;
-    opacity: .55;
-    margin: 0 .125rem;
+    opacity: ${props => props.isDark
+        ? '1'
+        : '.55'};
+    margin: 0 .3125rem;
 `
 export const StyledCollectionHeaderContainer = styled.div`
     flex: 1 1 auto;
@@ -55,7 +59,7 @@ export const StyledCollectionListItem = styled.a<Props>`
     : 'transparent'};
     color: ${props => props.isActive
     ? '#20145a'
-    : 'var(--text-color)'};
+    : '#212529'};
     display: block;
     text-decoration: none;
     opacity: .55;

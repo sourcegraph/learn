@@ -83,6 +83,7 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
                     title={props.collection.title}
                     members={props.collection.members}
                     activeSlug={props.slug}
+                    isDark={theme.isDark}
                 />
             )}
             leftColumn={props.toc && (

@@ -19,6 +19,7 @@ interface Props {
     description?: string
     members: MarkdownFile[]
     activeSlug?: string
+    isDark: boolean
 }
 
 const CollectionView: FunctionComponent<Props> = props => {
@@ -32,7 +33,7 @@ const CollectionView: FunctionComponent<Props> = props => {
                 <StyledCollectionToggleHeader>
                 {[props.members.slice(0, 1)][0][0].frontMatter.title}
                 </StyledCollectionToggleHeader>
-                <StyledIconWrapper onClick={() => setShowItems(!showItems)}>
+                <StyledIconWrapper onClick={() => setShowItems(!showItems)} isDark={props.isDark}>
                     <ChevronDownBoxOutlineIcon />
                 </StyledIconWrapper>
             </StyledCollectionHeaderContainer>
