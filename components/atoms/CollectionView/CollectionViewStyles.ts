@@ -33,7 +33,7 @@ export const StyledCollectionContent = styled.div<Props>`
     display: ${props => props.showItems
         ? 'block'
         : 'none'};
-    border: 1px solid #212529;
+    border: 1px solid rgba(0,0,0,.125);
     border-radius: 3px;
     position: absolute;
     overflow: auto;
