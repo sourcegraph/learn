@@ -1,5 +1,6 @@
 import AuthorTemplate, { Props as AuthorTemplateProps } from '@components/templates/AuthorTemplate'
-import loadAllRecords from '@lib/loadAllRecords'
+import { PageData } from '@interfaces/PageData'
+import { getPageData } from '@lib/api/getPageData'
 import loadAuthorCollections from '@lib/loadAuthorCollections'
 import getQueryParameter from '@util/getQueryParameters'
 import omitUndefinedFields from '@util/omitUndefinedFields'
@@ -24,13 +25,10 @@ export const getStaticProps: GetStaticProps<AuthorTemplateProps> = async context
         throw new Error(`Did not find author "${authorSlug}".`)
     }
 
-    const posts = await loadAllRecords('posts')
-    const videos = await loadAllRecords('videos')
-    const allRecords = posts.concat(videos)
-    const filteredRecords = allRecords.filter(record => record.frontMatter.authorSlug === authorSlug)
-    const records = filteredRecords.map(record => omitUndefinedFields(
-        { ...record, url: `/${record.slug}` }
-    ))
+    const allRecords = await getPageData() as PageData
+    const posts = allRecords.records.posts ?? []
+    const videos = allRecords.records.videos ?? []
+    const records = posts.concat(videos).filter(record => record.frontMatter.authorSlug === authorSlug)
 
     return {
         props: omitUndefinedFields({
