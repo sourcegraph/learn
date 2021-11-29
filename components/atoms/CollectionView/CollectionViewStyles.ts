@@ -41,6 +41,11 @@ export const StyledCollectionContent = styled.div<Props>`
     z-index: 5;
     background-color: #fff;
     padding: .625rem;
+    margin-top: .625rem;
+
+    @media screen and (max-width: 768px) {
+        left: 0;
+    }
 `
 export const StyledCollectionTitle = styled.div`
     font-size: 15px;
@@ -62,4 +67,5 @@ export const StyledCollectionListItem = styled.a<Props>`
     display: block;
     text-decoration: none;
     opacity: .55;
+    margin: .5rem 0;
 `

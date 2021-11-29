@@ -30,7 +30,9 @@ const CollectionView: FunctionComponent<Props> = props => {
         <StyledCollectionWrapper>
             <StyledCollectionHeaderContainer>
                 <StyledCollectionTitle>{props.title}</StyledCollectionTitle>
-                <ChevronRightIcon />
+                <StyledIconWrapper isDark={props.isDark}>
+                    <ChevronRightIcon />
+                </StyledIconWrapper>
                 <StyledCollectionToggleHeader>
                 {[props.members.slice(0, 1)][0][0].frontMatter.title}
                 </StyledCollectionToggleHeader>
