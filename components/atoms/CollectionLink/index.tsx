@@ -25,8 +25,8 @@ const CollectionLink: FunctionComponent<Props> = props => {
                 <StyledCollectionNextCard>
                     <StyledCollectionNextCallout>
                         Next in series
+                        <ChevronRightIcon />
                     </StyledCollectionNextCallout>
-                    <ChevronRightIcon />
                     <Link href={nextRecord.slug} passHref={true}>
                         <StyledCollectionNextLink key={nextRecord.slug}>
                             {nextRecord.frontMatter.title}
