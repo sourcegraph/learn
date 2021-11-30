@@ -117,8 +117,8 @@ Here, we were able to declare two constants using two different variables.
 
 ## Learn more
 
-Search across open source JavaScript repositories that have the `TypeError` to understand the message more.
+Search across open source JavaScript repositories that have this error message to understand how others are debugging.
 
-<SourcegraphSearch query="TypeError: invalid assignment to const x" patternType="literal"/>
+<SourcegraphSearch query="invalid assignment to const x" patternType="literal"/>
 
 From here, you can learn more about JavaScript's [`var` variable](https://www.w3schools.com/js/js_variables.asp), [`let` variable](https://www.w3schools.com/js/js_let.asp), and [`const` variable](https://www.w3schools.com/js/js_const.asp), or take a look at more [JavaScript tutorials](https://learn.sourcegraph.com/tags/javascript). 
