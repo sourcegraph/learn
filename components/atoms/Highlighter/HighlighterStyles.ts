@@ -9,6 +9,10 @@ export const StyledCodeBlock = styled.div<Props>`
     padding: ${props => props.isPrism
         ? ''
         : '1rem'};
+
+    span {
+        padding-right: .093rem;
+    }
 `
 export const StyledCodeWrapper = styled.pre<Props>`
     background-color: #e7e7e7 !important;
@@ -20,7 +24,9 @@ export const StyledCodeWrapper = styled.pre<Props>`
 export const StyledHighlighterMatch = styled.mark`
     background-color: #ffdb45 !important;
     color: #000 !important;
+    padding-right: .093rem;
 `
 export const StyledNonHighlighterMatch = styled.span`
     color: #000;
+    padding-right: .093rem;
 `
