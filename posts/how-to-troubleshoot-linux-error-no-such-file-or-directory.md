@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Linux error No such file or directory
-author: amit-agrawal
+authorSlug: amit-agrawal
+authorDisplayName: Amit Agrawal 
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 19, 2021
 description: Learn how to error handle No such file or directory in Linux
@@ -14,7 +15,6 @@ If you are working on a Linux terminal and you receive the following output, you
 
 <Highlighter
 input='No such file or directory'
-language='bash'
 />
 
 In this tutorial, we'll reproduce the issue and then go over some solutions. Before we get started, you should ensure that you have correct filename and that it is free from typos.
@@ -27,21 +27,21 @@ Open your terminal and execute the following commands.
 
 Create directory `foo` with the `mkdir` command. The `mkdir` command stands for "make directory" and will create a new directory in the directory you are currently located within on the terminal. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mkdir foo'
 language='bash'
 />
 
 Create file `bar.txt` inside the `foo` directory. We will use the [`touch` command](https://en.wikipedia.org/wiki/Touch_(command)) to create this file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='touch foo/bar.txt'
 language='bash'
 />
 
 Write some data to the file `bar.txt` with the `echo` command, which returns back what we request.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='echo "Hello, World" > foo/bar.txt'
 language='bash'
 />
@@ -50,7 +50,7 @@ The above command uses `echo`, then the text we would like to add to our file in
 
 Let's try to access the data using the `cat` or con**cat**enate command that will read data from the file and give its content as output.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat foo/bar.txt'
 language='bash'
 />
@@ -59,12 +59,11 @@ In this case, our ouput will be the following.
 
 <Highlighter
 input='Hello, World'
-language='bash'
 />
 
-Now, let's try to acess the file with an incorrect path.
+Now, let's try to access the file with an incorrect path.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat bar.txt'
 language='bash'
 />
@@ -73,7 +72,6 @@ Because we have not changed directories into the `foo` directory, we'll receive 
 
 <Highlighter
 input='cat: bar.txt: No such file or directory'
-language='bash'
 />
 
 Now that we have been able to reproduce the error, let's go over possible solutions.
@@ -82,7 +80,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 You can use the `pwd` command to check your current working directory. The `pwd` command stands for **p**resent **w**orking **d**irectory. You can then use the `ls` command to **l**i**s**t all the files present in the present directory. With these commands, you will get a better idea as to whether you are trying to access a given file through the correct filepath or not.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='pwd'
 language='bash'
 />
@@ -91,12 +89,11 @@ This command will return your current working directory.
 
 <Highlighter
 input='/home/your-username'
-language='bash'
 />
 
 Next, type `ls` to list the contents of the present working directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls'
 language='bash'
 />
@@ -105,14 +102,13 @@ This will return a list of all directories and files present in your current dir
 
 <Highlighter
 input='Desktop foo Music Public Videos Documents Pictures Downloads Templates'
-language='bash'
 />
 
 Through observating the output above, you will notice that the file `bar.txt` is not present in current directory. You will need to move inside of the `foo` directory to access that file, as this is where you created `bar.txt`.
 
 Use the `cd` command, which stands for **c**hange **d**irectory, to move inside the `foo` directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd foo'
 language='bash'
 />
@@ -122,7 +118,7 @@ This will move you into the `foo` directory, and your command prompt will change
 
 Now we can check for files present in the `foo` directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls'
 language='bash'
 />
@@ -131,12 +127,11 @@ In our example, we have only one file in this directory, so our output will retu
 
 <Highlighter
 input='bar.txt'
-language='bash'
 />
 
 Now that you are in the correct directory, you can check the contents of the file with `cat`. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cat bar.txt'
 language='bash'
 />
@@ -145,7 +140,6 @@ Your output will now be what we had expected.
 
 <Highlighter
 input='Hello, World'
-language='bash'
 />
 
 If you are still experiencing issues finding your file or directory, always check for typos in the file name. Also check the path for the file and your current working directory.
@@ -154,14 +148,14 @@ If you are still experiencing issues finding your file or directory, always chec
 
 It's possible that the file you are trying to access is a binary executable file, in this case you can use the `whereis` command to locate the binary. Open your terminal and type the following command, with `filename` standing in for the file you are looking for.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='whereis filename'
 language='bash'
 />
 
 For example, you can search for the location of `netstat`, which is a command-line utility that displays active TCP connections and more.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='whereis netstat'
 language='bash'
 />
@@ -170,7 +164,6 @@ When you run the above command, you'll get the path to the location of `netstat`
 
 <Highlighter
 input='/usr/sbin/netstat'
-language='bash'
 />
 
 The `whereis` command will return all relevant paths where the binary executable is stored. This way you can check whether a particular binary exists on your system or not, then use Linux navigation commands, like the ones we went through above, to reach the particular binary and execute it.

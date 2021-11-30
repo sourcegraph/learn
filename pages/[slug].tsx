@@ -1,7 +1,7 @@
 import ArticleTemplate, { Props as ArticleTemplateProps } from '@components/templates/ArticleTemplate'
 import getBaseDirectory from '@lib/getBaseDirectory'
-import loadAllRecords from '@lib/loadAllRecords'
-import loadMarkdownFile from '@lib/loadMarkdownFile'
+import listAllRecords from '@lib/listAllRecords'
+import loadMarkdownFile, { filenameToSlug } from '@lib/loadMarkdownFile'
 import loadRecordCollections from '@lib/loadRecordCollections'
 import serializeMdxSource from '@lib/serializeMdxSource'
 import getQueryParameter from '@util/getQueryParameters'
@@ -9,10 +9,10 @@ import omitUndefinedFields from '@util/omitUndefinedFields'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await loadAllRecords('posts')
-    const videos = await loadAllRecords('videos')
-    const allRecords = posts.concat(videos)
-    const paths = allRecords.map(record => ({ params: { slug: record.slug } }))
+    const posts = await listAllRecords('posts')
+    const videos = await listAllRecords('videos')
+    const allRecordSlugs = posts.concat(videos).map(file => filenameToSlug(file))
+    const paths = allRecordSlugs.map(slug => ({ params: { slug } }))
     return {
         paths,
         fallback: false,
@@ -24,14 +24,13 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
     const baseDirectory = await getBaseDirectory(['posts', 'videos'], `${slug}.md`) ?? 'posts'
     const markdownFile = await loadMarkdownFile(baseDirectory, `${slug}.md`)
     const { serializeResult, toc } = await serializeMdxSource(markdownFile)
-    const collections = await loadRecordCollections(baseDirectory)
-    const { recordCollections } = collections
-    const parentCollection = recordCollections.find(collection => !!collection.members.find(member => member.slug === slug))
+    const [ collection]  = await loadRecordCollections(slug)
     return {
         props: omitUndefinedFields({
             title: markdownFile.frontMatter.title,
             browserTitle: markdownFile.frontMatter.browserTitle,
-            author: markdownFile.frontMatter.author ?? null,
+            authorSlug: markdownFile.frontMatter.authorSlug ?? null,
+            authorDisplayName: markdownFile.frontMatter.authorDisplayName ?? null,
             tags: markdownFile.frontMatter.tags,
             publicationDate: markdownFile.frontMatter.publicationDate,
             updatedDate: markdownFile.frontMatter.updatedDate, 
@@ -41,7 +40,7 @@ export const getStaticProps: GetStaticProps<ArticleTemplateProps> = async contex
             description: markdownFile.frontMatter.description,
             toc: toc ?? null,
             mdxSource: serializeResult,
-            collection: parentCollection ?? null,
+            collection: collection ?? null,
             slug,
         }),
     }

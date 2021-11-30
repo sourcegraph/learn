@@ -23,17 +23,27 @@ export const StyledColumn = styled.div`
 
     &.flex-small {
         flex: 0 0 auto;
-        width: 25%;
+        width: 20%;
+    }
+
+    &.flex-small-full {
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     &.flex-medium {
         flex: 0 0 auto;
         flex-direction: column;
-        width: 50%;
+        width: 60%;
 
         @media screen and (max-width: 1024px) {
             width: 100%;
         }
+    }
+
+    &.flex-medium-static {
+        flex-direction: column;
+        width: auto;
     }
 
     &.flex-large {
@@ -41,7 +51,6 @@ export const StyledColumn = styled.div`
         flex: 0 0 auto;
         flex-wrap: wrap;
         min-height: 15.625rem;
-        padding: 0 .75rem;
 
         @media screen and (max-width: 768px) {
             flex-direction: column;

@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 
-export const StyledButton = styled.a`
+interface Props {
+    isDark?: boolean
+}
+
+export const StyledButton = styled.a<Props>`
+    align-items: center;
     background-color: transparent;
     border-radius: .25rem;
     border: 1px solid transparent;
-    color: #000;
+    color: var(--text-color);
     cursor: pointer;
     display: inline-block;
     font-size: 1rem;
@@ -21,14 +26,16 @@ export const StyledButton = styled.a`
     }
 
     &.primary {
-        color: #fff;
-        background-color: #5033e1;
-        border-color: #5033e1;
+        color: ${props => props.isDark
+            ? '#212529'
+            : '#fff'};
+        background-color: var(--primary-link-color);
+        border-color: var(--primary-link-color);
 
         :hover {
-            color: #5033e1;
-            background-color: #fff;
-            border-color: #5033e1;
+            color: var(--primary-link-color);
+            background-color: transparent;
+            border-color: var(--primary-link-color);
         }
     }
 
@@ -37,20 +44,16 @@ export const StyledButton = styled.a`
         padding: .563rem;
     }
 
-    &.header-cta {
-        color: white;
-        background-color: #a112ff;
-        max-width: 50%;
-    }
-
     &.outline-primary {
-        color: #5033e1;
-        border-color: #5033e1;
+        color: var(--primary-link-color);
+        border-color: var(--primary-link-color);
 
         :hover {
-            background-color: #5033e1;
-            border-color: #5033e1;
-            color: #fff;
+            background-color: var(--primary-link-color);
+            border-color: var(--primary-link-color);
+            color: ${props => props.isDark
+                ? '#212529'
+                : '#fff'};
         }
 
         @media screen and (max-width: 768px) {
@@ -59,8 +62,10 @@ export const StyledButton = styled.a`
     }
 
     &.extra-small {
-        color: #fff;
-        background-color: #5033e1;
+        color: ${props => props.isDark
+            ? '#212529'
+            : '#fff'};
+        background-color: var(--primary-link-color);
         border-radius: .25rem;
         display: inline-block;
         font-size: .75em;
@@ -69,15 +74,25 @@ export const StyledButton = styled.a`
         padding: .35em .65em;
         margin-right: .25rem;
         text-decoration: none;
-        text-transform: capitalize;
         text-align: center;
         white-space: nowrap;
         vertical-align: baseline;
 
         :hover {
-            color: #5033e1;
+            color: ${props => props.isDark
+                ? '#212529'
+                : 'var(--primary-link-color)'};
             background-color: #fff;
-            border-color: #5033e1;
+            border-color: var(--primary-link-color);
+        }
+    }
+
+    &.flex {
+        display: flex;
+        padding: .375rem .5rem;
+
+        :hover {
+          color: var(--primary-link-color);  
         }
     }
 `

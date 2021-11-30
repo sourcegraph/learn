@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Python OSError
-author: angelina-tresca
+authorSlug: angelina-tresca
+authorDisplayName: Angelina Tresca
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 15, 2021
 description: Learn how to error handle the Python OSError
@@ -12,7 +13,7 @@ type: posts
 
 If you are working in Python, and receive the following output, your code is attempting to make an OS operation that fails.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='OSError: [Errno X] description of the error'
 language='python'
 />
@@ -30,7 +31,7 @@ In this tutorial, we'll reproduce the issue with one of the most common system f
 
 Let's write the following program: `open_file.py`. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import os
  
  
@@ -44,7 +45,7 @@ language='python'
 This small program tries to open the file `ghost_file.txt` in read-only mode but this file 
 does not exist in our filesystem. So, the function `open()` throws the following exception:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`OSError: [Errno 2] No such file or directory: 'ghost_file.txt'`}
 language='python'
 />
@@ -55,7 +56,7 @@ Now that we have been able to reproduce the error, let's go over possible soluti
 
 You can use a `try` / `except` clause to catch this exception and show another message, log the result, or just ignore it. In our example, we'll print a message to the user so that they can recover from the error. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import os
  
  
@@ -77,7 +78,7 @@ language='python'
 
 Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `OSError` that we have anticipated. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`[Errno 2] No such file or directory: 'ghost_file.txt'
  
             Oops! The file you are looking for is not here. 
@@ -92,7 +93,7 @@ In this example, we have told the user that they cannot open the file if it does
 The `open` function has an option that indicates to Python to create the file if it does not exist. 
 This will prevent the exception from being raised by creating a `ghost_file.txt` in your filesystem and opening it.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import os
  
  

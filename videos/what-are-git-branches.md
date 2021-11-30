@@ -3,7 +3,8 @@ title: What are Git branches?
 tags: [video, git, open source]
 publicationDate: September 17, 2021
 description: Learn about branches in Git.
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-branches-thumbnail.jpg
 imageAlt: Diagram of Git branches
 type: videos
