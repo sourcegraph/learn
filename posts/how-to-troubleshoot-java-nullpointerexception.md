@@ -1,6 +1,7 @@
 ---
 title: How to troubleshoot Java NullPointerException
-author: william-bezuidenhout
+authorSlug: william-bezuidenhout
+authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 20, 2021
 description: Learn how to error handle the Java NullPointerException
@@ -16,7 +17,7 @@ The `NullPointerException` (NPE) is quite a common and dreaded exception that yo
 
 Below is a program which will recreate a `NullPointerException`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {
@@ -57,7 +58,6 @@ When we execute the above program, we will encounter a `NullPointerException` in
 input='Sourcegraph has been in business for 8 years.
 Exception in thread "main" java.lang.NullPointerException
 	at Program.main(Program.java:26)'
-language='bash'
 />
 
 Our `companies[]` array is made up of two companies `c1` and `c2`. When the `for` loop starts, it prints out information about the first company and then proceeds to the next company, `c2`. Unfortunately, `c2` has a `null` value so when we try to access anything that we expect a company object to have — like a `name` — we'll encounter a `NullPointerException` since `c2` does not point to _anything_.
@@ -68,7 +68,7 @@ We can make our `for` loop a little bit more robust by informing the user that a
 
 We can do this through the use of flow control by adding an `if`-`else` statement to our `for` loop.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {
@@ -114,7 +114,6 @@ In the output we receive below when our program executes, a message is printed t
 <Highlighter
 input='Sourcegraph has been in business for 8 years.
 Company at index 1 is null. Cannot print any information on null company'
-language='bash'
 />
 
 Here, we have prevented the error from occurring by providing user feedback for when an object is referencing a `null` value.
@@ -123,7 +122,7 @@ Here, we have prevented the error from occurring by providing user feedback for 
 
 We can also avoid the `NullPointerException` by ensuring that all the values that we use in our program are initialized.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.time.Year;
  
 public class Program {
@@ -164,7 +163,6 @@ With all our values in our program initialized, we don't encounter the `NullPoin
 <Highlighter
 input='Sourcegraph has been in business for 8 years.
 Y2K! has been in business for 21 years.'
-language='bash'
 />
 
 If you will have a `companies[]` array with many different companies, you can initialize all of them with stand-in data that can be modified later by programmers or users. 

@@ -1,7 +1,10 @@
 import Button from '@components/atoms/Button'
 import SiteSearch from '@components/atoms/SiteSearchBar'
+import { ThemeContext } from '@hooks/contexts/theme'
 import MenuIcon from 'mdi-react/MenuIcon'
-import { FunctionComponent, useState } from 'react'
+import MoonWaningCresentIcon from 'mdi-react/MoonWaningCrescentIcon'
+import WeatherSunnyIcon from 'mdi-react/WeatherSunnyIcon'
+import { FunctionComponent, useState, useContext } from 'react'
 
 import {
     StyledNavBarWrapper,
@@ -13,16 +16,19 @@ import {
     StyledNavBarItemsWrapper,
     StyledNavBarItemsContainer,
     StyledNavBarItemLink,
+    StyledButtonsWrapper,
+    StyledToggleButtonWrapper,
 } from './NavBarStyles'
 
 const NavBar: FunctionComponent = () => {
     const [ expandOnMobile, setExpandOnMobile ] = useState(false)
+    const theme = useContext(ThemeContext)
 
     return (
         <StyledNavBarWrapper id='nav'>
             <StyledNavBarContainer>
                 <StyledNavBarLogoLink href="/">
-                    <SyledNavBarLogoImage src="https://storage.googleapis.com/sourcegraph-assets/learn/logos/sourcegraph-learn.svg" alt="Sourcegraph logo" width="150" height="25" />
+                    <SyledNavBarLogoImage />
                 </StyledNavBarLogoLink>
                 <StyledNavBarMobileToggle 
                     onClick={() => setExpandOnMobile(!expandOnMobile)}
@@ -43,15 +49,35 @@ const NavBar: FunctionComponent = () => {
                         </StyledNavBarItemLink>
                         <SiteSearch />
                     </StyledNavBarItemsContainer>
-                    <div>                
+                    <StyledButtonsWrapper>                
                         <Button 
                             href="https://sourcegraph.com/search" 
                             className="outline-primary"
                             target="_blank"
-                            rel="noreferrer">
+                            rel="noreferrer"
+                            isDark={theme.isDark}>
                             Search on Sourcegraph
-                        </Button>                     
-                    </div>
+                        </Button>
+                        <StyledToggleButtonWrapper>
+                            <Button
+                                className="flex"
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={() => theme.toggleTheme('dark')}>
+                                <MoonWaningCresentIcon />
+                                Dark
+                            </Button>
+                            |
+                            <Button
+                                className="flex"
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={() => theme.toggleTheme('light')}>
+                                <WeatherSunnyIcon />
+                                Light
+                            </Button>
+                        </StyledToggleButtonWrapper>
+                    </StyledButtonsWrapper>
                 </StyledNavBarItemsWrapper>
             </StyledNavBarContainer>
         </StyledNavBarWrapper>

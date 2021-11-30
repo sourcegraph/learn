@@ -89,14 +89,16 @@ export const StyledFooterColumnList = styled.ul`
     list-style: none;
 `
 export const StyledFooterColumnListLink = styled.a`
-    color: #6c757d;
+    color: var(--text-color);
     font-size: .9rem;
     padding: .25rem 0;
     display: inline-block;
     text-decoration: none;
+    opacity: .8;
 
     :hover {
-        color: #000;
+        color: var(--text-color);
+        opacity: unset;
     }
 `
 export const StyledFooterLogo = styled.img`
@@ -114,14 +116,16 @@ export const StyledSocialIconsContainer = styled.ul`
     padding-left: 0;
 ` 
 export const StyledFooterSocialLink = styled.a`
-    color: #6c757d;
+    color: var(--text-color);
     display: inline-block;
     font-size: .9rem;
     padding: .3rem;
     text-decoration: none;
+    opacity: .8;
 
     :hover {
-        color: #000;
+        color: var(--text-color);
+        opacity: unset;
     }
 `
 export const StyledFooterPostscriptWrapper = styled.div`
@@ -145,7 +149,7 @@ export const StyledFooterPostscriptListItem = styled.li`
     font-size: 12px;
 `
 export const StyledFooterPostscriptLink = styled.a`
-    color: #5033e1;
+    color: var(--primary-link-color);
     display: block;
     font-size: 12px;
     padding: 0 .375rem;

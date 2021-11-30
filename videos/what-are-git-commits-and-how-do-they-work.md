@@ -3,7 +3,8 @@ title: What are Git commits and how do they work?
 tags: [video, git, open source]
 publicationDate: September 17, 2021
 description: Learn about commits in Git and how they work.
-author: marek-zaluski
+authorSlug: marek-zaluski
+authorDisplayName: Marek Zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/git-commit-thumbnail.jpg
 imageAlt: Diagram of Git commits
 type: videos

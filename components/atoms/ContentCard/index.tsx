@@ -15,20 +15,22 @@ export interface Props {
     description?: string | null
     image?: string | null
     imageAlt?: string | null
+    setHeight?: boolean
     url: string
 }
 
 const ContentCard: FunctionComponent<Props> = props => (
     <Link href={props.url} passHref={true}>
-        <CardLink href={props.url}>
-        {props.image && 
-        <StyledCardImage 
-            src={props.image} 
-            alt={props.imageAlt ?
-                props.imageAlt
-                : ''} 
-            width="185" 
-            height="96" />}
+        <CardLink href={props.url} setHeight={props.setHeight}>
+            {props.image && 
+                <StyledCardImage 
+                    src={props.image} 
+                    alt={props.imageAlt ?
+                        props.imageAlt
+                        : ''} 
+                    width="185" 
+                    height="96" />
+            }
             <StyledCardBody>
                 <StyledCardTitle>  
                     {props.title}  
@@ -38,7 +40,7 @@ const ContentCard: FunctionComponent<Props> = props => (
                 )}
             </StyledCardBody>
         </CardLink>
-    </Link> 
+    </Link>
 )
 
 export default ContentCard

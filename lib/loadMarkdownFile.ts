@@ -13,7 +13,7 @@ function removeExtension(filename: string): string {
     return filename
 }
 
-function filenameToSlug(filepath: string): string {
+export function filenameToSlug(filepath: string): string {
     const basename = path.basename(filepath)
     return removeExtension(basename)
 }
