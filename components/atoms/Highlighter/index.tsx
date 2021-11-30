@@ -1,56 +1,58 @@
-import CopyToClipboard from '@components/atoms/CopyToClipboard'
-import PrismLibrary from '@languages/index'
 import createRandomId from '@util/createRandomId'
-import returnHighlightIndices from '@util/returnHighlightIndices'
-import toStringSet from '@util/toStringSet'
-import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwlLight'
-import { FunctionComponent, createRef } from 'react'
+import { FunctionComponent } from 'react'
 
-import { 
-    StyledHighlighterMatch,
+import {
     StyledCodeBlock,
+    StyledHighlighterMatch,
     StyledCodeWrapper,
-    StyledHighlighterWrapper 
+    StyledNonHighlighterMatch,
 } from './HighlighterStyles'
 
 interface Props {
     input: string
-    language: Language
+    prismSyntax?: boolean
     matcher?: string
 }
 
 const Highlighter: FunctionComponent<Props> = props => {
-    const codeReference = createRef<HTMLPreElement>()
-    const checkToken = (index: number): boolean => {
-        if (!props.matcher) {
-            return false
-        }
-        const matcherArrayFiltered = props.matcher.split(/([^\w".])/)
-        const matcherSet = toStringSet(matcherArrayFiltered)
-        const getPunctuationIndices = returnHighlightIndices(props.input, props.matcher, matcherSet)
-        return getPunctuationIndices.has(index)
+    let parts: string[] = [ props.input ]
+    let regex = new RegExp('')
+    if (props.matcher) {
+        let matcherString = ''
+        props.matcher.split(',').map(part => {
+            matcherString = matcherString.concat('|', `(${part.trim()})|(?=${part.trim()})`)
+            matcherString = matcherString.replace(/^\|/, '')
+            regex = new RegExp(`${matcherString}`, 'gi')
+            parts = props.input.split(regex)
+        })
     }
-    
+    const hasHighlighting = parts.length > 1
+
     return (
-        <StyledHighlighterWrapper>
-            <Highlight {...defaultProps} Prism={PrismLibrary} theme={theme} code={props.input} language={props.language}>
-                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                    <StyledCodeWrapper className={className} style={style} ref={codeReference}>
-                        {tokens.map((line, index) => (
-                            <StyledCodeBlock key={createRandomId()} {...getLineProps({ line, key: index })}>
-                                {line.map((token, key) => (
-                                    checkToken(key)
-                                        ? (<StyledHighlighterMatch key={createRandomId()} {...getTokenProps({ token, key })} />)
-                                        : (<span key={createRandomId()} {...getTokenProps({ token, key })} />)
-                                ))}
-                            </StyledCodeBlock>
-                        ))}
-                    </StyledCodeWrapper>
+        <StyledCodeWrapper isPrism={props.prismSyntax}>
+            <StyledCodeBlock isPrism={props.prismSyntax}>
+                {props.prismSyntax && hasHighlighting && (
+                    parts.map((part: string) => (
+                        regex.test(part)
+                            ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
+                            : <span key={createRandomId()}>{part}</span>
+                    ))
                 )}
-            </Highlight>
-            <CopyToClipboard codeReference={codeReference} />
-        </StyledHighlighterWrapper>
+                {props.prismSyntax && !hasHighlighting && (
+                    <span>{parts}</span>
+                )}
+                {!props.prismSyntax && hasHighlighting && (
+                    parts.map((part: string) => (
+                        regex.test(part)
+                            ? <StyledHighlighterMatch key={createRandomId()}>{part}</StyledHighlighterMatch>
+                            : <StyledNonHighlighterMatch key={createRandomId()}>{part}</StyledNonHighlighterMatch>
+                    ))
+                )}
+                {!props.prismSyntax && !hasHighlighting && (
+                    <StyledNonHighlighterMatch>{parts}</StyledNonHighlighterMatch>
+                )}
+            </StyledCodeBlock>
+        </StyledCodeWrapper>
     )
 }
 

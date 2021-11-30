@@ -55,7 +55,7 @@ We will need to save the link to our first episode’s file for later by hoverin
 Next, we’ll be creating our RSS feed. You can title your RSS feed after your podcast. In our example podcast, we’ll call it `open-ollie.rss`.
 RSS feeds are written within an XML document. Therefore, we will begin by writing an XML declaration followed by an opening and closing RSS tag in which we will define our XML namespace.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
    
@@ -69,7 +69,7 @@ The second line is our opening RSS tag which will include all of our content and
 
 Next, let’s define our podcast show using the `<channel>` tag as shown in the XML below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
     <channel>
@@ -110,7 +110,7 @@ Now, it is time to add our first episode to our podcast which we will do using a
 
 Starting two lines below our `<itunes:category>` tag, as shown below, we will begin to define our first episode.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`    <channel>
         ...
         <itunes:category text="Technology"/>
@@ -136,7 +136,7 @@ Finally, we set a global unique identifier using the `<guid>` tag. This is to ma
 
 Let’s finish defining the rest of our first episode.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`   <channel>
         ...
         <!-- EPISODE 1 -->

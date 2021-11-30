@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=true next build",
-    "dev": "next dev",
-    "build": "next build && next export",
+    "dev": "./script/runDev.sh",
+    "build": "./script/runBuild.sh",
     "start": "next start",
     "prettier": "prettier '**/*.{js?(on),ts?(x),md}' --ignore-path .gitignore --write --list-different",
     "eslint": "eslint '**/*.{ts,tsx}' --ignore-path .gitignore",
