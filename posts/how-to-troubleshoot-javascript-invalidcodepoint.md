@@ -3,7 +3,7 @@ title: How to troubleshoot JavaScript RangeError Invalid code point
 authorSlug: anja-bender
 authorDisplayName: Anja Bender
 tags: [tutorial, JavaScript, troubleshooting]
-publicationDate: October 30,2021
+publicationDate: November 29,2021
 description: Learn how to error handle JavaScript RangeError, Invalid code point
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
 imageAlt: Sourcegraph Learn
