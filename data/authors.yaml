@@ -89,6 +89,13 @@ authors:
       name: Cristian Vera
       bio: Backend developer, roller skate lover.
       linkedInLink: https://www.linkedin.com/in/cristian-vera-5ba0ab155/
+    - slug: kshivendu
+      name: Kumar Shivendu
+      bio: Full Stack Software Developer
+      twitterLink: https://twitter.com/_KShivendu
+      linkedInLink: https://www.linkedin.com/in/kshivendu
+    - slug: arash-afghahi
+      name: Arash Afghahi
     - slug: mason-woodford
       name: Mason Woodford
       bio: University computer engineering student, web developer
@@ -100,3 +107,5 @@ authors:
       bio: Staff Developer Advocate, Sourcegraph
       twitterLink: https://twitter.com/unicodeveloper
       linkedInLink: https://www.linkedin.com/in/prosperotemuyiwa/
+    - slug: anja-bender
+      name: Anja Bender
