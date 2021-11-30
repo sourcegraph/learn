@@ -8,9 +8,11 @@ export const StyledCollectionNextCard = styled.div`
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    padding: 1rem;
 `
 export const StyledCollectionNextCallout = styled.div`
-    color: var(--primary-link-color);
+    color: var(--text-color);
 `
 export const StyledCollectionNextLink = styled.a<Props>`
     color: var(--primary-link-color);
