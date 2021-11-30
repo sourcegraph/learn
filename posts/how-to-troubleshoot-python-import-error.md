@@ -100,7 +100,7 @@ One of the ways to make sure that your code doesn't break when importing methods
 
 We can embed our imports in a `try`-`except` clause, making sure that we handle any future errors gracefully. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`try:
     from test_module import Hello
     print(Hello.get_name())

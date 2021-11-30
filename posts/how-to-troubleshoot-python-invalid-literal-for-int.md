@@ -130,8 +130,7 @@ language='python'
 Here, we first have the program attempt our original workflow, but use the `except` clause to handle the `ValueError` that we have anticipated.
 
 <Highlighter
-input={`
-Enter a number: hello
+input={`Enter a number: hello
 That value cannot be parsed to int. Please try with another one.`}
 matcher='hello'           
 />
