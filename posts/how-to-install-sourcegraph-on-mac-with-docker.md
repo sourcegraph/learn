@@ -12,7 +12,7 @@ browserTitle: Installing Sourcegraph to search code on a local instance with mac
 type: posts
 ---
 
-Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.
+Sourcegraph is a tool that can allow you to search all the code that is important to you, from your own local repositories, to the software you build together with a team, to all the code that is available through open source projects. You can get started using Sourcegraph by using [Sourcegraph Cloud](https://sourcegraph.com/search) with your preferred web browser, or you may want to install Sourcegraph locally or on a cloud server or virtual machine.
 
 By installing Sourcegraph on your own hardware, you’ll be able to manage your own instance of Sourcegraph, providing you with complete control over who has access to your code. Your own installation will also allow you to connect your local (or server-side) code as well as any relevant Git servers. Git servers that you can connect to include GitHub, GitHub Enterprise, GitLab, Bitbucket, AWS CodeCommit, Perforce, and more.
 
@@ -49,8 +49,9 @@ The first section is for macOS machines with [Intel chips](#on-macos-with-intel-
 
 On local machines with an Intel chip, you’ll be able to install Sourcegraph by running the following Docker command.
 
-<Highlighter
-input='docker run --publish 7080:7080 --publish 127.0.0.1:3370:3370 \
+<PrismSyntaxHighlighter
+input='docker run --publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
 sourcegraph/server:3.29.0'
@@ -63,7 +64,6 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.
@@ -72,9 +72,10 @@ At this point, you’ll be able to move onto the next section to verify your ins
 
 On a macOS machine with an Apple M1 chip, you’ll need to add an extra argument to your Docker command so that the platform does not interfere with the installation and running of Sourcegraph. Run the following command with the `--platform linux/amd64` argument as demonstrated below.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='docker run \
---publish 7080:7080 --publish 127.0.0.1:3370:3370 \
+--publish 7080:7080 \
+--publish 127.0.0.1:3370:3370 \
 --platform linux/amd64 \
 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph \
 --volume ~/.sourcegraph/data:/var/opt/sourcegraph \
@@ -88,7 +89,6 @@ Once you run the command, you’ll receive some output indicating that Sourcegra
 
 <Highlighter
 input='✱ Sourcegraph is ready at: http://127.0.0.1:7080'
-language='bash'
 />
 
 At this point, you’ll be able to move onto the next section to verify your installation.

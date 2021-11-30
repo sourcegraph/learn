@@ -19,7 +19,7 @@ Here, we will observe the difference between this type of chaining and cases whe
 
 Consider the following exception for an index error:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_mistake():
 	try:
 		[][1]
@@ -33,29 +33,27 @@ language='python'
 When we run this program, we'll call it `my_file.py`, we'll receive output similar to the following.
 
 <Highlighter
-input={`Traceback (most recent call last):
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in example_mistake
    [][1]
-IndexError: list index out of range
- 
+IndexError: list index out of range'
+/>
+  
 During handling of the above exception, another exception occurred:
- 
-Traceback (most recent call last):
+
+<Highlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
   File "my_file.py", line 5, in example_mistake
    print('Indexing error', mistake)
-NameError: name 'mistake' is not defined
- 
 NameError: name 'mistake' is not defined`}
-language='bash'
 />
 
 Notice the key phrase between the two tracebacks:
 
-<Highlighter
-input='During handling of the above exception, another exception occurred:'
-language='bash'
-/>
+```
+During handling of the above exception, another exception occurred:
+```
 
 Here, we observe the __context__ attribute of the exception object showing that another exception occurred within the handling of the original exception.
 
@@ -65,7 +63,7 @@ Now consider this next case where a developer can provide an improved error mess
 
 We know that when we are debugging it's useful to have information about all exceptions. The __cause__ attribute of the exception makes it possible to obtain the chaining by using the `raise ... from` statement in Python:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_chaining():
 	try:
 		[][1]
@@ -79,20 +77,21 @@ language='python'
 When you run this program, you'll receive output similar to the following. 
 
 <Highlighter
-input={`Traceback (most recent call last):
+input='Traceback (most recent call last):
   File "my_file.py", line 3, in exampl_chaining
     [][1]
-IndexError: list index out of range
+IndexError: list index out of range'
+/>
  
 The above exception was the direct cause of the following exception:
- 
-Traceback (most recent call last):
+
+<Highlighter
+input={`Traceback (most recent call last):
   File "my_file.py", line 7, in <module>
     example_chaining()
   File "my_file.py", line 5, in example_chaining
     raise ValueError('Here is additional info: Invalid value') from e
 ValueError: Here is additional info: Invalid value`}
-language='bash'
 />
 
 Again, notice the key phrase between the two tracebacks (`The above exception was the direct cause of the following exception:`). Here, that exception was wrapped with another one. Both exceptions are captured in the traceback.
@@ -101,7 +100,7 @@ Again, notice the key phrase between the two tracebacks (`The above exception wa
 
 Chaining can be disabled by using the `from None` motif within the `raise` clause. 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`def example_chaining_disabled():
 	try:
 		[][1]
@@ -120,7 +119,6 @@ input='Traceback (most recent call last):
   File "my_file.py", line 5, in example_chaining_disabled
     raise ValueError from None
 ValueError'
-language='bash'
 />
 
 Now you can differentiate the two types of chained exception tracebacks. 

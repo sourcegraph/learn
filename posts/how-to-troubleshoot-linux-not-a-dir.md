@@ -17,14 +17,14 @@ The Linux commands `cd` or `rmdir` will return the error `Not a directory` if yo
 
 Lets create a text file.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='echo "test" > test'
 language='bash'
 />
 
 Let's try to change directory to the text file named `test` with the **c**hange **d**irectory (`cd`) command.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd test'
 language='bash'
 />
@@ -33,7 +33,6 @@ We'll receive the following error message.
 
 <Highlighter
 input='cd: not a directory: test'
-language='bash'
 />
 
 The `cd` command fails because you've tried to change directory but passed a text file as an argument instead of a directory.
@@ -46,21 +45,21 @@ The most straightforward way of avoiding this error is by using `cd` only on kno
 
 First, we create a directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mkdir mydir'
 language='bash'
 />
 
 Then we can move our text file, `test` into that directory.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='mv test mydir/test'
 language='bash'
 />
 
 Finally we can now change directory into `mydir`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='cd mydir'
 language='bash'
 />
@@ -76,7 +75,7 @@ You can use `ls` to list all files in a directory. We will append the flags `-la
 * `-h` — list file sizes in a human-readable format, as in `5K`, `250M`, `96B`
 
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls -lah'
 language='bash'
 />
@@ -93,7 +92,6 @@ drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...'
-language='bash'
 />
 
 The start of each output lets you know if it's a directory or not. `-` means it's a regular file (as in `-rw-r--r--`) and `d` means it is a directory (as in `drwxr-xr-x`). Be sure to use `cd` only on directories that are indicated as such. 
@@ -102,7 +100,7 @@ The start of each output lets you know if it's a directory or not. `-` means it'
 
 You can use the `grep` command to list only directories. This way if you use `cd` on any of those, it should succeed. `grep` is used to filter out all regular files so only directories remain in the list.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='ls -lAh | grep "^d"'
 language='bash'
 />
@@ -114,7 +112,6 @@ input='drwxr-xr-x   14 user  Users   448B 11 Oct 20:25 .git
 drwxr-xr-x    3 user  Users    96B 11 Oct 12:17 .githooks
 drwxr-xr-x    4 user  Users   128B 11 Oct 12:17 .github
 ...'
-language='bash'
 />
 
 With `grep` you can filter out the files and directories you are looking for to ensure you are not using a command that will not run on a given type. 

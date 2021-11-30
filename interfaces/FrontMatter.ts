@@ -20,13 +20,17 @@ export default interface FrontMatter {
     /** Short meta description for social and search */
     description?: string | null
 
-    /** Image URL used for the post's card, header, and social image unless
-     * overridden by `socialImage` */
+    /**
+     * Image URL used for the post's card, header, and social image unless
+     * overridden by `socialImage`
+     */
     image?: string | null
     imageAlt?: string | null
 
-    /** Image URL used for social image tag (og:image). If not present, the
-     * social image defaults to the `image` field. */
+    /**
+     * Image URL used for social image tag (og:image). If not present, the
+     * social image defaults to the `image` field.
+     */
     socialImage?: string | null
 
     /** Content type */

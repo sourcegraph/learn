@@ -15,7 +15,6 @@ If you are working in Java, and receive the following output, your code is tryin
 
 <Highlighter
 input='java.lang.ClassNotFoundException: foo.Foo'
-language='bash'
 />
 
 This exception is thrown when your code tries to load a class through its string name using one of the following approaches.
@@ -34,7 +33,7 @@ In this tutorial, we'll reproduce the error and go through a few solutions so yo
 
 To reproduce this error, let's create a program with a class called `Main` that tries to load the `Foo` class.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// main/Main.java
 package main;
 public class Main {
@@ -53,7 +52,7 @@ language='java'
 
 Compile and execute the Main class. We'll pass the `-cp` flag to Java to tell the JVM which class to use for the main thread and where to find relevant libraries.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main.java
 java -cp . main/Main`}
 language='bash'
@@ -62,7 +61,7 @@ language='bash'
 Once we run these commands, we'll receive the following exception.
 
 <Highlighter
-input={`Loading Foo class
+input='Loading Foo class
 java.lang.ClassNotFoundException: foo.Foo
         at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
         at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
@@ -70,8 +69,7 @@ java.lang.ClassNotFoundException: foo.Foo
         at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
         at java.lang.Class.forName0(Native Method)
         at java.lang.Class.forName(Class.java:264)
-        at main.Main.main(Main.java:7)`}
-language='bash'
+        at main.Main.main(Main.java:7)'
 />
 
 Now that we have been able to reproduce the `ClassNotFoundException` error, let's go over possible solutions.
@@ -80,7 +78,7 @@ Now that we have been able to reproduce the `ClassNotFoundException` error, let'
 
 From the output, we can understand that the exception is raised because we did not create the class `Foo` yet. One solution to avoiding this error is to create all relevant classes before attempting to compile and run our Java programs.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// foo/Foo.java
 package foo;
 public class Foo{}`}
@@ -91,14 +89,14 @@ Here, we have initialized the class without giving it any functionality, which c
 
 Now, let's compile the `Foo` class:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='javac foo/Foo.java'
 language='bash'
 />
 
 With the `Foo` class compiled, we can compile and execute the `Main` class again so that the JVM can find the `Foo` class we initialized.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main
 java -cp . main/Main`}
 language='bash'
@@ -107,9 +105,8 @@ language='bash'
 Now `Main` will compile and run without any errors as it has loaded the `Foo` class.
 
 <Highlighter
-input={`Loading foo.Foo class
-foo.Foo loaded`}
-language='bash'
+input='Loading foo.Foo class
+foo.Foo loaded'
 />
 
 At this point you have resolved the `ClassNotFoundException` and continue working on your program.
@@ -120,7 +117,7 @@ An alternate approach is to catch the error that JVM will throw with a `try` ...
 
 In our example, we can modify our `Main` class to explicitly catch the `ClassNotFoundException` and print a message to warn the user to ensure that the class they are trying to load exists.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`// main/Main.java
 package main;
 public class Main {
@@ -141,7 +138,7 @@ In this case we modified the package name of the class to `bar` so that it is no
 
 Now, compile and execute the Main class.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`javac main/Main.java
 java -cp . main.Main`}
 language='bash'
@@ -150,9 +147,8 @@ language='bash'
 Because we have explictly caught the error message in our `try` ... `catch` logic, we will not run into errors that prevent the program from compiling and running. Instead, the user receives a helpful message so that they know they still need to create the `bar.Foo` class.
 
 <Highlighter
-input={`Loading bar.Foo class
-bar.Foo class not found. Please ensure that the class exists.`}
-language='bash'
+input='Loading bar.Foo class
+bar.Foo class not found. Please ensure that the class exists.'
 />
 
 With `try` and `catch` statements we are able to recover quickly without exiting the program or preventing compiling. This enables us to continue working while we are still figuring out all the design decisions we want to make for our program.

@@ -1,8 +1,8 @@
 ---
-title: How to search with Sourcegraph using structural patterns
+title: How to search code with Sourcegraph using structural patterns
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [tutorial, search, Sourcegraph]
+tags: [tutorial, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: August 13, 2021
 description: Learn how to use structural search patterns to search code on Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-10.png
@@ -27,7 +27,7 @@ Once structural search is enabled, the icon will be highlighted and you can begi
 
 Suppose we're debugging a program's error output and trying to figure out where that output is coming from in the code. We want to find calls to the `fprintf` function that writes to the standard error stream (`stderr`), which look like this:
 
-<Highlighter
+<PrismSyntaxHighlighter
 input='fprintf(stderr, "%s", message)'
 language='c'
 />

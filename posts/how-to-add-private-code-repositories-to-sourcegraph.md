@@ -1,13 +1,13 @@
 ---
-title: How to add private code repositories to Sourcegraph cloud
-tags: [tutorial, security, Sourcegraph]
+title: How to add private code repositories to Sourcegraph Cloud
+tags: [tutorial, security, Sourcegraph, Sourcegraph Cloud]
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
 publicationDate: August 19, 2021
 description: Learn how to add private software repositories to Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
-browserTitle: Adding private software repos to Sourcegraph cloud
+browserTitle: Adding private software repos to Sourcegraph Cloud
 type: posts
 ---
 
@@ -20,7 +20,7 @@ _Searching private code is currently in Public Beta._
 
 ---
 
-This tutorial will guide you through adding private repositories from a code host to Sourcegraph cloud so that you can search within and across your private code. 
+This tutorial will guide you through adding private repositories from a code host to Sourcegraph Cloud so that you can search within and across your private code. 
 
 **Your security and privacy are very important to Sourcegraph; Sourcegraph will have no access to see your private code and will never sell your private code. Only _you_ and your teammates with access to a given private repository via your code host will be able to see the private code you have added to Sourcegraph.**
 
@@ -90,8 +90,8 @@ Running a command like the one above across your own username will enable you to
 
 ## Next steps
 
-You should now be able to search your private code in Sourcegraph cloud, a feature that is currently in public beta! If you had any issues in bringing in repositories, please review our [troubleshooting guidance](https://docs.sourcegraph.com/code_search/how-to/adding_repositories_to_cloud#troubleshooting). Note that organizations you are affiliated with will need to grant you relevant access. 
+You should now be able to search your private code in Sourcegraph Cloud, a feature that is currently in public beta! If you had any issues in bringing in repositories, please review our [troubleshooting guidance](https://docs.sourcegraph.com/code_search/how-to/adding_repositories_to_cloud#troubleshooting). Note that organizations you are affiliated with will need to grant you relevant access. 
 
 With your private code connected to Sourcegraph, you can learn more about how to search effectively by following along with our [Sourcegraph search series](https://learn.sourcegraph.com/how-to-search-code-with-sourcegraph-using-literal-patterns). You can also learn more about the product through reviewing Sourcegraph’s [product documentation](https://docs.sourcegraph.com/). 
 
-For a video version of this tutorial, check out "[How to add private code repositories to Sourcegraph cloud (video)](/how-to-add-private-code-repositories-to-sourcegraph-video)."
+For a video version of this tutorial, check out "[How to add private code repositories to Sourcegraph Cloud (video)](/how-to-add-private-code-repositories-to-sourcegraph-video)."

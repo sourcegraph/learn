@@ -15,7 +15,6 @@ In Java, whenever you try to get a character from a string and you specify a cha
 
 <Highlighter
 input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range:'
-language='bash'
 />
 
 A String in Java is an array of characters and each character can be accessed by an index using the `.charAt()` method. When we use the `.charAt()` method and specify an index that does not exist in the underlying array of characters, Java will raise the above exception.
@@ -23,7 +22,7 @@ A String in Java is an array of characters and each character can be accessed by
 ## Reproducing the error
 Let's write the following Java program `ShowChar.java`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;   
  
 public class ShowChar {   
@@ -51,7 +50,6 @@ If the user enters `5` as the index, they won't encounter the `StringIndexOutOfB
 input={`The word is: 'sourcegraph'
 show character at index? 5
 sourcegraph has 'e' at index 5`}
-language='bash'
 />
 
 The length of the word `sourcegraph` is 11, which means there are 11 characters in the string.
@@ -63,7 +61,6 @@ input='Exception in thread "main" java.lang.StringIndexOutOfBoundsException: Str
 	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
 	at java.base/java.lang.String.charAt(String.java:693)
 	at ShowChar.main(ShowChar.java:14)'
-language='bash'
 />
 
 Now that we've been able to reproduce the error, let's go over possible solutions.
@@ -72,7 +69,7 @@ Now that we've been able to reproduce the error, let's go over possible solution
 
 By using flow control and `if`-`else` statements, we can check that the index lies within the string. If the index does not lie within the string we can tell the user the minimum and maximum values we're expecting.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;
  
 public class ShowChar {
@@ -110,7 +107,6 @@ input={`The word is 'sourcegraph' and has 11 characters
 Show character at position? -1
 The given index -1 is incorrect.
 The index can have a minimum value of 0 and a maximum value of 10`}
-language='bash'
 />
 
 Here we have handled the exception through providing feedback to the user via flow control.
@@ -123,7 +119,7 @@ If we mod the given index with the length of the word, we can ensure that a give
 
 We can also ensure that the given index is always positive by taking the absolute value of the index using `Math.abs`.
 
-<Highlighter
+<PrismSyntaxHighlighter
 input={`import java.util.Scanner;  
  
 public class ShowChar {  
@@ -158,7 +154,6 @@ sourcegraph has the character 'o' at index 1
 The word is 'sourcegraph' and has 11 characters
 Show character at index? -1
 sourcegraph has the character 'o' at index 1`}
-language='bash'
 />
 
 As per the output above, an index larger than our maximum is wrapped around, which happens because `12 % 11` is `1`.

@@ -118,18 +118,43 @@ In the website code, the front-matter data is accessible as the [`frontMatter`](
 
 ## Code blocks
 
-When adding code blocks to your file, you can use the `<Highlighter>` component, which will allow you to pass a language selection for syntax highlighting, as well as a `matcher` input for any code you would like to emphasize (the code is styled as a `<mark>` element). 
+### Code
 
-The component looks like this:
+When working with code blocks, we use two components: `<PrismSyntaxHighlighter>` and `<Highlighter>`. `<PrismSyntaxHighlighter>` includes language syntax highlighting and copy functionality, so we use this when we want to add code to a tutorial in a particular programming language (including `bash`) that readers can copy. We can also pass a `matcher` prop to the component, to highlight particular parts of the code for emphasis (the emphasized code is styled as a `<mark>` element). 
+
+The `<PrismSyntaxHighlighter>` component looks like this:
 
 ```
-<Highlighter
-    // For blocks with spaces & strings, use a template literal for input (like {`this`}) to preserve spacing. Also be sure to an additional space to the blank line.
+<PrismSyntaxHighlighter
     input='Your code here'  
     language='Your language here'
     matcher='The code you would like to highlight (optional)'
 />
 ```
+When you have input with line spacing that you would like to preserve, use a template literal for your input and preserve the spacing there. To do this, add an additional blank space to any line where you would like to preserve spacing. For example:
+
+```
+<PrismSyntaxHighlighter
+    input={`Your code input
+     // Be sure to add a blank space by pressing the spacebar at least once here!
+    with multiple lines`} 
+    language='Your language here'
+    matcher='The code you would like to highlight (optional)'
+/>
+```
+
+### Output
+
+When displaying output, please use the `<Highlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
+
+```
+<Highlighter
+    input='Your code here'
+    matcher='The code you would like to highlight (optional)'
+/>
+```
+
+The points about spacing above also apply to this component.
 
 ## Deploy previews (staging branches)
 
