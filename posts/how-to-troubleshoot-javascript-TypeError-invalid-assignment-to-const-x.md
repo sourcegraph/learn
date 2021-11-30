@@ -89,6 +89,6 @@ const y = 20;
 
 Search across open source JavaScript repositories that have the `TypeError` to understand the message more.
 
-<SourcegraphSearch query="TypeError: invalid assignment to const "x"" patternType="literal"/>
+<SourcegraphSearch query="TypeError: invalid assignment to const x" patternType="literal"/>
 
 Check out more Sourcegraph Learn tutorials on [JavaScript](https://learn.sourcegraph.com/tags/javascript).
