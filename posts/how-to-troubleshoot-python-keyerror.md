@@ -21,12 +21,11 @@ The code shown below initializes a dictionary with some keys and their correspon
 
 <PrismSyntaxHighlighter
 input={`my_list= {'Apple': 'Red', 'Lemon': 'Yellow', 'Carrot': 'Orange', 'Broccoli': 'Green', 'Grapes': 'Purple'}
-user_item = 'Banana'`}
+user_item = 'Banana'
+  
+print(user_item + ' is ' + my_list[user_item] + ' in color')`}
 language='python'
 />
- 
-print(user_item + ' is ' + my_list[user_item] + ' in color')
-```
 
 On running the above code snippet we get the following output:
 
@@ -41,7 +40,7 @@ The attempt to access 'Banana' results in a `KeyError` exception as it does not 
 
 Let's go through a few ways to tackle this error.
 
-## Using the get() method
+## Using the `get()` method
 
 In dictionaries, the `get()` method is used to either return the value of a specific key or a default value when the key is not found. Implementing this to the code mentioned before, we get:
 
