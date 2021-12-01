@@ -378,7 +378,8 @@ jobs:
         with:
           file-path: 'CONTRIBUTORS.md'
           commit-msg: Update Contributors
-          github-token: ${{ secrets.GITHUB_TOKEN }} `}
+          github-token: ${{ secrets.GITHUB_TOKEN }} 
+ `}
 language='bash'
 />
 
