@@ -358,7 +358,7 @@ We'll need to combine this action with another action to either commit the chang
 The following workflow will run once a month and commit an updated `CONTRIBUTORS.md` file directly into the default remote branch of the project where this workflow is set:
 
 
-<PrismSyntaxHighlighter
+<Highlighter
 input={`name: Update CONTRIBUTORS file
 on:
   schedule:
@@ -380,7 +380,6 @@ jobs:
           commit-msg: Update Contributors
           github-token: ${{ secrets.GITHUB_TOKEN }} 
  `}
-language='bash'
 />
 
 Remember to change the `CONTRIB_REPOSITORY` environment variable to the project you want to pull contributors from, using the format `owner/repository`.
