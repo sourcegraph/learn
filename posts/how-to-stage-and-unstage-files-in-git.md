@@ -1,5 +1,5 @@
 ---
-title: How to stage and unstage files in Git
+title: How to use the Git staging area, stage changes, and unstage files
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
 tags: [tutorial, git, open source]

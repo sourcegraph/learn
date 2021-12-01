@@ -1,12 +1,13 @@
 ---
-title: How to search commits and diffs with Sourcegraph
+title: How to search Git commits and diffs with Sourcegraph
 tags: [video, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: September 17, 2021
 description: Learn about using Sourcegraph to search commits and diffs.
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/commit-search-thumbnail.jpg
-imageAlt: Searching commits and diffs.
+imageAlt: Searching commits and diffs
+broswerTitle: Search Git commit messages and diffs in GitHub with Sourcegraph
 type: videos
 ---
 
