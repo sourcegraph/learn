@@ -143,6 +143,20 @@ When you have input with line spacing that you would like to preserve, use a tem
 />
 ```
 
+### Special Characters
+
+If you have a backslash `\` in your code input, be sure to escape it as follows:
+
+```
+use GuzzleHttp\\Client
+```
+
+This will output the desired single backslash:
+
+```
+use GuzzleHttp\Client
+```
+
 ### Output
 
 When displaying output, please use the `<Highlighter>` component. You do **not** need to specify a language when using this component, since it does not include language syntax highlighting. You can pass it a `matcher`, however, to draw attention to any code you would like to emphasize.
