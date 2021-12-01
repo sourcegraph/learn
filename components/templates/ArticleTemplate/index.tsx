@@ -1,4 +1,5 @@
 import Button from '@components/atoms/Button'
+import CollectionLink from '@components/atoms/CollectionLink'
 import CollectionView from '@components/atoms/CollectionView'
 import EmbeddedYoutubeVideo from '@components/atoms/EmbeddedYoutubeVideo'
 import GifLikeVideo from '@components/atoms/GifLikeVideo'
@@ -136,6 +137,13 @@ const ArticleTemplate: FunctionComponent<Props> = props => {
 
             <StyledMarkdownWrapper isDark={theme.isDark}>
                 <MDXRemote {...props.mdxSource} components={components} />
+                {props.collection && (
+                    <CollectionLink
+                        members={props.collection.members}
+                        isDark={theme.isDark}
+                        activeSlug={props.slug}
+                    />
+                )}
             </StyledMarkdownWrapper>
         </PageLayout>
     )
