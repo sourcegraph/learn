@@ -26,6 +26,11 @@ export const StyledColumn = styled.div`
         width: 20%;
     }
 
+    &.flex-small-full {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
     &.flex-medium {
         flex: 0 0 auto;
         flex-direction: column;

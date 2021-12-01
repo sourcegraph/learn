@@ -12,15 +12,14 @@ export const StyledTocTopWrapper = styled.div`
 
 export const StyledTocWrapper = styled.div`
     position: absolute;
-    left: -1.25rem;
+    left: 1rem;
 `
 
 export const StyledTocWrapperBody = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: left;
-    max-width: 14rem;
-    padding-right: 1.5rem;
+    max-width: 11.4rem;
     position: fixed;
     top: ${props => props.setTop
         ? '.3125rem'
