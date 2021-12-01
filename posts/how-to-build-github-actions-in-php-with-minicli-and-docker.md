@@ -197,7 +197,7 @@ language='bash'
 
 <Highlighter
 input={`Fetching top contributors...
-
+ 
 Finished updating contrib file.`}
 />
 
