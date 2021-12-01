@@ -81,9 +81,9 @@ This `sg` file will contain the code that we will use to run our container. So, 
 <PrismSyntaxHighlighter
 input={`#!/usr/bin/env bash
  
-docker run -it --rm \
-    --user $(id -u):$(id -g) \
-    -v $PWD:/app \
+docker run -it --rm \\
+    --user $(id -u):$(id -g) \\
+    -v $PWD:/app \\
     -w /app composer:latest "$@"`}
 language='bash'
 />
@@ -248,7 +248,7 @@ Define your dependencies.
  
 Would you like to define your dependencies (require) interactively [yes]? no
 Would you like to define your dev dependencies (require-dev) interactively [yes]? no
-Add PSR-4 autoload mapping? Maps namespace "YourUsername\SaidQuotes" to the entered relative path. [src/, n to skip]:`}
+Add PSR-4 autoload mapping? Maps namespace "YourUsername\\SaidQuotes" to the entered relative path. [src/, n to skip]:`}
 language='bash'
 />
 
@@ -270,7 +270,7 @@ Define your dependencies.
  
 Would you like to define your dependencies (require) interactively [yes]? no
 Would you like to define your dev dependencies (require-dev) interactively [yes]? no
-Add PSR-4 autoload mapping? Maps namespace "Tombenevides\SaidQuotes" to the entered relative path. [src/, n to skip]:
+Add PSR-4 autoload mapping? Maps namespace "Tombenevides\\SaidQuotes" to the entered relative path. [src/, n to skip]:
  
 {
     "name": "your-username/said-quotes",
@@ -294,7 +294,7 @@ Add PSR-4 autoload mapping? Maps namespace "Tombenevides\SaidQuotes" to the ente
 Do you confirm generation [yes]? yes
 Generating autoload files
 Generated autoload files
-PSR-4 autoloading configured. Use "namespace YourUsername\SaidQuotes;" in src/
+PSR-4 autoloading configured. Use "namespace YourUsername\\SaidQuotes;" in src/
 Include the Composer autoloader with: require 'vendor/autoload.php';`}
 language='bash'
 />
@@ -478,7 +478,7 @@ class SaidQuote
     {
         try{
             if(empty($this->author)){
-                throw new \Exception("An author name is required");
+                throw new \\Exception("An author name is required");
             }
   
             $response = $this->client->get(self::BASE_ENDPOINT, [
@@ -492,7 +492,7 @@ class SaidQuote
             return $quote['content'].' by '.ucwords($this->author);
         }catch(ClientException $e){
             return 'Error: Could not find any matching quotes for '.$this->author;
-        }catch(\Exception $e){
+        }catch(\\Exception $e){
             return 'Error: '.$e->getMessage();
         }	
     }
@@ -512,7 +512,7 @@ Now, if we run the tests, we will confirm that the package works as expected. Re
 <Highlighter
 input={`./sg vendor/bin/pest
  
- PASS  Tests\SaidQuoteTest
+ PASS  Tests\\SaidQuoteTest
   ✓ it returns a Jane Austen quote
   ✓ it returns a message when it doesnt find a matching quote.
   ✓ it returns a message when was not given an author name
