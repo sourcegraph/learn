@@ -4,12 +4,14 @@ interface Props {
     isDark?: boolean
 }
 
-export const StyledCollectionNextCard = styled.div`
+export const StyledCollectionNextCard = styled.div<Props>`
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     display: flex;
-    padding: 1rem;
+    padding: ${props => props.isDark
+        ? '1rem 0'
+        : '1rem'};
 
     @media screen and (max-width: 576px) {
         flex-direction: column;

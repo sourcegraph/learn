@@ -22,7 +22,7 @@ const CollectionLink: FunctionComponent<Props> = props => {
     return (
         <>
             {nextRecord && (
-                <StyledCollectionNextCard>
+                <StyledCollectionNextCard isDark={props.isDark}>
                     <StyledCollectionNextCallout>
                         Next in series
                         <ChevronRightIcon />
