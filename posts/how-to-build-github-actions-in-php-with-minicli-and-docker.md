@@ -23,13 +23,25 @@ To follow this tutorial you'll need access to:
 
 - A PHP command line environment (`php-cli`, no need for web servers) and Composer installed. The [`php-curl` extension](https://www.php.net/manual/en/curl.requirements.php) is required to connect to the GitHub API. 
 
-sudo apt-get install php-curl
+<PrismSyntaxHighlighter
+input={`sudo apt-get install php-curl`}
+language='bash'
+/>
 
-sudo apt install php7.4-cli
+<PrismSyntaxHighlighter
+input={`sudo apt install php7.4-cli`}
+language='bash'
+/>
 
-sudo apt install composer
+<PrismSyntaxHighlighter
+input={`sudo apt install composer`}
+language='bash'
+/>
 
-sudo apt install docker.io
+<PrismSyntaxHighlighter
+input={`sudo apt install docker.io`}
+language='bash'
+/>
 
 - An empty GitHub repository where you're going to set up your action. For more info, check [this documentation](https://docs.github.com/en/articles/creating-a-new-repository).
 
@@ -178,8 +190,7 @@ $app->registerCommand('update-contributors', function () use ($app) {
     return 0;
 });
  
-$app->runCommand($argv);
- `}
+$app->runCommand($argv);`}
 language='php'
 />
 
@@ -255,9 +266,8 @@ COPY . /application/
 RUN cd /application && composer install
  
 ENTRYPOINT [ "php", "/application/minicli" ]
-CMD ["update-contributors"]
- `}
-language='docker'
+CMD ["update-contributors"]`}
+language='bash'
 />
 
 Save the file.
@@ -301,7 +311,7 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile' `}
-language='yml'
+language='bash'
 />
 
 Save the file.
