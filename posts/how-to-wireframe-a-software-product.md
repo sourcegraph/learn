@@ -5,7 +5,7 @@ authorDisplayName: Shaili Shah
 tags: [user testing, UX, software lifecycle, tutorial]
 publicationDate: November 30, 2021
 description: Tips for wireframing a software project
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-10.png
 imageAlt: Sourcegraph Learn
 browserTitle: An introduction to wireframing
 type: posts
@@ -62,14 +62,18 @@ With these initial thoughts in place, we can move onto filling in some fundament
 
 ## Step 5 — Wireframe the basics
 
-Start with the basics and keep it simple:
+Start with the basics and keep it simple in your initial wireframe. 
  * Draw boxes to block out sections of content on your screen and bars for where the user’s own input will go
  * Boxes drawn with `X`s typically represent images. 
  * Use squiggles or lines to mark where text will go.
  * Optionally, depending on what you know about the content, include high-fidelity text and color to create a more accurate or realistic depiction of the screen.
  * Decide on your placement of basic features like navigation menus and search bars. Putting these elements in familiar places (following usability conventions) can make it easier for users to navigate your app, website, or product. 
  * Don’t include visual elements at this stage, leave that for later or for the graphic designer(s).
- * If you’re struggling to pin down a good screen layout or flow, there are UX pattern libraries you can search through for inspiration, like [ReallyGoodUX](https://www.reallygoodux.io/), [UXArchive](https://uxarchive.com/), and [UXPin](https://www.uxpin.com/studiopatterns). 
+ * If you’re struggling to pin down a good screen layout or flow, there are UX pattern libraries you can search through for inspiration, like [ReallyGoodUX](https://www.reallygoodux.io/), [UXArchive](https://uxarchive.com/), and [UXPin](https://www.uxpin.com/studiopatterns).
+
+ ![A wireframe example](https://storage.googleapis.com/sourcegraph-assets/learn/tutorial-images/wireframe-diagram.jpg) 
+
+ Above is an example of site map with wireframes, showing the possible screens with which a user may interact.
 
 ## Step 6 — Annotate your wireframe
 
