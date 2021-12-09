@@ -2,6 +2,8 @@
 title: How to install Sourcegraph with Docker Compose
 tags: [Sourcegraph, Docker, Linux, installation, tutorial]
 publicationDate: September 30, 2021
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 description: Install a self-hosted Sourcegraph instance for a production environment to search all of your code
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-10.png
 imageAlt: Sourcegraph Learn
