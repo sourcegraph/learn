@@ -84,12 +84,25 @@ These sections of your persona are key because this information will help you un
 
 Any details or preferences that your user interviewees expressed would be useful here. For instance, a user may have expressed a desire for a more intuitive way to navigate a screen. You can also include any observations about their behaviors and assumptions you made during the user interviews and by observing them during their day-to-day tasks or using similar technology. 
 
-| Section                               | Questions to consider |
-|-------------------------------------|-------------------------------------|
-| User’s goals                        | What does your user need? <br> What are their expectations and typical behaviors (relevant to your project)? <br> What problems do they encounter regularly? <br>What kinds of solutions would help them better perform certain tasks? |
-| Motivations and desires      | What do they express they wish they had? <br> What do they need to be more efficient? <br> What kinds of programs or services already help them? <br> What kinds of tools, services, or websites do they enjoy using? (Anything comparable to your software project?) <br> How do they like to perform certain work tasks? What are their habits and preferred methods? |
-| Pain points and frustrations | What’s an obstacle or challenge they face? At work, at home, in other situations? <br> What annoys them about the products or services they use (that are relevant to your software project)? <br> What do they feel is missing or lacking when they try to solve a problem? |
+Let's go through each section and questions to consider.
 
+**User's goals**
+* What does your user need?
+* What are their expectations and typical behaviors (relevant to your project)?
+* What problems do they encounter regularly?
+* What kinds of solutions would help them better perform certain tasks?
+
+**Motivations and desires**
+* What do they express they wish they had?
+* What do they need to be more efficient?
+* What kinds of programs or services already help them?
+* What kinds of tools, services, or websites do they enjoy using? (Anything comparable to your software project?)
+* How do they like to perform certain work tasks? What are their habits and preferred methods?
+
+**Pain points and frustrations**
+* What’s an obstacle or challenge they face? At work, at home, in other situations?
+* What annoys them about the products or services they use (that are relevant to your software project)?
+* What do they feel is missing or lacking when they try to solve a problem?
 
 Another way to paint a more accurate and specific picture of the types of challenges you want your software project to address: you can also include a description of a few scenarios or situations that the users might find themselves in where they need a software solution. This is another place to include notes on specific behaviors you noticed during interviews or observation periods.
 
