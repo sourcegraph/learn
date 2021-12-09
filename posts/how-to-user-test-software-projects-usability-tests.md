@@ -3,7 +3,7 @@ title: How to user test software projects — designing and conducting an in-per
 authorSlug: shaili-shah
 authorDisplayName: Shaili Shah
 tags: [user testing, UX, software lifecycle, tutorial]
-publicationDate: September, 25, 2021
+publicationDate: September 25, 2021
 description: User research and usability testing are important aspects of the software development process, this tutorial will guide you through the steps you need to take for a usability test on your software
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
