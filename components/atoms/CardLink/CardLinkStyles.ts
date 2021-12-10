@@ -37,6 +37,6 @@ export const StyledCardLink = styled.a<Props>`
     }
 
     @media screen and (max-width: 768px) {
-        max-height: 350px;
+        max-height: unset;
     }
 `
