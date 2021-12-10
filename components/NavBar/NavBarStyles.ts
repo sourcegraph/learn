@@ -57,6 +57,7 @@ export const StyledNavBarLogoLink = styled.a`
 `
 export const SyledNavBarLogoImage = styled.div`
     background: var(--logo-image);
+    background-repeat: no-repeat;
     height: 1.56rem;
     vertical-align: -.3rem;
     width: 12.19rem;
