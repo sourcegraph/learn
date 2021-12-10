@@ -6,6 +6,8 @@ interface Props {
 
 export const StyledCardLink = styled.a<Props>`
     cursor: pointer;
+    height: 100%;
+    max-height: 377px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -32,5 +34,9 @@ export const StyledCardLink = styled.a<Props>`
     @media screen and (max-width: 576px) {
         margin: .75rem;
         width: unset;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-height: unset;
     }
 `
