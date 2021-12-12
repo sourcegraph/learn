@@ -2,6 +2,8 @@
 title: How to create a self-hosted Sourcegraph account
 tags: [tutorial, Sourcegraph]
 publicationDate: September 13, 2021
+authorSlug: lisa-tagliaferri
+authorDisplayName: Lisa Tagliaferri
 description: Create an account on self-hosted Sourcegraph to your code
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-05.png
 imageAlt: Sourcegraph Learn
