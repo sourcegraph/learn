@@ -156,7 +156,7 @@ While it’s a good idea to learn regex thoroughly, it’s never a bad thing to 
 | `\`          | Escape character                  |
 | `^`         | Beginning of an expression |
 | `$`         | End of an expression           | 
-| `&#124;`          | "or"                                     |
+| &#124;          | _or_                                     |
 | `[...]`     | A class delimiter                 |
 | `\s`       | Add whitespace                    |
 
