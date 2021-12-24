@@ -76,21 +76,20 @@ This statement can be overwhelming if you don’t have much experience with regu
 
 Now, we’ll add this statement into our `Pattern` method, and tell the `Matcher` method to match our `email` object to that pattern. We’ll be building off the program we started above, working within the `Main` class.
 
-<PrismSyntaxHighlighter
-input={`...
+```
+...
 public class Main {
     public static void main(String[] args) {
  
         System.out.println("Please enter a valid email address: ");
         Scanner sc = new Scanner(System.in);
         String email = sc.nextLine();
-        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", Pattern.CASE_INSENSITIVE);
         // now we'll tell the matcher method to match the email object to the regex pattern
         Matcher matcher = pattern.matcher(email);
     }
-}`}
-language='java'
-/>
+}
+```
 
 It’s important to include the `Pattern.CASE_INSENSITIVE` qualifier at the end so the Java compiler knows not to enforce case. 
 
