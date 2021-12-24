@@ -3,7 +3,7 @@ title: Getting started with type hinting in Python
 authorSlug: caleb-hock
 authorDisplayName: Caleb Hock
 tags: [python, types, tutorial]
-publicationDate: September 28. 2021
+publicationDate: September 28, 2021
 description: Type hinting in Python helps others understand and read your code
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-09.png
 imageAlt: Sourcegraph Learn
