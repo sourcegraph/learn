@@ -5,7 +5,7 @@ authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
 publicationDate: August 19, 2021
 description: Learn how to add private software repositories to Sourcegraph.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
 browserTitle: Adding private software repos to Sourcegraph Cloud
 type: posts
