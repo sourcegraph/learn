@@ -63,11 +63,14 @@ language='java'
 In our `Main` class, we are providing output to guide the user to enter an email address. Then we are having Java take in user input from the next line, and assigning that input to the `email` string. 
 
 With this initialized, we will move onto setting up the regular expression to validate emails.
+
 ## Adding `Pattern` and `Matcher`
+
 Next, we’ll need to enter our regex pattern with the `Pattern` class. The regex we’re using for email validation is the [RFC 5322 “General Email Regex” Official Standard](https://www.ietf.org/rfc/rfc5322.txt). We’ll copy it here, as it’s fairly long:
 
-<Highlighter
-input='^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$'
+<PrismSyntaxHighlighter
+input={`^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$`}
+language='bash'
 />
 
 This statement can be overwhelming if you don’t have much experience with regular expressions. You can review the “[Email Validation Summary](https://emailregex.com/email-validation-summary/)” from _Almost Perfect Email Regex_ to learn more. 
