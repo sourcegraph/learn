@@ -53,8 +53,8 @@ public class Main {
         System.out.println("Please enter a valid email address: ");
         Scanner sc = new Scanner(System.in);
         String email = sc.nextLine();
-        // now that we've told the program to save user input as an "email" String object, 
-        // we can add our regex pattern
+        // now that we've told the program to save user input as an 
+        // "email" String object, we can add our regex pattern
     }
 }`}
 language='java'
@@ -66,7 +66,7 @@ With this initialized, we will move onto setting up the regular expression to va
 
 ## Adding `Pattern` and `Matcher`
 
-Next, we’ll need to enter our regex pattern with the `Pattern` class. The regex we’re using for email validation is the [RFC 5322 “General Email Regex” Official Standard](https://www.ietf.org/rfc/rfc5322.txt). We’ll copy it here, as it’s fairly long:
+Next, we’ll need to enter our regex pattern with the `Pattern` class. The regex we’re using for email validation is the [RFC 5322 “General Email Regex” Official Standard](https://www.ietf.org/rfc/rfc5322.txt). We’ll copy it here, as it’s fairly long. You will have to horizontally scroll to get the full string.
 
 ```
 ^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$
@@ -74,30 +74,32 @@ Next, we’ll need to enter our regex pattern with the `Pattern` class. The rege
 
 This statement can be overwhelming if you don’t have much experience with regular expressions. You can review the “[Email Validation Summary](https://emailregex.com/email-validation-summary/)” from _Almost Perfect Email Regex_ to learn more. 
 
-Now, we’ll add this statement into our `Pattern` method, and tell the `Matcher` method to match our `email` object to that pattern. We’ll be building off the program we started above, working within the `Main` class.
+Now, we’ll add this statement into our `Pattern` method. We’ll be building off the program we started above, working within the `Main` class.
 
 ```
 ...
-public class Main {
-    public static void main(String[] args) {
- 
-        System.out.println("Please enter a valid email address: ");
-        Scanner sc = new Scanner(System.in);
         String email = sc.nextLine();
         Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", Pattern.CASE_INSENSITIVE);
-        // now we'll tell the matcher method to match the email object to the regex pattern
-        Matcher matcher = pattern.matcher(email);
-    }
-}
+...
 ```
 
 It’s important to include the `Pattern.CASE_INSENSITIVE` qualifier at the end so the Java compiler knows not to enforce case. 
+
+In the next line, tell the `Matcher` method to match our `email` object to that pattern.
+
+<PrismSyntaxHighlighter
+input={`...
+        // now we'll tell the matcher method to match the email object to the regex pattern
+        Matcher matcher = pattern.matcher(email);
+    }
+}`}
+language='java'
+/>
 
 Finally, we want some feedback so we know our program is doing what we expect. We’ll add an `if`-`else` statement to let us know if our email object is a valid match or not. 
 
 <PrismSyntaxHighlighter
 input={`...
-        // now we'll tell the matcher method to match the email object to the regex pattern
         Matcher matcher = pattern.matcher(email);
         // now we'll ask the program to let us know if the input is a valid match or not
         if (matcher.matches()) {

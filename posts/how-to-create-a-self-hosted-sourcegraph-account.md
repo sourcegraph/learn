@@ -5,7 +5,7 @@ publicationDate: September 13, 2021
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
 description: Create an account on self-hosted Sourcegraph to your code
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-04.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-07.png
 imageAlt: Sourcegraph Learn
 browserTitle: Search your code with a Sourcegraph account
 type: posts
