@@ -76,17 +76,6 @@ This statement can be overwhelming if you don’t have much experience with regu
 
 Now, we’ll add this statement into our `Pattern` method. We’ll be building off the program we started above, working within the `Main` class.
 
-# Test
-
-
-<PrismSyntaxHighlighter
-input={`...
-        String email = sc.nextLine();
-        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\\\'/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", Pattern.CASE_INSENSITIVE);
-...`}
-language='java'
-/>
-
 ```
 ...
         String email = sc.nextLine();
