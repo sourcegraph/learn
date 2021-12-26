@@ -5,7 +5,7 @@ authorDisplayName: Marek Zaluski
 tags: [tutorial, search, Sourcegraph, Sourcegraph Cloud]
 publicationDate: June 25, 2021
 description: Learn how to use regular expression search patterns to search code on Sourcegraph.
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-07.png
 imageAlt: Sourcegraph Learn
 browserTitle: Using RegEx with Sourcegraph
 type: posts
