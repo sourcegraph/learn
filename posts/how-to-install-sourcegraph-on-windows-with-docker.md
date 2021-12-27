@@ -2,7 +2,7 @@
 title: How to install Sourcegraph on Windows with Docker
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
-tags: [tutorial, Docker, installation, Sourcegraph]
+tags: [tutorial, Docker, installation, Sourcegraph, Windows]
 publicationDate: July 1, 2021
 updatedDate: August 10, 2021
 description: Learn how to install Sourcegraph on your Windows machine with Docker
