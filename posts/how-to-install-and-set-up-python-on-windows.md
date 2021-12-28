@@ -7,9 +7,10 @@ publicationDate: December 27, 2021
 description: Follow these steps to install and set up Python 3 on a Windows 10 computer
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-07.png
 imageAlt: Sourcegraph Learn
-alternateTitle: Setting up Python 3 on Windows 10
+browserTitle: Setting up Python 3 on Windows 10
 type: posts
-—
+---
+
 
 Python is an extremely adaptable language that you can set up and use quickly. It has a wide range of uses and is a great language to pick up for programmers of any skill level.
 
