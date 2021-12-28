@@ -163,7 +163,7 @@ This should open up the Notebook program, along with a blank file called `hello.
 
 <PrismSyntaxHighlighter
 input={`print("Hello, World!")`}
-language=python
+language='python'
 />
 
 Once you have typed this program out, save the file by pressing `CTRL` + `S` on your keyboard. You can now run the “Hello, World!” program by running this command in your command prompt.
