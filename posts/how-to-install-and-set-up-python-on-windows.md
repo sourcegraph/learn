@@ -79,7 +79,7 @@ language='bash'
 At the time of this tutorial, the below is similar to the output you should expect with the relevant recent version numbers.
 
 <Highlighter
-input='pip 21.3.1 from C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pip (python 3.10)'
+input='pip 21.3.1 from C:\Users\User\AppData\Local\Programs\Python\Python310\lib\site-packages\pip (python 3.10)'
 matcher='21.3.1'
 />
 
@@ -128,7 +128,7 @@ matcher='my_env'
 The command prompt line should now be changed so that your virtual environment’s name is in parentheses at the front of the line, like so:
 
 <Highlighter
-input='(my_env) C:\\Users\\User\\python-project>'
+input='(my_env) C:\Users\User\python-project>'
 matcher='my_env'
 />
 
