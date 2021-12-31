@@ -5,7 +5,7 @@ authorDisplayName: Oussama Salahouelhadj
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 07, 2021
 description: Learn how to error handle JavaScript SyntaxError missing } after function body
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
 browserTitle: SyntaxError missing } after function body in JavaScript error handling
 type: posts

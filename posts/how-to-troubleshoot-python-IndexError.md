@@ -5,7 +5,7 @@ authorDisplayName: Shailesh Kumar
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 27, 2021
 description: Learn how to error handle Python IndexError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
 browserTitle: IndexError in Python error handling
 type: posts
