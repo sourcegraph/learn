@@ -5,7 +5,7 @@ authorDisplayName: Yash Sharma
 tags: [tutorial, Python, troubleshooting]
 publicationDate: November 29, 2021
 description: Learn how to error handle Python ImportError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-8.png
 imageAlt: Sourcegraph Learn
 browserTitle: ImportError in Python error handling
 type: posts

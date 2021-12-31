@@ -5,7 +5,7 @@ authorDisplayName: M.L. Narayana Rao
 tags: [tutorial, Java, troubleshooting]
 publicationDate: November 12, 2021
 description: Learn how to error handle the Java error NegativeArraySizeException
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
 browserTitle: NegativeArraySizeException in Java error handling
 type: posts

@@ -5,7 +5,7 @@ authorDisplayName: Nick Keers
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 4th, 2021
 description: Learn how to handle the JavaScript Error, Permission denied to access property "x"
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-3.png
 imageAlt: Sourcegraph Learn
 browserTitle: Error Permission denied to access property "x" in JavaScript error handling
 type: posts

@@ -5,7 +5,7 @@ authorDisplayName: Arun Kc
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 10, 2021
 description: Learn how to error handle the Python NameError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
 browserTitle: NameError in Python error handling
 type: posts

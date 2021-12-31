@@ -5,7 +5,7 @@ authorDisplayName: Caleb Hock
 tags: [python, tutorial, Windows]
 publicationDate: December 27, 2021
 description: Follow these steps to install and set up Python 3 on a Windows 10 computer
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-07.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-13.png
 imageAlt: Sourcegraph Learn
 browserTitle: Setting up Python 3 on Windows 10
 type: posts

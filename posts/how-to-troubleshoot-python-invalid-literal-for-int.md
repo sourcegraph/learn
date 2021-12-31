@@ -5,7 +5,7 @@ authorDisplayName: Angelina Tresca
 tags: [tutorial, Python, troubleshooting]
 publicationDate: November 29, 2021
 description: "Learn how to error handle Python ValueError: invalid literal for int() with base 10"
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-10.png
 imageAlt: Sourcegraph Learn
 browserTitle: "ValueError: invalid literal for int() with base 10 in Python error handling"
 type: posts

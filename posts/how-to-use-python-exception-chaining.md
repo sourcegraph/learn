@@ -5,7 +5,7 @@ authorDisplayName: David Lee
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 18, 2021
 description: Learn how to use Exception Chaining in Python
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 browserTitle: Exception Chaining in Python
 type: posts

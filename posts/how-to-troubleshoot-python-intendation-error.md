@@ -5,7 +5,7 @@ authorDisplayName: Kumar Shivendu
 tags: [tutorial, Python, troubleshooting]
 publicationDate: November 29, 2021
 description: Learn how to error handle Python IndentationError unexpected indent
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
 browserTitle: IndentationError unexpected indent in Python error handling
 type: posts

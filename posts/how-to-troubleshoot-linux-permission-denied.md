@@ -5,7 +5,7 @@ authorDisplayName: Jack Newman
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 23, 2021
 description: Learn how to handle Permission denied error in Linux
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
 browserTitle: Permission denied in Linux error handling
 type: posts
