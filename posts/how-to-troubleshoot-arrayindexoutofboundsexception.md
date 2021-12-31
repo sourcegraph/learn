@@ -5,7 +5,7 @@ authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java, troubleshooting]
 publicationDate: Oct 11, 2021
 description: Learn how to error handle the Java ArrayIndexOutOfBoundsException
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
 browserTitle: ArrayIndexOutOfBoundsException in Java error handling
 type: posts

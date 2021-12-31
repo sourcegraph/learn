@@ -5,7 +5,7 @@ authorDisplayName: Amit Agrawal
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 19, 2021
 description: Learn how to error handle No such file or directory in Linux
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
 browserTitle: No such file or directory in Linux error handling
 type: posts

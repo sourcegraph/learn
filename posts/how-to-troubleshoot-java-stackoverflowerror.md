@@ -5,7 +5,7 @@ authorDisplayName: Yashesvinee V
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 16, 2021
 description: Learn how to error handle the Java StackOverflowError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 browserTitle: StackOverflowError in Java error handling
 type: posts

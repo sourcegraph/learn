@@ -5,7 +5,7 @@ authorDisplayName: Mason Woodford
 tags: [tutorial, Python, troubleshooting]
 publicationDate: November 22, 2021
 description: Learn how to error handle the Python AttributeError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 browserTitle: AttributeError in Python error handling
 type: posts

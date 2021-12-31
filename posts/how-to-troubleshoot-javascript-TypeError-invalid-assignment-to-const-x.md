@@ -5,7 +5,7 @@ authorDisplayName: Yashesvinee V
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: November 30, 2021
 description: Learn how to error handle JavaScript TypeError invalid assignment to const "x"
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 browserTitle: TypeError invalid assignment to const "x" in JavaScript error handling
 type: posts

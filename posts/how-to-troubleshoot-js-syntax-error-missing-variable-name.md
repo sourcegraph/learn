@@ -5,7 +5,7 @@ authorDisplayName: Angelina Tresca
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError missing variable name
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-10.png
 imageAlt: Sourcegraph Learn
 browserTitle: SyntaxError missing variable name in JavaScript error handling
 type: posts

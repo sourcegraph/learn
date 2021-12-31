@@ -5,7 +5,7 @@ authorDisplayName: Tom Benevides
 tags: [tutorial, PHP, troubleshooting]
 publicationDate: October 15, 2021
 description: Learn how to error handle PHP syntax error, unexpected end of file, expecting ';' or ','
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
 browserTitle: Syntax error, unexpected end of file, expecting ';' or ',' in PHP error handling
 type: posts

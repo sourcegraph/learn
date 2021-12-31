@@ -5,7 +5,7 @@ authorDisplayName: Shaili Shah
 tags: [user testing, UX, software lifecycle, tutorial]
 publicationDate: December 8, 2021
 description: Creating and using personas enables you to serve the target users of your software more effectively
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-06.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-11.png
 imageAlt: Sourcegraph Learn
 browserTitle: User personas for developers
 type: posts

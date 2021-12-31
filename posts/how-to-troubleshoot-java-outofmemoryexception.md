@@ -5,7 +5,7 @@ authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java OutOfMemoryError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
 browserTitle: OutOfMemoryError in Java error handling
 type: posts

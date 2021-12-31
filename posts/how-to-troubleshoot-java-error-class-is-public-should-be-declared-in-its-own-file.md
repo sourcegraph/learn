@@ -5,7 +5,7 @@ authorDisplayName: Grace McNerney
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle the Java error class X is public, should be declared in a file named X
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-8.png
 imageAlt: Sourcegraph Learn
 browserTitle: error class X is public, should be declared in a file named X in Java error handling
 type: posts

@@ -5,7 +5,7 @@ authorDisplayName: William Bezuidenhout
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 22, 2021
 description: Learn how to error handle JavaScript SyntaxError JSON.parse
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
 browserTitle: SyntaxError JSON.parse in JavaScript error handling
 type: posts

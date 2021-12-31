@@ -3,7 +3,7 @@ title: How to reset a Git repository
 tags: [tutorial, git, open source]
 publicationDate: November 30, 2021
 description: Use the git reset command to unstage all changes in Git
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-03.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-05.png
 imageAlt: Sourcegraph Learn
 browserTitle: Resetting all changes in GitHub with the git reset command
 type: posts

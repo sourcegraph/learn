@@ -5,7 +5,7 @@ authorDisplayName: Angelina Tresca
 tags: [tutorial, JavaScript, troubleshooting]
 publicationDate: October 19, 2021
 description: Learn how to error handle JavaScript TypeError null has no properties
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
 browserTitle: TypeError null has no properties in JavaScript error handling
 type: posts
