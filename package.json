@@ -43,7 +43,7 @@
     "@types/react": "17.0.38",
     "@types/styled-components": "5.1.19",
     "eslint": "7.32.0",
-    "eslint-plugin-jsdoc": "^37.1.0",
+    "eslint-plugin-jsdoc": "^37.5.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-unicorn": "21.0.0",
