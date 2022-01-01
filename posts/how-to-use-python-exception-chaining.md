@@ -51,9 +51,9 @@ NameError: name 'mistake' is not defined`}
 
 Notice the key phrase between the two tracebacks:
 
-```
-During handling of the above exception, another exception occurred:
-```
+<Highlighter
+input='During handling of the above exception, another exception occurred:'
+/>
 
 Here, we observe the __context__ attribute of the exception object showing that another exception occurred within the handling of the original exception.
 

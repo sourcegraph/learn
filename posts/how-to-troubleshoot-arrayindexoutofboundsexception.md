@@ -13,11 +13,9 @@ type: posts
 
 In Java, to access an element in an array you use an index. However, if that index does not exist in the array, you'll get the following exception.
 
-```
-
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7
-
-```
+<Highlighter
+input='Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 7'
+/>
 
 Arrays in Java are zero-based, which means the first position of an array is at index `0` and the last index is the length of the array minus one. So a valid index is any value between `0` and the length of the array. All other values will lead to an `ArrayIndexOutOfBoundsException`.
 
