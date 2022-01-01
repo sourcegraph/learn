@@ -70,8 +70,8 @@ This query returns repositories that contain a `package.json` file and has conte
 Suppose you are searching for some content in a repository, such as a library. Use `repo.contains.content`.
 
 <Highlighter
-input='repo:repo-path repo.contains.content(content)'
-matcher='content'
+input='repo:repo-path repo.contains.content(your-content)'
+matcher='your-content'
 /> 
 
 <Highlighter
@@ -91,8 +91,8 @@ The above query returns repos that have `mdi-react` among its contents.
 Use `lang` when searching code to narrow the scope of your search to one programming language. 
 
 <Highlighter
-input='lang:programming language'
-matcher='programming language'
+input='lang:programming-language'
+matcher='programming-language'
 /> 
 
 We can search for results within the C++ or Python programming languages.
@@ -109,7 +109,7 @@ Prepending a hyphen can exclude results from a particular programming language.
 
 <Highlighter
 input='-lang:programming-language'
-matcher='programming language'
+matcher='programming-language'
 /> 
 
 To exclude Java, you can perform the following search.
