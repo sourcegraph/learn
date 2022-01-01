@@ -25,15 +25,13 @@ By default, Sourcegraph lets you search globally, providing you with results fro
 
 The `repo` keyword lets you search a specific repository in your organization or on the web.
 
-<PrismSyntaxHighlighter
-input={`repo:[repository-path]`}
-language='bash'
+<Highlighter
+input='repo:[repository-path]'
 matcher='[repository-path]'
 />
 
-<PrismSyntaxHighlighter
-input={`repo:[regular-pattern]`}
-language='bash'
+<Highlighter
+input='repo:[regular-pattern]'
 matcher='[regular-pattern]'
 /> 
 
@@ -52,9 +50,9 @@ When searching a repository, command chaining can be used to return more specifi
 
 If you are searching for a file in a repository, use `repo.contains.file`.
 
-<PrismSyntaxHighlighter
-input={`repo:[repository-path] repo.contains.file([file-path])`}
-language='bash'
+<Highlighter
+input='repo:[repository-path] repo.contains.file([file-path])'
+
 matcher='[file-path]'
 /> 
 
@@ -72,15 +70,15 @@ This query returns repositories that contain a `package.json` file and has conte
 
 Suppose you are searching for some content in a repository, such as a library. Use `repo.contains.content`.
 
-<PrismSyntaxHighlighter
-input={`repo:[repo-path] repo.contains.content([content])`}
-language='bash'
+<Highlighter
+input='repo:[repo-path] repo.contains.content([content])'
+
 matcher='[content]'
 /> 
 
-<PrismSyntaxHighlighter
-input={`repo:[repo-path] repo.contains.content([regular-pattern])`}
-language='bash'
+<Highlighter
+input='repo:[repo-path] repo.contains.content([regular-pattern])'
+
 matcher='[regular-pattern]'
 /> 
 
@@ -95,9 +93,9 @@ The above query returns repos that have `mdi-react` among its contents.
 
 Use `lang` when searching code to narrow the scope of your search to one programming language. 
 
-<PrismSyntaxHighlighter
-input={`lang:[programming language]`}
-language='bash'
+<Highlighter
+input='lang:[programming language]'
+
 matcher='[programming language]'
 /> 
 
@@ -113,9 +111,9 @@ By default, searches are case insensitive.
 
 Prepending a hyphen can exclude results from a particular programming language.
 
-<PrismSyntaxHighlighter
-input={`-lang:[programming-language]`}
-language='bash'
+<Highlighter
+input='-lang:[programming-language]'
+
 matcher='[programming language]'
 /> 
 
@@ -129,30 +127,26 @@ Narrowing your search scope down to specific languages can ensure that you find 
 
 If you are searching for code committed before or after a time period, you will use `before` and `after`
 
-<PrismSyntaxHighlighter
-input={`before:[time-period]
-after:[time-period]`}
-language='bash'
+<Highlighter
+input='before:[time-period]
+after:[time-period]'
 matcher='[time-period]'
 /> 
 
 Sometimes the time period can be literal, like `last week`, `last year`, `3 months ago`, `february 10 2021` or have actual dates in the format `dd/mm/yyyy`.
 
-<PrismSyntaxHighlighter
-input={`before:last week`}
-language='bash'
+<Highlighter
+input='before:last week'
 matcher='last week'
 /> 
 
-<PrismSyntaxHighlighter
-input={`after:february 10 2021`}
-language='bash'
+<Highlighter
+input='after:february 10 2021'
 matcher='february 10 2021'
 /> 
 
-<PrismSyntaxHighlighter
-input={`before:02/01/2019`}
-language='bash'
+<Highlighter
+input='before:02/01/2019'
 matcher='02/01/2019'
 /> 
 
@@ -168,11 +162,10 @@ Note that `before` and `after` only work in conjunction when combined with `type
 
 The `archived` keyword will bring up those results from repositories that have been archived.
 
-<PrismSyntaxHighlighter
-input={`archived:[yes/only]
+<Highlighter
+input='archived:[yes/only]
 archived:yes
-archived:only`}
-language='bash'
+archived:only'
 matcher='[yes/only]'
 /> 
 
@@ -186,11 +179,10 @@ This can help us understand past decisions made within a given codebase.
 
 Use `yes` or `no` with the `case` search query to specify if the search should be case sensitive or not. By default, searches are case insensitive.
 
-<PrismSyntaxHighlighter
-input={`case:[yes/no]
+<Highlighter
+input='case:[yes/no]
 case:yes
-case:no`}
-language='bash'
+case:no'
 matcher='[yes/no]'
 /> 
 
@@ -205,9 +197,8 @@ If you would like to find all declared functions that use camelCase, you can try
 
 Types define the scope of code search. A search scope consists of commits, diffs, symbols, repos, paths and files. It is typically used alongside other search commands to further narrow search results.
 
-<PrismSyntaxHighlighter
-input={`type:[commit|paths|diff|symbol|repo|files]`}
-language='bash'
+<Highlighter
+input='type:[commit|paths|diff|symbol|repo|files]'
 matcher='[commit|paths|diff|symbol|repo|files]'
 /> 
 
@@ -228,15 +219,13 @@ Searching by type can help you find exactly what you need in a codebase by narro
 
 If a commit message is known, it can be helpful to use the `message` keyword to bring up relevant commits.
 
-<PrismSyntaxHighlighter
-input={`message:[commit-message]`}
-language='bash'
+<Highlighter
+input='message:[commit-message]'
 matcher='[commit-message]'
 /> 
 
-<PrismSyntaxHighlighter
-input={`message:[string-regex-pattern]`}
-language='bash'
+<Highlighter
+input='message:[string-regex-pattern]'
 matcher='[string-regex-pattern]'
 /> 
 
@@ -250,17 +239,15 @@ Note that the message keyword only works for `type:diff` or `type:commit` querie
 
 The `author` keyword returns code search results that were created by a user. This keyword only works for `type:diff` or `type:commit` queries.
 
-<PrismSyntaxHighlighter
-input={`author:[author-name]`}
-language='bash'
+<Highlighter
+input='author:[author-name]'
 matcher='[author-name]'
 /> 
 
 Adding a hyphen in front of the `author` keyword omits code content created by a given author.
 
-<PrismSyntaxHighlighter
-input={`-author:[author-name]`}
-language='bash'
+<Highlighter
+input='-author:[author-name]'
 matcher='[author-name]'
 /> 
 
@@ -274,9 +261,8 @@ You can also search by `committer:git-email` with the same `type` constraints.
 
 Sourcegraph returns pages filled with search results. To stop searching after a given number of results are returned, use the `count` command.
 
-<PrismSyntaxHighlighter
-input={`count:[number|all]`}
-language='bash'
+<Highlighter
+input='count:[number|all]'
 matcher='[number|all]'
 /> 
 
@@ -292,9 +278,8 @@ The `count` keyword may also be used to return _more_ results, not just  _fewer_
 
 The `fork` keyword restricts the scope of search results to either include, exclude, or return only  forks of a given repository.
 
-<PrismSyntaxHighlighter
-input={`fork:[yes|no|only]`}
-language='bash'
+<Highlighter
+input='fork:[yes|no|only]'
 matcher='[yes|no|only]'
 /> 
 
@@ -306,9 +291,8 @@ One use case for searching forked repositories is looking for how users personal
 
 To set the duration before a search times out, you’ll use the `timeout` keyword. Time units that can be used include nanoseconds (`ns`), microseconds (`us` or `µs`) , milliseconds (`ms`), seconds (`s`) or minutes (`m`).
 
-<PrismSyntaxHighlighter
-input={`timeout:[time-duration-with-unit]`}
-language='bash'
+<Highlighter
+input='timeout:[time-duration-with-unit]'
 matcher='[time-duration-with-unit]'
 /> 
 
@@ -326,9 +310,8 @@ This is useful if you want the results of a search to be explicitly narrowed dow
 
 Except when explicitly set, all searches return results from both public and private repositories accessible to you.
 
-<PrismSyntaxHighlighter
-input={`visibility:[any|private|public]`}
-language='bash'
+<Highlighter
+input='visibility:[any|private|public]'
 matcher='[any|private|public]'
 /> 
 
