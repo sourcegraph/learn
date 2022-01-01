@@ -21,88 +21,103 @@ authors:
     - slug: nick-keers
       name: Nick Keers
       twitterLink: https://twitter.com/nickkeers
+      gitHubLink: https://github.com/nickkeers
       linkedInLink: https://www.linkedin.com/in/nick-keers
     - slug: abhinav-sharma
       name: Abhinav Sharma
       bio: Abhinav is a ML Enthusiast
+      gitHubLink: https://github.com/Abhinav-CHD
       linkedInLink: https://www.linkedin.com/in/abhinav-sharma-69b320192/
     - slug: william-bezuidenhout
       name: William Bezuidenhout
       twitterLink: https://twitter.com/burmudarftl
+      gitHubLink: https://github.com/Burmudar
       linkedInLink: https://www.linked.com/in/williambezuidenhout
     - slug: oussama-salahouelhadj
       name: Oussama Salahouelhadj
       bio: CS Student@UC2, Designer, Palm tree climber 🌴.
+      gitHubLink: https://github.com/OussamaSALAHOUELHADJ
       linkedInLink: https://www.linkedin.com/in/salahouelhadj-oussama/
     - slug: arun-kc
       name: Arun Kc
       bio: Data Engineer ✨ | Student Forever - Still learning!! ❤️| Coder 💻 | Tech Enthusiast 🚀 | Dreamer 💭
+      gitHubLink: https://github.com/Arun-kc
       linkedInLink: https://www.linkedin.com/in/arun-kc/
     - slug: angelina-tresca
       name: Angelina Tresca
       bio: Software developer
+      gitHubLink: https://github.com/angetresca-mercadolibre
       linkedInLink: https://www.linkedin.com/in/angelinatresca/
     - slug: macarena-pecha
       name: Macarena Pecha
       bio: Software developer
+      gitHubLink: https://github.com/MacaPecha
       linkedInLink: https://www.linkedin.com/in/macarena-pecha-62aaa7170/
     - slug: dean-coakley
       name: Dean Coakley
     - slug: david-lee
       name: David Lee
       bio: DevOps Engineer in the SV
+      gitHubLink: https://github.com/davidylee
       linkedInLink: https://www.linkedin.com/in/david-young-lee/
     - slug: amit-agrawal
       name: Amit Agrawal
+      gitHubLink: https://github.com/gopheramit
     - slug: anthony-tagliaferri
       name: Anthony Tagliaferri
-      linkedInLink: https://www.linkedin.com/in/anthonnytag/
       twitterLink: https://twitter.com/AnthonnyTag
+      gitHubLink: https://github.com/AnthonyTag
+      linkedInLink: https://www.linkedin.com/in/anthonnytag/
     - slug: tom-benevides
       name: Tom Benevides
       bio: Web developer, DevOps padawan and writer very rarely.
       twitterLink: https://twitter.com/tongedev
+      gitHubLink: https://github.com/tombenevides
       linkedInLink: https://www.linkedin.com/in/tomfbenevides/?locale=en_US
     - slug: ml-narayana-rao
       name: M.L. Narayana Rao
       bio: Student
+      gitHubLink: https://github.com/Ln11211
       linkedInLink: https://www.linkedin.com/in/lakshminarayana-malyala/
     - slug: yashesvinee-v
       name: Yashesvinee V
+      gitHubLink: https://github.com/Yashesvinee
     - slug: shailesh-kumar
       name: Shailesh Kumar
+      gitHubLink: https://github.com/ShaileshKumar007
     - slug: yashrsharma44
       name: Yash Sharma
       twitterLink: https://twitter.com/yashrsharma44
+      gitHubLink: https://github.com/yashrsharma44
       linkedInLink: https://www.linkedin.com/in/yashrsharma44
     - slug: jack-newman
       name: Jack Newman
+      gitHubLink: https://github.com/agitated-newton
     - slug: grace-mcnerney
       name: Grace McNerney
       bio: Wife, Mom, InfoSec Student, Gamer
       twitterLink: https://twitter.com/Miss_Claptrap
+      gitHubLink: https://github.com/rosiegamgee718
       linkedInLink: https://www.linkedin.com/in/grace-mcnerney-69201488/
-    - slug: yashrsharma44
-      name: Yash Sharma
-      twitterLink: https://twitter.com/yashrsharma44
-      linkedInLink: https://www.linkedin.com/in/yashrsharma44
     - slug: cristian-vera
       name: Cristian Vera
       bio: Backend developer, roller skate lover.
+      gitHubLink: https://github.com/cristianMeli
       linkedInLink: https://www.linkedin.com/in/cristian-vera-5ba0ab155/
     - slug: kshivendu
       name: Kumar Shivendu
       bio: Full Stack Software Developer
-      twitterLink: https://twitter.com/_KShivendu
+      twitterLink: https://twitter.com/
+      gitHubLink: https://github.com/KShivendu
       linkedInLink: https://www.linkedin.com/in/kshivendu
-    - slug: arash-afghahi
-      name: Arash Afghahi
     - slug: mason-woodford
       name: Mason Woodford
       bio: University computer engineering student, web developer
+      gitHubLink: https://github.com/masonwoodford
       linkedInLink: https://www.linkedin.com/in/mason-woodford/
     - slug: arash-afghahi
       name: Arash Afghahi
+      gitHubLink: https://github.com/AAfghahi
     - slug: prosper-otemuyiwa
       name: Prosper Otemuyiwa
       bio: Staff Developer Advocate, Sourcegraph
@@ -111,6 +126,7 @@ authors:
       linkedInLink: https://www.linkedin.com/in/prosperotemuyiwa/
     - slug: anja-bender
       name: Anja Bender
+      gitHubLink: https://github.com/Lumary2
     - slug: erika-heidi
       name: Erika Heidi
       bio: Senior Developer Advocate, Sourcegraph
