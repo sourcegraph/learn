@@ -26,8 +26,8 @@ By default, Sourcegraph lets you search globally, providing you with results fro
 The `repo` keyword lets you search a specific repository in your organization or on the web.
 
 <Highlighter
-input='repo:[repository-path]'
-matcher='[repository-path]'
+input='repo:repository-path'
+matcher='repository-path'
 />
 
 <Highlighter
