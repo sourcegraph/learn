@@ -7,5 +7,7 @@
     name: string
     bio?: string | null
     twitterLink?: string | null
+    gitHubLink?: string | null
     linkedInLink?: string | null
+    twitchLink?: string | null
 }

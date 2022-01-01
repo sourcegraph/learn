@@ -3,6 +3,7 @@ authors:
       name: Lisa Tagliaferri
       bio: Director of Developer Education, Sourcegraph
       twitterLink: https://twitter.com/lisaironcutter
+      gitHubLink: https://www.github.com/ltagliaferri/
       linkedInLink: https://www.linkedin.com/in/lisa-tagliaferri/
     - slug: oluebube-princess-egbuna
       name: Oluebube Princess Egbuna
@@ -106,6 +107,14 @@ authors:
       name: Prosper Otemuyiwa
       bio: Staff Developer Advocate, Sourcegraph
       twitterLink: https://twitter.com/unicodeveloper
+      gitHubLink: https://github.com/unicodeveloper
       linkedInLink: https://www.linkedin.com/in/prosperotemuyiwa/
     - slug: anja-bender
       name: Anja Bender
+    - slug: erika-heidi
+      name: Erika Heidi
+      bio: Senior Developer Advocate, Sourcegraph
+      twitterLink: https://twitter.com/erikaheidi
+      gitHubLink: https://github.com/erikaheidi
+      linkedInLink: https://www.linkedin.com/in/erikaheidi/
+      twitchLink: https://www.twitch.tv/erikaheidi
