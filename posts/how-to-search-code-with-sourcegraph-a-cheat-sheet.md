@@ -26,9 +26,9 @@ By default, Sourcegraph lets you search globally, providing you with results fro
 The `repo` keyword lets you search a specific repository in your organization or on the web.
 
 <PrismSyntaxHighlighter
-input={`repo:[regular-pattern]`}
+input={`repo:[repository-path]`}
 language='bash'
-matcher='[repository=path]'
+matcher='[repository-path]'
 />
 
 <PrismSyntaxHighlighter
