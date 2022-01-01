@@ -52,7 +52,6 @@ If you are searching for a file in a repository, use `repo.contains.file`.
 
 <Highlighter
 input='repo:[repository-path] repo.contains.file([file-path])'
-
 matcher='[file-path]'
 /> 
 
@@ -72,13 +71,11 @@ Suppose you are searching for some content in a repository, such as a library. U
 
 <Highlighter
 input='repo:[repo-path] repo.contains.content([content])'
-
 matcher='[content]'
 /> 
 
 <Highlighter
 input='repo:[repo-path] repo.contains.content([regular-pattern])'
-
 matcher='[regular-pattern]'
 /> 
 
@@ -95,7 +92,6 @@ Use `lang` when searching code to narrow the scope of your search to one program
 
 <Highlighter
 input='lang:[programming language]'
-
 matcher='[programming language]'
 /> 
 
@@ -113,7 +109,6 @@ Prepending a hyphen can exclude results from a particular programming language.
 
 <Highlighter
 input='-lang:[programming-language]'
-
 matcher='[programming language]'
 /> 
 
