@@ -4,7 +4,9 @@ import AuthorCollection from '@interfaces/AuthorCollection'
 import MarkdownFileWithUrl from '@interfaces/MarkdownFileWithUrl'
 import metaDataDefaults from '@lib/metaDataDefaults'
 import sluggify from '@util/sluggify'
+import GithubIcon from 'mdi-react/GithubIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
+import TwitchIcon from 'mdi-react/TwitchIcon'
 import TwitterIcon from 'mdi-react/TwitterIcon'
 import { FunctionComponent } from 'react'
 
@@ -40,6 +42,15 @@ const AuthorTemplate: FunctionComponent<Props> = props => {
                             <TwitterIcon />
                         </StyledAuthorSocialLink> 
                     )}
+                    {props.author.gitHubLink && (
+                        <StyledAuthorSocialLink
+                            href={props.author.gitHubLink}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                            aria-label="GitHub">
+                            <GithubIcon />
+                        </StyledAuthorSocialLink> 
+                    )}
                     {props.author.linkedInLink && (
                         <StyledAuthorSocialLink
                             href={props.author.linkedInLink}
@@ -47,6 +58,15 @@ const AuthorTemplate: FunctionComponent<Props> = props => {
                             rel="nofollow noopener noreferrer"
                             aria-label="LinkedIn">
                             <LinkedinIcon />
+                        </StyledAuthorSocialLink> 
+                    )}
+                    {props.author.twitchLink && (
+                        <StyledAuthorSocialLink
+                            href={props.author.twitchLink}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                            aria-label="Twitch">
+                            <TwitchIcon />
                         </StyledAuthorSocialLink> 
                     )}
                 </StyledAuthorSocialLinksContainer>
