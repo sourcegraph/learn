@@ -4,6 +4,7 @@ authorSlug: tom-benevides
 authorDisplayName: Tom Benevides
 tags: [tutorial, PHP, composer]
 publicationDate: November 14, 2021
+updatedDate: January 2, 2022
 description: Learn how to make a Composer package
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
@@ -22,7 +23,6 @@ For this tutorial, we will be using some tools that will help us in this journey
 * Git
 * Docker
 * Docker Compose
-* Composer
 
 First, we need Git, which is a version control system (you can read more about it on the [Git official docs](http@s://git-scm.com/). 
 
@@ -55,13 +55,7 @@ Again, if you received output, then Docker Compose is installed.
 
 If you received an error message or no version number, then either or both are not installed. Head to the [Docker installation page](https://docs.docker.com/engine/install/) and/or the [Docker Compose installation page](https://docs.docker.com/compose/install/). 
 
-Finally, you will need to install [Composer](https://getcomposer.org/), a dependency manager for PHP. You can read about [installing Composer on the official download guide](https://getcomposer.org/download/). If you are on Ubuntu or Debian Linux, you can use the following commansd to install Compose from your operating system's package manager.
-
-<PrismSyntaxHighlighter
-input={`sudo apt update
-sudo apt install composer`}
-language='bash'
-/>
+What about Composer? As we are using Docker to run our code, we don't need to install [Composer](https://getcomposer.org/) on our local machine. Instead, we'll use a Docker image from [Docker Hub](https://hub.docker.com/_/composer), so we can make it available in our container. We'll walk through how to do this in the next section.
 
 With these prerequisites in place on your machine, you're ready to move forward with this tutorial.
 
@@ -88,7 +82,7 @@ docker run -it --rm \\
 language='bash'
 />
 
-This code runs a Composer container inside our project folder. The `--user` flag tells the container to run as the current user. The `-v` flag tells the container to mount the current directory to the container. The `-w` flag tells the container to run it in the current directory.
+This code runs a Composer container inside our project folder. The `--user` flag tells the container to run as the current user. The `-v` flag tells the container to mount the current directory to the container. The `-w` flag tells the container to run it in the current directory. The "composer:latest" part of the command tells the container to use the latest version of Composer docker image, available on Docker Hub.
 
 Now, we need to give the `sg` file the right permissions so that it can be executed.
 
@@ -399,7 +393,7 @@ it('returns a Jane Austen quote', function() {
  
     $quote = $quotes->getQuote();
  
-    expect($quote)->toEndWith('Business, you know, may bring you money, but friendship hardly ever does. by Jane Austen');
+    expect($quote)->toEqual('Business, you know, may bring you money, but friendship hardly ever does. by Jane Austen');
 });`}
 language='php'
 />
@@ -447,7 +441,7 @@ it('returns a message when was not given an author name', function() {
 language='php'
 />
 
-This is a less complex test because we don't need a Guzzle client because this variable needs to be checked before the call to the API.
+This is a less complex test as we don't need a Guzzle client because this variable needs to be checked before the call to the API.
 
 ## Implement the package class
 
