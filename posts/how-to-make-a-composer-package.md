@@ -54,7 +54,7 @@ Again, if you received output, then Docker Compose is installed.
 
 If you received an error message or no version number, then either or both are not installed. Head to the [Docker installation page](https://docs.docker.com/engine/install/) and/or the [Docker Compose installation page](https://docs.docker.com/compose/install/). 
 
-What about Composer? As we using docker to run our code, we don't need to actual install [Composer](https://getcomposer.org/) in our local machine. To get it, we'll use a docker image from [Docker Hub](https://hub.docker.com/_/composer), so we can make it available in our container. We'll see how to do this in the next section.
+What about Composer? As we are using Docker to run our code, we don't need to install [Composer](https://getcomposer.org/) on our local machine. Instead, we'll use a Docker image from [Docker Hub](https://hub.docker.com/_/composer), so we can make it available in our container. We'll walk through how to do this in the next section.
 
 With these prerequisites in place on your machine, you're ready to move forward with this tutorial.
 
