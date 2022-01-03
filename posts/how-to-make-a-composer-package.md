@@ -4,6 +4,7 @@ authorSlug: tom-benevides
 authorDisplayName: Tom Benevides
 tags: [tutorial, PHP, composer]
 publicationDate: November 14, 2021
+updatedDate: January 2, 2022
 description: Learn how to make a Composer package
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-08.png
 imageAlt: Sourcegraph Learn
