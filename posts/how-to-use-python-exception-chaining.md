@@ -5,7 +5,7 @@ authorDisplayName: David Lee
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 18, 2021
 description: Learn how to use Exception Chaining in Python
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-2.png
 imageAlt: Sourcegraph Learn
 browserTitle: Exception Chaining in Python
 type: posts
@@ -51,9 +51,9 @@ NameError: name 'mistake' is not defined`}
 
 Notice the key phrase between the two tracebacks:
 
-```
-During handling of the above exception, another exception occurred:
-```
+<Highlighter
+input='During handling of the above exception, another exception occurred:'
+/>
 
 Here, we observe the __context__ attribute of the exception object showing that another exception occurred within the handling of the original exception.
 

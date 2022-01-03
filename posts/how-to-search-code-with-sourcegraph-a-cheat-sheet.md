@@ -13,9 +13,9 @@ type: posts
 
 Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more.
 
-This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
+This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our tutorials(https://learn.sourcegraph.com/tags/sourcegraph) and our documentation(https://docs.sourcegraph.com/). 
 
-You can use these commands on either [Sourcegraph Cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
+You can use these commands on either Sourcegraph Cloud(https://sourcegraph.com/search) or your own Sourcegraph instance(https://docs.sourcegraph.com/admin/install).
 
 ## Searching an organization’s repository
 
@@ -25,10 +25,15 @@ By default, Sourcegraph lets you search globally, providing you with results fro
 
 The `repo` keyword lets you search a specific repository in your organization or on the web.
 
-```
-repo:[repository-path]
-repo:[regular-pattern]
-```
+<Highlighter
+input='repo:repository-path'
+matcher='repository-path'
+/>
+
+<Highlighter
+input='repo:regular-pattern'
+matcher='regular-pattern'
+/> 
 
 Searching with `repo:^github\.com/ORGANIZATION` will return all repositories in a given organization, where `ORGANIZATION` can be `sourcegraph`, for example.
 
@@ -45,33 +50,34 @@ When searching a repository, command chaining can be used to return more specifi
 
 If you are searching for a file in a repository, use `repo.contains.file`.
 
-```
-repo:[repository-path] repo.contains.file([file-path])
-```
+<Highlighter
+input='repo:repository-path repo.contains.file(file-path)'
+matcher='file-path'
+/> 
 
 For example, when searching for the `package.json` file in a project, this search query will return the file.
 
-
 <SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:contains.file(package.json)" />
-
 
 A similar example that uses the content query to search for files is shown below.
 
-
 <SourcegraphSearch query="repo:contains(file:package\.json$ content:ts)" />
 
-
 This query returns repositories that contain a `package.json` file and has content written in TypeScript.
-
 
 **Search for a repository that contains some content**
 
 Suppose you are searching for some content in a repository, such as a library. Use `repo.contains.content`.
 
-```
-repo:[repo-path] repo.contains.content([content])
-repo:[repo-path] repo.contains.content([regular-pattern])
-```
+<Highlighter
+input='repo:repo-path repo.contains.content(your-content)'
+matcher='your-content'
+/> 
+
+<Highlighter
+input='repo:repo-path repo.contains.content(regular-pattern)'
+matcher='regular-pattern'
+/> 
 
 We can search for the `mdi-react` library in Sourcegraph, for example:
 
@@ -84,9 +90,10 @@ The above query returns repos that have `mdi-react` among its contents.
 
 Use `lang` when searching code to narrow the scope of your search to one programming language. 
 
-```
-lang:[programming language]
-```
+<Highlighter
+input='lang:programming-language'
+matcher='programming-language'
+/> 
 
 We can search for results within the C++ or Python programming languages.
 
@@ -100,9 +107,10 @@ By default, searches are case insensitive.
 
 Prepending a hyphen can exclude results from a particular programming language.
 
-```
--lang:[programming-language]
-```
+<Highlighter
+input='-lang:programming-language'
+matcher='programming-language'
+/> 
 
 To exclude Java, you can perform the following search.
 
@@ -114,18 +122,28 @@ Narrowing your search scope down to specific languages can ensure that you find 
 
 If you are searching for code committed before or after a time period, you will use `before` and `after`
 
-```
-before:[time-period]
-after:[time-period]
-```
+<Highlighter
+input='before:time-period
+after:time-period'
+matcher='time-period'
+/> 
 
 Sometimes the time period can be literal, like `last week`, `last year`, `3 months ago`, `february 10 2021` or have actual dates in the format `dd/mm/yyyy`.
 
-```
-before:last week
-after:february 10 2021
-before:02/01/2019
-```
+<Highlighter
+input='before:last week'
+matcher='last week'
+/> 
+
+<Highlighter
+input='after:february 10 2021'
+matcher='february 10 2021'
+/> 
+
+<Highlighter
+input='before:02/01/2019'
+matcher='02/01/2019'
+/> 
 
 To search between dates, keywords like `and` can be combined with `before` or `after` to return dates within a given period.
 
@@ -139,11 +157,12 @@ Note that `before` and `after` only work in conjunction when combined with `type
 
 The `archived` keyword will bring up those results from repositories that have been archived.
 
-```
-archived:[yes/only]
+<Highlighter
+input='archived:yes/only
 archived:yes
-archived:only
-```
+archived:only'
+matcher='yes/only'
+/> 
 
 We can surface only archived repositories within the Sourcegraph organization with the following query.
 
@@ -155,13 +174,14 @@ This can help us understand past decisions made within a given codebase.
 
 Use `yes` or `no` with the `case` search query to specify if the search should be case sensitive or not. By default, searches are case insensitive.
 
-```
-case:[yes/no]
+<Highlighter
+input='case:yes/no
 case:yes
-case:no
-```
+case:no'
+matcher='yes/no'
+/> 
 
-Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the [PEP 8](https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
+Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the PEP 8(https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
 
 <SourcegraphSearch query="case:yes lang:python myFunction" />
 
@@ -172,9 +192,10 @@ If you would like to find all declared functions that use camelCase, you can try
 
 Types define the scope of code search. A search scope consists of commits, diffs, symbols, repos, paths and files. It is typically used alongside other search commands to further narrow search results.
 
-```
-type:[commit|paths|diff|symbol|repo|files]
-```
+<Highlighter
+input='type:commit|paths|diff|symbol|repo|files'
+matcher='commit|paths|diff|symbol|repo|files'
+/> 
 
 Here is an example to show us time-based commits on the Sourcegraph repo.
 
@@ -182,7 +203,7 @@ Here is an example to show us time-based commits on the Sourcegraph repo.
 
 A `type` scope can use the following commands, which will restrict search to the following:
 * `commit` — commits to a repository
-* `diff` — show [diffs](https://git-scm.com/docs/git-diff), or changes, within a repository
+* `diff` — show diffs(https://git-scm.com/docs/git-diff), or changes, within a repository
 *`repo` — repositories available to you
 * `files` — returns files 
 *`symbol` — returns files that contain names or keywords in a library.
@@ -193,10 +214,15 @@ Searching by type can help you find exactly what you need in a codebase by narro
 
 If a commit message is known, it can be helpful to use the `message` keyword to bring up relevant commits.
 
-```
-message:[commit-message]
-message:[string-regex-pattern]
-```
+<Highlighter
+input='message:commit-message'
+matcher='commit-message'
+/> 
+
+<Highlighter
+input='message:string-regex-pattern'
+matcher='string-regex-pattern'
+/> 
 
 We can find all commit messages with “fix” in the `sourcegraph/sourcegraph` repository by searching the following.
 
@@ -208,16 +234,17 @@ Note that the message keyword only works for `type:diff` or `type:commit` querie
 
 The `author` keyword returns code search results that were created by a user. This keyword only works for `type:diff` or `type:commit` queries.
 
-
-```
-author:[author-name]
-```
+<Highlighter
+input='author:author-name'
+matcher='author-name'
+/> 
 
 Adding a hyphen in front of the `author` keyword omits code content created by a given author.
 
-```
--author:[author-name]
-```
+<Highlighter
+input='-author:author-name'
+matcher='author-name'
+/> 
 
 Search for all code diffs by the Renovate app within our Sourcegraph repository.
 
@@ -229,9 +256,10 @@ You can also search by `committer:git-email` with the same `type` constraints.
 
 Sourcegraph returns pages filled with search results. To stop searching after a given number of results are returned, use the `count` command.
 
-```
-count:[number|all]
-```
+<Highlighter
+input='count:number|all'
+matcher='number|all'
+/> 
 
 For example, `count:5` would return the first 5 results of a given query.
 
@@ -245,9 +273,10 @@ The `count` keyword may also be used to return _more_ results, not just  _fewer_
 
 The `fork` keyword restricts the scope of search results to either include, exclude, or return only  forks of a given repository.
 
-```
-fork:[yes|no|only]
-```
+<Highlighter
+input='fork:yes|no|only'
+matcher='yes|no|only'
+/> 
 
 The `yes` option includes forked repositories, the `no` option omits the results from forks, and the `only` option searches only forked repositories.
 
@@ -257,9 +286,10 @@ One use case for searching forked repositories is looking for how users personal
 
 To set the duration before a search times out, you’ll use the `timeout` keyword. Time units that can be used include nanoseconds (`ns`), microseconds (`us` or `µs`) , milliseconds (`ms`), seconds (`s`) or minutes (`m`).
 
-```
-timeout:[time-duration-with-unit]
-```
+<Highlighter
+input='timeout:time-duration-with-unit'
+matcher='time-duration-with-unit'
+/> 
 
 This is useful when searching many repositories at the same time to give search more time to return useful results. By default, timeout is 10 seconds, however, when using the `timeout` command, timeouts can be set to over a minute. When this scope is provided, search is given more time to complete.
 
@@ -275,9 +305,10 @@ This is useful if you want the results of a search to be explicitly narrowed dow
 
 Except when explicitly set, all searches return results from both public and private repositories accessible to you.
 
-```
- visibility:[any|private|public]
-```
+<Highlighter
+input='visibility:any|private|public'
+matcher='any|private|public'
+/> 
 
 When logged into Sourcegraph, you can change your context to your username and then run the following command to show all of your available private repositories.
 
@@ -288,8 +319,8 @@ This can allow you to search across the code that is private to only you. _Pleas
 ## Further resources
 
 To learn more about how to search effectively with Sourcegraph, you can read through our Sourcegraph search series:
-* [How To Search with Sourcegraph using Literal Patterns](/how-to-search-code-with-sourcegraph-using-literal-patterns)
-* [How To Search with Sourcegraph using Regular Expression Patterns](/how-to-search-with-sourcegraph-using-regular-expression-patterns)
-* [How To Search with Sourcegraph using Structural Patterns](/how-to-search-with-sourcegraph-using-structural-patterns)
+* How To Search with Sourcegraph using Literal Patterns(/how-to-search-code-with-sourcegraph-using-literal-patterns)
+* How To Search with Sourcegraph using Regular Expression Patterns(/how-to-search-with-sourcegraph-using-regular-expression-patterns)
+* How To Search with Sourcegraph using Structural Patterns(/how-to-search-with-sourcegraph-using-structural-patterns)
 
-You can also check out [Sourcegraph product documentation](https://docs.sourcegraph.com/) and [Sourcegraph tutorials](https://learn.sourcegraph.com/tags/sourcegraph).
+You can also check out Sourcegraph product documentation(https://docs.sourcegraph.com/) and Sourcegraph tutorials(https://learn.sourcegraph.com/tags/sourcegraph).

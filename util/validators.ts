@@ -102,8 +102,14 @@ export function normalizeAuthorCollectionDefinition(author: AuthorCollection): A
         twitterLink: author.twitterLink ? 
             normalizeString(author.twitterLink)
             : null,
+        gitHubLink: author.gitHubLink ? 
+            normalizeString(author.gitHubLink)
+            : null,
         linkedInLink: author.linkedInLink ? 
             normalizeString(author.linkedInLink)
+            : null,
+        twitchLink: author.twitchLink ? 
+            normalizeString(author.twitchLink)
             : null
     }
 }

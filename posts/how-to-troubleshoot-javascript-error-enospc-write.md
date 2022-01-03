@@ -5,7 +5,7 @@ authorDisplayName: Macarena Pecha
 tags: [tutorial, JavaScript, NPM, troubleshooting]
 publicationDate: October 26, 2021
 description: Learn how to error handle npm ERR Error ENOSPC, write
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
 browserTitle: npm ERR Error ENOSPC, write in JavaScript error handling
 type: posts

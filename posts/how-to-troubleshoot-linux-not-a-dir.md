@@ -5,7 +5,7 @@ authorDisplayName: Dean Coakley
 tags: [tutorial, Linux, troubleshooting]
 publicationDate: October 11, 2021
 description: Learn how to error handle Not a directory in Linux
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-6.png
 imageAlt: Sourcegraph Learn
 browserTitle: Not a directory in Linux error handling
 type: posts

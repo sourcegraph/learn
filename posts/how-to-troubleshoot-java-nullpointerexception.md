@@ -5,7 +5,7 @@ authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 20, 2021
 description: Learn how to error handle the Java NullPointerException
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
 browserTitle: NullPointerException in Java error handling
 type: posts

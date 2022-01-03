@@ -5,7 +5,7 @@ authorDisplayName: Angelina Tresca
 tags: [tutorial, Python, troubleshooting]
 publicationDate: October 15, 2021
 description: Learn how to error handle the Python OSError
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
 browserTitle: OSError in Python error handling
 type: posts

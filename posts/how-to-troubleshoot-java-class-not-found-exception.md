@@ -5,7 +5,7 @@ authorDisplayName: Cristian Vera
 tags: [tutorial, Java, troubleshooting]
 publicationDate: October 23, 2021
 description: Learn how to error handle the Java ClassNotFoundException
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-7.png
 imageAlt: Sourcegraph Learn
 browserTitle: ClassNotFoundException in Java error handling
 type: posts
