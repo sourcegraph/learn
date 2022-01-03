@@ -46,6 +46,7 @@ export const StyledFeaturedContentItem = styled.li`
 export const StyledHeaderText = styled.h5`
     font-size: 36px;
     margin-bottom: 1.5rem;
+    padding: 1.5rem;
     justify-content: center;
     display: flex;
 `
