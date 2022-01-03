@@ -7,7 +7,7 @@ interface Props {
 export const StyledCardLink = styled.a<Props>`
     cursor: pointer;
     height: 100%;
-    max-height: 377px;
+    max-height: 450px;
     position: relative;
     display: flex;
     flex-direction: column;
