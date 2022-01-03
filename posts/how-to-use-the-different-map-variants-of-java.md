@@ -5,7 +5,7 @@ authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java]
 publicationDate: January 2, 2022
 description: Overview of different implementations of Java Map
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
 imageAlt: Sourcegraph Learn
 browserTitle: "Java Maps: Hashtable, HashMap, LinkedHashMap, TreeMap"
 type: posts
@@ -275,20 +275,20 @@ import java.util.TreeMap;
     }
 }`}
 language='java'
-matcher='TreeMap
+matcher='TreeMap'
 />
 
-In all our previous programs, we either got a random ordering of our keys when we printed them out (`HashMap` and `Hashtable`) or we got the exact order we inserted our keys into the Map (`LinkedHashMap). With `TreeMap`, we get the following output:
+In all our previous programs, we either got a random ordering of our keys when we printed them out (`HashMap` and `Hashtable`) or we got the exact order we inserted our keys into the Map (`LinkedHashMap`). With `TreeMap`, we get the following output:
 
 <Highlighter
-input={`Nigeria is on the continent Africa
+input='Nigeria is on the continent Africa
 null is on the continent Antarctica
 China is on the continent Asia
 France is on the continent Europe
 United States of America is on the continent North America
 Australia is on the continent Oceania
-Brazil is on the continent South America
-
+Brazil is on the continent South America'
+/>
 
 From the output above we can determine that our continents keys are lexicographically sorted. Though it was inserted into our map second-to-last, `Africa` was printed out first, while `South America`, which was inserted second, was printed last.
 
@@ -303,4 +303,4 @@ Now that you have an understanding of the various ways you can work with Map in 
 <SourcegraphSearch query="new LinkedHashMap<>(); lang:java" patternType="literal"/>
 <SourcegraphSearch query="new TreeMap<>(); lang:java" patternType="literal"/>
 
-You can also review Oracle's official documentation on [Map in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html), or review our other [tutorials on Java](https://learn.sourcegraph.com/tags/java).
+You can also review the official Oracle documentation on [Map in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html), or review our other [tutorials on Java](https://learn.sourcegraph.com/tags/java).
