@@ -5,7 +5,7 @@ authorDisplayName: William Bezuidenhout
 tags: [tutorial, Java]
 publicationDate: January 2, 2022
 description: Overview of different implementations of Java Map
-image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-5.png
+image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-4.png
 imageAlt: Sourcegraph Learn
 browserTitle: "Java Maps: Hashtable, HashMap, LinkedHashMap, TreeMap"
 type: posts
@@ -13,15 +13,15 @@ type: posts
 
 In Java, a Map is an object that maps keys to values that cannot contain duplicate keys. It takes the place of the Dictionary class. The generic name of Hashtable is used for hash-based maps, and there are three classes that provide implementations that can provide various benefits such as guaranteeing the order of a map.
 
-In this tutorial, we’ll provide an overview of the Map interface, then discuss Hashtable, and the three class implementations: `HashMap`, `LinkedHashMap`, and `TreeMap`.
+In this tutorial, we’ll provide an overview of the Map interface, then discuss Hashtable, and the three class implementations: `HashMap`, `LinkedHashMap`, and `TreeMap`. We'll showcase the differences and benefits of each with an example program.
 
 ## The Map interface
 
 Whenever a developer needs to associate one value with another and wants to look the association up, they reach for a dictionary or Map in Java. When using a dictionary data structure, the keys are hashed using a hashing function which determines the position of where the value associated with the key will be stored.
 
-In Java, this hashing function is `hashCode()` which is a method on the base `Object` class from which all objects in Java inherit. By using this method a map is able to achieve constant lookup times for keys.
+In Java, this hashing function is `hashCode()` which is a method on the base `Object` class from which all objects in Java inherit. By using this method, a map is able to achieve constant lookup times for keys.
 
-Let's look at a small program that uses a Map in Java.
+Let's review a small program that uses Map in Java.
 
 <PrismSyntaxHighlighter
 input={`import java.util.Hashtable;
@@ -83,9 +83,9 @@ In Java, there are various implementations of the Map interface in the standard 
 
 ## `Hashtable`
 
-Originally introduced in Java 1.2 and later added as part of the [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html). Out of the box, Hashtable is fully synchronized and therefore thread safe (for highly concurrent applications use `ConcurrentHashMap` instead) but on the downside, Hashtable does not accept `null` for keys or values.
+Originally introduced in Java 1.2, Hashtable was later added as part of the [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html). Out of the box, Hashtable is fully synchronized and therefore thread safe (for highly concurrent applications use `ConcurrentHashMap` instead) but on the downside, Hashtable does not accept `null` for keys or values.
 
-Let's consider what happens when `null` is added to a Hashtable.
+We implemented the generic Hashtable interface for our Map in the section above. Let's now consider what happens when `null` is added to a Hashtable.
 
 <PrismSyntaxHighlighter
 input={`import java.util.Map;
@@ -132,9 +132,11 @@ language='java'
 In our program above, we add the continent of Antarctica with no country. For our particular implementation, we chose to represent `"no country"` with the value `null`. 
 When we run our program, `Hashtable` will not accept the `null` value for Antarctica as is indicated by the following exception.
 
-Exception in thread "main" java.lang.NullPointerException
+<Highlighter
+input='Exception in thread "main" java.lang.NullPointerException
     at java.base/java.util.Hashtable.put(Hashtable.java:475)
-    at WorldMap.main(WorldMap.java:47)
+    at WorldMap.main(WorldMap.java:47)'
+/>
 
 We can fix this issue either by using a sentinel value like `Country.of("No Country")` or we can change the backing implementation of our map to something that is `null` friendly like HashMap.
 
@@ -184,7 +186,7 @@ Australia is on the continent Oceania'
 
 We can see that all the continents are now printed, including `Antarctica`. Printing `null` is not the most user-friendly message but at least we're not throwing a `NullPointerException` exception anymore.
 
-As we discussed when using `Hashtable`, there is a slight trade off to using `HashMap`. A `HashMap` is not synchronized and therefore isn’t thread safe. Depending on your use case, if you really need to share a map between threads either use `Hashtable` or use the recommended `ConcurrentHashMap`, which is a `HashMap` that’s optimized for highly concurrent use cases. Next, we’ll review `LinkedHashMap`.
+As we discussed when using `Hashtable`, there is a slight trade off to using `HashMap`. A `HashMap` is not synchronized and therefore isn’t thread safe. Depending on your use case, if you really need to share a map between threads, either use `Hashtable` or use the recommended `ConcurrentHashMap`, which is a `HashMap` that’s optimized for highly concurrent use cases. Next, we’ll review `LinkedHashMap`.
 
 ## `LinkedHashMap`
 
@@ -206,7 +208,7 @@ import java.util.LinkedHashMap;
         globe.put("Europe", Country.of("France"));
         globe.put("Asia", Country.of("China"));
         globe.put("Oceania", Country.of("Australia"));
-          globe.put("Africa", Country.of("Nigeria"));
+        globe.put("Africa", Country.of("Nigeria"));
         globe.put("Antarctica", null);
  
         for(Map.Entry entry : globe.entrySet()) {
@@ -231,14 +233,15 @@ In our program, we're inserting continents into our globe with the following ord
 
 When we run our program using a `LinkedHashMap` we get the same order as can be verified below — unlike when we used `Hashtable` and `HashMap`.
 
-United States of America is on the continent North America
+<Highlighter
+input='United States of America is on the continent North America
 Brazil is on the continent South America
 France is on the continent Europe
 China is on the continent Asia
 Australia is on the continent Oceania
 Nigeria is on the continent Africa
-null is on the continent Antarctica
-
+null is on the continent Antarctica'
+/>
 
 `LinkedHashMap` uses `insert-ordering` for keys, but it also supports `access-ordering`. By using `access-ordering` whenever a key is accessed, the ordering of keys will change in the `LinkedHashMap` since the keys will now be ordered based on when they were last _accessed_. 
 
@@ -290,7 +293,7 @@ Australia is on the continent Oceania
 Brazil is on the continent South America'
 />
 
-From the output above we can determine that our continents keys are lexicographically sorted. Though it was inserted into our map second-to-last, `Africa` was printed out first, while `South America`, which was inserted second, was printed last.
+From the output above we can determine that our continent keys are lexicographically sorted. Though it was inserted into our map second-to-last, `Africa` was printed out first, while `South America`, which was inserted second, was printed last.
 
 As with `HashMap` and `LinkedHashMap`, `TreeMap` is not synchronized and therefore not thread-safe. If a thread-safe map is desired, one can wrap the map using `Collections.synchronizedMap`.
 
