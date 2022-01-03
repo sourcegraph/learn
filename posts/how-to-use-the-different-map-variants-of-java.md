@@ -7,7 +7,8 @@ publicationDate: January 2, 2022
 description: Overview of different implementations of Java Map
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-header-9.png
 imageAlt: Sourcegraph Learn
-browserTitle: "Java Map: Hashtable, HashMap, LinkedHashMap, TreeMap"
+browserTitle: "Java Maps: Hashtable, HashMap, LinkedHashMap, TreeMap"
+type: posts
 ---
 
 In Java, a Map is an object that maps keys to values that cannot contain duplicate keys. It takes the place of the Dictionary class. The generic name of Hashtable is used for hash-based maps, and there are three classes that provide implementations that can provide various benefits such as guaranteeing the order of a map.
