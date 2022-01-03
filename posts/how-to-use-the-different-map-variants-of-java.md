@@ -30,7 +30,7 @@ public class WorldMap {
  
     public static class Country {
         public String name;
-
+ 
         public static Country of(String name) {
             Country c = new Country();
             c.name = name;
