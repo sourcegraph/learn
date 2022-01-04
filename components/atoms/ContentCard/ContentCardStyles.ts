@@ -27,7 +27,7 @@ export const StyledCardTitle = styled.h5`
 export const StyledCardTagList = styled.p`
     font-size: .875em;
     text-transform: capitalize;
-    margin: -.25rem 0 .5rem;
+    margin: .25rem 0 .5rem;
     opacity: .8;
 `
 export const StyledCardImage = styled.img`
