@@ -2,7 +2,7 @@
 title: A short history of code search
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
-tags: [tutorial, code search]
+tags: [tutorial, search]
 publicationDate: January 3, 2022
 description: A history of code search, from libraries to Google, Sourcegraph, and GitHub
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-12.png
