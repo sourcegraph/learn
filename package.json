@@ -41,7 +41,7 @@
     "@types/node": "16.11.22",
     "@types/prismjs": "1.16.6",
     "@types/react": "17.0.39",
-    "@types/styled-components": "5.1.21",
+    "@types/styled-components": "5.1.22",
     "eslint": "7.32.0",
     "eslint-plugin-jsdoc": "^37.7.1",
     "eslint-plugin-react": "^7.28.0",
