@@ -46,7 +46,7 @@
     "eslint-plugin-jsdoc": "^37.9.7",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-unicorn": "21.0.0",
+    "eslint-plugin-unicorn": "41.0.1",
     "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react-hooks": "^4.3.0",
