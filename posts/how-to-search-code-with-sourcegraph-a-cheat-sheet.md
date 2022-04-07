@@ -48,10 +48,10 @@ When searching a repository, command chaining can be used to return more specifi
 
 **Search for a repository that contains a file**
 
-If you are searching for a file in a repository, use `repo.contains.file`.
+If you are searching for a file in a repository, use `repo:contains.file`.
 
 <Highlighter
-input='repo:repository-path repo.contains.file(file-path)'
+input='repo:repository-path repo:contains.file(file-path)'
 matcher='file-path'
 /> 
 
@@ -67,15 +67,15 @@ This query returns repositories that contain a `package.json` file and has conte
 
 **Search for a repository that contains some content**
 
-Suppose you are searching for some content in a repository, such as a library. Use `repo.contains.content`.
+Suppose you are searching for some content in a repository, such as a library. Use `repo:contains.content`.
 
 <Highlighter
-input='repo:repo-path repo.contains.content(your-content)'
+input='repo:repo-path repo:contains.content(your-content)'
 matcher='your-content'
 /> 
 
 <Highlighter
-input='repo:repo-path repo.contains.content(regular-pattern)'
+input='repo:repo-path repo:contains.content(regular-pattern)'
 matcher='regular-pattern'
 /> 
 
@@ -128,7 +128,7 @@ after:time-period'
 matcher='time-period'
 /> 
 
-Sometimes the time period can be literal, like `last week`, `last year`, `3 months ago`, `february 10 2021` or have actual dates in the format `dd/mm/yyyy`.
+Sometimes the time period can be relative, like `last week`, `last year`, `3 months ago` or absolute, in several formats including `{month} {day} {year}` (example: `february 10 2021`), `dd/mm/yyyy`, and ISO `yyyy-mm-dd`.
 
 <Highlighter
 input='before:last week'
@@ -158,10 +158,18 @@ Note that `before` and `after` only work in conjunction when combined with `type
 The `archived` keyword will bring up those results from repositories that have been archived.
 
 <Highlighter
-input='archived:yes/only
-archived:yes
-archived:only'
-matcher='yes/only'
+input='archived:yes'
+matcher='yes'
+/> 
+
+<Highlighter
+input='archived:no'
+matcher='no'
+/> 
+
+<Highlighter
+input='archived:only'
+matcher='only'
 /> 
 
 We can surface only archived repositories within the Sourcegraph organization with the following query.
@@ -175,10 +183,13 @@ This can help us understand past decisions made within a given codebase.
 Use `yes` or `no` with the `case` search query to specify if the search should be case sensitive or not. By default, searches are case insensitive.
 
 <Highlighter
-input='case:yes/no
-case:yes
-case:no'
-matcher='yes/no'
+input='case:yes'
+matcher='yes'
+/> 
+
+<Highlighter
+input='case:no'
+matcher='no'
 /> 
 
 Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the PEP 8(https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
@@ -193,8 +204,8 @@ If you would like to find all declared functions that use camelCase, you can try
 Types define the scope of code search. A search scope consists of commits, diffs, symbols, repos, paths and files. It is typically used alongside other search commands to further narrow search results.
 
 <Highlighter
-input='type:commit|paths|diff|symbol|repo|files'
-matcher='commit|paths|diff|symbol|repo|files'
+input='type:commit|path|diff|symbol|repo|file'
+matcher='commit|path|diff|symbol|repo|file'
 /> 
 
 Here is an example to show us time-based commits on the Sourcegraph repo.
@@ -202,11 +213,12 @@ Here is an example to show us time-based commits on the Sourcegraph repo.
 <SourcegraphSearch query="repo:sourcegraph after:yesterday type:commit" />
 
 A `type` scope can use the following commands, which will restrict search to the following:
-* `commit` — commits to a repository
-* `diff` — show diffs(https://git-scm.com/docs/git-diff), or changes, within a repository
-*`repo` — repositories available to you
-* `files` — returns files 
-*`symbol` — returns files that contain names or keywords in a library.
+* `commit` — commits to a repository.
+* `path` — restricts terms to matching filenames only (not file contents).
+* `diff` — show diffs(https://git-scm.com/docs/git-diff), or changes, within a repository.
+* `repo` — repositories available to you.
+* `file` — restricts terms to matching file contents only (not filenames).
+* `symbol` — returns files that contain names or keywords in a library.
 
 Searching by type can help you find exactly what you need in a codebase by narrowing down the scope of your search. 
 
