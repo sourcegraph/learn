@@ -13,9 +13,9 @@ type: posts
 
 Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more.
 
-This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our tutorials(https://learn.sourcegraph.com/tags/sourcegraph) and our documentation(https://docs.sourcegraph.com/). 
+This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
 
-You can use these commands on either Sourcegraph Cloud(https://sourcegraph.com/search) or your own Sourcegraph instance(https://docs.sourcegraph.com/admin/install).
+You can use these commands on either [Sourcegraph Cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
 
 ## Searching an organization’s repository
 
@@ -128,7 +128,7 @@ after:time-period'
 matcher='time-period'
 /> 
 
-Sometimes the time period can be relative, like `last week`, `last year`, `3 months ago` or absolute, in several formats including `{month} {day} {year}` (example: `february 10 2021`), `dd/mm/yyyy`, and ISO `yyyy-mm-dd`.
+Sometimes the time period can be relative, like `last week`, `last year`, `3 months ago` or absolute, in several formats including `{month} {day} {year}` (example: `february 10 2021`), `dd/mm/yyyy`, and ISO format `yyyy-mm-dd`.
 
 <Highlighter
 input='before:last week'
@@ -192,7 +192,7 @@ input='case:no'
 matcher='no'
 /> 
 
-Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the PEP 8(https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
+Suppose you would like to check to align the style of a given codebase to help you bring all function calls in Python to be consistent with the [PEP 8](https://www.python.org/dev/peps/pep-0008/) guidance. You can use Sourcegraph to understand which functions are using camelCase rather than lowercase names with underscores between words (also called snake_case).
 
 <SourcegraphSearch query="case:yes lang:python myFunction" />
 
@@ -215,7 +215,7 @@ Here is an example to show us time-based commits on the Sourcegraph repo.
 A `type` scope can use the following commands, which will restrict search to the following:
 * `commit` — commits to a repository.
 * `path` — restricts terms to matching filenames only (not file contents).
-* `diff` — show diffs(https://git-scm.com/docs/git-diff), or changes, within a repository.
+* `diff` — show [diffs](https://git-scm.com/docs/git-diff), or changes, within a repository.
 * `repo` — repositories available to you.
 * `file` — restricts terms to matching file contents only (not filenames).
 * `symbol` — returns files that contain names or keywords in a library.
@@ -331,8 +331,8 @@ This can allow you to search across the code that is private to only you. _Pleas
 ## Further resources
 
 To learn more about how to search effectively with Sourcegraph, you can read through our Sourcegraph search series:
-* How To Search with Sourcegraph using Literal Patterns(/how-to-search-code-with-sourcegraph-using-literal-patterns)
-* How To Search with Sourcegraph using Regular Expression Patterns(/how-to-search-with-sourcegraph-using-regular-expression-patterns)
-* How To Search with Sourcegraph using Structural Patterns(/how-to-search-with-sourcegraph-using-structural-patterns)
+* [How To Search with Sourcegraph using Literal Patterns](/how-to-search-code-with-sourcegraph-using-literal-patterns)
+* [How To Search with Sourcegraph using Regular Expression Patterns](/how-to-search-with-sourcegraph-using-regular-expression-patterns)
+* [How To Search with Sourcegraph using Structural Patterns](/how-to-search-with-sourcegraph-using-structural-patterns)
 
-You can also check out Sourcegraph product documentation(https://docs.sourcegraph.com/) and Sourcegraph tutorials(https://learn.sourcegraph.com/tags/sourcegraph).
+You can also check out [Sourcegraph product documentation](https://docs.sourcegraph.com/) and [Sourcegraph tutorials](https://learn.sourcegraph.com/tags/sourcegraph).
