@@ -40,7 +40,3 @@ In this Cloud Haiku repository, there is this line, “Like the octopuses’ min
 Now I have my private window, I’m going to go to sourcegraph.com and I’m going to search that line that I mentioned before. So this is “Like the octopuses’ minds” with a break. I am in the context:global search, I am not logged in, and I am going to hit the **Search**. So here we see that there are actually a few instances of this line, but it is limited to this repo. This repo is the one that I just added, so we know that that repository has been indexed by Sourcegraph. Now, even an anonymous user, not logged in, will be able to access the open source repos that I just added. 
 
 Looking forward to seeing the open source repositories that you’ll add to Sourcegraph. Happy coding and happy searching through open source!
-
-## Related links
-
-To learn more about Sourcegraph Cloud, check out our full written tutorial on [How to add open source software projects to Sourcegraph Cloud](https://learn.sourcegraph.com/how-to-add-open-source-software-projects-to-sourcegraph-cloud) and our tutorial on [How to add private code repositories to Sourcegraph Cloud](https://learn.sourcegraph.com/how-to-add-private-code-repositories-to-sourcegraph).

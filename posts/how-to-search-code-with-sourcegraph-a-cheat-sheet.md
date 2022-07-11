@@ -2,7 +2,7 @@
 title: How to search code with Sourcegraph — a cheat sheet
 authorSlug: oluebube-princess-egbuna
 authorDisplayName: Oluebube Princess Egbuna
-tags: [tutorial, search, Sourcegraph, cheat sheet, Sourcegraph Cloud]
+tags: [tutorial, search, Sourcegraph, cheat sheet]
 publicationDate: August 19, 2021
 description: A guide to help you get up to speed with Sourcegraph's commands quickly
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-03.png

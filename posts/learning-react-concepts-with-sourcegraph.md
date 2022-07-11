@@ -1,6 +1,6 @@
 ---
 title: Learning React concepts with Sourcegraph
-tags: [tutorial, React, Sourcegraph, Sourcegraph Cloud]
+tags: [tutorial, React, Sourcegraph]
 authorSlug: prosper-otemuyiwa
 authorDisplayName: Prosper Otemuyiwa
 publicationDate: November 23, 2021
