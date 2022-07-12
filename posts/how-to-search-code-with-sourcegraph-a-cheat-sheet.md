@@ -11,7 +11,7 @@ browserTitle: Getting started with Sourcegraph universal code search
 type: posts
 ---
 
-Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more. You can use these commands on your own Sourcegraph instance (link), or try them out on [Sourcegraph.com](https://sourcegraph.com/search) to search our index of open source repositories.
+Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more. You can use these commands on your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/deploy), or try them out on [Sourcegraph.com](https://sourcegraph.com/search) to search our index of open source repositories.
 
 This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
 
