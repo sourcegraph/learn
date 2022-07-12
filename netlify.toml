@@ -6,12 +6,6 @@
   force = true
 
 [[redirects]]
-  from = "/how-to-add-open-source-software-projects-to-sourcegraph"
-  to = "/how-to-add-open-source-software-projects-to-sourcegraph-cloud"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/sourcegraph-cheat-sheet"
   to = "/how-to-search-code-with-sourcegraph-a-cheat-sheet"
   status = 301

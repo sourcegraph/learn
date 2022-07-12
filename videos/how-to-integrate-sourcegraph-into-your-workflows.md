@@ -2,7 +2,7 @@
 title: How to integrate Sourcegraph into your workflows with GitHub and VS Code extensions
 authorSlug: marek-zaluski
 authorDisplayName: Marek Zaluski
-tags: [video, Sourcegraph, IDE, git, Sourcegraph Cloud]
+tags: [video, Sourcegraph, IDE, git]
 publicationDate: August 27, 2021
 description: Learn how to switch between your code host (like GitHub), code editor or IDE (like VS Code), and Sourcegraph.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/how-to-integrate-sourcegraph-into-your-workflows-thumbnail.jpg

@@ -2,7 +2,7 @@
 title: How to search code with Sourcegraph — a cheat sheet
 authorSlug: oluebube-princess-egbuna
 authorDisplayName: Oluebube Princess Egbuna
-tags: [tutorial, search, Sourcegraph, cheat sheet, Sourcegraph Cloud]
+tags: [tutorial, search, Sourcegraph, cheat sheet]
 publicationDate: August 19, 2021
 description: A guide to help you get up to speed with Sourcegraph's commands quickly
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/sourcegraph-learn-03.png
@@ -11,15 +11,15 @@ browserTitle: Getting started with Sourcegraph universal code search
 type: posts
 ---
 
-Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more.
+Sourcegraph is a universal code search tool, enabling you to search across both open source and your own private code repositories. Code search can help you onboard onto new codebases, contribute to open source, find bugs and error messages, understand dependency libraries, and more. You can use these commands on your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/deploy), or try them out on [Sourcegraph.com](https://sourcegraph.com/search) to search our index of open source repositories.
 
 This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
 
-You can use these commands on either [Sourcegraph Cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
+You can use these commands on either [Sourcegraph.com](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
 
 ## Searching an organization’s repository
 
-By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. On Sourcegraph Cloud, this includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
+By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. This includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
 
 ### Searching for or within a repository
 
@@ -311,22 +311,7 @@ Alternatively, if you are receiving too many results, you can decrease the time 
 
 ## Search by repository visibility
 
-Restricting search by codebase visibility is done with the `visibility` command. You can restrict search to public or private repositories.
-
-This is useful if you want the results of a search to be explicitly narrowed down to repositories that are private and accessible to you or repositories that are public. 
-
-Except when explicitly set, all searches return results from both public and private repositories accessible to you.
-
-<Highlighter
-input='visibility:any|private|public'
-matcher='any|private|public'
-/> 
-
-When logged into Sourcegraph, you can change your context to your username and then run the following command to show all of your available private repositories.
-
-<SourcegraphSearch query="visibility:private" />
-
-This can allow you to search across the code that is private to only you. _Please note that searching private code on Sourcegraph Cloud is currently in Public Beta._
+Please note that [Sourcegraph.com](https://sourcegraph.com/search) supports public and open source code.
 
 ## Further resources
 
