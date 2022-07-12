@@ -19,7 +19,7 @@ You can use these commands on either [Sourcegraph.com](https://sourcegraph.com/s
 
 ## Searching an organization’s repository
 
-By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. On Sourcegraph Cloud, this includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
+By default, Sourcegraph lets you search globally, providing you with results from all the repositories you have access to. This includes all currently indexed open source repositories. The `repo` command lets you dial down to the single repository level.
 
 ### Searching for or within a repository
 
@@ -312,12 +312,6 @@ Alternatively, if you are receiving too many results, you can decrease the time 
 ## Search by repository visibility
 
 Please note that [Sourcegraph.com](https://sourcegraph.com/search) supports public and open source code.
-
-Except when explicitly set, all searches return results from both public and private repositories accessible to you.
-
-<SourcegraphSearch query="visibility:private" />
-
-This can allow you to search across the code that is private to only you. _Please note that searching private code on Sourcegraph Cloud is currently in Public Beta._
 
 ## Further resources
 

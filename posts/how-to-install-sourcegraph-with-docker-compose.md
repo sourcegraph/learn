@@ -11,7 +11,7 @@ browserTitle: Install self-hosted Sourcegraph for a production environment
 type: posts
 ---
 
-Sourcegraph is a universal code search tool, allowing you to search across your own code or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph through [Sourcegraph Cloud](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
+Sourcegraph is a universal code search tool, allowing you to search across your own code or public open source repositories that you add to your instance. You can begin experimenting with Sourcegraph at [Sourcegraph.com](https://sourcegraph.com/search), which is available in-browser and has millions of open source repositories indexed.
 
 Once you know that you would like to self-host your own instance of Sourcegraph to search across your local or cloud repositories, and you want it to be suitable for a production environment, you can follow along with this tutorial that will set you up with a Sourcegraph instance on Docker Compose. This tutorial will assume *nix commands on the command line. 
 
