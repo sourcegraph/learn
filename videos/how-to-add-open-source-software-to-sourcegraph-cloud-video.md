@@ -2,7 +2,7 @@
 title: How to add open source software to Sourcegraph Cloud (video)
 authorSlug: lisa-tagliaferri
 authorDisplayName: Lisa Tagliaferri
-tags: [video, Sourcegraph, open source, Sourcegraph Cloud]
+tags: [video, Sourcegraph, open source]
 publicationDate: August 30, 2021
 description: Find out how to add open source repos to Sourcegraph Cloud so you can search across all the code you care about.
 image: https://storage.googleapis.com/sourcegraph-assets/learn/headers/install-sourcegraph-with-docker-screengrab.png

@@ -15,7 +15,7 @@ Sourcegraph is a universal code search tool, enabling you to search across both 
 
 This cheat sheet style guide can help you get up to speed with Sourcegraph commands quickly. For more thorough tutorials on using Sourcegraph, refer to our [tutorials](https://learn.sourcegraph.com/tags/sourcegraph) and our [documentation](https://docs.sourcegraph.com/). 
 
-You can use these commands on either [Sourcegraph Cloud](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
+You can use these commands on either [Sourcegraph.com](https://sourcegraph.com/search) or your own [Sourcegraph instance](https://docs.sourcegraph.com/admin/install).
 
 ## Searching an organization’s repository
 
@@ -311,9 +311,7 @@ Alternatively, if you are receiving too many results, you can decrease the time 
 
 ## Search by repository visibility
 
-Restricting search by codebase visibility is done with the `visibility` command. You can restrict search to public or private repositories.
-
-This is useful if you want the results of a search to be explicitly narrowed down to repositories that are private and accessible to you or repositories that are public. 
+Please note that [Sourcegraph.com](https://sourcegraph.com/search) supports public and open source code.
 
 Except when explicitly set, all searches return results from both public and private repositories accessible to you.
 

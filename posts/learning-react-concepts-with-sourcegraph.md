@@ -15,8 +15,6 @@ React, also known as ReactJS or React.js, is a popular front-end JavaScript libr
 
 There are many ways to learn React, including via the [official Learn React docs](https://beta.reactjs.org/learn). In this tutorial, we will support you in beginning to learn this library through using [Sourcegraph](https://sourcegraph.com). Sourcegraph enables you to search across open source code written in React so that you can delve into foundational concepts that are crucial to being able to implement React effectively.
 
-We’ll be using [Sourcegraph Cloud](https://sourcegraph.com) throughout this tutorial, which you don’t need an account to use. If you would like to [create an account](https://learn.sourcegraph.com/how-to-create-a-sourcegraph-cloud-account) to save your search history or learn more about the tool, feel free to review our [Sourcegraph Cloud tutorials and videos](https://learn.sourcegraph.com/tags/sourcegraph-cloud). 
-
 ## Forms
 
 Many front-end developers will need to build web forms to intake information from users. React provides a built-in way to work with [forms using controlled components](https://reactjs.org/docs/forms.html), but there are a number of React form libraries that can provide you with more features. 
