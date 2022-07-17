@@ -22,4 +22,4 @@ If you are actively developing Sourcegraph Learn or are looking to extend this r
 
 If you are actively contributing to Sourcegraph Learn as a technical writer or video creator, please see our [content documentation](https://github.com/sourcegraph/learn/blob/main/docs/content.md).
 
-See also our archived [Hacktoberfest 2021 contributors' guide](https://github.com/sourcegraph/learn/blob/main/docs/hacktoberfest-2021.md).
+See also our archived [Hacktoberfest 2021 contributors' guide](https://github.com/sourcegraph/learn/blob/main/docs/hacktoberfest-2021.md).This is a test again!
