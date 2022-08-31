@@ -48,40 +48,40 @@ When searching a repository, command chaining can be used to return more specifi
 
 **Search for a repository that contains a file**
 
-If you are searching for a file in a repository, use `repo:contains.file`.
+If you are searching for a file or a file path in a repository, use `repo:has.path`.
 
 <Highlighter
-input='repo:repository-path repo:contains.file(file-path)'
+input='repo:repository-path repo:has.path(file-path)'
 matcher='file-path'
 /> 
 
 For example, when searching for the `package.json` file in a project, this search query will return the file.
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:contains.file(package.json)" />
+<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:has.path(package.json)" />
 
-A similar example that uses the content query to search for files is shown below.
+Alternatively, you can use `repo:has.file`, which allows you to search for files containing content.
 
-<SourcegraphSearch query="repo:contains(file:package\.json$ content:ts)" />
+<SourcegraphSearch query="repo:has.file(path:package\.json$ content:tsconfig)" />
 
-This query returns repositories that contain a `package.json` file and has content written in TypeScript.
+This query returns repositories that contain a `package.json` file containing the string `tsconfig`.
 
 **Search for a repository that contains some content**
 
-Suppose you are searching for some content in a repository, such as a library. Use `repo:contains.content`.
+Suppose you are searching for some content in a repository, such as a library. Use `repo:has.content`.
 
 <Highlighter
-input='repo:repo-path repo:contains.content(your-content)'
+input='repo:repo-path repo:has.content(your-content)'
 matcher='your-content'
 /> 
 
 <Highlighter
-input='repo:repo-path repo:contains.content(regular-pattern)'
+input='repo:repo-path repo:has.content(regular-pattern)'
 matcher='regular-pattern'
 /> 
 
 We can search for the `mdi-react` library in Sourcegraph, for example:
 
-<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:contains.content(mdi-react)" />
+<SourcegraphSearch query="repo:^github\.com/sourcegraph/.* repo:has.content(mdi-react)" />
 
 
 The above query returns repos that have `mdi-react` among its contents.
