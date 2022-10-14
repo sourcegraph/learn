@@ -24,6 +24,12 @@ const AppWrapper: FunctionComponent<Props> = ({ children }) => {
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
     <>
         <AppWrapper>
+            <Script
+                defer={true}
+                data-domain="learn.sourcegraph.com"
+                src="https://plausible.io/js/plausible.js"
+                strategy="lazyOnload"
+            />
             <GoogleTagManagerScriptTag />
             <Script id='Swiftype' strategy='lazyOnload'>
             {`
