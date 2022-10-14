@@ -1,6 +1,7 @@
 import { GoogleTagManagerNoscriptFrame } from '@components/atoms/GoogleTagManager'
 import { SetThemeTag } from '@components/themes/theme'
 import Document, { Head, Html, Main, NextScript, DocumentContext } from 'next/document'
+import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -18,6 +19,7 @@ export default class MyDocument extends Document {
           {/* Prism theme for syntax highlighting */}
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
           <SetThemeTag />
+          <Script defer={true} data-domain="learn.sourcegraph.com" src="https://plausible.io/js/plausible.js" strategy="afterInteractive" />
         </Head>
         <body>
           <GoogleTagManagerNoscriptFrame />
